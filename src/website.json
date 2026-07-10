@@ -1,0 +1,109 @@
+{
+  "brand": {
+    "name": "KINETIC",
+
+    "tagline": "Real Estate, Redefined."
+  },
+
+  "nav": {
+    "links": [
+      { "label": "Home", "href": "#hero" },
+      { "label": "About", "href": "#about" },
+      { "label": "Properties", "href": "#properties" },
+      { "label": "Agents", "href": "#agents" },
+      { "label": "Blog", "href": "#blog" }
+    ],
+    "img": "/logo.png",
+    "cta": { "label": "Contact Us", "href": "#contact" }
+  },
+
+  "hero": {
+    "heading": "Find Your Perfect Home in the Bay Area",
+    "subheading": "Kinetic connects buyers and sellers with the Bay Area's most trusted real estate experts — delivering results with clarity, speed, and care.",
+    "cta": { "label": "Explore Properties", "href": "#properties" },
+    "backgroundImage": "/hero.webp",
+    "form": {
+      "heading": "Get in Touch",
+      "subheading": "Tell us what you're looking for and an agent will reach out within 24 hours.",
+      "backgroundImage": "/hero-form-bg.jpg",
+      "fields": {
+        "name": { "label": "Full Name", "placeholder": "John Doe" },
+        "email": { "label": "Email Address", "placeholder": "john@example.com" },
+        "phone": { "label": "Phone Number", "placeholder": "+1 (555) 000-0000" },
+        "service": {
+          "label": "Service",
+          "placeholder": "Select a service",
+          "options": [
+            "Buy a Property",
+            "Sell a Property",
+            "Rent a Property",
+            "Property Valuation",
+            "Investment Consultation"
+          ]
+        }
+      },
+      "submit": "Send Message"
+    }
+  },
+
+  "about": {
+    "heading": "Real estate, the way it should feel.",
+    "subheading": "Kinetic was founded on a simple idea: buying or selling a home shouldn't be confusing or transactional. We pair deep Bay Area knowledge with agents who actually pick up the phone — from the first showing to the final signature.",
+    "cta": { "label": "Meet Our Team", "href": "#agents" },
+    "image": "/home-about.avif",
+    "features": [
+      {
+        "icon": "layers",
+        "title": "10+ years in the Bay Area",
+        "description": "Founded in 2015, Kinetic has grown into one of the region's most trusted independent brokerages."
+      },
+      {
+        "icon": "chart",
+        "title": "Locally owned & operated",
+        "description": "Every agent lives and works in the neighborhoods they serve — no call centers, no outsourcing."
+      },
+      {
+        "icon": "shield",
+        "title": "Licensed, vetted, accountable",
+        "description": "Every agent on our team is fully licensed and held to one shared standard of transparency."
+      }
+    ],
+    "card": {
+      "label": "Track Record",
+      "stat": "500+",
+      "subStat": "Homes closed across 20+ Bay Area neighborhoods",
+      "cta": "View Our Results"
+    }
+  },
+
+  "properties": {
+    "badge": "Featured Listings",
+    "heading": "Homes Worth Falling For",
+    "subheading": "Hand-picked listings across the Bay Area and Sacramento — from modern condos to sprawling family estates.",
+    "cta": { "label": "View All Properties", "href": "#properties" }
+  },
+
+  "agents": {
+    "badge": "Our Team",
+    "heading": "Agents Who Go the Extra Mile",
+    "subheading": "Each Kinetic agent is a local expert, a skilled negotiator, and a trusted advisor — committed to your success.",
+    "cta": { "label": "Talk to an Agent", "href": "#contact" }
+  },
+
+  "blog": {
+    "badge": "Insights",
+    "heading": "Market News & Buying Tips",
+    "subheading": "Stay ahead with the latest Bay Area real estate trends, mortgage updates, and neighborhood guides.",
+    "cta": { "label": "Read All Articles", "href": "#blog" }
+  },
+
+  "footer": {
+    "tagline": "Your journey home starts here.",
+    "legal": "© 2025 Kinetic Real Estate. All rights reserved.",
+    "links": [
+      { "label": "Privacy Policy", "href": "#" },
+      { "label": "Terms of Service", "href": "#" },
+      { "label": "Sitemap", "href": "#" }
+    ]
+  }
+}

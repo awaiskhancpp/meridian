@@ -1,0 +1,201 @@
+/**
+ * theme.generated.css
+ * Auto-generated from builds.ts by scripts/generate-theme.ts
+ * DO NOT EDIT BY HAND — changes will be overwritten.
+ */
+
+@theme {
+  /* ─── Colors ──────────────────────────────────────────────────── */
+  --color-bg-deep: #0d1b2a;
+  --color-bg-dark: #112233;
+  --color-bg-card: #162d3f;
+  --color-accent: #4a9ebb;
+  --color-accent-hover: #357a96;
+  --color-accent-light: #6ab4d0;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a8bcc8;
+  --color-text-muted: #6b8898;
+  --color-black: #000000;
+  --color-dark-slate: #223338;
+
+  /* UI chrome — rgba strings, usable in arbitrary values */
+  --color-nav-bg: rgba(17,34,51,0.80);
+  --color-nav-border: rgba(255,255,255,0.10);
+  --color-input-bg: rgba(255,255,255,0.06);
+  --color-input-border: rgba(255,255,255,0.10);
+  --color-glass-bg: rgba(22,45,63,0.72);
+  --color-glass-border: rgba(255,255,255,0.10);
+
+  /* ─── Typography ──────────────────────────────────────────────── */
+  --font-family-sans: 'DM Sans', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* ─── Border Radius ───────────────────────────────────────────── */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  /* ─── Spacing ─────────────────────────────────────────────────── */
+  --spacing-section-sm: 2.5rem;
+  --spacing-section-md: 4rem;
+  --spacing-section-lg: 6rem;
+  --spacing-nav-h-sm: 56px;
+  --spacing-nav-h-md: 64px;
+  --spacing-nav-h-lg: 72px;
+
+  /* ─── Z-Index ─────────────────────────────────────────────────── */
+  --z-navbar: 50;
+  --z-modal: 100;
+  --z-toast: 200;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Typography Utilities
+   ═══════════════════════════════════════════════════════════════════ */
+
+@utility text-h1 {
+  font-size: 2rem;
+  line-height: 1.1;
+  font-weight: 600;
+  @media (min-width: 640px) and (max-width: 1023px) {
+    font-size: 2.75rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 3.5rem;
+  }
+}
+
+@utility text-h2 {
+  font-size: 1.625rem;
+  line-height: 1.2;
+  font-weight: 600;
+  @media (min-width: 640px) and (max-width: 1023px) {
+    font-size: 2.125rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 2.75rem;
+  }
+}
+
+@utility text-h3 {
+  font-size: 1.375rem;
+  line-height: 1.25;
+  font-weight: 600;
+  @media (min-width: 640px) and (max-width: 1023px) {
+    font-size: 1.625rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 2rem;
+  }
+}
+
+@utility text-h4 {
+  font-size: 1.125rem;
+  line-height: 1.3;
+  font-weight: 600;
+  @media (min-width: 640px) and (max-width: 1023px) {
+    font-size: 1.25rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+}
+
+@utility text-h5 {
+  font-size: 1rem;
+  line-height: 1.35;
+  font-weight: 600;
+  @media (min-width: 640px) and (max-width: 1023px) {
+    font-size: 1.125rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 1.25rem;
+  }
+}
+
+@utility text-p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  @media (min-width: 640px) and (max-width: 1023px) {
+    font-size: 0.9375rem;
+  }
+  @media (min-width: 1024px) {
+    font-size: 1rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Button Padding Utilities
+   ═══════════════════════════════════════════════════════════════════ */
+
+@utility btn-padding-sm {
+  padding: 0.5rem 1.125rem;
+}
+
+@utility btn-padding-md {
+  padding: 0.625rem 1.5rem;
+}
+
+@utility btn-padding-lg {
+  padding: 0.875rem 2rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   Semantic Color Utilities (common patterns)
+   ═══════════════════════════════════════════════════════════════════ */
+
+@utility bg-deep {
+  background-color: var(--color-bg-deep);
+}
+
+@utility bg-dark {
+  background-color: var(--color-bg-dark);
+}
+
+@utility bg-card {
+  background-color: var(--color-bg-card);
+}
+
+@utility bg-accent {
+  background-color: var(--color-accent);
+}
+
+@utility bg-accent-hover {
+  background-color: var(--color-accent-hover);
+}
+
+@utility text-primary {
+  color: var(--color-text-primary);
+}
+
+@utility text-secondary {
+  color: var(--color-text-secondary);
+}
+
+@utility text-muted {
+  color: var(--color-text-muted);
+}
+
+@utility text-black {
+  color: var(--color-black);
+}
+
+@utility text-dark-slate {
+  color: var(--color-dark-slate);
+}
+
+@utility text-accent {
+  color: var(--color-accent);
+}
+
+@utility border-accent {
+  border-color: var(--color-accent);
+}
+
+@utility ring-accent {
+  --tw-ring-color: var(--color-accent);
+}
