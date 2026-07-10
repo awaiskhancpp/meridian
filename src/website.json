@@ -1,109 +1,123 @@
 {
   "brand": {
     "name": "KINETIC",
-
-    "tagline": "Real Estate, Redefined."
+    "tagline": "Kitchen, bath, and whole-home remodeling."
   },
-
   "nav": {
+    "menuLabel": "Menu",
+    "img": "/logo.png",
     "links": [
       { "label": "Home", "href": "#hero" },
-      { "label": "About", "href": "#about" },
-      { "label": "Properties", "href": "#properties" },
-      { "label": "Agents", "href": "#agents" },
-      { "label": "Blog", "href": "#blog" }
+      { "label": "About Us", "href": "#about" },
+      { "label": "Why Choose Us", "href": "#why-choose-us" },
+      { "label": "Contact", "href": "#contact" }
     ],
-    "img": "/logo.png",
-    "cta": { "label": "Contact Us", "href": "#contact" }
+    "services": [
+      "Kitchen Remodeling",
+      "Bathroom Remodeling",
+      "Whole-Home Remodeling",
+      "Home Additions",
+      "Custom Cabinetry",
+      "Flooring",
+      "Design Consultation",
+      "Project Planning"
+    ]
   },
-
   "hero": {
-    "heading": "Find Your Perfect Home in the Bay Area",
-    "subheading": "Kinetic connects buyers and sellers with the Bay Area's most trusted real estate experts — delivering results with clarity, speed, and care.",
-    "cta": { "label": "Explore Properties", "href": "#properties" },
+    "eyebrow": "Premium remodeling for modern homes",
+    "heading": "YOUR VISION,",
+    "script": "expertly crafted.",
+    "subheading": "From kitchens and baths to full-home updates, we guide every project with clear communication, careful planning, and detail-focused execution.",
     "backgroundImage": "/hero.webp",
+    "serviceChips": [
+      "Kitchen Remodeling",
+      "Bathroom Remodeling",
+      "Whole-Home Remodeling",
+      "Home Additions"
+    ],
+    "cta": { "label": "Explore Services", "href": "#about" },
     "form": {
-      "heading": "Get in Touch",
-      "subheading": "Tell us what you're looking for and an agent will reach out within 24 hours.",
-      "backgroundImage": "/hero-form-bg.jpg",
       "fields": {
-        "name": { "label": "Full Name", "placeholder": "John Doe" },
-        "email": { "label": "Email Address", "placeholder": "john@example.com" },
-        "phone": { "label": "Phone Number", "placeholder": "+1 (555) 000-0000" },
+        "name": { "label": "Name", "placeholder": "Your name" },
+        "email": { "label": "Email", "placeholder": "Email address" },
+        "phone": { "label": "Phone", "placeholder": "Phone number" },
         "service": {
           "label": "Service",
           "placeholder": "Select a service",
           "options": [
-            "Buy a Property",
-            "Sell a Property",
-            "Rent a Property",
-            "Property Valuation",
-            "Investment Consultation"
+            "Kitchen Remodeling",
+            "Bathroom Remodeling",
+            "Whole-Home Remodeling",
+            "Home Additions",
+            "Custom Cabinetry",
+            "Flooring",
+            "Design Consultation",
+            "Project Planning"
           ]
         }
       },
-      "submit": "Send Message"
+      "submit": "Request a Quote"
     }
   },
-
   "about": {
-    "heading": "Real estate, the way it should feel.",
-    "subheading": "Kinetic was founded on a simple idea: buying or selling a home shouldn't be confusing or transactional. We pair deep Bay Area knowledge with agents who actually pick up the phone — from the first showing to the final signature.",
-    "cta": { "label": "Meet Our Team", "href": "#agents" },
+    "label": "About Us",
+    "heading": "A team built",
+    "script": "around your home.",
+    "subheading": "Kinetic started with a simple frustration: too many remodels feel rushed, disconnected, or over-promised. We built our process around the opposite — real design direction before a single wall comes down, one point of contact throughout, and craftsmanship that holds up long after the crew leaves.",
+    "cta": { "label": "See How We Work", "href": "#why-choose-us" },
     "image": "/home-about.avif",
     "features": [
       {
         "icon": "layers",
-        "title": "10+ years in the Bay Area",
-        "description": "Founded in 2015, Kinetic has grown into one of the region's most trusted independent brokerages."
+        "title": "Design before demolition",
+        "description": "We map materials, sequencing, and scope in full before any work begins — no surprises once the crew arrives."
       },
       {
         "icon": "chart",
-        "title": "Locally owned & operated",
-        "description": "Every agent lives and works in the neighborhoods they serve — no call centers, no outsourcing."
+        "title": "One point of contact",
+        "description": "You're not chasing down subcontractors or guessing at status — one person owns your project from first call to final walkthrough."
       },
       {
         "icon": "shield",
-        "title": "Licensed, vetted, accountable",
-        "description": "Every agent on our team is fully licensed and held to one shared standard of transparency."
+        "title": "Craft that outlasts the crew",
+        "description": "We treat every home like it's the one we're going to live in — protected, respected, and finished right."
       }
     ],
     "card": {
-      "label": "Track Record",
-      "stat": "500+",
-      "subStat": "Homes closed across 20+ Bay Area neighborhoods",
-      "cta": "View Our Results"
+      "label": "Our promise",
+      "stat": "100%",
+      "subStat": "Every project gets our full attention — from first sketch to final walkthrough.",
+      "cta": "See our process"
     }
   },
-
-  "properties": {
-    "badge": "Featured Listings",
-    "heading": "Homes Worth Falling For",
-    "subheading": "Hand-picked listings across the Bay Area and Sacramento — from modern condos to sprawling family estates.",
-    "cta": { "label": "View All Properties", "href": "#properties" }
-  },
-
-  "agents": {
-    "badge": "Our Team",
-    "heading": "Agents Who Go the Extra Mile",
-    "subheading": "Each Kinetic agent is a local expert, a skilled negotiator, and a trusted advisor — committed to your success.",
-    "cta": { "label": "Talk to an Agent", "href": "#contact" }
-  },
-
-  "blog": {
-    "badge": "Insights",
-    "heading": "Market News & Buying Tips",
-    "subheading": "Stay ahead with the latest Bay Area real estate trends, mortgage updates, and neighborhood guides.",
-    "cta": { "label": "Read All Articles", "href": "#blog" }
-  },
-
-  "footer": {
-    "tagline": "Your journey home starts here.",
-    "legal": "© 2025 Kinetic Real Estate. All rights reserved.",
-    "links": [
-      { "label": "Privacy Policy", "href": "#" },
-      { "label": "Terms of Service", "href": "#" },
-      { "label": "Sitemap", "href": "#" }
+  "whyChooseUs": {
+    "label": "Why Choose Us",
+    "heading": "Clarity, not",
+    "script": "chaos.",
+    "subheading": "Remodeling has a reputation for surprise costs and vanishing contractors. We run ours differently — clear numbers up front, one team from start to finish, and a finished space that feels intentional, not improvised.",
+    "highlights": [
+      "Fixed estimates before work begins",
+      "One team, start to finish",
+      "Materials chosen with real intention"
+    ],
+    "stats": [
+      { "value": "24h", "label": "Average response time" },
+      { "value": "10+", "label": "Years remodeling homes" },
+      { "value": "5-step", "label": "A defined process, every time" },
+      { "value": "100%", "label": "Estimates in writing" }
     ]
+  },
+  "contact": {
+    "label": "Contact Us",
+    "heading": "Let's begin a",
+    "script": "conversation.",
+    "subheading": "Tell us about your space, your goals, and your timeline. We will guide you through the next steps with care and intention.",
+    "fields": {
+      "name": { "label": "Name", "placeholder": "Your name" },
+      "phone": { "label": "Phone", "placeholder": "Phone number" },
+      "email": { "label": "Email", "placeholder": "Email address" },
+      "message": { "label": "Message", "placeholder": "Tell us about your project" }
+    },
+    "submit": "Send Request"
   }
 }

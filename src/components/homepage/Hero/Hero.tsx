@@ -2,246 +2,210 @@
 
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { Button, Container } from '@/components/ui'
 import siteData from '@/website.json'
-import { colors } from '@/builds'
+import { Button, Container } from '@/components/ui'
 
-const { hero } = siteData
-const { form } = hero
+const { hero, brand } = siteData
 
-/**
- * Hero
- *
- * Uses semantic utilities from theme.generated.css:
- *  - text-h1, text-p (responsive typography from builds.ts fontSize/lineHeight)
- *  - text-primary, text-secondary, text-muted
- *  - bg-accent, bg-accent-hover (steel blue from colors.accent/accentHover)
- *
- * Background: full-section photo (hero.backgroundImage) with a bgDeep/bgDark
- * gradient overlay on top for legibility.
- *
- * Layout:
- *  - lg   : photo fills the viewport. Heading card sits near the bottom of the
- *           photo, and the form is absolutely positioned so it overlaps the
- *           bottom edge of the photo (unchanged from the desktop design).
- *  - sm/md: photo is a shorter block just tall enough for the heading card.
- *           The form is NOT absolutely positioned here — it's a normal
- *           sibling block on a white background, below the photo entirely.
- */
 export default function Hero() {
-  const [formData, setFormData] = useState({ name: '', email: '', phone: '', service: '' })
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: '',
+  })
+
   const [submitted, setSubmitted] = useState(false)
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+    const { name, value } = e.target
+    setFormData((previous) => ({ ...previous, [name]: value }))
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
     setSubmitted(true)
   }
 
   return (
-    <section id="hero" aria-label="Hero" className="relative w-full">
-      {/* ── Photo block — shorter on sm/md, full viewport on lg ─────────── */}
-      <div className="relative w-full overflow-hidden h-[100svh] sm:min-h-[620px] lg:min-h-screen flex flex-col bg-white">
-        {/* Background photo — only rendered when website.json actually has a path set */}
-        {hero.backgroundImage ? (
-          <Image
-            src={hero.backgroundImage}
-            alt=""
-            fill
-            priority
-            aria-hidden="true"
-            className="object-cover "
-          />
-        ) : null}
+    <section id="hero" aria-label="Hero" className="px-4 pb-8 pt-4 sm:px-6 lg:px-8 lg:pb-10">
+      <Container>
+        <div className="overflow-hidden rounded-[36px] border border-[rgba(255,255,255,0.12)] bg-deep shadow-[0_36px_100px_rgba(60,37,21,0.22)]">
+          <div className="relative isolate min-h-[34rem] sm:min-h-[40rem] lg:min-h-[44rem]">
+            <Image
+              src={hero.backgroundImage}
+              alt=""
+              fill
+              priority
+              aria-hidden="true"
+              className="object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(29,18,11,0.35)_0%,rgba(60,37,21,0.62)_55%,rgba(60,37,21,0.82)_100%)]" />
 
-        {/* Content */}
-        <div className="relative z-10 flex flex-col flex-1">
-          {/* Navbar spacer — spacing.navH from builds.ts */}
-          <div className="h-14 md:h-16 lg:h-[72px]" aria-hidden="true" />
+            <div className="relative flex min-h-[34rem] flex-col justify-end px-5 py-6 sm:min-h-[40rem] sm:px-8 sm:py-8 lg:min-h-[44rem] lg:px-10 lg:py-10">
+              <div className="max-w-[38rem] rounded-[30px] border border-[rgba(255,255,255,0.16)] bg-[rgba(255,255,255,0.14)] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.12)] backdrop-blur-md sm:p-5">
+                <p className="text-xs uppercase tracking-[0.34em] text-cream/90">{brand.tagline}</p>
 
-          {/* Heading card — pinned to the bottom of the photo, extra pb on lg
-              to leave room for the form that overlaps this block on lg only */}
-          <div className="flex-1 flex flex-col justify-end px-0 pt-10 pb-4 md:pb-8 lg:pb-26">
-            <Container>
-              <div className="max-w-sm md:max-w-md lg:max-w-lg">
-                <div
-                  className={`rounded-2xl p-6 md:p-8 border border-white/10 backdrop-blur-sm `}
-                  style={{ background: colors.glassBg }}
-                >
-                  {/* h1 — text-h1 utility (responsive fontSize.h1 + lineHeight.h1) */}
-                  <h1 className="text-h1 text-primary mb-3 md:mb-4">{hero.heading}</h1>
+                <h1 className="mt-2 text-white">
+                  <span className="block text-[clamp(2.8rem,7vw,5.9rem)] font-bold uppercase leading-[0.88] tracking-[-0.04em]">
+                    {hero.heading}
+                  </span>
+                  <span className="mt-1 block font-[family-name:var(--font-allura)] text-[clamp(3rem,7.2vw,5.8rem)] leading-none italic text-cream">
+                    {hero.script}
+                  </span>
+                </h1>
 
-                  {/* Body — text-p utility + text-secondary */}
-                  <p className="text-p text-secondary max-w-xs md:max-w-sm mb-6">
-                    {hero.subheading}
-                  </p>
+                <p className="mt-4 max-w-[32rem] text-p text-[rgba(255,255,255,0.88)]">
+                  {hero.subheading}
+                </p>
 
-                  <Button
-                    variant="outline"
-                    size="md"
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <a
                     href={hero.cta.href}
-                    className="font-medium tracking-wide"
+                    className="inline-flex items-center justify-center rounded-full border border-[rgba(255,255,255,0.22)] px-5 py-3 text-sm font-semibold tracking-[0.16em] text-cream transition-colors hover:border-[rgba(255,255,255,0.45)] hover:bg-[rgba(255,255,255,0.08)]"
                   >
                     {hero.cta.label}
-                  </Button>
+                  </a>
+                  <a
+                    href="#about"
+                    className="inline-flex items-center justify-center rounded-full border border-[rgba(255,255,255,0.22)] px-5 py-3 text-sm font-semibold tracking-[0.16em] text-cream transition-colors hover:border-[rgba(255,255,255,0.45)] hover:bg-[rgba(255,255,255,0.08)]"
+                  >
+                    Learn About Us
+                  </a>
                 </div>
               </div>
-            </Container>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* ── Form block ────────────────────────────────────────────────────
-          sm/md: normal flow, white background, renders below the photo
-          lg   : absolutely positioned, overlaps the bottom edge of the photo,
-                 transparent wrapper (the form panel itself carries the dark
-                 glass background there)
-      */}
-      <div className="relative py-2 md:py-2 lg:py-0 lg:absolute lg:inset-x-0 lg:bottom-0 lg:pb-2 z-10 bg-white lg:bg-transparent">
-        <Container>
+        <div className="mt-2 rounded-[28px] border border-[rgba(60,37,21,0.08)] bg-white px-4 py-4 shadow-[0_18px_48px_rgba(60,37,21,0.08)] sm:px-6">
           {submitted ? (
-            <div
-              className={`flex items-center gap-3 rounded-2xl border border-white/10 backdrop-blur-md px-5 py-4 ${colors.bgCard}cc`}
-              role="status"
-            >
-              {/* Checkmark — accent color */}
-              <span
-                className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${colors.accent}33`}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke={colors.accent}
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  aria-hidden="true"
-                >
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
+            <div className="flex flex-wrap items-center gap-3 rounded-[22px] border border-[rgba(60,37,21,0.08)] bg-cream px-5 py-4">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-sm font-semibold text-white">
+                ✓
               </span>
-              <p className="text-primary text-sm font-medium">
-                Message sent! An agent will be in touch within 24&nbsp;hours.
+              <p className="text-sm font-medium text-dark">
+                Thanks. We received your request and will follow up shortly.
               </p>
               <button
+                type="button"
                 onClick={() => {
                   setSubmitted(false)
                   setFormData({ name: '', email: '', phone: '', service: '' })
                 }}
-                className="ml-auto shrink-0 text-muted hover:text-primary text-xs underline underline-offset-2 focus-visible:outline-none focus-visible:ring-2 ring-accent/50"
+                className="ml-auto text-sm font-medium text-dark-muted underline underline-offset-4 transition-colors hover:text-dark"
               >
-                Send again
+                Send another
               </button>
             </div>
           ) : (
             <form
               onSubmit={handleSubmit}
               noValidate
-              aria-label="Quick contact form"
-              className="rounded-2xl border border-white/10 backdrop-blur-md p-3 md:p-4"
-              style={{ background: `${colors.bgCard}cc` }}
+              className="grid gap-4 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] lg:items-end"
             >
-              <div className="flex flex-col md:grid md:grid-cols-2 lg:flex lg:flex-row gap-2 md:gap-3 lg:items-center">
-                {/* Name */}
-                <div className="flex flex-col gap-1 lg:flex-1 min-w-0">
-                  <label htmlFor="hero-name" className="sr-only">
-                    {form.fields.name.label}
-                  </label>
-                  <input
-                    id="hero-name"
-                    name="name"
-                    type="text"
-                    autoComplete="name"
-                    required
-                    placeholder={form.fields.name.placeholder}
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full rounded-xl border border-white/10 bg-white/6 px-4 py-3 text-sm text-primary placeholder-muted outline-none focus:border-accent/60 focus:bg-white/10 transition-colors"
-                  />
-                </div>
-
-                {/* Email */}
-                <div className="flex flex-col gap-1 lg:flex-1 min-w-0">
-                  <label htmlFor="hero-email" className="sr-only">
-                    {form.fields.email.label}
-                  </label>
-                  <input
-                    id="hero-email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    required
-                    placeholder={form.fields.email.placeholder}
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full rounded-xl border border-white/10 bg-white/6 px-4 py-3 text-sm text-primary placeholder-muted outline-none focus:border-accent/60 focus:bg-white/10 transition-colors"
-                  />
-                </div>
-
-                {/* Phone */}
-                <div className="flex flex-col gap-1 lg:flex-1 min-w-0">
-                  <label htmlFor="hero-phone" className="sr-only">
-                    {form.fields.phone.label}
-                  </label>
-                  <input
-                    id="hero-phone"
-                    name="phone"
-                    type="tel"
-                    autoComplete="tel"
-                    placeholder={form.fields.phone.placeholder}
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full rounded-xl border border-white/10 bg-white/6 px-4 py-3 text-sm text-primary placeholder-muted outline-none focus:border-accent/60 focus:bg-white/10 transition-colors"
-                  />
-                </div>
-
-                {/* Service — options need EXPLICIT bg/text classes.
-                    Native <option> elements ignore most parent styling and
-                    colorScheme in some browsers, so without this they render
-                    with a white background and only show text on hover
-                    (the browser's own highlight state). */}
-                <div className="flex flex-col gap-1 lg:flex-1 min-w-0">
-                  <label htmlFor="hero-service" className="sr-only">
-                    {form.fields.service.label}
-                  </label>
+              <Field
+                id="hero-name"
+                label={hero.form.fields.name.label}
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder={hero.form.fields.name.placeholder}
+              />
+              <Field
+                id="hero-email"
+                label={hero.form.fields.email.label}
+                name="email"
+                type="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder={hero.form.fields.email.placeholder}
+              />
+              <Field
+                id="hero-phone"
+                label={hero.form.fields.phone.label}
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder={hero.form.fields.phone.placeholder}
+              />
+              <div className="min-w-0">
+                <label
+                  htmlFor="hero-service"
+                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.22em] text-dark-muted"
+                >
+                  {hero.form.fields.service.label}
+                </label>
+                <div className="relative">
                   <select
                     id="hero-service"
                     name="service"
                     required
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full rounded-xl border border-white/10 bg-white/6 px-4 py-3 text-sm text-primary outline-none focus:border-accent/60 focus:bg-white/10 transition-colors appearance-none cursor-pointer"
-                    style={{ colorScheme: 'dark' }}
+                    className="h-12 w-full appearance-none rounded-full border border-[rgba(60,37,21,0.18)] bg-[rgba(60,37,21,0.03)] px-4 pr-10 text-sm text-dark outline-none transition-colors placeholder:text-dark-muted focus:border-accent"
                   >
-                    <option value="" disabled className="bg-card text-muted">
-                      {form.fields.service.placeholder}
+                    <option value="" disabled>
+                      {hero.form.fields.service.placeholder}
                     </option>
-                    {form.fields.service.options.map((opt) => (
-                      <option key={opt} value={opt} className="bg-card text-primary">
-                        {opt}
+                    {hero.form.fields.service.options.map((option) => (
+                      <option key={option} value={option}>
+                        {option}
                       </option>
                     ))}
                   </select>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-dark-muted"
+                    aria-hidden="true"
+                  >
+                    <polyline points="6 9 12 15 18 9" />
+                  </svg>
                 </div>
-
-                {/* Submit — bg-accent, bg-accent-hover */}
-                <button
-                  type="submit"
-                  className="md:col-span-2 lg:col-span-1 shrink-0 rounded-full bg-accent hover:bg-accent-hover active:scale-95 text-primary font-semibold text-sm px-7 py-3 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 ring-accent/60"
-                >
-                  {form.submit}
-                </button>
               </div>
+
+              <button
+                type="submit"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-[rgba(60,37,21,0.18)] bg-accent px-6 text-sm font-semibold tracking-[0.18em] text-white transition-colors hover:bg-accent-hover"
+              >
+                {hero.form.submit}
+              </button>
             </form>
           )}
-        </Container>
-      </div>
+        </div>
+      </Container>
     </section>
+  )
+}
+
+interface FieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  id: string
+  label: string
+}
+
+function Field({ id, label, ...props }: FieldProps) {
+  return (
+    <div className="min-w-0">
+      <label
+        htmlFor={id}
+        className="mb-2 block text-xs font-semibold uppercase tracking-[0.22em] text-dark-muted"
+      >
+        {label}
+      </label>
+      <input
+        id={id}
+        {...props}
+        className="h-12 w-full rounded-full border border-[rgba(60,37,21,0.18)] bg-[rgba(60,37,21,0.03)] px-4 text-sm text-dark outline-none transition-colors placeholder:text-dark-muted focus:border-accent"
+      />
+    </div>
   )
 }

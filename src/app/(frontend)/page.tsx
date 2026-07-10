@@ -1,10 +1,8 @@
-import React from 'react'
 import Homepage from '@/components/homepage/Homepage'
 
 export const metadata = {
-  title: 'Kinetic – Expert Real Estate Agents',
-  description:
-    'Experienced real estate agents providing trusted buying and selling services throughout the Bay Area and Sacramento.',
+  title: 'Kinetic | Remodeling Template',
+  description: 'A warm, editorial remodeling template built around a bold hero, clean forms, and service-focused sections.',
 }
 
 export default function HomePage() {

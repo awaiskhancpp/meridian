@@ -1,35 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
-import { Button, Container } from '@/components/ui'
 import siteData from '@/website.json'
-import { colors } from '@/builds'
+import { Button, Container } from '@/components/ui'
 
 const { about } = siteData
 
-/**
- * About
- *
- * Genuine "About Us" section (company story + credibility facts), not a
- * features/why-choose-us pitch. Layout follows the reference design:
- *   left  — heading, subheading, CTA, a short list of monochrome fact/feature rows
- *   right — a photo with a single floating dark stat card over its top-left corner
- *
- * Typography — semantic utilities from theme.generated.css:
- *   text-h2   → fontSize.h2 + lineHeight.h2  (responsive)
- *   text-p    → fontSize.p  + lineHeight.p   (responsive)
- *
- * Colors — CSS custom properties via utility classes:
- *   text-black       → var(--color-black)      headings
- *   text-dark-slate  → var(--color-dark-slate) body copy
- *   bg-dark          → var(--color-bg-dark)    floating card surface
- *
- * Raw color values from builds.ts are used only in style= props for
- * opacity tints (icon-square bg, dividers) that aren't in the generated set.
- */
-
 function FeatureIcon({ name }: { name: string }) {
-  // Monochrome — matches the reference's simple dark-line-on-light-square icons
-  const cls = 'w-5 h-5 text-black'
+  const cls = 'h-4 w-4 text-dark'
 
   if (name === 'layers') {
     return (
@@ -50,6 +27,7 @@ function FeatureIcon({ name }: { name: string }) {
       </svg>
     )
   }
+
   if (name === 'chart') {
     return (
       <svg
@@ -69,6 +47,7 @@ function FeatureIcon({ name }: { name: string }) {
       </svg>
     )
   }
+
   if (name === 'shield') {
     return (
       <svg
@@ -86,7 +65,8 @@ function FeatureIcon({ name }: { name: string }) {
       </svg>
     )
   }
-  return <span className="w-2 h-2 rounded-full bg-black" aria-hidden="true" />
+
+  return <span className="h-2 w-2 rounded-full bg-dark" aria-hidden="true" />
 }
 
 export default function About() {
@@ -94,96 +74,76 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="w-full bg-white py-20 md:py-28 lg:py-36"
+      className="px-4 py-8 sm:px-6 lg:px-8 lg:py-12"
     >
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* ── Left column ──────────────────────────────────────────── */}
-          <div className="flex flex-col gap-6">
-            {/* h2 — text-h2 utility, black, two-line style like the reference */}
-            <h2 id="about-heading" className="text-h2 text-black max-w-md">
-              {about.heading}
+        <div className="grid gap-4 lg:gap-0 grid-cols-1 lg:grid-cols-2 lg:items-start">
+          <div className="flex flex-col order-2 lg:order-1">
+            <p className="text-xs uppercase tracking-[0.32em] text-dark-muted">{about.label}</p>
+
+            <h2 id="about-heading" className="mt-1 ">
+              <span className="block text-[clamp(2.7rem,6vw,4.9rem)] font-black uppercase leading-[0.88] tracking-[-0.04em] text-dark">
+                {about.heading}
+              </span>
+              <span className=" block font-[family-name:var(--font-allura)] text-[clamp(2.8rem,5vw,4.5rem)] leading-none italic text-accent">
+                {about.script}
+              </span>
             </h2>
 
-            {/* body — text-p utility, dark-slate muted */}
-            <p className={`text-p max-w-md ${colors.darkSlate}a6`}>{about.subheading}</p>
+            <p className="mt-3 max-w-[28rem] text-p text-dark-muted">{about.subheading}</p>
 
-            {/* CTA */}
-            <div>
-              <Button
-                variant="primary"
-                size="md"
-                href={about.cta.href}
-                className="bg-black hover:bg-dark-slate text-white border-transparent"
-              >
+            <div className="mt-6">
+              <Button variant="line" size="md" href={about.cta.href} className="max-w-fit">
                 {about.cta.label}
               </Button>
             </div>
 
-            {/* Divider */}
-            <div className={`w-16 h-px my-2 ${colors.darkSlate}26`} aria-hidden="true" />
-
-            {/* Fact / feature rows — monochrome icon squares, not accent circles */}
-            <ul className="flex flex-col gap-5" role="list">
-              {about.features.map((feature) => (
-                <li key={feature.title} className="flex items-start gap-4">
-                  <span
-                    className="shrink-0 mt-0.5 w-9 h-9 rounded-xl flex items-center justify-center"
-                    style={{ backgroundColor: `${colors.darkSlate}0f` }}
+            <div className="mt-4 w-full max-w-[34rem]">
+              <div className="grid gap-4 ">
+                {about.features.map((feature) => (
+                  <div
+                    key={feature.title}
+                    className="border-b border-[rgba(60,37,21,0.12)] last:border-none pb-4"
                   >
-                    <FeatureIcon name={feature.icon} />
-                  </span>
-                  <div className="flex flex-col gap-0.5">
-                    <span className="font-medium text-black text-sm">{feature.title}</span>
-                    <span
-                      className="text-sm leading-relaxed"
-                      style={{ color: `${colors.darkSlate}8c` }}
-                    >
-                      {feature.description}
-                    </span>
+                    <div className="flex items-start gap-2">
+                      <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[rgba(60,37,21,0.14)] bg-white">
+                        <FeatureIcon name={feature.icon} />
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold text-dark">{feature.title}</p>
+                        <p className="mt-1 text-sm leading-relaxed text-dark-muted">
+                          {feature.description}
+                        </p>
+                      </div>
+                    </div>
                   </div>
-                </li>
-              ))}
-            </ul>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* ── Right column: photo + single floating stat card ───────── */}
-          {/* Right column */}
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[560px]">
-              {/* Image */}
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[32px]">
+          <div className="relative order-1 lg:order-2">
+            <div className="overflow-hidden rounded-[32px] bg-cream shadow-[0_18px_48px_rgba(60,37,21,0.08)]">
+              <div className="relative aspect-[4/5] w-full">
                 <Image src={about.image} alt={about.heading} fill className="object-cover" />
               </div>
+            </div>
 
-              {/* Floating Card */}
-              <div className="absolute left-6 bottom-6 w-[320px] rounded-3xl bg-bg-dark border border-white/10 p-4 backdrop-blur-md">
-                <p className="mb-1 text-xs font-medium uppercase tracking-[0.2em] text-secondary">
-                  {about.card.label}
-                </p>
-
-                <p className="mb-2 text-4xl font-semibold text-primary">{about.card.stat}</p>
-
-                <p className="mb-5 text-sm leading-relaxed text-secondary">{about.card.subStat}</p>
-
-                <a
-                  href="#agents"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-primary transition-colors hover:text-accent-light"
-                >
-                  {about.card.cta}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </div>
+            <div className="absolute left-4 bottom-4 max-w-[15rem] rounded-[24px] bg-[rgba(60,37,21,0.82)] p-4 text-white shadow-[0_18px_48px_rgba(0,0,0,0.18)] backdrop-blur-md sm:left-6 sm:bottom-6">
+              <p className="text-xs uppercase tracking-[0.28em] text-[rgba(255,255,255,0.72)]">
+                {about.card.label}
+              </p>
+              <p className="mt-3 text-4xl font-black leading-none">{about.card.stat}</p>
+              <p className="mt-3 text-sm leading-relaxed text-[rgba(255,255,255,0.82)]">
+                {about.card.subStat}
+              </p>
+              <a
+                href={about.cta.href}
+                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold tracking-[0.14em] text-white transition-colors hover:text-cream"
+              >
+                {about.card.cta}
+                <span aria-hidden="true">→</span>
+              </a>
             </div>
           </div>
         </div>

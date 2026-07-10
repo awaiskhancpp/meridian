@@ -1,62 +1,66 @@
 /**
- * builds.ts
- * Central design token file. All theme values live here.
- * Import from this file to stay consistent across components.
+ * Central design tokens for the template.
  *
- * IMPORTANT — Tailwind cannot resolve dynamic class names at build time.
- * Use these tokens as Tailwind arbitrary values: bg-[#4a9ebb]
- * or reference them in style= props when truly dynamic.
+ * Palette:
+ * - deep brown canvas
+ * - espresso accent
+ * - warm cream
+ * - pure white
  */
 
-// ─── Color Palette ───────────────────────────────────────────────────────────
 export const colors = {
-  // Primary backgrounds
-  bgDeep: '#0d1b2a', // deepest navy  (outermost bg)
-  bgDark: '#112233', // dark navy     (main surface)
-  bgCard: '#162d3f', // card / glass surface
+  bgDeep: '#5B4836',
+  bgDark: '#4A3424',
+  bgCard: '#3C2515',
+  bgCream: '#EFE6D8',
+  bgWhite: '#FFFFFF',
 
-  // Accent — steel blue, sits naturally in the deep navy palette
-  accent: '#4a9ebb',
-  accentHover: '#357a96',
-  accentLight: '#6ab4d0', // lighter tint for hover states / glows
+  accent: '#3C2515',
+  accentHover: '#4A2F1C',
+  accentLight: '#8A694D',
 
-  // Text
-  textPrimary: '#ffffff', // HEX #FFFFFF  RGB 255,255,255
-  textSecondary: '#a8bcc8', // muted blue-grey
-  textMuted: '#6b8898',
+  textPrimary: '#FFFFFF',
+  textSecondary: '#F7F1E7',
+  textMuted: '#D8C9B7',
 
-  // Neutral
-  black: '#000000', // HEX #000000  RGB 0,0,0
-  darkSlate: '#223338', // HEX #223338  RGB 34,51,56
+  textDark: '#3C2515',
+  textDarkMuted: '#6F513D',
 
-  // UI chrome — kept as strings so they can be used in arbitrary Tailwind values
-  navBg: 'rgba(17,34,51,0.80)', // scrolled navbar bg
-  navBorder: 'rgba(255,255,255,0.10)',
-  inputBg: 'rgba(255,255,255,0.06)',
-  inputBorder: 'rgba(255,255,255,0.10)',
-  glassBg: 'rgba(22,45,63,0.72)',
-  glassBorder: 'rgba(255,255,255,0.10)',
+  black: '#24170F',
+  white: '#FFFFFF',
+  cream: '#EFE6D8',
+  darkSlate: '#3C2515',
+
+  navBg: 'rgba(255,255,255,0.96)',
+  navBgDefault: 'rgba(255,255,255,0.88)',
+  navBorder: 'rgba(60,37,21,0.08)',
+  glassBg: 'rgba(239,230,216,0.86)',
+  glassBorder: 'rgba(60,37,21,0.12)',
+  formBg: 'rgba(239,230,216,0.94)',
+  inputBg: 'rgba(60,37,21,0.05)',
+  inputBorder: 'rgba(60,37,21,0.16)',
 } as const
 
-// ─── Typography ───────────────────────────────────────────────────────────────
-// Font: DM Sans — Regular 400, Medium 500, SemiBold 600
+// Host Grotesk handles body/UI text.
+// Allura handles the script accent used in headings.
 export const fontFamily = {
-  sans: "'DM Sans', sans-serif",
+  sans: "'Host Grotesk', sans-serif",
+  script: "'Allura', cursive",
 } as const
 
-// Font sizes — three breakpoints: sm (<640) | md (640-1024) | lg (>1024)
+// Font sizes are responsive by breakpoint: sm (<640) | md (640-1024) | lg (>1024)
 export const fontSize = {
-  h1: { lg: '3.5rem', md: '2.75rem', sm: '2rem' }, // 56 / 44 / 32px
-  h2: { lg: '2.75rem', md: '2.125rem', sm: '1.625rem' }, // 44 / 34 / 26px
-  h3: { lg: '2rem', md: '1.625rem', sm: '1.375rem' }, // 32 / 26 / 22px
-  h4: { lg: '1.5rem', md: '1.25rem', sm: '1.125rem' }, // 24 / 20 / 18px
-  h5: { lg: '1.25rem', md: '1.125rem', sm: '1rem' }, // 20 / 18 / 16px
-  p: { lg: '1rem', md: '0.9375rem', sm: '0.875rem' }, // 16 / 15 / 14px
+  h1: { lg: '3.5rem', md: '2.75rem', sm: '2rem' },
+  h2: { lg: '2.75rem', md: '2.125rem', sm: '1.625rem' },
+  h3: { lg: '2rem', md: '1.625rem', sm: '1.375rem' },
+  h4: { lg: '1.5rem', md: '1.25rem', sm: '1.125rem' },
+  h5: { lg: '1.25rem', md: '1.125rem', sm: '1rem' },
+  p: { lg: '1rem', md: '0.9375rem', sm: '0.875rem' },
 } as const
 
 export const lineHeight = {
-  h1: '1.15',
-  h2: '1.2',
+  h1: '1.1',
+  h2: '1.1',
   h3: '1.25',
   h4: '1.3',
   h5: '1.35',
@@ -67,17 +71,17 @@ export const fontWeight = {
   regular: '400',
   medium: '500',
   semibold: '600',
+  bold: '700',
 } as const
 
-// ─── Button Padding ───────────────────────────────────────────────────────────
-// [paddingY, paddingX]
+// Button padding tokens.
 export const buttonPadding = {
-  lg: ['0.875rem', '2rem'], // 14px 32px
-  md: ['0.625rem', '1.5rem'], // 10px 24px
-  sm: ['0.5rem', '1.125rem'], // 8px  18px
+  lg: ['0.875rem', '2rem'],
+  md: ['0.625rem', '1.5rem'],
+  sm: ['0.5rem', '1.125rem'],
 } as const
 
-// ─── Border Radius ────────────────────────────────────────────────────────────
+// Border radius tokens.
 export const borderRadius = {
   xs: '4px',
   sm: '8px',
@@ -86,14 +90,14 @@ export const borderRadius = {
   full: '9999px',
 } as const
 
-// ─── Spacing ──────────────────────────────────────────────────────────────────
+// Spacing tokens.
 export const spacing = {
   section: { lg: '6rem', md: '4rem', sm: '2.5rem' },
   navH: { lg: '72px', md: '64px', sm: '56px' },
   containerPx: { lg: '5rem', md: '2.5rem', sm: '1.25rem' },
 } as const
 
-// ─── Z-Index ──────────────────────────────────────────────────────────────────
+// Z-index tokens.
 export const zIndex = {
   navbar: 50,
   modal: 100,

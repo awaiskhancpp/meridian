@@ -1,25 +1,39 @@
-import { DM_Sans } from 'next/font/google'
+import localFont from 'next/font/local'
 import React from 'react'
 import './styles.css'
 
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-  variable: '--font-dm-sans',
+const hostGrotesk = localFont({
+  src: [
+    { path: '../../fonts/HostGrotesk-Latin.woff2', weight: '300 800', style: 'normal' },
+    { path: '../../fonts/HostGrotesk-LatinExt.woff2', weight: '300 800', style: 'normal' },
+  ],
+  variable: '--font-host-grotesk',
   display: 'swap',
+  fallback: ['system-ui', 'sans-serif'],
+})
+
+const allura = localFont({
+  src: [
+    { path: '../../fonts/Allura-Latin.woff2', weight: '400', style: 'normal' },
+    { path: '../../fonts/Allura-Latin2.woff2', weight: '400', style: 'normal' },
+    { path: '../../fonts/Allura-LatinExt.woff2', weight: '400', style: 'normal' },
+  ],
+  variable: '--font-allura',
+  display: 'swap',
+  fallback: ['cursive'],
 })
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  description: 'A warm, editorial remodeling template with a white background and soft brown accents.',
+  title: 'Kinetic | Remodeling Template',
 }
 
-export default async function RootLayout(props: { children: React.ReactNode }) {
+export default function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="en" className={dmSans.variable}>
-      <body className="font-[family-name:var(--font-dm-sans)] bg-[#0d1b2a] text-white antialiased">
+    <html lang="en" className={`${hostGrotesk.variable} ${allura.variable}`}>
+      <body className="min-h-screen bg-white font-[family-name:var(--font-host-grotesk)] text-dark antialiased selection:bg-accent selection:text-white">
         {children}
       </body>
     </html>
