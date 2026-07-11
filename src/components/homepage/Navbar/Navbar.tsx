@@ -77,6 +77,7 @@ export default function Navbar() {
   const textClasses = scrolled ? 'text-dark' : 'text-white'
   const mutedTextClasses = scrolled ? 'text-dark-muted' : 'text-white/82'
   const hoverTextClasses = scrolled ? 'hover:text-accent' : 'hover:text-cream'
+  const borderClasses = scrolled ? 'border border-dark-muted ' : 'border border-white'
 
   return (
     <header className="fixed top-0 inset-x-0 z-[var(--z-navbar)] pt-4 lg:pt-6">
@@ -142,7 +143,11 @@ export default function Navbar() {
               "hidden" was silently losing below lg. Putting the toggle on a
               wrapper element sidesteps the conflict entirely. */}
           <div className="hidden lg:inline-flex">
-            <Button variant="primary" size="md" href="#contact" className="whitespace-nowrap">
+            <Button
+              variant="line"
+              href="#contact"
+              className={`whitespace-nowrap text-sm  font-medium tracking-[0.12em] transition-colors ${textClasses} ${hoverTextClasses}`}
+            >
               Request a Quote
             </Button>
           </div>
@@ -150,7 +155,7 @@ export default function Navbar() {
           <button
             type="button"
             onClick={() => setMobileOpen((value) => !value)}
-            className={`inline-flex items-center gap-3 rounded-full border px-4 py-2 text-sm font-semibold tracking-[0.24em] transition-colors lg:hidden ${
+            className={`inline-flex items-center gap-3 rounded-full border  text-sm font-semibold tracking-[0.24em] transition-colors lg:hidden ${
               scrolled
                 ? 'border-[rgba(60,37,21,0.14)] text-accent hover:bg-cream'
                 : 'border-white/30 text-white hover:bg-white/10'
@@ -239,7 +244,7 @@ export default function Navbar() {
             )}
 
             <div className="mt-4" onClick={() => setMobileOpen(false)}>
-              <Button variant="primary" size="md" href="#contact" className="w-full">
+              <Button variant="ghost" size="md" href="#contact" className="w-full">
                 Request a Quote
               </Button>
             </div>

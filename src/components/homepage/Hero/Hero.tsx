@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import siteData from '@/website.json'
+import { Container } from '@/components/ui'
 
 const { hero } = siteData
 
@@ -27,8 +28,8 @@ export default function Hero() {
   }
 
   return (
-    <section id="hero" aria-label="Hero" className="w-full pb-8">
-      <div className="relative isolate w-full min-h-[36rem] sm:min-h-[44rem] lg:min-h-[calc(100svh-5.25rem)]">
+    <section id="hero" aria-label="Hero" className="w-full">
+      <div className="relative isolate h-[100svh] w-full overflow-hidden 2xl:h-[92svh]">
         <Image
           src={hero.backgroundImage}
           alt=""
@@ -47,14 +48,14 @@ export default function Hero() {
         <div className="pointer-events-none absolute inset-y-0 right-6 hidden w-px bg-white/20 lg:block" /> */}
         <div className="pointer-events-none absolute inset-x-0 bottom-24 h-px bg-white/20 sm:bottom-28 lg:bottom-32" />
 
-        <div className="relative flex min-h-[36rem] flex-col justify-between px-4 pt-6 sm:min-h-[44rem] sm:px-6 sm:pt-8 lg:px-8 lg:pt-10">
+        <Container className="relative flex h-full flex-col justify-between pt-24 sm:pt-28 lg:pt-32 2xl:pt-24">
           <div className="flex justify-between gap-4" aria-hidden="true">
             <span className="text-[0.68rem] font-medium uppercase tracking-[0.28em] text-white/0">
               {hero.eyebrow}
             </span>
           </div>
 
-          <div className="max-w-[74rem] pb-5 sm:pb-6 lg:pb-8">
+          <div className="max-w-7xl pb-8 sm:pb-10 lg:pb-12">
             <h1 className="max-w-[40rem] text-white">
               <span className="text-[clamp(2.75rem,6.8vw,5.85rem)] font-bold uppercase leading-[0.9] tracking-[-0.06em] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.18)]">
                 {hero.heading}{' '}
@@ -64,8 +65,8 @@ export default function Hero() {
               </span>
             </h1>
 
-            <div className="mt-6 grid gap-16 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
-              <div className="grid grid-cols-2 max-w-[44rem]">
+            <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+              <div className="grid max-w-[44rem] grid-cols-2">
                 <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/80">
                   About us
                 </p>
@@ -82,10 +83,10 @@ export default function Hero() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </div>
 
-      <div className="mx-auto mt-2 w-full px-4 sm:px-6 lg:px-8">
+      <Container className="-mt-px">
         <div className="border border-[rgba(60,37,21,0.12)] bg-white px-4 py-5 shadow-[0_18px_48px_rgba(60,37,21,0.06)] sm:px-6 lg:px-8">
           {submitted ? (
             <div className="flex flex-wrap items-center gap-3 border-b border-[rgba(60,37,21,0.12)] pb-3">
@@ -110,7 +111,7 @@ export default function Hero() {
             <form
               onSubmit={handleSubmit}
               noValidate
-              className="grid gap-4 md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_auto]"
+              className="grid gap-4  md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_auto]"
             >
               <Field
                 id="hero-name"
@@ -191,7 +192,7 @@ export default function Hero() {
             </form>
           )}
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

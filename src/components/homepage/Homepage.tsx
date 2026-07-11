@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Hero, About, WhyChooseUs, Contact, Footer } from './index'
+import { Navbar, Hero, About, WhyChooseUs, Services, Blogs, Contact, Footer } from './index'
 
 /**
  * Homepage
@@ -12,6 +12,8 @@ export default function Homepage() {
       <Hero />
       <About />
       <WhyChooseUs />
+      <Services />
+      <Blogs />
       <Contact />
       <Footer />
     </main>

@@ -10,7 +10,7 @@
       { "label": "Home", "href": "#hero" },
       { "label": "Service Areas", "href": "#service-areas" },
       { "label": "Projects", "href": "#projects" },
-      { "label": "Blogs", "href": "/blog" },
+      { "label": "Blogs", "href": "#blogs" },
       { "label": "About", "href": "#about" }
     ],
     "services": [
@@ -85,6 +85,64 @@
       "subStat": "Every project gets our full attention — from first sketch to final walkthrough.",
       "cta": "See our process"
     }
+  },
+  "services": {
+    "label": "What We Do",
+    "heading": "Remodels built",
+    "script": "around real life.",
+    "items": [
+      {
+        "icon": "faucet",
+        "title": "Kitchen Remodeling",
+        "description": "New layouts, cabinetry, and finishes built around how your household actually cooks, gathers, and lives day to day."
+      },
+      {
+        "icon": "bath",
+        "title": "Bathroom Remodeling",
+        "description": "From a simple refresh to a full gut renovation — fixtures, tile, and storage chosen to fit your space and routine."
+      },
+      {
+        "icon": "home",
+        "title": "Whole-Home Remodeling",
+        "description": "Additions, floor-plan changes, and full-home renovations coordinated under one team from first sketch to final walkthrough."
+      }
+    ]
+  },
+  "blogs": {
+    "label": "Journal",
+    "heading": "Notes from the",
+    "script": "studio.",
+    "subheading": "Short reflections on materials, light, rooms, and the small choices that make a space feel calm and complete.",
+    "items": [
+      {
+        "title": "Spaces That Breathe",
+        "description": "A look at rooms that feel open, calm, and easy to live in without losing warmth.",
+        "image": "/home-about.avif",
+        "imageAlt": "Soft interior with curtain light",
+        "href": "#contact"
+      },
+      {
+        "title": "Textures of Stillness",
+        "description": "How layered materials can add quiet depth to kitchens, baths, and living spaces.",
+        "image": "/hero.webp",
+        "imageAlt": "Neutral textures and design materials",
+        "href": "#contact"
+      },
+      {
+        "title": "Light as a Material",
+        "description": "Using daylight to shape mood, highlight finishes, and guide movement through a home.",
+        "image": "/home-about.avif",
+        "imageAlt": "Patterned light and wall shadow",
+        "href": "#contact"
+      },
+      {
+        "title": "The Beauty of Restraint",
+        "description": "Why fewer, more deliberate choices often create the most memorable spaces.",
+        "image": "/hero.webp",
+        "imageAlt": "Minimal interior with warm architectural lines",
+        "href": "#contact"
+      }
+    ]
   },
   "whyChooseUs": {
     "label": "Why Choose Us",

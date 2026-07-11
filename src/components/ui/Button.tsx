@@ -22,12 +22,12 @@ const sizeClasses: Record<Size, string> = {
 }
 
 const variantClasses: Record<Variant, string> = {
-  primary: 'bg-accent hover:bg-accent-hover text-white border border-transparent shadow-[0_12px_28px_rgba(60,37,21,0.14)]',
+  primary:
+    'bg-accent hover:bg-accent-hover text-white border border-transparent shadow-[0_12px_28px_rgba(60,37,21,0.14)]',
   outline:
     'bg-transparent border border-[rgba(60,37,21,0.22)] text-dark hover:bg-accent hover:text-white',
   ghost: 'bg-transparent border border-transparent text-dark hover:bg-[rgba(60,37,21,0.06)]',
-  line:
-    'group relative inline-flex items-center gap-8 rounded-none border-0 bg-transparent px-0 py-0 text-dark shadow-none',
+  line: 'group relative inline-flex items-center gap-8 rounded-none border-0 bg-transparent px-0 py-0 text-dark shadow-none',
 }
 
 const base =
@@ -54,7 +54,10 @@ export default function Button({
       return (
         <a href={href} className={`${lineClasses} ${className}`}>
           <span>{children}</span>
-          <span className="inline-flex translate-x-0 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
+          <span
+            className="inline-flex translate-x-0 transition-transform duration-300 group-hover:translate-x-1"
+            aria-hidden="true"
+          >
             →
           </span>
         </a>
@@ -64,7 +67,10 @@ export default function Button({
     return (
       <button className={`${lineClasses} ${className}`} {...props}>
         <span>{children}</span>
-        <span className="inline-flex translate-x-0 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">
+        <span
+          className="inline-flex translate-x-0 transition-transform duration-300 group-hover:translate-x-1"
+          aria-hidden="true"
+        >
           →
         </span>
       </button>
