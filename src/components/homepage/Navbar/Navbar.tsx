@@ -7,27 +7,88 @@ import { Button, Container } from '@/components/ui'
 
 const { nav, brand } = siteData
 
+type SimpleNavItem = { label: string; href: string; children?: never }
+type DropdownNavItem = { label: string; href?: never; children: { label: string; href: string }[] }
+type NavItem = SimpleNavItem | DropdownNavItem
+
+const homeLink = nav.links.find((l) => l.label === 'Home')!
+const serviceAreasLink = nav.links.find((l) => l.label === 'Service Areas')!
+const remainingLinks = nav.links.filter((l) => l.label !== 'Home' && l.label !== 'Service Areas')
+
+const NAV_ITEMS: NavItem[] = [
+  homeLink,
+  serviceAreasLink,
+  {
+    label: 'Services',
+    children: nav.services.map((service) => ({ label: service, href: '#contact' })),
+  },
+  ...remainingLinks,
+]
+
+function ChevronIcon({ className = '' }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <polyline points="6 9 12 15 18 9" />
+    </svg>
+  )
+}
+
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    if (!menuOpen) return
-
+    if (!mobileOpen) return
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setMenuOpen(false)
-      }
+      if (event.key === 'Escape') setMobileOpen(false)
     }
-
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
-  }, [menuOpen])
+  }, [mobileOpen])
+
+  useEffect(() => {
+    if (!mobileOpen) setMobileServicesOpen(false)
+  }, [mobileOpen])
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12)
+
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const surfaceClasses = scrolled
+    ? 'border-[rgba(60,37,21,0.08)] bg-white/95 shadow-[0_18px_48px_rgba(60,37,21,0.06)] backdrop-blur-md'
+    : 'border-transparent bg-transparent shadow-none backdrop-blur-none'
+
+  const textClasses = scrolled ? 'text-dark' : 'text-white'
+  const mutedTextClasses = scrolled ? 'text-dark-muted' : 'text-white/82'
+  const hoverTextClasses = scrolled ? 'hover:text-accent' : 'hover:text-cream'
 
   return (
-    <header className="relative z-[var(--z-navbar)] px-2 pt-4  lg:pt-6">
+    <header className="fixed top-0 inset-x-0 z-[var(--z-navbar)] pt-4 lg:pt-6">
       <Container className="relative">
-        <div className="flex items-center justify-between gap-4 rounded-[28px] border border-[rgba(60,37,21,0.08)] bg-white px-5  shadow-[0_18px_48px_rgba(60,37,21,0.06)]">
-          <a href="#hero" className="flex items-center gap-3 text-dark" aria-label={brand.name}>
+        <div
+          className={`flex items-center justify-between gap-4 rounded-[28px] border px-5 py-2 transition-all duration-300 ${surfaceClasses}`}
+        >
+          <a
+            href="#hero"
+            className={`flex items-center gap-3 ${textClasses}`}
+            aria-label={brand.name}
+          >
             {nav.img ? (
               <Image src={nav.img} alt={brand.name} width={112} height={80} />
             ) : (
@@ -35,29 +96,84 @@ export default function Navbar() {
             )}
           </a>
 
+          <nav className="hidden items-center gap-8 lg:flex">
+            {NAV_ITEMS.map((item) =>
+              item.children ? (
+                <div key={item.label} className="group relative">
+                  <button
+                    type="button"
+                    className={`flex items-center gap-1 text-sm font-medium tracking-[0.12em] transition-colors ${textClasses} ${hoverTextClasses}`}
+                  >
+                    {item.label}
+                    <ChevronIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
+                  </button>
+
+                  <div className="invisible absolute left-1/2 top-full z-10 w-[220px] -translate-x-1/2 translate-y-2 rounded-[20px] border border-[rgba(60,37,21,0.08)] bg-white p-2 opacity-0 shadow-[0_18px_48px_rgba(60,37,21,0.1)] transition-all duration-200 group-hover:visible group-hover:translate-y-3 group-hover:opacity-100">
+                    {item.children.map((child) => (
+                      <a
+                        key={child.label}
+                        href={child.href}
+                        className="block rounded-[12px] px-3 py-2 text-sm text-dark-muted transition-colors hover:bg-cream hover:text-dark"
+                      >
+                        {child.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className={`whitespace-nowrap text-sm font-medium tracking-[0.12em] transition-colors ${textClasses} ${hoverTextClasses}`}
+                >
+                  {item.label}
+                </a>
+              ),
+            )}
+          </nav>
+
+          {/* Desktop-only CTA — wrapped in a div carrying the hidden/lg:inline-flex
+              toggle. Button's own base classes always include "inline-flex"
+              (see Button.tsx), so passing "hidden lg:inline-flex" straight into
+              Button's className competes with that base class on the SAME
+              element for the same CSS property (display). Which one wins isn't
+              determined by class order in the HTML — it's whatever order
+              Tailwind happens to emit them in the compiled stylesheet — so
+              "hidden" was silently losing below lg. Putting the toggle on a
+              wrapper element sidesteps the conflict entirely. */}
+          <div className="hidden lg:inline-flex">
+            <Button variant="primary" size="md" href="#contact" className="whitespace-nowrap">
+              Request a Quote
+            </Button>
+          </div>
+
           <button
             type="button"
-            onClick={() => setMenuOpen((value) => !value)}
-            className="inline-flex items-center gap-3 rounded-full border border-[rgba(60,37,21,0.14)] px-4 py-2 text-sm font-semibold tracking-[0.24em] text-accent transition-colors hover:bg-cream"
-            aria-expanded={menuOpen}
+            onClick={() => setMobileOpen((value) => !value)}
+            className={`inline-flex items-center gap-3 rounded-full border px-4 py-2 text-sm font-semibold tracking-[0.24em] transition-colors lg:hidden ${
+              scrolled
+                ? 'border-[rgba(60,37,21,0.14)] text-accent hover:bg-cream'
+                : 'border-white/30 text-white hover:bg-white/10'
+            }`}
+            aria-expanded={mobileOpen}
             aria-controls="main-menu"
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
           >
             <span>{nav.menuLabel}</span>
             <span className="relative flex h-4 w-4 items-center justify-center" aria-hidden="true">
               <span
                 className={`absolute h-0.5 w-4 rounded-full bg-current transition-transform duration-200 ${
-                  menuOpen ? 'rotate-45' : '-translate-y-1.5'
+                  mobileOpen ? 'rotate-45' : '-translate-y-1.5'
                 }`}
               />
               <span
                 className={`absolute h-0.5 w-4 rounded-full bg-current transition-opacity duration-200 ${
-                  menuOpen ? 'opacity-0' : 'opacity-100'
+                  mobileOpen ? 'opacity-0' : 'opacity-100'
                 }`}
               />
               <span
                 className={`absolute h-0.5 w-4 rounded-full bg-current transition-transform duration-200 ${
-                  menuOpen ? '-rotate-45' : 'translate-y-1.5'
+                  mobileOpen ? '-rotate-45' : 'translate-y-1.5'
                 }`}
               />
             </span>
@@ -66,103 +182,66 @@ export default function Navbar() {
 
         <div
           id="main-menu"
-          className={`absolute left-4 right-4 top-[calc(100%+0.75rem)] overflow-hidden rounded-[30px] border border-[rgba(60,37,21,0.08)] bg-white shadow-[0_28px_70px_rgba(60,37,21,0.12)] transition-all duration-300 ${
-            menuOpen ? 'max-h-[60rem] opacity-100' : 'pointer-events-none max-h-0 opacity-0'
+          className={`absolute left-4 right-4 top-[calc(100%+0.75rem)] overflow-hidden rounded-[30px] border border-[rgba(60,37,21,0.08)] bg-white shadow-[0_28px_70px_rgba(60,37,21,0.12)] transition-all duration-300 lg:hidden ${
+            mobileOpen ? 'max-h-[40rem] opacity-100' : 'pointer-events-none max-h-0 opacity-0'
           }`}
         >
-          <div className="grid gap-3 lg:gap-6 p-5 sm:p-6 lg:grid-cols-[0.76fr_0.94fr_1.3fr] lg:p-8">
-            <div className="space-y-6">
-              <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">Navigate</p>
-              <ul className="divide-y divide-[rgba(60,37,21,0.08)]" role="list">
-                {nav.links.map((link, index) => (
-                  <li key={link.label}>
-                    <a
-                      href={link.href}
-                      onClick={() => setMenuOpen(false)}
-                      className="flex items-center justify-between py-4 text-dark transition-colors hover:text-accent"
-                    >
-                      <span className="flex items-center gap-4 text-sm font-medium tracking-[0.16em] uppercase">
-                        <span className="w-7 text-xs text-dark-muted">
-                          {String(index + 1).padStart(2, '0')}
-                        </span>
-                        {link.label}
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-              <p className="hidden lg:block max-w-[18ch] text-sm leading-relaxed text-dark-muted">
-                Thoughtful remodeling for kitchens, baths, additions, and whole-home
-                transformations.
-              </p>
-            </div>
+          <div className="flex flex-col p-5 sm:p-6">
+            {NAV_ITEMS.map((item) =>
+              item.children ? (
+                <div
+                  key={item.label}
+                  className="border-b border-[rgba(60,37,21,0.08)] last:border-none"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setMobileServicesOpen((value) => !value)}
+                    aria-expanded={mobileServicesOpen}
+                    className="flex w-full items-center justify-between py-4 text-sm font-medium uppercase tracking-[0.14em] text-dark transition-colors hover:text-accent"
+                  >
+                    {item.label}
+                    <ChevronIcon
+                      className={`h-4 w-4 transition-transform duration-300 ${
+                        mobileServicesOpen ? 'rotate-180' : ''
+                      }`}
+                    />
+                  </button>
 
-            <div className="space-y-6 lg:border-x lg:border-[rgba(60,37,21,0.08)] lg:px-8">
-              <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">Our services</p>
-              {/*
-                grid-cols-2 by default: below lg, this section stacks to
-                the full width of the menu card (the outer grid only
-                switches to the 3-column split at lg:), so there's ample
-                horizontal room to run services in two columns instead of
-                one long vertical list — cuts the section's height roughly
-                in half on phones/tablets.
-
-                lg:grid-cols-1: at lg this section is squeezed into the
-                narrower middle slot of the 3-col split (0.94fr) with
-                larger text (text-xl), so it reverts to a single column
-                there to avoid two columns wrapping awkwardly in that
-                tighter space.
-              */}
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-3 lg:grid-cols-1 lg:gap-4" role="list">
-                {nav.services.map((service) => (
-                  <li key={service}>
-                    <a
-                      href="#contact"
-                      onClick={() => setMenuOpen(false)}
-                      className="block text-lg tracking-[0.12em] text-dark transition-colors hover:text-accent sm:text-[1.2rem]"
-                    >
-                      {service}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-
-              {/*
-                Wrapped in its own flex container rather than centering
-                the Button directly (e.g. mx-auto) — Button likely renders
-                with its own internal display type (inline-flex is common
-                for button components), and margin-auto centering only
-                works reliably on block-level elements. A wrapping flex
-                container with justify-center controls the Button's
-                position regardless of whatever display type it renders
-                internally, so this works no matter how Button itself is
-                implemented.
-              */}
-              <div className="flex justify-center lg:justify-start">
-                <Button variant="primary" size="md" href="#contact" className="w-fit">
-                  Request a Quote
-                </Button>
-              </div>
-            </div>
-
-            <div className="hidden lg:block">
-              <div className="overflow-hidden rounded-[24px] border border-[rgba(60,37,21,0.08)] bg-cream">
-                <div className="relative aspect-[16/10] w-full">
-                  <Image
-                    src={nav.services.length > 0 ? '/hero.webp' : '/hero.webp'}
-                    alt=""
-                    fill
-                    aria-hidden="true"
-                    className="object-cover"
-                  />
+                  <div
+                    className={`overflow-hidden transition-[max-height] duration-300 ease-out ${
+                      mobileServicesOpen ? 'max-h-[24rem]' : 'max-h-0'
+                    }`}
+                  >
+                    <div className="flex flex-col gap-1 pb-4 pl-3">
+                      {item.children.map((child) => (
+                        <a
+                          key={child.label}
+                          href={child.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="py-2 text-sm text-dark-muted transition-colors hover:text-accent"
+                        >
+                          {child.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <div className="p-4">
-                  <p className="text-xs uppercase tracking-[0.28em] text-dark-muted">Latest work</p>
-                  <p className="mt-2 text-sm text-dark">
-                    Kitchens and baths designed to feel calm, practical, and refined.
-                  </p>
-                </div>
-              </div>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="border-b border-[rgba(60,37,21,0.08)] py-4 text-sm font-medium uppercase tracking-[0.14em] text-dark transition-colors last:border-none hover:text-accent"
+                >
+                  {item.label}
+                </a>
+              ),
+            )}
+
+            <div className="mt-4" onClick={() => setMobileOpen(false)}>
+              <Button variant="primary" size="md" href="#contact" className="w-full">
+                Request a Quote
+              </Button>
             </div>
           </div>
         </div>

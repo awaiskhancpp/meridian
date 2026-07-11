@@ -8,9 +8,10 @@
     "img": "/logo.png",
     "links": [
       { "label": "Home", "href": "#hero" },
-      { "label": "About Us", "href": "#about" },
-      { "label": "Why Choose Us", "href": "#why-choose-us" },
-      { "label": "Contact", "href": "#contact" }
+      { "label": "Service Areas", "href": "#service-areas" },
+      { "label": "Projects", "href": "#projects" },
+      { "label": "Blogs", "href": "/blog" },
+      { "label": "About", "href": "#about" }
     ],
     "services": [
       "Kitchen Remodeling",
@@ -24,23 +25,18 @@
     ]
   },
   "hero": {
-    "eyebrow": "Premium remodeling for modern homes",
-    "heading": "YOUR VISION,",
-    "script": "expertly crafted.",
-    "subheading": "From kitchens and baths to full-home updates, we guide every project with clear communication, careful planning, and detail-focused execution.",
+    "eyebrow": "Renova studio",
+    "heading": "Design that feels",
+    "script": "like home",
+    "subheading": "We create calm, tailored interiors with warm materials, clear planning, and craftsmanship that lasts.",
     "backgroundImage": "/hero.webp",
-    "serviceChips": [
-      "Kitchen Remodeling",
-      "Bathroom Remodeling",
-      "Whole-Home Remodeling",
-      "Home Additions"
-    ],
-    "cta": { "label": "Explore Services", "href": "#about" },
+    "cta": { "label": "Book Consultation", "href": "#contact" },
+    "secondaryCta": { "label": "View Projects", "href": "#about" },
     "form": {
       "fields": {
-        "name": { "label": "Name", "placeholder": "Your name" },
-        "email": { "label": "Email", "placeholder": "Email address" },
-        "phone": { "label": "Phone", "placeholder": "Phone number" },
+        "name": { "label": "Name", "placeholder": "Enter your name" },
+        "email": { "label": "Email", "placeholder": "Enter your email" },
+        "phone": { "label": "Phone", "placeholder": "Enter your phone" },
         "service": {
           "label": "Service",
           "placeholder": "Select a service",
@@ -56,7 +52,7 @@
           ]
         }
       },
-      "submit": "Request a Quote"
+      "submit": "Get Started"
     }
   },
   "about": {

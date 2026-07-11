@@ -123,18 +123,18 @@ export default function About() {
           </div>
 
           <div className="relative order-1 lg:order-2">
-            <div className="overflow-hidden rounded-[32px] bg-cream shadow-[0_18px_48px_rgba(60,37,21,0.08)]">
+            <div className="overflow-hidden rounded-sm bg-cream shadow-[0_18px_48px_rgba(60,37,21,0.08)]">
               <div className="relative aspect-[4/5] w-full">
                 <Image src={about.image} alt={about.heading} fill className="object-cover" />
               </div>
             </div>
 
-            <div className="absolute left-4 bottom-4 max-w-[15rem] rounded-[24px] bg-[rgba(60,37,21,0.82)] p-4 text-white shadow-[0_18px_48px_rgba(0,0,0,0.18)] backdrop-blur-md sm:left-6 sm:bottom-6">
+            <div className="absolute left-4 bottom-4 max-w-[15rem] rounded-sm bg-[rgba(60,37,21,0.82)] p-4 text-white shadow-[0_18px_48px_rgba(0,0,0,0.18)] backdrop-blur-md sm:left-6 sm:bottom-6">
               <p className="text-xs uppercase tracking-[0.28em] text-[rgba(255,255,255,0.72)]">
                 {about.card.label}
               </p>
               <p className="mt-3 text-4xl font-black leading-none">{about.card.stat}</p>
-              <p className="mt-3 text-sm leading-relaxed text-[rgba(255,255,255,0.82)]">
+              <p className="mt-3 text-sm leading-relaxed uppercase text-[rgba(255,255,255,0.82)]">
                 {about.card.subStat}
               </p>
               <a

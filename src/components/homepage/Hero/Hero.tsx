@@ -3,9 +3,8 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import siteData from '@/website.json'
-import { Button, Container } from '@/components/ui'
 
-const { hero, brand } = siteData
+const { hero } = siteData
 
 export default function Hero() {
   const [formData, setFormData] = useState({
@@ -28,61 +27,70 @@ export default function Hero() {
   }
 
   return (
-    <section id="hero" aria-label="Hero" className="px-4 pb-8 pt-4 sm:px-6 lg:px-8 lg:pb-10">
-      <Container>
-        <div className="overflow-hidden rounded-[36px] border border-[rgba(255,255,255,0.12)] bg-deep shadow-[0_36px_100px_rgba(60,37,21,0.22)]">
-          <div className="relative isolate min-h-[34rem] sm:min-h-[40rem] lg:min-h-[44rem]">
-            <Image
-              src={hero.backgroundImage}
-              alt=""
-              fill
-              priority
-              aria-hidden="true"
-              className="object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(29,18,11,0.35)_0%,rgba(60,37,21,0.62)_55%,rgba(60,37,21,0.82)_100%)]" />
+    <section id="hero" aria-label="Hero" className="w-full pb-8">
+      <div className="relative isolate w-full min-h-[36rem] sm:min-h-[44rem] lg:min-h-[calc(100svh-5.25rem)]">
+        <Image
+          src={hero.backgroundImage}
+          alt=""
+          fill
+          priority
+          aria-hidden="true"
+          className="object-cover object-center"
+        />
 
-            <div className="relative flex min-h-[34rem] flex-col justify-end px-5 py-6 sm:min-h-[40rem] sm:px-8 sm:py-8 lg:min-h-[44rem] lg:px-10 lg:py-10">
-              <div className="max-w-[38rem] rounded-[30px] border border-[rgba(255,255,255,0.16)] bg-[rgba(255,255,255,0.14)] p-5 shadow-[0_20px_60px_rgba(0,0,0,0.12)] backdrop-blur-md sm:p-5">
-                <p className="text-xs uppercase tracking-[0.34em] text-cream/90">{brand.tagline}</p>
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(34,24,18,0.38)_0%,rgba(34,24,18,0.18)_42%,rgba(34,24,18,0.74)_100%)]" />
 
-                <h1 className="mt-2 text-white">
-                  <span className="block text-[clamp(2.8rem,7vw,5.9rem)] font-bold uppercase leading-[0.88] tracking-[-0.04em]">
-                    {hero.heading}
-                  </span>
-                  <span className="mt-1 block font-[family-name:var(--font-allura)] text-[clamp(3rem,7.2vw,5.8rem)] leading-none italic text-cream">
-                    {hero.script}
-                  </span>
-                </h1>
+        {/* <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/20" />
+        <div className="pointer-events-none absolute inset-x-0 top-14 h-px bg-white/10 sm:top-16" />
+        <div className="pointer-events-none absolute inset-y-0 left-24 hidden w-px bg-white/10 md:block" />
+        <div className="pointer-events-none absolute inset-y-0 left-[42rem] hidden w-px bg-white/10 xl:block" />
+        <div className="pointer-events-none absolute inset-y-0 right-6 hidden w-px bg-white/20 lg:block" /> */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-24 h-px bg-white/20 sm:bottom-28 lg:bottom-32" />
 
-                <p className="mt-4 max-w-[32rem] text-p text-[rgba(255,255,255,0.88)]">
-                  {hero.subheading}
+        <div className="relative flex min-h-[36rem] flex-col justify-between px-4 pt-6 sm:min-h-[44rem] sm:px-6 sm:pt-8 lg:px-8 lg:pt-10">
+          <div className="flex justify-between gap-4" aria-hidden="true">
+            <span className="text-[0.68rem] font-medium uppercase tracking-[0.28em] text-white/0">
+              {hero.eyebrow}
+            </span>
+          </div>
+
+          <div className="max-w-[74rem] pb-5 sm:pb-6 lg:pb-8">
+            <h1 className="max-w-[40rem] text-white">
+              <span className="text-[clamp(2.75rem,6.8vw,5.85rem)] font-bold uppercase leading-[0.9] tracking-[-0.06em] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.18)]">
+                {hero.heading}{' '}
+              </span>
+              <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(3.1rem,7vw,6.1rem)] leading-[0.82] text-cream">
+                {hero.script}
+              </span>
+            </h1>
+
+            <div className="mt-6 grid gap-16 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+              <div className="grid grid-cols-2 max-w-[44rem]">
+                <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/80">
+                  About us
                 </p>
-
-                <div className="mt-4 flex flex-wrap gap-3">
-                  <a
-                    href={hero.cta.href}
-                    className="inline-flex items-center justify-center rounded-full border border-[rgba(255,255,255,0.22)] px-5 py-3 text-sm font-semibold tracking-[0.16em] text-cream transition-colors hover:border-[rgba(255,255,255,0.45)] hover:bg-[rgba(255,255,255,0.08)]"
-                  >
-                    {hero.cta.label}
-                  </a>
-                  <a
-                    href="#about"
-                    className="inline-flex items-center justify-center rounded-full border border-[rgba(255,255,255,0.22)] px-5 py-3 text-sm font-semibold tracking-[0.16em] text-cream transition-colors hover:border-[rgba(255,255,255,0.45)] hover:bg-[rgba(255,255,255,0.08)]"
-                  >
-                    Learn About Us
-                  </a>
+                <div className=" text-sm leading-6 text-white/85 sm:text-[0.95rem]">
+                  {hero.subheading}
                 </div>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-x-8 gap-y-4 lg:justify-center">
+                <HeroLink href={hero.cta.href}>{hero.cta.label}</HeroLink>
+                <HeroLink href={hero.secondaryCta?.href ?? '#about'}>
+                  {hero.secondaryCta?.label ?? 'View Projects'}
+                </HeroLink>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="mt-2 rounded-[28px] border border-[rgba(60,37,21,0.08)] bg-white px-4 py-4 shadow-[0_18px_48px_rgba(60,37,21,0.08)] sm:px-6">
+      <div className="mx-auto mt-2 w-full px-4 sm:px-6 lg:px-8">
+        <div className="border border-[rgba(60,37,21,0.12)] bg-white px-4 py-5 shadow-[0_18px_48px_rgba(60,37,21,0.06)] sm:px-6 lg:px-8">
           {submitted ? (
-            <div className="flex flex-wrap items-center gap-3 rounded-[22px] border border-[rgba(60,37,21,0.08)] bg-cream px-5 py-4">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-sm font-semibold text-white">
-                ✓
+            <div className="flex flex-wrap items-center gap-3 border-b border-[rgba(60,37,21,0.12)] pb-3">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-accent text-sm font-semibold text-white">
+                OK
               </span>
               <p className="text-sm font-medium text-dark">
                 Thanks. We received your request and will follow up shortly.
@@ -102,7 +110,7 @@ export default function Hero() {
             <form
               onSubmit={handleSubmit}
               noValidate
-              className="grid gap-4 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] lg:items-end"
+              className="grid gap-4 md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_auto]"
             >
               <Field
                 id="hero-name"
@@ -130,6 +138,7 @@ export default function Hero() {
                 onChange={handleChange}
                 placeholder={hero.form.fields.phone.placeholder}
               />
+
               <div className="min-w-0">
                 <label
                   htmlFor="hero-service"
@@ -144,7 +153,7 @@ export default function Hero() {
                     required
                     value={formData.service}
                     onChange={handleChange}
-                    className="h-12 w-full appearance-none rounded-full border border-[rgba(60,37,21,0.18)] bg-[rgba(60,37,21,0.03)] px-4 pr-10 text-sm text-dark outline-none transition-colors placeholder:text-dark-muted focus:border-accent"
+                    className="h-12 w-full appearance-none border-0 border-b border-[rgba(60,37,21,0.2)] bg-transparent px-0 pr-8 text-sm text-dark outline-none transition-colors placeholder:text-dark-muted focus:border-accent focus:ring-0"
                   >
                     <option value="" disabled>
                       {hero.form.fields.service.placeholder}
@@ -165,7 +174,7 @@ export default function Hero() {
                     strokeWidth="2"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-dark-muted"
+                    className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-dark-muted"
                     aria-hidden="true"
                   >
                     <polyline points="6 9 12 15 18 9" />
@@ -175,15 +184,29 @@ export default function Hero() {
 
               <button
                 type="submit"
-                className="inline-flex h-12 items-center justify-center rounded-full border border-[rgba(60,37,21,0.18)] bg-accent px-6 text-sm font-semibold tracking-[0.18em] text-white transition-colors hover:bg-accent-hover"
+                className="inline-flex h-12 items-center justify-center rounded-none border-b border-[rgba(60,37,21,0.2)] px-0 text-left text-sm font-semibold uppercase tracking-[0.18em] text-dark transition-colors hover:border-accent hover:text-accent md:col-span-2 xl:col-span-1"
               >
                 {hero.form.submit}
               </button>
             </form>
           )}
         </div>
-      </Container>
+      </div>
     </section>
+  )
+}
+
+function HeroLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <a
+      href={href}
+      className="group inline-flex min-w-[11rem] items-center justify-between gap-6 border-b border-white/35 pb-2 text-sm font-medium uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:text-cream sm:min-w-[12rem]"
+    >
+      <span>{children}</span>
+      <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
+        -&gt;
+      </span>
+    </a>
   )
 }
 
@@ -204,7 +227,7 @@ function Field({ id, label, ...props }: FieldProps) {
       <input
         id={id}
         {...props}
-        className="h-12 w-full rounded-full border border-[rgba(60,37,21,0.18)] bg-[rgba(60,37,21,0.03)] px-4 text-sm text-dark outline-none transition-colors placeholder:text-dark-muted focus:border-accent"
+        className="h-12 w-full border-0 border-b border-[rgba(60,37,21,0.2)] bg-transparent px-0 text-sm text-dark outline-none transition-colors placeholder:text-dark-muted focus:border-accent focus:ring-0"
       />
     </div>
   )

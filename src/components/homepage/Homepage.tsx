@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Hero, About, WhyChooseUs, Contact } from './index'
+import { Navbar, Hero, About, WhyChooseUs, Contact, Footer } from './index'
 
 /**
  * Homepage
@@ -8,13 +8,12 @@ import { Navbar, Hero, About, WhyChooseUs, Contact } from './index'
 export default function Homepage() {
   return (
     <main className="min-h-screen bg-white">
-      <div className="mx-auto w-full max-w-[1440px]">
-        <Navbar />
-        <Hero />
-        <About />
-        <WhyChooseUs />
-        <Contact />
-      </div>
+      <Navbar />
+      <Hero />
+      <About />
+      <WhyChooseUs />
+      <Contact />
+      <Footer />
     </main>
   )
 }
