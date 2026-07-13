@@ -55,13 +55,15 @@ export default function FAQ() {
         <div className="grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
           {/* ── Left: heading + subheading ──────────────────────── */}
           <div>
-            <p className="text-xs uppercase tracking-[0.32em] text-dark-muted">{faq.label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
+              {faq.label}
+            </p>
 
             <h2 className="mt-2">
-              <span className="block text-[clamp(2.2rem,5vw,3.4rem)] font-black uppercase leading-[0.95] tracking-[-0.03em] text-dark">
+              <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
                 {faq.heading}
               </span>
-              <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.3rem,4.2vw,3.1rem)] italic leading-none text-accent">
+              <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] italic leading-none text-accent">
                 {faq.script}
               </span>
             </h2>

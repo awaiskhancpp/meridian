@@ -71,10 +71,10 @@ export default function Testimonials() {
             </p>
 
             <h2 id="testimonials-heading" className="mt-3">
-              <span className="block text-[clamp(2.4rem,4.8vw,4.4rem)] font-black uppercase leading-[0.92] tracking-[-0.04em] text-dark">
+              <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
                 {testimonials.heading}
               </span>
-              <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.6rem,4.8vw,4.4rem)] leading-none italic text-accent">
+              <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
                 {testimonials.script}
               </span>
             </h2>

@@ -104,13 +104,15 @@ export default function About() {
       <Container>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:items-stretch lg:gap-6">
           <div className="order-2 flex flex-col lg:order-1 lg:justify-center">
-            <p className="text-xs uppercase tracking-[0.32em] text-dark-muted">{about.label}</p>
+            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
+              {about.label}
+            </p>
 
             <h2 id="about-heading" className="mt-1">
-              <span className="block text-[clamp(2.4rem,4.6vw,4.9rem)] font-black uppercase leading-[0.88] tracking-[-0.04em] text-dark">
+              <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
                 {about.heading}
               </span>
-              <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.4rem,4vw,4.5rem)] leading-none italic text-accent">
+              <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
                 {about.script}
               </span>
             </h2>

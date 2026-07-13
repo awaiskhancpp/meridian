@@ -34,10 +34,10 @@ export default function Contact() {
             <div>
               <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{contact.label}</p>
               <h2 id="contact-heading" className="mt-1">
-                <span className="block text-[clamp(2.8rem,7vw,5.4rem)] font-black uppercase leading-[0.9] tracking-[-0.05em] text-dark">
+                <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
                   {contact.heading}
                 </span>
-                <span className=" font-[family-name:var(--font-allura)] capitalize text-[clamp(3rem,6vw,4.8rem)] leading-none italic text-accent">
+                <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
                   {contact.script}
                 </span>
               </h2>

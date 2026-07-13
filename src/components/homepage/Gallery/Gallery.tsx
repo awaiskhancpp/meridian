@@ -37,7 +37,7 @@ const galleryData: GalleryItem[] = [
 
 export default function Gallery() {
   return (
-    <section id="gallery" className="relative w-full py-16 overflow-hidden ">
+    <section className="relative w-full py-16 overflow-hidden ">
       {/* Elegant Header Section */}
       <div className="mx-auto max-w-3xl text-center">
         <p className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">

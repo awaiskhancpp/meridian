@@ -133,14 +133,14 @@ export default function Process() {
             {process.label}
           </p>
           <h2 id="process-heading" className="mt-4">
-            <span className="block text-[clamp(2.4rem,5vw,4.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+            <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
               {process.heading}
             </span>
-            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.8rem,5.6vw,4.8rem)] leading-none text-accent">
+            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
               {process.script}
             </span>
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-dark-muted">
+          <p className="mx-auto mt-6 max-w-xl text-p leading-relaxed text-dark-muted">
             {process.subheading}
           </p>
         </div>

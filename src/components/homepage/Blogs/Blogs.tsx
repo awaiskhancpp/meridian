@@ -29,10 +29,10 @@ export default function Blogs() {
             {blogs.label}
           </p>
           <h2 id="blogs-heading" className="mt-4 text-dark">
-            <span className="block text-[clamp(2.6rem,6vw,5rem)] font-black uppercase leading-[0.92] tracking-[-0.06em]">
+            <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em]">
               {blogs.heading}
             </span>
-            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(3rem,6.8vw,5.8rem)] leading-none text-accent">
+            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
               {blogs.script}
             </span>
           </h2>
