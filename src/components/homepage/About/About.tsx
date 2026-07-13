@@ -5,6 +5,32 @@ import { Button, Container } from '@/components/ui'
 
 const { about } = siteData
 
+/**
+ * About
+ *
+ * lg+: capped at exactly one viewport (`lg:h-screen`), vertically centered,
+ * so the section never spills past the fold on desktop. To make that
+ * actually hold (not just hope it fits):
+ *   - Heading/script clamps blend vw AND vh (`clamp(min, Xvw + Yvh, max)`),
+ *     so they shrink on short-but-wide windows, not just narrow ones.
+ *   - Vertical rhythm (margins, feature-list gaps) is tightened at lg.
+ *   - The image switches from a fixed aspect-ratio to `lg:h-full`, so it
+ *     always exactly matches whatever height the left column's content
+ *     leaves available, instead of dictating its own height via aspect
+ *     ratio (that was the main overflow source — a 4:5 ratio on a wide
+ *     column can easily demand more height than the viewport has).
+ *
+ * Not attempted: guaranteeing a fit for arbitrarily long feature
+ * descriptions on very short windows without either shrinking text to
+ * near-illegible sizes or truncating real copy. This targets comfortable
+ * fit on typical laptop/desktop viewport heights; unusually long copy or
+ * an unusually short window may still need to overflow.
+ *
+ * Mobile/tablet are intentionally left as a normal scrollable stack —
+ * "fit in one screen" isn't a reasonable expectation once everything is
+ * stacked vertically.
+ */
+
 function FeatureIcon({ name }: { name: string }) {
   const cls = 'h-4 w-4 text-dark'
 
@@ -74,36 +100,36 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="px-4 py-8 sm:px-6 lg:px-8 lg:py-12"
+      className="px-4 py-8 sm:px-6 lg:h-screen lg:px-8 lg:py-6"
     >
-      <Container>
-        <div className="grid gap-4 lg:gap-0 grid-cols-1 lg:grid-cols-2 lg:items-start">
-          <div className="flex flex-col order-2 lg:order-1">
+      <Container className="lg:h-full">
+        <div className="grid h-full grid-cols-1 gap-4 lg:grid-cols-2 lg:items-stretch lg:gap-6">
+          <div className="order-2 flex flex-col lg:order-1 lg:h-full lg:justify-center">
             <p className="text-xs uppercase tracking-[0.32em] text-dark-muted">{about.label}</p>
 
-            <h2 id="about-heading" className="mt-1 ">
-              <span className="block text-[clamp(2.7rem,6vw,4.9rem)] font-black uppercase leading-[0.88] tracking-[-0.04em] text-dark">
+            <h2 id="about-heading" className="mt-1">
+              <span className="block text-[clamp(2.2rem,3vw+2vh,4.4rem)] font-black uppercase leading-[0.88] tracking-[-0.04em] text-dark">
                 {about.heading}
               </span>
-              <span className=" block font-[family-name:var(--font-allura)] text-[clamp(2.8rem,5vw,4.5rem)] leading-none italic text-accent">
+              <span className="block font-[family-name:var(--font-allura)] text-[clamp(2.2rem,2.6vw+2vh,4rem)] leading-none italic text-accent">
                 {about.script}
               </span>
             </h2>
 
-            <p className="mt-3 max-w-[28rem] text-p text-dark-muted">{about.subheading}</p>
+            <p className="mt-2 max-w-[28rem] text-p text-dark-muted lg:mt-3">{about.subheading}</p>
 
-            <div className="mt-6">
+            <div className="mt-4 lg:mt-5">
               <Button variant="line" size="md" href={about.cta.href} className="max-w-fit">
                 {about.cta.label}
               </Button>
             </div>
 
-            <div className="mt-4 w-full max-w-[34rem]">
-              <div className="grid gap-4 ">
+            <div className="mt-6 w-full max-w-[34rem]">
+              <div className="grid gap-2 lg:gap-2.5">
                 {about.features.map((feature) => (
                   <div
                     key={feature.title}
-                    className="border-b border-[rgba(60,37,21,0.12)] last:border-none pb-4"
+                    className="border-b border-[rgba(60,37,21,0.12)] pb-2 last:border-none lg:pb-2.5"
                   >
                     <div className="flex items-start gap-2">
                       <span className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[rgba(60,37,21,0.14)] bg-white">
@@ -122,9 +148,9 @@ export default function About() {
             </div>
           </div>
 
-          <div className="relative order-1 lg:order-2">
-            <div className="overflow-hidden rounded-sm bg-cream shadow-[0_18px_48px_rgba(60,37,21,0.08)]">
-              <div className="relative aspect-[4/5] w-full">
+          <div className="relative order-1 lg:order-2 lg:h-full">
+            <div className="h-full overflow-hidden rounded-sm bg-cream shadow-[0_18px_48px_rgba(60,37,21,0.08)]">
+              <div className="relative aspect-[4/5] w-full lg:aspect-auto lg:h-full">
                 <Image src={about.image} alt={about.heading} fill className="object-cover" />
               </div>
             </div>

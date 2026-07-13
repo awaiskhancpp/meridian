@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
 import siteData from '@/website.json'
 import { Button, Container } from '@/components/ui'
@@ -48,6 +48,9 @@ export default function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
+  const menuRef = useRef<HTMLDivElement>(null)
+  const toggleButtonRef = useRef<HTMLButtonElement>(null)
+
   useEffect(() => {
     if (!mobileOpen) return
     const onKeyDown = (event: KeyboardEvent) => {
@@ -55,6 +58,22 @@ export default function Navbar() {
     }
     window.addEventListener('keydown', onKeyDown)
     return () => window.removeEventListener('keydown', onKeyDown)
+  }, [mobileOpen])
+
+  // Click/tap anywhere outside the open menu panel (and outside the
+  // hamburger toggle itself, so the toggle's own click isn't immediately
+  // undone by this same handler) closes it. `pointerdown` — not `click` —
+  // so it fires consistently for both mouse and touch input.
+  useEffect(() => {
+    if (!mobileOpen) return
+    const onPointerDown = (event: PointerEvent) => {
+      const target = event.target as Node
+      if (menuRef.current?.contains(target)) return
+      if (toggleButtonRef.current?.contains(target)) return
+      setMobileOpen(false)
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => document.removeEventListener('pointerdown', onPointerDown)
   }, [mobileOpen])
 
   useEffect(() => {
@@ -77,13 +96,39 @@ export default function Navbar() {
   const textClasses = scrolled ? 'text-dark' : 'text-white'
   const mutedTextClasses = scrolled ? 'text-dark-muted' : 'text-white/82'
   const hoverTextClasses = scrolled ? 'hover:text-accent' : 'hover:text-cream'
-  const borderClasses = scrolled ? 'border border-dark-muted ' : 'border border-white'
+
+  /*
+    FIX: the CTA button previously received `${textClasses} ${borderClasses}`
+    as plain (non-important) utility classes, trying to override the
+    outline-light variant's own baked-in `text-white`/`border-white/70`
+    (see Button.tsx's variantClasses) from the outside. That's the exact
+    same conflict already documented above for the wrapper div's
+    hidden/lg:inline-flex issue: two classes targeting the same CSS
+    property on the same element don't resolve by which one appears later
+    in the className string — they resolve by whichever order Tailwind
+    happens to emit the corresponding rules in its generated stylesheet,
+    which isn't something call-site code controls. The variant's
+    text-white/border-white/70 were winning even when scrolled was true,
+    so the button rendered white text on the now-white/95 scrolled navbar
+    — invisible, not literally gone.
+
+    `!` (Tailwind's important modifier) is what guarantees an override
+    wins regardless of emission order — that's specifically what it's for.
+    Also overriding hover:!bg-transparent, since outline-light's baked-in
+    hover:bg-white fill doesn't match how every OTHER nav link behaves on
+    hover (a plain text-color swap, no background fill) — without this,
+    the button's hover state would look inconsistent with the rest of the
+    nav even once the base colors were fixed.
+  */
+  const ctaClasses = scrolled
+    ? '!border-accent !text-dark hover:!text-accent hover:!bg-transparent'
+    : '!border-white !text-white hover:!text-cream hover:!bg-transparent'
 
   return (
-    <header className="fixed top-0 inset-x-0 z-[var(--z-navbar)] pt-4 lg:pt-6">
+    <header className="fixed top-0 inset-x-0 z-[var(--z-navbar)] pt-4 ">
       <Container className="relative">
         <div
-          className={`flex items-center justify-between gap-4 rounded-[28px] border px-5 py-2 transition-all duration-300 ${surfaceClasses}`}
+          className={`flex items-center justify-between gap-4 rounded-[28px] border px-5 transition-all duration-300 ${surfaceClasses}`}
         >
           <a
             href="#hero"
@@ -144,9 +189,9 @@ export default function Navbar() {
               wrapper element sidesteps the conflict entirely. */}
           <div className="hidden lg:inline-flex">
             <Button
-              variant="line"
+              variant="outline-light"
               href="#contact"
-              className={`whitespace-nowrap text-sm  font-medium tracking-[0.12em] transition-colors ${textClasses} ${hoverTextClasses}`}
+              className={`whitespace-nowrap text-sm font-medium tracking-[0.12em] transition-colors ${ctaClasses}`}
             >
               Request a Quote
             </Button>
@@ -154,11 +199,10 @@ export default function Navbar() {
 
           <button
             type="button"
+            ref={toggleButtonRef}
             onClick={() => setMobileOpen((value) => !value)}
-            className={`inline-flex items-center gap-3 rounded-full border  text-sm font-semibold tracking-[0.24em] transition-colors lg:hidden ${
-              scrolled
-                ? 'border-[rgba(60,37,21,0.14)] text-accent hover:bg-cream'
-                : 'border-white/30 text-white hover:bg-white/10'
+            className={`inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-[0.24em] transition-colors lg:hidden ${
+              scrolled ? 'text-accent hover:bg-cream' : 'text-white hover:bg-white/10'
             }`}
             aria-expanded={mobileOpen}
             aria-controls="main-menu"
@@ -187,6 +231,7 @@ export default function Navbar() {
 
         <div
           id="main-menu"
+          ref={menuRef}
           className={`absolute left-4 right-4 top-[calc(100%+0.75rem)] overflow-hidden rounded-[30px] border border-[rgba(60,37,21,0.08)] bg-white shadow-[0_28px_70px_rgba(60,37,21,0.12)] transition-all duration-300 lg:hidden ${
             mobileOpen ? 'max-h-[40rem] opacity-100' : 'pointer-events-none max-h-0 opacity-0'
           }`}
@@ -244,7 +289,7 @@ export default function Navbar() {
             )}
 
             <div className="mt-4" onClick={() => setMobileOpen(false)}>
-              <Button variant="ghost" size="md" href="#contact" className="w-full">
+              <Button variant="primary" size="md" href="#contact" className="w-full">
                 Request a Quote
               </Button>
             </div>

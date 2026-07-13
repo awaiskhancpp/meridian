@@ -1,4 +1,9 @@
-import React from 'react'
+'use client'
+
+import React, { useRef, useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import type { Swiper as SwiperType } from 'swiper'
+import 'swiper/css'
 import siteData from '@/website.json'
 import { Container } from '@/components/ui'
 
@@ -79,9 +84,6 @@ function ServiceIcon({ name }: { name: string }) {
   return null
 }
 
-// Decorative only — not wired to a working carousel, since all three
-// services already render at once on every breakpoint. Rendered as
-// non-interactive so they don't imply functionality that isn't there.
 function ArrowIcon({ direction }: { direction: 'left' | 'right' }) {
   return (
     <svg
@@ -105,6 +107,15 @@ function ArrowIcon({ direction }: { direction: 'left' | 'right' }) {
 }
 
 export default function Services() {
+  const swiperRef = useRef<SwiperType | null>(null)
+  const [atStart, setAtStart] = useState(true)
+  const [atEnd, setAtEnd] = useState(false)
+
+  function updateEdgeState(swiper: SwiperType) {
+    setAtStart(swiper.isBeginning)
+    setAtEnd(swiper.isEnd)
+  }
+
   return (
     <section
       id="services"
@@ -127,37 +138,71 @@ export default function Services() {
             </h2>
           </div>
 
-          <div className="flex items-center gap-3 pt-1" aria-hidden="true">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-500">
+          {/* Wired to the Swiper instance via ref — these were previously
+              decorative spans; now real buttons driving slidePrev/slideNext.
+              Dimmed + non-interactive at either end of the track. */}
+          <div className="flex items-center gap-3 pt-1">
+            <button
+              type="button"
+              onClick={() => swiperRef.current?.slidePrev()}
+              disabled={atStart}
+              aria-label="Previous services"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-500 transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
+            >
               <ArrowIcon direction="left" />
-            </span>
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-900">
+            </button>
+            <button
+              type="button"
+              onClick={() => swiperRef.current?.slideNext()}
+              disabled={atEnd}
+              aria-label="Next services"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-900 transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
+            >
               <ArrowIcon direction="right" />
-            </span>
+            </button>
           </div>
         </div>
 
         <div className="border-t border-neutral-200" />
 
-        <div className="mt-8 grid grid-cols-1 gap-1 overflow-hidden rounded-md sm:grid-cols-2 lg:grid-cols-3">
-          {services.items.map((service, index) => (
-            <div key={service.title} className="flex min-h-[22rem] flex-col bg-bg-cream p-6 md:p-8">
-              <span className="text-sm font-medium text-dark-muted">
-                {String(index + 1).padStart(2, '0')}
-              </span>
+        {/* 1 card on mobile, 2 on tablet (sm: 640px+), 3 on desktop (lg: 1024px+) —
+            same breakpoints the old CSS grid used (sm:grid-cols-2 lg:grid-cols-3) */}
+        <div className="mt-8 overflow-hidden rounded-md">
+          <Swiper
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper
+              updateEdgeState(swiper)
+            }}
+            onSlideChange={updateEdgeState}
+            onResize={updateEdgeState}
+            spaceBetween={4}
+            slidesPerView={1}
+            breakpoints={{
+              640: { slidesPerView: 2, spaceBetween: 4 },
+              1024: { slidesPerView: 3, spaceBetween: 4 },
+            }}
+          >
+            {services.items.map((service, index) => (
+              <SwiperSlide key={service.title}>
+                <div className="flex min-h-[22rem] flex-col bg-bg-cream p-6 md:p-8">
+                  <span className="text-sm font-medium text-dark-muted">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
 
-              <div className="flex flex-1 items-center justify-center">
-                <ServiceIcon name={service.icon} />
-              </div>
+                  <div className="flex flex-1 items-center justify-center">
+                    <ServiceIcon name={service.icon} />
+                  </div>
 
-              <div>
-                <h3 className="text-lg font-semibold text-dark md:text-xl">{service.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-dark-muted">
-                  {service.description}
-                </p>
-              </div>
-            </div>
-          ))}
+                  <div>
+                    <h3 className="text-lg font-semibold text-dark md:text-xl">{service.title}</h3>
+                    <p className="mt-3 text-sm leading-relaxed text-dark-muted">
+                      {service.description}
+                    </p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </Container>
     </section>

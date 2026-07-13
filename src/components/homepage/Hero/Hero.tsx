@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import siteData from '@/website.json'
 import { Container } from '@/components/ui'
+import { Button } from '@/components/ui'
 
 const { hero } = siteData
 
@@ -46,7 +47,7 @@ export default function Hero() {
         <div className="pointer-events-none absolute inset-y-0 left-24 hidden w-px bg-white/10 md:block" />
         <div className="pointer-events-none absolute inset-y-0 left-[42rem] hidden w-px bg-white/10 xl:block" />
         <div className="pointer-events-none absolute inset-y-0 right-6 hidden w-px bg-white/20 lg:block" /> */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-24 h-px bg-white/20 sm:bottom-28 lg:bottom-32" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-24 h-px bg-white/20 sm:bottom-26 lg:bottom-32" />
 
         <Container className="relative flex h-full flex-col justify-between pt-24 sm:pt-28 lg:pt-32 2xl:pt-24">
           <div className="flex justify-between gap-4" aria-hidden="true">
@@ -66,20 +67,26 @@ export default function Hero() {
             </h1>
 
             <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
-              <div className="grid max-w-[44rem] grid-cols-2">
+              <div className="grid max-w-[44rem] grid-cols-1 lg:grid-cols-2">
                 <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/80">
                   About us
                 </p>
-                <div className=" text-sm leading-6 text-white/85 sm:text-[0.95rem]">
+                <div className=" text-sm leading-6 text-white/85 max-w-[260px] sm:text-[0.95rem]">
                   {hero.subheading}
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-x-8 gap-y-4 lg:justify-center">
-                <HeroLink href={hero.cta.href}>{hero.cta.label}</HeroLink>
-                <HeroLink href={hero.secondaryCta?.href ?? '#about'}>
+              <div className="flex flex-wrap items-center gap-x-2 md:gap-x-4 gap-y-4 lg:justify-center">
+                <Button variant="line" href={hero.cta.href} className="text-white">
+                  {hero.cta.label}
+                </Button>
+                <Button
+                  href={hero.secondaryCta?.href ?? '#about'}
+                  variant="line"
+                  className="text-white"
+                >
                   {hero.secondaryCta?.label ?? 'View Projects'}
-                </HeroLink>
+                </Button>
               </div>
             </div>
           </div>
