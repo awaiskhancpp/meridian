@@ -128,18 +128,18 @@ export default function Navbar() {
     <header className="fixed top-0 inset-x-0 z-[var(--z-navbar)] pt-4 ">
       <Container className="relative">
         <div
-          className={`flex items-center justify-between gap-4 rounded-[28px] border px-5 transition-all duration-300 ${surfaceClasses}`}
+          className={`flex items-center justify-between gap-4 rounded-lg border px-5 py-2 transition-all duration-300 ${surfaceClasses}`}
         >
           <a
             href="#hero"
             className={`flex items-center gap-3 ${textClasses}`}
             aria-label={brand.name}
           >
-            {nav.img ? (
+            {/* {nav.img ? (
               <Image src={nav.img} alt={brand.name} width={112} height={80} />
-            ) : (
-              <span className="text-base font-semibold tracking-[0.22em]">{brand.name}</span>
-            )}
+            ) : ( */}
+            <span className="text-base font-semibold tracking-[0.22em]">{brand.name}</span>
+            {/* )} */}
           </a>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -191,7 +191,7 @@ export default function Navbar() {
             <Button
               variant="outline-light"
               href="#contact"
-              className={`whitespace-nowrap text-sm font-medium tracking-[0.12em] transition-colors ${ctaClasses}`}
+              className={`whitespace-nowrap text-sm font-medium tracking-[0.12em] rounded-none transition-colors ${ctaClasses}`}
             >
               Request a Quote
             </Button>

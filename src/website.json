@@ -7,26 +7,11 @@
     "menuLabel": "Menu",
     "img": "/logo.png",
     "links": [
-      {
-        "label": "Home",
-        "href": "#hero"
-      },
-      {
-        "label": "Service Areas",
-        "href": "#service-areas"
-      },
-      {
-        "label": "Projects",
-        "href": "#projects"
-      },
-      {
-        "label": "Blogs",
-        "href": "#blogs"
-      },
-      {
-        "label": "About",
-        "href": "#about"
-      }
+      { "label": "Home", "href": "#hero" },
+      { "label": "Service Areas", "href": "#service-areas" },
+      { "label": "Projects", "href": "#projects" },
+      { "label": "Blogs", "href": "#blogs" },
+      { "label": "About", "href": "#about" }
     ],
     "services": [
       "Kitchen Remodeling",
@@ -45,28 +30,12 @@
     "script": "like home",
     "subheading": "We create calm, tailored interiors with warm materials, clear planning, and craftsmanship that lasts.",
     "backgroundImage": "/hero.webp",
-    "cta": {
-      "label": "Book Consultation",
-      "href": "#contact"
-    },
-    "secondaryCta": {
-      "label": "View Projects",
-      "href": "#about"
-    },
+    "cta": { "label": "Book Consultation", "href": "#contact" },
     "form": {
       "fields": {
-        "name": {
-          "label": "Name",
-          "placeholder": "Enter your name"
-        },
-        "email": {
-          "label": "Email",
-          "placeholder": "Enter your email"
-        },
-        "phone": {
-          "label": "Phone",
-          "placeholder": "Enter your phone"
-        },
+        "name": { "label": "Name", "placeholder": "Enter your name" },
+        "email": { "label": "Email", "placeholder": "Enter your email" },
+        "phone": { "label": "Phone", "placeholder": "Enter your phone" },
         "service": {
           "label": "Service",
           "placeholder": "Select a service",
@@ -89,33 +58,30 @@
     "label": "About Us",
     "heading": "A team built",
     "script": "around your home.",
-    "subheading": "Kinetic started with a simple frustration: too many remodels feel rushed, disconnected, or over-promised. We built our process around the opposite \u2014 real design direction before a single wall comes down, one point of contact throughout, and craftsmanship that holds up long after the crew leaves.",
-    "cta": {
-      "label": "See How We Work",
-      "href": "#why-choose-us"
-    },
+    "subheading": "Kinetic started with a simple frustration: too many remodels feel rushed, disconnected, or over-promised. We built our process around the opposite — real design direction before a single wall comes down, one point of contact throughout, and craftsmanship that holds up long after the crew leaves.",
+    "cta": { "label": "See How We Work", "href": "#why-choose-us" },
     "image": "/home-about.avif",
     "features": [
       {
         "icon": "layers",
         "title": "Design before demolition",
-        "description": "We map materials, sequencing, and scope in full before any work begins \u2014 no surprises once the crew arrives."
+        "description": "We map materials, sequencing, and scope in full before any work begins — no surprises once the crew arrives."
       },
       {
         "icon": "chart",
         "title": "One point of contact",
-        "description": "You're not chasing down subcontractors or guessing at status \u2014 one person owns your project from first call to final walkthrough."
+        "description": "You're not chasing down subcontractors or guessing at status — one person owns your project from first call to final walkthrough."
       },
       {
         "icon": "shield",
         "title": "Craft that outlasts the crew",
-        "description": "We treat every home like it's the one we're going to live in \u2014 protected, respected, and finished right."
+        "description": "We treat every home like it's the one we're going to live in — protected, respected, and finished right."
       }
     ],
     "card": {
       "label": "Our promise",
       "stat": "100%",
-      "subStat": "Every project gets our full attention \u2014 from first sketch to final walkthrough.",
+      "subStat": "Every project gets our full attention — from first sketch to final walkthrough.",
       "cta": "See our process"
     }
   },
@@ -125,19 +91,44 @@
     "script": "around real life.",
     "items": [
       {
-        "icon": "faucet",
+        "icon": "chef-hat",
         "title": "Kitchen Remodeling",
         "description": "New layouts, cabinetry, and finishes built around how your household actually cooks, gathers, and lives day to day."
       },
       {
         "icon": "bath",
         "title": "Bathroom Remodeling",
-        "description": "From a simple refresh to a full gut renovation \u2014 fixtures, tile, and storage chosen to fit your space and routine."
+        "description": "From a simple refresh to a full gut renovation — fixtures, tile, and storage chosen to fit your space and routine."
       },
       {
         "icon": "home",
         "title": "Whole-Home Remodeling",
         "description": "Additions, floor-plan changes, and full-home renovations coordinated under one team from first sketch to final walkthrough."
+      },
+      {
+        "icon": "house-plus",
+        "title": "Home Additions",
+        "description": "Expand your living space with thoughtfully designed additions that blend seamlessly with your home's architecture and meet your family's growing needs."
+      },
+      {
+        "icon": "shelving-unit",
+        "title": "Custom Cabinetry",
+        "description": "Built-to-order cabinets and storage solutions crafted to maximize space, improve organization, and complement your home's unique style."
+      },
+      {
+        "icon": "layout-grid",
+        "title": "Flooring",
+        "description": "Durable hardwood, tile, luxury vinyl, and other premium flooring options professionally installed to enhance comfort, beauty, and everyday performance."
+      },
+      {
+        "icon": "pencil-line",
+        "title": "Design Consultation",
+        "description": "Work one-on-one with our design team to explore ideas, refine your vision, and select finishes that bring your remodeling goals to life."
+      },
+      {
+        "icon": "clipboard-list",
+        "title": "Project Planning",
+        "description": "Every successful renovation begins with detailed planning, transparent budgeting, and a clear timeline to keep your project organized from start to finish."
       }
     ]
   },
@@ -181,52 +172,40 @@
     "label": "Why Choose Us",
     "heading": "Clarity, not",
     "script": "chaos.",
-    "subheading": "Remodeling has a reputation for surprise costs and vanishing contractors. We run ours differently \u2014 clear numbers up front, one team from start to finish, and a finished space that feels intentional, not improvised.",
+    "subheading": "Remodeling has a reputation for surprise costs and vanishing contractors. We run ours differently — clear numbers up front, one team from start to finish, and a finished space that feels intentional, not improvised.",
     "highlights": [
       "Fixed estimates before work begins",
       "One team, start to finish",
       "Materials chosen with real intention"
     ],
     "stats": [
-      {
-        "value": "24h",
-        "label": "Average response time"
-      },
-      {
-        "value": "10+",
-        "label": "Years remodeling homes"
-      },
-      {
-        "value": "5-step",
-        "label": "A defined process, every time"
-      },
-      {
-        "value": "100%",
-        "label": "Estimates in writing"
-      }
+      { "value": "24h", "label": "Average response time" },
+      { "value": "10+", "label": "Years remodeling homes" },
+      { "value": "5-step", "label": "A defined process, every time" },
+      { "value": "100%", "label": "Estimates in writing" }
     ]
   },
   "faq": {
     "label": "FAQs",
     "heading": "Common questions,",
     "script": "clearly answered.",
-    "subheading": "Straightforward answers about our process, pricing, and what it's actually like to work with Kinetic \u2014 the questions we hear most, answered before you have to ask.",
+    "subheading": "Straightforward answers about our process, pricing, and what it's actually like to work with Kinetic — the questions we hear most, answered before you have to ask.",
     "items": [
       {
         "question": "How do I get started with a project?",
-        "answer": "It starts with a free consultation \u2014 we walk the space, talk through your goals and budget, and define a clear scope before anything goes on paper. From there we move into design and a written estimate, so you know exactly what to expect before work begins."
+        "answer": "It starts with a free consultation — we walk the space, talk through your goals and budget, and define a clear scope before anything goes on paper. From there we move into design and a written estimate, so you know exactly what to expect before work begins."
       },
       {
         "question": "How are your estimates put together?",
-        "answer": "Every estimate is delivered in writing after we've finalized materials, scope, and sequencing together \u2014 no verbal ballparks, no surprise change orders once the crew is on site."
+        "answer": "Every estimate is delivered in writing after we've finalized materials, scope, and sequencing together — no verbal ballparks, no surprise change orders once the crew is on site."
       },
       {
         "question": "How long does a typical remodel take?",
-        "answer": "It depends on scope \u2014 a bathroom refresh might take two to three weeks, while a whole-home remodel can run several months. We'll walk you through a realistic timeline during planning, and our five-step process is built to avoid the delays that usually come from decisions made mid-project."
+        "answer": "It depends on scope — a bathroom refresh might take two to three weeks, while a whole-home remodel can run several months. We'll walk you through a realistic timeline during planning, and our five-step process is built to avoid the delays that usually come from decisions made mid-project."
       },
       {
         "question": "Will I have one point of contact throughout the project?",
-        "answer": "Yes. One person owns your project from the first call to the final walkthrough \u2014 you're never left chasing down subcontractors or guessing who to call with a question."
+        "answer": "Yes. One person owns your project from the first call to the final walkthrough — you're never left chasing down subcontractors or guessing who to call with a question."
       },
       {
         "question": "How quickly do you respond to inquiries?",
@@ -234,7 +213,7 @@
       },
       {
         "question": "Do you handle permits and inspections?",
-        "answer": "Yes \u2014 permitting and inspections are coordinated as part of our project management, handled alongside the rest of your build so you don't have to manage it separately."
+        "answer": "Yes — permitting and inspections are coordinated as part of our project management, handled alongside the rest of your build so you don't have to manage it separately."
       }
     ]
   },
@@ -244,22 +223,10 @@
     "script": "conversation.",
     "subheading": "Tell us about your space, your goals, and your timeline. We will guide you through the next steps with care and intention.",
     "fields": {
-      "name": {
-        "label": "Name",
-        "placeholder": "Your name"
-      },
-      "phone": {
-        "label": "Phone",
-        "placeholder": "Phone number"
-      },
-      "email": {
-        "label": "Email",
-        "placeholder": "Email address"
-      },
-      "message": {
-        "label": "Message",
-        "placeholder": "Tell us about your project"
-      }
+      "name": { "label": "Name", "placeholder": "Your name" },
+      "phone": { "label": "Phone", "placeholder": "Phone number" },
+      "email": { "label": "Email", "placeholder": "Email address" },
+      "message": { "label": "Message", "placeholder": "Tell us about your project" }
     },
     "submit": "Send Request"
   },
@@ -279,7 +246,7 @@
         "icon": "ruler",
         "image": "/hero.webp",
         "title": "Design & Planning",
-        "description": "Materials, layout, and sequencing are locked in full before demolition starts \u2014 so decisions get made at the drawing board, not on the job site."
+        "description": "Materials, layout, and sequencing are locked in full before demolition starts — so decisions get made at the drawing board, not on the job site."
       },
       {
         "icon": "hammer",
@@ -299,7 +266,7 @@
     "label": "Client Stories",
     "heading": "Don't just take",
     "script": "our word for it.",
-    "subheading": "Real results, real homeowners. Every remodel we finish leaves a story \u2014 these are a few of them told in the clients' own words.",
+    "subheading": "Real results, real homeowners. Every remodel we finish leaves a story — these are a few of them told in the clients' own words.",
     "rating": {
       "score": "4.9",
       "count": "312",
@@ -308,59 +275,49 @@
     "items": [
       {
         "stars": 5,
-        "body": "A thorough review was done of our home's outdated kitchen \u2014 new layout options presented, materials sourced on our behalf, and progress updates at every stage. The stress we expected simply never arrived.",
+        "body": "A thorough review was done of our home's outdated kitchen — new layout options presented, materials sourced on our behalf, and progress updates at every stage. The stress we expected simply never arrived.",
         "author": "Margaret Holt",
-        "date": "March 14, 2024"
+        "date": "March 14, 2024",
+        "role": "Homeowner, Kitchen Remodel",
+        "avatar": "/person_1.jpg"
       },
       {
         "stars": 5,
         "body": "We've worked with Kinetic on two projects and the experience has been consistent every time. They explain every decision clearly, keep to the timeline, and the finished results speak entirely for themselves.",
         "author": "Daniel Reeves",
-        "date": "November 02, 2024"
+        "date": "November 02, 2024",
+        "role": "Repeat Client, Two Renovations",
+        "avatar": "/person_1.jpg"
       },
       {
         "stars": 5,
-        "body": "From first consultation to final walkthrough, the team was professional, honest, and genuinely invested in our home. The bathroom renovation exceeded what we'd imagined \u2014 we couldn't be more pleased.",
+        "body": "From first consultation to final walkthrough, the team was professional, honest, and genuinely invested in our home. The bathroom renovation exceeded what we'd imagined — we couldn't be more pleased.",
         "author": "Claire Ashton",
-        "date": "October 29, 2024"
+        "date": "October 29, 2024",
+        "role": "Homeowner, Bathroom Remodel",
+        "avatar": "/person_1.jpg"
       },
       {
         "stars": 5,
-        "body": "Transparent pricing, no surprise costs, and a crew that treated our home with real care. This is how remodeling should be done \u2014 clear from the first call to the last nail.",
+        "body": "Transparent pricing, no surprise costs, and a crew that treated our home with real care. This is how remodeling should be done — clear from the first call to the last nail.",
         "author": "Tom & Susan Barker",
-        "date": "January 08, 2025"
+        "date": "January 08, 2025",
+        "role": "Homeowners, Whole-Home Remodel",
+        "avatar": "/person_1.jpg"
       }
     ]
   },
   "gallery": {
-    "label": "Gallery",
-    "heading": "Moments from",
-    "script": "the projects we love.",
+    "label": "Our Work",
+    "heading": "Building spaces,",
+    "script": "shaping stories.",
     "items": [
-      {
-        "image": "/hero.webp",
-        "label": "Kitchen reveal"
-      },
-      {
-        "image": "/hero.webp",
-        "label": "Custom millwork"
-      },
-      {
-        "image": "/hero.webp",
-        "label": "Outdoor living"
-      },
-      {
-        "image": "/hero.webp",
-        "label": "Primary suite"
-      },
-      {
-        "image": "/hero.webp",
-        "label": "Bath remodel"
-      },
-      {
-        "image": "/hero.webp",
-        "label": "Craft in the details"
-      }
+      { "image": "/home-about.avif", "alt": "", "label": "Warm living room remodel" },
+      { "image": "/hero.webp", "alt": "", "label": "Full kitchen transformation" },
+      { "image": "/home-about.avif", "alt": "", "label": "Custom built-in millwork" },
+      { "image": "/hero.webp", "alt": "", "label": "Primary suite renovation" },
+      { "image": "/home-about.avif", "alt": "", "label": "Spa-style bathroom" },
+      { "image": "/hero.webp", "alt": "", "label": "Outdoor living space" }
     ]
   }
 }

@@ -33,7 +33,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+    <section id="faq" className="px-4 py-8 sm:px-6 lg:px-8 lg:py-16">
       <Container>
         {/*
           Responsive reasoning:
@@ -61,7 +61,7 @@ export default function FAQ() {
               <span className="block text-[clamp(2.2rem,5vw,3.4rem)] font-black uppercase leading-[0.95] tracking-[-0.03em] text-dark">
                 {faq.heading}
               </span>
-              <span className="block font-[family-name:var(--font-allura)] text-[clamp(2.3rem,4.2vw,3.1rem)] italic leading-none text-accent">
+              <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.3rem,4.2vw,3.1rem)] italic leading-none text-accent">
                 {faq.script}
               </span>
             </h2>
@@ -70,17 +70,13 @@ export default function FAQ() {
           </div>
 
           {/* ── Right: accordion list ────────────────────────────── */}
-          <div className="flex flex-col gap-3">
+          <div className="flex flex-col gap-3 ">
             {faq.items.map((item, index) => {
               const open = openIndex === index
               return (
                 <div
                   key={item.question}
-                  className={`overflow-hidden rounded-[20px] border transition-colors duration-300 ${
-                    open
-                      ? 'border-[rgba(60,37,21,0.16)] bg-cream/50'
-                      : 'border-[rgba(60,37,21,0.1)] bg-white'
-                  }`}
+                  className={`overflow-hidden  transition-colors duration-300 border-b border-dark/10 last:border-none `}
                 >
                   <button
                     type="button"

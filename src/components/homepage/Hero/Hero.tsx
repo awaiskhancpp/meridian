@@ -5,6 +5,7 @@ import Image from 'next/image'
 import siteData from '@/website.json'
 import { Container } from '@/components/ui'
 import { Button } from '@/components/ui'
+import { ArrowUpRight } from 'lucide-react'
 
 const { hero } = siteData
 
@@ -71,21 +72,19 @@ export default function Hero() {
                 <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/80">
                   About us
                 </p>
-                <div className=" text-sm leading-6 text-white/85 max-w-[260px] sm:text-[0.95rem]">
+                <div className="text-sm leading-6 text-white/85 max-w-[260px] sm:text-[0.95rem]">
                   {hero.subheading}
                 </div>
               </div>
 
-              <div className="flex flex-wrap items-center gap-x-2 md:gap-x-4 gap-y-4 lg:justify-center">
-                <Button variant="line" href={hero.cta.href} className="text-white">
-                  {hero.cta.label}
-                </Button>
+              <div className="inline-flex items-center gap-x-2 md:gap-x-4 gap-y-4 lg:justify-center">
                 <Button
-                  href={hero.secondaryCta?.href ?? '#about'}
                   variant="line"
-                  className="text-white"
+                  href={hero.cta.href}
+                  className="text-white flex gap-2 items-center"
                 >
-                  {hero.secondaryCta?.label ?? 'View Projects'}
+                  <span>{hero.cta.label}</span>
+                  <ArrowUpRight size={20} />
                 </Button>
               </div>
             </div>
@@ -93,7 +92,7 @@ export default function Hero() {
         </Container>
       </div>
 
-      <Container className="-mt-px">
+      <Container className="mt-2">
         <div className="border border-[rgba(60,37,21,0.12)] bg-white px-4 py-5 shadow-[0_18px_48px_rgba(60,37,21,0.06)] sm:px-6 lg:px-8">
           {submitted ? (
             <div className="flex flex-wrap items-center gap-3 border-b border-[rgba(60,37,21,0.12)] pb-3">
@@ -192,7 +191,7 @@ export default function Hero() {
 
               <button
                 type="submit"
-                className="inline-flex h-12 items-center justify-center rounded-none border-b border-[rgba(60,37,21,0.2)] px-0 text-left text-sm font-semibold uppercase tracking-[0.18em] text-dark transition-colors hover:border-accent hover:text-accent md:col-span-2 xl:col-span-1"
+                className="inline-flex h-12 items-center justify-center rounded-none border px-2 py-1 border-dark px-0 text-left text-sm font-semibold cursor-pointer uppercase tracking-[0.18em] text-dark transition-colors hover:border-accent hover:text-accent md:col-span-2 xl:col-span-1"
               >
                 {hero.form.submit}
               </button>

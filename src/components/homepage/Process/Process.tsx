@@ -58,7 +58,7 @@ function ProcessCard({ step, index }: { step: Step; index: number }) {
         className="
           group absolute inset-x-0 bottom-0 z-10 h-[20rem] overflow-hidden rounded-2xl
           border border-bg-cream bg-cream transition-[height] duration-500 ease-out
-          hover:z-20 hover:h-[26rem]
+          hover:z-20 hover:h-[23rem]
         "
       >
         {/* ── Rest layer: number at top, icon+title grouped near the bottom ── */}
@@ -80,11 +80,11 @@ function ProcessCard({ step, index }: { step: Step; index: number }) {
         {/* ── Hover layer: photo at top (replaces the number), then
                icon → title → description ── */}
         <div className="absolute inset-0 flex flex-col opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
-          <div className="relative h-40 w-full shrink-0 overflow-hidden">
+          <div className="relative h-54 w-full shrink-0 overflow-hidden">
             <Image src={step.image} alt="" fill aria-hidden="true" className="object-cover" />
           </div>
 
-          <div className="flex flex-1 flex-col p-6">
+          <div className="flex flex-1 flex-col p-6 ">
             <span className="flex h-10 w-10 items-center justify-center rounded-full border border-accent/20 bg-white">
               <StepIcon name={step.icon} />
             </span>
@@ -137,7 +137,7 @@ export default function Process() {
             <span className="block text-[clamp(2.4rem,5vw,4.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
               {process.heading}
             </span>
-            <span className="block font-[family-name:var(--font-allura)] text-[clamp(2.8rem,5.6vw,4.8rem)] leading-none text-accent">
+            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.8rem,5.6vw,4.8rem)] leading-none text-accent">
               {process.script}
             </span>
           </h2>

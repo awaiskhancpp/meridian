@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import siteData from '@/website.json'
 import { Button, Container } from '@/components/ui'
+import { ArrowUpRight } from 'lucide-react'
 
 const { contact } = siteData
 
@@ -26,13 +27,9 @@ export default function Contact() {
   }
 
   return (
-    <section
-      id="contact"
-      aria-labelledby="contact-heading"
-      className="px-4 pb-10 sm:px-6 lg:px-8 lg:pb-14"
-    >
+    <section id="contact" aria-labelledby="contact-heading" className=" pb-10  lg:pb-14">
       <Container>
-        <div className="rounded-[30px] bg-white p-6 shadow-[0_18px_48px_rgba(60,37,21,0.06)] lg:p-8">
+        <div className="rounded-[30px] bg-white p-6 ">
           <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
               <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{contact.label}</p>
@@ -40,7 +37,7 @@ export default function Contact() {
                 <span className="block text-[clamp(2.8rem,7vw,5.4rem)] font-black uppercase leading-[0.9] tracking-[-0.05em] text-dark">
                   {contact.heading}
                 </span>
-                <span className=" font-[family-name:var(--font-allura)] text-[clamp(3rem,6vw,4.8rem)] leading-none italic text-accent">
+                <span className=" font-[family-name:var(--font-allura)] capitalize text-[clamp(3rem,6vw,4.8rem)] leading-none italic text-accent">
                   {contact.script}
                 </span>
               </h2>
@@ -100,14 +97,15 @@ export default function Contact() {
                     label={contact.fields.message.label}
                     name="message"
                     as="textarea"
-                    rows={4}
+                    rows={3}
                     placeholder={contact.fields.message.placeholder}
                     value={formData.message}
                     onChange={handleChange}
                   />
 
                   <Button variant="line" size="md" type="submit" className="max-w-fit">
-                    {contact.submit}
+                    <span>{contact.submit}</span>
+                    <ArrowUpRight size={20} />
                   </Button>
                 </form>
               )}

@@ -61,13 +61,7 @@ function LiquidUnderlineButton({
 
   const content = (
     <>
-      <span className="relative z-10">{children}</span>
-      <span
-        className="relative z-10 inline-flex transition-transform duration-300 group-hover:translate-x-1"
-        aria-hidden="true"
-      >
-        →
-      </span>
+      <span className="relative z-10 inline-flex">{children}</span>
 
       {/* Underline track — own overflow-hidden strip so the sweep's
           off-screen rest position is truly invisible without clipping

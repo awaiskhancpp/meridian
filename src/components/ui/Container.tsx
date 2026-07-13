@@ -11,5 +11,5 @@ interface ContainerProps {
  * Centered max-width wrapper with responsive horizontal padding.
  */
 export default function Container({ children, className = '', as: Tag = 'div' }: ContainerProps) {
-  return <Tag className={`mx-auto w-full max-w-7xl px-4  ${className}`}>{children}</Tag>
+  return <Tag className={`mx-auto w-full max-w-[1440px] px-4  ${className}`}>{children}</Tag>
 }
