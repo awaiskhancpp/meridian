@@ -131,8 +131,8 @@ export default function Services() {
           >
             {services.items.map((service, index) => (
               <SwiperSlide key={service.title} className="h-auto">
-                <div className="group flex h-full min-h-[22rem] flex-col bg-bg-cream p-6 md:p-8">
-                  <span className="text-sm font-medium text-dark-muted">
+                <div className="group flex h-full min-h-[28rem] flex-col bg-dark p-6 md:p-8">
+                  <span className="text-sm font-medium text-white">
                     {String(index + 1).padStart(2, '0')}
                   </span>
 
@@ -141,7 +141,7 @@ export default function Services() {
                   </div>
 
                   <div>
-                    <h3 className="text-lg font-semibold text-dark md:text-xl">{service.title}</h3>
+                    <h3 className="text-lg font-semibold text-white md:text-xl">{service.title}</h3>
 
                     {/* Description is hidden at rest — number, icon, and
                         title only. Revealed smoothly on hover via a
@@ -152,7 +152,7 @@ export default function Services() {
                         to interpolate between. */}
                     <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out group-hover:grid-rows-[1fr]">
                       <div className="overflow-hidden">
-                        <p className="mt-3 text-sm leading-relaxed text-dark-muted opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        <p className="mt-3 text-sm leading-relaxed text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                           {service.description}
                         </p>
                       </div>

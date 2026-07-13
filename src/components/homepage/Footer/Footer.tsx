@@ -1,4 +1,4 @@
-import React from 'react'
+import Image from 'next/image'
 import siteData from '@/website.json'
 import { Container } from '@/components/ui'
 
@@ -6,8 +6,10 @@ const { brand } = siteData
 
 const footerLinks = [
   { label: 'About us', href: '#about' },
+  { label: 'Process', href: '#process' },
   { label: 'Services', href: '#hero' },
   { label: 'Why choose us', href: '#why-choose-us' },
+  { label: 'Our Projects', href: '#gallery' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -26,7 +28,9 @@ export default function Footer() {
           <div className="grid gap-8 px-5 py-6 backdrop-blur-sm sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:py-8">
             {/* Brand Section */}
             <div className="space-y-4 col-span-3">
-              <div className="text-xl font-semibold tracking-[0.18em] text-dark">{brand.name}</div>
+              <div className="text-xl font-semibold tracking-[0.18em] text-dark">
+                <Image src="/logo.png" alt="" width={120} height={100} />
+              </div>
               <p className="max-w-sm text-sm leading-6 text-dark-muted">
                 Warm, practical remodeling for kitchens, baths, and whole-home updates with a calm
                 process and a finished result that feels lived in from day one.
@@ -39,7 +43,7 @@ export default function Footer() {
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted min-w-[5rem] shrink-0">
                   Menu
                 </p>
-                <div className="mt-2 lg:mt-0 grid gap-3">
+                <div className="mt-2 lg:mt-0 grid content-start gap-3">
                   {footerLinks.map((item) => (
                     <a
                       key={item.label}
@@ -57,7 +61,7 @@ export default function Footer() {
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted min-w-[5rem] shrink-0">
                   Follow us
                 </p>
-                <div className="mt-2 lg:mt-0 grid gap-3 items-start">
+                <div className="mt-2 lg:mt-0 grid content-start items-start gap-3">
                   {socialLinks.map((item) => (
                     <a
                       key={item.label}
@@ -75,7 +79,7 @@ export default function Footer() {
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted min-w-[5rem] shrink-0">
                   Contact
                 </p>
-                <div className="mt-2 lg:mt-0 grid gap-3 text-sm leading-6 text-dark">
+                <div className="mt-2 lg:mt-0 grid content-start gap-3 text-sm leading-6 text-dark">
                   <p className="whitespace-nowrap">123 Artisan Lane</p>
                   <p className="whitespace-nowrap">New York, NY 10001</p>
                   <a

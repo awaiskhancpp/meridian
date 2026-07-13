@@ -31,7 +31,7 @@ export default function Hero() {
 
   return (
     <section id="hero" aria-label="Hero" className="w-full">
-      <div className="relative isolate h-[100svh] w-full overflow-hidden 2xl:h-[92svh]">
+      <div className="relative isolate h-[100svh] w-full overflow-hidden 2xl:h-[100svh]">
         <Image
           src={hero.backgroundImage}
           alt=""
@@ -57,7 +57,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <div className="max-w-7xl pb-8 sm:pb-10 lg:pb-12">
+          <div className="max-w-[1440px] pb-8 sm:pb-10 lg:pb-12">
             <h1 className="max-w-[40rem] text-white">
               <span className="text-[clamp(2.75rem,6.8vw,5.85rem)] font-bold uppercase leading-[0.9] tracking-[-0.06em] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.18)]">
                 {hero.heading}{' '}
@@ -91,114 +91,6 @@ export default function Hero() {
           </div>
         </Container>
       </div>
-
-      <Container className="mt-2">
-        <div className="border border-[rgba(60,37,21,0.12)] bg-white px-4 py-5 shadow-[0_18px_48px_rgba(60,37,21,0.06)] sm:px-6 lg:px-8">
-          {submitted ? (
-            <div className="flex flex-wrap items-center gap-3 border-b border-[rgba(60,37,21,0.12)] pb-3">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-accent text-sm font-semibold text-white">
-                OK
-              </span>
-              <p className="text-sm font-medium text-dark">
-                Thanks. We received your request and will follow up shortly.
-              </p>
-              <button
-                type="button"
-                onClick={() => {
-                  setSubmitted(false)
-                  setFormData({ name: '', email: '', phone: '', service: '' })
-                }}
-                className="ml-auto text-sm font-medium text-dark-muted underline underline-offset-4 transition-colors hover:text-dark"
-              >
-                Send another
-              </button>
-            </div>
-          ) : (
-            <form
-              onSubmit={handleSubmit}
-              noValidate
-              className="grid gap-4  md:grid-cols-2 xl:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)_auto]"
-            >
-              <Field
-                id="hero-name"
-                label={hero.form.fields.name.label}
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder={hero.form.fields.name.placeholder}
-              />
-              <Field
-                id="hero-email"
-                label={hero.form.fields.email.label}
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder={hero.form.fields.email.placeholder}
-              />
-              <Field
-                id="hero-phone"
-                label={hero.form.fields.phone.label}
-                name="phone"
-                type="tel"
-                value={formData.phone}
-                onChange={handleChange}
-                placeholder={hero.form.fields.phone.placeholder}
-              />
-
-              <div className="min-w-0">
-                <label
-                  htmlFor="hero-service"
-                  className="mb-2 block text-xs font-semibold uppercase tracking-[0.22em] text-dark-muted"
-                >
-                  {hero.form.fields.service.label}
-                </label>
-                <div className="relative">
-                  <select
-                    id="hero-service"
-                    name="service"
-                    required
-                    value={formData.service}
-                    onChange={handleChange}
-                    className="h-12 w-full appearance-none border-0 border-b border-[rgba(60,37,21,0.2)] bg-transparent px-0 pr-8 text-sm text-dark outline-none transition-colors placeholder:text-dark-muted focus:border-accent focus:ring-0"
-                  >
-                    <option value="" disabled>
-                      {hero.form.fields.service.placeholder}
-                    </option>
-                    {hero.form.fields.service.options.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-dark-muted"
-                    aria-hidden="true"
-                  >
-                    <polyline points="6 9 12 15 18 9" />
-                  </svg>
-                </div>
-              </div>
-
-              <button
-                type="submit"
-                className="inline-flex h-12 items-center justify-center rounded-none border px-2 py-1 border-dark px-0 text-left text-sm font-semibold cursor-pointer uppercase tracking-[0.18em] text-dark transition-colors hover:border-accent hover:text-accent md:col-span-2 xl:col-span-1"
-              >
-                {hero.form.submit}
-              </button>
-            </form>
-          )}
-        </div>
-      </Container>
     </section>
   )
 }

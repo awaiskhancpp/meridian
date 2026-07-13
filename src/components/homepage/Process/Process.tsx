@@ -1,5 +1,4 @@
 import React from 'react'
-import Image from 'next/image'
 import { Compass, PenLine, Hammer, CheckCircle2 } from 'lucide-react'
 import siteData from '@/website.json'
 import { Container } from '@/components/ui'
@@ -9,89 +8,91 @@ const { process } = siteData
 /**
  * Process
  *
- * All 4 cards are the SAME component. Rest state: number pinned to the top,
- * icon + title grouped together near the BOTTOM (icon sits close to the
- * title, not close to the number). Hover state: number disappears,
- * replaced at the top by the photo; below it, icon → title → description.
+ * Horizontal accordion, matching the reference: all cards are equal
+ * width at rest (compact — just a number + label at top, a small icon
+ * near the bottom). Hovering ONE card grows it in WIDTH via flex-grow,
+ * which pushes the other three narrower to compensate — the row's
+ * total width never changes, only how it's divided up.
  *
- * Growth mechanism: each grid item is a FIXED-height placeholder
- * (`h-[20rem]`, never changes) — this is what CSS Grid uses to size the
- * shared row track. The actual visible card is an `absolute` overlay
- * anchored to the placeholder's bottom edge, sized independently via its
- * own `height` transition. Because it's `position: absolute`, it's
- * removed from the grid's layout calculation entirely, so growing it on
- * hover can NEVER resize the row or shift sibling cards — which is what
- * happened with the earlier `min-height`-on-the-grid-item approach (CSS
- * Grid rows size to their tallest cell, so any cell that grows resizes
- * the whole row, and every sibling re-aligns to match).
+ * This is a fundamentally different mechanism from a height-growth
+ * card: `flex-grow` is what CSS animates here, not `height`. Every
+ * card shares the same flex container, so growing one's flex-grow
+ * value automatically (and smoothly, since flex-grow is transitionable)
+ * steals space from its siblings — no absolute positioning or manual
+ * height math needed.
  *
- * The overlay is bottom-anchored (`inset-x-0 bottom-0`) so growth only
- * ever extends the top edge upward, never the bottom.
+ * `min-w-0` on each card is required — flex items default to
+ * `min-width: auto`, which would refuse to let the compact cards
+ * shrink below their content's natural width, breaking the whole
+ * effect.
+ *
+ * Content within a card cross-fades between two states (icon-only vs.
+ * icon + title + description) the same way the previous version did —
+ * that part didn't need to change, only what triggers the size change.
  *
  * Responsive:
- *   - lg+     : collapsed at rest, hover reveals photo + description, grows upward
- *   - sm/md   : hover isn't reliable on touch, so every card renders its
- *               "expanded" content permanently — nothing hidden, no hover needed
- *
- * Theme: cream bg, dark text, accent for borders/icons, Allura script —
- *        all from theme.generated.css utilities, no hardcoded hex.
+ *   - lg+   : compact row, hover expands one card at a time
+ *   - sm/md : hover isn't reliable on touch, so every card renders
+ *             permanently expanded, stacked vertically — nothing
+ *             hidden, no hover needed
  */
 
-function StepIcon({ name }: { name: string }) {
-  const cls = 'h-5 w-5 text-accent'
-  if (name === 'compass') return <Compass className={cls} strokeWidth={1.5} aria-hidden="true" />
-  if (name === 'ruler') return <PenLine className={cls} strokeWidth={1.5} aria-hidden="true" />
-  if (name === 'hammer') return <Hammer className={cls} strokeWidth={1.5} aria-hidden="true" />
-  if (name === 'check') return <CheckCircle2 className={cls} strokeWidth={1.5} aria-hidden="true" />
+function StepIcon({ name, className }: { name: string; className: string }) {
+  if (name === 'compass')
+    return <Compass className={className} strokeWidth={1.5} aria-hidden="true" />
+  if (name === 'ruler')
+    return <PenLine className={className} strokeWidth={1.5} aria-hidden="true" />
+  if (name === 'hammer')
+    return <Hammer className={className} strokeWidth={1.5} aria-hidden="true" />
+  if (name === 'check')
+    return <CheckCircle2 className={className} strokeWidth={1.5} aria-hidden="true" />
   return null
 }
 
 type Step = { icon: string; image: string; title: string; description: string }
 
-/* ── Desktop card ─────────────────────────────────────────────────── */
+/* ── Desktop card — horizontal accordion panel ───────────────────── */
 function ProcessCard({ step, index }: { step: Step; index: number }) {
+  const number = String(index + 1).padStart(2, '0')
+
   return (
-    /* Grid item — FIXED height, never changes. Keeps the row track locked
-       regardless of hover state, so siblings never shift. */
-    <div className="relative h-[20rem]">
-      <div
-        className="
-          group absolute inset-x-0 bottom-0 z-10 h-[20rem] overflow-hidden rounded-2xl
-          border border-bg-cream bg-cream transition-[height] duration-500 ease-out
-          hover:z-20 hover:h-[23rem]
-        "
-      >
-        {/* ── Rest layer: number at top, icon+title grouped near the bottom ── */}
-        <div className="absolute inset-0 flex flex-col p-6 opacity-100 transition-opacity duration-500 ease-out group-hover:opacity-0">
-          <span className="text-[2.8rem] font-black leading-none text-dark opacity-10">
-            {String(index + 1).padStart(2, '0')}
-          </span>
+    <div
+      id="process"
+      className="
+        group relative h-[26rem] min-w-0 flex-1 overflow-hidden rounded-2xl
+        bg-[#f3ede3] transition-all duration-500 ease-out
+        hover:flex-[2.5] hover:bg-accent
+      "
+    >
+      <div className="relative z-10 flex h-full flex-col p-5">
+        {/* Number + label — always visible, color shifts with the bg */}
+        <p className="whitespace-nowrap text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-dark-muted transition-colors duration-500 group-hover:text-white/70">
+          {number}. {step.title}
+        </p>
 
-          <div className="mt-auto flex flex-col gap-3">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-accent/20 bg-white">
-              <StepIcon name={step.icon} />
+        {/* Stage: rest icon vs. expanded content, cross-fading,
+            bottom-anchored so both states share the same baseline */}
+        <div className="relative mt-auto flex-1">
+          {/* Rest state — small icon badge, fades out on hover */}
+          <div className="absolute inset-x-0 bottom-0 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
+            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-accent/20 bg-white">
+              <StepIcon name={step.icon} className="h-4 w-4 text-accent" />
             </span>
-            <h3 className="text-xl font-black uppercase leading-[0.95] tracking-[-0.03em] text-dark">
-              {step.title}
-            </h3>
-          </div>
-        </div>
-
-        {/* ── Hover layer: photo at top (replaces the number), then
-               icon → title → description ── */}
-        <div className="absolute inset-0 flex flex-col opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100">
-          <div className="relative h-54 w-full shrink-0 overflow-hidden">
-            <Image src={step.image} alt="" fill aria-hidden="true" className="object-cover" />
           </div>
 
-          <div className="flex flex-1 flex-col p-6 ">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-accent/20 bg-white">
-              <StepIcon name={step.icon} />
+          {/* Expanded state — bigger icon, title, description. Only
+              actually readable once the card has grown, so a slight
+              delay lets the width animation lead the content fade-in. */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 opacity-0 transition-opacity duration-500 delay-100 group-hover:opacity-100">
+            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15">
+              <StepIcon name={step.icon} className="h-6 w-6 text-white" />
             </span>
-            <h3 className="mt-4 text-xl font-black uppercase leading-[0.95] tracking-[-0.03em] text-dark">
+            <h3 className="mt-6 whitespace-nowrap text-xl font-black uppercase leading-tight text-white">
               {step.title}
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-dark-muted">{step.description}</p>
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/85">
+              {step.description}
+            </p>
           </div>
         </div>
       </div>
@@ -99,26 +100,24 @@ function ProcessCard({ step, index }: { step: Step; index: number }) {
   )
 }
 
-/* ── Mobile/tablet card — permanently in the "expanded" state.
+/* ── Mobile/tablet card — permanently expanded.
      Hover isn't reliable on touch, so there's nothing to reveal —
-     photo + icon + title + description are always visible, same order
-     as the desktop hover layer. ── */
+     icon + title + description are always visible. ── */
 function SimpleCard({ step, index }: { step: Step; index: number }) {
-  return (
-    <div className="flex flex-col overflow-hidden rounded-2xl border border-bg-cream bg-cream">
-      <div className="relative h-40 w-full shrink-0 overflow-hidden">
-        <Image src={step.image} alt="" fill aria-hidden="true" className="object-cover" />
-      </div>
+  const number = String(index + 1).padStart(2, '0')
 
-      <div className="flex flex-1 flex-col p-6">
-        <span className="flex h-10 w-10 items-center justify-center rounded-full border border-accent/20 bg-white">
-          <StepIcon name={step.icon} />
-        </span>
-        <h3 className="mt-4 text-xl font-black uppercase leading-[0.95] tracking-[-0.03em] text-dark">
-          {step.title}
-        </h3>
-        <p className="mt-3 text-sm leading-relaxed text-dark-muted">{step.description}</p>
-      </div>
+  return (
+    <div className="rounded-2xl bg-cream p-6">
+      <p className="text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-dark-muted">
+        {number}. {step.title}
+      </p>
+      <span className="mt-6 flex h-10 w-10 items-center justify-center rounded-full border border-accent/20 bg-white">
+        <StepIcon name={step.icon} className="h-5 w-5 text-accent" />
+      </span>
+      <h3 className="mt-4 text-xl font-black uppercase leading-[0.95] tracking-[-0.03em] text-dark">
+        {step.title}
+      </h3>
+      <p className="mt-3 text-sm leading-relaxed text-dark-muted">{step.description}</p>
     </div>
   )
 }
@@ -146,21 +145,18 @@ export default function Process() {
           </p>
         </div>
 
-        {/* ── sm/md: every card permanently expanded (photo always visible) ── */}
+        {/* ── sm/md: every card permanently expanded, stacked ── */}
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:hidden">
           {process.steps.map((step, i) => (
             <SimpleCard key={step.title} step={step} index={i} />
           ))}
         </div>
 
-        {/* ── lg+: 4 fixed-height grid cells, each hosting an absolutely
-             positioned card that grows independently on hover — see
-             ProcessCard's comment for why this needs to be an overlay
-             rather than a size change on the grid item itself. Extra
-             top margin (mt-20 instead of mt-12) leaves headroom for a
-             hovered card to grow upward without visually colliding with
-             the subheading text above. ── */}
-        <div className="mt-20 hidden grid-cols-4 gap-4 lg:grid">
+        {/* ── lg+: horizontal accordion — flex row, each card flex-1 at
+             rest, hover:flex-[2.5] on the hovered one. min-w-0 is what
+             lets the other cards actually compress instead of refusing
+             to shrink below their content width. ── */}
+        <div className="mt-12 hidden gap-4 lg:flex">
           {process.steps.map((step, i) => (
             <ProcessCard key={step.title} step={step} index={i} />
           ))}

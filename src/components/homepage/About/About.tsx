@@ -99,7 +99,7 @@ export default function About() {
     <section
       id="about"
       aria-labelledby="about-heading"
-      className="px-4 py-8 sm:px-6 lg:px-8 lg:py-12"
+      className="px-4 py-8 sm:px-6 lg:px-8 lg:py-12 lg:mt-12"
     >
       <Container>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:items-stretch lg:gap-6">
@@ -156,13 +156,13 @@ export default function About() {
                 chains through nested divs. Mobile/tablet keep the
                 aspect-ratio-driven sizing since there's no stretched
                 row to match there. */}
-            <div className="overflow-hidden rounded-sm bg-cream shadow-[0_18px_48px_rgba(60,37,21,0.08)] lg:absolute lg:inset-0">
+            <div className="overflow-hidden rounded-sm bg-cream lg:absolute lg:inset-0">
               <div className="relative aspect-[4/5] w-full lg:aspect-auto lg:h-full">
                 <Image src={about.image} alt={about.heading} fill className="object-cover" />
               </div>
             </div>
 
-            <div className="absolute left-4 bottom-4 max-w-[15rem] rounded-sm bg-[rgba(60,37,21,0.82)] p-4 text-white shadow-[0_18px_48px_rgba(0,0,0,0.18)] backdrop-blur-md sm:left-6 sm:bottom-6">
+            <div className="absolute left-4 bottom-4 max-w-[15rem] rounded-sm bg-[rgba(60,37,21,0.82)] p-4 text-white  backdrop-blur-md sm:left-6 sm:bottom-6">
               <p className="text-xs uppercase tracking-[0.28em] text-[rgba(255,255,255,0.72)]">
                 {about.card.label}
               </p>

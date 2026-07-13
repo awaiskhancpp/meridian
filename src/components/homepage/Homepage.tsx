@@ -28,9 +28,10 @@ export default function Homepage() {
       <Services />
       <Process />
       <Testimonials />
+      <Faq />
       <Gallery />
       <Blogs />
-      <Faq />
+
       <Contact />
       <Footer />
     </main>

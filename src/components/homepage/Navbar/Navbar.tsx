@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import { ArrowUpRight } from 'lucide-react'
 import siteData from '@/website.json'
 import { Button, Container } from '@/components/ui'
 
@@ -60,10 +61,6 @@ export default function Navbar() {
     return () => window.removeEventListener('keydown', onKeyDown)
   }, [mobileOpen])
 
-  // Click/tap anywhere outside the open menu panel (and outside the
-  // hamburger toggle itself, so the toggle's own click isn't immediately
-  // undone by this same handler) closes it. `pointerdown` — not `click` —
-  // so it fires consistently for both mouse and touch input.
   useEffect(() => {
     if (!mobileOpen) return
     const onPointerDown = (event: PointerEvent) => {
@@ -90,7 +87,7 @@ export default function Navbar() {
   }, [])
 
   const surfaceClasses = scrolled
-    ? 'border-[rgba(60,37,21,0.08)] bg-white/95 shadow-[0_18px_48px_rgba(60,37,21,0.06)] backdrop-blur-md'
+    ? 'border-[rgba(60,37,21,0.08)] bg-white/95 shadow-[0_18px_48px _rgba(60,37,21,0.06)] backdrop-blur-md'
     : 'border-transparent bg-transparent shadow-none backdrop-blur-none'
 
   const textClasses = scrolled ? 'text-dark' : 'text-white'
@@ -98,48 +95,45 @@ export default function Navbar() {
   const hoverTextClasses = scrolled ? 'hover:text-accent' : 'hover:text-cream'
 
   /*
-    FIX: the CTA button previously received `${textClasses} ${borderClasses}`
-    as plain (non-important) utility classes, trying to override the
-    outline-light variant's own baked-in `text-white`/`border-white/70`
-    (see Button.tsx's variantClasses) from the outside. That's the exact
-    same conflict already documented above for the wrapper div's
-    hidden/lg:inline-flex issue: two classes targeting the same CSS
-    property on the same element don't resolve by which one appears later
-    in the className string — they resolve by whichever order Tailwind
-    happens to emit the corresponding rules in its generated stylesheet,
-    which isn't something call-site code controls. The variant's
-    text-white/border-white/70 were winning even when scrolled was true,
-    so the button rendered white text on the now-white/95 scrolled navbar
-    — invisible, not literally gone.
+    CTA design: unified with Contact.tsx's "Send Request" button —
+    same shape (rounded-sm), same ArrowUpRight icon, same border→fill
+    hover interaction. The only thing that changes is which existing
+    Button variant is used, based on what's behind the navbar:
 
-    `!` (Tailwind's important modifier) is what guarantees an override
-    wins regardless of emission order — that's specifically what it's for.
-    Also overriding hover:!bg-transparent, since outline-light's baked-in
-    hover:bg-white fill doesn't match how every OTHER nav link behaves on
-    hover (a plain text-color swap, no background fill) — without this,
-    the button's hover state would look inconsistent with the rest of the
-    nav even once the base colors were fixed.
+      - scrolled (solid white bar)   -> 'outline'       (dark border/text,
+                                          hover fills solid accent — this
+                                          is exactly Contact's button)
+      - unscrolled (transparent, over
+        the hero photo)             -> 'outline-light'  (white border/text,
+                                          hover fills solid white — the
+                                          palette-inverted mirror of
+                                          'outline', for a dark backdrop)
+
+    Both variants already implement the identical interaction (border-only
+    at rest, solid fill on hover) — swapping between them is the correct
+    fix, rather than the previous approach of force-overriding one
+    variant's colors with `!important` and disabling its hover fill,
+    which is what made this button feel inconsistent with Contact's in
+    the first place.
   */
-  const ctaClasses = scrolled
-    ? '!border-accent !text-dark hover:!text-accent hover:!bg-transparent'
-    : '!border-white !text-white hover:!text-cream hover:!bg-transparent'
+  const ctaVariant = scrolled ? 'outline' : 'outline-light'
 
   return (
-    <header className="fixed top-0 inset-x-0 z-[var(--z-navbar)] pt-4 ">
+    <header
+      className={`fixed top-0 inset-x-0 w-full z-[var(--z-navbar)] border-b transition-all duration-300 ${surfaceClasses}`}
+    >
       <Container className="relative">
-        <div
-          className={`flex items-center justify-between gap-4 rounded-lg border px-5 py-2 transition-all duration-300 ${surfaceClasses}`}
-        >
+        <div className="flex items-center justify-between gap-4">
           <a
             href="#hero"
             className={`flex items-center gap-3 ${textClasses}`}
             aria-label={brand.name}
           >
-            {/* {nav.img ? (
+            {nav.img ? (
               <Image src={nav.img} alt={brand.name} width={112} height={80} />
-            ) : ( */}
-            <span className="text-base font-semibold tracking-[0.22em]">{brand.name}</span>
-            {/* )} */}
+            ) : (
+              <span className="text-base font-semibold tracking-[0.22em]">{brand.name}</span>
+            )}
           </a>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -189,11 +183,12 @@ export default function Navbar() {
               wrapper element sidesteps the conflict entirely. */}
           <div className="hidden lg:inline-flex">
             <Button
-              variant="outline-light"
+              variant={ctaVariant}
               href="#contact"
-              className={`whitespace-nowrap text-sm font-medium tracking-[0.12em] rounded-none transition-colors ${ctaClasses}`}
+              className="whitespace-nowrap rounded-sm text-sm font-medium tracking-[0.12em]"
             >
-              Request a Quote
+              <span>Request a Quote</span>
+              <ArrowUpRight size={18} />
             </Button>
           </div>
 
@@ -289,8 +284,9 @@ export default function Navbar() {
             )}
 
             <div className="mt-4" onClick={() => setMobileOpen(false)}>
-              <Button variant="primary" size="md" href="#contact" className="w-full">
-                Request a Quote
+              <Button variant="outline" size="md" href="#contact" className="w-full rounded-sm">
+                <span>Request a Quote</span>
+                <ArrowUpRight size={18} />
               </Button>
             </div>
           </div>

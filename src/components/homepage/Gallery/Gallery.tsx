@@ -3,12 +3,11 @@
 import React from 'react'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, Autoplay } from 'swiper/modules'
+import { Autoplay } from 'swiper/modules'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 // Import Swiper styles
 import 'swiper/css'
-import 'swiper/css/navigation'
 import siteData from '@/website.json'
 const { gallery } = siteData
 interface GalleryItem {
@@ -38,7 +37,7 @@ const galleryData: GalleryItem[] = [
 
 export default function Gallery() {
   return (
-    <section className="relative w-full py-16 overflow-hidden bg-[#FAFAFA]">
+    <section id="gallery" className="relative w-full py-16 overflow-hidden ">
       {/* Elegant Header Section */}
       <div className="mx-auto max-w-3xl text-center">
         <p className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
@@ -59,9 +58,9 @@ export default function Gallery() {
       </div>
 
       {/* Main Carousel Wrapper */}
-      <div className="relative w-full px-0 mt-4">
+      <div className="relative w-full px-0 mt-8">
         <Swiper
-          modules={[Navigation, Autoplay]}
+          modules={[Autoplay]}
           spaceBetween={16}
           slidesPerView={1.2}
           centeredSlides={true}
@@ -88,14 +87,14 @@ export default function Gallery() {
               spaceBetween: 40,
             },
           }}
-          className="w-full !overflow-visible"
+          className="w-full !overflow-visible "
         >
           {gallery.items.map((slide, i) => (
-            <SwiperSlide key={i} className="w-full">
+            <SwiperSlide key={i} className="w-full ">
               {({ isActive }) => (
                 <div
                   className={`relative w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden transition-all duration-500 ease-in-out ${
-                    isActive ? 'scale-100 opacity-100 shadow-xl' : 'scale-90 opacity-40 blur-[1px]'
+                    isActive ? 'scale-100 opacity-100 shadow-xl' : 'scale-90 opacity-100'
                   }`}
                 >
                   <Image
@@ -111,20 +110,6 @@ export default function Gallery() {
             </SwiperSlide>
           ))}
         </Swiper>
-
-        {/* Navigation Elements anchored to the edges of the screen */}
-        <button
-          className="swiper-button-prev-custom absolute left-4 top-1/2 -translate-y-1/2 z-30 flex h-12 w-12 items-center justify-center rounded-full border border-neutral-200 bg-white/80 backdrop-blur-sm text-neutral-800 shadow-md transition-all hover:bg-white hover:scale-105 active:scale-95 disabled:opacity-0"
-          aria-label="Previous slide"
-        >
-          <ChevronLeft className="h-6 w-6" />
-        </button>
-        <button
-          className="swiper-button-next-custom absolute right-4 top-1/2 -translate-y-1/2 z-30 flex h-12 w-12 items-center justify-center rounded-full border border-neutral-200 bg-white/80 backdrop-blur-sm text-neutral-800 shadow-md transition-all hover:bg-white hover:scale-105 active:scale-95 disabled:opacity-0"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="h-6 w-6" />
-        </button>
       </div>
     </section>
   )

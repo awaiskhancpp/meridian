@@ -46,10 +46,11 @@ export default function Contact() {
 
             <div>
               {submitted ? (
-                <div className="rounded-[24px] border border-[rgba(60,37,21,0.08)] bg-cream p-6">
+                <div className="rounded-[24px] border h-[437px] border-[rgba(60,37,21,0.08)] flex justify-center items-center flex-col bg-cream p-6">
                   <p className="text-sm font-medium text-dark">
                     Thanks. Your message is in, and we will be in touch soon.
                   </p>
+                  <br />
                   <button
                     type="button"
                     onClick={() => {
@@ -103,7 +104,12 @@ export default function Contact() {
                     onChange={handleChange}
                   />
 
-                  <Button variant="line" size="md" type="submit" className="max-w-fit">
+                  <Button
+                    variant="outline"
+                    size="md"
+                    type="submit"
+                    className="max-w-fit rounded-sm"
+                  >
                     <span>{contact.submit}</span>
                     <ArrowUpRight size={20} />
                   </Button>

@@ -1,8 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
 import siteData from '@/website.json'
-import { Container } from '@/components/ui'
-import { Hammer, Clock, BadgeDollarSign, ClipboardCheck } from 'lucide-react'
+import { Button, Container } from '@/components/ui'
+import { Hammer, Clock, BadgeDollarSign, ClipboardCheck, ArrowUpRight } from 'lucide-react'
 
 const { whyChooseUs } = siteData
 
@@ -81,10 +81,7 @@ export default function WhyChooseUs() {
 
           {/* Center Column Image with Offset Background */}
           <div className="w-full sm:max-w-md lg:w-1/3 relative flex justify-center order-1 lg:order-2 mb-8 lg:mb-0">
-            {/* Offset Decorative Box */}
-            <div className="absolute top-10 -right-6 w-full h-[95%] bg-[#f6f2eb] border border-[rgba(60,37,21,0.08)] shadow-sm -z-10 hidden sm:block" />
-
-            <div className="relative w-full aspect-[4/5] overflow-hidden shadow-2xl ring-1 ring-black/5">
+            <div className="relative w-full aspect-[4/5] overflow-hidden ring-1 ring-black/5">
               <Image
                 src="/hero.webp"
                 alt="Detailed interior remodeling craftsmanship"
@@ -108,6 +105,12 @@ export default function WhyChooseUs() {
               </div>
             ))}
           </div>
+        </div>
+        <div className="flex justify-center items-center mt-6">
+          <Button variant="line" href="/#contact" className="flex gap-1">
+            <span>Get a free Quote</span>
+            <ArrowUpRight size={20} />{' '}
+          </Button>
         </div>
       </Container>
     </section>
