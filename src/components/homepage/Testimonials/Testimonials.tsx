@@ -66,7 +66,7 @@ export default function Testimonials() {
 
           {/* Testimonial content */}
           <div
-            className={`flex-1 max-w-6xl mx-auto transition-all duration-300 ease-out ${
+            className={`flex-1 max-w-3xl mx-auto transition-all duration-300 ease-out ${
               visible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
             }`}
           >

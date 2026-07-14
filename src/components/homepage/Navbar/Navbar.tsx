@@ -148,12 +148,12 @@ export default function Navbar() {
                     <ChevronIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
                   </button>
 
-                  <div className="invisible absolute left-1/2 top-full z-10 w-[220px] -translate-x-1/2 translate-y-2 rounded-[20px] border border-[rgba(60,37,21,0.08)] bg-white p-2 opacity-0 shadow-[0_18px_48px_rgba(60,37,21,0.1)] transition-all duration-200 group-hover:visible group-hover:translate-y-3 group-hover:opacity-100">
+                  <div className="invisible absolute left-1/2 top-full z-10 w-[220px] -translate-x-1/2 translate-y-2 border border-[rgba(60,37,21,0.08)] bg-white p-2 opacity-0 shadow-[0_18px_48px_rgba(60,37,21,0.1)] transition-all duration-200 group-hover:visible group-hover:translate-y-3 group-hover:opacity-100">
                     {item.children.map((child) => (
                       <a
                         key={child.label}
                         href={child.href}
-                        className="block rounded-[12px] px-3 py-2 text-sm text-dark-muted transition-colors hover:bg-cream hover:text-dark"
+                        className="block px-3 py-2 text-sm text-dark-muted transition-colors hover:bg-cream hover:text-dark"
                       >
                         {child.label}
                       </a>
@@ -171,16 +171,6 @@ export default function Navbar() {
               ),
             )}
           </nav>
-
-          {/* Desktop-only CTA — wrapped in a div carrying the hidden/lg:inline-flex
-              toggle. Button's own base classes always include "inline-flex"
-              (see Button.tsx), so passing "hidden lg:inline-flex" straight into
-              Button's className competes with that base class on the SAME
-              element for the same CSS property (display). Which one wins isn't
-              determined by class order in the HTML — it's whatever order
-              Tailwind happens to emit them in the compiled stylesheet — so
-              "hidden" was silently losing below lg. Putting the toggle on a
-              wrapper element sidesteps the conflict entirely. */}
           <div className="hidden lg:inline-flex">
             <Button
               variant={ctaVariant}
@@ -227,7 +217,7 @@ export default function Navbar() {
         <div
           id="main-menu"
           ref={menuRef}
-          className={`absolute left-4 right-4 top-[calc(100%+0.75rem)] overflow-hidden rounded-[30px] border border-[rgba(60,37,21,0.08)] bg-white shadow-[0_28px_70px_rgba(60,37,21,0.12)] transition-all duration-300 lg:hidden ${
+          className={`absolute left-4 right-4 top-[calc(100%+0.75rem)] overflow-hidden border border-[rgba(60,37,21,0.08)] bg-white shadow-[0_28px_70px_rgba(60,37,21,0.12)] transition-all duration-300 lg:hidden ${
             mobileOpen ? 'max-h-[40rem] opacity-100' : 'pointer-events-none max-h-0 opacity-0'
           }`}
         >

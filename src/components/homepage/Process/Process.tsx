@@ -1,86 +1,89 @@
-'use client'
-
-import React, { useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
 import { Container } from '@/components/ui'
 import siteData from '@/website.json'
 
 const { process: processData } = siteData
 
-/**
- * Process Section
- *
- * Tab-based process walkthrough with heading on right, steps on left.
- * Each step reveals its title, description, and image when selected.
- * Clean, minimal design matching the reference layout.
- */
+/*
+  Photography paths, one per step — see the accompanying prompts for what
+  to generate/shoot for each. File names match the step order in
+  website.json (processData.steps[0] → discovery.jpg, etc.); if you
+  reorder steps in the JSON, keep this array in the same order or the
+  images will pair with the wrong step.
+*/
+const stepImages = ['/discovery.png', '/design.png', '/build.png', '/handoff.png']
+
+/* ─────────────────────────────────────────────
+   Process Section
+───────────────────────────────────────────── */
 export default function Process() {
-  const [activeStep, setActiveStep] = useState(0)
-  const currentStep = processData.steps[activeStep]
-
   return (
-    <section id="process" aria-labelledby="process-heading" className="relative  py-16  lg:py-24 ">
+    <section id="process" aria-labelledby="process-heading" className="py-16 lg:py-24 bg-white">
       <Container>
-        {/* Header Section - Right Aligned */}
-        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
-          <div className="lg:max-w-md">
-            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
-              {processData.label}
-            </p>
-            <h2 id="process-heading" className="text-dark">
-              <span className="block mt-3 text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em]">
-                {processData.heading}
-              </span>
-              <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
-                {processData.script}
-              </span>
-            </h2>
-            <p className="mt-4 text-p text-dark-muted lg:ml-auto">{processData.subheading}</p>
-          </div>
+        {/* Centered heading */}
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
+            {processData.label}
+          </p>
+          <h2 id="process-heading" className="mt-4 text-dark">
+            <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em]">
+              {processData.heading}
+            </span>
+            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
+              {processData.script}
+            </span>
+          </h2>
+          <p className="mx-auto mt-6 max-w-2xl text-p text-dark-muted">{processData.subheading}</p>
         </div>
 
-        {/* Step Navigation Tabs */}
-        <div className="flex flex-wrap gap-2 mb-12 border-b border-[rgba(60,37,21,0.12)] pb-4">
+        {/* Step cards */}
+        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {processData.steps.map((step, idx) => (
-            <button
+            <div
               key={idx}
-              onClick={() => setActiveStep(idx)}
-              className={`px-6 py-3 text-sm font-semibold tracking-wide transition-all duration-300 ${
-                activeStep === idx
-                  ? 'text-dark border-b-2 border-dark'
-                  : 'text-dark-muted hover:text-dark'
-              }`}
-              aria-current={activeStep === idx ? 'step' : undefined}
+              className="relative flex flex-col  border border-[rgba(60,37,21,0.1)] bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-md"
             >
-              Step {idx + 1}
-            </button>
-          ))}
-        </div>
+              {/*
+                Badge + line share one flex row now, instead of the badge
+                being a standalone element with a separately-positioned
+                line elsewhere in the card. `gap-2` is the only space
+                between them, so the line visually starts exactly at the
+                badge's edge ("attached"), and `flex-1` makes it stretch
+                to fill whatever's left of the row — i.e. to the card's
+                own right edge — rather than needing a manually-guessed
+                width or position to reach "the end of the card."
+              */}
+              <div className="mb-5 flex items-center gap-2">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#3c2515] text-sm font-bold text-white">
+                  {String(idx + 1).padStart(2, '0')}
+                </div>
+                <div
+                  className="h-0 flex-1 border-t border-dashed border-[rgba(60,37,21,0.25)]"
+                  aria-hidden="true"
+                />
+              </div>
 
-        {/* Active Step Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12  items-center px-8">
-          {/* Left: Title & Description */}
-          <div className="col-span-7 order-2 lg:order-1">
-            <h3 className="text-[clamp(1rem,2.5vw,2rem)] font-bold uppercase tracking-tight text-dark mb-6 leading-tight">
-              {currentStep.title}
-            </h3>
-            <p className="text-p text-dark-muted leading-relaxed max-w-lg">
-              {currentStep.description}
-            </p>
-          </div>
+              {/* Title */}
+              <h3 className="mb-3 text-base font-bold leading-snug text-dark">{step.title}</h3>
 
-          {/* Right: Image */}
-          <div className="col-span-5 order-1 lg:order-2">
-            <div className="relative h-[260px] w-full overflow-hidden bg-white/50">
-              <Image
-                src={currentStep.image}
-                alt={currentStep.title}
-                fill
-                className="object-cover transition-opacity duration-500"
-                key={activeStep} // Force re-render on step change for smooth transition
-              />
+              {/* Description */}
+              <p className="flex-1 text-sm leading-relaxed text-dark-muted">{step.description}</p>
+
+              {/* Photo — replaces the previous inline SVG illustration.
+                  aspect-[280/160] matches the old SVG viewBox's proportions
+                  so the card's overall shape doesn't jump when this swaps in. */}
+              <div className="relative mt-6 aspect-[280/160] w-full overflow-hidden  ">
+                <Image
+                  src={stepImages[idx] ?? stepImages[stepImages.length - 1]}
+                  alt={step.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                />
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </Container>
     </section>
