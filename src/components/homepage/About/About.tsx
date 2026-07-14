@@ -127,11 +127,7 @@ function FeatureIcon({
 
 export default function About() {
   return (
-    <section
-      id="about"
-      aria-labelledby="about-heading"
-      className="px-4 py-8 sm:px-6 lg:px-8 lg:py-12 lg:mt-12"
-    >
+    <section id="about" aria-labelledby="about-heading" className="py-8   lg:py-12 lg:mt-12">
       <Container>
         <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:items-stretch lg:gap-6">
           <div className="order-2 flex flex-col lg:order-1 lg:justify-center">
@@ -150,7 +146,7 @@ export default function About() {
 
             <p className="mt-3 max-w-[28rem] text-p text-dark-muted">{about.subheading}</p>
 
-            <div className="mt-6 w-full max-w-[34rem]">
+            <div className="mt-10 w-full max-w-[34rem]">
               <div className="grid gap-3">
                 {about.features.map((feature) => (
                   <div

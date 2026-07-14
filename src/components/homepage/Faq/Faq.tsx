@@ -33,7 +33,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="px-4 py-8 sm:px-6 lg:px-8 lg:py-16">
+    <section id="faq" className=" py-8 lg:py-16">
       <Container>
         {/*
           Responsive reasoning:

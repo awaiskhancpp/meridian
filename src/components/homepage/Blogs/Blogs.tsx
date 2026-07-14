@@ -22,7 +22,7 @@ export default function Blogs() {
   }
 
   return (
-    <section id="blogs" aria-labelledby="blogs-heading" className="bg-white py-16 sm:px-6 lg:py-24">
+    <section id="blogs" aria-labelledby="blogs-heading" className="bg-white py-16  lg:py-24">
       <Container>
         <div className="mx-auto max-w-4xl text-center">
           <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">

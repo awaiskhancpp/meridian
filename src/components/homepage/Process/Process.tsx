@@ -19,11 +19,7 @@ export default function Process() {
   const currentStep = processData.steps[activeStep]
 
   return (
-    <section
-      id="process"
-      aria-labelledby="process-heading"
-      className="relative px-4 py-16 lg:px-6 lg:py-24 "
-    >
+    <section id="process" aria-labelledby="process-heading" className="relative  py-16  lg:py-24 ">
       <Container>
         {/* Header Section - Right Aligned */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
