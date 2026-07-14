@@ -71,7 +71,7 @@ export default function Contact() {
 
       <Container className="relative z-10 w-full">
         {/* RESPONSIVE CARD */}
-        <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 bg-dark p-8 shadow-2xl sm:p-12">
+        <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 bg-[rgba(60,37,21,0.82)] p-8 shadow-2xl sm:p-12">
           {/* TOP: Heading Section (Centered) */}
           <div className="flex flex-col items-center text-center">
             <p className="text-xs uppercase tracking-[0.34em] text-white/70">{contact.label}</p>
