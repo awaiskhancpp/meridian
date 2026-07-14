@@ -114,13 +114,13 @@ function BlogFeatureCard({ card }: { card: BlogItem }) {
             />
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(60,37,21,0.08)_0%,rgba(60,37,21,0.18)_100%)]" />
 
-            <div className="absolute inset-0 flex items-center justify-center  opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100">
-              <div className="max-w-[22rem] translate-y-4  border border-white/50 bg-white/90 px-8 py-10 text-center opacity-0 shadow-[0_18px_48px_rgba(60,37,21,0.08)] backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+            <div className="absolute inset-0 flex items-center justify-center p-6  opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100">
+              <div className="w-full translate-y-4 h-full  border border-white/50 bg-white/90 px-8 py-10 flex flex-col items-center justify-center text-center opacity-0 shadow-[0_18px_48px_rgba(60,37,21,0.08)] backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                 <h3 className="text-[clamp(1.5rem,2vw,2rem)] font-black uppercase leading-[0.92] tracking-[-0.04em] text-dark">
                   {card.title}
                 </h3>
                 <p className="mt-5 text-sm leading-6 text-dark-muted">{card.description}</p>
-                <Button variant="outline" className="mt-10">
+                <Button variant="outline" className="mt-10 rounded-none">
                   Read More
                 </Button>
                 {/* <span className="mt-8 inline-flex items-center gap-3 border-b border-dark/30 pb-2 text-sm font-medium uppercase tracking-[0.18em] text-dark transition-colors group-hover:border-accent group-hover:text-accent">

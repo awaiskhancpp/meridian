@@ -108,7 +108,7 @@ export default function Contact() {
                     variant="outline"
                     size="md"
                     type="submit"
-                    className="max-w-fit rounded-sm"
+                    className="max-w-fit rounded-none"
                   >
                     <span>{contact.submit}</span>
                     <ArrowUpRight size={20} />

@@ -75,7 +75,7 @@ export default function Footer() {
               </div>
 
               {/* Contact Section */}
-              <div className="mt-4 md:mt-0 lg:gap-4 flex gap-2 flex-col md:flex-row">
+              <div className="mt-6 md:mt-0 lg:gap-4 flex gap-2 flex-col md:flex-row">
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted min-w-[5rem] shrink-0">
                   Contact
                 </p>

@@ -52,23 +52,25 @@ export default function FAQ() {
           like the reference screenshot where the left column doesn't
           stretch to match the right column's height.
         */}
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-16">
+        <div className="grid gap-8 lg:grid-cols-1 lg:gap-16">
           {/* ── Left: heading + subheading ──────────────────────── */}
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
-              {faq.label}
-            </p>
+            <div className="mx-auto max-w-4xl text-center">
+              <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
+                {faq.label}
+              </p>
 
-            <h2 className="mt-2">
-              <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
-                {faq.heading}
-              </span>
-              <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] italic leading-none text-accent">
-                {faq.script}
-              </span>
-            </h2>
+              <h2 id="blogs-heading" className="mt-4 text-dark">
+                <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em]">
+                  {faq.heading}
+                </span>
+                <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
+                  {faq.script}
+                </span>
+              </h2>
 
-            <p className="mt-4 max-w-[26rem] text-p text-dark-muted">{faq.subheading}</p>
+              <p className="mx-auto mt-6 max-w-2xl text-p text-dark-muted">{faq.subheading}</p>
+            </div>
           </div>
 
           {/* ── Right: accordion list ────────────────────────────── */}

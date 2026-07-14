@@ -24,8 +24,9 @@ export default function Homepage() {
       <Navbar />
       <Hero />
       <About />
-      <WhyChooseUs />
       <Services />
+      <WhyChooseUs />
+
       <Process />
       <Testimonials />
       <Faq />

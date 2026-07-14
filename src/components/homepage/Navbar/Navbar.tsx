@@ -185,7 +185,7 @@ export default function Navbar() {
             <Button
               variant={ctaVariant}
               href="#contact"
-              className="whitespace-nowrap rounded-sm text-sm font-medium tracking-[0.12em]"
+              className="whitespace-nowrap rounded-none text-dark-muted text-sm font-medium tracking-[0.12em]"
             >
               <span>Request a Quote</span>
               <ArrowUpRight size={18} />
@@ -206,17 +206,17 @@ export default function Navbar() {
             <span>{nav.menuLabel}</span>
             <span className="relative flex h-4 w-4 items-center justify-center" aria-hidden="true">
               <span
-                className={`absolute h-0.5 w-4 rounded-full bg-current transition-transform duration-200 ${
+                className={`absolute h-0.5 w-4  bg-current transition-transform duration-200 ${
                   mobileOpen ? 'rotate-45' : '-translate-y-1.5'
                 }`}
               />
               <span
-                className={`absolute h-0.5 w-4 rounded-full bg-current transition-opacity duration-200 ${
+                className={`absolute h-0.5 w-4 bg-current transition-opacity duration-200 ${
                   mobileOpen ? 'opacity-0' : 'opacity-100'
                 }`}
               />
               <span
-                className={`absolute h-0.5 w-4 rounded-full bg-current transition-transform duration-200 ${
+                className={`absolute h-0.5 w-4  bg-current transition-transform duration-200 ${
                   mobileOpen ? '-rotate-45' : 'translate-y-1.5'
                 }`}
               />

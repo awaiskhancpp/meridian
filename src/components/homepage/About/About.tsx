@@ -28,11 +28,23 @@ const { about } = siteData
  * wrapper is `lg:absolute lg:inset-0` instead: it fills its stretched
  * grid-item parent exactly by pinning to all four edges, sidestepping
  * percentage-resolution entirely.
+ *
+ * TWO floating cards sit on top of the photo, not one — a small badge
+ * pill near the top (icon + short label, e.g. "Free Estimate") and the
+ * larger stat card at the bottom-left (label/stat/subStat/cta). Both
+ * share the same dark-glass treatment (bg-[rgba(60,37,21,0.82)] +
+ * backdrop-blur-md) so they read as one consistent overlay language,
+ * just two different sizes for two different jobs — quick trust signal
+ * vs. a fuller stat callout.
  */
 
-function FeatureIcon({ name }: { name: string }) {
-  const cls = 'h-4 w-4 text-dark'
-
+function FeatureIcon({
+  name,
+  className = 'h-4 w-4 text-dark',
+}: {
+  name: string
+  className?: string
+}) {
   if (name === 'layers') {
     return (
       <svg
@@ -43,7 +55,7 @@ function FeatureIcon({ name }: { name: string }) {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className={cls}
+        className={className}
         aria-hidden="true"
       >
         <polygon points="12 2 2 7 12 12 22 7 12 2" />
@@ -63,7 +75,7 @@ function FeatureIcon({ name }: { name: string }) {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className={cls}
+        className={className}
         aria-hidden="true"
       >
         <line x1="18" y1="20" x2="18" y2="10" />
@@ -83,10 +95,29 @@ function FeatureIcon({ name }: { name: string }) {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        className={cls}
+        className={className}
         aria-hidden="true"
       >
         <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    )
+  }
+
+  if (name === 'clock') {
+    return (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={className}
+        aria-hidden="true"
+      >
+        <circle cx="12" cy="12" r="9" />
+        <polyline points="12 7 12 12 15.5 14" />
       </svg>
     )
   }
@@ -158,13 +189,26 @@ export default function About() {
                 chains through nested divs. Mobile/tablet keep the
                 aspect-ratio-driven sizing since there's no stretched
                 row to match there. */}
-            <div className="overflow-hidden rounded-sm bg-cream lg:absolute lg:inset-0">
+            <div className="overflow-hidden   lg:absolute lg:inset-0">
               <div className="relative aspect-[4/5] w-full lg:aspect-auto lg:h-full">
                 <Image src={about.image} alt={about.heading} fill className="object-cover" />
               </div>
             </div>
 
-            <div className="absolute left-4 bottom-4 max-w-[15rem] rounded-sm bg-[rgba(60,37,21,0.82)] p-4 text-white  backdrop-blur-md sm:left-6 sm:bottom-6">
+            {/* Small top badge — the piece that was missing. Deliberately
+                minimal: icon + one short label, no stat, no cta — its job
+                is a quick trust signal you register in passing, not
+                something you stop and read. */}
+            <div className="absolute left-4 bottom-4 sm:left-6 w-[15rem] z-10 flex items-center gap-2  bg-[rgba(60,37,21,0.82)] px-4 py-2 text-white backdrop-blur-md">
+              <span className="text-sm font-semibold tracking-[0.14em]">{about.badge.label}</span>
+              <span className="ml-auto flex h-6 w-6 items-center justify-between rounded-full ">
+                <a href="/#gallery">
+                  <ArrowUpRight />
+                </a>
+              </span>
+            </div>
+
+            <div className="absolute left-4 bottom-15 max-w-[15rem]  bg-[rgba(60,37,21,0.82)] p-4 text-white  backdrop-blur-md sm:left-6 sm:bottom-15">
               <p className="text-xs uppercase tracking-[0.28em] text-[rgba(255,255,255,0.72)]">
                 {about.card.label}
               </p>
@@ -174,10 +218,12 @@ export default function About() {
               </p>
               <a
                 href={about.cta.href}
-                className="mt-4 inline-flex items-center gap-2 text-sm font-semibold tracking-[0.14em] text-white transition-colors hover:text-cream"
+                className="mt-4 inline-flex items-center gap-2 w-full items-center justify-center text-sm font-semibold tracking-[0.14em] text-white transition-colors hover:text-cream"
               >
                 {about.card.cta}
-                <ArrowUpRight size={20} />
+                <span className="flex ml-auto">
+                  <ArrowUpRight />
+                </span>
               </a>
             </div>
           </div>

@@ -1,167 +1,242 @@
-import React from 'react'
-import { Compass, PenLine, Hammer, CheckCircle2 } from 'lucide-react'
-import siteData from '@/website.json'
-import { Container } from '@/components/ui'
+'use client'
 
-const { process } = siteData
+import React, { useState, useEffect, useRef } from 'react'
+import { Container } from '@/components/ui'
+import siteData from '@/website.json'
+import { Check } from 'lucide-react'
+
+const { process: processData } = siteData
 
 /**
- * Process
+ * Process Section
  *
- * Horizontal accordion, matching the reference: all cards are equal
- * width at rest (compact — just a number + label at top, a small icon
- * near the bottom). Hovering ONE card grows it in WIDTH via flex-grow,
- * which pushes the other three narrower to compensate — the row's
- * total width never changes, only how it's divided up.
- *
- * This is a fundamentally different mechanism from a height-growth
- * card: `flex-grow` is what CSS animates here, not `height`. Every
- * card shares the same flex container, so growing one's flex-grow
- * value automatically (and smoothly, since flex-grow is transitionable)
- * steals space from its siblings — no absolute positioning or manual
- * height math needed.
- *
- * `min-w-0` on each card is required — flex items default to
- * `min-width: auto`, which would refuse to let the compact cards
- * shrink below their content's natural width, breaking the whole
- * effect.
- *
- * Content within a card cross-fades between two states (icon-only vs.
- * icon + title + description) the same way the previous version did —
- * that part didn't need to change, only what triggers the size change.
- *
- * Responsive:
- *   - lg+   : compact row, hover expands one card at a time
- *   - sm/md : hover isn't reliable on touch, so every card renders
- *             permanently expanded, stacked vertically — nothing
- *             hidden, no hover needed
+ * Smooth scroll-driven card progression with:
+ * - Extended section height to ensure all cards complete
+ * - requestAnimationFrame for 60fps smooth updates
+ * - Easing functions for natural transitions
+ * - Progress bar that completes when last card is fully active
  */
 
-function StepIcon({ name, className }: { name: string; className: string }) {
-  if (name === 'compass')
-    return <Compass className={className} strokeWidth={1.5} aria-hidden="true" />
-  if (name === 'ruler')
-    return <PenLine className={className} strokeWidth={1.5} aria-hidden="true" />
-  if (name === 'hammer')
-    return <Hammer className={className} strokeWidth={1.5} aria-hidden="true" />
-  if (name === 'check')
-    return <CheckCircle2 className={className} strokeWidth={1.5} aria-hidden="true" />
-  return null
-}
-
-type Step = { icon: string; image: string; title: string; description: string }
-
-/* ── Desktop card — horizontal accordion panel ───────────────────── */
-function ProcessCard({ step, index }: { step: Step; index: number }) {
-  const number = String(index + 1).padStart(2, '0')
-
-  return (
-    <div
-      id="process"
-      className="
-        group relative h-[26rem] min-w-0 flex-1 overflow-hidden rounded-2xl
-        bg-[#f3ede3] transition-all duration-500 ease-out
-        hover:flex-[2.5] hover:bg-accent
-      "
-    >
-      <div className="relative z-10 flex h-full flex-col p-5">
-        {/* Number + label — always visible, color shifts with the bg */}
-        <p className="whitespace-nowrap text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-dark-muted transition-colors duration-500 group-hover:text-white/70">
-          {number}. {step.title}
-        </p>
-
-        {/* Stage: rest icon vs. expanded content, cross-fading,
-            bottom-anchored so both states share the same baseline */}
-        <div className="relative mt-auto flex-1">
-          {/* Rest state — small icon badge, fades out on hover */}
-          <div className="absolute inset-x-0 bottom-0 opacity-100 transition-opacity duration-300 group-hover:opacity-0">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full border border-accent/20 bg-white">
-              <StepIcon name={step.icon} className="h-4 w-4 text-accent" />
-            </span>
-          </div>
-
-          {/* Expanded state — bigger icon, title, description. Only
-              actually readable once the card has grown, so a slight
-              delay lets the width animation lead the content fade-in. */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 opacity-0 transition-opacity duration-500 delay-100 group-hover:opacity-100">
-            <span className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15">
-              <StepIcon name={step.icon} className="h-6 w-6 text-white" />
-            </span>
-            <h3 className="mt-6 whitespace-nowrap text-xl font-black uppercase leading-tight text-white">
-              {step.title}
-            </h3>
-            <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/85">
-              {step.description}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-/* ── Mobile/tablet card — permanently expanded.
-     Hover isn't reliable on touch, so there's nothing to reveal —
-     icon + title + description are always visible. ── */
-function SimpleCard({ step, index }: { step: Step; index: number }) {
-  const number = String(index + 1).padStart(2, '0')
-
-  return (
-    <div className="rounded-2xl bg-cream p-6">
-      <p className="text-[0.7rem] font-semibold uppercase tracking-[0.15em] text-dark-muted">
-        {number}. {step.title}
-      </p>
-      <span className="mt-6 flex h-10 w-10 items-center justify-center rounded-full border border-accent/20 bg-white">
-        <StepIcon name={step.icon} className="h-5 w-5 text-accent" />
-      </span>
-      <h3 className="mt-4 text-xl font-black uppercase leading-[0.95] tracking-[-0.03em] text-dark">
-        {step.title}
-      </h3>
-      <p className="mt-3 text-sm leading-relaxed text-dark-muted">{step.description}</p>
-    </div>
-  )
+// Smooth easing function for natural transitions
+const easeInOutCubic = (t: number): number => {
+  return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2
 }
 
 export default function Process() {
+  const [scrollProgress, setScrollProgress] = useState(0)
+  const sectionRef = useRef<HTMLElement>(null)
+  const rafRef = useRef<number>(1)
+
+  useEffect(() => {
+    let ticking = false
+
+    const updateScrollProgress = () => {
+      if (!sectionRef.current) {
+        ticking = false
+        return
+      }
+
+      const section = sectionRef.current
+      const rect = section.getBoundingClientRect()
+      const viewportHeight = window.innerHeight
+
+      /**
+       * Calculate scroll progress (0 → 1)
+       *
+       * Start: When section top hits 70% down viewport
+       * End: When section bottom is 30% up viewport
+       *
+       * This ensures:
+       * - First card activates smoothly when entering
+       * - Last card completes fully before leaving viewport
+       * - Progress bar reaches 100% before next section
+       */
+      const sectionTop = rect.top
+      const sectionBottom = rect.bottom
+      const sectionHeight = rect.height
+
+      const startTrigger = viewportHeight * 0.7
+      const endTrigger = viewportHeight * 0.3
+
+      // Total scroll range from start to finish
+      const scrollRange = sectionHeight + (startTrigger - endTrigger)
+
+      // Current progress through that range
+      const rawProgress = (startTrigger - sectionTop) / scrollRange
+
+      // Clamp between 0 and 1
+      const clampedProgress = Math.max(0, Math.min(1, rawProgress))
+
+      setScrollProgress(clampedProgress)
+      ticking = false
+    }
+
+    const handleScroll = () => {
+      if (!ticking) {
+        rafRef.current = requestAnimationFrame(updateScrollProgress)
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    updateScrollProgress() // Initial calculation
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current)
+      }
+    }
+  }, [])
+
+  const numSteps = processData.steps.length
+
+  /**
+   * Calculate card activation level (0 → 1)
+   *
+   * Each card has:
+   * - Entry phase: fades in
+   * - Active phase: fully visible
+   * - Exit phase: fades out
+   *
+   * Phases overlap slightly for smooth transitions
+   */
+  const getCardActivation = (index: number): number => {
+    const stepSize = 1 / numSteps
+    const cardCenter = (index + 0.5) * stepSize
+
+    // Distance from card's center point
+    const distance = Math.abs(scrollProgress - cardCenter)
+
+    // Activation range (card is active within ±40% of its window)
+    const activationRange = stepSize * 0.6
+
+    if (distance > activationRange) {
+      return 0
+    }
+
+    // Calculate activation with smooth easing
+    const rawActivation = 1 - distance / activationRange
+    return easeInOutCubic(rawActivation)
+  }
+
   return (
-    <section id="process" aria-labelledby="process-heading" className="bg-white py-16 lg:py-24">
-      <Container>
-        {/* Centred heading block */}
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
-            <span className="h-5" aria-hidden="true" />
-            {process.label}
-          </p>
-          <h2 id="process-heading" className="mt-4">
-            <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
-              {process.heading}
-            </span>
-            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
-              {process.script}
-            </span>
-          </h2>
-          <p className="mx-auto mt-6 max-w-xl text-p leading-relaxed text-dark-muted">
-            {process.subheading}
-          </p>
-        </div>
+    <section
+      ref={sectionRef}
+      id="process"
+      className="relative bg-white"
+      style={{
+        // Extended height ensures smooth completion
+        // Each card needs space to fully activate/deactivate
+        minHeight: '300vh',
+      }}
+    >
+      {/* Sticky container stays in viewport */}
+      <div className="sticky top-0 left-0 w-full h-screen flex items-center py-16">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            {/* LEFT: Card stack */}
+            <div className="flex flex-col gap-6">
+              {processData.steps.map((step, idx) => {
+                const activation = getCardActivation(idx)
+                const isActive = activation > 0.5
 
-        {/* ── sm/md: every card permanently expanded, stacked ── */}
-        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:hidden">
-          {process.steps.map((step, i) => (
-            <SimpleCard key={step.title} step={step} index={i} />
-          ))}
-        </div>
+                return (
+                  <div
+                    key={idx}
+                    className={`rounded-2xl p-8 ${
+                      isActive ? 'bg-[#3c2515] shadow-xl' : 'bg-[#f4efe8] shadow-md'
+                    }`}
+                    style={{
+                      opacity: 0.3 + activation * 0.7,
+                      transform: `scale(${0.96 + activation * 0.04})`,
+                      transition: 'background-color 0.6s ease, box-shadow 0.6s ease',
+                    }}
+                  >
+                    <div
+                      className={`text-3xl font-black mb-4 tracking-tight transition-colors duration-600 ${
+                        isActive ? 'text-white/20' : 'text-[#c28b6e]'
+                      }`}
+                    >
+                      {(idx + 1).toString().padStart(2, '0')}
+                    </div>
 
-        {/* ── lg+: horizontal accordion — flex row, each card flex-1 at
-             rest, hover:flex-[2.5] on the hovered one. min-w-0 is what
-             lets the other cards actually compress instead of refusing
-             to shrink below their content width. ── */}
-        <div className="mt-12 hidden gap-4 lg:flex">
-          {process.steps.map((step, i) => (
-            <ProcessCard key={step.title} step={step} index={i} />
-          ))}
-        </div>
-      </Container>
+                    <h3
+                      className={`text-xl font-bold mb-4 transition-colors duration-600 ${
+                        isActive ? 'text-white' : 'text-dark'
+                      }`}
+                    >
+                      {step.title}
+                    </h3>
+
+                    <div
+                      className="overflow-hidden"
+                      style={{
+                        maxHeight: `${activation * 200}px`,
+                        opacity: activation,
+                        transition: 'max-height 0.6s ease, opacity 0.6s ease',
+                      }}
+                    >
+                      <p
+                        className={`text-sm leading-relaxed ${isActive ? 'text-white/85' : 'text-dark-muted'}`}
+                      >
+                        {step.description}
+                      </p>
+                    </div>
+                  </div>
+                )
+              })}
+            </div>
+
+            {/* CENTER: Progress indicator */}
+            <div className="hidden lg:flex relative h-[500px] w-12 flex-col items-center justify-start py-4">
+              {/* Track */}
+              <div className="absolute top-0 bottom-0 w-0.5 bg-[#f4efe8]" />
+
+              {/* Fill */}
+              <div
+                className="absolute top-0 w-0.5 bg-[#3c2515]"
+                style={{
+                  height: `${scrollProgress * 100}%`,
+                  transition: 'none', // No transition - driven by scroll
+                }}
+              />
+
+              {/* Checkmark indicator */}
+              <div
+                className="absolute w-8 h-8 rounded-full bg-[#3c2515] text-white flex items-center justify-center z-10 ring-4 ring-white shadow-sm"
+                style={{
+                  top: `${scrollProgress * 100}%`,
+                  transform: 'translateY(-50%)',
+                  transition: 'none', // No transition - driven by scroll
+                }}
+              >
+                <Check size={16} strokeWidth={3} />
+              </div>
+            </div>
+
+            {/* RIGHT: Sticky heading */}
+            <div className="flex flex-col items-start">
+              <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted mb-4">
+                {processData.label}
+              </p>
+
+              <h2 className="mb-6 leading-[0.9]">
+                <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+                  {processData.heading}
+                </span>
+                <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
+                  {processData.script}
+                </span>
+              </h2>
+
+              <p className="text-p text-dark-muted leading-relaxed max-w-sm">
+                {processData.subheading}
+              </p>
+            </div>
+          </div>
+        </Container>
+      </div>
     </section>
   )
 }

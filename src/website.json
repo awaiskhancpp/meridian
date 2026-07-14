@@ -57,6 +57,9 @@
   "about": {
     "label": "About Us",
     "heading": "A team built",
+    "badge": {
+      "label": "See Gallery"
+    },
     "script": "around your home.",
     "subheading": "Kinetic started with a simple frustration: too many remodels feel rushed, disconnected, or over-promised. We built our process around the opposite — real design direction before a single wall comes down, one point of contact throughout, and craftsmanship that holds up long after the crew leaves.",
     "cta": { "label": "See How We Work", "href": "#why-choose-us" },
@@ -79,10 +82,10 @@
       }
     ],
     "card": {
-      "label": "Our promise",
-      "stat": "100%",
-      "subStat": "Every project gets our full attention — from first sketch to final walkthrough.",
-      "cta": "See our process"
+      "label": "OUR EXPERIENCE",
+      "stat": "10+",
+      "subStat": "Years creating beautiful kitchens, baths, and homes.",
+      "cta": "Our Process"
     }
   },
   "services": {
@@ -260,7 +263,11 @@
         "title": "Walkthrough & Handoff",
         "description": "We don't consider the job done until you've walked every room and signed off. Your home, finished right."
       }
-    ]
+    ],
+    "cta": {
+      "label": "Request a Quote",
+      "href": "#contact"
+    }
   },
   "testimonials": {
     "label": "Client Stories",
