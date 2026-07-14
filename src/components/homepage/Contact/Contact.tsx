@@ -193,17 +193,6 @@ export default function Contact() {
                                 onClick={() => handleServiceSelect(service)}
                                 className="flex cursor-pointer items-center gap-3 px-4 py-3 transition-colors hover:bg-[#f4efe8]"
                               >
-                                {/* Radio circle, not a checkbox square —
-                                    only one of these can ever be filled
-                                    at once, so the exclusive-choice shape
-                                    matches the actual behavior. */}
-                                {/* <div
-                                  className={`flex h-4 w-4 shrink-0 items-center justify-center rounded-full border transition-colors ${
-                                    isSelected ? 'border-dark' : 'border-[rgba(60,37,21,0.32)]'
-                                  }`}
-                                >
-                                  {isSelected && <span className="h-2 w-2 rounded-full bg-dark" />}
-                                </div> */}
                                 <span className="text-sm text-dark">{service}</span>
                               </div>
                             )
