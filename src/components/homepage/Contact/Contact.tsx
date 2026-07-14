@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import siteData from '@/website.json'
 import { Button, Container } from '@/components/ui'
 import { ArrowUpRight } from 'lucide-react'
-
+import Image from 'next/image'
 const { contact } = siteData
 
 export default function Contact() {
@@ -27,95 +27,107 @@ export default function Contact() {
   }
 
   return (
-    <section id="contact" aria-labelledby="contact-heading" className=" pb-10  lg:pb-14">
-      <Container>
-        <div className="rounded-[30px] bg-white p-6 ">
-          <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-            <div>
-              <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{contact.label}</p>
-              <h2 id="contact-heading" className="mt-1">
-                <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
-                  {contact.heading}
-                </span>
-                <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
-                  {contact.script}
-                </span>
-              </h2>
-              <p className="mt-6 max-w-md text-p text-dark-muted">{contact.subheading}</p>
-            </div>
+    <section
+      id="contact"
+      aria-labelledby="contact-heading"
+      // Made section relative and added min-height so the background image has room to breathe
+      className="relative flex min-h-[90vh] items-center py-16 lg:py-26"
+    >
+      {/* FULL WIDTH BACKGROUND IMAGE */}
+      <Image src="/hero.webp" alt="" fill className="absolute inset-0 z-0 object-cover" />
 
-            <div>
-              {submitted ? (
-                <div className="rounded-[24px] border h-[437px] border-[rgba(60,37,21,0.08)] flex justify-center items-center flex-col bg-cream p-6">
-                  <p className="text-sm font-medium text-dark">
-                    Thanks. Your message is in, and we will be in touch soon.
-                  </p>
-                  <br />
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setSubmitted(false)
-                      setFormData({ name: '', phone: '', email: '', message: '' })
-                    }}
-                    className="mt-4 text-sm font-semibold tracking-[0.12em] text-dark underline underline-offset-4 hover:text-accent"
-                  >
-                    Send another message
-                  </button>
+      {/* Optional overlay to soften the image and make the content card pop */}
+      <div className="absolute inset-0 z-0 bg-black/30" />
+
+      <Container className="relative z-10 w-full">
+        {/* RESPONSIVE CARD: Stacked vertically, constrained width on desktop */}
+        <div className="mx-auto flex w-full max-w-4xl flex-col gap-12 rounded-[30px] bg-white p-8 shadow-2xl sm:p-12 lg:gap-16">
+          {/* TOP: Heading Section */}
+          <div>
+            <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{contact.label}</p>
+            <h2 id="contact-heading" className="mt-1">
+              <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+                {contact.heading}
+              </span>
+              <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
+                {contact.script}
+              </span>
+            </h2>
+            <p className="mt-6 max-w-md text-p text-dark-muted">{contact.subheading}</p>
+          </div>
+
+          {/* BOTTOM: Form Section */}
+          <div className="w-full">
+            {submitted ? (
+              <div className="rounded-[24px] border h-[437px] border-[rgba(60,37,21,0.08)] flex justify-center items-center flex-col bg-cream p-6">
+                <p className="text-sm font-medium text-dark">
+                  Thanks. Your message is in, and we will be in touch soon.
+                </p>
+                <br />
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSubmitted(false)
+                    setFormData({ name: '', phone: '', email: '', message: '' })
+                  }}
+                  className="mt-4 text-sm font-semibold tracking-[0.12em] text-dark underline underline-offset-4 hover:text-accent"
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} noValidate className="grid gap-6">
+                <UnderlineField
+                  id="contact-name"
+                  label={contact.fields.name.label}
+                  name="name"
+                  placeholder={contact.fields.name.placeholder}
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+
+                <div className="grid gap-6 sm:grid-cols-2">
+                  <UnderlineField
+                    id="contact-phone"
+                    label={contact.fields.phone.label}
+                    name="phone"
+                    placeholder={contact.fields.phone.placeholder}
+                    value={formData.phone}
+                    onChange={handleChange}
+                  />
+                  <UnderlineField
+                    id="contact-email"
+                    label={contact.fields.email.label}
+                    name="email"
+                    type="email"
+                    placeholder={contact.fields.email.placeholder}
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} noValidate className="grid gap-6">
-                  <UnderlineField
-                    id="contact-name"
-                    label={contact.fields.name.label}
-                    name="name"
-                    placeholder={contact.fields.name.placeholder}
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
 
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    <UnderlineField
-                      id="contact-phone"
-                      label={contact.fields.phone.label}
-                      name="phone"
-                      placeholder={contact.fields.phone.placeholder}
-                      value={formData.phone}
-                      onChange={handleChange}
-                    />
-                    <UnderlineField
-                      id="contact-email"
-                      label={contact.fields.email.label}
-                      name="email"
-                      type="email"
-                      placeholder={contact.fields.email.placeholder}
-                      value={formData.email}
-                      onChange={handleChange}
-                    />
-                  </div>
+                <UnderlineField
+                  id="contact-message"
+                  label={contact.fields.message.label}
+                  name="message"
+                  as="textarea"
+                  rows={3}
+                  placeholder={contact.fields.message.placeholder}
+                  value={formData.message}
+                  onChange={handleChange}
+                />
 
-                  <UnderlineField
-                    id="contact-message"
-                    label={contact.fields.message.label}
-                    name="message"
-                    as="textarea"
-                    rows={3}
-                    placeholder={contact.fields.message.placeholder}
-                    value={formData.message}
-                    onChange={handleChange}
-                  />
-
-                  <Button
-                    variant="outline"
-                    size="md"
-                    type="submit"
-                    className="max-w-fit text-dark-muted rounded-none"
-                  >
-                    <span>{contact.submit}</span>
-                    <ArrowUpRight size={20} />
-                  </Button>
-                </form>
-              )}
-            </div>
+                <Button
+                  variant="outline"
+                  size="md"
+                  type="submit"
+                  className="max-w-fit text-dark-muted rounded-none"
+                >
+                  <span>{contact.submit}</span>
+                  <ArrowUpRight size={20} />
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </Container>

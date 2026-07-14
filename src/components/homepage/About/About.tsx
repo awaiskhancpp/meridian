@@ -150,12 +150,6 @@ export default function About() {
 
             <p className="mt-3 max-w-[28rem] text-p text-dark-muted">{about.subheading}</p>
 
-            <div className="mt-5">
-              <Button variant="line" size="md" href={about.cta.href} className="max-w-fit">
-                <span>{about.cta.label}</span> <ArrowUpRight size={20} />
-              </Button>
-            </div>
-
             <div className="mt-6 w-full max-w-[34rem]">
               <div className="grid gap-3">
                 {about.features.map((feature) => (
@@ -178,6 +172,11 @@ export default function About() {
                 ))}
               </div>
             </div>
+            <div className="mt-5">
+              <Button variant="line" size="md" href={about.cta.href} className="max-w-fit">
+                <span>{about.cta.label}</span> <ArrowUpRight size={20} />
+              </Button>
+            </div>
           </div>
 
           {/* This div is the grid item — `lg:items-stretch` on the grid
@@ -189,7 +188,7 @@ export default function About() {
                 chains through nested divs. Mobile/tablet keep the
                 aspect-ratio-driven sizing since there's no stretched
                 row to match there. */}
-            <div className="overflow-hidden   lg:absolute lg:inset-0">
+            <div className="overflow-hidden lg:absolute lg:inset-0">
               <div className="relative aspect-[4/5] w-full lg:aspect-auto lg:h-full">
                 <Image src={about.image} alt={about.heading} fill className="object-cover" />
               </div>
@@ -216,15 +215,6 @@ export default function About() {
               <p className="mt-3 text-sm leading-relaxed uppercase text-[rgba(255,255,255,0.82)]">
                 {about.card.subStat}
               </p>
-              <a
-                href={about.cta.href}
-                className="mt-4 inline-flex items-center gap-2 w-full items-center justify-center text-sm font-semibold tracking-[0.14em] text-white transition-colors hover:text-cream"
-              >
-                {about.card.cta}
-                <span className="flex ml-auto">
-                  <ArrowUpRight />
-                </span>
-              </a>
             </div>
           </div>
         </div>

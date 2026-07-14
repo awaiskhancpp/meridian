@@ -22,7 +22,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer id="footer" className="bg-[#f3ede3]">
+    <footer id="footer" className="border-t border-dark">
       <Container>
         <div className="mx-auto w-full  py-8  lg:py-10">
           <div className="grid gap-8 px-5 py-6 backdrop-blur-sm sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:py-8">
@@ -43,12 +43,12 @@ export default function Footer() {
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted min-w-[5rem] shrink-0">
                   Menu
                 </p>
-                <div className="mt-2 lg:mt-0 grid content-start gap-3">
+                <div className="mt-2 lg:mt-0 grid content-start gap-3 lg:gap-6">
                   {footerLinks.map((item) => (
                     <a
                       key={item.label}
                       href={item.href}
-                      className="text-sm font-medium uppercase whitespace-nowrap tracking-[0.14em] text-dark transition-colors hover:text-accent"
+                      className="text-xs font-medium uppercase whitespace-nowrap tracking-[0.14em] text-dark transition-colors hover:text-accent"
                     >
                       {item.label}
                     </a>
@@ -61,12 +61,12 @@ export default function Footer() {
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted min-w-[5rem] shrink-0">
                   Follow us
                 </p>
-                <div className="mt-2 lg:mt-0 grid content-start items-start gap-3">
+                <div className="mt-2 lg:mt-0 grid content-start items-start gap-3 lg:gap-6">
                   {socialLinks.map((item) => (
                     <a
                       key={item.label}
                       href={item.href}
-                      className="text-sm font-medium uppercase tracking-[0.14em] text-dark transition-colors hover:text-accent"
+                      className="text-xs font-medium uppercase tracking-[0.14em] text-dark transition-colors hover:text-accent"
                     >
                       {item.label}
                     </a>
@@ -75,7 +75,7 @@ export default function Footer() {
               </div>
 
               {/* Contact Section */}
-              <div className="mt-6 md:mt-0 lg:gap-4 flex gap-2 flex-col md:flex-row">
+              <div className="mt-6 md:mt-0 lg:gap-4 flex gap-3 flex-col md:flex-row">
                 <p className="text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted min-w-[5rem] shrink-0">
                   Contact
                 </p>

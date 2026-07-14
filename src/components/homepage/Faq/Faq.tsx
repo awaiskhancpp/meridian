@@ -86,9 +86,9 @@ export default function FAQ() {
                     type="button"
                     onClick={() => setOpenIndex(open ? null : index)}
                     aria-expanded={open}
-                    className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left sm:px-6 sm:py-5"
+                    className="flex w-full items-center justify-between gap-4 px-5 py-2 text-left sm:px-6 sm:py-3"
                   >
-                    <span className="text-base font-semibold text-dark sm:text-lg">
+                    <span className="text-md font-semibold text-dark sm:text-lg">
                       {item.question}
                     </span>
                     <PlusMinusIcon open={open} />
