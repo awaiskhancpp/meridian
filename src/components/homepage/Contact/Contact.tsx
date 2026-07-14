@@ -41,11 +41,6 @@ export default function Contact() {
     setFormData((previous) => ({ ...previous, [name]: value }))
   }
 
-  // Single-select now — picking a service replaces whatever was picked
-  // before (there's only ever one, not an array), and the dropdown
-  // closes immediately since there's nothing further to add. Clicking
-  // the already-selected service again clears it, so there's still a
-  // way to get back to "nothing selected" without a separate clear button.
   function handleServiceSelect(service: string) {
     setFormData((prev) => ({
       ...prev,
@@ -60,7 +55,7 @@ export default function Contact() {
   }
 
   const commonClass =
-    'w-full border-0 border-b border-[rgba(60,37,21,0.32)] bg-transparent px-0 pb-2 text-sm text-dark outline-none placeholder:text-dark-muted focus:border-accent focus:ring-0'
+    'w-full border-0 border-b border-white/30 bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white/60 focus:border-accent focus:ring-0'
 
   return (
     <section
@@ -72,19 +67,19 @@ export default function Contact() {
       <Image src="/hero.webp" alt="" fill className="absolute inset-0 z-0 object-cover" />
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 z-0 bg-[#4A3424]/40" />
+      <div className="absolute inset-0 z-0 bg-black/40" />
 
       <Container className="relative z-10 w-full">
         {/* RESPONSIVE CARD */}
-        <div className="mx-auto flex w-full max-w-3xl flex-col gap-8 bg-white  p-8 ">
+        <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 bg-dark p-8 shadow-2xl sm:p-12">
           {/* TOP: Heading Section (Centered) */}
           <div className="flex flex-col items-center text-center">
-            <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{contact.label}</p>
+            <p className="text-xs uppercase tracking-[0.34em] text-white/70">{contact.label}</p>
             <h2 id="contact-heading" className="mt-2">
-              <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+              <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-white">
                 {contact.heading}
               </span>
-              <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
+              <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-white">
                 {contact.script}
               </span>
             </h2>
@@ -93,8 +88,8 @@ export default function Contact() {
           {/* BOTTOM: Form Section */}
           <div className="w-full">
             {submitted ? (
-              <div className="flex h-[437px] flex-col items-center justify-center rounded-[24px] border border-[rgba(60,37,21,0.08)] bg-cream p-6">
-                <p className="text-sm font-medium text-dark">
+              <div className="flex h-[437px] flex-col items-center justify-center rounded-[24px] border border-white/20 bg-white/5 p-6 backdrop-blur-sm">
+                <p className="text-sm font-medium text-white">
                   Thanks. Your message is in, and we will be in touch soon.
                 </p>
                 <br />
@@ -104,7 +99,7 @@ export default function Contact() {
                     setSubmitted(false)
                     setFormData({ name: '', phone: '', email: '', message: '', service: '' })
                   }}
-                  className="mt-4 text-sm font-semibold tracking-[0.12em] text-dark underline underline-offset-4 hover:text-accent"
+                  className="mt-4 text-sm font-semibold tracking-[0.12em] text-white underline underline-offset-4 hover:text-accent"
                 >
                   Send another message
                 </button>
@@ -143,7 +138,7 @@ export default function Contact() {
 
                   {/* SERVICE DROPDOWN — single-select */}
                   <div className="relative grid gap-3">
-                    <span className="text-xs uppercase tracking-[0.22em] text-dark-muted">
+                    <span className="text-xs uppercase tracking-[0.22em] text-white">
                       Service of Interest
                     </span>
 
@@ -153,8 +148,8 @@ export default function Contact() {
                       className={`${commonClass} flex h-12 w-full cursor-pointer items-center justify-between text-left`}
                     >
                       <span
-                        className={`flex-1 min-w-0 truncate pr-4 ${
-                          formData.service ? 'text-dark' : 'text-dark-muted'
+                        className={`min-w-0 flex-1 truncate pr-4 ${
+                          formData.service ? 'text-white' : 'text-white/60'
                         }`}
                       >
                         {formData.service || 'Select a service...'}
@@ -162,7 +157,7 @@ export default function Contact() {
 
                       <ChevronDown
                         size={18}
-                        className={`shrink-0 text-dark-muted transition-transform duration-300 ${
+                        className={`shrink-0 text-white/60 transition-transform duration-300 ${
                           isDropdownOpen ? 'rotate-180' : ''
                         }`}
                       />
@@ -180,7 +175,8 @@ export default function Contact() {
                         <div
                           role="listbox"
                           aria-label="Service of interest"
-                          className="absolute left-0 top-full z-20 mt-1 max-h-60 w-full overflow-y-auto rounded-none border border-[rgba(60,37,21,0.1)] bg-white py-2 shadow-xl"
+                          // Added classes to hide scrollbar across all major browsers
+                          className="absolute left-0 top-full z-20 mt-1 max-h-60 w-full overflow-y-auto rounded-none border border-white/20 bg-dark py-2 shadow-xl [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
                         >
                           {AVAILABLE_SERVICES.map((service) => {
                             const isSelected = formData.service === service
@@ -191,9 +187,9 @@ export default function Contact() {
                                 role="option"
                                 aria-selected={isSelected}
                                 onClick={() => handleServiceSelect(service)}
-                                className="flex cursor-pointer items-center gap-3 px-4 py-3 transition-colors hover:bg-[#f4efe8]"
+                                className="flex cursor-pointer items-center gap-3 px-4 py-3 transition-colors hover:bg-white/10"
                               >
-                                <span className="text-sm text-dark">{service}</span>
+                                <span className="text-sm text-white">{service}</span>
                               </div>
                             )
                           })}
@@ -215,15 +211,18 @@ export default function Contact() {
                   onChange={handleChange}
                 />
 
-                <Button
-                  variant="outline"
-                  size="md"
-                  type="submit"
-                  className="max-w-fit rounded-none text-dark-muted"
-                >
-                  <span>{contact.submit}</span>
-                  <ArrowUpRight size={20} />
-                </Button>
+                <div className="flex justify-center">
+                  <Button
+                    variant="outline"
+                    size="md"
+                    type="submit"
+                    // Added ! modifiers to force these hover states over the Button component's defaults
+                    className="max-w-fit rounded-none border-white/30 text-white hover:!bg-white hover:!text-dark"
+                  >
+                    <span>{contact.submit}</span>
+                    <ArrowUpRight size={20} />
+                  </Button>
+                </div>
               </form>
             )}
           </div>
@@ -257,11 +256,11 @@ function UnderlineField({
   rows = 1,
 }: FieldProps) {
   const commonClass =
-    'w-full border-0 border-b border-[rgba(60,37,21,0.32)] bg-transparent px-0 pb-2 text-sm text-dark outline-none placeholder:text-dark-muted focus:border-accent focus:ring-0'
+    'w-full border-0 border-b border-white/30 bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white/60 focus:border-accent focus:ring-0'
 
   return (
     <label htmlFor={id} className="grid gap-3">
-      <span className="text-xs uppercase tracking-[0.22em] text-dark-muted">{label}</span>
+      <span className="text-xs uppercase tracking-[0.22em] text-white">{label}</span>
       {as === 'textarea' ? (
         <textarea
           id={id}

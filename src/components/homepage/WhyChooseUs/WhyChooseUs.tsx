@@ -106,8 +106,8 @@ export default function WhyChooseUs() {
             ))}
           </div>
         </div>
-        <div className="flex justify-center items-center mt-6">
-          <Button variant="line" href="/#contact" className="flex gap-1">
+        <div className="flex justify-center items-center mt-8">
+          <Button variant="outline" href="/#contact" className="flex gap-1 rounded-none">
             <span>Get a free Quote</span>
             <ArrowUpRight size={20} />{' '}
           </Button>
