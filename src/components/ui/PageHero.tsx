@@ -31,7 +31,7 @@ export default function PageHero({
 }: PageHeroProps) {
   return (
     <section aria-label={heading} className="w-full">
-      <div className="relative isolate h-[60vh] min-h-[480px] w-full overflow-hidden lg:h-[85vh]">
+      <div className="relative isolate h-[60vh] min-h-[480px] w-full  lg:h-[85vh]">
         {/* Background image */}
         <Image
           src={image}

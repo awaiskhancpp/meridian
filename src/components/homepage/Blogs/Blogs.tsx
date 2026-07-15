@@ -104,7 +104,7 @@ export function BlogFeatureCard({ card }: { card: BlogItem }) {
   return (
     <article className="group h-full">
       <a href={card.href} className="block">
-        <div className="relative overflow-hidden ">
+        <div className="relative ">
           <div className="relative h-[28rem] overflow-hidden lg:h-[34rem]">
             <Image
               src={card.image}

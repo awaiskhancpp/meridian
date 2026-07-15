@@ -123,7 +123,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
         {isOpen && (
           <>
             <div className="fixed inset-0 z-20" onClick={() => setOpenDropdown(null)} />
-            <div className="absolute bottom-full left-0 z-30 mb-2 w-56 border border-black/10 bg-white py-1 shadow-xl">
+            <div className="absolute z-[999] top-full left-0 mt-2 w-56 border border-black/10 bg-white py-1 shadow-xl">
               {field.options.map((option) => (
                 <button
                   key={option}
@@ -132,7 +132,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
                     setValue(field.name, option)
                     setOpenDropdown(null)
                   }}
-                  className={`w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-cream ${
+                  className={`w-full px-4 py-2.5 text-left z-[999] text-sm transition-colors hover:bg-cream ${
                     option === selected ? 'font-medium text-dark' : 'text-dark-muted'
                   }`}
                 >
@@ -147,7 +147,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
   }
 
   return (
-    <div className="mx-auto max-w-5xl border border-black/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
+    <div className="relative z-50 mx-auto max-w-5xl border border-black/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
       <form onSubmit={handleSubmit} role="search" aria-label="Search articles">
         {/* ── Desktop: single-row layout ─────────────────────────── */}
         <div className="hidden items-stretch lg:flex h-[72px]">
@@ -155,7 +155,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
 
           <button
             type="submit"
-            className="flex shrink-0 items-center bg-[#2F2F2F] px-9 text-sm font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-[#404040]"
+            className="flex shrink-0 items-center bg-text-dark-muted px-9 text-sm font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-dark"
           >
             Search
           </button>
@@ -169,7 +169,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
 
           <button
             type="submit"
-            className="flex items-center justify-center bg-dark px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-accent"
+            className="flex items-center justify-center bg-text-dark-muted px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-accent"
           >
             Search
           </button>
