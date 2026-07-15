@@ -1,7 +1,3 @@
-import React from 'react'
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
-import { toBlogCard } from '@/lib/blogs'
 import {
   Navbar,
   Hero,
@@ -27,18 +23,6 @@ import {
  * to the static siteData items if the CMS has no featured posts yet.
  */
 export default async function Homepage() {
-  const payload = await getPayload({ config: configPromise })
-
-  const { docs } = await payload.find({
-    collection: 'blogs',
-    depth: 1,
-    where: { featured: { equals: true } },
-    limit: 6,
-    sort: '-datePosted',
-  })
-
-  const featuredPosts = docs.map(toBlogCard)
-
   return (
     <main className="min-h-screen bg-white">
       <Navbar />

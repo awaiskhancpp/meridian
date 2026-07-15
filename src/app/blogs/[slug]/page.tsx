@@ -2,50 +2,41 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
 import Navbar from '@/components/homepage/Navbar/Navbar'
 import Footer from '@/components/homepage/Footer/Footer'
-import { Container } from '@/components/ui'
+import { Container, PageHero } from '@/components/ui'
 import RichText, { extractHeadings } from '@/lib/richText'
-import { CATEGORY_LABELS, getAuthorName } from '@/lib/blogs'
-import type { Media } from '@/payload-types'
+import { CATEGORY_LABELS } from '@/lib/blogs'
 import PostFaqs from './PostFaqs'
 
-/**
- * Single blog post page — matches the reference layout:
- *   breadcrumb -> title -> author/date/read-time row -> cover image ->
- *   two-column body (rich text + sticky "Contents" sidebar) -> FAQ
- *   accordion at the bottom.
- *
- * The sidebar ToC prefers the post's manually-curated
- * `tableOfContents` field; if that's empty, it falls back to
- * auto-extracting h2/h3 headings straight from the rich text so a
- * post never ships with an empty/missing ToC just because an editor
- * skipped that field.
- */
+// 1. Import your static JSON data
+import websiteData from '@/website.json' // Update this path if website.json is located elsewhere
 
-export async function generateStaticParams() {
-  const payload = await getPayload({ config: configPromise })
-  const { docs } = await payload.find({ collection: 'blogs', limit: 200, depth: 0 })
-  return docs.map((post) => ({ slug: post.slug }))
+// 2. Define the expected structure based on your JSON + optional page fields
+type BlogPost = (typeof websiteData.blogs.items)[0] & {
+  content?: string
+  tableOfContents?: { heading: string; anchorId: string }[]
+  faqs?: any[]
+  readTimeMinutes?: number
 }
 
-async function getPost(slug: string) {
-  const payload = await getPayload({ config: configPromise })
-  const { docs } = await payload.find({
-    collection: 'blogs',
-    where: { slug: { equals: slug } },
-    depth: 2,
-    limit: 1,
-  })
-  return docs[0] ?? null
+// 3. Generate static routes directly from the JSON array
+export async function generateStaticParams() {
+  return websiteData.blogs.items.map((post) => ({ slug: post.slug }))
+}
+
+// 4. Fetch the post locally from the imported JSON
+async function getPost(slug: string): Promise<BlogPost | null> {
+  const post = websiteData.blogs.items.find((p) => p.slug === slug)
+  return post ? (post as BlogPost) : null
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const post = await getPost(slug)
+
   if (!post) return {}
+
   return {
     title: `${post.title} | Meridian Journal`,
     description: post.description,
@@ -75,32 +66,39 @@ function AuthorAvatar({ name }: { name: string }) {
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const post = await getPost(slug)
+
   if (!post) notFound()
 
-  const media = post.image as Media | number
-  const imageUrl = typeof media === 'object' ? media?.url : undefined
-  const imageAlt = typeof media === 'object' ? (media?.alt ?? post.title) : post.title
+  // 5. Simplified Media - Since it's from JSON, it's always a string now
+  const imageUrl = post.image
+  const imageAlt = post.imageAlt || post.title
 
-  // FIX: post.author is `number | User` (a relationship field), never a
-  // plain string — passing it directly into AuthorAvatar/the byline span
-  // (both expecting `string`) was the source of the reported error.
-  // getAuthorName resolves it to the author's display name (falling back
-  // to email, then to '' if somehow unpopulated) in one place shared
-  // with the blog card helper, so both usages stay in sync.
-  const authorName = getAuthorName(post.author)
+  // 6. Simplified Author - Directly a string in JSON, no helper needed
+  const authorName = post.author
 
+  // 7. Fallback content logic for TOC (since content isn't in JSON yet)
+  const rawContent = post.content || ''
   const toc =
     post.tableOfContents && post.tableOfContents.length > 0
       ? post.tableOfContents.map((item) => ({ heading: item.heading, anchorId: item.anchorId }))
-      : extractHeadings(post.content)
+      : extractHeadings(rawContent)
 
-  const categoryLabel = CATEGORY_LABELS[post.category] ?? post.category
+  // 8. Safely handle the category label
+  const categoryLabel =
+    CATEGORY_LABELS[post.category as keyof typeof CATEGORY_LABELS] ?? post.category
 
   return (
     <main className="min-h-screen scroll-smooth bg-white">
       <Navbar />
+      <PageHero
+        label="Journal"
+        heading="Article"
+        script="Details"
+        subheading="Read our latest insights and stories"
+        image="/hero.webp"
+      />
 
-      <article className="pt-28 lg:pt-36">
+      <article className="pt-12 lg:pt-16">
         <Container className="!max-w-4xl">
           {/* Breadcrumb */}
           <nav
@@ -143,18 +141,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <Container className="!max-w-4xl">
           <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[1fr_15rem]">
             <div className="min-w-0">
-              <RichText content={post.content} />
+              {/* Note: Content will be blank until added to website.json */}
+              <RichText content={rawContent} />
 
-              {/* Per-post FAQ — sits inside the body column (not full
-                  section width) since it's tied to THIS post's content,
-                  not a site-wide section. Only renders when the post
-                  actually has FAQs. */}
+              {/* Per-post FAQ */}
               {post.faqs && post.faqs.length > 0 && <PostFaqs faqs={post.faqs} />}
             </div>
 
-            {/* Sidebar — sticky on lg+, sits inline above the body on
-                smaller screens where there's no room for a true side
-                rail without squeezing the reading column too narrow. */}
+            {/* Sidebar */}
             {toc.length > 0 && (
               <aside className="order-first lg:order-last">
                 <div className="lg:sticky lg:top-28">

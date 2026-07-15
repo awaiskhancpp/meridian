@@ -48,7 +48,7 @@ interface HeroSearchBarProps {
 
 const DEFAULT_FIELDS: SearchField[] = [
   { type: 'text', name: 'title', label: 'Title', placeholder: 'Search by title…' },
-  { type: 'text', name: 'author', label: 'Author', placeholder: 'Search by author…' },
+  // { type: 'text', name: 'author', label: 'Author', placeholder: 'Search by author…' },
   {
     type: 'select',
     name: 'sort',
@@ -126,7 +126,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
         {isOpen && (
           <>
             <div className="fixed inset-0 z-20" onClick={() => setOpenDropdown(null)} />
-            <div className="absolute bottom-full left-0 z-30 mb-2 w-56 border border-white/20 bg-[#654b38] py-1 shadow-xl backdrop-blur-md">
+            <div className="absolute bottom-full left-0 z-30 mb-2 w-full border border-white/20 bg-[rgba(60,37,21,0.82)] py-1 shadow-xl backdrop-blur-md">
               {field.options.map((option) => (
                 <button
                   key={option}
@@ -150,7 +150,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
   }
 
   return (
-    <div className="border max-w-5xl mx-auto border-white/20 bg-[#654b38]/90 backdrop-blur-md">
+    <div className="border max-w-5xl mx-auto border-white/20 bg-[rgba(60,37,21,0.82)] backdrop-blur-md">
       <Container>
         <form onSubmit={handleSubmit} role="search" aria-label="Search articles">
           {/* ── Desktop: single-row layout ─────────────────────────── */}

@@ -8,7 +8,7 @@ interface PageHeroProps {
   /** Main sans heading e.g. "Notes from the" */
   heading: string
   /** Script accent line e.g. "studio." */
-  script: string
+  script?: string
   /** Optional short subheading below the script */
   subheading?: string
   /** Background image path — defaults to hero.webp */
@@ -21,18 +21,6 @@ interface PageHeroProps {
   formSlot?: React.ReactNode
 }
 
-/**
- * PageHero
- *
- * Reusable inner-page hero that mirrors the homepage Hero layout:
- * - Full-viewport-height background image
- * - Same gradient overlay
- * - Same horizontal rule near the bottom
- * - Label + heading + script anchored to the bottom-left
- *
- * Accepts props so every inner page can supply its own copy.
- * The Navbar sits on top of it (fixed, z-50) just like on the homepage.
- */
 export default function PageHero({
   label,
   heading,
@@ -60,9 +48,9 @@ export default function PageHero({
         {/* Horizontal rule near the bottom */}
         {/* <div className="pointer-events-none absolute inset-x-0 bottom-24 h-px bg-white/20 sm:bottom-26 lg:bottom-32" /> */}
 
-        <Container className="relative flex h-full flex-col  pb-8 pt-24 sm:pb-10 sm:pt-28 lg:pb-12 ">
+        <Container className="relative mx-auto flex h-full flex-col pb-8 pt-24 justify-center items-center sm:pb-10 sm:pt-28 lg:pb-12">
           {/* Eyebrow */}
-          <div className="flex flex-col justify-center items-center text-center">
+          <div className="flex w-full flex-col justify-center items-center text-center">
             <p className="mb-3 text-xs font-medium uppercase tracking-[0.34em] text-white/70">
               {label}
             </p>

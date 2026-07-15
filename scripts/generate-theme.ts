@@ -27,7 +27,7 @@ import {
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-const outPath = resolve(__dirname, '../src/app/(frontend)/theme.generated.css')
+const outPath = resolve(__dirname, '../src/app/theme.generated.css')
 
 // ─── Build CSS ────────────────────────────────────────────────────────────────
 

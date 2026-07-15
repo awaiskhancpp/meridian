@@ -26,7 +26,20 @@ import { CATEGORY_LABELS, type BlogCardData } from '@/lib/blogs'
 
 const SEARCH_FIELDS: SearchField[] = [
   { type: 'text', name: 'title', label: 'Title', placeholder: 'Search by title…' },
-  { type: 'text', name: 'author', label: 'Author', placeholder: 'Search by author…' },
+  {
+    type: 'select',
+    name: 'Category',
+    label: 'Category',
+    placeholder: 'Search by author…',
+    options: [
+      'Kitchen Remodeling',
+      'Bathroom Remodeling',
+      'Whole-Home Remodeling',
+      'Design Tips',
+      'Materials & Finishes',
+      'Project Planning',
+    ],
+  },
   {
     type: 'select',
     name: 'sort',
@@ -108,13 +121,13 @@ export default function BlogsPageClient({
             </p>
           </div>
 
-          <div className="mb-10">
+          {/* <div className="mb-10">
             <CategoryFilterPills
               categories={categoriesPresent}
               active={category}
               onChange={setCategory}
             />
-          </div>
+          </div> */}
 
           {filtered.length === 0 ? (
             <p className="py-16 text-center text-sm text-dark-muted">

@@ -1,8 +1,6 @@
 import React from 'react'
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
+
 import siteData from '@/website.json'
-import { toBlogCard } from '@/lib/blogs'
 import BlogsPageClient from './BlogsPageClient'
 
 const { blogs } = siteData
@@ -26,20 +24,9 @@ export const metadata = {
  * list.
  */
 export default async function BlogsPage() {
-  const payload = await getPayload({ config: configPromise })
-
-  const { docs } = await payload.find({
-    collection: 'blogs',
-    depth: 1,
-    limit: 100,
-    sort: '-datePosted',
-  })
-
-  const posts = docs.map(toBlogCard)
-
   return (
     <BlogsPageClient
-      posts={posts}
+      posts={blogs.items}
       heroProps={{
         label: blogs.label,
         heading: blogs.heading,
