@@ -23,9 +23,8 @@ export default function AreasPageClient() {
               All Services
             </h2>
           </div>
-          <p className="text-sm text-dark-muted">
-            {services.items.length} {services.items.length === 1 ? 'service' : 'services'}
-          </p>
+          <p className="text-sm text-dark-muted"></p> {services.items.length}{' '}
+          {services.items.length === 1 ? 'service' : 'services'}
         </div>
         <div className="mt-8 grid grid-cols-4 gap-x-4  gap-y-8">
           {services.items.map((s, i) => (
