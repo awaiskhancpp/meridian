@@ -100,7 +100,7 @@ type BlogItem = {
   href: string
 }
 
-function BlogFeatureCard({ card }: { card: BlogItem }) {
+export function BlogFeatureCard({ card }: { card: BlogItem }) {
   return (
     <article className="group h-full">
       <a href={card.href} className="block">

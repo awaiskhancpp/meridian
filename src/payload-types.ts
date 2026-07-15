@@ -69,6 +69,8 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
+    'form-submissions': FormSubmission;
+    blogs: Blog;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -78,6 +80,8 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
+    'form-submissions': FormSubmissionsSelect<false> | FormSubmissionsSelect<true>;
+    blogs: BlogsSelect<false> | BlogsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -123,6 +127,10 @@ export interface UserAuthOperations {
  */
 export interface User {
   id: number;
+  /**
+   * Shown publicly as the author byline on blog posts (e.g. "Written by Jane Smith"). Falls back to the account email if left blank.
+   */
+  name?: string | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -162,6 +170,119 @@ export interface Media {
   focalY?: number | null;
 }
 /**
+ * Contact form submissions from the website.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "form-submissions".
+ */
+export interface FormSubmission {
+  id: number;
+  name: string;
+  email: string;
+  phone?: string | null;
+  service?:
+    | (
+        | 'kitchen-remodeling'
+        | 'bathroom-remodeling'
+        | 'whole-home-remodeling'
+        | 'home-additions'
+        | 'custom-cabinetry'
+        | 'flooring'
+        | 'design-consultation'
+        | 'project-planning'
+        | 'other'
+      )
+    | null;
+  message?: string | null;
+  status?: ('new' | 'in-review' | 'contacted' | 'closed') | null;
+  submittedAt?: string | null;
+  /**
+   * Captured server-side for spam tracking.
+   */
+  ipAddress?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * Journal / blog posts shown on the homepage carousel and the /blogs page.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blogs".
+ */
+export interface Blog {
+  id: number;
+  title: string;
+  /**
+   * Used in the post URL: /blogs/[slug]. Lowercase, hyphenated, no spaces.
+   */
+  slug: string;
+  /**
+   * Short excerpt shown on blog cards (homepage carousel + listing grid).
+   */
+  description: string;
+  image: number | Media;
+  /**
+   * Automatically set to whoever creates the post — not editable.
+   */
+  author: number | User;
+  datePosted: string;
+  category:
+    | 'kitchen-remodeling'
+    | 'bathroom-remodeling'
+    | 'whole-home-remodeling'
+    | 'design-tips'
+    | 'materials-finishes'
+    | 'project-planning';
+  /**
+   * Featured posts appear in the homepage Journal carousel.
+   */
+  featured?: boolean | null;
+  /**
+   * Leave blank to auto-calculate from the body content (~200 words/minute) on save.
+   */
+  readTimeMinutes?: number | null;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  /**
+   * Leave empty to auto-generate from H2/H3 headings in the body. Fill in manually for editorial control over which headings appear and how they're labeled.
+   */
+  tableOfContents?:
+    | {
+        heading: string;
+        /**
+         * Must match the target heading's rendered id (e.g. "getting-started").
+         */
+        anchorId: string;
+        id?: string | null;
+      }[]
+    | null;
+  /**
+   * Shown as an accordion at the bottom of this post. Leave empty to omit the section entirely.
+   */
+  faqs?:
+    | {
+        question: string;
+        answer: string;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -192,6 +313,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
+      } | null)
+    | ({
+        relationTo: 'form-submissions';
+        value: number | FormSubmission;
+      } | null)
+    | ({
+        relationTo: 'blogs';
+        value: number | Blog;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -240,6 +369,7 @@ export interface PayloadMigration {
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  name?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -274,6 +404,54 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "form-submissions_select".
+ */
+export interface FormSubmissionsSelect<T extends boolean = true> {
+  name?: T;
+  email?: T;
+  phone?: T;
+  service?: T;
+  message?: T;
+  status?: T;
+  submittedAt?: T;
+  ipAddress?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blogs_select".
+ */
+export interface BlogsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  description?: T;
+  image?: T;
+  author?: T;
+  datePosted?: T;
+  category?: T;
+  featured?: T;
+  readTimeMinutes?: T;
+  content?: T;
+  tableOfContents?:
+    | T
+    | {
+        heading?: T;
+        anchorId?: T;
+        id?: T;
+      };
+  faqs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

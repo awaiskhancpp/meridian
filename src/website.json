@@ -1,6 +1,6 @@
 {
   "brand": {
-    "name": "KINETIC",
+    "name": "MERIDIAN",
     "tagline": "Kitchen, bath, and whole-home remodeling."
   },
   "nav": {
@@ -10,7 +10,7 @@
       { "label": "Home", "href": "#hero" },
       { "label": "Service Areas", "href": "#service-areas" },
       { "label": "Projects", "href": "#projects" },
-      { "label": "Blogs", "href": "#blogs" },
+      { "label": "Blogs", "href": "/blogs" },
       { "label": "About", "href": "#about" }
     ],
     "services": [

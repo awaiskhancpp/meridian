@@ -194,14 +194,15 @@ export default function About() {
                 minimal: icon + one short label, no stat, no cta — its job
                 is a quick trust signal you register in passing, not
                 something you stop and read. */}
-            <div className="absolute left-4 bottom-4 sm:left-6 w-[15rem] z-10 flex items-center gap-2  bg-[rgba(60,37,21,0.82)] px-4 py-2 text-white backdrop-blur-md">
+            <a
+              href="/#gallery"
+              className="absolute left-4 bottom-4 sm:left-6 w-[15rem] z-10 flex items-center gap-2  bg-[rgba(60,37,21,0.82)] px-4 py-2 text-white backdrop-blur-md"
+            >
               <span className="text-sm font-semibold tracking-[0.14em]">{about.badge.label}</span>
               <span className="ml-auto flex h-6 w-6 items-center justify-between rounded-full ">
-                <a href="/#gallery">
-                  <ArrowUpRight />
-                </a>
+                <ArrowUpRight />
               </span>
-            </div>
+            </a>
 
             <div className="absolute left-4 bottom-15 max-w-[15rem]  bg-[rgba(60,37,21,0.82)] p-4 text-white  backdrop-blur-md sm:left-6 sm:bottom-15">
               <p className="text-xs uppercase tracking-[0.28em] text-[rgba(255,255,255,0.72)]">

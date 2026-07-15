@@ -16,6 +16,13 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '*.public.blob.vercel-storage.com',
+        port: '',
+      },
+    ],
   },
   webpack: (webpackConfig) => {
     webpackConfig.resolve.extensionAlias = {

@@ -22,6 +22,8 @@ const AVAILABLE_SERVICES = [
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [serverError, setServerError] = useState<string | null>(null)
   const [formData, setFormData] = useState<{
     name: string
     phone: string
@@ -49,9 +51,31 @@ export default function Contact() {
     setIsDropdownOpen(false)
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSubmitted(true)
+    setServerError(null)
+    setIsSubmitting(true)
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        setServerError(data.error ?? 'Something went wrong. Please try again.')
+        return
+      }
+
+      setSubmitted(true)
+    } catch {
+      setServerError('Network error. Please check your connection and try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const commonClass =
@@ -211,15 +235,20 @@ export default function Contact() {
                   onChange={handleChange}
                 />
 
-                <div className="flex justify-center">
+                <div className="flex flex-col items-center gap-3">
+                  {serverError && (
+                    <p className="text-sm text-red-300" role="alert">
+                      {serverError}
+                    </p>
+                  )}
                   <Button
                     variant="outline"
                     size="md"
                     type="submit"
-                    // Added ! modifiers to force these hover states over the Button component's defaults
-                    className="max-w-fit rounded-none border-white/30 text-white hover:!bg-white hover:!text-dark"
+                    disabled={isSubmitting}
+                    className="max-w-fit rounded-none border-white/30 text-white hover:!bg-white hover:!text-dark disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    <span>{contact.submit}</span>
+                    <span>{isSubmitting ? 'Sending…' : contact.submit}</span>
                     <ArrowUpRight size={20} />
                   </Button>
                 </div>

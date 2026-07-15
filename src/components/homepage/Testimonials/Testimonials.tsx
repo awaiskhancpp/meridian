@@ -32,7 +32,7 @@ export default function Testimonials() {
   const item = items[index]
 
   return (
-    <section id="testimonials" aria-labelledby="testimonials-heading" className=" py-16   lg:py-24">
+    <section id="testimonials" aria-labelledby="testimonials-heading" className="py-16 lg:py-24">
       <Container>
         {/* Centered heading */}
         <div className="text-center">
@@ -44,34 +44,36 @@ export default function Testimonials() {
             <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
               {testimonials.heading}
             </span>
-            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
+            <span className="block font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] italic leading-none text-accent capitalize">
               {testimonials.script}
             </span>
           </h2>
 
-          <p className="mt-5 text-p text-dark-muted max-w-xl mx-auto">{testimonials.subheading}</p>
+          <p className="mx-auto mt-5 max-w-xl text-p text-dark-muted">{testimonials.subheading}</p>
         </div>
 
         {/* Testimonial card with nav buttons on sides */}
-        <div className="mt-14 flex items-center gap-4 lg:gap-8">
+        {/* Added max-w-4xl and mx-auto to bring arrows closer on lg screens */}
+        <div className="mx-auto mt-14 flex max-w-4xl items-center justify-center gap-4 lg:gap-8">
           {/* Left nav */}
           <button
             type="button"
             onClick={prev}
             aria-label="Previous testimonial"
-            className="shrink-0 flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(60,37,21,0.2)] text-dark transition-colors hover:border-accent hover:text-accent"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[rgba(60,37,21,0.2)] text-dark transition-colors hover:border-accent hover:text-accent"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           </button>
 
           {/* Testimonial content */}
+          {/* Added min-heights and flex-col to prevent jumping up and down */}
           <div
-            className={`flex-1 max-w-3xl mx-auto transition-all duration-300 ease-out ${
+            className={`flex min-h-[360px] flex-1 flex-col justify-center transition-all duration-300 ease-out  md:min-h-[240px] lg:min-h-[320px] ${
               visible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
             }`}
           >
             <Quote
-              className="h-10 w-10 text-accent mx-auto"
+              className="mx-auto h-10 w-10 text-accent"
               fill="currentColor"
               strokeWidth={0}
               aria-hidden="true"
@@ -97,7 +99,7 @@ export default function Testimonials() {
             type="button"
             onClick={next}
             aria-label="Next testimonial"
-            className="shrink-0 flex h-11 w-11 items-center justify-center rounded-full border border-[rgba(60,37,21,0.2)] text-dark transition-colors hover:border-accent hover:text-accent"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[rgba(60,37,21,0.2)] text-dark transition-colors hover:border-accent hover:text-accent"
           >
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </button>

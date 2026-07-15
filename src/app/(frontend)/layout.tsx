@@ -24,8 +24,9 @@ const allura = localFont({
 })
 
 export const metadata = {
-  description: 'A warm, editorial remodeling template with a white background and soft brown accents.',
-  title: 'Kinetic | Remodeling Template',
+  description:
+    'A warm, editorial remodeling template with a white background and soft brown accents.',
+  title: 'Meridian | Remodeling Template',
 }
 
 export default function RootLayout(props: { children: React.ReactNode }) {

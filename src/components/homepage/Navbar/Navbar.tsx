@@ -124,11 +124,7 @@ export default function Navbar() {
     >
       <Container className="relative">
         <div className="flex items-center justify-between gap-4">
-          <a
-            href="#hero"
-            className={`flex items-center gap-3 ${textClasses}`}
-            aria-label={brand.name}
-          >
+          <a href="/" className={`flex items-center gap-3 ${textClasses}`} aria-label={brand.name}>
             {nav.img ? (
               <Image src={nav.img} alt={brand.name} width={112} height={80} />
             ) : (

@@ -1,2 +1,6 @@
 export { default as Button } from './Button'
 export { default as Container } from './Container'
+export { default as PageHero } from './PageHero'
+export { default as HeroSearchBar } from './HeroSearchBar'
+export type { SearchField } from './HeroSearchBar'
+export { default as CategoryFilterPills } from './CategoryFilterPills'
