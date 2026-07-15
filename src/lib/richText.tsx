@@ -76,17 +76,96 @@ export function estimateReadTimeMinutes(content: LexicalContent): number {
   return Math.max(1, Math.round(words / 200))
 }
 
+/**
+ * A "pseudo-heading": a paragraph whose content starts with a bold run
+ * followed by regular continuation text in the SAME paragraph — e.g.
+ * "**Introduction** Renovating a kitchen in a Seattle home often
+ * means..." typed as one paragraph rather than an actual Heading block.
+ *
+ * Deliberately excluded:
+ *   - paragraphs inside a list item ("**Widen Windows:** If your
+ *     budget allows...") — those are emphasized list labels, not
+ *     section headings, and must not end up promoted or in the ToC.
+ *   - a paragraph that's ENTIRELY bold (no non-bold continuation) —
+ *     that's a callout/emphasis, not a "Label: content" heading.
+ *
+ * This is a heuristic, not a certainty — a paragraph like "**Note:**
+ * always confirm pricing first" at the top level would also match.
+ * The correct long-term fix for new content is authoring real Heading
+ * blocks in the editor; this exists as a safety net for content that
+ * already uses the bold-lead-in pattern instead.
+ */
+function getBoldLeadIn(node: LexicalNode, insideListItem: boolean): string | null {
+  if (insideListItem) return null
+  if (node.type !== 'paragraph' || !node.children || node.children.length < 2) return null
+
+  const [first, ...rest] = node.children
+  if (first.type !== 'text') return null
+
+  const firstFormat = typeof first.format === 'number' ? first.format : 0
+  const isBold = (firstFormat & TEXT_FORMAT.BOLD) !== 0
+  const label = first.text?.trim()
+  if (!isBold || !label) return null
+
+  const hasNonBoldContinuation = rest.some((child) => {
+    if (child.type !== 'text') return true // links, etc. count as continuation
+    const format = typeof child.format === 'number' ? child.format : 0
+    return (format & TEXT_FORMAT.BOLD) === 0 && (child.text ?? '').trim().length > 0
+  })
+  if (!hasNonBoldContinuation) return null
+
+  return label.replace(/:$/, '')
+}
+
+/** Walks the whole tree once, assigning each heading node a stable,
+ *  de-duplicated anchor id — shared by both extractHeadings() (below)
+ *  and RichText's own heading rendering, so the sidebar ToC's links and
+ *  the actual ids on the page can never drift out of sync.
+ *
+ *  Without de-duplication, two headings with identical text (e.g. two
+ *  "Overview" sections) would both slugify to the same id, and a ToC
+ *  link to the second one would just jump to the first. */
+function computeHeadingIdMap(root: LexicalNode): Map<LexicalNode, string> {
+  const seenCounts = new Map<string, number>()
+  const idMap = new Map<LexicalNode, string>()
+
+  function nextId(base: string): string {
+    const count = seenCounts.get(base) ?? 0
+    seenCounts.set(base, count + 1)
+    return count === 0 ? base : `${base}-${count + 1}`
+  }
+
+  function walk(node: LexicalNode, insideListItem: boolean) {
+    if (node.type === 'heading' && node.tag) {
+      const text = extractText(node)
+      if (text) idMap.set(node, nextId(slugify(text)))
+    } else {
+      const leadIn = getBoldLeadIn(node, insideListItem)
+      if (leadIn) idMap.set(node, nextId(slugify(leadIn)))
+    }
+    const nextInsideListItem = insideListItem || node.type === 'listitem'
+    node.children?.forEach((child) => walk(child, nextInsideListItem))
+  }
+
+  walk(root, false)
+  return idMap
+}
+
 /** Walks the tree collecting {heading, anchorId} for every h2/h3 — a
  *  fallback ToC generator for posts that didn't fill in the manual
- *  tableOfContents field on the collection. */
+ *  tableOfContents field on the collection. Ids come from
+ *  computeHeadingIdMap so they exactly match what RichText renders,
+ *  including the same de-duplication for repeated heading text. */
 export function extractHeadings(content: LexicalContent): { heading: string; anchorId: string }[] {
   if (!content?.root) return []
+  const idMap = computeHeadingIdMap(content.root)
   const out: { heading: string; anchorId: string }[] = []
 
   function walk(node: LexicalNode) {
     if (node.type === 'heading' && (node.tag === 'h2' || node.tag === 'h3')) {
       const text = extractText(node)
-      if (text) out.push({ heading: text, anchorId: slugify(text) })
+      const anchorId = idMap.get(node)
+      if (text && anchorId) out.push({ heading: text, anchorId })
     }
     node.children?.forEach(walk)
   }
@@ -114,12 +193,16 @@ function renderText(node: LexicalNode, key: React.Key) {
   return <React.Fragment key={key}>{el}</React.Fragment>
 }
 
-function renderChildren(nodes: LexicalNode[] | undefined) {
+function renderChildren(nodes: LexicalNode[] | undefined, idMap: Map<LexicalNode, string>) {
   if (!nodes) return null
-  return nodes.map((node, i) => renderNode(node, i))
+  return nodes.map((node, i) => renderNode(node, i, idMap))
 }
 
-function renderNode(node: LexicalNode, key: React.Key): React.ReactNode {
+function renderNode(
+  node: LexicalNode,
+  key: React.Key,
+  idMap: Map<LexicalNode, string>,
+): React.ReactNode {
   switch (node.type) {
     case 'text':
       return renderText(node, key)
@@ -130,13 +213,13 @@ function renderNode(node: LexicalNode, key: React.Key): React.ReactNode {
     case 'paragraph':
       return (
         <p key={key} className="mb-5 text-[0.95rem] leading-relaxed text-dark-muted">
-          {renderChildren(node.children)}
+          {renderChildren(node.children, idMap)}
         </p>
       )
 
     case 'heading': {
       const text = extractText(node)
-      const id = slugify(text)
+      const id = idMap.get(node) ?? slugify(text)
 
       const headingClasses: Record<string, string> = {
         h1: 'mt-14 mb-5 scroll-mt-28 text-3xl font-black uppercase tracking-[-0.03em] text-dark md:text-4xl',
@@ -149,28 +232,28 @@ function renderNode(node: LexicalNode, key: React.Key): React.ReactNode {
         case 'h1':
           return (
             <h1 key={key} id={id} className={headingClasses.h1}>
-              {renderChildren(node.children)}
+              {renderChildren(node.children, idMap)}
             </h1>
           )
 
         case 'h3':
           return (
             <h3 key={key} id={id} className={headingClasses.h3}>
-              {renderChildren(node.children)}
+              {renderChildren(node.children, idMap)}
             </h3>
           )
 
         case 'h4':
           return (
             <h4 key={key} id={id} className={headingClasses.h4}>
-              {renderChildren(node.children)}
+              {renderChildren(node.children, idMap)}
             </h4>
           )
 
         default:
           return (
             <h2 key={key} id={id} className={headingClasses.h2}>
-              {renderChildren(node.children)}
+              {renderChildren(node.children, idMap)}
             </h2>
           )
       }
@@ -185,7 +268,7 @@ function renderNode(node: LexicalNode, key: React.Key): React.ReactNode {
             node.listType === 'number' ? 'list-decimal pl-5' : 'list-none pl-0'
           }`}
         >
-          {renderChildren(node.children)}
+          {renderChildren(node.children, idMap)}
         </Tag>
       )
     }
@@ -199,14 +282,14 @@ function renderNode(node: LexicalNode, key: React.Key): React.ReactNode {
               aria-hidden="true"
             />
           )}
-          {renderChildren(node.children)}
+          {renderChildren(node.children, idMap)}
         </li>
       )
 
     case 'quote':
       return (
         <blockquote key={key} className="mb-6 border-l-4 border-accent pl-5 italic text-dark-muted">
-          {renderChildren(node.children)}
+          {renderChildren(node.children, idMap)}
         </blockquote>
       )
 
@@ -224,7 +307,7 @@ function renderNode(node: LexicalNode, key: React.Key): React.ReactNode {
           rel={newTab ? 'noopener noreferrer' : undefined}
           className="text-accent underline decoration-accent/40 underline-offset-2 transition-colors hover:decoration-accent"
         >
-          {renderChildren(node.children)}
+          {renderChildren(node.children, idMap)}
         </Link>
       )
     }
@@ -254,7 +337,7 @@ function renderNode(node: LexicalNode, key: React.Key): React.ReactNode {
           className="mb-8 overflow-x-auto rounded-lg border border-[rgba(60,37,21,0.12)]"
         >
           <table className="w-full border-collapse text-left text-sm">
-            <tbody>{renderChildren(node.children)}</tbody>
+            <tbody>{renderChildren(node.children, idMap)}</tbody>
           </table>
         </div>
       )
@@ -262,7 +345,7 @@ function renderNode(node: LexicalNode, key: React.Key): React.ReactNode {
     case 'tablerow':
       return (
         <tr key={key} className="border-b border-[rgba(60,37,21,0.1)] last:border-none">
-          {renderChildren(node.children)}
+          {renderChildren(node.children, idMap)}
         </tr>
       )
 
@@ -278,7 +361,7 @@ function renderNode(node: LexicalNode, key: React.Key): React.ReactNode {
               : 'text-dark-muted'
           }`}
         >
-          {renderChildren(node.children)}
+          {renderChildren(node.children, idMap)}
         </Cell>
       )
     }
@@ -287,12 +370,13 @@ function renderNode(node: LexicalNode, key: React.Key): React.ReactNode {
       // Unknown/unsupported node type — render children if any exist,
       // rather than dropping content or throwing.
       return node.children ? (
-        <React.Fragment key={key}>{renderChildren(node.children)}</React.Fragment>
+        <React.Fragment key={key}>{renderChildren(node.children, idMap)}</React.Fragment>
       ) : null
   }
 }
 
 export default function RichText({ content }: { content: LexicalContent }) {
   if (!content?.root?.children) return null
-  return <div className="richtext">{renderChildren(content.root.children)}</div>
+  const idMap = computeHeadingIdMap(content.root)
+  return <div className="richtext">{renderChildren(content.root.children, idMap)}</div>
 }
