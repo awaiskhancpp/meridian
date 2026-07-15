@@ -13,9 +13,9 @@ export function ServiceAreaGrid({ title, description, image, imageAlt }: Service
         <div className="border border-t-text-dark my-2 pr-4" />
         <p>{description}</p>
       </div>
-      <div className="relative mt-1 w-full aspect-square w-full">
+      {/* <div className="relative mt-1 w-full aspect-square w-full">
         <Image src={image} alt={imageAlt} fill className="object-cover" />
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -119,12 +119,6 @@
         "imageAlt": "Open concept living room in Mountlake Terrace WA"
       },
       {
-        "title": "Mukilteo, WA",
-        "description": "Mukilteo’s Harbour Pointe community and waterfront neighborhoods feature homes from the 1990s that are now prime candidates for contemporary interior design.",
-        "image": "/hero.webp",
-        "imageAlt": "Luxury master bathroom in Mukilteo WA"
-      },
-      {
         "title": "Seattle, WA",
         "description": "From the Craftsman bungalows of Ballard to the grand estates of Laurelhurst, Seattle’s diverse neighborhoods offer endless opportunities for custom renovations.",
         "image": "/home-about.avif",
@@ -714,6 +708,12 @@
         "avatar": "/person_1.jpg"
       }
     ]
+  },
+  "map": {
+    "label": "Find Us",
+    "heading": "Visit our",
+    "script": "office.",
+    "address": "734 University Ave. Suite 205, San Diego, CA 92103"
   },
   "gallery": {
     "label": "Our Work",

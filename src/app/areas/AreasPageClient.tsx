@@ -1,4 +1,4 @@
-import { Contact, Footer, Navbar, Services } from '@/components/homepage'
+import { Contact, Footer, Map, Navbar, Services } from '@/components/homepage'
 import { ServiceAreaGrid } from '@/components/homepage/Services/ServiceAreaGrid'
 import { Container, PageHero } from '@/components/ui'
 import siteData from '@/website.json'
@@ -26,7 +26,7 @@ export default function AreasPageClient() {
           <p className="text-sm text-dark-muted"></p> {services.items.length}{' '}
           {serviceAreas.areas.length === 1 ? 'Area' : 'Areas'}
         </div>
-        <div className="mt-8 grid grid-cols-3 gap-x-4  gap-y-8">
+        <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4  gap-y-8">
           {serviceAreas.areas.map((s, i) => (
             <ServiceAreaGrid
               key={i}
@@ -38,6 +38,7 @@ export default function AreasPageClient() {
           ))}
         </div>
       </Container>
+      <Map />
       <Contact />
       <Footer />
     </div>
