@@ -26,7 +26,7 @@ export default function AreasPageClient() {
           <p className="text-sm text-dark-muted"></p> {services.items.length}{' '}
           {services.items.length === 1 ? 'service' : 'services'}
         </div>
-        <div className="mt-8 grid grid-cols-4 gap-x-4  gap-y-8">
+        <div className="mt-8 grid grid-cols-3 gap-x-4  gap-y-8">
           {services.items.map((s, i) => (
             <ServiceAreaGrid key={i} title={s.title} description={s.description} image={s.image} />
           ))}
