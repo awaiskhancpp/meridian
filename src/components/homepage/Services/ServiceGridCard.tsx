@@ -50,9 +50,9 @@ export default function ServiceGridCard({ service }: { service: ServiceCardData 
           alt={service.title}
           fill
           //   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover "
         />
-        {service.badge && (
+        {service.icon && (
           <span className="absolute right-3 top-3 rounded-full bg-dark/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
             <ServiceIcon name={service.icon} />
           </span>
