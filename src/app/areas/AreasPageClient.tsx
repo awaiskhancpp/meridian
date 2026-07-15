@@ -17,18 +17,24 @@ export default function AreasPageClient() {
         <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="">
             <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
-              {serviceAreas.label}
+              Primary {serviceAreas.label}
             </p>
             <h2 className="mt-2 text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
-              All Services
+              Surrounding Areas
             </h2>
           </div>
           <p className="text-sm text-dark-muted"></p> {services.items.length}{' '}
-          {services.items.length === 1 ? 'service' : 'services'}
+          {serviceAreas.areas.length === 1 ? 'Area' : 'Areas'}
         </div>
         <div className="mt-8 grid grid-cols-3 gap-x-4  gap-y-8">
-          {services.items.map((s, i) => (
-            <ServiceAreaGrid key={i} title={s.title} description={s.description} image={s.image} />
+          {serviceAreas.areas.map((s, i) => (
+            <ServiceAreaGrid
+              key={i}
+              title={s.title}
+              description={s.description}
+              image={s.image}
+              imageAlt={s.imageAlt}
+            />
           ))}
         </div>
       </Container>

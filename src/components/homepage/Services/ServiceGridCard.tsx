@@ -43,7 +43,7 @@ function ServiceIcon({ name }: { name: string }) {
 }
 export default function ServiceGridCard({ service }: { service: ServiceCardData }) {
   return (
-    <Link href={service.href} className="group block h-[28rem]  lg:h-[34rem]">
+    <Link href={service.href} className="group block h-[28rem]  lg:h-[34rem] bg-white p-4">
       <div className="relative aspect-[4/5] w-full  ">
         <Image
           src={service.image}
@@ -60,7 +60,7 @@ export default function ServiceGridCard({ service }: { service: ServiceCardData 
       </div>
 
       {/* <div className="mt-4 flex items-start justify-between gap-3"> */}
-      <h3 className="mt-3 text-[clamp(1.5rem,2vw,2rem)] font-black uppercase leading-[0.92] tracking-[-0.04em] text-dark">
+      <h3 className="mt-2 text-[clamp(1rem,2vw,1.5rem)] font-black uppercase leading-[0.92] tracking-[-0.04em] text-dark">
         {service.title}
       </h3>
       {/* </div> */}

@@ -76,7 +76,7 @@ export default function ServicesPageClient({
   }, [services, search])
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#EFEFEF]">
       <Navbar />
 
       <PageHero

@@ -86,7 +86,51 @@
     "label": "Service Areas",
     "heading": "Our local",
     "script": "footprint.",
-    "subheading": "We bring our dedicated remodeling process and craft to neighborhoods across the greater region. Explore the communities we serve."
+    "subheading": "We bring our dedicated remodeling process and craft to neighborhoods across the greater region. Explore the communities we serve.",
+    "areas": [
+      {
+        "title": "Edmonds, WA",
+        "description": "Edmonds’ charming downtown, waterfront setting, and active arts community make it one of the most desirable places to live and invest in custom home remodeling.",
+        "image": "/hero.webp",
+        "imageAlt": "Remodeled home exterior in Edmonds WA"
+      },
+      {
+        "title": "Everett, WA",
+        "description": "From the historic Craftsman homes of Grand Avenue to the growing neighborhoods of Silver Lake, Everett homeowners are turning to us for high-quality renovations.",
+        "image": "/home-about.avif",
+        "imageAlt": "Historic craftsman home remodel in Everett WA"
+      },
+      {
+        "title": "Lynnwood, WA",
+        "description": "Lynnwood’s transformation with new light rail stations is driving homeowners to invest in renovations rather than relocate, maximizing their current property value.",
+        "image": "/hero.webp",
+        "imageAlt": "Modern kitchen renovation in Lynnwood WA"
+      },
+      {
+        "title": "Mill Creek, WA",
+        "description": "Mill Creek’s master-planned community features well-maintained homes from the 1980s and 1990s that are now 30-plus years old and ready for modern updates.",
+        "image": "/home-about.avif",
+        "imageAlt": "Bathroom remodel in Mill Creek WA"
+      },
+      {
+        "title": "Mountlake Terrace, WA",
+        "description": "With its new light rail station driving property values upward, Mountlake Terrace homeowners are making smart investments in major home remodeling.",
+        "image": "/hero.webp",
+        "imageAlt": "Open concept living room in Mountlake Terrace WA"
+      },
+      {
+        "title": "Mukilteo, WA",
+        "description": "Mukilteo’s Harbour Pointe community and waterfront neighborhoods feature homes from the 1990s that are now prime candidates for contemporary interior design.",
+        "image": "/hero.webp",
+        "imageAlt": "Luxury master bathroom in Mukilteo WA"
+      },
+      {
+        "title": "Seattle, WA",
+        "description": "From the Craftsman bungalows of Ballard to the grand estates of Laurelhurst, Seattle’s diverse neighborhoods offer endless opportunities for custom renovations.",
+        "image": "/home-about.avif",
+        "imageAlt": "Custom kitchen remodel in Seattle WA"
+      }
+    ]
   },
   "about": {
     "label": "Start Your Project",
