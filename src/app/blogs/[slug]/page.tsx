@@ -91,9 +91,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <main className="min-h-screen scroll-smooth bg-white">
       <Navbar />
       <PageHero
-        label="Journal"
-        heading="Article"
-        script="Details"
+        label=""
+        heading=""
         subheading="Read our latest insights and stories"
         image="/hero.webp"
       />

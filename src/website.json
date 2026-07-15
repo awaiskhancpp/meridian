@@ -7,11 +7,26 @@
     "menuLabel": "Menu",
     "img": "/logo.png",
     "links": [
-      { "label": "Home", "href": "#hero" },
-      { "label": "Service Areas", "href": "#service-areas" },
-      { "label": "Projects", "href": "#projects" },
-      { "label": "Blogs", "href": "/blogs" },
-      { "label": "About", "href": "#about" }
+      {
+        "label": "Home",
+        "href": "#hero"
+      },
+      {
+        "label": "Service Areas",
+        "href": "#service-areas"
+      },
+      {
+        "label": "Projects",
+        "href": "#projects"
+      },
+      {
+        "label": "Blogs",
+        "href": "/blogs"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      }
     ],
     "services": [
       "Kitchen Remodeling",
@@ -30,12 +45,24 @@
     "script": "like home",
     "subheading": "We create calm, tailored interiors with warm materials, clear planning, and craftsmanship that lasts.",
     "backgroundImage": "/hero.webp",
-    "cta": { "label": "Book Consultation", "href": "#contact" },
+    "cta": {
+      "label": "Book Consultation",
+      "href": "#contact"
+    },
     "form": {
       "fields": {
-        "name": { "label": "Name", "placeholder": "Enter your name" },
-        "email": { "label": "Email", "placeholder": "Enter your email" },
-        "phone": { "label": "Phone", "placeholder": "Enter your phone" },
+        "name": {
+          "label": "Name",
+          "placeholder": "Enter your name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter your email"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Enter your phone"
+        },
         "service": {
           "label": "Service",
           "placeholder": "Select a service",
@@ -62,7 +89,10 @@
     },
     "script": "around your home.",
     "subheading": "Kinetic started with a simple frustration: too many remodels feel rushed, disconnected, or over-promised. We built our process around the opposite.",
-    "cta": { "label": "See How We Work", "href": "#why-choose-us" },
+    "cta": {
+      "label": "See How We Work",
+      "href": "#why-choose-us"
+    },
     "image": "/home-about.avif",
     "features": [
       {
@@ -96,42 +126,90 @@
       {
         "icon": "chef-hat",
         "title": "Kitchen Remodeling",
-        "description": "New layouts, cabinetry, and finishes built around how your household actually cooks, gathers, and lives day to day."
+        "description": "New layouts, cabinetry, and finishes built around how your household actually cooks, gathers, and lives day to day.",
+        "image": "/hero.webp",
+        "startingPrice": "$18,000",
+        "timeline": "4–6 weeks",
+        "badge": "Most Popular",
+        "slug": "kitchen-remodeling",
+        "href": "/services/kitchen-remodeling"
       },
       {
         "icon": "bath",
         "title": "Bathroom Remodeling",
-        "description": "From a simple refresh to a full gut renovation — fixtures, tile, and storage chosen to fit your space and routine."
+        "description": "From a simple refresh to a full gut renovation — fixtures, tile, and storage chosen to fit your space and routine.",
+        "image": "/home-about.avif",
+        "startingPrice": "$9,500",
+        "timeline": "2–3 weeks",
+        "badge": null,
+        "slug": "bathroom-remodeling",
+        "href": "/services/bathroom-remodeling"
       },
       {
         "icon": "home",
         "title": "Whole-Home Remodeling",
-        "description": "Additions, floor-plan changes, and full-home renovations coordinated under one team from first sketch to final walkthrough."
+        "description": "Additions, floor-plan changes, and full-home renovations coordinated under one team from first sketch to final walkthrough.",
+        "image": "/hero.webp",
+        "startingPrice": "$85,000",
+        "timeline": "3–6 months",
+        "badge": "Full Service",
+        "slug": "whole-home-remodeling",
+        "href": "/services/whole-home-remodeling"
       },
       {
         "icon": "house-plus",
         "title": "Home Additions",
-        "description": "Expand your living space with thoughtfully designed additions that blend seamlessly with your home's architecture and meet your family's growing needs."
+        "description": "Expand your living space with thoughtfully designed additions that blend seamlessly with your home's architecture and meet your family's growing needs.",
+        "image": "/home-about.avif",
+        "startingPrice": "$45,000",
+        "timeline": "2–4 months",
+        "badge": null,
+        "slug": "home-additions",
+        "href": "/services/home-additions"
       },
       {
         "icon": "shelving-unit",
         "title": "Custom Cabinetry",
-        "description": "Built-to-order cabinets and storage solutions crafted to maximize space, improve organization, and complement your home's unique style."
+        "description": "Built-to-order cabinets and storage solutions crafted to maximize space, improve organization, and complement your home's unique style.",
+        "image": "/hero.webp",
+        "startingPrice": "$6,200",
+        "timeline": "6–10 weeks",
+        "badge": null,
+        "slug": "custom-cabinetry",
+        "href": "/services/custom-cabinetry"
       },
       {
         "icon": "layout-grid",
         "title": "Flooring",
-        "description": "Durable hardwood, tile, luxury vinyl, and other premium flooring options professionally installed to enhance comfort, beauty, and everyday performance."
+        "description": "Durable hardwood, tile, luxury vinyl, and other premium flooring options professionally installed to enhance comfort, beauty, and everyday performance.",
+        "image": "/home-about.avif",
+        "startingPrice": "$4,800",
+        "timeline": "1–2 weeks",
+        "badge": "Fast Turnaround",
+        "slug": "flooring",
+        "href": "/services/flooring"
       },
       {
         "icon": "pencil-line",
         "title": "Design Consultation",
-        "description": "Work one-on-one with our design team to explore ideas, refine your vision, and select finishes that bring your remodeling goals to life."
+        "description": "Work one-on-one with our design team to explore ideas, refine your vision, and select finishes that bring your remodeling goals to life.",
+        "image": "/hero.webp",
+        "startingPrice": "Free",
+        "timeline": "1 visit",
+        "badge": "Free Consultation",
+        "slug": "design-consultation",
+        "href": "/services/design-consultation"
       },
       {
         "icon": "clipboard-list",
         "title": "Project Planning",
-        "description": "Every successful renovation begins with detailed planning, transparent budgeting, and a clear timeline to keep your project organized from start to finish."
+        "description": "Every successful renovation begins with detailed planning, transparent budgeting, and a clear timeline to keep your project organized from start to finish.",
+        "image": "/home-about.avif",
+        "startingPrice": "$1,200",
+        "timeline": "1–2 weeks",
+        "badge": null,
+        "slug": "project-planning",
+        "href": "/services/project-planning"
       }
     ]
   },
@@ -148,22 +226,208 @@
         "imageAlt": "Soft interior with curtain light",
         "href": "/blogs/small-kitchen-remodel-ideas-seattle",
         "author": "Awais",
-        "category": "Technology",
+        "category": "kitchen-remodeling",
         "datePosted": "2026-07-15",
         "slug": "small-kitchen-remodel-ideas-seattle",
-        "content": "<p>Renovating a small kitchen requires careful planning to maximize every square inch. Here in Seattle, where natural light can be scarce during winter, design choices matter even more.</p><h2>Maximize Natural Light</h2><p>Using reflective surfaces and keeping window treatments minimal can significantly bounce light around the room. Consider glossy tile backsplashes or lighter cabinetry to keep the space feeling airy.</p><h2>Smart Storage Solutions</h2><p>Consider taking cabinets all the way to the ceiling to capture unused vertical space. Built-in organizers for your drawers and pull-out pantry shelves are essential for keeping clutter off the countertops.</p><h3>The Appliance Garage</h3><p>A dedicated cabinet to hide your coffee maker, toaster, and blender can visually clean up a small kitchen instantly.</p>"
+        "readTimeMinutes": 4,
+        "content": "<p>Renovating a small kitchen requires careful planning to maximize every square inch. Here in Seattle, where natural light can be scarce during winter, design choices matter even more.</p><h2>Maximize Natural Light</h2><p>Using reflective surfaces and keeping window treatments minimal can significantly bounce light around the room. Consider glossy tile backsplashes or lighter cabinetry to keep the space feeling airy.</p><h2>Smart Storage Solutions</h2><p>Consider taking cabinets all the way to the ceiling to capture unused vertical space. Built-in organizers for your drawers and pull-out pantry shelves are essential for keeping clutter off the countertops.</p><h3>The Appliance Garage</h3><p>A dedicated cabinet to hide your coffee maker, toaster, and blender can visually clean up a small kitchen instantly.</p>",
+        "tableOfContents": [
+          {
+            "heading": "Maximize Natural Light",
+            "anchorId": "maximize-natural-light"
+          },
+          {
+            "heading": "Smart Storage Solutions",
+            "anchorId": "smart-storage-solutions"
+          },
+          {
+            "heading": "The Appliance Garage",
+            "anchorId": "the-appliance-garage"
+          }
+        ],
+        "faqs": [
+          {
+            "question": "How small is too small for a kitchen remodel?",
+            "answer": "Even galley kitchens under 70 square feet can be transformed with the right layout — the limiting factor is usually storage planning, not floor area."
+          },
+          {
+            "question": "Does a small kitchen remodel cost less than a large one?",
+            "answer": "Generally yes, since less material and labor are needed, though per-square-foot costs can run higher for custom storage solutions."
+          }
+        ]
+      },
+      {
+        "title": "Designing a Spa-Style Bathroom at Home",
+        "description": "Simple material and layout choices that turn an ordinary bathroom into a daily retreat.",
+        "image": "/hero.webp",
+        "imageAlt": "Warm, minimal bathroom with natural stone",
+        "href": "/blogs/spa-style-bathroom-at-home",
+        "author": "Awais",
+        "category": "bathroom-remodeling",
+        "datePosted": "2026-07-10",
+        "slug": "spa-style-bathroom-at-home",
+        "readTimeMinutes": 3,
+        "content": "<p>A spa-style bathroom isn't about square footage — it's about slowing down the details most homeowners rush past: water flow, material texture, and light temperature.</p><h2>Choosing Calming Materials</h2><p>Honed stone, matte tile, and warm wood-look vanities read as quieter than glossy, high-contrast finishes. Texture does more work here than color.</p><h2>Water as an Experience</h2><p>A rain showerhead and a freestanding tub change how a bathroom feels to use, not just how it looks in photos.</p>",
+        "tableOfContents": [
+          {
+            "heading": "Choosing Calming Materials",
+            "anchorId": "choosing-calming-materials"
+          },
+          {
+            "heading": "Water as an Experience",
+            "anchorId": "water-as-an-experience"
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What's the most impactful upgrade in a bathroom remodel?",
+            "answer": "Rethinking the shower — a curbless entry and rain showerhead consistently change how a bathroom feels more than any surface finish."
+          },
+          {
+            "question": "How long does a typical bathroom remodel take?",
+            "answer": "Two to three weeks for a full renovation, depending on whether plumbing locations are changing."
+          }
+        ]
+      },
+      {
+        "title": "Planning a Whole-Home Remodel Without the Chaos",
+        "description": "How sequencing and a single point of contact keep a full-home renovation from unraveling mid-project.",
+        "image": "/home-about.avif",
+        "imageAlt": "Open-concept living space mid-renovation",
+        "href": "/blogs/whole-home-remodel-without-chaos",
+        "author": "Awais",
+        "category": "whole-home-remodeling",
+        "datePosted": "2026-07-05",
+        "slug": "whole-home-remodel-without-chaos",
+        "readTimeMinutes": 5,
+        "content": "<p>Whole-home remodels fail for the same reason most big projects do: decisions get made in the wrong order. Getting sequencing right up front prevents most of the surprises that derail a renovation.</p><h2>Design Before Demolition</h2><p>Every material, fixture, and layout decision should be locked in before a wall comes down. Changing your mind mid-project is where budgets and timelines both slip.</p><h2>One Team, One Timeline</h2><p>Coordinating trades under a single project lead avoids the finger-pointing that happens when subcontractors are scheduled independently.</p><h3>Living Through It</h3><p>Phasing work room by room, rather than opening the whole house at once, keeps at least part of your home livable throughout.</p>",
+        "tableOfContents": [
+          {
+            "heading": "Design Before Demolition",
+            "anchorId": "design-before-demolition"
+          },
+          {
+            "heading": "One Team, One Timeline",
+            "anchorId": "one-team-one-timeline"
+          },
+          {
+            "heading": "Living Through It",
+            "anchorId": "living-through-it"
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Can I stay in my home during a whole-home remodel?",
+            "answer": "Often yes, if the work is phased room by room — we plan sequencing specifically to keep part of the home livable."
+          },
+          {
+            "question": "How far in advance should materials be selected?",
+            "answer": "Before demolition begins. Locking in finishes early is what keeps a whole-home project on schedule."
+          }
+        ]
+      },
+      {
+        "title": "Adding a Room Without Losing Your Yard",
+        "description": "How thoughtful additions expand living space while keeping a home's outdoor footprint intact.",
+        "image": "/hero.webp",
+        "imageAlt": "Home addition blending into an existing structure",
+        "href": "/blogs/adding-a-room-without-losing-your-yard",
+        "author": "Awais",
+        "category": "home-additions",
+        "datePosted": "2026-06-28",
+        "slug": "adding-a-room-without-losing-your-yard",
+        "readTimeMinutes": 4,
+        "content": "<p>Most homeowners assume an addition means giving up half the backyard. In practice, the right footprint and orientation can add significant square footage while barely touching outdoor space.</p><h2>Building Up Instead of Out</h2><p>A second-story addition over an existing footprint preserves yard space entirely, though it requires a closer look at your home's existing structure.</p><h2>Matching the Original Architecture</h2><p>Rooflines, siding, and window proportions should echo the existing home so the addition reads as original rather than bolted on.</p>",
+        "tableOfContents": [
+          {
+            "heading": "Building Up Instead of Out",
+            "anchorId": "building-up-instead-of-out"
+          },
+          {
+            "heading": "Matching the Original Architecture",
+            "anchorId": "matching-the-original-architecture"
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Do home additions require a full architectural redesign?",
+            "answer": "Not always — additions that build on an existing footprint or match the current roofline often need less structural rework than a from-scratch design."
+          },
+          {
+            "question": "Will an addition increase my home's resale value?",
+            "answer": "Generally yes, especially additions that add bedrooms or bathrooms, though the return depends heavily on how well it matches the home's existing style."
+          }
+        ]
       },
       {
         "title": "Textures of Stillness",
         "description": "How layered materials can add quiet depth to kitchens, baths, and living spaces.",
         "image": "/hero.webp",
         "imageAlt": "Neutral textures and design materials",
-        "href": "/blogs/small-kitchen-remodel-ideas",
+        "href": "/blogs/textures-of-stillness",
         "author": "Awais",
-        "category": "Technology",
-        "datePosted": "2026-07-15",
-        "slug": "small-kitchen-remodel-ideas",
-        "content": "<p>A quiet room isn't just about acoustics; it's about visual noise. Layering materials thoughtfully creates a sense of deep calm that painted drywall alone cannot achieve.</p><h2>The Role of Natural Wood</h2><p>Incorporating natural wood tones brings immediate warmth to cold spaces. Whether it's floating white oak shelves or a custom walnut vanity, organic grain patterns ground the room.</p><h2>Matte vs. Gloss Finishes</h2><p>We prefer matte finishes for their ability to absorb light softly, reducing glare and promoting stillness. Plaster walls, honed stone counters, and brushed brass fixtures all contribute to this muted, relaxed aesthetic.</p>"
+        "category": "custom-cabinetry",
+        "datePosted": "2026-06-20",
+        "slug": "textures-of-stillness",
+        "readTimeMinutes": 3,
+        "content": "<p>A quiet room isn't just about acoustics; it's about visual noise. Layering materials thoughtfully creates a sense of deep calm that painted drywall alone cannot achieve.</p><h2>The Role of Natural Wood</h2><p>Incorporating natural wood tones brings immediate warmth to cold spaces. Whether it's floating white oak shelves or a custom walnut vanity, organic grain patterns ground the room.</p><h2>Matte vs. Gloss Finishes</h2><p>We prefer matte finishes for their ability to absorb light softly, reducing glare and promoting stillness. Plaster walls, honed stone counters, and brushed brass fixtures all contribute to this muted, relaxed aesthetic.</p>",
+        "tableOfContents": [
+          {
+            "heading": "The Role of Natural Wood",
+            "anchorId": "the-role-of-natural-wood"
+          },
+          {
+            "heading": "Matte vs. Gloss Finishes",
+            "anchorId": "matte-vs-gloss-finishes"
+          }
+        ],
+        "faqs": [
+          {
+            "question": "Is custom cabinetry more durable than stock cabinetry?",
+            "answer": "Custom cabinetry is typically built with better joinery and hardware, so it tends to hold up longer, especially in high-use kitchens."
+          },
+          {
+            "question": "How long does custom cabinetry take to build?",
+            "answer": "Usually six to ten weeks from final design approval, depending on wood species and finish complexity."
+          }
+        ]
+      },
+      {
+        "title": "Choosing the Right Floor for Every Room",
+        "description": "Matching flooring material to how a room actually gets used, not just how it looks in a showroom.",
+        "image": "/home-about.avif",
+        "imageAlt": "Wide-plank hardwood flooring in a sunlit room",
+        "href": "/blogs/choosing-the-right-floor-for-every-room",
+        "author": "Awais",
+        "category": "flooring",
+        "datePosted": "2026-06-12",
+        "slug": "choosing-the-right-floor-for-every-room",
+        "readTimeMinutes": 4,
+        "content": "<p>The flooring that looks best in a showroom isn't always the right choice for how a specific room in your home actually gets used day to day.</p><h2>Durability Where It Matters</h2><p>Entryways and kitchens see the most wear — luxury vinyl and engineered hardwood hold up better here than softer solid wood.</p><h2>Warmth Underfoot</h2><p>Bedrooms and living rooms benefit from materials that feel warm to bare feet, which is where wide-plank hardwood or wool carpet earn their keep.</p><h3>Moisture-Prone Rooms</h3><p>Bathrooms and laundry rooms need genuinely water-resistant materials — tile and waterproof vinyl remain the safest choices.</p>",
+        "tableOfContents": [
+          {
+            "heading": "Durability Where It Matters",
+            "anchorId": "durability-where-it-matters"
+          },
+          {
+            "heading": "Warmth Underfoot",
+            "anchorId": "warmth-underfoot"
+          },
+          {
+            "heading": "Moisture-Prone Rooms",
+            "anchorId": "moisture-prone-rooms"
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What flooring holds up best with pets?",
+            "answer": "Luxury vinyl plank and engineered hardwood with a higher-durability finish tend to resist scratches better than solid hardwood."
+          },
+          {
+            "question": "Is it worth mixing flooring materials room to room?",
+            "answer": "Often yes — matching material to a room's actual use (moisture, foot traffic, comfort) usually beats forcing one material through the whole home."
+          }
+        ]
       },
       {
         "title": "Light as a Material",
@@ -172,22 +436,64 @@
         "imageAlt": "Patterned light and wall shadow",
         "href": "/blogs/light-as-a-material",
         "author": "Awais",
-        "category": "Technology",
-        "datePosted": "2026-07-15",
+        "category": "design-consultation",
+        "datePosted": "2026-06-04",
         "slug": "light-as-a-material",
-        "content": "<p>We often think of materials as things we can touch—stone, wood, metal. But daylight is perhaps the most transformative material in your home, completely altering how architectural elements are perceived throughout the day.</p><h2>Direct and Indirect Lighting</h2><p>Combining recessed lighting with ambient sconces creates layers of illumination. Indirect light scraping across a textured wall highlights the craftsmanship in a way flat lighting never could.</p><h2>Shadows Matter</h2><p>Don't be afraid of shadows. They provide depth and contrast, anchoring your furniture to the room and defining spaces without the need for physical walls.</p>"
+        "readTimeMinutes": 3,
+        "content": "<p>We often think of materials as things we can touch—stone, wood, metal. But daylight is perhaps the most transformative material in your home, completely altering how architectural elements are perceived throughout the day.</p><h2>Direct and Indirect Lighting</h2><p>Combining recessed lighting with ambient sconces creates layers of illumination. Indirect light scraping across a textured wall highlights the craftsmanship in a way flat lighting never could.</p><h2>Shadows Matter</h2><p>Don't be afraid of shadows. They provide depth and contrast, anchoring your furniture to the room and defining spaces without the need for physical walls.</p>",
+        "tableOfContents": [
+          {
+            "heading": "Direct and Indirect Lighting",
+            "anchorId": "direct-and-indirect-lighting"
+          },
+          {
+            "heading": "Shadows Matter",
+            "anchorId": "shadows-matter"
+          }
+        ],
+        "faqs": [
+          {
+            "question": "What happens in a design consultation?",
+            "answer": "We walk your space, talk through how you actually use each room, and map lighting and material direction before any drawings begin."
+          },
+          {
+            "question": "Is a design consultation free?",
+            "answer": "Yes — the initial consultation is complimentary and has no obligation to move forward."
+          }
+        ]
       },
       {
         "title": "The Beauty of Restraint",
-        "description": "Why fewer, more deliberate choices often create the most memorable spaces.",
+        "description": "Why fewer, more deliberate choices — and clear planning behind them — create the most memorable spaces.",
         "image": "/hero.webp",
         "imageAlt": "Minimal interior with warm architectural lines",
         "href": "/blogs/the-beauty-of-restraint",
         "author": "Awais",
-        "category": "Technology",
-        "datePosted": "2026-07-15",
+        "category": "project-planning",
+        "datePosted": "2026-05-27",
         "slug": "the-beauty-of-restraint",
-        "content": "<p>In modern design, the temptation to add 'just one more thing' is strong. Restraint is the discipline of knowing when to stop, allowing the fundamental structure of the room to speak for itself.</p><h2>Curating Your Palette</h2><p>Sticking to three primary materials or colors prevents visual clutter. If you have bold marble veining, let the cabinetry and flooring act as quiet supporting characters.</p><h2>Negative Space</h2><p>Leaving walls blank or surfaces empty allows the architecture of your home to breathe. It turns the items you <em>do</em> display into focal points rather than background noise.</p>"
+        "readTimeMinutes": 3,
+        "content": "<p>In modern design, the temptation to add 'just one more thing' is strong. Restraint is the discipline of knowing when to stop — and that discipline starts with planning, not decorating.</p><h2>Curating Your Palette Early</h2><p>Sticking to three primary materials or colors, decided before construction starts, prevents visual clutter and costly mid-project changes.</p><h2>Negative Space</h2><p>Leaving walls blank or surfaces empty allows the architecture of your home to breathe. It turns the items you <em>do</em> display into focal points rather than background noise.</p>",
+        "tableOfContents": [
+          {
+            "heading": "Curating Your Palette Early",
+            "anchorId": "curating-your-palette-early"
+          },
+          {
+            "heading": "Negative Space",
+            "anchorId": "negative-space"
+          }
+        ],
+        "faqs": [
+          {
+            "question": "How far in advance should a project be planned?",
+            "answer": "Ideally all material and scope decisions are finalized before demolition — that's what keeps a restrained, deliberate design intact through construction."
+          },
+          {
+            "question": "Does planning add time to a project?",
+            "answer": "It adds time up front but typically shortens the build itself by avoiding decisions made (and reversed) mid-project."
+          }
+        ]
       }
     ]
   },
@@ -202,10 +508,22 @@
       "Materials chosen with real intention"
     ],
     "stats": [
-      { "value": "24h", "label": "Average response time" },
-      { "value": "10+", "label": "Years remodeling homes" },
-      { "value": "5-step", "label": "A defined process, every time" },
-      { "value": "100%", "label": "Estimates in writing" }
+      {
+        "value": "24h",
+        "label": "Average response time"
+      },
+      {
+        "value": "10+",
+        "label": "Years remodeling homes"
+      },
+      {
+        "value": "5-step",
+        "label": "A defined process, every time"
+      },
+      {
+        "value": "100%",
+        "label": "Estimates in writing"
+      }
     ]
   },
   "faq": {
@@ -246,10 +564,22 @@
     "script": "conversation.",
     "subheading": "Tell us about your space, your goals, and your timeline. We will guide you through the next steps with care and intention.",
     "fields": {
-      "name": { "label": "Name", "placeholder": "Your name" },
-      "phone": { "label": "Phone", "placeholder": "Phone number" },
-      "email": { "label": "Email", "placeholder": "Email address" },
-      "message": { "label": "Message", "placeholder": "Tell us about your project" }
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "Phone number"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Email address"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us about your project"
+      }
     },
     "submit": "Send Request"
   },
@@ -339,12 +669,36 @@
     "heading": "Building spaces,",
     "script": "shaping stories.",
     "items": [
-      { "image": "/home-about.avif", "alt": "", "label": "Warm living room remodel" },
-      { "image": "/hero.webp", "alt": "", "label": "Full kitchen transformation" },
-      { "image": "/home-about.avif", "alt": "", "label": "Custom built-in millwork" },
-      { "image": "/hero.webp", "alt": "", "label": "Primary suite renovation" },
-      { "image": "/home-about.avif", "alt": "", "label": "Spa-style bathroom" },
-      { "image": "/hero.webp", "alt": "", "label": "Outdoor living space" }
+      {
+        "image": "/home-about.avif",
+        "alt": "",
+        "label": "Warm living room remodel"
+      },
+      {
+        "image": "/hero.webp",
+        "alt": "",
+        "label": "Full kitchen transformation"
+      },
+      {
+        "image": "/home-about.avif",
+        "alt": "",
+        "label": "Custom built-in millwork"
+      },
+      {
+        "image": "/hero.webp",
+        "alt": "",
+        "label": "Primary suite renovation"
+      },
+      {
+        "image": "/home-about.avif",
+        "alt": "",
+        "label": "Spa-style bathroom"
+      },
+      {
+        "image": "/hero.webp",
+        "alt": "",
+        "label": "Outdoor living space"
+      }
     ]
   }
 }

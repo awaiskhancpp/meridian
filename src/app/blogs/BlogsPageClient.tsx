@@ -25,12 +25,11 @@ import { CATEGORY_LABELS, type BlogCardData } from '@/lib/blogs'
  */
 
 const SEARCH_FIELDS: SearchField[] = [
-  { type: 'text', name: 'title', label: 'Title', placeholder: 'Search by title…' },
   {
     type: 'select',
     name: 'Category',
     label: 'Category',
-    placeholder: 'Search by author…',
+    placeholder: 'Search by Category…',
     options: [
       'Kitchen Remodeling',
       'Bathroom Remodeling',
@@ -47,6 +46,7 @@ const SEARCH_FIELDS: SearchField[] = [
     options: ['Latest', 'Oldest', 'A–Z'],
     placeholder: 'Latest',
   },
+  { type: 'text', name: 'title', label: 'Title', placeholder: 'Search by title…' },
 ]
 
 export default function BlogsPageClient({
@@ -105,7 +105,7 @@ export default function BlogsPageClient({
         formSlot={<HeroSearchBar fields={SEARCH_FIELDS} onSearch={setSearch} />}
       />
 
-      <section aria-label="All articles" className="py-16 lg:py-24">
+      <section aria-label="All articles" className="py-16 lg:py-20">
         <Container>
           <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>

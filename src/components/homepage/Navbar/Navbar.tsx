@@ -136,13 +136,13 @@ export default function Navbar() {
             {NAV_ITEMS.map((item) =>
               item.children ? (
                 <div key={item.label} className="group relative">
-                  <button
-                    type="button"
+                  <a
+                    href="/services"
                     className={`flex items-center gap-1 text-sm font-medium tracking-[0.12em] transition-colors ${textClasses} ${hoverTextClasses}`}
                   >
                     {item.label}
                     <ChevronIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
-                  </button>
+                  </a>
 
                   <div className="invisible absolute left-1/2 top-full z-10 w-[220px] -translate-x-1/2 translate-y-2 border border-[rgba(60,37,21,0.08)] bg-white p-2 opacity-0 shadow-[0_18px_48px_rgba(60,37,21,0.1)] transition-all duration-200 group-hover:visible group-hover:translate-y-3 group-hover:opacity-100">
                     {item.children.map((child) => (
