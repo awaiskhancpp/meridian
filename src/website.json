@@ -13,7 +13,7 @@
       },
       {
         "label": "Service Areas",
-        "href": "#service-areas"
+        "href": "/areas"
       },
       {
         "label": "Projects",
@@ -49,6 +49,7 @@
       "label": "Book Consultation",
       "href": "#contact"
     },
+
     "form": {
       "fields": {
         "name": {
@@ -80,6 +81,12 @@
       },
       "submit": "Get Started"
     }
+  },
+  "serviceAreas": {
+    "label": "Service Areas",
+    "heading": "Our local",
+    "script": "footprint.",
+    "subheading": "We bring our dedicated remodeling process and craft to neighborhoods across the greater region. Explore the communities we serve."
   },
   "about": {
     "label": "Start Your Project",
@@ -215,7 +222,7 @@
   },
   "blogs": {
     "label": "Journal",
-    "heading": "Notes from the",
+    "heading": "Notes from",
     "script": "studio.",
     "subheading": "Short reflections on materials, light, rooms, and the small choices that make a space feel calm and complete.",
     "items": [

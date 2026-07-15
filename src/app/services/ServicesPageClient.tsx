@@ -85,7 +85,7 @@ export default function ServicesPageClient({
         script={heroProps.script}
         subheading={heroProps.subheading}
         image="/hero.webp"
-        formSlot={<HeroSearchBar fields={SEARCH_FIELDS} onSearch={setSearch} />}
+        // formSlot={<HeroSearchBar fields={SEARCH_FIELDS} onSearch={setSearch} />}
       />
 
       <section aria-label="All services" className="py-16 lg:py-20">

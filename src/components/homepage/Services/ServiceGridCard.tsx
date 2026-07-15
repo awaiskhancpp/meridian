@@ -50,7 +50,7 @@ export default function ServiceGridCard({ service }: { service: ServiceCardData 
           alt={service.title}
           fill
           //   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover "
+          className="object-cover"
         />
         {service.icon && (
           <span className="absolute right-3 top-3 rounded-full bg-dark/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
@@ -60,7 +60,7 @@ export default function ServiceGridCard({ service }: { service: ServiceCardData 
       </div>
 
       {/* <div className="mt-4 flex items-start justify-between gap-3"> */}
-      <h3 className="mt-3 text-base font-semibold leading-snug text-dark transition-colors group-hover:text-accent">
+      <h3 className="mt-3 text-[clamp(1.5rem,2vw,2rem)] font-black uppercase leading-[0.92] tracking-[-0.04em] text-dark">
         {service.title}
       </h3>
       {/* </div> */}
