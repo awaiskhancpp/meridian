@@ -1,7 +1,7 @@
 import React from 'react'
 import siteData from '@/website.json'
 import { Container } from '@/components/ui'
-
+import { IFrame } from '@/components/ui/IFrame'
 const { map } = siteData
 
 /**
@@ -28,8 +28,8 @@ export default function Map() {
           </h2>
           <p className="mt-3 text-sm text-dark-muted">{map.address}</p>
         </div>
-
-        <div className="h-[24rem] w-full overflow-hidden  border border-[rgba(60,37,21,0.1)] lg:h-[30rem]">
+        <IFrame mapSrc={mapSrc} address={map.address} />
+        {/* <div className="h-[24rem] w-full overflow-hidden  border border-[rgba(60,37,21,0.1)] lg:h-[30rem]">
           <iframe
             title={`${map.address} on Google Maps`}
             src={mapSrc}
@@ -38,7 +38,7 @@ export default function Map() {
             referrerPolicy="no-referrer-when-downgrade"
             allowFullScreen
           />
-        </div>
+        </div> */}
       </Container>
     </section>
   )

@@ -1,8 +1,83 @@
+import { Footer, Navbar } from '@/components/homepage'
+import { Container } from '@/components/ui'
+import siteData from '@/website.json'
+import type { ServiceCardData } from '@/lib/services'
+import ServiceHero from './ServiceHero'
 import About from './About'
-export default function Servicepage() {
+import TrustSection from './TrustSection'
+import BeforeAfter from './BeforeAfter'
+import ExploreOtherServices from './ExploreOtherServices'
+import AreasWeServe from './AreasWeServe'
+import CTABanner from './CTABanner'
+import ServiceProcess from './ServiceProcess'
+interface ServicePageProps {
+  service: ServiceCardData
+  allServices: ServiceCardData[]
+}
+
+/**
+ * ServicePage
+ *
+ * The actual reusable service-detail template — every /services/[slug]
+ * route renders THIS, passed only the resolved `service` + the full
+ * `allServices` list. This used to be a disconnected stub (just an
+ * empty <About />) while app/services/[slug]/page.tsx built the entire
+ * page inline instead of using this file at all. Now the route file is
+ * just data-lookup + notFound(); this is where the actual page lives.
+ */
+export default function ServicePage({ service, allServices }: ServicePageProps) {
+  const { serviceAreas } = siteData
+
   return (
     <div>
-      <About />
+      <Navbar />
+
+      <ServiceHero
+        title={service.title}
+        subtitle={service.subtitle}
+        tagline={service.tagline}
+        image={service.image}
+        label="Our Services"
+        statBoxes={service.statBoxes}
+        ctaLabel="Schedule a Consultation"
+        ctaHref="#contact"
+      />
+
+      <Container className="pt-24 pb-16">
+        <About title={service.title} description={service.description} />
+      </Container>
+      {/* <ServiceProcess title={service.title} image={service.image} steps={service.process?.steps}/> */}
+
+      <TrustSection />
+
+      {/* Only rendered for services that involve physical remodeling
+          work — Design Consultation and Project Planning have no
+          beforeAfter array in website.json since there's no physical
+          result to show a before/after of, and forcing a fake one in
+          would be worse than just not having the section. */}
+      {service.beforeAfter && service.beforeAfter.length > 0 && (
+        <BeforeAfter
+          label="Our Work"
+          heading="Before &"
+          script="After"
+          subheading={`See the transformation from a recent ${service.title.toLowerCase()} project.`}
+          items={service.beforeAfter}
+        />
+      )}
+
+      <ExploreOtherServices currentSlug={service.slug} services={allServices} />
+
+      <AreasWeServe
+        label={serviceAreas.label}
+        heading={serviceAreas.heading}
+        script={serviceAreas.script}
+        subheading={serviceAreas.subheading}
+        areas={serviceAreas.areas}
+      />
+
+      <CTABanner />
+
+      <Footer />
     </div>
   )
 }
