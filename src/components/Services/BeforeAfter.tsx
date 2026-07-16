@@ -39,14 +39,15 @@ export default function BeforeAfter({
         <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="flex items-center gap-2 text-xs uppercase tracking-[0.34em] text-dark-muted">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" />
+              {/* <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" /> */}
               {label}
             </p>
-            <h2 id="before-after-heading" className="mt-1">
-              <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+            <h2 id="before-after-heading" className="mt-1 flex flex-wrap items-end gap-3">
+              <span className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
                 {heading}
               </span>
-              <span className="block font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] italic leading-none text-accent">
+
+              <span className="font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] italic leading-none text-accent">
                 {script}
               </span>
             </h2>

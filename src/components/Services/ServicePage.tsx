@@ -10,6 +10,8 @@ import ExploreOtherServices from './ExploreOtherServices'
 import AreasWeServe from './AreasWeServe'
 import CTABanner from './CTABanner'
 import ServiceProcess from './ServiceProcess'
+import ServiceFaqs from './ServiceFaq'
+
 interface ServicePageProps {
   service: ServiceCardData
   allServices: ServiceCardData[]
@@ -44,10 +46,18 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
       />
 
       <Container className="pt-24 pb-16">
-        <About title={service.title} description={service.description} />
+        <About
+          badgeLabel={service.badge || 'About'}
+          statBoxes={service.statBoxes}
+          tagline={service.tagline}
+          imageAlt={service.description}
+          image={service.image}
+          description={service.description}
+        />
       </Container>
-      {/* <ServiceProcess title={service.title} image={service.image} steps={service.process?.steps}/> */}
-
+      {service.process && service.process.steps.length > 0 && (
+        <ServiceProcess title={service.title} image={service.image} steps={service.process.steps} />
+      )}
       <TrustSection />
 
       {/* Only rendered for services that involve physical remodeling
@@ -66,7 +76,9 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
       )}
 
       <ExploreOtherServices currentSlug={service.slug} services={allServices} />
-
+      <Container>
+        <ServiceFaqs serviceTitle={service.title} faqs={service.faqs ?? []} />
+      </Container>
       <AreasWeServe
         label={serviceAreas.label}
         heading={serviceAreas.heading}

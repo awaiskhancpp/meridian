@@ -5,6 +5,7 @@ import { Button } from '@/components/ui'
 import { ArrowUpRight } from 'lucide-react'
 
 interface StatBox {
+  number: string
   title: string
   description: string
 }
@@ -118,13 +119,21 @@ export default function ServiceHero({
             <Container>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {statBoxes.map((statBox, index) => (
-                  <div key={index} className="bg-white/95 backdrop-blur-sm p-6 shadow-lg">
-                    <h3 className="text-lg font-bold text-dark uppercase tracking-wide">
-                      {statBox.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-dark-muted leading-relaxed">
-                      {statBox.description}
-                    </p>
+                  <div
+                    key={index}
+                    className="bg-white/95 backdrop-blur-sm p-6 shadow-lg flex gap-3"
+                  >
+                    <div className="text-4xl font-black flex items-center text-accent lg:text-5xl">
+                      {statBox.number}
+                    </div>
+                    <div className="flex flex-col">
+                      <h3 className="mt-2 text-lg font-bold text-dark uppercase tracking-wide">
+                        {statBox.title}
+                      </h3>
+                      <p className="mt-2 text-sm text-dark-muted leading-relaxed">
+                        {statBox.description}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>

@@ -89,9 +89,9 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
           }}
         >
           {otherServices.map((service) => (
-            <SwiperSlide key={service.slug} className="h-auto">
-              <Link href={`/services/${service.slug}`} className="group block h-full">
-                <div className="relative flex h-full flex-col border border-[rgba(60,37,21,0.12)] bg-white transition-all duration-300 hover:border-accent hover:shadow-lg">
+            <SwiperSlide key={service.slug}>
+              <Link href={`/services/${service.slug}`} className="group flex w-full">
+                <div className="relative flex w-full flex-col border border-[rgba(60,37,21,0.12)] bg-white transition-all duration-300 hover:border-accent hover:shadow-lg">
                   <div className="relative aspect-[4/3]">
                     <div className="absolute inset-0 overflow-hidden">
                       <Image
@@ -138,10 +138,26 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
           ))}
         </Swiper>
       </Container>
+
+      {/* 
+        The CSS below forces Swiper to behave like a standard stretching flex container.
+        This prevents Swiper's internal scripts from making the cards uneven.
+      */}
       <style>{`
       .swiper {
         padding-bottom: 56px;
-        padding-right:1px
+        padding-right:2px;
+      }
+
+      /* Force the wrapper to stretch its children equally */
+      .swiper-wrapper {
+        align-items: stretch !important;
+      }
+
+      /* Override Swiper's default height:100% and allow flex properties to work */
+      .swiper-slide {
+        height: auto !important;
+        display: flex !important;
       }
 
       .swiper-pagination-bullet {

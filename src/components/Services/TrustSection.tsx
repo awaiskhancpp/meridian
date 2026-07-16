@@ -144,9 +144,9 @@ export default function TrustSection({
                 <p className="text-3xl font-black leading-none text-dark">{statHighlight.score}</p>
                 <p className="mt-1 text-sm text-dark-muted">{statHighlight.label}</p>
                 <div className="mt-2 flex items-center -space-x-3">
-                  {avatars.map((avatar) => (
+                  {avatars.map((avatar, index) => (
                     <div
-                      key={avatar}
+                      key={index}
                       className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 border-cream bg-bg-cream"
                     >
                       <Image src={avatar} alt="" fill className="object-cover" />

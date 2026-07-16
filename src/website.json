@@ -7,21 +7,60 @@
     "menuLabel": "Menu",
     "img": "/logo.png",
     "links": [
-      { "label": "Home", "href": "#hero" },
-      { "label": "Service Areas", "href": "/areas" },
-      { "label": "Projects", "href": "#projects" },
-      { "label": "Blogs", "href": "/blogs" },
-      { "label": "About", "href": "#about" }
+      {
+        "label": "Home",
+        "href": "#hero"
+      },
+      {
+        "label": "Service Areas",
+        "href": "/areas"
+      },
+      {
+        "label": "Projects",
+        "href": "#projects"
+      },
+      {
+        "label": "Blogs",
+        "href": "/blogs"
+      },
+      {
+        "label": "About",
+        "href": "#about"
+      }
     ],
     "services": [
-      { "name": "Kitchen Remodeling", "href": "/services/kitchen-remodeling" },
-      { "name": "Bathroom Remodeling", "href": "/services/bathroom-remodeling" },
-      { "name": "Whole-Home Remodeling", "href": "/services/whole-home-remodeling" },
-      { "name": "Home Additions", "href": "/services/home-additions" },
-      { "name": "Custom Cabinetry", "href": "/services/custom-cabinetry" },
-      { "name": "Flooring", "href": "/services/flooring" },
-      { "name": "Design Consultation", "href": "/services/design-consultation" },
-      { "name": "Project Planning", "href": "/services/project-planning" }
+      {
+        "name": "Kitchen Remodeling",
+        "href": "/services/kitchen-remodeling"
+      },
+      {
+        "name": "Bathroom Remodeling",
+        "href": "/services/bathroom-remodeling"
+      },
+      {
+        "name": "Whole-Home Remodeling",
+        "href": "/services/whole-home-remodeling"
+      },
+      {
+        "name": "Home Additions",
+        "href": "/services/home-additions"
+      },
+      {
+        "name": "Custom Cabinetry",
+        "href": "/services/custom-cabinetry"
+      },
+      {
+        "name": "Flooring",
+        "href": "/services/flooring"
+      },
+      {
+        "name": "Design Consultation",
+        "href": "/services/design-consultation"
+      },
+      {
+        "name": "Project Planning",
+        "href": "/services/project-planning"
+      }
     ]
   },
   "hero": {
@@ -30,12 +69,24 @@
     "script": "like home",
     "subheading": "We create calm, tailored interiors with warm materials, clear planning, and craftsmanship that lasts.",
     "backgroundImage": "/hero.webp",
-    "cta": { "label": "Book Consultation", "href": "#contact" },
+    "cta": {
+      "label": "Book Consultation",
+      "href": "#contact"
+    },
     "form": {
       "fields": {
-        "name": { "label": "Name", "placeholder": "Enter your name" },
-        "email": { "label": "Email", "placeholder": "Enter your email" },
-        "phone": { "label": "Phone", "placeholder": "Enter your phone" },
+        "name": {
+          "label": "Name",
+          "placeholder": "Enter your name"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Enter your email"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Enter your phone"
+        },
         "service": {
           "label": "Service",
           "placeholder": "Select a service",
@@ -101,10 +152,15 @@
   "about": {
     "label": "Start Your Project",
     "heading": "A team built",
-    "badge": { "label": "See Gallery" },
+    "badge": {
+      "label": "See Gallery"
+    },
     "script": "around your home.",
     "subheading": "Kinetic started with a simple frustration: too many remodels feel rushed, disconnected, or over-promised. We built our process around the opposite.",
-    "cta": { "label": "See How We Work", "href": "#why-choose-us" },
+    "cta": {
+      "label": "See How We Work",
+      "href": "#why-choose-us"
+    },
     "image": "/home-about.avif",
     "features": [
       {
@@ -130,8 +186,14 @@
       "cta": "Our Process"
     },
     "stats": [
-      { "value": "10+", "label": "Years Experience" },
-      { "value": "500+", "label": "Homes Completed" }
+      {
+        "value": "10+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "500+",
+        "label": "Homes Completed"
+      }
     ],
     "trust": {
       "label": "Client Satisfaction",
@@ -157,16 +219,19 @@
         "tagline": "QUALITY CRAFTSMANSHIP, TIMELESS DESIGN",
         "statBoxes": [
           {
-            "title": "Custom Design Solutions",
-            "description": "Tailored kitchen layouts that maximize space and functionality for your unique needs."
+            "number": "15+",
+            "title": "Kitchens Built",
+            "description": "Across The Puget Sound"
           },
           {
-            "title": "Premium Materials",
-            "description": "High-quality cabinets, countertops, and fixtures built to last a lifetime."
+            "number": "20+",
+            "title": "Years Experience",
+            "description": "In Kitchen Remodeling"
           },
           {
-            "title": "Expert Installation",
-            "description": "Professional installation with attention to detail and clean project completion."
+            "number": "100%",
+            "title": "Client Satisfaction",
+            "description": "Based On Client Reviews"
           }
         ],
         "beforeAfter": [
@@ -186,6 +251,44 @@
             "title": "Galley Kitchen Refresh",
             "description": "Widened sightlines, new lighting, and updated finishes turned a cramped galley layout into an open, functional space."
           }
+        ],
+        "process": {
+          "steps": [
+            {
+              "title": "In-Home Consultation & Measure",
+              "description": "We walk your kitchen with you, listen to how you actually use the space, and take precise measurements before anything is designed."
+            },
+            {
+              "title": "Design & Material Selection",
+              "description": "Layout, cabinetry, countertops, and finishes are locked in together, with a fixed-price estimate before any demolition begins."
+            },
+            {
+              "title": "Demolition & Construction",
+              "description": "Our crew handles demo, plumbing, electrical, and installation in sequence, with daily site communication so you always know what stage you're at."
+            },
+            {
+              "title": "Final Walkthrough",
+              "description": "We walk every inch of the finished kitchen with you and don't consider the job done until you've signed off."
+            }
+          ]
+        },
+        "faqs": [
+          {
+            "question": "How long does a kitchen remodel typically take?",
+            "answer": "Most kitchen remodels take four to six weeks from demolition to final walkthrough, depending on the scope of layout changes and custom cabinetry lead times."
+          },
+          {
+            "question": "Can I still use my kitchen during the remodel?",
+            "answer": "Not fully — once plumbing and electrical work begins, the kitchen is unusable. We help set up a temporary cooking area elsewhere in your home for the duration."
+          },
+          {
+            "question": "Do you handle the plumbing and electrical work?",
+            "answer": "Yes, our crew coordinates all trades — plumbing, electrical, and installation — under one point of contact, so nothing falls through the cracks between subcontractors."
+          },
+          {
+            "question": "Will I get a fixed price before work begins?",
+            "answer": "Yes. Layout, cabinetry, countertops, and finishes are locked in together with a fixed-price estimate before any demolition starts."
+          }
         ]
       },
       {
@@ -202,16 +305,19 @@
         "tagline": "LUXURY MEETS FUNCTIONALITY",
         "statBoxes": [
           {
-            "title": "Spa-Like Features",
-            "description": "Luxurious fixtures, soaking tubs, and rainfall showerheads for ultimate relaxation."
+            "number": "10",
+            "title": "Bathrooms Remodeled",
+            "description": "Across The Puget Sound"
           },
           {
-            "title": "Smart Storage",
-            "description": "Innovative vanity designs and storage solutions for a clutter-free bathroom."
+            "number": "20+",
+            "title": "Years Experience",
+            "description": "In Bathroom Remodeling"
           },
           {
-            "title": "Efficient Plumbing",
-            "description": "Modern plumbing systems that improve water efficiency and reliability."
+            "number": "100%",
+            "title": "Client Satisfaction",
+            "description": "Based On Client Reviews"
           }
         ],
         "beforeAfter": [
@@ -231,6 +337,44 @@
             "title": "Powder Room Refresh",
             "description": "New tile, fixtures, and lighting brought a small, dated powder room fully up to date."
           }
+        ],
+        "process": {
+          "steps": [
+            {
+              "title": "In-Home Consultation",
+              "description": "We assess plumbing, layout, and any moisture or structural issues on-site before proposing a scope."
+            },
+            {
+              "title": "Design & Fixture Selection",
+              "description": "Tile, vanity, fixtures, and layout are finalized together, with a clear written estimate before work starts."
+            },
+            {
+              "title": "Demolition & Installation",
+              "description": "Plumbing, waterproofing, tile, and fixtures are installed in the right order to avoid the callbacks that rushed bathroom work usually causes."
+            },
+            {
+              "title": "Final Quality Check",
+              "description": "We test every fixture and seal before handoff, so the first time you use the space is also the last time anyone touches it."
+            }
+          ]
+        },
+        "faqs": [
+          {
+            "question": "How long does a bathroom remodel take?",
+            "answer": "A typical bathroom renovation takes two to three weeks, depending on whether plumbing fixture locations are changing."
+          },
+          {
+            "question": "Do you offer emergency bathroom repairs?",
+            "answer": "We focus on planned renovations rather than emergency repairs, but we're happy to prioritize scheduling if a failing fixture is part of your remodel scope."
+          },
+          {
+            "question": "What's the most impactful upgrade in a bathroom remodel?",
+            "answer": "Rethinking the shower — a curbless entry and rain showerhead consistently change how a bathroom feels more than any surface finish choice."
+          },
+          {
+            "question": "Will you handle waterproofing?",
+            "answer": "Yes — proper waterproofing behind tile and around fixtures is done before a single tile goes down, since that's what prevents costly leaks later."
+          }
         ]
       },
       {
@@ -247,16 +391,19 @@
         "tagline": "COMPREHENSIVE HOME SOLUTIONS",
         "statBoxes": [
           {
-            "title": "Complete Renovation",
-            "description": "Full-home transformation from structural changes to finishing touches."
+            "number": "12",
+            "title": "Home Remodels Completed",
+            "description": "Across The Puget Sound"
           },
           {
-            "title": "Project Management",
-            "description": "Single point of contact for seamless coordination of all trades and timelines."
+            "number": "20+",
+            "title": "Years Experience",
+            "description": "In Home Remodeling"
           },
           {
-            "title": "Quality Assurance",
-            "description": "Rigorous quality control at every stage to ensure exceptional results."
+            "number": "100%",
+            "title": "Client Satisfaction",
+            "description": "Based On Client Reviews"
           }
         ],
         "beforeAfter": [
@@ -276,6 +423,44 @@
             "title": "Open-Concept Conversion",
             "description": "Removing non-structural walls turned a closed-off, room-by-room layout into one connected open-concept living space."
           }
+        ],
+        "process": {
+          "steps": [
+            {
+              "title": "Discovery & Scope",
+              "description": "We walk the entire property, define a clear scope room by room, and set realistic expectations before any numbers are put on paper."
+            },
+            {
+              "title": "Design & Permitting",
+              "description": "Full architectural and material decisions are locked in and permits are filed before demolition — so decisions get made at the drawing board, not on the job site."
+            },
+            {
+              "title": "Phased Construction",
+              "description": "One crew, one point of contact manages scheduling, subcontractors, and daily communication across every phase of the build."
+            },
+            {
+              "title": "Final Walkthrough & Handoff",
+              "description": "We don't consider the project done until you've walked every room and signed off — your home, finished right."
+            }
+          ]
+        },
+        "faqs": [
+          {
+            "question": "Can I stay in my home during a whole-home remodel?",
+            "answer": "Often yes, if the work is phased room by room — we plan sequencing specifically to keep part of the home livable throughout construction."
+          },
+          {
+            "question": "How far in advance should materials be selected?",
+            "answer": "Before demolition begins. Locking in finishes early is what keeps a whole-home project on schedule and on budget."
+          },
+          {
+            "question": "Do you handle permits for a full remodel?",
+            "answer": "Yes — permitting and inspections are coordinated as part of our project management, filed before demolition starts."
+          },
+          {
+            "question": "How long does a whole-home remodel take?",
+            "answer": "Typically three to six months, depending on square footage and how many rooms are affected."
+          }
         ]
       },
       {
@@ -292,16 +477,19 @@
         "tagline": "SEAMLESS EXPANSIONS",
         "statBoxes": [
           {
-            "title": "Seamless Integration",
-            "description": "Additions that match your existing architecture and complement your home's style."
+            "number": "6",
+            "title": "Additions Completed",
+            "description": "Across The Puget Sound"
           },
           {
-            "title": "Structural Expertise",
-            "description": "Engineered solutions for safe, durable additions that stand the test of time."
+            "number": "20+",
+            "title": "Years Experience",
+            "description": "In Home Additions"
           },
           {
-            "title": "Permit Handling",
-            "description": "Complete permit acquisition and compliance with all local building codes."
+            "number": "100%",
+            "title": "Client Satisfaction",
+            "description": "Based On Client Reviews"
           }
         ],
         "beforeAfter": [
@@ -321,6 +509,44 @@
             "title": "Second-Story Addition",
             "description": "A full second-story build-out added bedrooms and living space without expanding the home's existing footprint."
           }
+        ],
+        "process": {
+          "steps": [
+            {
+              "title": "Site Assessment & Feasibility",
+              "description": "We evaluate your lot, foundation, and local zoning constraints to confirm what's actually buildable before designing anything."
+            },
+            {
+              "title": "Design & Permit Approval",
+              "description": "Structural and architectural plans are finalized and submitted for permit approval before ground is broken."
+            },
+            {
+              "title": "Foundation & Framing",
+              "description": "Foundation, framing, and the building envelope go up first, with regular inspections at each structural milestone."
+            },
+            {
+              "title": "Final Finishes & Walkthrough",
+              "description": "Interior finishes are completed and the new space is walked room by room with you before we call it done."
+            }
+          ]
+        },
+        "faqs": [
+          {
+            "question": "Do home additions require a full architectural redesign?",
+            "answer": "Not always — additions that build on an existing footprint or match the current roofline often need less structural rework than a from-scratch design."
+          },
+          {
+            "question": "Will an addition increase my home's resale value?",
+            "answer": "Generally yes, especially additions that add bedrooms or bathrooms, though the return depends heavily on how well it matches the home's existing style."
+          },
+          {
+            "question": "How long does the permit process take for an addition?",
+            "answer": "Permit approval typically takes four to eight weeks depending on your local jurisdiction, which we factor into your overall project timeline."
+          },
+          {
+            "question": "Can you build up instead of out?",
+            "answer": "Yes — a second-story addition over an existing footprint preserves yard space entirely, though it requires a closer look at your home's existing structure first."
+          }
         ]
       },
       {
@@ -337,16 +563,19 @@
         "tagline": "BESPOKE STORAGE SOLUTIONS",
         "statBoxes": [
           {
-            "title": "Bespoke Design",
-            "description": "Custom cabinet designs tailored to your specific storage needs and style preferences."
+            "number": "8+",
+            "title": "Custom Cabinets Built",
+            "description": "Across The Puget Sound"
           },
           {
-            "title": "Premium Materials",
-            "description": "Selection of fine woods, hardware, and finishes for lasting beauty and durability."
+            "number": "20+",
+            "title": "Years Experience",
+            "description": "In Custom Cabinetry"
           },
           {
-            "title": "Precision Craftsmanship",
-            "description": "Meticulous construction and installation by skilled cabinetmakers."
+            "number": "100%",
+            "title": "Client Satisfaction",
+            "description": "Based On Client Reviews"
           }
         ],
         "beforeAfter": [
@@ -365,6 +594,44 @@
             "afterAlt": "Home office after custom built-in shelving",
             "title": "Built-In Shelving",
             "description": "Floor-to-ceiling built-ins replaced a freestanding bookcase, adding storage without losing floor space."
+          }
+        ],
+        "process": {
+          "steps": [
+            {
+              "title": "Design Consultation & Measurements",
+              "description": "We measure your space and talk through storage needs, style, and budget before drawing anything up."
+            },
+            {
+              "title": "Material & Finish Selection",
+              "description": "Wood species, hardware, and finish are chosen together, with a fixed quote before fabrication begins."
+            },
+            {
+              "title": "Fabrication",
+              "description": "Cabinetry is built to your exact measurements in our shop, not adjusted on-site after the fact."
+            },
+            {
+              "title": "Delivery & Installation",
+              "description": "Finished cabinetry is delivered and installed by the same team that measured it, so fit is never a guessing game."
+            }
+          ]
+        },
+        "faqs": [
+          {
+            "question": "Is custom cabinetry more durable than stock cabinetry?",
+            "answer": "Custom cabinetry is typically built with better joinery and hardware, so it tends to hold up longer, especially in high-use kitchens."
+          },
+          {
+            "question": "How long does custom cabinetry take to build?",
+            "answer": "Usually six to ten weeks from final design approval, depending on wood species and finish complexity."
+          },
+          {
+            "question": "Can you match existing cabinetry in my home?",
+            "answer": "In most cases yes — we can match wood species, stain, and hardware style to blend new cabinetry with what's already there."
+          },
+          {
+            "question": "Do you install the cabinetry yourselves?",
+            "answer": "Yes — the same team that measures your space also delivers and installs the finished cabinetry, so fit is never a guessing game."
           }
         ]
       },
@@ -411,6 +678,44 @@
             "title": "Kitchen Tile-to-Vinyl Conversion",
             "description": "Cracked, dated tile replaced with waterproof luxury vinyl for a more durable, easier-to-maintain kitchen floor."
           }
+        ],
+        "process": {
+          "steps": [
+            {
+              "title": "In-Home Estimate",
+              "description": "We assess your subfloor condition and take exact square footage before recommending materials."
+            },
+            {
+              "title": "Material Selection",
+              "description": "Hardwood, tile, or luxury vinyl — we help you weigh durability, cost, and look for how the room is actually used."
+            },
+            {
+              "title": "Subfloor Prep & Installation",
+              "description": "Proper subfloor prep happens before a single plank or tile goes down, since that's what actually determines how long a floor lasts."
+            },
+            {
+              "title": "Final Walkthrough & Care Guide",
+              "description": "We walk the finished floor with you and send you off with a simple care guide so it stays looking new."
+            }
+          ]
+        },
+        "faqs": [
+          {
+            "question": "What flooring holds up best with pets?",
+            "answer": "Luxury vinyl plank and engineered hardwood with a higher-durability finish tend to resist scratches better than solid hardwood."
+          },
+          {
+            "question": "Is it worth mixing flooring materials room to room?",
+            "answer": "Often yes — matching material to a room's actual use (moisture, foot traffic, comfort) usually beats forcing one material through the whole home."
+          },
+          {
+            "question": "How long does flooring installation take?",
+            "answer": "Most flooring projects take one to two weeks, depending on square footage and whether old flooring needs to be removed first."
+          },
+          {
+            "question": "Do you repair the subfloor if needed?",
+            "answer": "Yes — proper subfloor prep happens before any plank or tile goes down, since that's what actually determines how long a new floor lasts."
+          }
         ]
       },
       {
@@ -437,6 +742,44 @@
           {
             "title": "No Obligation",
             "description": "A consultation, not a sales pitch — decide on your own timeline."
+          }
+        ],
+        "process": {
+          "steps": [
+            {
+              "title": "Discovery Call",
+              "description": "A short call to understand your space, goals, and budget range before we schedule an in-person visit."
+            },
+            {
+              "title": "On-Site Design Session",
+              "description": "We walk your space together, talk through layout and material direction, and take measurements on the spot."
+            },
+            {
+              "title": "Concept & Mood Board Presentation",
+              "description": "You receive a concept direction with material and layout options, refined based on your feedback."
+            },
+            {
+              "title": "Final Design Handoff",
+              "description": "You leave with a finished design package — ready to build now, or to hand to any contractor of your choosing."
+            }
+          ]
+        },
+        "faqs": [
+          {
+            "question": "What happens in a design consultation?",
+            "answer": "We walk your space, talk through how you actually use each room, and map material and layout direction before any drawings begin."
+          },
+          {
+            "question": "Is a design consultation free?",
+            "answer": "Yes — the initial consultation is complimentary and has no obligation to move forward with a full project."
+          },
+          {
+            "question": "How long does a consultation take?",
+            "answer": "Most consultations run about an hour, enough time to walk the space and talk through your goals and budget range."
+          },
+          {
+            "question": "Do I receive anything after the consultation?",
+            "answer": "Yes — you'll leave with a concept direction and material options, refined based on your feedback before any construction commitment."
           }
         ]
       },
@@ -465,6 +808,44 @@
             "title": "One Organized Plan",
             "description": "Every trade and material decision mapped before demolition starts."
           }
+        ],
+        "process": {
+          "steps": [
+            {
+              "title": "Initial Consultation",
+              "description": "We learn about your project goals, timeline expectations, and budget constraints before proposing a plan."
+            },
+            {
+              "title": "Scope & Budget Definition",
+              "description": "We break the project into phases with realistic cost ranges for each, so there are no surprises once work begins."
+            },
+            {
+              "title": "Timeline & Contractor Coordination",
+              "description": "A phased schedule is built, coordinating any trades or permits the project will need."
+            },
+            {
+              "title": "Final Plan Handoff",
+              "description": "You receive a complete, actionable project plan — whether you move forward with us or another team."
+            }
+          ]
+        },
+        "faqs": [
+          {
+            "question": "How far in advance should a project be planned?",
+            "answer": "Ideally all material and scope decisions are finalized before demolition — that's what keeps a project on schedule once construction starts."
+          },
+          {
+            "question": "Does planning add time to a project overall?",
+            "answer": "It adds time up front but typically shortens the build itself by avoiding decisions made — and reversed — mid-project."
+          },
+          {
+            "question": "Can I use the plan with a different contractor?",
+            "answer": "Yes — you receive a complete, actionable project plan whether you move forward with us or another team."
+          },
+          {
+            "question": "What's included in a project plan?",
+            "answer": "A phased scope breakdown, realistic cost ranges per phase, and a coordinated timeline for any trades or permits the project will need."
+          }
         ]
       }
     ]
@@ -488,9 +869,18 @@
         "readTimeMinutes": 4,
         "content": "<p>Renovating a small kitchen requires careful planning to maximize every square inch. Here in Seattle, where natural light can be scarce during winter, design choices matter even more.</p><h2>Maximize Natural Light</h2><p>Using reflective surfaces and keeping window treatments minimal can significantly bounce light around the room. Consider glossy tile backsplashes or lighter cabinetry to keep the space feeling airy.</p><h2>Smart Storage Solutions</h2><p>Consider taking cabinets all the way to the ceiling to capture unused vertical space. Built-in organizers for your drawers and pull-out pantry shelves are essential for keeping clutter off the countertops.</p><h3>The Appliance Garage</h3><p>A dedicated cabinet to hide your coffee maker, toaster, and blender can visually clean up a small kitchen instantly.</p>",
         "tableOfContents": [
-          { "heading": "Maximize Natural Light", "anchorId": "maximize-natural-light" },
-          { "heading": "Smart Storage Solutions", "anchorId": "smart-storage-solutions" },
-          { "heading": "The Appliance Garage", "anchorId": "the-appliance-garage" }
+          {
+            "heading": "Maximize Natural Light",
+            "anchorId": "maximize-natural-light"
+          },
+          {
+            "heading": "Smart Storage Solutions",
+            "anchorId": "smart-storage-solutions"
+          },
+          {
+            "heading": "The Appliance Garage",
+            "anchorId": "the-appliance-garage"
+          }
         ],
         "faqs": [
           {
@@ -516,8 +906,14 @@
         "readTimeMinutes": 3,
         "content": "<p>A spa-style bathroom isn't about square footage — it's about slowing down the details most homeowners rush past: water flow, material texture, and light temperature.</p><h2>Choosing Calming Materials</h2><p>Honed stone, matte tile, and warm wood-look vanities read as quieter than glossy, high-contrast finishes. Texture does more work here than color.</p><h2>Water as an Experience</h2><p>A rain showerhead and a freestanding tub change how a bathroom feels to use, not just how it looks in photos.</p>",
         "tableOfContents": [
-          { "heading": "Choosing Calming Materials", "anchorId": "choosing-calming-materials" },
-          { "heading": "Water as an Experience", "anchorId": "water-as-an-experience" }
+          {
+            "heading": "Choosing Calming Materials",
+            "anchorId": "choosing-calming-materials"
+          },
+          {
+            "heading": "Water as an Experience",
+            "anchorId": "water-as-an-experience"
+          }
         ],
         "faqs": [
           {
@@ -543,9 +939,18 @@
         "readTimeMinutes": 5,
         "content": "<p>Whole-home remodels fail for the same reason most big projects do: decisions get made in the wrong order. Getting sequencing right up front prevents most of the surprises that derail a renovation.</p><h2>Design Before Demolition</h2><p>Every material, fixture, and layout decision should be locked in before a wall comes down. Changing your mind mid-project is where budgets and timelines both slip.</p><h2>One Team, One Timeline</h2><p>Coordinating trades under a single project lead avoids the finger-pointing that happens when subcontractors are scheduled independently.</p><h3>Living Through It</h3><p>Phasing work room by room, rather than opening the whole house at once, keeps at least part of your home livable throughout.</p>",
         "tableOfContents": [
-          { "heading": "Design Before Demolition", "anchorId": "design-before-demolition" },
-          { "heading": "One Team, One Timeline", "anchorId": "one-team-one-timeline" },
-          { "heading": "Living Through It", "anchorId": "living-through-it" }
+          {
+            "heading": "Design Before Demolition",
+            "anchorId": "design-before-demolition"
+          },
+          {
+            "heading": "One Team, One Timeline",
+            "anchorId": "one-team-one-timeline"
+          },
+          {
+            "heading": "Living Through It",
+            "anchorId": "living-through-it"
+          }
         ],
         "faqs": [
           {
@@ -571,7 +976,10 @@
         "readTimeMinutes": 4,
         "content": "<p>Most homeowners assume an addition means giving up half the backyard. In practice, the right footprint and orientation can add significant square footage while barely touching outdoor space.</p><h2>Building Up Instead of Out</h2><p>A second-story addition over an existing footprint preserves yard space entirely, though it requires a closer look at your home's existing structure.</p><h2>Matching the Original Architecture</h2><p>Rooflines, siding, and window proportions should echo the existing home so the addition reads as original rather than bolted on.</p>",
         "tableOfContents": [
-          { "heading": "Building Up Instead of Out", "anchorId": "building-up-instead-of-out" },
+          {
+            "heading": "Building Up Instead of Out",
+            "anchorId": "building-up-instead-of-out"
+          },
           {
             "heading": "Matching the Original Architecture",
             "anchorId": "matching-the-original-architecture"
@@ -601,8 +1009,14 @@
         "readTimeMinutes": 3,
         "content": "<p>A quiet room isn't just about acoustics; it's about visual noise. Layering materials thoughtfully creates a sense of deep calm that painted drywall alone cannot achieve.</p><h2>The Role of Natural Wood</h2><p>Incorporating natural wood tones brings immediate warmth to cold spaces. Whether it's floating white oak shelves or a custom walnut vanity, organic grain patterns ground the room.</p><h2>Matte vs. Gloss Finishes</h2><p>We prefer matte finishes for their ability to absorb light softly, reducing glare and promoting stillness. Plaster walls, honed stone counters, and brushed brass fixtures all contribute to this muted, relaxed aesthetic.</p>",
         "tableOfContents": [
-          { "heading": "The Role of Natural Wood", "anchorId": "the-role-of-natural-wood" },
-          { "heading": "Matte vs. Gloss Finishes", "anchorId": "matte-vs-gloss-finishes" }
+          {
+            "heading": "The Role of Natural Wood",
+            "anchorId": "the-role-of-natural-wood"
+          },
+          {
+            "heading": "Matte vs. Gloss Finishes",
+            "anchorId": "matte-vs-gloss-finishes"
+          }
         ],
         "faqs": [
           {
@@ -628,9 +1042,18 @@
         "readTimeMinutes": 4,
         "content": "<p>The flooring that looks best in a showroom isn't always the right choice for how a specific room in your home actually gets used day to day.</p><h2>Durability Where It Matters</h2><p>Entryways and kitchens see the most wear — luxury vinyl and engineered hardwood hold up better here than softer solid wood.</p><h2>Warmth Underfoot</h2><p>Bedrooms and living rooms benefit from materials that feel warm to bare feet, which is where wide-plank hardwood or wool carpet earn their keep.</p><h3>Moisture-Prone Rooms</h3><p>Bathrooms and laundry rooms need genuinely water-resistant materials — tile and waterproof vinyl remain the safest choices.</p>",
         "tableOfContents": [
-          { "heading": "Durability Where It Matters", "anchorId": "durability-where-it-matters" },
-          { "heading": "Warmth Underfoot", "anchorId": "warmth-underfoot" },
-          { "heading": "Moisture-Prone Rooms", "anchorId": "moisture-prone-rooms" }
+          {
+            "heading": "Durability Where It Matters",
+            "anchorId": "durability-where-it-matters"
+          },
+          {
+            "heading": "Warmth Underfoot",
+            "anchorId": "warmth-underfoot"
+          },
+          {
+            "heading": "Moisture-Prone Rooms",
+            "anchorId": "moisture-prone-rooms"
+          }
         ],
         "faqs": [
           {
@@ -656,8 +1079,14 @@
         "readTimeMinutes": 3,
         "content": "<p>We often think of materials as things we can touch—stone, wood, metal. But daylight is perhaps the most transformative material in your home, completely altering how architectural elements are perceived throughout the day.</p><h2>Direct and Indirect Lighting</h2><p>Combining recessed lighting with ambient sconces creates layers of illumination. Indirect light scraping across a textured wall highlights the craftsmanship in a way flat lighting never could.</p><h2>Shadows Matter</h2><p>Don't be afraid of shadows. They provide depth and contrast, anchoring your furniture to the room and defining spaces without the need for physical walls.</p>",
         "tableOfContents": [
-          { "heading": "Direct and Indirect Lighting", "anchorId": "direct-and-indirect-lighting" },
-          { "heading": "Shadows Matter", "anchorId": "shadows-matter" }
+          {
+            "heading": "Direct and Indirect Lighting",
+            "anchorId": "direct-and-indirect-lighting"
+          },
+          {
+            "heading": "Shadows Matter",
+            "anchorId": "shadows-matter"
+          }
         ],
         "faqs": [
           {
@@ -683,8 +1112,14 @@
         "readTimeMinutes": 3,
         "content": "<p>In modern design, the temptation to add 'just one more thing' is strong. Restraint is the discipline of knowing when to stop — and that discipline starts with planning, not decorating.</p><h2>Curating Your Palette Early</h2><p>Sticking to three primary materials or colors, decided before construction starts, prevents visual clutter and costly mid-project changes.</p><h2>Negative Space</h2><p>Leaving walls blank or surfaces empty allows the architecture of your home to breathe. It turns the items you <em>do</em> display into focal points rather than background noise.</p>",
         "tableOfContents": [
-          { "heading": "Curating Your Palette Early", "anchorId": "curating-your-palette-early" },
-          { "heading": "Negative Space", "anchorId": "negative-space" }
+          {
+            "heading": "Curating Your Palette Early",
+            "anchorId": "curating-your-palette-early"
+          },
+          {
+            "heading": "Negative Space",
+            "anchorId": "negative-space"
+          }
         ],
         "faqs": [
           {
@@ -710,10 +1145,22 @@
       "Materials chosen with real intention"
     ],
     "stats": [
-      { "value": "24h", "label": "Average response time" },
-      { "value": "10+", "label": "Years remodeling homes" },
-      { "value": "5-step", "label": "A defined process, every time" },
-      { "value": "100%", "label": "Estimates in writing" }
+      {
+        "value": "24h",
+        "label": "Average response time"
+      },
+      {
+        "value": "10+",
+        "label": "Years remodeling homes"
+      },
+      {
+        "value": "5-step",
+        "label": "A defined process, every time"
+      },
+      {
+        "value": "100%",
+        "label": "Estimates in writing"
+      }
     ]
   },
   "faq": {
@@ -754,10 +1201,22 @@
     "script": "conversation.",
     "subheading": "Tell us about your space, your goals, and your timeline. We will guide you through the next steps with care and intention.",
     "fields": {
-      "name": { "label": "Name", "placeholder": "Your name" },
-      "phone": { "label": "Phone", "placeholder": "Phone number" },
-      "email": { "label": "Email", "placeholder": "Email address" },
-      "message": { "label": "Message", "placeholder": "Tell us about your project" }
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name"
+      },
+      "phone": {
+        "label": "Phone",
+        "placeholder": "Phone number"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "Email address"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us about your project"
+      }
     },
     "submit": "Send Request"
   },
@@ -792,14 +1251,21 @@
         "description": "We don't consider the job done until you've walked every room and signed off. Your home, finished right."
       }
     ],
-    "cta": { "label": "Request a Quote", "href": "#contact" }
+    "cta": {
+      "label": "Request a Quote",
+      "href": "#contact"
+    }
   },
   "testimonials": {
     "label": "Client Stories",
     "heading": "Don't just take",
     "script": "our word for it.",
     "subheading": "Real results, real homeowners. Every remodel we finish leaves a story — these are a few of them told in the clients' own words.",
-    "rating": { "score": "4.9", "count": "312", "label": "Excellent" },
+    "rating": {
+      "score": "4.9",
+      "count": "312",
+      "label": "Excellent"
+    },
     "items": [
       {
         "stars": 5,
@@ -846,182 +1312,90 @@
     "heading": "Building spaces,",
     "script": "shaping stories.",
     "items": [
-      { "image": "/home-about.avif", "alt": "", "label": "Warm living room remodel" },
-      { "image": "/hero.webp", "alt": "", "label": "Full kitchen transformation" },
-      { "image": "/home-about.avif", "alt": "", "label": "Custom built-in millwork" },
-      { "image": "/hero.webp", "alt": "", "label": "Primary suite renovation" },
-      { "image": "/home-about.avif", "alt": "", "label": "Spa-style bathroom" },
-      { "image": "/hero.webp", "alt": "", "label": "Outdoor living space" }
+      {
+        "image": "/home-about.avif",
+        "alt": "",
+        "label": "Warm living room remodel"
+      },
+      {
+        "image": "/hero.webp",
+        "alt": "",
+        "label": "Full kitchen transformation"
+      },
+      {
+        "image": "/home-about.avif",
+        "alt": "",
+        "label": "Custom built-in millwork"
+      },
+      {
+        "image": "/hero.webp",
+        "alt": "",
+        "label": "Primary suite renovation"
+      },
+      {
+        "image": "/home-about.avif",
+        "alt": "",
+        "label": "Spa-style bathroom"
+      },
+      {
+        "image": "/hero.webp",
+        "alt": "",
+        "label": "Outdoor living space"
+      }
     ]
   },
   "trustHero": {
-    "rating": { "score": "5.0", "reviewCount": "500+" },
+    "rating": {
+      "score": "5.0",
+      "reviewCount": "500+"
+    },
     "heading": "Your Trusted Partner For",
     "script": "Reliable Remodeling.",
     "description": "We provide expert kitchen, bath, and whole-home remodeling designed to keep your project on time, on budget, and built to last. From first sketch to final walkthrough, our team makes the whole process feel effortless.",
-    "ctaPrimary": { "label": "Book a Consultation", "href": "#contact" },
-    "ctaSecondary": { "label": "Call Us Now", "href": "tel:+16195551234" },
-    "googleRating": { "score": "5.0", "label": "50+ Rating" },
-    "statHighlight": { "score": "4.9", "label": "Stars By Happy Clients" },
+    "ctaPrimary": {
+      "label": "Book a Consultation",
+      "href": "#contact"
+    },
+    "ctaSecondary": {
+      "label": "Call Us Now",
+      "href": "tel:+16195551234"
+    },
+    "googleRating": {
+      "score": "5.0",
+      "label": "50+ Rating"
+    },
+    "statHighlight": {
+      "score": "4.9",
+      "label": "Stars By Happy Clients"
+    },
     "avatarCountBadge": "500+",
-    "avatars": ["/person-1.jpg", "/person-2.jpg", "/person-3.jpg", "/person-4.jpg"],
+    "avatars": ["/person_1.jpg", "/person_1.jpg", "/person_1.jpg", "/person_1.jpg"],
     "image": "/home-about.avif",
     "partners": [
-      { "name": "Boltshift", "icon": "zap" },
-      { "name": "Lightbox", "icon": "box" },
-      { "name": "FeatherDev", "icon": "feather" },
-      { "name": "Spherule", "icon": "circle" },
-      { "name": "GlobalBank", "icon": "hexagon" }
+      {
+        "name": "Boltshift",
+        "icon": "zap"
+      },
+      {
+        "name": "Lightbox",
+        "icon": "box"
+      },
+      {
+        "name": "FeatherDev",
+        "icon": "feather"
+      },
+      {
+        "name": "Spherule",
+        "icon": "circle"
+      },
+      {
+        "name": "GlobalBank",
+        "icon": "hexagon"
+      }
     ]
   },
   "sitePhone": {
     "display": "(619) 555-1234",
-    "href": "tel:+16195551234",
-    "process": {
-      "kitchen-remodeling": [
-        {
-          "title": "In-Home Consultation & Measure",
-          "description": "We walk your kitchen with you, listen to how you actually use the space, and take precise measurements before anything is designed."
-        },
-        {
-          "title": "Design & Material Selection",
-          "description": "Layout, cabinetry, countertops, and finishes are locked in together, with a fixed-price estimate before any demolition begins."
-        },
-        {
-          "title": "Demolition & Construction",
-          "description": "Our crew handles demo, plumbing, electrical, and installation in sequence, with daily site communication so you always know what stage you're at."
-        },
-        {
-          "title": "Final Walkthrough",
-          "description": "We walk every inch of the finished kitchen with you and don't consider the job done until you've signed off."
-        }
-      ],
-      "bathroom-remodeling": [
-        {
-          "title": "In-Home Consultation",
-          "description": "We assess plumbing, layout, and any moisture or structural issues on-site before proposing a scope."
-        },
-        {
-          "title": "Design & Fixture Selection",
-          "description": "Tile, vanity, fixtures, and layout are finalized together, with a clear written estimate before work starts."
-        },
-        {
-          "title": "Demolition & Installation",
-          "description": "Plumbing, waterproofing, tile, and fixtures are installed in the right order to avoid the callbacks that rushed bathroom work usually causes."
-        },
-        {
-          "title": "Final Quality Check",
-          "description": "We test every fixture and seal before handoff, so the first time you use the space is also the last time anyone touches it."
-        }
-      ],
-      "whole-home-remodeling": [
-        {
-          "title": "Discovery & Scope",
-          "description": "We walk the entire property, define a clear scope room by room, and set realistic expectations before any numbers are put on paper."
-        },
-        {
-          "title": "Design & Permitting",
-          "description": "Full architectural and material decisions are locked in and permits are filed before demolition — so decisions get made at the drawing board, not on the job site."
-        },
-        {
-          "title": "Phased Construction",
-          "description": "One crew, one point of contact manages scheduling, subcontractors, and daily communication across every phase of the build."
-        },
-        {
-          "title": "Final Walkthrough & Handoff",
-          "description": "We don't consider the project done until you've walked every room and signed off — your home, finished right."
-        }
-      ],
-      "home-additions": [
-        {
-          "title": "Site Assessment & Feasibility",
-          "description": "We evaluate your lot, foundation, and local zoning constraints to confirm what's actually buildable before designing anything."
-        },
-        {
-          "title": "Design & Permit Approval",
-          "description": "Structural and architectural plans are finalized and submitted for permit approval before ground is broken."
-        },
-        {
-          "title": "Foundation & Framing",
-          "description": "Foundation, framing, and the building envelope go up first, with regular inspections at each structural milestone."
-        },
-        {
-          "title": "Final Finishes & Walkthrough",
-          "description": "Interior finishes are completed and the new space is walked room by room with you before we call it done."
-        }
-      ],
-      "custom-cabinetry": [
-        {
-          "title": "Design Consultation & Measurements",
-          "description": "We measure your space and talk through storage needs, style, and budget before drawing anything up."
-        },
-        {
-          "title": "Material & Finish Selection",
-          "description": "Wood species, hardware, and finish are chosen together, with a fixed quote before fabrication begins."
-        },
-        {
-          "title": "Fabrication",
-          "description": "Cabinetry is built to your exact measurements in our shop, not adjusted on-site after the fact."
-        },
-        {
-          "title": "Delivery & Installation",
-          "description": "Finished cabinetry is delivered and installed by the same team that measured it, so fit is never a guessing game."
-        }
-      ],
-      "flooring": [
-        {
-          "title": "In-Home Estimate",
-          "description": "We assess your subfloor condition and take exact square footage before recommending materials."
-        },
-        {
-          "title": "Material Selection",
-          "description": "Hardwood, tile, or luxury vinyl — we help you weigh durability, cost, and look for how the room is actually used."
-        },
-        {
-          "title": "Subfloor Prep & Installation",
-          "description": "Proper subfloor prep happens before a single plank or tile goes down, since that's what actually determines how long a floor lasts."
-        },
-        {
-          "title": "Final Walkthrough & Care Guide",
-          "description": "We walk the finished floor with you and send you off with a simple care guide so it stays looking new."
-        }
-      ],
-      "design-consultation": [
-        {
-          "title": "Discovery Call",
-          "description": "A short call to understand your space, goals, and budget range before we schedule an in-person visit."
-        },
-        {
-          "title": "On-Site Design Session",
-          "description": "We walk your space together, talk through layout and material direction, and take measurements on the spot."
-        },
-        {
-          "title": "Concept & Mood Board Presentation",
-          "description": "You receive a concept direction with material and layout options, refined based on your feedback."
-        },
-        {
-          "title": "Final Design Handoff",
-          "description": "You leave with a finished design package — ready to build now, or to hand to any contractor of your choosing."
-        }
-      ],
-      "project-planning": [
-        {
-          "title": "Initial Consultation",
-          "description": "We learn about your project goals, timeline expectations, and budget constraints before proposing a plan."
-        },
-        {
-          "title": "Scope & Budget Definition",
-          "description": "We break the project into phases with realistic cost ranges for each, so there are no surprises once work begins."
-        },
-        {
-          "title": "Timeline & Contractor Coordination",
-          "description": "A phased schedule is built, coordinating any trades or permits the project will need."
-        },
-        {
-          "title": "Final Plan Handoff",
-          "description": "You receive a complete, actionable project plan — whether you move forward with us or another team."
-        }
-      ]
-    }
+    "href": "tel:+16195551234"
   }
 }
