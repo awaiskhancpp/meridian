@@ -161,6 +161,20 @@
       "stat": "10+",
       "subStat": "Years creating beautiful kitchens, baths, and homes.",
       "cta": "Our Process"
+    },
+    "stats": [
+      {
+        "value": "10+",
+        "label": "Years Experience"
+      },
+      {
+        "value": "500+",
+        "label": "Homes Completed"
+      }
+    ],
+    "trust": {
+      "label": "Client Satisfaction",
+      "avatars": ["/person_1.jpg", "/person_1.jpg", "/person_1.jpg", "/person_1.jpg"]
     }
   },
   "services": {
@@ -711,7 +725,7 @@
   },
   "map": {
     "label": "Find Us",
-    "heading": "Visit our",
+    "heading": "Visit our office.",
     "script": "office.",
     "address": "734 University Ave. Suite 205, San Diego, CA 92103"
   },

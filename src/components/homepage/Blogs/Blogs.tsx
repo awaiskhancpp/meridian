@@ -7,7 +7,6 @@ import type { Swiper as SwiperType } from 'swiper'
 import 'swiper/css'
 import siteData from '@/website.json'
 import { Button, Container } from '@/components/ui'
-import { ArrowUpRight, ChevronLeft, ChevronRight } from 'lucide-react'
 
 const { blogs } = siteData
 
@@ -123,12 +122,6 @@ export function BlogFeatureCard({ card }: { card: BlogItem }) {
                 <Button variant="outline" className="mt-10 rounded-none">
                   Read More
                 </Button>
-                {/* <span className="mt-8 inline-flex items-center gap-3 border-b border-dark/30 pb-2 text-sm font-medium uppercase tracking-[0.18em] text-dark transition-colors group-hover:border-accent group-hover:text-accent">
-                  Read more
-                  <span className="transition-transform duration-300 group-hover:translate-x-1">
-                    <ArrowUpRight size={20} />
-                  </span>
-                </span> */}
               </div>
             </div>
           </div>
