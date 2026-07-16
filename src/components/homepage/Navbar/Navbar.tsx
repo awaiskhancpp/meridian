@@ -2,6 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link' // 1. Add this import
 import { ArrowUpRight } from 'lucide-react'
 import siteData from '@/website.json'
 import { Button, Container } from '@/components/ui'
@@ -21,7 +22,10 @@ const NAV_ITEMS: NavItem[] = [
   serviceAreasLink,
   {
     label: 'Services',
-    children: nav.services.map((service) => ({ label: service, href: '#contact' })),
+    children: nav.services.map((service) => ({
+      label: service.name,
+      href: service.href,
+    })),
   },
   ...remainingLinks,
 ]
@@ -124,46 +128,50 @@ export default function Navbar() {
     >
       <Container className="relative">
         <div className="flex items-center justify-between gap-4">
-          <a href="/" className={`flex items-center gap-3 ${textClasses}`} aria-label={brand.name}>
+          <Link
+            href="/"
+            className={`flex items-center gap-3 ${textClasses}`}
+            aria-label={brand.name}
+          >
             {nav.img ? (
               <Image src={nav.img} alt={brand.name} width={112} height={80} />
             ) : (
               <span className="text-base font-semibold tracking-[0.22em]">{brand.name}</span>
             )}
-          </a>
+          </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
             {NAV_ITEMS.map((item) =>
               item.children ? (
                 <div key={item.label} className="group relative">
-                  <a
+                  <Link
                     href="/services"
                     className={`flex items-center gap-1 text-sm font-medium tracking-[0.12em] transition-colors ${textClasses} ${hoverTextClasses}`}
                   >
                     {item.label}
                     <ChevronIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
-                  </a>
+                  </Link>
 
                   <div className="invisible absolute left-1/2 top-full z-10 w-[220px] -translate-x-1/2 translate-y-2 border border-[rgba(60,37,21,0.08)] bg-white p-2 opacity-0 shadow-[0_18px_48px_rgba(60,37,21,0.1)] transition-all duration-200 group-hover:visible group-hover:translate-y-3 group-hover:opacity-100">
                     {item.children.map((child) => (
-                      <a
+                      <Link
                         key={child.label}
                         href={child.href}
                         className="block px-3 py-2 text-sm text-dark-muted transition-colors hover:bg-cream hover:text-dark"
                       >
                         {child.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
               ) : (
-                <a
+                <Link
                   key={item.label}
                   href={item.href}
                   className={`whitespace-nowrap text-sm font-medium tracking-[0.12em] transition-colors ${textClasses} ${hoverTextClasses}`}
                 >
                   {item.label}
-                </a>
+                </Link>
               ),
             )}
           </nav>

@@ -81,9 +81,9 @@ export default function About() {
             {/* Avatar stack + trust label */}
             <div className="flex items-center gap-3">
               <div className="flex items-center -space-x-3">
-                {about.trust.avatars.map((avatar) => (
+                {about.trust.avatars.map((avatar, i) => (
                   <div
-                    key={avatar}
+                    key={i}
                     className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-white bg-bg-cream"
                   >
                     <Image src={avatar} alt="" fill className="object-cover" />

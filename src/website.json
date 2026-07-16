@@ -29,14 +29,38 @@
       }
     ],
     "services": [
-      "Kitchen Remodeling",
-      "Bathroom Remodeling",
-      "Whole-Home Remodeling",
-      "Home Additions",
-      "Custom Cabinetry",
-      "Flooring",
-      "Design Consultation",
-      "Project Planning"
+      {
+        "name": "Kitchen Remodeling",
+        "href": "/services/kitchen-remodeling"
+      },
+      {
+        "name": "Bathroom Remodeling",
+        "href": "/services/bathroom-remodeling"
+      },
+      {
+        "name": "Whole-Home Remodeling",
+        "href": "/services/whole-home-remodeling"
+      },
+      {
+        "name": "Home Additions",
+        "href": "/services/home-additions"
+      },
+      {
+        "name": "Custom Cabinetry",
+        "href": "/services/custom-cabinetry"
+      },
+      {
+        "name": "Flooring",
+        "href": "/services/flooring"
+      },
+      {
+        "name": "Design Consultation",
+        "href": "/services/design-consultation"
+      },
+      {
+        "name": "Project Planning",
+        "href": "/services/project-planning"
+      }
     ]
   },
   "hero": {
