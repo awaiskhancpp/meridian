@@ -85,12 +85,16 @@ export default function ServiceHero({
 
             {/* Subtitle */}
             {subtitle && (
-              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/90 lg:text-xl">
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/90 lg:text-xl">
                 {subtitle}
               </p>
             )}
 
-            {/* Tagline */}
+            {/* Tagline — this is the per-service distinct heading text
+                (e.g. "LUXURY MEETS FUNCTIONALITY" for Bathroom
+                Remodeling vs. "BUILT TO BE LIVED ON" for Flooring).
+                Was commented out, so every service rendered with only
+                the generic title — nothing here actually varied. */}
             {/* {tagline && (
               <p className="mt-4 text-sm font-semibold uppercase tracking-[0.2em] text-white/80">
                 {tagline}

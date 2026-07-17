@@ -219,17 +219,17 @@
         "tagline": "QUALITY CRAFTSMANSHIP, TIMELESS DESIGN",
         "statBoxes": [
           {
-            "number": "15+",
+            "number": "01",
             "title": "Kitchens Built",
             "description": "Across The Puget Sound"
           },
           {
-            "number": "20+",
+            "number": "02",
             "title": "Years Experience",
             "description": "In Kitchen Remodeling"
           },
           {
-            "number": "100%",
+            "number": "03",
             "title": "Client Satisfaction",
             "description": "Based On Client Reviews"
           }
@@ -320,17 +320,17 @@
         "tagline": "LUXURY MEETS FUNCTIONALITY",
         "statBoxes": [
           {
-            "number": "10",
+            "number": "01",
             "title": "Bathrooms Remodeled",
             "description": "Across The Puget Sound"
           },
           {
-            "number": "20+",
+            "number": "02",
             "title": "Years Experience",
             "description": "In Bathroom Remodeling"
           },
           {
-            "number": "100%",
+            "number": "03",
             "title": "Client Satisfaction",
             "description": "Based On Client Reviews"
           }
@@ -406,17 +406,17 @@
         "tagline": "COMPREHENSIVE HOME SOLUTIONS",
         "statBoxes": [
           {
-            "number": "12",
+            "number": "01",
             "title": "Home Remodels Completed",
             "description": "Across The Puget Sound"
           },
           {
-            "number": "20+",
+            "number": "02",
             "title": "Years Experience",
             "description": "In Home Remodeling"
           },
           {
-            "number": "100%",
+            "number": "03",
             "title": "Client Satisfaction",
             "description": "Based On Client Reviews"
           }
@@ -507,17 +507,17 @@
         "tagline": "SEAMLESS EXPANSIONS",
         "statBoxes": [
           {
-            "number": "6",
+            "number": "01",
             "title": "Additions Completed",
             "description": "Across The Puget Sound"
           },
           {
-            "number": "20+",
+            "number": "02",
             "title": "Years Experience",
             "description": "In Home Additions"
           },
           {
-            "number": "100%",
+            "number": "03",
             "title": "Client Satisfaction",
             "description": "Based On Client Reviews"
           }
@@ -608,17 +608,17 @@
         "tagline": "BESPOKE STORAGE SOLUTIONS",
         "statBoxes": [
           {
-            "number": "8+",
+            "number": "01",
             "title": "Custom Cabinets Built",
             "description": "Across The Puget Sound"
           },
           {
-            "number": "20+",
+            "number": "02",
             "title": "Years Experience",
             "description": "In Custom Cabinetry"
           },
           {
-            "number": "100%",
+            "number": "03",
             "title": "Client Satisfaction",
             "description": "Based On Client Reviews"
           }
@@ -710,15 +710,18 @@
         "statBoxes": [
           {
             "title": "Material Range",
-            "description": "Hardwood, tile, and luxury vinyl options suited to every room and budget."
+            "description": "Hardwood, tile, and luxury vinyl options suited to every room and budget.",
+            "number": "01"
           },
           {
             "title": "Fast Turnaround",
-            "description": "Most flooring projects are completed in one to two weeks, start to finish."
+            "description": "Most flooring projects are completed in one to two weeks, start to finish.",
+            "number": "02"
           },
           {
             "title": "Clean Installation",
-            "description": "Careful prep and cleanup so the rest of your home stays undisturbed."
+            "description": "Careful prep and cleanup so the rest of your home stays undisturbed.",
+            "number": "03"
           }
         ],
         "beforeAfter": [
@@ -808,15 +811,18 @@
         "statBoxes": [
           {
             "title": "One-on-One Guidance",
-            "description": "Direct time with our design team to talk through ideas and constraints."
+            "description": "Direct time with our design team to talk through ideas and constraints.",
+            "number": "01"
           },
           {
             "title": "Real Direction",
-            "description": "Leave with a clearer sense of scope, style, and next steps."
+            "description": "Leave with a clearer sense of scope, style, and next steps.",
+            "number": "02"
           },
           {
             "title": "No Obligation",
-            "description": "A consultation, not a sales pitch — decide on your own timeline."
+            "description": "A consultation, not a sales pitch — decide on your own timeline.",
+            "number": "03"
           }
         ],
         "process": {
@@ -888,15 +894,18 @@
         "statBoxes": [
           {
             "title": "Clear Budgeting",
-            "description": "Transparent, itemized numbers before any work begins."
+            "description": "Transparent, itemized numbers before any work begins.",
+            "number": "01"
           },
           {
             "title": "Realistic Timelines",
-            "description": "Sequencing worked out in advance to avoid mid-project surprises."
+            "description": "Sequencing worked out in advance to avoid mid-project surprises.",
+            "number": "02"
           },
           {
             "title": "One Organized Plan",
-            "description": "Every trade and material decision mapped before demolition starts."
+            "description": "Every trade and material decision mapped before demolition starts.",
+            "number": "03"
           }
         ],
         "process": {
@@ -942,7 +951,6 @@
           "heading": "Renovating for",
           "script": "Generations"
         },
-
         "processSection": {
           "label": "Our Process",
           "heading": "Our Simple",
