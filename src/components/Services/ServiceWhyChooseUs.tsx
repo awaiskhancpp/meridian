@@ -1,9 +1,11 @@
 import React from 'react'
-import { Container } from '@/components/ui'
+import Image from 'next/image'
+import { Button, Container } from '@/components/ui'
 
 interface WhyChooseUsData {
   heading: string
   script?: string
+  image?: string
   description: string
   missionTitle: string
   missionText: string
@@ -31,17 +33,41 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
   return (
     <section aria-labelledby="why-choose-us-heading" className="py-16 lg:py-24">
       <Container>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] lg:items-start lg:gap-16">
-          <div className="flex flex-col gap-6 lg:gap-8">
-            {data.stats.map((stat, index) => (
-              <div key={index} className="rounded-none   p-6 lg:p-8">
-                <p className="text-4xl font-black leading-none text-accent lg:text-5xl">
-                  {stat.value}
-                </p>
-                <p className="mt-2 text-sm font-semibold text-dark lg:text-base">{stat.label}</p>
-              </div>
-            ))}
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start lg:gap-16">
+          {/* ── Left: stats ── */}
+          <div className="flex h-full flex-col justify-between gap-6 lg:gap-8">
+            {/* Grouping stats together so they sit at the top */}
+            <div className="flex flex-col gap-4">
+              {data.stats.map((stat, index) => (
+                <div key={index} className="rounded-none p-6 lg:p-8">
+                  <p className="text-4xl font-black leading-none text-accent lg:text-5xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-2 text-sm font-semibold text-dark lg:text-base">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Button is now pushed to the bottom by justify-between */}
+            <Button variant="outline" href="#" className="rounded-none ">
+              Learn More
+            </Button>
           </div>
+
+          {/* ── Center: image ── */}
+          {data.image && (
+            <div className="relative h-full w-full overflow-hidden rounded-none lg:aspect-[4/3]">
+              <Image
+                src={data.image}
+                alt="Why choose us"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 33vw"
+              />
+            </div>
+          )}
+
+          {/* ── Right: heading, description, mission ── */}
           <div>
             <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">Why Choose Us</p>
 

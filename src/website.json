@@ -1516,6 +1516,7 @@
     "kitchen-remodeling": {
       "heading": "Reliable Kitchen Remodeling",
       "script": "Backed By Experience",
+      "image": "/hero.webp",
       "description": "At Meridian, we specialize in fast, reliable, and beautifully finished kitchen remodels for homes and businesses alike.",
       "missionTitle": "Mission",
       "missionText": "Whether it's a full gut renovation or a targeted cabinet-and-countertop refresh, we make the process smooth, fast, and stress-free from start to finish.",
@@ -1533,6 +1534,7 @@
     "bathroom-remodeling": {
       "heading": "Reliable Bathroom Remodeling",
       "script": "Backed By Experience",
+      "image": "/hero.webp",
       "description": "At Meridian, we specialize in fast, reliable, and beautifully finished bathroom renovations for every budget and space.",
       "missionTitle": "Mission",
       "missionText": "Whether it's a full gut renovation or a simple fixture refresh, we make the process smooth, fast, and stress-free from start to finish.",
@@ -1550,6 +1552,7 @@
     "whole-home-remodeling": {
       "heading": "Reliable Whole-Home Remodeling",
       "script": "Backed By Experience",
+      "image": "/hero.webp",
       "description": "At Meridian, we specialize in coordinated, full-property renovations that touch every corner of your home without the usual chaos.",
       "missionTitle": "Mission",
       "missionText": "Whether it's a single-room refresh or a top-to-bottom transformation, we make the process smooth, fast, and stress-free from start to finish.",
@@ -1567,6 +1570,7 @@
     "home-additions": {
       "heading": "Reliable Home Additions",
       "script": "Backed By Experience",
+      "image": "/hero.webp",
       "description": "At Meridian, we specialize in seamless home additions that expand your living space without disrupting your day-to-day.",
       "missionTitle": "Mission",
       "missionText": "Whether it's a single new room or a full second story, we make the process smooth, fast, and stress-free from start to finish.",
@@ -1584,6 +1588,7 @@
     "custom-cabinetry": {
       "heading": "Reliable Custom Cabinetry",
       "script": "Backed By Experience",
+      "image": "/hero.webp",
       "description": "At Meridian, we specialize in handcrafted, built-to-order cabinetry designed around exactly how you use your space.",
       "missionTitle": "Mission",
       "missionText": "Whether it's a single built-in or cabinetry for a full home, we make the process smooth, fast, and stress-free from start to finish.",
@@ -1601,6 +1606,7 @@
     "flooring": {
       "heading": "Reliable Flooring Installation",
       "script": "Backed By Experience",
+      "image": "/hero.webp",
       "description": "At Meridian, we specialize in fast, reliable, and durable flooring installation for homes and businesses alike.",
       "missionTitle": "Mission",
       "missionText": "Whether it's a single room or your whole home, we make the process smooth, fast, and stress-free from start to finish.",
@@ -1618,6 +1624,7 @@
     "design-consultation": {
       "heading": "Reliable Design Guidance",
       "script": "Backed By Experience",
+      "image": "/hero.webp",
       "description": "At Meridian, we specialize in clear, honest design consultations that turn vague ideas into a real, actionable plan.",
       "missionTitle": "Mission",
       "missionText": "Whether you're just exploring options or ready to move forward, we make the process smooth, fast, and stress-free from start to finish.",
@@ -1635,6 +1642,7 @@
     "project-planning": {
       "heading": "Reliable Project Planning",
       "script": "Backed By Experience",
+      "image": "/hero.webp",
       "description": "At Meridian, we specialize in detailed, transparent project planning that keeps every renovation organized from day one.",
       "missionTitle": "Mission",
       "missionText": "Whether it's a small project or a major renovation, we make the process smooth, fast, and stress-free from start to finish.",
