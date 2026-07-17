@@ -11,6 +11,7 @@ import AreasWeServe from './AreasWeServe'
 import CTABanner from './CTABanner'
 import ServiceProcess from './ServiceProcess'
 import ServiceFaqs from './ServiceFaq'
+import ServiceWhyChooseUs from './ServiceWhyChooseUs'
 
 interface ServicePageProps {
   service: ServiceCardData
@@ -28,7 +29,8 @@ interface ServicePageProps {
  * just data-lookup + notFound(); this is where the actual page lives.
  */
 export default function ServicePage({ service, allServices }: ServicePageProps) {
-  const { serviceAreas } = siteData
+  const { serviceAreas, serviceWhyChooseUs } = siteData
+  const whyChooseUsData = serviceWhyChooseUs?.[service.slug as keyof typeof serviceWhyChooseUs]
 
   return (
     <div>
@@ -56,6 +58,9 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
           description={service.description}
         />
       </Container>
+
+      {whyChooseUsData && <ServiceWhyChooseUs data={whyChooseUsData} />}
+
       {service.process && service.process.steps.length > 0 && (
         <ServiceProcess
           label={service.processSection?.label || 'Our Process'}

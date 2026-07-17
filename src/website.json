@@ -291,9 +291,9 @@
           }
         ],
         "about": {
-          "label": "About",
-          "heading": "About",
-          "script": "Us"
+          "label": "Who We Are",
+          "heading": "Renovating for",
+          "script": "Generations"
         },
         "processSection": {
           "label": "Our Process",
@@ -478,9 +478,9 @@
           }
         ],
         "about": {
-          "label": "About",
-          "heading": "About",
-          "script": "Us"
+          "label": "Who We Are",
+          "heading": "Renovating for",
+          "script": "Generations"
         },
         "processSection": {
           "label": "Our Process",
@@ -579,9 +579,9 @@
           }
         ],
         "about": {
-          "label": "About",
-          "heading": "About",
-          "script": "Us"
+          "label": "Who We Are",
+          "heading": "Renovating for",
+          "script": "Generations"
         },
         "processSection": {
           "label": "Our Process",
@@ -680,9 +680,9 @@
           }
         ],
         "about": {
-          "label": "About",
-          "heading": "About",
-          "script": "Us"
+          "label": "Who We Are",
+          "heading": "Renovating for",
+          "script": "Generations"
         },
         "processSection": {
           "label": "Our Process",
@@ -781,9 +781,9 @@
           }
         ],
         "about": {
-          "label": "About",
-          "heading": "About",
-          "script": "Us"
+          "label": "Who We Are",
+          "heading": "Renovating for",
+          "script": "Generations"
         },
         "processSection": {
           "label": "Our Process",
@@ -864,9 +864,9 @@
           }
         ],
         "about": {
-          "label": "About",
-          "heading": "About",
-          "script": "Us"
+          "label": "Who We Are",
+          "heading": "Renovating for",
+          "script": "Generations"
         },
         "processSection": {
           "label": "Our Process",
@@ -1463,8 +1463,8 @@
       "score": "5.0",
       "reviewCount": "500+"
     },
-    "heading": "Your Trusted Partner For",
-    "script": "Reliable Remodeling.",
+    "heading": "Remodeling You Can",
+    "script": "Actually Trust.",
     "description": "We provide expert kitchen, bath, and whole-home remodeling designed to keep your project on time, on budget, and built to last. From first sketch to final walkthrough, our team makes the whole process feel effortless.",
     "ctaPrimary": {
       "label": "Book a Consultation",
@@ -1511,5 +1511,143 @@
   "sitePhone": {
     "display": "(619) 555-1234",
     "href": "tel:+16195551234"
+  },
+  "serviceWhyChooseUs": {
+    "kitchen-remodeling": {
+      "heading": "Reliable Kitchen Remodeling",
+      "script": "Backed By Experience",
+      "description": "At Meridian, we specialize in fast, reliable, and beautifully finished kitchen remodels for homes and businesses alike.",
+      "missionTitle": "Mission",
+      "missionText": "Whether it's a full gut renovation or a targeted cabinet-and-countertop refresh, we make the process smooth, fast, and stress-free from start to finish.",
+      "stats": [
+        {
+          "value": "10+",
+          "label": "Years Experience"
+        },
+        {
+          "value": "500+",
+          "label": "Kitchens Completed"
+        }
+      ]
+    },
+    "bathroom-remodeling": {
+      "heading": "Reliable Bathroom Remodeling",
+      "script": "Backed By Experience",
+      "description": "At Meridian, we specialize in fast, reliable, and beautifully finished bathroom renovations for every budget and space.",
+      "missionTitle": "Mission",
+      "missionText": "Whether it's a full gut renovation or a simple fixture refresh, we make the process smooth, fast, and stress-free from start to finish.",
+      "stats": [
+        {
+          "value": "10+",
+          "label": "Years Experience"
+        },
+        {
+          "value": "400+",
+          "label": "Bathrooms Completed"
+        }
+      ]
+    },
+    "whole-home-remodeling": {
+      "heading": "Reliable Whole-Home Remodeling",
+      "script": "Backed By Experience",
+      "description": "At Meridian, we specialize in coordinated, full-property renovations that touch every corner of your home without the usual chaos.",
+      "missionTitle": "Mission",
+      "missionText": "Whether it's a single-room refresh or a top-to-bottom transformation, we make the process smooth, fast, and stress-free from start to finish.",
+      "stats": [
+        {
+          "value": "10+",
+          "label": "Years Experience"
+        },
+        {
+          "value": "150+",
+          "label": "Full Homes Renovated"
+        }
+      ]
+    },
+    "home-additions": {
+      "heading": "Reliable Home Additions",
+      "script": "Backed By Experience",
+      "description": "At Meridian, we specialize in seamless home additions that expand your living space without disrupting your day-to-day.",
+      "missionTitle": "Mission",
+      "missionText": "Whether it's a single new room or a full second story, we make the process smooth, fast, and stress-free from start to finish.",
+      "stats": [
+        {
+          "value": "10+",
+          "label": "Years Experience"
+        },
+        {
+          "value": "120+",
+          "label": "Additions Built"
+        }
+      ]
+    },
+    "custom-cabinetry": {
+      "heading": "Reliable Custom Cabinetry",
+      "script": "Backed By Experience",
+      "description": "At Meridian, we specialize in handcrafted, built-to-order cabinetry designed around exactly how you use your space.",
+      "missionTitle": "Mission",
+      "missionText": "Whether it's a single built-in or cabinetry for a full home, we make the process smooth, fast, and stress-free from start to finish.",
+      "stats": [
+        {
+          "value": "10+",
+          "label": "Years Experience"
+        },
+        {
+          "value": "600+",
+          "label": "Cabinets Built"
+        }
+      ]
+    },
+    "flooring": {
+      "heading": "Reliable Flooring Installation",
+      "script": "Backed By Experience",
+      "description": "At Meridian, we specialize in fast, reliable, and durable flooring installation for homes and businesses alike.",
+      "missionTitle": "Mission",
+      "missionText": "Whether it's a single room or your whole home, we make the process smooth, fast, and stress-free from start to finish.",
+      "stats": [
+        {
+          "value": "10+",
+          "label": "Years Experience"
+        },
+        {
+          "value": "700+",
+          "label": "Rooms Floored"
+        }
+      ]
+    },
+    "design-consultation": {
+      "heading": "Reliable Design Guidance",
+      "script": "Backed By Experience",
+      "description": "At Meridian, we specialize in clear, honest design consultations that turn vague ideas into a real, actionable plan.",
+      "missionTitle": "Mission",
+      "missionText": "Whether you're just exploring options or ready to move forward, we make the process smooth, fast, and stress-free from start to finish.",
+      "stats": [
+        {
+          "value": "10+",
+          "label": "Years Experience"
+        },
+        {
+          "value": "1,000+",
+          "label": "Consultations Given"
+        }
+      ]
+    },
+    "project-planning": {
+      "heading": "Reliable Project Planning",
+      "script": "Backed By Experience",
+      "description": "At Meridian, we specialize in detailed, transparent project planning that keeps every renovation organized from day one.",
+      "missionTitle": "Mission",
+      "missionText": "Whether it's a small project or a major renovation, we make the process smooth, fast, and stress-free from start to finish.",
+      "stats": [
+        {
+          "value": "10+",
+          "label": "Years Experience"
+        },
+        {
+          "value": "500+",
+          "label": "Projects Planned"
+        }
+      ]
+    }
   }
 }

@@ -71,7 +71,7 @@ export default function ServiceProcess({
               {sitePhone.display}
             </a>
 
-            <div className="relative mt-6 aspect-[4/3] w-full overflow-hidden rounded-none border border-dark">
+            <div className="relative mt-8 aspect-[4/3] w-full overflow-hidden rounded-none border border-dark">
               <Image
                 src={image}
                 alt="Project in progress"
@@ -83,7 +83,7 @@ export default function ServiceProcess({
           </div>
 
           {/* ── Right: numbered step stack ── */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-4">
             {steps.map((step, i) => (
               <div
                 key={step.title}

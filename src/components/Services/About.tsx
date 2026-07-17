@@ -72,7 +72,7 @@ export default function About({
         </div>
 
         {/* ── Right: description, stat grid, CTA ── */}
-        <div>
+        <div className="flex flex-col items-center">
           <p className="text-sm leading-relaxed text-dark-muted sm:text-base">{description}</p>
 
           <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6">

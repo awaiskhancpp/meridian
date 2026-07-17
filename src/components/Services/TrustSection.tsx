@@ -42,12 +42,17 @@ interface TrustSectionProps {
 /**
  * TrustSection (service detail page)
  *
- * Card content is centered (description + CTA row) to match the
- * reference — only the bottom stat row (Google rating / stat highlight
- * + avatars) stays left-aligned, which is how the reference has it too.
- * The card itself needs its own bg-cream + border since it has no
- * ambient background otherwise — that had gotten dropped in a previous
- * edit, which is also why it looked visually flat/undefined before.
+ * Bottom stat row (Google rating / stat highlight + avatars) is now
+ * centered under each column, matching the reference, with a vertical
+ * divider between the two halves — previously they just floated next
+ * to each other with a plain gap and no visual separation, and the
+ * whole row was left-aligned instead of centered.
+ *
+ * heading/script rewritten to read as one coherent sentence across the
+ * two type treatments (matching the pattern every other heading on the
+ * site uses, e.g. About's "A team built" / "around your home.") —
+ * "Your Trusted Partner For" / "Reliable Remodeling." didn't actually
+ * complete as a sentence.
  *
  * Key design decisions (same as the rest of this folder):
  * - No rounded corners — rounded-none override on Button, square photo
@@ -111,9 +116,9 @@ export default function TrustSection({
               </Button>
             </div>
 
-            <div className="mt-auto  w-full grid grid-cols-2 justify-center items-center gap-8 pt-4">
+            <div className="mt-auto grid w-full grid-cols-2 items-center gap-8 divide-x divide-[rgba(60,37,21,0.15)] pt-4">
               {/* Google rating */}
-              <div>
+              <div className="flex flex-col items-center text-center">
                 <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
                   <path
                     d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -140,10 +145,10 @@ export default function TrustSection({
               </div>
 
               {/* Stat + avatar stack */}
-              <div>
+              <div className="flex flex-col items-center text-center">
                 <p className="text-3xl font-black leading-none text-dark">{statHighlight.score}</p>
                 <p className="mt-1 text-sm text-dark-muted">{statHighlight.label}</p>
-                <div className="mt-2 flex items-center -space-x-3">
+                <div className="mt-2 flex items-center justify-center -space-x-3">
                   {avatars.map((avatar, index) => (
                     <div
                       key={index}
@@ -165,7 +170,8 @@ export default function TrustSection({
           </div>
         </div>
 
-        {/* Partner / press logo row — placeholders, see file comment */}
+        {/* Partner / press logo row — placeholders, see file comment.
+            Left commented out, same as before. */}
         {/* <div className="mt-16 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
           {partners.map((partner) => {
             const Icon = PARTNER_ICONS[partner.icon]
