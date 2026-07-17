@@ -938,10 +938,11 @@
           }
         ],
         "about": {
-          "label": "About",
-          "heading": "About",
-          "script": "Us"
+          "label": "Who We Are",
+          "heading": "Renovating for",
+          "script": "Generations"
         },
+
         "processSection": {
           "label": "Our Process",
           "heading": "Our Simple",
