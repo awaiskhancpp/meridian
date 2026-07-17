@@ -289,7 +289,22 @@
             "question": "Will I get a fixed price before work begins?",
             "answer": "Yes. Layout, cabinetry, countertops, and finishes are locked in together with a fixed-price estimate before any demolition starts."
           }
-        ]
+        ],
+        "about": {
+          "label": "About",
+          "heading": "About",
+          "script": "Us"
+        },
+        "processSection": {
+          "label": "Our Process",
+          "heading": "Our Simple",
+          "script": "Process"
+        },
+        "faqSection": {
+          "label": "FAQ",
+          "heading": "What homeowners",
+          "script": "ask us."
+        }
       },
       {
         "icon": "bath",
@@ -461,7 +476,22 @@
             "question": "How long does a whole-home remodel take?",
             "answer": "Typically three to six months, depending on square footage and how many rooms are affected."
           }
-        ]
+        ],
+        "about": {
+          "label": "About",
+          "heading": "About",
+          "script": "Us"
+        },
+        "processSection": {
+          "label": "Our Process",
+          "heading": "Our Simple",
+          "script": "Process"
+        },
+        "faqSection": {
+          "label": "FAQ",
+          "heading": "What homeowners",
+          "script": "ask us."
+        }
       },
       {
         "icon": "house-plus",
@@ -547,7 +577,22 @@
             "question": "Can you build up instead of out?",
             "answer": "Yes — a second-story addition over an existing footprint preserves yard space entirely, though it requires a closer look at your home's existing structure first."
           }
-        ]
+        ],
+        "about": {
+          "label": "About",
+          "heading": "About",
+          "script": "Us"
+        },
+        "processSection": {
+          "label": "Our Process",
+          "heading": "Our Simple",
+          "script": "Process"
+        },
+        "faqSection": {
+          "label": "FAQ",
+          "heading": "What homeowners",
+          "script": "ask us."
+        }
       },
       {
         "icon": "shelving-unit",
@@ -633,7 +678,22 @@
             "question": "Do you install the cabinetry yourselves?",
             "answer": "Yes — the same team that measures your space also delivers and installs the finished cabinetry, so fit is never a guessing game."
           }
-        ]
+        ],
+        "about": {
+          "label": "About",
+          "heading": "About",
+          "script": "Us"
+        },
+        "processSection": {
+          "label": "Our Process",
+          "heading": "Our Simple",
+          "script": "Process"
+        },
+        "faqSection": {
+          "label": "FAQ",
+          "heading": "What homeowners",
+          "script": "ask us."
+        }
       },
       {
         "icon": "layout-grid",
@@ -716,7 +776,22 @@
             "question": "Do you repair the subfloor if needed?",
             "answer": "Yes — proper subfloor prep happens before any plank or tile goes down, since that's what actually determines how long a new floor lasts."
           }
-        ]
+        ],
+        "about": {
+          "label": "About",
+          "heading": "About",
+          "script": "Us"
+        },
+        "processSection": {
+          "label": "Our Process",
+          "heading": "Our Simple",
+          "script": "Process"
+        },
+        "faqSection": {
+          "label": "FAQ",
+          "heading": "What homeowners",
+          "script": "ask us."
+        }
       },
       {
         "icon": "pencil-line",
@@ -781,7 +856,22 @@
             "question": "Do I receive anything after the consultation?",
             "answer": "Yes — you'll leave with a concept direction and material options, refined based on your feedback before any construction commitment."
           }
-        ]
+        ],
+        "about": {
+          "label": "About",
+          "heading": "About",
+          "script": "Us"
+        },
+        "processSection": {
+          "label": "Our Process",
+          "heading": "Our Simple",
+          "script": "Process"
+        },
+        "faqSection": {
+          "label": "FAQ",
+          "heading": "What homeowners",
+          "script": "ask us."
+        }
       },
       {
         "icon": "clipboard-list",
@@ -846,7 +936,22 @@
             "question": "What's included in a project plan?",
             "answer": "A phased scope breakdown, realistic cost ranges per phase, and a coordinated timeline for any trades or permits the project will need."
           }
-        ]
+        ],
+        "about": {
+          "label": "About",
+          "heading": "About",
+          "script": "Us"
+        },
+        "processSection": {
+          "label": "Our Process",
+          "heading": "Our Simple",
+          "script": "Process"
+        },
+        "faqSection": {
+          "label": "FAQ",
+          "heading": "What homeowners",
+          "script": "ask us."
+        }
       }
     ]
   },

@@ -25,8 +25,9 @@ import { Button } from '../ui'
  */
 
 interface AboutProps {
-  badgeLabel?: string
-  tagline: string
+  label?: string
+  heading?: string
+  script?: string
   description: string
   image: string
   imageAlt?: string
@@ -36,8 +37,9 @@ interface AboutProps {
 }
 
 export default function About({
-  badgeLabel = 'About Us',
-  tagline,
+  label = 'About Us',
+  heading = 'About',
+  script = 'Us',
   description,
   image,
   imageAlt = '',
@@ -47,15 +49,14 @@ export default function About({
 }: AboutProps) {
   return (
     <section aria-labelledby="service-about-heading">
-      <span className="inline-flex items-center rounded-none border border-dark/20 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-dark">
-        {badgeLabel}
-      </span>
-
-      <h2
-        id="service-about-heading"
-        className="mt-5 max-w-3xl text-[clamp(1.4rem,2.6vw,2rem)] font-black uppercase leading-[1.2] tracking-[-0.01em] text-dark"
-      >
-        {tagline}
+      <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
+      <h2 id="service-about-heading" className="mt-1">
+        <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+          {heading}
+        </span>
+        <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
+          {script}
+        </span>
       </h2>
 
       <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:gap-12">

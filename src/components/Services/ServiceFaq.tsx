@@ -47,10 +47,14 @@ function PlusMinusIcon({ open }: { open: boolean }) {
 }
 
 export default function ServiceFaqs({
-  serviceTitle,
+  label = 'FAQ',
+  heading = 'What homeowners',
+  script = 'ask us.',
   faqs,
 }: {
-  serviceTitle: string
+  label?: string
+  heading?: string
+  script?: string
   faqs: ServiceFaq[]
 }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
@@ -62,16 +66,14 @@ export default function ServiceFaqs({
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16">
         {/* ── Left: eyebrow + heading ── */}
         <div>
-          <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.24em] text-accent">
-            <span className="h-px w-6 bg-accent" aria-hidden="true" />
-            FAQ
-            <span className="h-px w-6 bg-accent" aria-hidden="true" />
-          </p>
-          <h2
-            id="service-faq-heading"
-            className="mt-4 text-[clamp(1.6rem,3.2vw,2.4rem)] font-black leading-[1.15] tracking-[-0.02em] text-dark"
-          >
-            Common Questions About {serviceTitle}
+          <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
+          <h2 id="service-faq-heading" className="mt-1">
+            <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+              {heading}
+            </span>
+            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
+              {script}
+            </span>
           </h2>
         </div>
 

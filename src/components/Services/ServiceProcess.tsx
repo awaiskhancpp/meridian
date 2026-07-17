@@ -8,7 +8,9 @@ import type { ProcessStep } from '@/lib/services'
 const { sitePhone } = siteData
 
 interface ServiceProcessProps {
-  title: string
+  label?: string
+  heading?: string
+  script?: string
   image: string
   steps: ProcessStep[]
 }
@@ -37,32 +39,42 @@ interface ServiceProcessProps {
  * step's description here runs a full sentence or two rather than the
  * reference's shorter copy.
  */
-export default function ServiceProcess({ title, image, steps }: ServiceProcessProps) {
+export default function ServiceProcess({
+  label = 'Our Process',
+  heading = 'Our Simple',
+  script = 'Process',
+  image,
+  steps,
+}: ServiceProcessProps) {
   return (
     <section aria-labelledby="process-heading" className="py-16 lg:py-24">
       <Container>
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-16">
           {/* ── Left: heading + phone CTA + photo ── */}
           <div>
-            <h2
-              id="process-heading"
-              className="text-[clamp(1.9rem,3.4vw,2.6rem)] font-black leading-[1.05] tracking-[-0.02em] text-dark"
-            >
-              Our Simple {title} Process
+            <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
+            <h2 id="process-heading" className="mt-1 flex flex-wrap items-end gap-3">
+              <span className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+                {heading}
+              </span>
+
+              <span className="font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] italic leading-none text-accent">
+                {script}
+              </span>
             </h2>
 
             <a
               href={sitePhone.href}
-              className="mt-6 inline-flex items-center gap-2 rounded-none border border-dark bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
+              className="mt-4 inline-flex items-center gap-2 rounded-none border border-dark bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
             >
               <Phone size={16} strokeWidth={2} aria-hidden="true" />
               {sitePhone.display}
             </a>
 
-            <div className="relative mt-8 aspect-[4/3] w-full overflow-hidden rounded-none border border-dark">
+            <div className="relative mt-6 aspect-[4/3] w-full overflow-hidden rounded-none border border-dark">
               <Image
                 src={image}
-                alt={`${title} project in progress`}
+                alt="Project in progress"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -71,7 +83,7 @@ export default function ServiceProcess({ title, image, steps }: ServiceProcessPr
           </div>
 
           {/* ── Right: numbered step stack ── */}
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-5">
             {steps.map((step, i) => (
               <div
                 key={step.title}

@@ -45,6 +45,9 @@ export type ServiceCardData = {
   beforeAfter?: BeforeAfterItem[]
   process?: { steps: ProcessStep[] }
   faqs?: ServiceFaq[]
+  about?: { label?: string; heading?: string; script?: string }
+  processSection?: { label?: string; heading?: string; script?: string }
+  faqSection?: { label?: string; heading?: string; script?: string }
 }
 
 export const PRICE_TIERS = ['Under $10k', '$10k–$50k', '$50k+'] as const

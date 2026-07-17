@@ -47,16 +47,23 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
 
       <Container className="pt-24 pb-16">
         <About
-          badgeLabel={service.badge || 'About'}
+          label={service.about?.label || 'About'}
+          heading={service.about?.heading || 'About'}
+          script={service.about?.script || 'Us'}
           statBoxes={service.statBoxes}
-          tagline={service.tagline}
           imageAlt={service.description}
           image={service.image}
           description={service.description}
         />
       </Container>
       {service.process && service.process.steps.length > 0 && (
-        <ServiceProcess title={service.title} image={service.image} steps={service.process.steps} />
+        <ServiceProcess
+          label={service.processSection?.label || 'Our Process'}
+          heading={service.processSection?.heading || 'Our Simple'}
+          script={service.processSection?.script || 'Process'}
+          image={service.image}
+          steps={service.process.steps}
+        />
       )}
       <TrustSection />
 
@@ -77,7 +84,12 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
 
       <ExploreOtherServices currentSlug={service.slug} services={allServices} />
       <Container>
-        <ServiceFaqs serviceTitle={service.title} faqs={service.faqs ?? []} />
+        <ServiceFaqs
+          label={service.faqSection?.label || 'FAQ'}
+          heading={service.faqSection?.heading || 'What homeowners'}
+          script={service.faqSection?.script || 'ask us.'}
+          faqs={service.faqs ?? []}
+        />
       </Container>
       <AreasWeServe
         label={serviceAreas.label}
