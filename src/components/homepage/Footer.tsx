@@ -80,19 +80,19 @@ export default function Footer() {
                   Contact
                 </p>
                 <div className="mt-2 lg:mt-0 grid content-start gap-3 text-sm leading-6 text-dark">
-                  <p className="whitespace-nowrap">123 Artisan Lane</p>
-                  <p className="whitespace-nowrap">New York, NY 10001</p>
+                  <p className="whitespace-nowrap">734 University Ave.</p>
+                  <p className="whitespace-nowrap">Suite 205 San Diego, CA 92103</p>
                   <a
-                    href="mailto:hello@renova.studio"
+                    href="mailto:info@1REALTOUR.com"
                     className="font-medium hover:text-accent whitespace-nowrap"
                   >
-                    hello@renova.studio
+                    info@1REALTOUR.com
                   </a>
                   <a
                     href="tel:+12125551234"
                     className="font-medium hover:text-accent whitespace-nowrap"
                   >
-                    +1 (212) 555-1234
+                    619.315.4591
                   </a>
                 </div>
               </div>
