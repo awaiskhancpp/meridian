@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
       className="relative overflow-hidden py-16  lg:py-24 bg-white"
     >
       {/* Subtle Background Decoration matching the reference's depth */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial-warm" />
+      {/* <div className="pointer-events-none absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial-warm" /> */}
 
       <Container className="relative z-10">
         {/* Header Section */}
