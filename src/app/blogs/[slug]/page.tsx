@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     CATEGORY_LABELS[post.category as keyof typeof CATEGORY_LABELS] ?? post.category
 
   return (
-    <main className="min-h-screen scroll-smooth bg-white">
+    <main className="min-h-screen scroll-smooth bg-white overflow-hidden">
       <Navbar />
       <PageHero label="" heading="" subheading="" image="/hero.webp" />
 

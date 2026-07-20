@@ -1460,7 +1460,7 @@
     "description": "We provide expert kitchen, bath, and whole-home remodeling designed to keep your project on time, on budget, and built to last. From first sketch to final walkthrough, our team makes the whole process feel effortless.",
     "ctaPrimary": {
       "label": "Book a Consultation",
-      "href": "#contact"
+      "href": "/#contact"
     },
     "ctaSecondary": {
       "label": "Call Us Now",

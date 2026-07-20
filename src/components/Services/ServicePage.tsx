@@ -44,7 +44,7 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
         label="Our Services"
         statBoxes={service.statBoxes}
         ctaLabel="Schedule a Consultation"
-        ctaHref="#contact"
+        ctaHref="/#contact"
       />
 
       <Container className="pt-24 pb-16">

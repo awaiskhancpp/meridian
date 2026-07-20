@@ -24,10 +24,10 @@ export default function Footer() {
   return (
     <footer id="footer" className="border-t border-dark">
       <Container>
-        <div className="mx-auto w-full  py-8  lg:py-10">
-          <div className="grid gap-8 px-5 py-6 backdrop-blur-sm sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:py-8">
+        <div className="mx-auto w-full py-8 lg:py-10">
+          <div className="grid grid-cols-1 gap-8 px-5 py-6 backdrop-blur-sm sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:py-8">
             {/* Brand Section */}
-            <div className="space-y-4 col-span-3">
+            <div className="space-y-4 lg:col-span-3">
               <div className="text-xl font-semibold tracking-[0.18em] text-dark">
                 <Image src="/logo.png" alt="" width={120} height={100} />
               </div>
@@ -38,12 +38,12 @@ export default function Footer() {
             </div>
 
             {/* Menu Section */}
-            <div className="col-span-9 grid grid-cols-2 md:grid-cols-3">
-              <div className="flex gap-2 lg:gap-0 flex-col md:flex-row">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted min-w-[5rem] shrink-0">
+            <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 md:grid-cols-3 lg:col-span-9 lg:gap-x-8">
+              <div className="flex flex-col gap-2 lg:flex-row lg:gap-0">
+                <p className="min-w-[5rem] shrink-0 text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted">
                   Menu
                 </p>
-                <div className="mt-2 lg:mt-0 grid content-start gap-3 lg:gap-6">
+                <div className="mt-2 grid content-start gap-3 lg:mt-0 lg:gap-6">
                   {footerLinks.map((item) => (
                     <a
                       key={item.label}
@@ -57,11 +57,11 @@ export default function Footer() {
               </div>
 
               {/* Follow Us Section */}
-              <div className="flex gap-2 lg:gap-4 flex-col md:flex-row">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted min-w-[5rem] shrink-0">
+              <div className="flex flex-col gap-2 lg:flex-row lg:gap-4">
+                <p className="min-w-[5rem] shrink-0 text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted">
                   Follow us
                 </p>
-                <div className="mt-2 lg:mt-0 grid content-start items-start gap-3 lg:gap-6">
+                <div className="mt-2 grid content-start items-start gap-3 lg:mt-0 lg:gap-6">
                   {socialLinks.map((item) => (
                     <a
                       key={item.label}
@@ -75,13 +75,13 @@ export default function Footer() {
               </div>
 
               {/* Contact Section */}
-              <div className="mt-6 md:mt-0 lg:gap-4 flex gap-3 flex-col md:flex-row">
-                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted min-w-[5rem] shrink-0">
+              <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-1 lg:flex-row lg:gap-3">
+                <p className="min-w-[5rem] shrink-0 text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted">
                   Contact
                 </p>
-                <div className="mt-2 lg:mt-0 grid content-start gap-3 text-sm leading-6 text-dark">
-                  <p className="whitespace-nowrap">734 University Ave.</p>
-                  <p className="whitespace-nowrap">Suite 205 San Diego, CA 92103</p>
+                <div className="mt-0 grid content-start gap-3 text-sm leading-6 text-dark">
+                  <p>734 University Ave.</p>
+                  <p>Suite 205 San Diego, CA 92103</p>
                   <a
                     href="mailto:info@1REALTOUR.com"
                     className="font-medium hover:text-accent whitespace-nowrap"

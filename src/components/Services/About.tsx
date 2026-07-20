@@ -45,7 +45,7 @@ export default function About({
   imageAlt = '',
   statBoxes,
   ctaLabel = "Let's Build Together",
-  ctaHref = '#contact',
+  ctaHref = '/#contact',
 }: AboutProps) {
   return (
     <section aria-labelledby="service-about-heading">
@@ -72,10 +72,10 @@ export default function About({
         </div>
 
         {/* ── Right: description, stat grid, CTA ── */}
-        <div className="flex h-full flex-col justify-center items-center">
+        <div className="flex h-full flex-col justify-center items-start">
           <p className="text-sm leading-relaxed text-dark-muted sm:text-base">{description}</p>
 
-          <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6">
+          <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 ">
             {statBoxes.map((stat) => (
               <div key={stat.title}>
                 <p className="text-2xl font-black leading-none text-dark sm:text-3xl">

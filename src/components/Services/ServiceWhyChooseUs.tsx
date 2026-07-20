@@ -49,7 +49,7 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
             </div>
 
             {/* Button is now pushed to the bottom by justify-between */}
-            <Button variant="outline" href="#" className="rounded-none">
+            <Button variant="outline" href="/#contact" className="rounded-none">
               Learn More
             </Button>
           </div>

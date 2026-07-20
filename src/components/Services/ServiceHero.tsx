@@ -49,14 +49,13 @@ export default function ServiceHero({
   tagline,
   image,
   ctaLabel = 'Schedule a Consultation',
-  ctaHref = '#contact',
+  ctaHref = '/#contact',
   label,
   statBoxes,
 }: ServiceHeroProps) {
   return (
     <section aria-label={title} className="w-full">
       <div className="relative isolate h-[100vh] min-h-[500px] w-full lg:h-[92vh]">
-        {/* Background image */}
         <Image
           src={image}
           alt=""
@@ -71,13 +70,6 @@ export default function ServiceHero({
 
         <Container className="relative flex h-full flex-col justify-center">
           <div className="max-w-3xl">
-            {/* Optional label */}
-            {/* {label && (
-              <p className="mb-4 text-xs font-medium uppercase tracking-[0.34em] text-white/70">
-                {label}
-              </p>
-            )} */}
-
             {/* Main title */}
             <h1 className="text-[clamp(2rem,5vw,4rem)] font-bold uppercase leading-[0.95] tracking-[-0.04em] text-white lg:text-[4.5rem]">
               {title}
@@ -89,17 +81,6 @@ export default function ServiceHero({
                 {subtitle}
               </p>
             )}
-
-            {/* Tagline — this is the per-service distinct heading text
-                (e.g. "LUXURY MEETS FUNCTIONALITY" for Bathroom
-                Remodeling vs. "BUILT TO BE LIVED ON" for Flooring).
-                Was commented out, so every service rendered with only
-                the generic title — nothing here actually varied. */}
-            {/* {tagline && (
-              <p className="mt-4 text-sm font-semibold uppercase tracking-[0.2em] text-white/80">
-                {tagline}
-              </p>
-            )} */}
 
             {/* CTA Button */}
             {ctaLabel && ctaHref && (

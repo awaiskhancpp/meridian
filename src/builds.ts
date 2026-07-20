@@ -166,7 +166,7 @@ export const shadow = {
 export const gradient = {
   hero: 'linear-gradient(180deg,rgba(34,24,18,0.38)_0%,rgba(34,24,18,0.18)_42%,rgba(34,24,18,0.74)_100%)',
   serviceHero:
-    'linear-gradient(90deg,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.45)_55%,rgba(0,0,0,0.15)_100%)',
+    'linear-gradient(90deg,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.45)_45%,rgba(0,0,0,0.10)_100%)',
   card: 'linear-gradient(180deg,rgba(60,37,21,0.08)_0%,rgba(60,37,21,0.18)_100%)',
   radialWarm: 'radial-gradient(circle_at_center,rgba(60,37,21,0.03)_0%,transparent_70%)',
   cardBottomDark: 'linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.1) 100%)',
