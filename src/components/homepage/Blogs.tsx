@@ -72,7 +72,7 @@ export default function Blogs() {
             onClick={() => swiperRef.current?.slidePrev()}
             disabled={atStart}
             aria-label="Previous articles"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(60,37,21,0.2)] text-dark-muted transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-35"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-strong text-dark-muted transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-35"
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
@@ -81,7 +81,7 @@ export default function Blogs() {
             onClick={() => swiperRef.current?.slideNext()}
             disabled={atEnd}
             aria-label="Next articles"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[rgba(60,37,21,0.2)] text-dark-muted transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-35"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-strong text-dark-muted transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-35"
           >
             <ChevronRight className="h-4 w-4" />
           </button>
@@ -111,10 +111,10 @@ export function BlogFeatureCard({ card }: { card: BlogItem }) {
               fill
               className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(60,37,21,0.08)_0%,rgba(60,37,21,0.18)_100%)]" />
+            <div className="absolute inset-0 bg-overlay-card" />
 
             <div className="absolute inset-0 flex items-center justify-center p-6  opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100">
-              <div className="w-full translate-y-4 h-full  border border-white/50 bg-white/90 px-8 py-10 flex flex-col items-center justify-center text-center opacity-0 shadow-[0_18px_48px_rgba(60,37,21,0.08)] backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="w-full translate-y-4 h-full border border-light-strong bg-white-overlay px-8 py-10 flex flex-col items-center justify-center text-center opacity-0 shadow-soft backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                 <h3 className="text-[clamp(1.5rem,2vw,2rem)] font-black uppercase leading-[0.92] tracking-[-0.04em] text-dark">
                   {card.title}
                 </h3>

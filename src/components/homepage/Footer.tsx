@@ -98,9 +98,9 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="mt-8 flex flex-col items-center justify-center gap-2 border-t border-[rgba(60,37,21,0.08)] px-5 pt-6 text-center text-xs text-dark-muted md:flex-row md:gap-3">
+          <div className="mt-8 flex flex-col items-center justify-center gap-2 border-t border-subtle px-5 pt-6 text-center text-xs text-dark-muted md:flex-row md:gap-3">
             <p>© 2026 MERIDIAN. All rights reserved.</p>
-            <span className="hidden md:inline text-[rgba(60,37,21,0.2)]">|</span>
+            <span className="hidden md:inline text-border-strong">|</span>
             <p>
               Designed and Developed by{' '}
               <a

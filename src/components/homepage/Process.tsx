@@ -42,7 +42,7 @@ export default function Process() {
           {processData.steps.map((step, idx) => (
             <div
               key={idx}
-              className="relative flex flex-col  border border-[rgba(60,37,21,0.1)] bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-md"
+              className="relative flex flex-col border border-soft bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-md"
             >
               {/*
                 Badge + line share one flex row now, instead of the badge
@@ -55,11 +55,11 @@ export default function Process() {
                 width or position to reach "the end of the card."
               */}
               <div className="mb-5 flex items-center gap-2">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#3c2515] text-sm font-bold text-white">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
                   {String(idx + 1).padStart(2, '0')}
                 </div>
                 <div
-                  className="h-0 flex-1 border-t border-dashed border-[rgba(60,37,21,0.25)]"
+                  className="h-0 flex-1 border-t border-dashed border-divider-strong"
                   aria-hidden="true"
                 />
               </div>

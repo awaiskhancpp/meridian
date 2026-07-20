@@ -32,9 +32,58 @@
   --color-nav-border:    rgba(60,37,21,0.08);
   --color-input-bg:      rgba(60,37,21,0.05);
   --color-input-border:  rgba(60,37,21,0.16);
+  --color-overlay-dark:  rgba(0,0,0,0.4);
+  --color-panel-dark:    rgba(60,37,21,0.82);
+  --color-white-soft:    rgba(255,255,255,0.05);
+  --color-white-ghost:   rgba(255,255,255,0.1);
+  --color-white-faint:   rgba(255,255,255,0.2);
+  --color-white-muted:   rgba(255,255,255,0.6);
+  --color-white-subtle:  rgba(255,255,255,0.7);
+  --color-white-overlay: rgba(255,255,255,0.9);
+  --color-white-high:    rgba(255,255,255,0.95);
+  --color-border-light-soft:   rgba(255,255,255,0.2);
+  --color-border-light-muted:  rgba(255,255,255,0.3);
+  --color-border-light-mid:    rgba(255,255,255,0.35);
+  --color-border-light-strong: rgba(255,255,255,0.5);
+  --color-border-light-heavy:  rgba(255,255,255,0.7);
+  --color-border-emphasis:     rgba(60,37,21,0.3);
+  --color-ring-dark-soft:      rgba(0,0,0,0.05);
   --color-glass-bg:      rgba(239,230,216,0.86);
   --color-glass-border:  rgba(60,37,21,0.12);
   --color-form-bg:       rgba(239,230,216,0.94);
+  --color-border-subtle: rgba(60,37,21,0.08);
+  --color-border-soft:   rgba(60,37,21,0.1);
+  --color-border-muted:  rgba(60,37,21,0.12);
+  --color-border-divider: rgba(60,37,21,0.15);
+  --color-border-strong: rgba(60,37,21,0.2);
+  --color-border-divider-strong: rgba(60,37,21,0.25);
+  --color-border-extra-strong: rgba(60,37,21,0.22);
+  --color-accent-faint:  rgba(60,37,21,0.06);
+  --color-hero-overlay: rgba(34,24,18,0.38);
+  --color-hero-overlay-mid: rgba(34,24,18,0.18);
+  --color-hero-overlay-strong: rgba(34,24,18,0.74);
+  --color-service-hero-overlay: rgba(34,24,18,0.45);
+  --color-service-hero-overlay-mid: rgba(34,24,18,0.25);
+  --color-service-hero-overlay-strong: rgba(34,24,18,0.7);
+  --color-card-overlay: rgba(60,37,21,0.08);
+  --color-card-overlay-strong: rgba(60,37,21,0.18);
+  --color-radial-warm: rgba(60,37,21,0.03);
+  --color-decorative-gold: #FBBC05;
+  --color-decorative-blue: #4285F4;
+  --color-decorative-green: #34A853;
+  --color-decorative-red: #EA4335;
+  --color-decorative-terracotta: #c28b6e;
+  --shadow-soft: 0 12px 28px rgba(60,37,21,0.08);
+  --shadow-card: 0 18px 48px rgba(60,37,21,0.1);
+  --shadow-card-strong: 0 12px 28px rgba(60,37,21,0.18);
+  --shadow-lift: 0 20px 60px rgba(0,0,0,0.12);
+  --shadow-navbar: 0 18px 48px rgba(60,37,21,0.06);
+  --shadow-menu: 0 28px 70px rgba(60,37,21,0.12);
+  --gradient-hero: linear-gradient(180deg,rgba(34,24,18,0.38)_0%,rgba(34,24,18,0.18)_42%,rgba(34,24,18,0.74)_100%);
+  --gradient-service-hero: linear-gradient(90deg,rgba(0,0,0,0.8)_0%,rgba(0,0,0,0.45)_55%,rgba(0,0,0,0.15)_100%);
+  --gradient-card: linear-gradient(180deg,rgba(60,37,21,0.08)_0%,rgba(60,37,21,0.18)_100%);
+  --gradient-radial-warm: radial-gradient(circle_at_center,rgba(60,37,21,0.03)_0%,transparent_70%);
+  --gradient-card-bottom-dark: linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.1) 100%);
 
   /* ─── Typography ──────────────────────────────────────────────── */
   --font-family-sans:   'Host Grotesk', sans-serif;
@@ -135,6 +184,23 @@
 @utility bg-cream { background-color: var(--color-bg-cream); }
 @utility bg-accent       { background-color: var(--color-accent); }
 @utility bg-accent-hover { background-color: var(--color-accent-hover); }
+@utility bg-accent-faint { background-color: var(--color-accent-faint); }
+@utility bg-overlay-dark { background-color: var(--color-overlay-dark); }
+@utility bg-panel-dark { background-color: var(--color-panel-dark); }
+@utility bg-white-soft { background-color: var(--color-white-soft); }
+@utility bg-white-ghost { background-color: var(--color-white-ghost); }
+@utility bg-white-faint { background-color: var(--color-white-faint); }
+@utility bg-white-muted { background-color: var(--color-white-muted); }
+@utility bg-white-subtle { background-color: var(--color-white-subtle); }
+@utility bg-white-overlay { background-color: var(--color-white-overlay); }
+@utility bg-white-high { background-color: var(--color-white-high); }
+@utility bg-nav          { background-color: var(--color-nav-bg); }
+@utility bg-nav-default  { background-color: var(--color-nav-bg-default); }
+@utility bg-glass        { background-color: var(--color-glass-bg); }
+@utility bg-form         { background-color: var(--color-form-bg); }
+@utility bg-input        { background-color: var(--color-input-bg); }
+@utility bg-card-overlay  { background-color: var(--color-card-overlay); }
+@utility bg-card-overlay-strong { background-color: var(--color-card-overlay-strong); }
 
 /* Text — on dark surfaces */
 @utility text-primary   { color: var(--color-text-primary); }
@@ -154,4 +220,71 @@
 @utility text-accent-light { color: var(--color-accent-light); }
 
 @utility border-accent { border-color: var(--color-accent); }
+@utility border-nav    { border-color: var(--color-nav-border); }
+@utility border-glass  { border-color: var(--color-glass-border); }
+@utility border-input  { border-color: var(--color-input-border); }
+@utility border-light-soft { border-color: var(--color-border-light-soft); }
+@utility border-light-muted { border-color: var(--color-border-light-muted); }
+@utility border-light-mid { border-color: var(--color-border-light-mid); }
+@utility border-light-strong { border-color: var(--color-border-light-strong); }
+@utility border-light-heavy { border-color: var(--color-border-light-heavy); }
+@utility border-emphasis { border-color: var(--color-border-emphasis); }
+@utility border-subtle { border-color: var(--color-border-subtle); }
+@utility border-soft { border-color: var(--color-border-soft); }
+@utility border-muted { border-color: var(--color-border-muted); }
+@utility border-divider { border-color: var(--color-border-divider); }
+@utility border-strong { border-color: var(--color-border-strong); }
+@utility border-divider-strong { border-color: var(--color-border-divider-strong); }
+@utility border-extra-strong { border-color: var(--color-border-extra-strong); }
 @utility ring-accent   { --tw-ring-color: var(--color-accent); }
+@utility ring-dark-soft { --tw-ring-color: var(--color-ring-dark-soft); }
+
+@utility divide-soft {
+  & > :not(:last-child) { border-color: var(--color-border-soft); }
+}
+@utility divide-muted {
+  & > :not(:last-child) { border-color: var(--color-border-muted); }
+}
+@utility divide-divider {
+  & > :not(:last-child) { border-color: var(--color-border-divider); }
+}
+@utility divide-divider-strong {
+  & > :not(:last-child) { border-color: var(--color-border-divider-strong); }
+}
+
+@utility bg-hero-overlay { background-color: var(--color-hero-overlay); }
+@utility bg-hero-overlay-mid { background-color: var(--color-hero-overlay-mid); }
+@utility bg-hero-overlay-strong { background-color: var(--color-hero-overlay-strong); }
+@utility bg-service-hero-overlay { background-color: var(--color-service-hero-overlay); }
+@utility bg-service-hero-overlay-mid { background-color: var(--color-service-hero-overlay-mid); }
+@utility bg-service-hero-overlay-strong { background-color: var(--color-service-hero-overlay-strong); }
+
+@utility bg-overlay-hero { background-image: var(--gradient-hero); }
+@utility bg-overlay-service-hero { background-image: var(--gradient-service-hero); }
+@utility bg-overlay-card { background-image: var(--gradient-card); }
+@utility bg-radial-warm { background-image: var(--gradient-radial-warm); }
+@utility bg-card-bottom-dark { background-image: var(--gradient-card-bottom-dark); }
+
+@utility shadow-soft { box-shadow: var(--shadow-soft); }
+@utility shadow-card { box-shadow: var(--shadow-card); }
+@utility shadow-card-strong { box-shadow: var(--shadow-card-strong); }
+@utility shadow-lift { box-shadow: var(--shadow-lift); }
+@utility shadow-navbar { box-shadow: var(--shadow-navbar); }
+@utility shadow-menu { box-shadow: var(--shadow-menu); }
+
+@utility bg-decorative-gold { background-color: var(--color-decorative-gold); }
+@utility bg-decorative-blue { background-color: var(--color-decorative-blue); }
+@utility bg-decorative-green { background-color: var(--color-decorative-green); }
+@utility bg-decorative-red { background-color: var(--color-decorative-red); }
+@utility bg-decorative-terracotta { background-color: var(--color-decorative-terracotta); }
+@utility text-decorative-gold { color: var(--color-decorative-gold); }
+@utility text-decorative-blue { color: var(--color-decorative-blue); }
+@utility text-decorative-green { color: var(--color-decorative-green); }
+@utility text-decorative-red { color: var(--color-decorative-red); }
+@utility text-decorative-terracotta { color: var(--color-decorative-terracotta); }
+@utility fill-decorative-gold { fill: var(--color-decorative-gold); }
+@utility fill-decorative-blue { fill: var(--color-decorative-blue); }
+@utility fill-decorative-green { fill: var(--color-decorative-green); }
+@utility fill-decorative-red { fill: var(--color-decorative-red); }
+@utility fill-decorative-terracotta { fill: var(--color-decorative-terracotta); }
+@utility text-border-strong { color: var(--color-border-strong); }

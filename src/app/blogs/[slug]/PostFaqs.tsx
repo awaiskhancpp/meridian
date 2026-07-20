@@ -23,12 +23,12 @@ export default function PostFaqs({ faqs }: { faqs: Faq[] }) {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <div className="mt-16 border-t border-[rgba(60,37,21,0.1)] pt-10">
+    <div className="mt-16 border-t border-soft pt-10">
       <p className="text-xs font-semibold uppercase tracking-[0.2em] text-dark-muted">
         Frequently Asked Questions
       </p>
 
-      <div className="mt-6 divide-y divide-[rgba(60,37,21,0.1)]">
+      <div className="mt-6 divide-y divide-soft">
         {faqs.map((item, i) => {
           const open = openIndex === i
           return (

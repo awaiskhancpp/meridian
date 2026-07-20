@@ -91,7 +91,7 @@ export default function Navbar() {
   }, [])
 
   const surfaceClasses = scrolled
-    ? 'border-[rgba(60,37,21,0.08)] bg-white/95 shadow-[0_18px_48px _rgba(60,37,21,0.06)] backdrop-blur-md'
+    ? 'border-b border-nav bg-nav shadow-navbar backdrop-blur-md'
     : 'border-transparent bg-transparent shadow-none backdrop-blur-none'
 
   const textClasses = scrolled ? 'text-dark' : 'text-white'
@@ -124,7 +124,7 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 w-full z-[var(--z-navbar)] border-b transition-all duration-300 ${surfaceClasses}`}
+      className={`fixed inset-x-0 top-0 w-full z-[var(--z-navbar)] transition-all duration-300 ${surfaceClasses}`}
     >
       <Container className="relative">
         <div className="flex items-center justify-between gap-4">
@@ -152,7 +152,7 @@ export default function Navbar() {
                     <ChevronIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
                   </Link>
 
-                  <div className="invisible absolute left-1/2 top-full z-10 w-[220px] -translate-x-1/2 translate-y-2 border border-[rgba(60,37,21,0.08)] bg-white p-2 opacity-0 shadow-[0_18px_48px_rgba(60,37,21,0.1)] transition-all duration-200 group-hover:visible group-hover:translate-y-3 group-hover:opacity-100">
+                  <div className="invisible absolute left-1/2 top-full z-10 w-[220px] -translate-x-1/2 translate-y-2 border border-subtle bg-white p-2 opacity-0 shadow-card transition-all duration-200 group-hover:visible group-hover:translate-y-3 group-hover:opacity-100">
                     {item.children.map((child) => (
                       <Link
                         key={child.label}
@@ -191,7 +191,7 @@ export default function Navbar() {
             ref={toggleButtonRef}
             onClick={() => setMobileOpen((value) => !value)}
             className={`inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-[0.24em] transition-colors lg:hidden ${
-              scrolled ? 'text-accent hover:bg-cream' : 'text-white hover:bg-white/10'
+              scrolled ? 'text-accent hover:bg-cream' : 'text-white hover:bg-white-ghost'
             }`}
             aria-expanded={mobileOpen}
             aria-controls="main-menu"
@@ -221,7 +221,7 @@ export default function Navbar() {
         <div
           id="main-menu"
           ref={menuRef}
-          className={`absolute left-4 right-4 top-[calc(100%+0.75rem)] overflow-hidden border border-[rgba(60,37,21,0.08)] bg-white shadow-[0_28px_70px_rgba(60,37,21,0.12)] transition-all duration-300 lg:hidden ${
+          className={`absolute left-4 right-4 top-[calc(100%+0.75rem)] overflow-hidden border border-subtle bg-white shadow-menu transition-all duration-300 lg:hidden ${
             mobileOpen ? 'max-h-[40rem] opacity-100' : 'pointer-events-none max-h-0 opacity-0'
           }`}
         >
@@ -230,7 +230,7 @@ export default function Navbar() {
               item.children ? (
                 <div
                   key={item.label}
-                  className="border-b border-[rgba(60,37,21,0.08)] last:border-none"
+                  className="border-b border-subtle last:border-none"
                 >
                   <button
                     type="button"
@@ -270,7 +270,7 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="border-b border-[rgba(60,37,21,0.08)] py-4 text-sm font-medium uppercase tracking-[0.14em] text-dark transition-colors last:border-none hover:text-accent"
+                  className="border-b border-subtle py-4 text-sm font-medium uppercase tracking-[0.14em] text-dark transition-colors last:border-none hover:text-accent"
                 >
                   {item.label}
                 </a>

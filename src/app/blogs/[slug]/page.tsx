@@ -112,7 +112,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </h1>
 
           {/* Author / date / read time */}
-          <div className="mt-6 flex items-center gap-3 border-b border-[rgba(60,37,21,0.1)] pb-6 text-sm text-dark-muted">
+          <div className="mt-6 flex items-center gap-3 border-b border-soft pb-6 text-sm text-dark-muted">
             <AuthorAvatar name={authorName} />
             <span className="font-medium text-dark">{authorName}</span>
             <span aria-hidden="true">·</span>
@@ -149,7 +149,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <p className="text-xs font-semibold uppercase tracking-[0.2em] text-dark-muted">
                     Contents
                   </p>
-                  <ul className="mt-4 space-y-3 border-l border-[rgba(60,37,21,0.12)] text-sm">
+                  <ul className="mt-4 space-y-3 border-l border-muted text-sm">
                     {toc.map((item) => (
                       <li key={item.anchorId}>
                         <a

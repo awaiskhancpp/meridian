@@ -140,7 +140,7 @@ export default function ServiceFaqs({
               <div
                 key={item.question}
                 className={`rounded-none border px-5 py-4 transition-colors duration-300 sm:px-6 ${
-                  open ? 'border-accent/30 bg-cream' : 'border-[rgba(60,37,21,0.12)] bg-white'
+                  open ? 'border-accent/30 bg-cream' : 'border-muted bg-white'
                 }`}
               >
                 <button

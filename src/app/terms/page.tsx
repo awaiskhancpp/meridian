@@ -16,7 +16,7 @@ export default function TermsPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Header */}
-      <div className="border-b border-[rgba(60,37,21,0.08)] py-16 lg:py-24">
+      <div className="border-b border-subtle py-16 lg:py-24">
         <Container>
           <div className="max-w-3xl">
             <Link

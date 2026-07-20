@@ -33,7 +33,7 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
   return (
     <section aria-labelledby="why-choose-us-heading" className="py-16 lg:py-24">
       <Container>
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start lg:gap-16">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start lg:gap-10">
           {/* ── Left: stats ── */}
           <div className="flex h-full flex-col justify-between gap-6 lg:gap-8 order-3 lg:order-1">
             {/* Grouping stats together so they sit at the top */}

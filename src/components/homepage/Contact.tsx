@@ -79,7 +79,7 @@ export default function Contact() {
   }
 
   const commonClass =
-    'w-full border-0 border-b border-white/30 bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white/60 focus:border-accent focus:ring-0'
+    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white/60 focus:border-accent focus:ring-0'
 
   return (
     <section
@@ -91,11 +91,11 @@ export default function Contact() {
       <Image src="/hero.webp" alt="" fill className="absolute inset-0 z-0 object-cover" />
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 z-0 bg-black/40" />
+      <div className="absolute inset-0 z-0 bg-overlay-dark" />
 
       <Container className="relative z-10 w-full">
         {/* RESPONSIVE CARD */}
-        <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 bg-[rgba(60,37,21,0.82)] p-8 shadow-2xl sm:p-12">
+        <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 bg-panel-dark p-8 shadow-2xl sm:p-12">
           {/* TOP: Heading Section (Centered) */}
           <div className="flex flex-col items-center text-center">
             <p className="text-xs uppercase tracking-[0.34em] text-white/70">{contact.label}</p>
@@ -112,7 +112,7 @@ export default function Contact() {
           {/* BOTTOM: Form Section */}
           <div className="w-full">
             {submitted ? (
-              <div className="flex h-[437px] flex-col items-center justify-center rounded-[24px] border border-white/20 bg-white/5 p-6 backdrop-blur-sm">
+              <div className="flex h-[437px] flex-col items-center justify-center rounded-[24px] border border-light-soft bg-white-soft p-6 backdrop-blur-sm">
                 <p className="text-sm font-medium text-white">
                   Thanks. Your message is in, and we will be in touch soon.
                 </p>
@@ -200,7 +200,7 @@ export default function Contact() {
                           role="listbox"
                           aria-label="Service of interest"
                           // Added classes to hide scrollbar across all major browsers
-                          className="absolute left-0 top-full z-20 mt-1 max-h-60 w-full overflow-y-auto rounded-none border border-white/20 bg-dark py-2 shadow-xl [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                          className="absolute left-0 top-full z-20 mt-1 max-h-60 w-full overflow-y-auto rounded-none border border-light-soft bg-dark py-2 shadow-xl [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
                         >
                           {AVAILABLE_SERVICES.map((service) => {
                             const isSelected = formData.service === service
@@ -211,7 +211,7 @@ export default function Contact() {
                                 role="option"
                                 aria-selected={isSelected}
                                 onClick={() => handleServiceSelect(service)}
-                                className="flex cursor-pointer items-center gap-3 px-4 py-3 transition-colors hover:bg-white/10"
+                                className="flex cursor-pointer items-center gap-3 px-4 py-3 transition-colors hover:bg-white-ghost"
                               >
                                 <span className="text-sm text-white">{service}</span>
                               </div>
@@ -246,7 +246,7 @@ export default function Contact() {
                     size="md"
                     type="submit"
                     disabled={isSubmitting}
-                    className="max-w-fit rounded-none border-white/30 text-white hover:!bg-white hover:!text-dark disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="max-w-fit rounded-none border-light-muted text-white hover:!bg-white hover:!text-dark disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <span>{isSubmitting ? 'Sending…' : contact.submit}</span>
                     <ArrowUpRight size={20} />
@@ -285,7 +285,7 @@ function UnderlineField({
   rows = 1,
 }: FieldProps) {
   const commonClass =
-    'w-full border-0 border-b border-white/30 bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white/60 focus:border-accent focus:ring-0'
+    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white/60 focus:border-accent focus:ring-0'
 
   return (
     <label htmlFor={id} className="grid gap-3">

@@ -34,12 +34,12 @@ const sizeClasses: Record<Size, string> = {
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    'bg-accent hover:bg-accent-hover text-white border border-transparent shadow-[0_12px_28px_rgba(60,37,21,0.14)]',
+    'bg-accent hover:bg-accent-hover text-white border border-transparent shadow-soft',
   outline:
-    'bg-transparent border border-[rgba(60,37,21,0.22)] text-dark hover:bg-accent hover:text-white',
+    'bg-transparent border border-extra-strong text-dark hover:bg-accent hover:text-white',
   'outline-light':
-    'bg-transparent border border-white/70 text-white hover:bg-white hover:text-dark',
-  ghost: 'bg-transparent border border-transparent text-dark hover:bg-[rgba(60,37,21,0.06)]',
+    'bg-transparent border border-light-heavy text-white hover:bg-white hover:text-dark',
+  ghost: 'bg-transparent border border-transparent text-dark hover:bg-accent-faint',
   line: '', // handled entirely by LiquidUnderlineButton below
 }
 

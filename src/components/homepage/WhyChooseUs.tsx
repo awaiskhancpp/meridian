@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
       className="relative overflow-hidden py-16  lg:py-24 bg-white"
     >
       {/* Subtle Background Decoration matching the reference's depth */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(60,37,21,0.03)_0%,transparent_70%)] rounded-full pointer-events-none" />
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial-warm" />
 
       <Container className="relative z-10">
         {/* Header Section */}
@@ -70,7 +70,7 @@ export default function WhyChooseUs() {
           <div className="flex flex-col w-full sm:max-w-md lg:w-1/3 gap-12 order-2 lg:order-1">
             {featuresLeft.map((feature, idx) => (
               <div key={idx} className="flex flex-col items-center text-center group">
-                <div className="mb-5 text-[#c28b6e] transition-transform duration-300 group-hover:-translate-y-1">
+                <div className="mb-5 text-decorative-terracotta transition-transform duration-300 group-hover:-translate-y-1">
                   <feature.icon className="w-10 h-10 text-dark" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold text-dark mb-3">{feature.title}</h3>
@@ -81,7 +81,7 @@ export default function WhyChooseUs() {
 
           {/* Center Column Image with Offset Background */}
           <div className="w-full sm:max-w-md lg:w-1/3 relative flex justify-center order-1 lg:order-2 mb-8 lg:mb-0">
-            <div className="relative w-full aspect-[4/5] overflow-hidden ring-1 ring-black/5">
+            <div className="relative w-full aspect-[4/5] overflow-hidden ring-1 ring-dark-soft">
               <Image
                 src="/hero.webp"
                 alt="Detailed interior remodeling craftsmanship"
@@ -89,7 +89,7 @@ export default function WhyChooseUs() {
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
               {/* Subtle overlay to match the warm finish of the site */}
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/10" />
+              <div className="absolute inset-0 bg-card-bottom-dark" />
             </div>
           </div>
 
@@ -97,7 +97,7 @@ export default function WhyChooseUs() {
           <div className="flex flex-col w-full sm:max-w-md lg:w-1/3 gap-12 order-3 lg:order-3">
             {featuresRight.map((feature, idx) => (
               <div key={idx} className="flex flex-col items-center text-center group">
-                <div className="mb-5 text-[#c28b6e] transition-transform duration-300 group-hover:-translate-y-1">
+                <div className="mb-5 text-decorative-terracotta transition-transform duration-300 group-hover:-translate-y-1">
                   <feature.icon className="w-10 h-10 text-dark" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold text-dark mb-3">{feature.title}</h3>

@@ -33,7 +33,7 @@ export default function CategoryFilterPills({
         className={`rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] transition-colors ${
           active === null
             ? 'border-accent bg-accent text-white'
-            : 'border-[rgba(60,37,21,0.2)] text-dark-muted hover:border-accent hover:text-accent'
+            : 'border-strong text-dark-muted hover:border-accent hover:text-accent'
         }`}
       >
         All
@@ -48,7 +48,7 @@ export default function CategoryFilterPills({
           className={`rounded-full border px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] transition-colors ${
             active === cat.value
               ? 'border-accent bg-accent text-white'
-              : 'border-[rgba(60,37,21,0.2)] text-dark-muted hover:border-accent hover:text-accent'
+              : 'border-strong text-dark-muted hover:border-accent hover:text-accent'
           }`}
         >
           {cat.label}

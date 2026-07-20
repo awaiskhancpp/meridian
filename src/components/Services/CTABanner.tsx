@@ -69,15 +69,7 @@ export default function CTABanner({
         <Image src={backgroundImage} alt="" fill className="object-cover" priority />
         {/* Dark overlay */}
         {/* Directional overlay */}
-        <div
-          className="
-    absolute inset-0
-    bg-gradient-to-r
-    from-black/80
-    via-black/45
-    to-black/15
-  "
-        />
+        <div className="absolute inset-0 bg-overlay-service-hero" />
       </div>
 
       <Container className="relative z-10">
@@ -99,7 +91,7 @@ export default function CTABanner({
                     setEmailError('')
                   }}
                   placeholder="Enter your email"
-                  className="h-14 w-full rounded-none border border-white/30 bg-white/10 px-4 pr-36 text-white placeholder:text-white/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                  className="h-14 w-full rounded-none border border-light-muted bg-white-ghost px-4 pr-36 text-white placeholder:text-white/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 />
 
                 <button

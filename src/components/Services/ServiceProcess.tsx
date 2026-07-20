@@ -87,7 +87,7 @@ export default function ServiceProcess({
             {steps.map((step, i) => (
               <div
                 key={step.title}
-                className="flex items-start justify-between gap-6 rounded-none border border-[rgba(60,37,21,0.12)] bg-white p-6 shadow-sm"
+                className="flex items-start justify-between gap-6 rounded-none border border-muted bg-white p-6 shadow-sm"
               >
                 <div className="min-w-0">
                   <h3 className="text-base font-bold text-dark sm:text-lg">{step.title}</h3>

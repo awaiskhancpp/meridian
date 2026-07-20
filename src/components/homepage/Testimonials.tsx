@@ -60,7 +60,7 @@ export default function Testimonials() {
             type="button"
             onClick={prev}
             aria-label="Previous testimonial"
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[rgba(60,37,21,0.2)] text-dark transition-colors hover:border-accent hover:text-accent"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-strong text-dark transition-colors hover:border-accent hover:text-accent"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
           </button>
@@ -99,7 +99,7 @@ export default function Testimonials() {
             type="button"
             onClick={next}
             aria-label="Next testimonial"
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-[rgba(60,37,21,0.2)] text-dark transition-colors hover:border-accent hover:text-accent"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-strong text-dark transition-colors hover:border-accent hover:text-accent"
           >
             <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </button>

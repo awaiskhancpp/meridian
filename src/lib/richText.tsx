@@ -97,7 +97,7 @@ const richTextStyles = `
   
   [&_code]:rounded [&_code]:bg-cream [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:font-mono [&_code]:text-[0.9em] [&_code]:text-dark
   
-  [&_hr]:my-10 [&_hr]:border-t [&_hr]:border-[rgba(60,37,21,0.12)]
+  [&_hr]:my-10 [&_hr]:border-t [&_hr]:border-muted
 `
 
 export default function RichText({ content }: { content: string | undefined }) {

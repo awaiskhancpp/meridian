@@ -42,9 +42,9 @@ export default function About() {
           {/* ── Left: label, heading, subheading, CTA, stats ───────── */}
           <div className="flex flex-col">
             <p className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
-              <span className="h-px w-6 bg-[rgba(60,37,21,0.3)]" aria-hidden="true" />
+              <span className="h-px w-6 bg-border-emphasis" aria-hidden="true" />
               {about.label}
-              <span className="h-px w-6 bg-[rgba(60,37,21,0.3)]" aria-hidden="true" />
+              <span className="h-px w-6 bg-border-emphasis" aria-hidden="true" />
             </p>
 
             <h2 id="about-heading" className="mt-4">

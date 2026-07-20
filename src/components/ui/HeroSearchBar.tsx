@@ -48,7 +48,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
   }
 
   function renderField(field: SearchField, opts: { border?: string } = {}) {
-    const borderClass = opts.border ?? 'border-r border-black/10'
+    const borderClass = opts.border ?? 'border-r border-subtle'
 
     if (field.type === 'text') {
       return (
@@ -99,7 +99,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
         {isOpen ? (
           <>
             <div className="fixed inset-0 z-20" onClick={() => setOpenDropdown(null)} />
-            <div className="absolute left-0 top-full z-[999] mt-2 w-full border border-black/10 bg-white py-1 shadow-xl">
+            <div className="absolute left-0 top-full z-[999] mt-2 w-full border border-subtle bg-white py-1 shadow-card lg:bottom-full lg:top-auto lg:mb-2 lg:mt-0">
               {field.options.map((option) => (
                 <button
                   key={option}
@@ -123,7 +123,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
   }
 
   return (
-    <div className="relative z-50 mx-auto w-full max-w-5xl border border-black/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
+    <div className="relative z-50 mx-auto w-full max-w-5xl border border-subtle bg-white shadow-lift">
       <form onSubmit={handleSubmit} role="search" aria-label="Search articles">
         <div className="hidden h-[72px] items-stretch lg:flex">
           {fields.map((field) => renderField(field))}
@@ -137,9 +137,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
         </div>
 
         <div className="flex flex-col gap-0 lg:hidden">
-          {fields.map((field) =>
-            renderField(field, { border: 'border-b border-black/10 px-5 py-4' }),
-          )}
+          {fields.map((field) => renderField(field, { border: 'border-b border-subtle px-5 py-4' }))}
 
           <button
             type="submit"

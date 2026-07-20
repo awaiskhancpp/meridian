@@ -22,7 +22,9 @@ import {
   borderRadius,
   spacing,
   zIndex,
-} from '../src/builds.js'
+  shadow,
+  gradient,
+} from '../src/builds.ts'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
@@ -65,9 +67,58 @@ let css = `/**
   --color-nav-border:    ${colors.navBorder};
   --color-input-bg:      ${colors.inputBg};
   --color-input-border:  ${colors.inputBorder};
+  --color-overlay-dark:  ${colors.overlayDark};
+  --color-panel-dark:    ${colors.panelDark};
+  --color-white-soft:    ${colors.whiteSoft};
+  --color-white-ghost:   ${colors.whiteGhost};
+  --color-white-faint:   ${colors.whiteFaint};
+  --color-white-muted:   ${colors.whiteMuted};
+  --color-white-subtle:  ${colors.whiteSubtle};
+  --color-white-overlay: ${colors.whiteOverlay};
+  --color-white-high:    ${colors.whiteHigh};
+  --color-border-light-soft:   ${colors.borderLightSoft};
+  --color-border-light-muted:  ${colors.borderLightMuted};
+  --color-border-light-mid:    ${colors.borderLightMid};
+  --color-border-light-strong: ${colors.borderLightStrong};
+  --color-border-light-heavy:  ${colors.borderLightHeavy};
+  --color-border-emphasis:     ${colors.borderEmphasis};
+  --color-ring-dark-soft:      ${colors.ringDarkSoft};
   --color-glass-bg:      ${colors.glassBg};
   --color-glass-border:  ${colors.glassBorder};
   --color-form-bg:       ${colors.formBg};
+  --color-border-subtle: ${colors.borderSubtle};
+  --color-border-soft:   ${colors.borderSoft};
+  --color-border-muted:  ${colors.borderMuted};
+  --color-border-divider: ${colors.borderDivider};
+  --color-border-strong: ${colors.borderStrong};
+  --color-border-divider-strong: ${colors.borderDividerStrong};
+  --color-border-extra-strong: ${colors.borderExtraStrong};
+  --color-accent-faint:  ${colors.accentFaint};
+  --color-hero-overlay: ${colors.heroOverlay};
+  --color-hero-overlay-mid: ${colors.heroOverlayMid};
+  --color-hero-overlay-strong: ${colors.heroOverlayStrong};
+  --color-service-hero-overlay: ${colors.serviceHeroOverlay};
+  --color-service-hero-overlay-mid: ${colors.serviceHeroOverlayMid};
+  --color-service-hero-overlay-strong: ${colors.serviceHeroOverlayStrong};
+  --color-card-overlay: ${colors.cardOverlay};
+  --color-card-overlay-strong: ${colors.cardOverlayStrong};
+  --color-radial-warm: ${colors.radialWarm};
+  --color-decorative-gold: ${colors.decorativeGold};
+  --color-decorative-blue: ${colors.decorativeBlue};
+  --color-decorative-green: ${colors.decorativeGreen};
+  --color-decorative-red: ${colors.decorativeRed};
+  --color-decorative-terracotta: ${colors.decorativeTerracotta};
+  --shadow-soft: ${shadow.soft};
+  --shadow-card: ${shadow.card};
+  --shadow-card-strong: ${shadow.cardStrong};
+  --shadow-lift: ${shadow.lift};
+  --shadow-navbar: ${shadow.navbar};
+  --shadow-menu: ${shadow.menu};
+  --gradient-hero: ${gradient.hero};
+  --gradient-service-hero: ${gradient.serviceHero};
+  --gradient-card: ${gradient.card};
+  --gradient-radial-warm: ${gradient.radialWarm};
+  --gradient-card-bottom-dark: ${gradient.cardBottomDark};
 
   /* ─── Typography ──────────────────────────────────────────────── */
   --font-family-sans:   ${fontFamily.sans};
@@ -168,6 +219,23 @@ let css = `/**
 @utility bg-cream { background-color: var(--color-bg-cream); }
 @utility bg-accent       { background-color: var(--color-accent); }
 @utility bg-accent-hover { background-color: var(--color-accent-hover); }
+@utility bg-accent-faint { background-color: var(--color-accent-faint); }
+@utility bg-overlay-dark { background-color: var(--color-overlay-dark); }
+@utility bg-panel-dark { background-color: var(--color-panel-dark); }
+@utility bg-white-soft { background-color: var(--color-white-soft); }
+@utility bg-white-ghost { background-color: var(--color-white-ghost); }
+@utility bg-white-faint { background-color: var(--color-white-faint); }
+@utility bg-white-muted { background-color: var(--color-white-muted); }
+@utility bg-white-subtle { background-color: var(--color-white-subtle); }
+@utility bg-white-overlay { background-color: var(--color-white-overlay); }
+@utility bg-white-high { background-color: var(--color-white-high); }
+@utility bg-nav          { background-color: var(--color-nav-bg); }
+@utility bg-nav-default  { background-color: var(--color-nav-bg-default); }
+@utility bg-glass        { background-color: var(--color-glass-bg); }
+@utility bg-form         { background-color: var(--color-form-bg); }
+@utility bg-input        { background-color: var(--color-input-bg); }
+@utility bg-card-overlay  { background-color: var(--color-card-overlay); }
+@utility bg-card-overlay-strong { background-color: var(--color-card-overlay-strong); }
 
 /* Text — on dark surfaces */
 @utility text-primary   { color: var(--color-text-primary); }
@@ -187,7 +255,74 @@ let css = `/**
 @utility text-accent-light { color: var(--color-accent-light); }
 
 @utility border-accent { border-color: var(--color-accent); }
+@utility border-nav    { border-color: var(--color-nav-border); }
+@utility border-glass  { border-color: var(--color-glass-border); }
+@utility border-input  { border-color: var(--color-input-border); }
+@utility border-light-soft { border-color: var(--color-border-light-soft); }
+@utility border-light-muted { border-color: var(--color-border-light-muted); }
+@utility border-light-mid { border-color: var(--color-border-light-mid); }
+@utility border-light-strong { border-color: var(--color-border-light-strong); }
+@utility border-light-heavy { border-color: var(--color-border-light-heavy); }
+@utility border-emphasis { border-color: var(--color-border-emphasis); }
+@utility border-subtle { border-color: var(--color-border-subtle); }
+@utility border-soft { border-color: var(--color-border-soft); }
+@utility border-muted { border-color: var(--color-border-muted); }
+@utility border-divider { border-color: var(--color-border-divider); }
+@utility border-strong { border-color: var(--color-border-strong); }
+@utility border-divider-strong { border-color: var(--color-border-divider-strong); }
+@utility border-extra-strong { border-color: var(--color-border-extra-strong); }
 @utility ring-accent   { --tw-ring-color: var(--color-accent); }
+@utility ring-dark-soft { --tw-ring-color: var(--color-ring-dark-soft); }
+
+@utility divide-soft {
+  & > :not(:last-child) { border-color: var(--color-border-soft); }
+}
+@utility divide-muted {
+  & > :not(:last-child) { border-color: var(--color-border-muted); }
+}
+@utility divide-divider {
+  & > :not(:last-child) { border-color: var(--color-border-divider); }
+}
+@utility divide-divider-strong {
+  & > :not(:last-child) { border-color: var(--color-border-divider-strong); }
+}
+
+@utility bg-hero-overlay { background-color: var(--color-hero-overlay); }
+@utility bg-hero-overlay-mid { background-color: var(--color-hero-overlay-mid); }
+@utility bg-hero-overlay-strong { background-color: var(--color-hero-overlay-strong); }
+@utility bg-service-hero-overlay { background-color: var(--color-service-hero-overlay); }
+@utility bg-service-hero-overlay-mid { background-color: var(--color-service-hero-overlay-mid); }
+@utility bg-service-hero-overlay-strong { background-color: var(--color-service-hero-overlay-strong); }
+
+@utility bg-overlay-hero { background-image: var(--gradient-hero); }
+@utility bg-overlay-service-hero { background-image: var(--gradient-service-hero); }
+@utility bg-overlay-card { background-image: var(--gradient-card); }
+@utility bg-radial-warm { background-image: var(--gradient-radial-warm); }
+@utility bg-card-bottom-dark { background-image: var(--gradient-card-bottom-dark); }
+
+@utility shadow-soft { box-shadow: var(--shadow-soft); }
+@utility shadow-card { box-shadow: var(--shadow-card); }
+@utility shadow-card-strong { box-shadow: var(--shadow-card-strong); }
+@utility shadow-lift { box-shadow: var(--shadow-lift); }
+@utility shadow-navbar { box-shadow: var(--shadow-navbar); }
+@utility shadow-menu { box-shadow: var(--shadow-menu); }
+
+@utility bg-decorative-gold { background-color: var(--color-decorative-gold); }
+@utility bg-decorative-blue { background-color: var(--color-decorative-blue); }
+@utility bg-decorative-green { background-color: var(--color-decorative-green); }
+@utility bg-decorative-red { background-color: var(--color-decorative-red); }
+@utility bg-decorative-terracotta { background-color: var(--color-decorative-terracotta); }
+@utility text-decorative-gold { color: var(--color-decorative-gold); }
+@utility text-decorative-blue { color: var(--color-decorative-blue); }
+@utility text-decorative-green { color: var(--color-decorative-green); }
+@utility text-decorative-red { color: var(--color-decorative-red); }
+@utility text-decorative-terracotta { color: var(--color-decorative-terracotta); }
+@utility fill-decorative-gold { fill: var(--color-decorative-gold); }
+@utility fill-decorative-blue { fill: var(--color-decorative-blue); }
+@utility fill-decorative-green { fill: var(--color-decorative-green); }
+@utility fill-decorative-red { fill: var(--color-decorative-red); }
+@utility fill-decorative-terracotta { fill: var(--color-decorative-terracotta); }
+@utility text-border-strong { color: var(--color-border-strong); }
 `
 
 // Write the file

@@ -67,7 +67,7 @@ export default function ServiceHero({
         />
 
         {/* Gradient overlay - using theme colors */}
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(34,24,18,0.45)_0%,rgba(34,24,18,0.25)_40%,rgba(34,24,18,0.70)_100%)]" />
+        <div className="absolute inset-0 bg-overlay-service-hero" />
 
         <Container className="relative flex h-full flex-col justify-center">
           <div className="max-w-3xl">
@@ -125,7 +125,7 @@ export default function ServiceHero({
                 {statBoxes.map((statBox, index) => (
                   <div
                     key={index}
-                    className="bg-white/95 backdrop-blur-sm p-6 shadow-lg flex gap-3"
+                    className="bg-white-high backdrop-blur-sm p-6 shadow-lg flex gap-3"
                   >
                     <div className="text-4xl font-black flex items-center text-accent lg:text-5xl">
                       {statBox.number}
