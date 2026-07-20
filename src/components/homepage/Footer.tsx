@@ -89,7 +89,7 @@ export default function Footer() {
                     info@1REALTOUR.com
                   </a>
                   <a
-                    href="tel:+12125551234"
+                    href="tel:+6193154591"
                     className="font-medium hover:text-accent whitespace-nowrap"
                   >
                     619.315.4591
