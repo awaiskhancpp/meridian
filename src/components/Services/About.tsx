@@ -48,7 +48,7 @@ export default function About({
   ctaHref = '/#contact',
 }: AboutProps) {
   return (
-    <section aria-labelledby="service-about-heading">
+    <section aria-labelledby="service-about-heading ">
       <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
       <h2 id="service-about-heading" className="mt-1">
         <span className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
