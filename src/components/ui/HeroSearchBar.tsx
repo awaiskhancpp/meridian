@@ -54,7 +54,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
       return (
         <div
           key={field.name}
-          className={`flex flex-1 flex-col justify-center gap-0.5 px-5 ${borderClass}`}
+          className={`flex flex-1 z-[800] flex-col justify-center gap-0.5 px-5 ${borderClass}`}
         >
           <label className="text-[10px] font-semibold uppercase tracking-[0.22em] text-dark-muted">
             {field.label}

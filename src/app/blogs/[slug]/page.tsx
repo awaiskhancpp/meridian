@@ -90,12 +90,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <main className="min-h-screen scroll-smooth bg-white">
       <Navbar />
-      <PageHero
-        label=""
-        heading=""
-        subheading="Read our latest insights and stories"
-        image="/hero.webp"
-      />
+      <PageHero label="" heading="" subheading="" image="/hero.webp" />
 
       <article className="pt-12 lg:pt-16">
         <Container className="!max-w-4xl">
