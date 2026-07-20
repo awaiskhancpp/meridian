@@ -9,23 +9,15 @@
     "links": [
       {
         "label": "Home",
-        "href": "#hero"
+        "href": "/"
       },
       {
         "label": "Service Areas",
         "href": "/areas"
       },
       {
-        "label": "Projects",
-        "href": "#projects"
-      },
-      {
         "label": "Blogs",
         "href": "/blogs"
-      },
-      {
-        "label": "About",
-        "href": "#about"
       }
     ],
     "services": [

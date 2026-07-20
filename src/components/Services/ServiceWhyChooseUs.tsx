@@ -55,17 +55,16 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
           </div>
 
           {/* ── Center: image ── */}
+          {/* ── Center: image ── */}
           <div className="relative h-full w-full overflow-hidden rounded-none aspect-[4/3] order-2 lg:order-2">
             {data.image && (
-              <div className=" ">
-                <Image
-                  src={data.image}
-                  alt="Why choose us"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 33vw"
-                />
-              </div>
+              <Image
+                src={data.image}
+                alt="Why choose us"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 33vw"
+              />
             )}
           </div>
 
