@@ -200,17 +200,17 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
                       own affordance, and the reference itself doesn't
                       show one.
                     */}
-                    <div className="absolute inset-x-4 bottom-4 rounded-none bg-white px-5 py-5 shadow-card-strong transition-colors duration-300 group-hover:bg-accent">
+                    <div className="absolute inset-x-4 bottom-4 rounded-none bg-dark px-5 py-5 shadow-card-strong transition-colors duration-300 ">
                       {Icon && (
-                        <div className="absolute bottom-[46px] left-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent ">
+                        <div className="absolute bottom-[46px] left-5 flex h-14 w-14 items-center justify-center rounded-full bg-white">
                           <Icon
-                            className="h-7 w-7 text-white"
+                            className="h-7 w-7 text-accent"
                             strokeWidth={1.5}
                             aria-hidden="true"
                           />
                         </div>
                       )}
-                      <h3 className="text-base font-bold uppercase leading-snug tracking-wide text-dark transition-colors duration-300 group-hover:text-white sm:text-lg">
+                      <h3 className="text-base font-bold uppercase leading-snug tracking-wide text-white transition-colors duration-300  sm:text-lg">
                         {service.title}
                       </h3>
                     </div>
