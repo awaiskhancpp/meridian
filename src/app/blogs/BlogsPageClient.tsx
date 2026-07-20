@@ -98,7 +98,7 @@ export default function BlogsPageClient({
     <main className="min-h-screen bg-white">
       <Navbar />
 
-      <div className="relative z-50">
+      <div className="relative z-10">
         <PageHero
           label={heroProps.label}
           heading={heroProps.heading}
