@@ -162,7 +162,7 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
             1024: { slidesPerView: 3 },
           }}
         >
-          {otherServices.map((service) => {
+          {otherServices.splice(0, 4).map((service) => {
             const Icon = service.icon && SERVICE_ICONS[service.icon]
             return (
               <SwiperSlide key={service.slug}>
@@ -200,11 +200,11 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
                       own affordance, and the reference itself doesn't
                       show one.
                     */}
-                    <div className="absolute inset-x-4 bottom-4 z-[5] rounded-none bg-white px-5 py-5 shadow-card-strong transition-colors duration-300 group-hover:bg-accent">
+                    <div className="absolute inset-x-4 bottom-4 rounded-none bg-white px-5 py-5 shadow-card-strong transition-colors duration-300 group-hover:bg-accent">
                       {Icon && (
-                        <div className="absolute bottom-[42px] left-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent ">
+                        <div className="absolute bottom-[46px] left-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent ">
                           <Icon
-                            className="h-6 w-6 text-white"
+                            className="h-7 w-7 text-white"
                             strokeWidth={1.5}
                             aria-hidden="true"
                           />
