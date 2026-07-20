@@ -100,7 +100,7 @@ export default function ServiceFaqs({
           </h2>
 
           {/* ── Contact card — new ── */}
-          <div className="mt-8 rounded-2xl border border-accent/25 bg-cream p-6">
+          <div className="mt-8 rounded-none border border-accent/25 bg-cream p-6">
             <div className="flex items-center -space-x-3">
               {avatars.map((avatar, index) => (
                 <div
@@ -124,7 +124,7 @@ export default function ServiceFaqs({
               variant="primary"
               size="md"
               href={phoneHref}
-              className="mt-5 w-full rounded-full sm:w-auto"
+              className="mt-5 w-full rounded-none sm:w-auto"
             >
               <Phone size={15} strokeWidth={2} aria-hidden="true" />
               <span>{phoneDisplay}</span>
