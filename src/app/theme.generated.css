@@ -79,10 +79,10 @@
   --shadow-lift: 0 20px 60px rgba(0,0,0,0.12);
   --shadow-navbar: 0 18px 48px rgba(60,37,21,0.06);
   --shadow-menu: 0 28px 70px rgba(60,37,21,0.12);
-  --gradient-hero: linear-gradient(180deg, rgba(34,24,18,0.38) 0%, rgba(34,24,18,0.18) 42%, rgba(34,24,18,0.74) 100%);
-  --gradient-service-hero: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.45) 55%, rgba(0,0,0,0.15) 100%);
-  --gradient-card: linear-gradient(180deg, rgba(60,37,21,0.08) 0%, rgba(60,37,21,0.18) 100%);
-  --gradient-radial-warm: radial-gradient(circle at center, rgba(60,37,21,0.03) 0%, transparent 70%);
+  --gradient-hero: linear-gradient(115deg,rgba(34,24,18,0.7) 0%,rgba(34,24,18,0.42) 38%,rgba(34,24,18,0.12) 68%,rgba(34,24,18,0.04) 100%);
+  --gradient-service-hero: linear-gradient(90deg,rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.45) 45%,rgba(0,0,0,0.10) 100%);
+  --gradient-card: linear-gradient(180deg,rgba(60,37,21,0.08) 0%,rgba(60,37,21,0.18) 100%);
+  --gradient-radial-warm: radial-gradient(circle at center,rgba(60,37,21,0.03) 0%,transparent 70%);
   --gradient-card-bottom-dark: linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.1) 100%);
 
   /* ─── Typography ──────────────────────────────────────────────── */
