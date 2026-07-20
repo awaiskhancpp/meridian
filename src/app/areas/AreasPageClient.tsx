@@ -1,5 +1,5 @@
 import { Contact, Footer, Map, Navbar, Services } from '@/components/homepage'
-import { ServiceAreaGrid } from '@/components/homepage/Services/ServiceAreaGrid'
+import { ServiceAreaGrid } from '@/components/homepage/ServiceAreaGrid'
 import { Container, PageHero } from '@/components/ui'
 import siteData from '@/website.json'
 

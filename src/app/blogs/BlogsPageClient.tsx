@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useMemo, useState } from 'react'
-import Navbar from '@/components/homepage/Navbar/Navbar'
-import Footer from '@/components/homepage/Footer/Footer'
-import { BlogFeatureCard } from '@/components/homepage/Blogs/Blogs'
+import Navbar from '@/components/homepage/Navbar'
+import Footer from '@/components/homepage/Footer'
+import { BlogFeatureCard } from '@/components/homepage/Blogs'
 import { PageHero, HeroSearchBar, CategoryFilterPills, Container } from '@/components/ui'
 import type { SearchField } from '@/components/ui'
 import { CATEGORY_LABELS, type BlogCardData } from '@/lib/blogs'
@@ -96,14 +96,16 @@ export default function BlogsPageClient({
     <main className="min-h-screen bg-white">
       <Navbar />
 
-      <PageHero
-        label={heroProps.label}
-        heading={heroProps.heading}
-        script={heroProps.script}
-        subheading={heroProps.subheading}
-        image="/hero.webp"
-        formSlot={<HeroSearchBar fields={SEARCH_FIELDS} onSearch={setSearch} />}
-      />
+      <div className="z-50">
+        <PageHero
+          label={heroProps.label}
+          heading={heroProps.heading}
+          script={heroProps.script}
+          subheading={heroProps.subheading}
+          image="/hero.webp"
+          formSlot={<HeroSearchBar fields={SEARCH_FIELDS} onSearch={setSearch} />}
+        />
+      </div>
 
       <section aria-label="All articles" className="py-16 lg:py-20">
         <Container>
@@ -121,20 +123,12 @@ export default function BlogsPageClient({
             </p>
           </div>
 
-          {/* <div className="mb-10">
-            <CategoryFilterPills
-              categories={categoriesPresent}
-              active={category}
-              onChange={setCategory}
-            />
-          </div> */}
-
           {filtered.length === 0 ? (
             <p className="py-16 text-center text-sm text-dark-muted">
               No articles match your search. Try clearing a filter.
             </p>
           ) : (
-            <div className="grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="z-10 grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((post) => (
                 <BlogFeatureCard key={post.slug} card={post} />
               ))}

@@ -189,11 +189,6 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
                       bottom offset (76px) lining up with roughly the
                       midpoint of the title card's own height.
                     */}
-                    {Icon && (
-                      <div className="absolute bottom-[68px] left-5 z-10 flex h-14 w-14 items-center justify-center rounded-full bg-accent shadow-lg">
-                        <Icon className="h-6 w-6 text-white" strokeWidth={1.5} aria-hidden="true" />
-                      </div>
-                    )}
 
                     {/*
                       Floating title card — the reference shows a compact
@@ -205,7 +200,16 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
                       own affordance, and the reference itself doesn't
                       show one.
                     */}
-                    <div className="absolute inset-x-4 bottom-4 z-[5] rounded-none bg-white px-5 py-4 shadow-[0_12px_28px_rgba(60,37,21,0.18)] transition-colors duration-300 group-hover:bg-accent">
+                    <div className="absolute inset-x-4 bottom-4 z-[5] rounded-none bg-white px-5 py-5 shadow-[0_12px_28px_rgba(60,37,21,0.18)] transition-colors duration-300 group-hover:bg-accent">
+                      {Icon && (
+                        <div className="absolute bottom-[42px] left-5 flex h-14 w-14 items-center justify-center rounded-full bg-accent ">
+                          <Icon
+                            className="h-6 w-6 text-white"
+                            strokeWidth={1.5}
+                            aria-hidden="true"
+                          />
+                        </div>
+                      )}
                       <h3 className="text-base font-bold uppercase leading-snug tracking-wide text-dark transition-colors duration-300 group-hover:text-white sm:text-lg">
                         {service.title}
                       </h3>

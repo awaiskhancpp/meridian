@@ -3,27 +3,6 @@
 import React, { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
 
-/**
- * HeroSearchBar
- *
- * Config-driven — see each field's shape below. Field ORDER is decided
- * entirely by the caller's `fields` array (e.g. BlogsPageClient puts
- * Category + Sort first, Title last, right next to the Search
- * button) — this component just renders whatever order it's given.
- *
- * Previously wrapped its content in an extra <Container>, which
- * ADDS its own horizontal padding on top of the bar's own border —
- * that's what was reading as "extra padding on the sides." The bar is
- * already width-capped by its own max-w-5xl wrapper, so the nested
- * Container was redundant. Removed; fields now sit directly against
- * the bar's own edge padding (tightened from px-6 to px-5).
- *
- * Color: switched from a dark, translucent brown bar to a light one
- * (bg-white) with dark text and a solid dark "Search" button at the
- * end — matching the reference's light search bar + contrasting dark
- * CTA, rather than one uniform dark surface throughout.
- */
-
 export type SearchField =
   | {
       type: 'text'
@@ -45,12 +24,12 @@ interface HeroSearchBarProps {
 }
 
 const DEFAULT_FIELDS: SearchField[] = [
-  { type: 'text', name: 'title', label: 'Title', placeholder: 'Search by title…' },
+  { type: 'text', name: 'title', label: 'Title', placeholder: 'Search by title...' },
   {
     type: 'select',
     name: 'sort',
     label: 'Sort',
-    options: ['Latest', 'Oldest', 'A–Z'],
+    options: ['Latest', 'Oldest', 'A-Z'],
     placeholder: 'Latest',
   },
 ]
@@ -68,8 +47,6 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
     onSearch?.(values)
   }
 
-  // One field renderer shared by both layouts — keeps desktop/mobile
-  // from drifting apart when a field gets added later.
   function renderField(field: SearchField, opts: { border?: string } = {}) {
     const borderClass = opts.border ?? 'border-r border-black/10'
 
@@ -93,7 +70,6 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
       )
     }
 
-    // select
     const selected = values[field.name] ?? ''
     const isOpen = openDropdown === field.name
     const displayLabel = selected || field.placeholder || field.options[0]
@@ -120,10 +96,10 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
           />
         </button>
 
-        {isOpen && (
+        {isOpen ? (
           <>
             <div className="fixed inset-0 z-20" onClick={() => setOpenDropdown(null)} />
-            <div className="absolute z-[999] top-full left-0 mt-2 w-56 border border-black/10 bg-white py-1 shadow-xl">
+            <div className="absolute left-0 top-full z-[999] mt-2 w-full border border-black/10 bg-white py-1 shadow-xl">
               {field.options.map((option) => (
                 <button
                   key={option}
@@ -132,7 +108,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
                     setValue(field.name, option)
                     setOpenDropdown(null)
                   }}
-                  className={`w-full px-4 py-2.5 text-left z-[999] text-sm transition-colors hover:bg-cream ${
+                  className={`z-[999] w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-cream ${
                     option === selected ? 'font-medium text-dark' : 'text-dark-muted'
                   }`}
                 >
@@ -141,16 +117,15 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
               ))}
             </div>
           </>
-        )}
+        ) : null}
       </div>
     )
   }
 
   return (
-    <div className="relative z-50 mx-auto max-w-5xl border border-black/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
+    <div className="relative z-50 mx-auto w-full max-w-5xl border border-black/10 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.12)]">
       <form onSubmit={handleSubmit} role="search" aria-label="Search articles">
-        {/* ── Desktop: single-row layout ─────────────────────────── */}
-        <div className="hidden items-stretch lg:flex h-[72px]">
+        <div className="hidden h-[72px] items-stretch lg:flex">
           {fields.map((field) => renderField(field))}
 
           <button
@@ -161,7 +136,6 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
           </button>
         </div>
 
-        {/* ── Mobile/tablet: stacked layout ─────────────────────── */}
         <div className="flex flex-col gap-0 lg:hidden">
           {fields.map((field) =>
             renderField(field, { border: 'border-b border-black/10 px-5 py-4' }),

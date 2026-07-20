@@ -51,10 +51,10 @@ export default function About({
     <section aria-labelledby="service-about-heading">
       <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
       <h2 id="service-about-heading" className="mt-1">
-        <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+        <span className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
           {heading}
         </span>
-        <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
+        <span className=" capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
           {script}
         </span>
       </h2>
@@ -72,7 +72,7 @@ export default function About({
         </div>
 
         {/* ── Right: description, stat grid, CTA ── */}
-        <div className="flex flex-col items-center">
+        <div className="flex h-full flex-col justify-center items-center">
           <p className="text-sm leading-relaxed text-dark-muted sm:text-base">{description}</p>
 
           <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6">

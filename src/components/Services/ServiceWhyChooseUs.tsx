@@ -35,9 +35,9 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
       <Container>
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start lg:gap-16">
           {/* ── Left: stats ── */}
-          <div className="flex h-full flex-col justify-between gap-6 lg:gap-8">
+          <div className="flex h-full flex-col justify-between gap-6 lg:gap-8 order-3 lg:order-1">
             {/* Grouping stats together so they sit at the top */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-row lg:flex-col gap-4">
               {data.stats.map((stat, index) => (
                 <div key={index} className="rounded-none p-6 lg:p-8">
                   <p className="text-4xl font-black leading-none text-accent lg:text-5xl">
@@ -49,26 +49,28 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
             </div>
 
             {/* Button is now pushed to the bottom by justify-between */}
-            <Button variant="outline" href="#" className="rounded-none ">
+            <Button variant="outline" href="#" className="rounded-none">
               Learn More
             </Button>
           </div>
 
           {/* ── Center: image ── */}
-          {data.image && (
-            <div className="relative h-full w-full overflow-hidden rounded-none lg:aspect-[4/3]">
-              <Image
-                src={data.image}
-                alt="Why choose us"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 33vw"
-              />
-            </div>
-          )}
+          <div className="relative h-full w-full overflow-hidden rounded-none aspect-[4/3] order-2 lg:order-2">
+            {data.image && (
+              <div className=" ">
+                <Image
+                  src={data.image}
+                  alt="Why choose us"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 33vw"
+                />
+              </div>
+            )}
+          </div>
 
           {/* ── Right: heading, description, mission ── */}
-          <div>
+          <div className="order-1 lg:order-3">
             <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">Why Choose Us</p>
 
             <h2 id="why-choose-us-heading" className="mt-1 flex flex-wrap items-end gap-3">

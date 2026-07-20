@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useMemo, useState } from 'react'
-import Navbar from '@/components/homepage/Navbar/Navbar'
-import Footer from '@/components/homepage/Footer/Footer'
-import ServiceGridCard from '@/components/homepage/Services/ServiceGridCard'
+import Navbar from '@/components/homepage/Navbar'
+import Footer from '@/components/homepage/Footer'
+import ServiceGridCard from '@/components/homepage/ServiceGridCard'
 import { PageHero, HeroSearchBar, Container } from '@/components/ui'
 import type { SearchField } from '@/components/ui'
 import { PRICE_TIERS, priceTierFor, type ServiceCardData } from '@/lib/services'
