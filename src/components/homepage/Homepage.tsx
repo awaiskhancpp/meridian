@@ -11,6 +11,7 @@ import {
   Faq,
   Testimonials,
   Gallery,
+  CTABanner,
 } from './index'
 
 /**
@@ -33,7 +34,7 @@ export default async function Homepage() {
 
       <Process />
       <Testimonials />
-
+      <CTABanner />
       <Gallery />
       <Blogs />
       {/* posts={featuredPosts}  */}

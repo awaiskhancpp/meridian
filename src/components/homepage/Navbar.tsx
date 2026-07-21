@@ -178,7 +178,7 @@ export default function Navbar() {
           <div className="hidden lg:inline-flex">
             <Button
               variant={ctaVariant}
-              href="#contact"
+              href="/contact"
               className="whitespace-nowrap rounded-none text-dark-muted text-sm font-medium tracking-[0.12em]"
             >
               <span>Request a Quote</span>
@@ -228,10 +228,7 @@ export default function Navbar() {
           <div className="flex flex-col p-5 sm:p-6">
             {NAV_ITEMS.map((item) =>
               item.children ? (
-                <div
-                  key={item.label}
-                  className="border-b border-subtle last:border-none"
-                >
+                <div key={item.label} className="border-b border-subtle last:border-none">
                   <button
                     type="button"
                     onClick={() => setMobileServicesOpen((value) => !value)}
@@ -278,7 +275,7 @@ export default function Navbar() {
             )}
 
             <div className="mt-4" onClick={() => setMobileOpen(false)}>
-              <Button variant="outline" size="md" href="#contact" className="w-full rounded-sm">
+              <Button variant="outline" size="md" href="/contact" className="w-full rounded-sm">
                 <span>Request a Quote</span>
                 <ArrowUpRight size={18} />
               </Button>

@@ -1,102 +1,124 @@
 import React from 'react'
 import Image from 'next/image'
-import siteData from '@/website.json'
-import { Button, Container } from '@/components/ui'
-import { ArrowUpRight, Plus } from 'lucide-react'
+import { Container } from '@/components/ui'
+// Import your exact design tokens
+import { colors, fontFamily, shadow, borderRadius, fontSize, lineHeight } from '@/builds'
 
-const { about } = siteData
+interface OurStoryProps {
+  label?: string
+  heading?: string
+  script?: string
+  content?: React.ReactNode
+  imageSrc?: string
+  imageAlt?: string
+}
 
-/**
- * About
- *
- * Matches the reference layout:
- *   left  — label, heading, subheading, CTA (Button variant="line"),
- *           then a two-box stat row lower down
- *   right — an avatar-stack "trust" badge above a contained photo
- *           (NOT full-bleed/full-column-height like the previous
- *           design — just a normal rectangular image block)
- *
- * Deliberately square, not rounded, per request — no rounded-* classes
- * on the photo, stat boxes, or button. Avatar dots are the one
- * exception (rounded-full): that's their functional shape as circular
- * portrait thumbnails, not a "rounded corner" stylistic choice.
- *
- * Colors/typography stay on the site's existing tokens throughout
- * (text-dark, text-dark-muted, text-accent, bg-cream, the
- * heading+Allura-script pattern) rather than adopting the reference's
- * literal green/gray palette — this is a layout reference, not a
- * palette swap.
- *
- * The previous version's height-matching machinery (lg:items-stretch +
- * absolute-inset image fill to match a stretched grid row) is gone —
- * that existed specifically to make a full-height photo match the text
- * column's height. This photo is a normal contained block now, so
- * none of that complexity is needed anymore.
- */
-
-export default function About() {
+export default function OurStory({
+  label = 'Our Story',
+  heading = 'Building With',
+  script = 'Integrity',
+  imageSrc = '/hero.webp', // Placeholder, update with your actual image
+  imageAlt = 'Our remodeling team at work',
+  content,
+}: OurStoryProps) {
   return (
-    <section id="about" aria-labelledby="about-heading" className="py-8 lg:py-12 lg:mt-12">
+    <section
+      aria-labelledby="our-story-heading"
+      className="py-16 lg:py-24"
+      style={{ backgroundColor: colors.bgCream }}
+    >
       <Container>
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-6">
-          {/* ── Left: label, heading, subheading, CTA, stats ───────── */}
-          <div className="flex flex-col">
-            <p className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
-              {about.label}
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+          {/* ── Left Column: Image ── */}
+          {/* Using aspect-video (16:9) on mobile and aspect-[4/3] on desktop so it doesn't get too tall */}
+          <div
+            className="relative w-full aspect-video lg:aspect-[4/3] overflow-hidden"
+            style={{
+              boxShadow: shadow.lift,
+              borderRadius: borderRadius.md,
+              backgroundColor: colors.bgWhite,
+            }}
+          >
+            <Image
+              src={imageSrc}
+              alt={imageAlt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+            {/* Subtle inner border matching your design system */}
+            <div
+              className="absolute inset-4 z-10 pointer-events-none"
+              style={{
+                border: `1px solid ${colors.borderLightStrong}`,
+                borderRadius: borderRadius.sm,
+              }}
+            />
+          </div>
+
+          {/* ── Right Column: Text Content ── */}
+          <div className="flex flex-col justify-center">
+            <p
+              className="text-xs uppercase tracking-[0.34em]"
+              style={{ color: colors.textDarkMuted, fontFamily: fontFamily.sans }}
+            >
+              {label}
             </p>
 
-            <h2 id="about-heading" className="mt-4">
-              <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
-                {about.heading}
+            <h2 id="our-story-heading" className="mt-3">
+              <span
+                className="block uppercase tracking-[-0.05em]"
+                style={{
+                  color: colors.textDark,
+                  fontFamily: fontFamily.sans,
+                  fontSize: fontSize.h2.lg, // using your token size
+                  fontWeight: 900,
+                  lineHeight: lineHeight.h2,
+                }}
+              >
+                {heading}
               </span>
-              <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none  text-accent">
-                {about.script}
+              <span
+                className="block capitalize mt-1"
+                style={{
+                  color: colors.accentLight,
+                  fontFamily: fontFamily.script,
+                  fontSize: fontSize.h1.lg, // making the script slightly larger
+                  lineHeight: 1,
+                }}
+              >
+                {script}
               </span>
             </h2>
 
-            <p className="mt-4 max-w-[28rem] text-p text-dark-muted">{about.subheading}</p>
-
-            <div className="mt-6">
-              <Button variant="line" size="md" href={about.cta.href} className="max-w-fit">
-                <span>{about.cta.label}</span> <ArrowUpRight size={20} />
-              </Button>
-            </div>
-
-            {/* Two-box stat row — replaces the old floating stat card
-                that used to sit on top of the photo */}
-            <div className="mt-auto grid grid-cols-2 gap-4 pt-14 max-w-[24rem]">
-              {about.stats.map((stat) => (
-                <div key={stat.label} className="bg-cream p-5">
-                  <p className="text-3xl font-black leading-none text-dark">{stat.value}</p>
-                  <p className="mt-2 text-sm text-dark-muted">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* ── Right: avatar trust badge + contained photo ────────── */}
-          <div className="flex flex-col">
-            {/* Avatar stack + trust label */}
-            <div className="flex items-center gap-3">
-              <div className="flex items-center -space-x-3">
-                {about.trust.avatars.map((avatar, i) => (
-                  <div
-                    key={i}
-                    className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-white bg-bg-cream"
-                  >
-                    <Image src={avatar} alt="" fill className="object-cover" />
-                  </div>
-                ))}
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-white bg-accent text-white">
-                  <Plus className="h-4 w-4" aria-hidden="true" />
-                </span>
-              </div>
-            </div>
-            <p className="mt-3 text-sm font-medium text-dark">{about.trust.label}</p>
-
-            {/* Contained photo — not full-bleed, no overlay cards */}
-            <div className="relative mt-8 aspect-[16/11] w-full overflow-hidden">
-              <Image src={about.image} alt={about.heading} fill className="object-cover" />
+            <div
+              className="mt-8 space-y-5"
+              style={{
+                color: colors.textDarkMuted,
+                fontFamily: fontFamily.sans,
+                fontSize: fontSize.p.lg,
+                lineHeight: lineHeight.p,
+              }}
+            >
+              {content ? (
+                content
+              ) : (
+                <>
+                  <p>
+                    It started with a simple belief: that a remodeling project shouldn't just change
+                    a physical space; it should improve the way people live in it. For over a
+                    decade, we have been turning houses into homes with unwavering attention to
+                    detail and a commitment to honest craftsmanship.
+                  </p>
+                  <p>
+                    We know that inviting contractors into your home is a big deal. That is why we
+                    built this company on transparency, clear communication, and a genuine respect
+                    for your time and property. From the first blueprint to the final walkthrough,
+                    our team is there to ensure the vision you have in your head is exactly what you
+                    see in front of you.
+                  </p>
+                </>
+              )}
             </div>
           </div>
         </div>

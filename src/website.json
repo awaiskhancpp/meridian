@@ -18,6 +18,10 @@
       {
         "label": "Blogs",
         "href": "/blogs"
+      },
+      {
+        "label": "About",
+        "href": "/about"
       }
     ],
     "services": [
