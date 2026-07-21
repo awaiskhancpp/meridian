@@ -92,7 +92,7 @@ export default function Footer() {
                     href="mailto:info@1REALTOUR.com"
                     className="font-medium hover:text-accent whitespace-nowrap"
                   >
-                    info@1REALTOUR.com
+                    hello@meridian.studio
                   </a>
                   <a
                     href="tel:+6193154591"
