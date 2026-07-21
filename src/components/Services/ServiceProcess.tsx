@@ -47,7 +47,7 @@ export default function ServiceProcess({
   steps,
 }: ServiceProcessProps) {
   return (
-    <section aria-labelledby="process-heading" className="py-16 lg:py-24">
+    <section aria-labelledby="process-heading" className="py-16">
       <Container>
         <div>
           <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>

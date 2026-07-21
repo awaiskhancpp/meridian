@@ -95,7 +95,7 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
   const script = 'Services'
 
   return (
-    <section aria-label="Explore Other Services" className="py-16 lg:py-24">
+    <section aria-label="Explore Other Services" className="py-16">
       <Container>
         {/* ── Header row: eyebrow + heading left, nav arrows right ── */}
         <div className="mb-8 flex flex-wrap items-end justify-between gap-6">

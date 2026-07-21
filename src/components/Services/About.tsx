@@ -82,7 +82,7 @@ export default function About({
           <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 ">
             {highlights.map((t, i) => (
               <div key={i}>
-                <p className="text-2xl font-black leading-none text-dark sm:text-3xl">{t.title}</p>
+                <p className="text-xl font-bold leading-none text-dark sm:text-2xl">{t.title}</p>
                 <p className="mt-2 text-sm text-dark-muted">{t.description}</p>
               </div>
             ))}
