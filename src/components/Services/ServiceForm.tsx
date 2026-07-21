@@ -3,35 +3,25 @@
 import React, { useState } from 'react'
 import { Button } from '@/components/ui'
 import { ArrowUpRight } from 'lucide-react'
+import Image from 'next/image'
 
 /**
  * ServiceForm
  *
  * Same underline-field form language as homepage Contact.tsx — dark
  * panel, borderless inputs with a bottom rule, ArrowUpRight submit
- * button, same /api/contact endpoint (no new backend route needed).
- * UnderlineField is duplicated here rather than imported from
- * Contact.tsx, same reasoning as ServiceFaqs duplicating its
- * plus/minus icon rather than importing from the homepage Faq: this
- * component is wired to its own props (serviceTitle, heading text),
- * not Contact.tsx's siteData.contact source, so sharing the file would
- * mean threading unrelated data through it for no real benefit.
+ * button, same /api/contact endpoint.
  *
- * No "service" dropdown — Contact.tsx has one because a visitor could
- * be asking about anything; here the visitor is already ON a specific
- * service's page, so which service they're asking about is already
- * known. It's shown back to them as a plain label instead of an
- * editable field, so it still reads as confirmation ("yes, this
- * request is about Kitchen Remodeling") without a redundant control.
- *
- * bg-dark (a solid color token from builds.ts), not a full-bleed photo
- * like Contact.tsx's hero-image background — this section sits
- * between several other sections on the service page rather than
- * being its own dedicated full-viewport moment, so a plain dark panel
- * keeps it substantial without competing with CTABanner's photo
- * treatment elsewhere on the same page. rounded-none throughout,
- * matching the no-rounded-corners convention already established
- * across this Services folder.
+ * Left-column color hierarchy: text-accent and text-dark are the
+ * SAME hex (#3C2515) — using text-accent for the eyebrow label AND
+ * the subheading paragraph meant they rendered in the exact same
+ * full-strength color as the giant heading, with zero tonal contrast
+ * between "quiet label," "loud heading," and "quiet supporting text."
+ * Every other section in this codebase (Faq.tsx, Process.tsx,
+ * Blogs.tsx, Testimonials.tsx) uses text-dark-muted (#6F513D — a
+ * genuinely different, softer shade) for exactly the label + body-copy
+ * roles, reserving the strong color for the heading only. Matched
+ * that convention here instead.
  */
 
 interface ServiceFormProps {
@@ -59,43 +49,53 @@ export default function ServiceForm({
   }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    // e.preventDefault()
-    // setServerError(null)
-    // setIsSubmitting(true)
-    // try {
-    //   const res = await fetch('/api/contact', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({ ...formData, service: serviceTitle }),
-    //   })
-    //   const data = await res.json()
-    //   if (!res.ok) {
-    //     setServerError(data.error ?? 'Something went wrong. Please try again.')
-    //     return
-    //   }
-    //   setSubmitted(true)
-    // } catch {
-    //   setServerError('Network error. Please check your connection and try again.')
-    // } finally {
-    //   setIsSubmitting(false)
-    // }
+    e.preventDefault()
+    setServerError(null)
+    setIsSubmitting(true)
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...formData, service: serviceTitle }),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        setServerError(data.error ?? 'Something went wrong. Please try again.')
+        return
+      }
+
+      setSubmitted(true)
+    } catch {
+      setServerError('Network error. Please check your connection and try again.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
-    <section aria-labelledby="service-form-heading" className=" py-16 ">
-      <div className="mx-auto grid w-full max-w-5xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16 lg:px-8">
+    <section aria-labelledby="service-form-heading" className="relative py-16">
+      <Image src="/hero.webp" alt="" fill className="absolute inset-0 z-0 object-cover" />
+
+      {/* OVERLAY */}
+      <div className="absolute inset-0 z-0 bg-overlay-dark" />
+
+      {/* ADDED relative z-10 HERE */}
+      <div className="relative z-10 mx-auto grid w-full max-w-5xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16 lg:px-8">
         {/* ── Left: heading ── */}
         <div>
-          <p className="text-xs uppercase tracking-[0.34em] text-accent">{label}</p>
+          <p className="text-xs uppercase tracking-[0.34em] text-white/90">{label}</p>
           <h2
             id="service-form-heading"
-            className="mt-3 text-[clamp(1.8rem,3.6vw,2.6rem)] font-black uppercase leading-[0.98] tracking-[-0.03em] text-accent"
+            className="mt-3 text-[clamp(1.8rem,3.6vw,2.6rem)] font-black uppercase leading-[0.98] tracking-[-0.03em] text-white"
           >
             {heading}
             <br />
             {serviceTitle}
           </h2>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-accent">{subheading}</p>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">{subheading}</p>
         </div>
 
         {/* ── Right: form ── */}
