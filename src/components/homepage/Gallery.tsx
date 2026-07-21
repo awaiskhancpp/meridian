@@ -48,7 +48,7 @@ export default function Gallery() {
           <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
             {gallery.heading}
           </span>
-          <span className="block font-[family-name:var(--font-allura)] capitalize text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
+          <span className="block font-[family-name:var(--font-allura)] capitalize text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
             {gallery.script}
           </span>
         </h2>

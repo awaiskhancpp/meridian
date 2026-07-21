@@ -103,7 +103,7 @@ export default function Contact() {
               <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-white">
                 {contact.heading}
               </span>
-              <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-white">
+              <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-white">
                 {contact.script}
               </span>
             </h2>

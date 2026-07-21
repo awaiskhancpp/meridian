@@ -52,7 +52,7 @@ export default function AreasWeServe({
             <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
               {heading}
             </span>
-            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
+            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none  text-accent">
               {script}
             </span>
           </h2>
@@ -76,7 +76,7 @@ export default function AreasWeServe({
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               {areas.map((area, index) => (
-                <span key={index} className="flex gap-1 bg-dark text-white px-3 py-2">
+                <span key={index} className="flex gap-1  text-accent px-3 py-2">
                   <MapPin />
                   <h3 className="text-lg font-bold uppercase tracking-wide ">{area.title}</h3>
                 </span>

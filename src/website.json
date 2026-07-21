@@ -283,7 +283,7 @@
           }
         ],
         "about": {
-          "label": "Who We Are",
+          "label": "About Us",
           "heading": "Renovating for",
           "script": "Generations"
         },
@@ -470,7 +470,7 @@
           }
         ],
         "about": {
-          "label": "Who We Are",
+          "label": "About Us",
           "heading": "Renovating for",
           "script": "Generations"
         },
@@ -571,7 +571,7 @@
           }
         ],
         "about": {
-          "label": "Who We Are",
+          "label": "About Us",
           "heading": "Renovating for",
           "script": "Generations"
         },
@@ -672,7 +672,7 @@
           }
         ],
         "about": {
-          "label": "Who We Are",
+          "label": "About Us",
           "heading": "Renovating for",
           "script": "Generations"
         },
@@ -773,7 +773,7 @@
           }
         ],
         "about": {
-          "label": "Who We Are",
+          "label": "About Us",
           "heading": "Renovating for",
           "script": "Generations"
         },
@@ -856,7 +856,7 @@
           }
         ],
         "about": {
-          "label": "Who We Are",
+          "label": "About Us",
           "heading": "Renovating for",
           "script": "Generations"
         },
@@ -939,7 +939,7 @@
           }
         ],
         "about": {
-          "label": "Who We Are",
+          "label": "About Us",
           "heading": "Renovating for",
           "script": "Generations"
         },
@@ -1508,6 +1508,7 @@
     "kitchen-remodeling": {
       "heading": "Reliable Kitchen Remodeling",
       "script": "Backed By Experience",
+      "contentHeading": "Thoughtfully Designed. Expertly Built.",
       "image": "/hero.webp",
       "description": "At Meridian, we specialize in fast, reliable, and beautifully finished kitchen remodels for homes and businesses alike.",
       "missionTitle": "Mission",
@@ -1521,11 +1522,19 @@
           "value": "500+",
           "label": "Kitchens Completed"
         }
+      ],
+      "bullets": [
+        "Custom Kitchen Designs",
+        "Premium Cabinet Solutions",
+        "Quality Craftsmanship",
+        "On-Time Project Delivery",
+        "Built Around Your Lifestyle"
       ]
     },
     "bathroom-remodeling": {
       "heading": "Reliable Bathroom Remodeling",
       "script": "Backed By Experience",
+      "contentHeading": "Comfort Meets Timeless Design.",
       "image": "/hero.webp",
       "description": "At Meridian, we specialize in fast, reliable, and beautifully finished bathroom renovations for every budget and space.",
       "missionTitle": "Mission",
@@ -1539,11 +1548,19 @@
           "value": "400+",
           "label": "Bathrooms Completed"
         }
+      ],
+      "bullets": [
+        "Luxury Bathroom Upgrades",
+        "Modern Fixture Installation",
+        "Water-Efficient Solutions",
+        "Clean & Hassle-Free Process",
+        "Comfort Built to Last"
       ]
     },
     "whole-home-remodeling": {
       "heading": "Reliable Whole-Home Remodeling",
       "script": "Backed By Experience",
+      "contentHeading": "Transforming Homes Without the Stress.",
       "image": "/hero.webp",
       "description": "At Meridian, we specialize in coordinated, full-property renovations that touch every corner of your home without the usual chaos.",
       "missionTitle": "Mission",
@@ -1557,11 +1574,19 @@
           "value": "150+",
           "label": "Full Homes Renovated"
         }
+      ],
+      "bullets": [
+        "Complete Home Transformations",
+        "Seamless Project Coordination",
+        "Consistent Quality Throughout",
+        "Transparent Communication",
+        "Designed for Modern Living"
       ]
     },
     "home-additions": {
       "heading": "Reliable Home Additions",
       "script": "Backed By Experience",
+      "contentHeading": "More Space. Same Home You Love.",
       "image": "/hero.webp",
       "description": "At Meridian, we specialize in seamless home additions that expand your living space without disrupting your day-to-day.",
       "missionTitle": "Mission",
@@ -1575,11 +1600,19 @@
           "value": "120+",
           "label": "Additions Built"
         }
+      ],
+      "bullets": [
+        "Seamless Home Expansion",
+        "Increase Living Space",
+        "Designed to Match Your Home",
+        "Built with Lasting Quality",
+        "Stress-Free Construction"
       ]
     },
     "custom-cabinetry": {
       "heading": "Reliable Custom Cabinetry",
       "script": "Backed By Experience",
+      "contentHeading": "Storage That Fits Your Life Perfectly.",
       "image": "/hero.webp",
       "description": "At Meridian, we specialize in handcrafted, built-to-order cabinetry designed around exactly how you use your space.",
       "missionTitle": "Mission",
@@ -1593,11 +1626,19 @@
           "value": "600+",
           "label": "Cabinets Built"
         }
+      ],
+      "bullets": [
+        "Made-to-Measure Cabinetry",
+        "Premium Materials & Finishes",
+        "Maximized Storage Solutions",
+        "Precision Craftsmanship",
+        "Built for Everyday Living"
       ]
     },
     "flooring": {
       "heading": "Reliable Flooring Installation",
       "script": "Backed By Experience",
+      "contentHeading": "Every Step Starts with Quality.",
       "image": "/hero.webp",
       "description": "At Meridian, we specialize in fast, reliable, and durable flooring installation for homes and businesses alike.",
       "missionTitle": "Mission",
@@ -1611,11 +1652,19 @@
           "value": "700+",
           "label": "Rooms Floored"
         }
+      ],
+      "bullets": [
+        "Professional Floor Installation",
+        "Durable Premium Materials",
+        "Perfect Finish Every Time",
+        "Fast & Efficient Service",
+        "Beautiful Floors That Last"
       ]
     },
     "design-consultation": {
       "heading": "Reliable Design Guidance",
       "script": "Backed By Experience",
+      "contentHeading": "Every Great Remodel Starts with a Plan.",
       "image": "/hero.webp",
       "description": "At Meridian, we specialize in clear, honest design consultations that turn vague ideas into a real, actionable plan.",
       "missionTitle": "Mission",
@@ -1629,11 +1678,19 @@
           "value": "1,000+",
           "label": "Consultations Given"
         }
+      ],
+      "bullets": [
+        "Personalized Design Advice",
+        "Functional Space Planning",
+        "Material & Finish Guidance",
+        "Budget-Conscious Recommendations",
+        "Clear Project Vision"
       ]
     },
     "project-planning": {
       "heading": "Reliable Project Planning",
       "script": "Backed By Experience",
+      "contentHeading": "Planning Every Detail Before We Build.",
       "image": "/hero.webp",
       "description": "At Meridian, we specialize in detailed, transparent project planning that keeps every renovation organized from day one.",
       "missionTitle": "Mission",
@@ -1647,6 +1704,13 @@
           "value": "500+",
           "label": "Projects Planned"
         }
+      ],
+      "bullets": [
+        "Detailed Project Roadmaps",
+        "Accurate Budget Planning",
+        "Transparent Timelines",
+        "Coordinated Project Management",
+        "Smooth Start to Finish"
       ]
     }
   }

@@ -89,7 +89,7 @@ export default function Footer() {
                   <p>734 University Ave.</p>
                   <p>Suite 205 San Diego, CA 92103</p>
                   <a
-                    href="mailto:info@1REALTOUR.com"
+                    href="mailto:hello@meridian.studio"
                     className="font-medium hover:text-accent whitespace-nowrap"
                   >
                     hello@meridian.studio

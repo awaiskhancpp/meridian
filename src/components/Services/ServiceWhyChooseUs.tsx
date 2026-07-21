@@ -1,11 +1,13 @@
 import React from 'react'
 import Image from 'next/image'
 import { Button, Container } from '@/components/ui'
+import { Check } from 'lucide-react'
 
 interface WhyChooseUsData {
   heading: string
   script?: string
   image?: string
+  contentHeading: string
   description: string
   missionTitle: string
   missionText: string
@@ -13,6 +15,7 @@ interface WhyChooseUsData {
     value: string
     label: string
   }[]
+  bullets: string[]
 }
 
 interface ServiceWhyChooseUsProps {
@@ -31,19 +34,32 @@ interface ServiceWhyChooseUsProps {
  */
 export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
   return (
-    <section aria-labelledby="why-choose-us-heading" className="py-16 lg:py-24">
+    <section aria-labelledby="why-choose-us-heading" className="py-16 ">
       <Container>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start lg:gap-10">
+        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
+          <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">Why Choose Us</p>
+
+          <h2 id="why-choose-us-heading" className="mt-1 text-center">
+            <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+              {data.heading}
+            </span>
+
+            <span className="mt-2 block font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
+              {data.script}
+            </span>
+          </h2>
+        </div>
+        <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start lg:gap-10">
           {/* ── Left: stats ── */}
           <div className="flex h-full flex-col justify-between gap-6 lg:gap-8 order-3 lg:order-1">
             {/* Grouping stats together so they sit at the top */}
-            <div className="flex flex-row lg:flex-col gap-4">
-              {data.stats.map((stat, index) => (
-                <div key={index} className="rounded-none p-6 lg:p-8">
-                  <p className="text-4xl font-black leading-none text-accent lg:text-5xl">
-                    {stat.value}
-                  </p>
-                  <p className="mt-2 text-sm font-semibold text-dark lg:text-base">{stat.label}</p>
+            <div className="flex flex-col gap-4">
+              {data.bullets.map((bullet, index) => (
+                <div key={index} className="rounded-none flex gap-2 items-center">
+                  <div className="rounded-full bg-accent ">
+                    <Check className="text-white" />
+                  </div>
+                  <p className="  leading-none text-accent ">{bullet}</p>
                 </div>
               ))}
             </div>
@@ -55,7 +71,6 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
           </div>
 
           {/* ── Center: image ── */}
-          {/* ── Center: image ── */}
           <div className="relative h-full w-full overflow-hidden rounded-none aspect-[4/3] order-2 lg:order-2">
             {data.image && (
               <Image
@@ -63,24 +78,16 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
                 alt="Why choose us"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 33vw"
+                // sizes="(max-width: 1024px) 100vw, 33vw"
               />
             )}
           </div>
 
           {/* ── Right: heading, description, mission ── */}
           <div className="order-1 lg:order-3">
-            <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">Why Choose Us</p>
-
-            <h2 id="why-choose-us-heading" className="mt-1 flex flex-wrap items-end gap-3">
-              <span className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
-                {data.heading}
-              </span>
-
-              <span className="font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] italic leading-none text-accent">
-                {data.script}
-              </span>
-            </h2>
+            <h3 className="mt-1 flex flex-wrap items-end gap-3 text-[clamp(1.9rem,3.8vw,3rem)] font-bold uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+              {data.contentHeading}
+            </h3>
 
             <p className="mt-6 text-base leading-relaxed text-dark-muted lg:text-lg">
               {data.description}

@@ -44,7 +44,7 @@ export default function Testimonials() {
             <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
               {testimonials.heading}
             </span>
-            <span className="block font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] italic leading-none text-accent capitalize">
+            <span className="block font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)]  leading-none text-accent capitalize">
               {testimonials.script}
             </span>
           </h2>

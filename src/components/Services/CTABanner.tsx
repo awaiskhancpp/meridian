@@ -78,7 +78,7 @@ export default function CTABanner({
             {title}
           </h2>
 
-          <p className="mt-6 text-lg leading-relaxed text-white/80 lg:text-xl">{description}</p>
+          <p className="mt-6 text-lg leading-relaxed text-white/80 lg:text-md">{description}</p>
 
           <form onSubmit={handleSubmit} className="mt-8">
             <div className="max-w-xl">
@@ -91,7 +91,7 @@ export default function CTABanner({
                     setEmailError('')
                   }}
                   placeholder="Enter your email"
-                  className="h-14 w-full rounded-none border border-light-muted bg-white-ghost px-4 pr-36 text-white placeholder:text-white/50 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                  className="h-14 w-full rounded-none border border-light-muted bg-white px-4 pr-36 text-accent placeholder:text-accent focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 />
 
                 <button

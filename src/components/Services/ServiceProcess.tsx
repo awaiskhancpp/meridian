@@ -58,7 +58,7 @@ export default function ServiceProcess({
                 {heading}
               </span>
 
-              <span className="font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] italic leading-none text-accent">
+              <span className="font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
                 {script}
               </span>
             </h2>

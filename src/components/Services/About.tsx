@@ -38,8 +38,8 @@ interface AboutProps {
 
 export default function About({
   label = 'About Us',
-  heading = 'About',
-  script = 'Us',
+  heading = 'Renovating for',
+  script = 'Genrations',
   description,
   image,
   imageAlt = '',
@@ -54,7 +54,7 @@ export default function About({
         <span className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
           {heading}
         </span>
-        <span className=" capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none italic text-accent">
+        <span className=" capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
           {script}
         </span>
       </h2>

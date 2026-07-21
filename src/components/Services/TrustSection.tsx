@@ -85,7 +85,11 @@ export default function TrustSection({
         <div className="flex items-center justify-center gap-2 text-sm">
           <div className="flex gap-0.5" aria-label={`${rating.score} out of 5 stars`}>
             {Array.from({ length: 5 }).map((_, i) => (
-              <Star key={i} className="h-4 w-4 fill-decorative-gold text-decorative-gold" aria-hidden="true" />
+              <Star
+                key={i}
+                className="h-4 w-4 fill-decorative-gold text-decorative-gold"
+                aria-hidden="true"
+              />
             ))}
           </div>
           <span className="font-semibold text-dark">{rating.score}</span>
@@ -97,7 +101,7 @@ export default function TrustSection({
           <span className="block text-[clamp(2.2rem,5.4vw,3.8rem)] font-black uppercase leading-[0.98] tracking-[-0.03em] text-dark">
             {heading}
           </span>
-          <span className="block font-[family-name:var(--font-allura)] text-[clamp(2.4rem,5.4vw,4rem)] italic leading-tight text-accent">
+          <span className="block font-[family-name:var(--font-allura)] text-[clamp(2.4rem,5.4vw,4rem)] leading-tight text-accent">
             {script}
           </span>
         </h2>
@@ -139,7 +143,10 @@ export default function TrustSection({
                 </svg>
                 <p className="mt-2 flex items-center gap-1 text-sm font-semibold text-dark">
                   {googleRating.score}
-                  <Star className="h-3.5 w-3.5 fill-decorative-gold text-decorative-gold" aria-hidden="true" />
+                  <Star
+                    className="h-3.5 w-3.5 fill-decorative-gold text-decorative-gold"
+                    aria-hidden="true"
+                  />
                 </p>
                 <p className="text-xs text-dark-muted">{googleRating.label}</p>
               </div>
