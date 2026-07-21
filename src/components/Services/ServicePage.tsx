@@ -55,6 +55,7 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
           statBoxes={service.statBoxes}
           imageAlt={service.description}
           image={service.image}
+          highlights={service.highlights}
           description={service.description}
         />
       </Container>

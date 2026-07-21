@@ -28,14 +28,17 @@ export type ServiceFaq = {
   question: string
   answer: string
 }
-
+interface Highlight {
+  title: string
+  description: string
+}
 export type ServiceCardData = {
   icon: string
   title: string
   description: string
   image: string
   startingPrice: string
-  timeline: string
+  highlights: Highlight[]
   badge: string | null
   slug: string
   href: string

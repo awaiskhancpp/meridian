@@ -23,7 +23,10 @@ import { Button } from '../ui'
  * services folder (see ServiceProcess.tsx's own comments), rather
  * than copying the reference's rounded pill badge/button literally.
  */
-
+interface Highlight {
+  title: string
+  description: string
+}
 interface AboutProps {
   label?: string
   heading?: string
@@ -34,6 +37,7 @@ interface AboutProps {
   statBoxes: StatBox[]
   ctaLabel?: string
   ctaHref?: string
+  highlights: Highlight[]
 }
 
 export default function About({
@@ -46,6 +50,7 @@ export default function About({
   statBoxes,
   ctaLabel = "Let's Build Together",
   ctaHref = '/#contact',
+  highlights,
 }: AboutProps) {
   return (
     <section aria-labelledby="service-about-heading ">
@@ -76,12 +81,10 @@ export default function About({
           <p className="text-sm leading-relaxed text-dark-muted sm:text-base">{description}</p>
 
           <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 ">
-            {statBoxes.map((stat) => (
-              <div key={stat.title}>
-                <p className="text-2xl font-black leading-none text-dark sm:text-3xl">
-                  {stat.title}
-                </p>
-                <p className="mt-2 text-sm text-dark-muted">{stat.description}</p>
+            {highlights.map((t, i) => (
+              <div key={i}>
+                <p className="text-2xl font-black leading-none text-dark sm:text-3xl">{t.title}</p>
+                <p className="mt-2 text-sm text-dark-muted">{t.description}</p>
               </div>
             ))}
           </div>

@@ -203,12 +203,29 @@
         "description": "New layouts, cabinetry, and finishes built around how your household actually cooks, gathers, and lives day to day.",
         "image": "/hero.webp",
         "startingPrice": "$18,000",
-        "timeline": "4–6 weeks",
         "badge": "Most Popular",
         "slug": "kitchen-remodeling",
         "href": "/services/kitchen-remodeling",
         "subtitle": "Transform your kitchen into a beautiful, functional space that fits your lifestyle and budget.",
         "tagline": "QUALITY CRAFTSMANSHIP, TIMELESS DESIGN",
+        "highlights": [
+          {
+            "title": "Custom Designs",
+            "description": "Layouts tailored to your lifestyle."
+          },
+          {
+            "title": "Premium Materials",
+            "description": "Cabinets, countertops, and finishes built to last."
+          },
+          {
+            "title": "Transparent Process",
+            "description": "Clear timelines, pricing, and communication."
+          },
+          {
+            "title": "Quality Craftsmanship",
+            "description": "Attention to every detail from start to finish."
+          }
+        ],
         "statBoxes": [
           {
             "number": "01",
@@ -304,12 +321,29 @@
         "description": "From a simple refresh to a full gut renovation — fixtures, tile, and storage chosen to fit your space and routine.",
         "image": "/home-about.avif",
         "startingPrice": "$9,500",
-        "timeline": "2–3 weeks",
         "badge": null,
         "slug": "bathroom-remodeling",
         "href": "/services/bathroom-remodeling",
         "subtitle": "Create a luxurious retreat with expert bathroom renovation services tailored to your needs.",
         "tagline": "LUXURY MEETS FUNCTIONALITY",
+        "highlights": [
+          {
+            "title": "Luxury Finishes",
+            "description": "Modern fixtures and elegant materials."
+          },
+          {
+            "title": "Space Optimization",
+            "description": "Designed to maximize comfort and functionality."
+          },
+          {
+            "title": "Water-Efficient Solutions",
+            "description": "Stylish upgrades that help reduce water usage."
+          },
+          {
+            "title": "Built to Last",
+            "description": "Durable craftsmanship for everyday living."
+          }
+        ],
         "statBoxes": [
           {
             "number": "01",
@@ -390,12 +424,29 @@
         "description": "Additions, floor-plan changes, and full-home renovations coordinated under one team from first sketch to final walkthrough.",
         "image": "/hero.webp",
         "startingPrice": "$85,000",
-        "timeline": "3–6 months",
         "badge": "Full Service",
         "slug": "whole-home-remodeling",
         "href": "/services/whole-home-remodeling",
         "subtitle": "Complete home transformation services that breathe new life into every corner of your property.",
         "tagline": "COMPREHENSIVE HOME SOLUTIONS",
+        "highlights": [
+          {
+            "title": "Unified Design",
+            "description": "Every room flows together seamlessly."
+          },
+          {
+            "title": "End-to-End Management",
+            "description": "One team handling every phase."
+          },
+          {
+            "title": "Premium Finishes",
+            "description": "Quality materials throughout your home."
+          },
+          {
+            "title": "Stress-Free Renovation",
+            "description": "Organized planning from start to finish."
+          }
+        ],
         "statBoxes": [
           {
             "number": "01",
@@ -491,12 +542,29 @@
         "description": "Expand your living space with thoughtfully designed additions that blend seamlessly with your home's architecture and meet your family's growing needs.",
         "image": "/home-about.avif",
         "startingPrice": "$45,000",
-        "timeline": "2–4 months",
         "badge": null,
         "slug": "home-additions",
         "href": "/services/home-additions",
         "subtitle": "Expand your living space with seamless home additions that blend perfectly with your existing structure.",
         "tagline": "SEAMLESS EXPANSIONS",
+        "highlights": [
+          {
+            "title": "Seamless Integration",
+            "description": "Designed to match your existing home."
+          },
+          {
+            "title": "Functional Spaces",
+            "description": "Extra room built around your needs."
+          },
+          {
+            "title": "Code-Compliant Construction",
+            "description": "Built safely and professionally."
+          },
+          {
+            "title": "Long-Term Value",
+            "description": "Add space while increasing property value."
+          }
+        ],
         "statBoxes": [
           {
             "number": "01",
@@ -592,12 +660,29 @@
         "description": "Built-to-order cabinets and storage solutions crafted to maximize space, improve organization, and complement your home's unique style.",
         "image": "/hero.webp",
         "startingPrice": "$6,200",
-        "timeline": "6–10 weeks",
         "badge": null,
         "slug": "custom-cabinetry",
         "href": "/services/custom-cabinetry",
         "subtitle": "Handcrafted custom cabinets designed to maximize storage and enhance your home's aesthetic.",
         "tagline": "BESPOKE STORAGE SOLUTIONS",
+        "highlights": [
+          {
+            "title": "Made-to-Measure",
+            "description": "Cabinetry built specifically for your space."
+          },
+          {
+            "title": "Premium Craftsmanship",
+            "description": "Precision-built with lasting quality."
+          },
+          {
+            "title": "Smart Storage",
+            "description": "Maximize every inch of available space."
+          },
+          {
+            "title": "Custom Finishes",
+            "description": "Styles and colors tailored to your home."
+          }
+        ],
         "statBoxes": [
           {
             "number": "01",
@@ -693,12 +778,29 @@
         "description": "Durable hardwood, tile, luxury vinyl, and other premium flooring options professionally installed to enhance comfort, beauty, and everyday performance.",
         "image": "/home-about.avif",
         "startingPrice": "$4,800",
-        "timeline": "1–2 weeks",
         "badge": "Fast Turnaround",
         "slug": "flooring",
         "href": "/services/flooring",
         "subtitle": "Durable, beautiful flooring professionally installed to handle everyday life without losing its shine.",
         "tagline": "BUILT TO BE LIVED ON",
+        "highlights": [
+          {
+            "title": "Professional Installation",
+            "description": "Installed with precision and care."
+          },
+          {
+            "title": "Durable Materials",
+            "description": "Options built for everyday use."
+          },
+          {
+            "title": "Clean Finish",
+            "description": "Attention to every edge and transition."
+          },
+          {
+            "title": "Wide Material Selection",
+            "description": "Hardwood, tile, vinyl, laminate, and more."
+          }
+        ],
         "statBoxes": [
           {
             "title": "Material Range",
@@ -794,12 +896,29 @@
         "description": "Work one-on-one with our design team to explore ideas, refine your vision, and select finishes that bring your remodeling goals to life.",
         "image": "/hero.webp",
         "startingPrice": "Free",
-        "timeline": "1 visit",
         "badge": "Free Consultation",
         "slug": "design-consultation",
         "href": "/services/design-consultation",
         "subtitle": "A free, no-pressure conversation to explore ideas and put real numbers behind your remodeling goals.",
         "tagline": "START WITH CLARITY, NOT GUESSWORK",
+        "highlights": [
+          {
+            "title": "Expert Guidance",
+            "description": "Professional advice for every project."
+          },
+          {
+            "title": "Personalized Concepts",
+            "description": "Solutions designed around your vision."
+          },
+          {
+            "title": "Material Selection",
+            "description": "Choose finishes with confidence."
+          },
+          {
+            "title": "Budget Planning",
+            "description": "Recommendations that fit your investment."
+          }
+        ],
         "statBoxes": [
           {
             "title": "One-on-One Guidance",
@@ -877,12 +996,29 @@
         "description": "Every successful renovation begins with detailed planning, transparent budgeting, and a clear timeline to keep your project organized from start to finish.",
         "image": "/home-about.avif",
         "startingPrice": "$1,200",
-        "timeline": "1–2 weeks",
         "badge": null,
         "slug": "project-planning",
         "href": "/services/project-planning",
         "subtitle": "Detailed planning and transparent budgeting that keeps your renovation organized from day one.",
         "tagline": "A PLAN BEFORE A SINGLE WALL COMES DOWN",
+        "highlights": [
+          {
+            "title": "Detailed Roadmaps",
+            "description": "Every phase planned before work begins."
+          },
+          {
+            "title": "Budget Transparency",
+            "description": "Clear costs with no surprises."
+          },
+          {
+            "title": "Realistic Scheduling",
+            "description": "Timelines you can count on."
+          },
+          {
+            "title": "Coordinated Execution",
+            "description": "Everything organized for a smooth project."
+          }
+        ],
         "statBoxes": [
           {
             "title": "Clear Budgeting",
