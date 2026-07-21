@@ -100,21 +100,7 @@ export default function ServiceFaqs({
           </h2>
 
           {/* ── Contact card — new ── */}
-          <div className="mt-8 rounded-none border border-accent/25 bg-cream p-6">
-            <div className="flex items-center -space-x-3">
-              {avatars.map((avatar, index) => (
-                <div
-                  key={index}
-                  className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 border-cream bg-white"
-                >
-                  <Image src={avatar} alt="" fill className="object-cover" />
-                </div>
-              ))}
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border-2 border-cream bg-accent text-[10px] font-semibold text-white">
-                {avatarCountBadge}
-              </span>
-            </div>
-
+          <div className="mt-6">
             <p className="mt-4 text-base font-bold text-dark">Still have a question?</p>
             <p className="mt-1 text-sm leading-relaxed text-dark-muted">
               We&apos;re ready to help — reach out and a real person will get back to you.

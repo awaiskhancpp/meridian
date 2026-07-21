@@ -98,11 +98,12 @@ export default function ServiceHero({
           </div>
         </Container>
 
-        {/* Stat Boxes - positioned half-in/half-out at bottom of hero */}
+        {/* Notice we removed the outer <div className="max-w-5xl"> here */}
         {statBoxes && statBoxes.length > 0 && (
           <div className="hidden lg:block absolute bottom-0 left-0 right-0 translate-y-1/2">
-            <Container>
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ">
+            {/* Added max-w-5xl directly to the Container instead */}
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {statBoxes.map((statBox, index) => (
                   <div
                     key={index}
@@ -112,17 +113,17 @@ export default function ServiceHero({
                       {statBox.number}
                     </div>
                     <div className="flex flex-col items-center">
-                      <h3 className=" text-md font-bold text-dark uppercase tracking-wide">
+                      <h3 className="text-md font-bold text-dark uppercase tracking-wide">
                         {statBox.title}
                       </h3>
-                      <p className=" text-xs text-dark-muted leading-relaxed">
+                      <p className="text-xs text-dark-muted leading-relaxed">
                         {statBox.description}
                       </p>
                     </div>
                   </div>
                 ))}
               </div>
-            </Container>
+            </div>
           </div>
         )}
       </div>

@@ -12,6 +12,7 @@ import CTABanner from './CTABanner'
 import ServiceProcess from './ServiceProcess'
 import ServiceFaqs from './ServiceFaq'
 import ServiceWhyChooseUs from './ServiceWhyChooseUs'
+import ServiceForm from './ServiceForm'
 
 interface ServicePageProps {
   service: ServiceCardData
@@ -97,6 +98,7 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
           faqs={service.faqs ?? []}
         />
       </Container>
+      <ServiceForm serviceTitle={service.title} />
       <AreasWeServe
         label={serviceAreas.label}
         heading={serviceAreas.heading}

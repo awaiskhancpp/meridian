@@ -54,17 +54,7 @@ export default function About({
 }: AboutProps) {
   return (
     <section aria-labelledby="service-about-heading ">
-      <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
-      <h2 id="service-about-heading" className="mt-1">
-        <span className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
-          {heading}
-        </span>
-        <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
-          {script}
-        </span>
-      </h2>
-
-      <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:gap-12">
+      <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-stretch ">
         {/* ── Left: photo ── */}
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-none sm:aspect-[4/3]">
           <Image
@@ -78,6 +68,15 @@ export default function About({
 
         {/* ── Right: description, stat grid, CTA ── */}
         <div className="flex h-full flex-col justify-center items-start">
+          <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
+          <h2 id="service-about-heading" className="mt-1">
+            <span className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+              {heading}
+            </span>
+            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
+              {script}
+            </span>
+          </h2>
           <p className="text-sm leading-relaxed text-dark-muted sm:text-base">{description}</p>
 
           <div className="mt-8 grid grid-cols-2 gap-x-8 gap-y-6 ">

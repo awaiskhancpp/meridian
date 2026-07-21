@@ -46,13 +46,13 @@ export default function AreasWeServe({
     <section aria-label="Service Areas" className="pb-16 ">
       <Container>
         {/* Header */}
-        <div>
+        <div className="max-w-2xl mx-auto flex flex-col justify-center items-center">
           <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
           <h2 id="services-heading" className="mt-1">
             <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
               {heading}
             </span>
-            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none  text-accent">
+            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
               {script}
             </span>
           </h2>
@@ -76,7 +76,10 @@ export default function AreasWeServe({
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
               {areas.map((area, index) => (
-                <span key={index} className="flex gap-1  text-accent px-3 py-2">
+                <span
+                  key={index}
+                  className="flex flex-col justify-center items-center gap-1  text-accent px-3 py-2"
+                >
                   <MapPin />
                   <h3 className="text-lg font-bold uppercase tracking-wide ">{area.title}</h3>
                 </span>
