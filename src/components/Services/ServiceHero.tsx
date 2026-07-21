@@ -112,11 +112,11 @@ export default function ServiceHero({
                     <div className="text-3xl font-black flex items-center text-accent lg:text-4xl">
                       {statBox.number}
                     </div>
-                    <div className="flex flex-col items-center">
+                    <div className="flex flex-col justify-center items-center">
                       <h3 className="text-md font-bold text-dark uppercase tracking-wide">
                         {statBox.title}
                       </h3>
-                      <p className="text-xs text-dark-muted leading-relaxed">
+                      <p className="text-xs text-center text-dark-muted leading-relaxed">
                         {statBox.description}
                       </p>
                     </div>

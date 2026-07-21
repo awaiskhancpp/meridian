@@ -1,11 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import { Phone } from 'lucide-react'
-import siteData from '@/website.json'
 import { Container } from '@/components/ui'
 import type { ProcessStep } from '@/lib/services'
-
-const { sitePhone } = siteData
 
 interface ServiceProcessProps {
   label?: string
@@ -18,26 +14,60 @@ interface ServiceProcessProps {
 /**
  * ServiceProcess
  *
- * Matches the reference layout: heading + phone CTA + photo on the
- * left, a vertical stack of numbered step cards on the right — but
- * every service passes its OWN `steps`, not a shared global process.
- * A physical remodel (Kitchen, Flooring) has a demolition/installation
- * step; a consultation service (Design Consultation, Project Planning)
- * has a "handoff" step instead, since there's no physical work to
- * install. See website.json's per-service `process.steps`.
+ * COMPLETE redesign, not a re-skin — the previous version (and its
+ * "fixed" pass) kept the same photo-left / content-right split that
+ * About and ServiceFaq ALSO use on this exact page (both ~0.85/1.15
+ * two-column splits). By the time a visitor reaches Process they've
+ * already seen that skeleton twice, so a nicer badge treatment inside
+ * the same box still reads as "the same section again."
  *
- * rounded-none throughout (photo, phone button, step cards) — matches
- * the "no rounded corners" convention already established across every
- * other component in this Services folder (see TrustSection.tsx's own
- * comments), not the reference's slightly-rounded cards.
+ * This version breaks the pattern structurally: it's the ONLY other
+ * section on the page (besides ServiceHero) that goes full-bleed —
+ * edge-to-edge, outside Container, a real photo behind everything —
+ * instead of another bordered white box confined to Container's
+ * max-width. That alone makes it read as a distinct "chapter break"
+ * moment rather than another content block in the same rhythm.
  *
- * Responsive: single column below lg — heading/phone/photo first, then
- * the step stack below, matching natural reading order. At lg+, the two
- * columns sit side by side like the reference, with the left column
- * narrower (lg:grid-cols-[0.85fr_1.15fr]) so the step cards get more
- * room to breathe than the reference's roughly-even split, since each
- * step's description here runs a full sentence or two rather than the
- * reference's shorter copy.
+ * It deliberately echoes ServiceHero rather than inventing a new visual
+ * language from scratch:
+ * - Same gradient token (bg-overlay-service-hero) ServiceHero itself
+ *   uses over its own photo — not a new bespoke overlay.
+ * - Step numbers use the exact "big black accent numeral" treatment
+ *   ServiceHero's own stat boxes use (text-3xl font-black text-accent),
+ *   so the step count reads as a sibling of the hero's stat count, not
+ *   an unrelated invention.
+ * - The floating card material is bg-glass/border-glass — tokens that
+ *   already exist in builds.ts (glassBg/glassBorder) but were unused
+ *   anywhere in the codebase until now. This is the same "photo with
+ *   floating translucent stat-like boxes" grammar ServiceHero already
+ *   established with its own bg-white-high stat boxes, just carried
+ *   through with the warmer glass token instead.
+ *
+ * The gradient is 90deg (left → right fade, darkest at the left edge),
+ * not the site's diagonal hero gradient — chosen specifically because
+ * the heading block sits at the left regardless of vertical position,
+ * so legibility doesn't depend on getting a diagonal angle to line up
+ * with content placement. The step cards are ~86% opaque glass, so
+ * they carry their own contrast regardless of how much photo shows
+ * through on the right side of the gradient.
+ *
+ * Responsive reasoning (this is the other real change, not just
+ * fewer columns at each breakpoint):
+ * - Mobile: steps are a horizontally swipeable, scroll-snapped row —
+ *   NOT a vertical stack. A vertical stack of 4 cards over a full-bleed
+ *   photo would force the photo panel to grow very tall on a phone.
+ *   A horizontal row keeps the panel's height bounded to "one card row"
+ *   at every breakpoint, and doubles as a natural "explore the
+ *   sequence" swipe interaction — distinct from ExploreOtherServices'
+ *   arrow-button carousel elsewhere on this same page, so two sections
+ *   don't share the identical interaction pattern.
+ * - sm+/lg+: the row becomes a static grid (2-up, then 4-up) — desktop
+ *   has room to show all four steps at once, so scrolling would be an
+ *   unnecessary interaction cost once there's space to avoid it.
+ * - The -mx-4/px-4 pair on the mobile scroll row matches Container's
+ *   own px-4 mobile padding exactly, so cards can bleed to the true
+ *   screen edge (revealing a "peek" of the next card as a scroll
+ *   affordance) without fighting Container's padding.
  */
 export default function ServiceProcess({
   label = 'Our Process',
@@ -47,65 +77,44 @@ export default function ServiceProcess({
   steps,
 }: ServiceProcessProps) {
   return (
-    <section aria-labelledby="process-heading" className="py-16">
-      <Container>
-        <div>
-          <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
-          <h2 id="process-heading" className="mt-1 flex flex-wrap items-end gap-3">
-            <span className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
-              {heading}
-            </span>
+    <section aria-labelledby="process-heading" className="relative w-full overflow-hidden bg-dark">
+      <div className="relative min-h-[560px] w-full ">
+        <Image src={image} alt="" fill aria-hidden="true" className="object-cover" sizes="100vw" />
+        <div className="absolute inset-0 bg-overlay-service-hero" />
 
-            <span className="font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
-              {script}
-            </span>
-          </h2>
-
-          {/* <a
-            href={sitePhone.href}
-            className="mt-4 inline-flex items-center gap-2 rounded-none border border-dark bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
-          >
-            <Phone size={16} strokeWidth={2} aria-hidden="true" />
-            {sitePhone.display}
-          </a> */}
-        </div>
-        <div className="mt-6 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-stretch ">
-          {/* ── Left: heading + phone CTA + photo ── */}
-          <div>
-            <div className="relative h-full min-h-[400px] overflow-hidden rounded-none">
-              <Image
-                src={image}
-                alt="Project in progress"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 40vw"
-              />
-            </div>
+        <Container className="relative flex h-full min-h-[560px] flex-col justify-between gap-2 py-14  lg:py-16">
+          {/* ── Heading — left-aligned, safe in the gradient's darkest
+                zone regardless of scroll/breakpoint since the fade runs
+                left→right, not top→bottom ── */}
+          <div className="max-w-xl mx-auto flex flex-col text-center">
+            <p className="text-xs uppercase tracking-[0.34em] text-white/70">{label}</p>
+            <h2 id="process-heading" className="mt-2">
+              <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-white">
+                {heading}
+              </span>
+              <span className="block font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-cream">
+                {script}
+              </span>
+            </h2>
           </div>
 
-          {/* ── Right: numbered step stack ── */}
-          <div className="flex flex-col gap-4">
+          {/* ── Steps: swipeable row on mobile, static grid from sm+ ── */}
+          <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 lg:grid-cols-4 [&::-webkit-scrollbar]:hidden">
             {steps.map((step, i) => (
               <div
                 key={step.title}
-                className="flex items-start justify-between gap-6 rounded-none border border-muted bg-white p-6 shadow-sm"
+                className="w-[78vw] shrink-0 snap-start border border-glass bg-glass p-6 shadow-card backdrop-blur-sm sm:w-auto sm:shrink"
               >
-                <div className="min-w-0">
-                  <h3 className="text-base font-bold text-dark sm:text-lg">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-dark-muted">{step.description}</p>
-                </div>
-
-                <span
-                  className="shrink-0 text-3xl font-black leading-none text-dark sm:text-4xl"
-                  aria-hidden="true"
-                >
+                <span className="text-3xl font-black leading-none text-accent sm:text-4xl">
                   {String(i + 1).padStart(2, '0')}
                 </span>
+                <h3 className="mt-3 text-base font-bold text-dark sm:text-lg">{step.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-dark-muted">{step.description}</p>
               </div>
             ))}
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </section>
   )
 }
