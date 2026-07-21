@@ -53,7 +53,7 @@ export default function About({
   highlights,
 }: AboutProps) {
   return (
-    <section aria-labelledby="service-about-heading ">
+    <section aria-labelledby="service-about-heading">
       <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-stretch ">
         {/* ── Left: photo ── */}
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-none sm:aspect-[4/3]">
@@ -73,7 +73,7 @@ export default function About({
             <span className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
               {heading}
             </span>
-            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
+            <span className="ml-2 capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
               {script}
             </span>
           </h2>

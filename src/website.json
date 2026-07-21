@@ -416,7 +416,22 @@
             "question": "Will you handle waterproofing?",
             "answer": "Yes — proper waterproofing behind tile and around fixtures is done before a single tile goes down, since that's what prevents costly leaks later."
           }
-        ]
+        ],
+        "about": {
+          "label": "About Us",
+          "heading": "Renovating for",
+          "script": "Generations"
+        },
+        "processSection": {
+          "label": "Our Process",
+          "heading": "Our Simple",
+          "script": "Process"
+        },
+        "faqSection": {
+          "label": "FAQ",
+          "heading": "What homeowners",
+          "script": "ask us."
+        }
       },
       {
         "icon": "home",

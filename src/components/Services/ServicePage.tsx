@@ -8,7 +8,6 @@ import TrustSection from './TrustSection'
 import BeforeAfter from './BeforeAfter'
 import ExploreOtherServices from './ExploreOtherServices'
 import AreasWeServe from './AreasWeServe'
-import CTABanner from './CTABanner'
 import ServiceProcess from './ServiceProcess'
 import ServiceFaqs from './ServiceFaq'
 import ServiceWhyChooseUs from './ServiceWhyChooseUs'
@@ -98,7 +97,7 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
           faqs={service.faqs ?? []}
         />
       </Container>
-      <ServiceForm serviceTitle={service.title} />
+
       <AreasWeServe
         label={serviceAreas.label}
         heading={serviceAreas.heading}
@@ -107,7 +106,7 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
         areas={serviceAreas.areas}
       />
 
-      <CTABanner />
+      <ServiceForm serviceTitle={service.title} />
 
       <Footer />
     </div>

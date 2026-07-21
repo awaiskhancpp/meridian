@@ -46,7 +46,7 @@ export default function Footer() {
             {/* Menu Section */}
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 md:grid-cols-3 lg:col-span-9 lg:gap-x-8">
               <div className="flex flex-col gap-2 lg:flex-row lg:gap-0">
-                <p className="min-w-[5rem] shrink-0 text-sm font-semibold uppercase tracking-[0.28em] text-dark-muted">
+                <p className="min-w-[5rem] shrink-0 text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted">
                   Menu
                 </p>
                 <div className="mt-2 grid content-start gap-3 lg:mt-0 lg:gap-4">
@@ -54,7 +54,7 @@ export default function Footer() {
                     <a
                       key={item.label}
                       href={item.href}
-                      className="text-xs font-medium uppercase whitespace-nowrap tracking-[0.14em] text-dark transition-colors hover:text-accent"
+                      className="text-sm font-medium uppercase whitespace-nowrap tracking-[0.14em] text-dark transition-colors hover:text-accent"
                     >
                       {item.label}
                     </a>
@@ -64,7 +64,7 @@ export default function Footer() {
 
               {/* Follow Us Section */}
               <div className="flex flex-col gap-2 lg:flex-row lg:gap-4">
-                <p className="min-w-[5rem] shrink-0 text-sm font-semibold uppercase tracking-[0.28em] text-dark-muted">
+                <p className="min-w-[5rem] shrink-0 text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted">
                   Follow us
                 </p>
                 <div className="mt-2 grid content-start items-start gap-3 lg:mt-0 lg:gap-4">
@@ -72,7 +72,7 @@ export default function Footer() {
                     <a
                       key={item.label}
                       href={item.href}
-                      className="text-xs font-medium uppercase tracking-[0.14em] text-dark transition-colors hover:text-accent"
+                      className="text-sm font-medium uppercase tracking-[0.14em] text-dark transition-colors hover:text-accent"
                     >
                       {item.label}
                     </a>
@@ -82,7 +82,7 @@ export default function Footer() {
 
               {/* Contact Section */}
               <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-1 lg:flex-row lg:gap-3">
-                <p className="min-w-[5rem] shrink-0 text-sm font-semibold uppercase tracking-[0.28em] text-dark-muted">
+                <p className="min-w-[5rem] shrink-0 text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted">
                   Contact
                 </p>
                 <div className="mt-0 grid content-start gap-2 text-sm leading-6 text-dark">

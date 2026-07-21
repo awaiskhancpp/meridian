@@ -101,7 +101,7 @@ export default function ServiceFaqs({
 
           {/* ── Contact card — new ── */}
           <div className="mt-6">
-            <p className="mt-4 text-base font-bold text-dark">Still have a question?</p>
+            <p className="mt-4 text-xl font-bold text-dark">Still have a question?</p>
             <p className="mt-1 text-sm leading-relaxed text-dark-muted">
               We&apos;re ready to help — reach out and a real person will get back to you.
             </p>
