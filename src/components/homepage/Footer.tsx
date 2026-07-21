@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from 'next/image'
 import siteData from '@/website.json'
 import { Container } from '@/components/ui'
@@ -18,6 +19,11 @@ const socialLinks = [
   { label: 'Pinterest', href: '#' },
   { label: 'Behance', href: '#' },
   { label: 'LinkedIn', href: '#' },
+]
+
+const legalLinks = [
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms & Conditions', href: '/terms' },
 ]
 
 export default function Footer() {
@@ -98,20 +104,33 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="mt-8 flex flex-col items-center justify-center gap-2 border-t border-subtle px-5 pt-6 text-center text-xs text-dark-muted md:flex-row md:gap-3">
-            <p>© 2026 MERIDIAN. All rights reserved.</p>
-            <span className="hidden md:inline text-border-strong">|</span>
-            <p>
-              Designed and Developed by{' '}
-              <a
-                href="https://1realtour.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-dark transition-colors hover:text-accent"
-              >
-                1REALTOUR
-              </a>
-            </p>
+          <div className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-subtle px-5 pt-6 text-center text-xs text-dark-muted md:flex-row md:gap-3">
+            <div className="flex gap-2">
+              <p>© 2026 MERIDIAN. All rights reserved.</p>
+              <span className="hidden md:inline text-border-strong">|</span>
+              <p>
+                Designed and Developed by{' '}
+                <a
+                  href="https://1realtour.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-dark transition-colors hover:text-accent"
+                >
+                  1REALTOUR
+                </a>
+              </p>
+            </div>
+            {/* <span className="hidden md:inline text-border-strong">|</span> */}
+            <div className="flex items-center gap-3">
+              {legalLinks.map((item, i) => (
+                <React.Fragment key={item.label}>
+                  {i > 0 && <span className="text-border-strong">|</span>}
+                  <a href={item.href} className="transition-colors hover:text-accent">
+                    {item.label}
+                  </a>
+                </React.Fragment>
+              ))}
+            </div>
           </div>
         </div>
       </Container>

@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import { Container } from '@/components/ui'
+import { Container, PageHero } from '@/components/ui'
+import { Footer, Navbar } from '@/components/homepage'
 
 export const metadata = {
   title: 'Privacy Policy | Meridian',
@@ -16,8 +17,10 @@ export default function PrivacyPolicyPage() {
 
   return (
     <main className="min-h-screen bg-white">
+      <Navbar />
+      <PageHero label="" heading="Privacy" script="Policy" />
       {/* Header */}
-      <div className="border-b border-subtle py-16 lg:py-24">
+      <div className="border-b border-subtle py-16 ">
         <Container>
           <div className="max-w-3xl">
             <Link
@@ -26,9 +29,7 @@ export default function PrivacyPolicyPage() {
             >
               ← Back to home
             </Link>
-            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
-              Legal
-            </p>
+            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">Legal</p>
             <h1 className="mt-3 text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
               Privacy Policy
             </h1>
@@ -39,20 +40,28 @@ export default function PrivacyPolicyPage() {
 
       {/* Body */}
       <Container>
-        <div className="prose prose-neutral max-w-3xl py-16 lg:py-20 [&_h2]:mt-10 [&_h2]:text-base [&_h2]:font-bold [&_h2]:uppercase [&_h2]:tracking-[0.18em] [&_h2]:text-dark [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-dark-muted [&_ul]:text-sm [&_ul]:leading-relaxed [&_ul]:text-dark-muted [&_a]:text-dark [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-accent">
-
+        <div className="max-w-3xl py-16 lg:py-20 [&_h2]:mt-10 [&_h2]:text-base [&_h2]:font-bold [&_h2]:uppercase [&_h2]:tracking-[0.18em] [&_h2]:text-dark [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-dark-muted [&_ul]:text-sm [&_ul]:leading-relaxed [&_ul]:text-dark-muted [&_a]:text-dark [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-accent">
           <p>
-            {company} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to protecting your
-            privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your
-            information when you visit our website or submit a contact form.
+            {company} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to
+            protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and
+            safeguard your information when you visit our website or submit a contact form.
           </p>
 
           <h2>1. Information We Collect</h2>
           <p>We collect information you provide directly to us, including:</p>
           <ul>
-            <li><strong>Contact form data:</strong> name, email address, phone number, service of interest, and message content.</li>
-            <li><strong>Technical data:</strong> IP address, browser type, operating system, referring URLs, and pages visited — collected automatically via server logs and analytics tools.</li>
-            <li><strong>Cookies:</strong> small files stored on your device to improve your experience and analyze traffic.</li>
+            <li>
+              <strong>Contact form data:</strong> name, email address, phone number, service of
+              interest, and message content.
+            </li>
+            <li>
+              <strong>Technical data:</strong> IP address, browser type, operating system, referring
+              URLs, and pages visited — collected automatically via server logs and analytics tools.
+            </li>
+            <li>
+              <strong>Cookies:</strong> small files stored on your device to improve your experience
+              and analyze traffic.
+            </li>
           </ul>
 
           <h2>2. How We Use Your Information</h2>
@@ -84,8 +93,7 @@ export default function PrivacyPolicyPage() {
           <p>
             We retain form submission data for as long as necessary to respond to your inquiry and
             fulfill any resulting engagement, or as required by law. You may request deletion of
-            your data at any time by contacting us at{' '}
-            <a href={`mailto:${email}`}>{email}</a>.
+            your data at any time by contacting us at <a href={`mailto:${email}`}>{email}</a>.
           </p>
 
           <h2>6. Data Security</h2>
@@ -106,8 +114,7 @@ export default function PrivacyPolicyPage() {
             <li>Withdraw consent where processing is based on consent.</li>
           </ul>
           <p>
-            To exercise any of these rights, contact us at{' '}
-            <a href={`mailto:${email}`}>{email}</a>.
+            To exercise any of these rights, contact us at <a href={`mailto:${email}`}>{email}</a>.
           </p>
 
           <h2>8. Children&apos;s Privacy</h2>
@@ -125,15 +132,18 @@ export default function PrivacyPolicyPage() {
           </p>
 
           <h2>10. Contact Us</h2>
-          <p>
-            If you have any questions about this Privacy Policy, please contact us:
-          </p>
+          <p>If you have any questions about this Privacy Policy, please contact us:</p>
           <ul>
-            <li><strong>Email:</strong> <a href={`mailto:${email}`}>{email}</a></li>
-            <li><strong>Address:</strong> {address}</li>
+            <li>
+              <strong>Email:</strong> <a href={`mailto:${email}`}>{email}</a>
+            </li>
+            <li>
+              <strong>Address:</strong> {address}
+            </li>
           </ul>
         </div>
       </Container>
+      <Footer />
     </main>
   )
 }

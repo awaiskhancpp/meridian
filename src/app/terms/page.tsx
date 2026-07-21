@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
-import { Container } from '@/components/ui'
+import { Container, PageHero } from '@/components/ui'
+import { Footer, Navbar } from '@/components/homepage'
 
 export const metadata = {
   title: 'Terms & Conditions | Meridian',
@@ -15,8 +16,10 @@ export default function TermsPage() {
 
   return (
     <main className="min-h-screen bg-white">
+      <Navbar />
+      <PageHero label="" heading="Terms &amp;" script="Conditions" />
       {/* Header */}
-      <div className="border-b border-subtle py-16 lg:py-24">
+      <div className="border-b border-subtle py-16">
         <Container>
           <div className="max-w-3xl">
             <Link
@@ -25,9 +28,7 @@ export default function TermsPage() {
             >
               ← Back to home
             </Link>
-            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
-              Legal
-            </p>
+            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">Legal</p>
             <h1 className="mt-3 text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
               Terms &amp; Conditions
             </h1>
@@ -38,8 +39,7 @@ export default function TermsPage() {
 
       {/* Body */}
       <Container>
-        <div className="prose prose-neutral max-w-3xl py-16 lg:py-20 [&_h2]:mt-10 [&_h2]:text-base [&_h2]:font-bold [&_h2]:uppercase [&_h2]:tracking-[0.18em] [&_h2]:text-dark [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-dark-muted [&_ul]:text-sm [&_ul]:leading-relaxed [&_ul]:text-dark-muted [&_a]:text-dark [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-accent">
-
+        <div className="max-w-3xl py-16 lg:py-20 [&_h2]:mt-10 [&_h2]:text-base [&_h2]:font-bold [&_h2]:uppercase [&_h2]:tracking-[0.18em] [&_h2]:text-dark [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-dark-muted [&_ul]:text-sm [&_ul]:leading-relaxed [&_ul]:text-dark-muted [&_a]:text-dark [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-accent">
           <p>
             Please read these Terms &amp; Conditions carefully before using the {company} website or
             engaging our services. By accessing our website or contacting us, you agree to be bound
@@ -59,7 +59,9 @@ export default function TermsPage() {
             <li>Infringe the rights of others or restrict their use of the site.</li>
             <li>Transmit unsolicited commercial communications (spam).</li>
             <li>Introduce malicious code, viruses, or other harmful material.</li>
-            <li>Attempt to gain unauthorized access to any part of the site or its infrastructure.</li>
+            <li>
+              Attempt to gain unauthorized access to any part of the site or its infrastructure.
+            </li>
           </ul>
 
           <h2>3. Intellectual Property</h2>
@@ -92,7 +94,8 @@ export default function TermsPage() {
           </p>
           <p>
             Project outcomes, timelines, and costs displayed or discussed on this website are
-            illustrative examples only and are not guarantees of results for any specific engagement.
+            illustrative examples only and are not guarantees of results for any specific
+            engagement.
           </p>
 
           <h2>7. Limitation of Liability</h2>
@@ -136,6 +139,7 @@ export default function TermsPage() {
           </p>
         </div>
       </Container>
+      <Footer />
     </main>
   )
 }
