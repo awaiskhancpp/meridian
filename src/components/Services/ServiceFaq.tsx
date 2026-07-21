@@ -94,7 +94,7 @@ export default function ServiceFaqs({
             <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
               {heading}
             </span>
-            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
+            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none  text-accent">
               {script}
             </span>
           </h2>
@@ -140,7 +140,7 @@ export default function ServiceFaqs({
               <div
                 key={item.question}
                 className={`rounded-none border px-5 py-4 transition-colors duration-300 sm:px-6 ${
-                  open ? 'border-accent/30 bg-cream' : 'border-muted bg-white'
+                  open ? 'border-accent/30 ' : 'border-muted bg-white'
                 }`}
               >
                 <button

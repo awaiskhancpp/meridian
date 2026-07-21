@@ -49,29 +49,30 @@ export default function ServiceProcess({
   return (
     <section aria-labelledby="process-heading" className="py-16 lg:py-24">
       <Container>
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-start lg:gap-16">
+        <div>
+          <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
+          <h2 id="process-heading" className="mt-1 flex flex-wrap items-end gap-3">
+            <span className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+              {heading}
+            </span>
+
+            <span className="font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
+              {script}
+            </span>
+          </h2>
+
+          {/* <a
+            href={sitePhone.href}
+            className="mt-4 inline-flex items-center gap-2 rounded-none border border-dark bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
+          >
+            <Phone size={16} strokeWidth={2} aria-hidden="true" />
+            {sitePhone.display}
+          </a> */}
+        </div>
+        <div className="mt-6 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-stretch ">
           {/* ── Left: heading + phone CTA + photo ── */}
           <div>
-            <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
-            <h2 id="process-heading" className="mt-1 flex flex-wrap items-end gap-3">
-              <span className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
-                {heading}
-              </span>
-
-              <span className="font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
-                {script}
-              </span>
-            </h2>
-
-            <a
-              href={sitePhone.href}
-              className="mt-4 inline-flex items-center gap-2 rounded-none border border-dark bg-accent px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-accent-hover"
-            >
-              <Phone size={16} strokeWidth={2} aria-hidden="true" />
-              {sitePhone.display}
-            </a>
-
-            <div className="relative mt-8 aspect-[4/3] w-full overflow-hidden rounded-none border border-dark">
+            <div className="relative h-full min-h-[400px] overflow-hidden rounded-none">
               <Image
                 src={image}
                 alt="Project in progress"

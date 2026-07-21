@@ -200,7 +200,7 @@
       {
         "icon": "chef-hat",
         "title": "Kitchen Remodeling",
-        "description": "New layouts, cabinetry, and finishes built around how your household actually cooks, gathers, and lives day to day.",
+        "description": "At Meridian, we believe the kitchen is the heart of every home. Our team combines thoughtful design, premium materials, and expert craftsmanship to create spaces that are beautiful, functional, and built to support the way your family cooks, gathers, and lives every day.",
         "image": "/hero.webp",
         "startingPrice": "$18,000",
         "badge": "Most Popular",
@@ -318,7 +318,7 @@
       {
         "icon": "bath",
         "title": "Bathroom Remodeling",
-        "description": "From a simple refresh to a full gut renovation — fixtures, tile, and storage chosen to fit your space and routine.",
+        "description": "We create bathrooms that balance comfort, functionality, and timeless design. From compact guest bathrooms to luxurious master suites, every renovation is carefully planned and expertly built to enhance your home's value and everyday living experience.",
         "image": "/home-about.avif",
         "startingPrice": "$9,500",
         "badge": null,
@@ -421,7 +421,7 @@
       {
         "icon": "home",
         "title": "Whole-Home Remodeling",
-        "description": "Additions, floor-plan changes, and full-home renovations coordinated under one team from first sketch to final walkthrough.",
+        "description": "A whole-home remodel is an opportunity to completely reimagine your living space. We manage every aspect of the renovation with careful planning, clear communication, and exceptional craftsmanship to deliver a cohesive home that reflects your lifestyle.",
         "image": "/hero.webp",
         "startingPrice": "$85,000",
         "badge": "Full Service",
@@ -539,7 +539,7 @@
       {
         "icon": "house-plus",
         "title": "Home Additions",
-        "description": "Expand your living space with thoughtfully designed additions that blend seamlessly with your home's architecture and meet your family's growing needs.",
+        "description": "Whether your family is growing or your needs have changed, our custom home additions provide the extra space you need without sacrificing the character of your existing home. Every addition is thoughtfully designed to feel like it has always belonged.",
         "image": "/home-about.avif",
         "startingPrice": "$45,000",
         "badge": null,
@@ -657,7 +657,7 @@
       {
         "icon": "shelving-unit",
         "title": "Custom Cabinetry",
-        "description": "Built-to-order cabinets and storage solutions crafted to maximize space, improve organization, and complement your home's unique style.",
+        "description": "Our custom cabinetry is designed around the way you live, work, and organize your space. Every piece is handcrafted with precision, using premium materials and finishes that combine lasting durability with timeless style.",
         "image": "/hero.webp",
         "startingPrice": "$6,200",
         "badge": null,
@@ -775,7 +775,7 @@
       {
         "icon": "layout-grid",
         "title": "Flooring",
-        "description": "Durable hardwood, tile, luxury vinyl, and other premium flooring options professionally installed to enhance comfort, beauty, and everyday performance.",
+        "description": "The right flooring transforms the look, feel, and functionality of any space. We provide expert installation using high-quality materials to create beautiful, durable floors that stand up to everyday life while complementing your home's design.",
         "image": "/home-about.avif",
         "startingPrice": "$4,800",
         "badge": "Fast Turnaround",
@@ -893,7 +893,7 @@
       {
         "icon": "pencil-line",
         "title": "Design Consultation",
-        "description": "Work one-on-one with our design team to explore ideas, refine your vision, and select finishes that bring your remodeling goals to life.",
+        "description": "Every successful renovation begins with a clear vision. Our design consultation services help you explore ideas, select materials, refine layouts, and develop a practical plan that aligns with your style, goals, and investment.",
         "image": "/hero.webp",
         "startingPrice": "Free",
         "badge": "Free Consultation",
@@ -993,7 +993,7 @@
       {
         "icon": "clipboard-list",
         "title": "Project Planning",
-        "description": "Every successful renovation begins with detailed planning, transparent budgeting, and a clear timeline to keep your project organized from start to finish.",
+        "description": "Careful planning is the foundation of every successful remodeling project. We develop detailed project roadmaps, realistic schedules, and transparent budgets to ensure every phase is organized, efficient, and completed with confidence.",
         "image": "/home-about.avif",
         "startingPrice": "$1,200",
         "badge": null,
