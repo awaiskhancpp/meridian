@@ -127,7 +127,7 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
               ref={prevRef}
               type="button"
               aria-label="Previous service"
-              className="swiper-nav-prev flex h-11 w-11 items-center justify-center rounded-full bg-dark text-white transition-opacity duration-200 hover:opacity-85"
+              className="swiper-nav-prev flex h-11 w-11 items-center justify-center rounded-full text-dark border border-dark transition-opacity duration-200 hover:opacity-85"
             >
               <ChevronLeft size={20} aria-hidden="true" />
             </button>
@@ -135,7 +135,7 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
               ref={nextRef}
               type="button"
               aria-label="Next service"
-              className="swiper-nav-next flex h-11 w-11 items-center justify-center rounded-full bg-accent text-white transition-opacity duration-200 hover:opacity-85"
+              className="swiper-nav-next flex h-11 w-11 items-center justify-center rounded-full  text-accent border border-accent transition-opacity duration-200 hover:opacity-85"
             >
               <ChevronRight size={20} aria-hidden="true" />
             </button>
@@ -180,26 +180,6 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-
-                    {/*
-                      Icon badge — circular now (was a square h-16 w-16),
-                      positioned to straddle the photo/card boundary: its
-                      own bottom half overlaps the white title card below
-                      it via a negative margin trick — see the badge's
-                      bottom offset (76px) lining up with roughly the
-                      midpoint of the title card's own height.
-                    */}
-
-                    {/*
-                      Floating title card — the reference shows a compact
-                      white rounded rectangle inset from the photo's own
-                      edges (not flush), containing only the title. No
-                      description, no button: the whole card is already
-                      the click target via the outer <Link>, so a
-                      "Learn More" button was redundant with the card's
-                      own affordance, and the reference itself doesn't
-                      show one.
-                    */}
                     <div className="absolute inset-x-4 bottom-4 bg-dark px-5 pb-5 pt-9 shadow-card-strong transition-colors duration-300">
                       {Icon && (
                         <div className="absolute -top-7 left-5 flex h-14 w-14 items-center justify-center rounded-full bg-white">

@@ -98,14 +98,14 @@ export default function Footer() {
                     href="tel:+6193154591"
                     className="font-medium hover:text-accent whitespace-nowrap"
                   >
-                    619.315.4591
+                    (619) 315-4591
                   </a>
                 </div>
               </div>
             </div>
           </div>
-          <div className="mt-8 flex flex-col items-center justify-between gap-2 border-t border-subtle px-5 pt-6 text-center text-xs text-dark-muted md:flex-row md:gap-3">
-            <div className="flex gap-2">
+          <div className="mt-8 flex flex-col items-center justify-center md:justify-between gap-2 border-t border-subtle px-5 pt-6 text-center text-xs text-dark-muted md:flex-row md:gap-3">
+            <div className="flex flex-col md:flex-row gap-2">
               <p>© 2026 MERIDIAN. All rights reserved.</p>
               <span className="hidden md:inline text-border-strong">|</span>
               <p>
