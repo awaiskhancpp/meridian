@@ -1,5 +1,5 @@
 import React from 'react'
-import { Shield, FileText, Eye, Clock, Award, ArrowRight } from 'lucide-react'
+import { Shield, FileText, Eye, Clock, Award, ArrowUpRight } from 'lucide-react'
 import { Container, Button } from '@/components/ui'
 
 interface StatItem {
@@ -79,7 +79,7 @@ export default function AboutTrustSection({
           ))}
         </div>
         <div className="pt-6 ">
-          <div className="flex items-center overflow-x-auto sm:flex-wrap sm:justify-center gap-6 sm:gap-8 no-scrollbar pb-2 sm:pb-0">
+          <div className="flex items-center flex-wrap sm:justify-center gap-6 sm:gap-8  pb-2 sm:pb-0">
             {trustIndicators.map((item, idx) => {
               const IconComponent = item.icon
               return (
@@ -102,7 +102,7 @@ export default function AboutTrustSection({
             className="rounded-none font-semibold text-xs uppercase tracking-wider"
           >
             {ctaLabel}
-            <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
+            <ArrowUpRight className=" h-4 w-4" aria-hidden="true" />
           </Button>
         </div>
 
