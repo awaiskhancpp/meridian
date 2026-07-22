@@ -83,9 +83,9 @@ export default function ServiceForm({
       <div className="absolute inset-0 z-0 bg-overlay-dark" />
 
       {/* ADDED relative z-10 HERE */}
-      <div className="relative z-10 mx-auto grid w-full max-w-5xl gap-10 px-5 sm:px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-center lg:gap-16 lg:px-8">
+      <div className="relative z-10 mx-auto grid w-full  gap-10 px-5 sm:px-6 lg:grid-cols-12 lg:items-center lg:gap-16 lg:px-8">
         {/* ── Left: heading ── */}
-        <div>
+        <div className="col-span-6">
           <p className="text-xs uppercase tracking-[0.34em] text-white/90">{label}</p>
           <h2
             id="service-form-heading"
@@ -98,8 +98,7 @@ export default function ServiceForm({
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">{subheading}</p>
         </div>
 
-        {/* ── Right: form ── */}
-        <div className="w-full rounded-none border border-light-soft bg-panel-dark p-6 shadow-lift sm:p-8">
+        <div className="col-span-6 w-full rounded-none border border-light-soft bg-panel-dark p-6 shadow-sm sm:p-8">
           {submitted ? (
             <div className="flex min-h-[20rem] flex-col items-center justify-center text-center">
               <p className="text-sm font-medium text-white">
