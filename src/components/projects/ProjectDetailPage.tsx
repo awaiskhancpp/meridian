@@ -6,6 +6,7 @@ import ProjectDirection from './ProjectDirection'
 import ProjectHero from './ProjectHero'
 import RelatedProjects from './RelatedProjects'
 import type { ProjectDetail } from './types'
+import ProjectGallery from './ProjectGallery'
 
 export default function ProjectDetailPage({ project }: { project: ProjectDetail }) {
   return (
@@ -13,6 +14,7 @@ export default function ProjectDetailPage({ project }: { project: ProjectDetail 
       <Navbar />
       <ProjectHero project={project} />
       {/* <ProjectBrief project={project} /> */}
+      <ProjectGallery images={project.gallery} />
       <ProjectBeforeAfter project={project} />
       {/* <ProjectDirection project={project} /> */}
       <RelatedProjects project={project} />

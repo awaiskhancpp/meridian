@@ -6,7 +6,7 @@ export default function ContactHomePage() {
   return (
     <div>
       <Navbar />
-      <PageHero label="" heading="Contact" script="Us" />
+      <PageHero label="" heading="Build " script="Your Vision" />
       <ContactPage />
       <Footer />
     </div>

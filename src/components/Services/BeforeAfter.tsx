@@ -48,7 +48,7 @@ export default function BeforeAfter({
               <span className="heading-script text-accent">{script}</span>
             </h2>
             {subheading && (
-              <p className="mt-4 max-w-2xl text-base leading-relaxed  text-dark-muted">
+              <p className="mt-4 max-w-2xl text-base text-center leading-relaxed  text-dark-muted">
                 {subheading}
               </p>
             )}

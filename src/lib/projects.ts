@@ -12,6 +12,7 @@ export type Project = {
   category: string
   description: string
   image: string
+  gallery: string[]
   imageAlt: string
   href: string
   eyebrow: string

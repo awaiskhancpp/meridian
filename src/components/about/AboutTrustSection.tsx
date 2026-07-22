@@ -16,6 +16,7 @@ interface AboutTrustSectionProps {
   label?: string
   heading?: string
   script?: string
+  description?: string
   stats?: StatItem[]
   ctaLabel?: string
   ctaHref?: string
@@ -26,6 +27,7 @@ export default function AboutTrustSection({
   label = 'WHY HOMEOWNERS TRUST US',
   heading = 'NUMBERS THAT BACK UP',
   script = 'Every Promise We Make.',
+  description = 'Building trust takes time, but it starts with transparency. We’ve built our reputation on clear communication, reliable timelines, and an unwavering standard of quality for every home we touch.',
   stats = [
     { value: '24h', label: 'Average response time' },
     { value: '10+', label: 'Years remodeling homes' },
@@ -58,6 +60,9 @@ export default function AboutTrustSection({
             <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.5rem,5vw,4rem)] leading-none text-accent mt-1">
               {script}
             </span>
+            <p className="mt-2 text-xs sm:text-sm text-dark-muted font-medium leading-snug">
+              {description}
+            </p>
           </h2>
         </div>
 

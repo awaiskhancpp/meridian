@@ -22,7 +22,7 @@ export default function ProjectPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-6 lg:gap-6">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-6 lg:gap-2">
           {getAllProjects().map((project, index) => {
             const sizeClass =
               index === 0
@@ -43,23 +43,23 @@ export default function ProjectPage() {
                       src={project.image}
                       alt={project.imageAlt}
                       fill
-                      className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover object-center transition-transform duration-500 ease-in-out group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-overlay-card" />
-                    {/* Bottom-only hover caption — replaces the previous
-                        whole-image centered panel. No description, no
-                        button: the entire card is already the click
-                        target via the outer Link. */}
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-full bg-overlay-card-caption px-6 pb-6 pt-14 opacity-0 transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100">
+
+                    {/* FIX 2: Changed ease-out to ease-in-out so it doesn't snap down on mouse leave */}
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-full transform-gpu bg-overlay-card-caption px-6 pb-6 pt-14 opacity-0 transition-all duration-500 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
                       <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/75">
                         {project.category}
                       </p>
-                      <h3 className="mt-2 text-[clamp(1.2rem,1.8vw,1.6rem)] font-bold uppercase leading-[0.95] tracking-[-0.04em] text-white">
+                      <h3 className="mt-2 text-[clamp(1.2rem,1.8vw,1.6rem)] font-bold uppercase leading-[0.95] tracking-[-0.04em] text-white text-balance line-clamp-2">
                         {project.title}
                       </h3>
                     </div>
                   </div>
-                  <div className="mt-4 text-[clamp(1.35rem,2vw,1.85rem)] font-bold uppercase leading-[0.95] tracking-[-0.05em] transition-all duration-300 group-hover:-translate-y-2 group-hover:opacity-0">
+
+                  {/* FIX 3: Matched ease-in-out here as well for the bottom title */}
+                  <div className="mt-4 text-[clamp(1.35rem,2vw,1.85rem)] font-bold uppercase leading-[0.95] tracking-[-0.05em] transform-gpu transition-all duration-500 ease-in-out group-hover:-translate-y-2 group-hover:opacity-0 text-balance line-clamp-2">
                     {project.title}
                   </div>
                 </Link>
