@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import { Container } from '@/components/ui' // Reusing your existing Container component
+import { Container } from '@/components/ui'
+import siteData from '@/website.json'
 
 interface OurStoryProps {
   label?: string
@@ -15,28 +16,31 @@ export default function OurStory({
   label = 'Our Story',
   heading = 'Building With',
   script = 'Integrity',
-  imageSrc = '/hero.webp', // Placeholder, update with your actual image
+  imageSrc = '/hero.webp',
   imageAlt = 'Our remodeling team at work',
   content,
 }: OurStoryProps) {
+  const { about } = siteData
+
   return (
     <section aria-labelledby="our-story-heading" className="py-16">
       <Container>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center lg:gap-10">
+        {/* Changed lg:items-center to lg:items-stretch */}
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10">
           {/* ── Left Column: Image ── */}
-          <div className="relative w-full aspect-video lg:aspect-[4/3] overflow-hidden">
+          {/* Removed aspect ratios, added lg:h-full to fill the stretched grid cell */}
+          <div className="relative w-full min-h-[300px] lg:h-full overflow-hidden">
             <Image
               src={imageSrc}
               alt={imageAlt}
               fill
               className="object-cover"
-              //   sizes="(max-width: 1024px) 100vw, 50vw"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            {/* <div className="absolute inset-4 border border-white/20 z-10 pointer-events-none" /> */}
           </div>
 
           {/* ── Right Column: Text Content ── */}
-          <div className="flex flex-col justify-center">
+          <div className="flex flex-col justify-center py-4">
             <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
 
             <h2 id="our-story-heading" className="mt-3">
@@ -48,7 +52,6 @@ export default function OurStory({
               </span>
             </h2>
 
-            {/* Default story text if no children/content prop is provided */}
             <div className="mt-8 space-y-5 text-base leading-relaxed text-dark-muted">
               {content ? (
                 content
@@ -69,6 +72,15 @@ export default function OurStory({
                   </p>
                 </>
               )}
+            </div>
+
+            <div className="mt-auto grid grid-cols-2 gap-4 pt-14 max-w-[24rem]">
+              {about.stats.map((stat) => (
+                <div key={stat.label} className="bg-cream p-5">
+                  <p className="text-3xl font-black leading-none text-dark">{stat.value}</p>
+                  <p className="mt-2 text-sm text-dark-muted">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
