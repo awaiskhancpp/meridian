@@ -75,7 +75,7 @@ export default function AboutWhyChooseUs() {
           </div>
 
           {/* Right Column: 2x2 Feature Grid */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-6">
             {features.map((feature, idx) => (
               <div
                 key={idx}

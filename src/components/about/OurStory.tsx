@@ -74,9 +74,9 @@ export default function OurStory({
               )}
             </div>
 
-            <div className="mt-auto grid grid-cols-2 gap-4 pt-14 max-w-[24rem]">
+            <div className="mt-auto grid grid-cols-2  pt-14 max-w-[24rem]">
               {about.stats.map((stat) => (
-                <div key={stat.label} className="bg-cream p-5">
+                <div key={stat.label} className=" ">
                   <p className="text-3xl font-black leading-none text-dark">{stat.value}</p>
                   <p className="mt-2 text-sm text-dark-muted">{stat.label}</p>
                 </div>

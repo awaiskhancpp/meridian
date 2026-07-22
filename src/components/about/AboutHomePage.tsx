@@ -15,7 +15,6 @@ export default function AboutHomePage() {
       <CoreValues />
       <AboutTrustSection />
       {/* <MissionValues /> */}
-      <Testimonials />
       <CTABanner />
       <Footer />
     </div>

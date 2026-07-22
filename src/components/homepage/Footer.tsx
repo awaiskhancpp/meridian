@@ -49,7 +49,7 @@ export default function Footer() {
                 <p className="min-w-[5rem] shrink-0 text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted">
                   Menu
                 </p>
-                <div className="mt-2 grid content-start gap-3 lg:mt-0 lg:gap-4">
+                <div className="mt-2 grid content-start gap-2 lg:mt-0 lg:gap-2">
                   {footerLinks.map((item) => (
                     <a
                       key={item.label}
@@ -67,7 +67,7 @@ export default function Footer() {
                 <p className="min-w-[5rem] shrink-0 text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted">
                   Follow us
                 </p>
-                <div className="mt-2 grid content-start items-start gap-3 lg:mt-0 lg:gap-4">
+                <div className="mt-2 grid content-start items-start gap-2 lg:mt-0 lg:gap-2">
                   {socialLinks.map((item) => (
                     <a
                       key={item.label}
@@ -81,16 +81,16 @@ export default function Footer() {
               </div>
 
               {/* Contact Section */}
-              <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-1 lg:flex-row lg:gap-3">
+              <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-1 lg:flex-row lg:gap-2">
                 <p className="min-w-[5rem] shrink-0 text-xs font-semibold uppercase tracking-[0.28em] text-dark-muted">
-                  Contact
+                  Contacts
                 </p>
-                <div className="mt-0 grid content-start gap-2 text-sm leading-6 text-dark">
+                <div className="mt-0 grid content-start text-sm uppercase leading-6 text-dark">
                   <p>734 University Ave.</p>
                   <p>Suite 205 San Diego, CA 92103</p>
                   <a
                     href="mailto:hello@meridian.studio"
-                    className="font-medium hover:text-accent whitespace-nowrap"
+                    className="font-medium hover:text-accent  whitespace-nowrap"
                   >
                     hello@meridian.studio
                   </a>

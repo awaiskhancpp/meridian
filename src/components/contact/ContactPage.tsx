@@ -1,17 +1,18 @@
 import React from 'react'
 import siteData from '@/website.json'
 import { Button, Container } from '@/components/ui'
+import { CTABanner } from '../homepage'
 
 // const { company } = siteData;
 
 export default function ContactPage() {
   // Shared classes for all input fields to ensure consistency
   const inputStyles =
-    'w-full px-4 py-3 bg-transparent border border-divider rounded-sm text-dark placeholder:text-dark-muted focus:outline-none focus:border-dark focus:ring-1 focus:ring-dark transition-colors'
+    'w-full px-4 py-3 bg-transparent border border-divider rounded-none text-dark placeholder:text-dark-muted focus:outline-none focus:border-dark focus:ring-1 focus:ring-dark transition-colors'
 
   return (
-    <section className="py-16 lg:py-24">
-      <Container>
+    <section className="pt-16 ">
+      <Container className="pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 ">
           {/* LEFT COLUMN: Contact Information */}
           <div className="flex flex-col justify-center">
@@ -117,7 +118,7 @@ export default function ContactPage() {
           </div>
 
           {/* RIGHT COLUMN: The Form */}
-          <div className="bg-white px-8 py-8 shadow-sm border border-divider rounded-sm">
+          <div className="bg-white px-8 py-8 shadow-sm border border-divider rounded-none">
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* First Name */}
@@ -227,7 +228,7 @@ export default function ContactPage() {
               {/* Submit Action */}
               <Button
                 variant="outline"
-                className="w-full py-4 text-sm tracking-wider uppercase rounded-sm mt-2"
+                className="w-full py-4 text-sm tracking-wider uppercase rounded-none mt-2"
                 type="submit"
               >
                 Send Message
@@ -236,6 +237,7 @@ export default function ContactPage() {
           </div>
         </div>
       </Container>
+      <CTABanner />
     </section>
   )
 }
