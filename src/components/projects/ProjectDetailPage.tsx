@@ -15,7 +15,7 @@ export default function ProjectDetailPage({ project }: { project: ProjectDetail 
       <ProjectHero project={project} />
       {/* <ProjectBrief project={project} /> */}
       <ProjectGallery images={project.gallery} />
-      <ProjectBeforeAfter project={project} />
+      {/* <ProjectBeforeAfter project={project} /> */}
       {/* <ProjectDirection project={project} /> */}
       <RelatedProjects project={project} />
       <ProjectCTA project={project} />

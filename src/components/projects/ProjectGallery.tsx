@@ -62,11 +62,11 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
         </div>
 
         {/* 4-Column Grid */}
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
           {images.map((img, idx) => (
             <div
               key={idx}
-              className="group relative aspect-square cursor-pointer overflow-hidden bg-gray-100"
+              className="group relative aspect-square cursor-pointer overflow-hidden "
               onClick={() => setSelectedIndex(idx)}
             >
               <Image
@@ -75,7 +75,6 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              {/* Optional hover overlay for visual feedback */}
               <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
             </div>
           ))}
