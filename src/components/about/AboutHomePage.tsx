@@ -1,9 +1,6 @@
 import { Contact, CTABanner, Footer, Navbar, Testimonials, WhyChooseUs } from '../homepage'
 import { Container, PageHero } from '../ui'
-import AboutTrustSection from './AboutTrustSection'
-import AboutWhyChooseUs from './AboutWhyChooseUs'
-import CoreValues from './CoreValues'
-import OurStory from './OurStory'
+import { AboutTrustSection, CoreValues, OurStory, AboutWhyChooseUs } from './index'
 
 export default function AboutHomePage() {
   return (
