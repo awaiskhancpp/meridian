@@ -22,7 +22,7 @@ export default function Map() {
         <div className="mb-8">
           <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{map.label}</p>
           <h2 id="map-heading" className="mt-1">
-            <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+          <span className="block heading-2 text-dark">
               {map.heading}
             </span>
           </h2>

@@ -28,10 +28,10 @@ export default function Blogs() {
             {blogs.label}
           </p>
           <h2 id="blogs-heading" className="mt-4 text-dark">
-            <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em]">
+            <span className="block heading-2">
               {blogs.heading}
             </span>
-            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
+            <span className="block heading-script capitalize text-accent">
               {blogs.script}
             </span>
           </h2>
@@ -128,7 +128,7 @@ export function BlogFeatureCard({ card }: { card: BlogItem }) {
         </div>
 
         <div className="mt-4 transition-all duration-300 group-hover:opacity-0 group-hover:-translate-y-2">
-          <h3 className=" text-[clamp(1.35rem,2vw,1.85rem)] font-bold uppercase leading-[0.95] tracking-[-0.05em] text-dark">
+          <h3 className="heading-card text-dark">
             {card.title}
           </h3>
         </div>

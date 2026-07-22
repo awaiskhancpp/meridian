@@ -40,11 +40,11 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
           <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">Why Choose Us</p>
 
           <h2 id="why-choose-us-heading" className="mt-1 text-center">
-            <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+            <span className="block heading-2 text-dark">
               {data.heading}
             </span>
 
-            <span className="mt-2 block font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
+            <span className="mt-2 block heading-script text-accent">
               {data.script}
             </span>
           </h2>

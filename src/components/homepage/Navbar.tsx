@@ -6,26 +6,41 @@ import Link from 'next/link' // 1. Add this import
 import { ArrowUpRight } from 'lucide-react'
 import siteData from '@/website.json'
 import { Button, Container } from '@/components/ui'
+import { getAllProjects } from '@/lib/projects'
 
 const { nav, brand } = siteData
 
 type SimpleNavItem = { label: string; href: string; children?: never }
-type DropdownNavItem = { label: string; href?: never; children: { label: string; href: string }[] }
+type DropdownNavItem = {
+  label: string
+  href?: string
+  children: { label: string; href: string }[]
+  seeMore?: { label: string; href: string }
+}
 type NavItem = SimpleNavItem | DropdownNavItem
 
 const homeLink = nav.links.find((l) => l.label === 'Home')!
 const serviceAreasLink = nav.links.find((l) => l.label === 'Service Areas')!
-const remainingLinks = nav.links.filter((l) => l.label !== 'Home' && l.label !== 'Service Areas')
+const remainingLinks = nav.links.filter(
+  (l) => l.label !== 'Home' && l.label !== 'Service Areas' && l.label !== 'Projects',
+)
 
 const NAV_ITEMS: NavItem[] = [
   homeLink,
   serviceAreasLink,
   {
     label: 'Services',
+    href: '/services',
     children: nav.services.map((service) => ({
       label: service.name,
       href: service.href,
     })),
+  },
+  {
+    label: 'Projects',
+    href: '/projects',
+    children: getAllProjects().slice(0, 6).map((project) => ({ label: project.title, href: project.href })),
+    seeMore: { label: 'See all projects', href: '/projects' },
   },
   ...remainingLinks,
 ]
@@ -145,7 +160,7 @@ export default function Navbar() {
               item.children ? (
                 <div key={item.label} className="group relative">
                   <Link
-                    href="/services"
+                    href={item.href ?? '#'}
                     className={`flex items-center gap-1 text-sm font-medium tracking-[0.12em] transition-colors ${textClasses} ${hoverTextClasses}`}
                   >
                     {item.label}
@@ -162,6 +177,14 @@ export default function Navbar() {
                         {child.label}
                       </Link>
                     ))}
+                    {item.seeMore ? (
+                      <Link
+                        href={item.seeMore.href}
+                        className="mt-1 block border-t border-subtle px-3 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-accent transition-colors hover:bg-cream"
+                      >
+                        {item.seeMore.label}
+                      </Link>
+                    ) : null}
                   </div>
                 </div>
               ) : (
@@ -190,7 +213,7 @@ export default function Navbar() {
             type="button"
             ref={toggleButtonRef}
             onClick={() => setMobileOpen((value) => !value)}
-            className={`inline-flex items-center gap-3 rounded-full text-sm font-semibold tracking-[0.24em] transition-colors lg:hidden ${
+            className={`inline-flex items-center gap-3 rounded-none text-sm font-semibold tracking-[0.24em] transition-colors lg:hidden ${
               scrolled ? 'text-accent hover:bg-cream' : 'text-white hover:bg-white-ghost'
             }`}
             aria-expanded={mobileOpen}
@@ -259,6 +282,15 @@ export default function Navbar() {
                           {child.label}
                         </a>
                       ))}
+                      {item.seeMore ? (
+                        <a
+                          href={item.seeMore.href}
+                          onClick={() => setMobileOpen(false)}
+                          className="border-t border-subtle py-3 text-xs font-semibold uppercase tracking-[0.14em] text-accent"
+                        >
+                          {item.seeMore.label}
+                        </a>
+                      ) : null}
                     </div>
                   </div>
                 </div>
@@ -275,7 +307,7 @@ export default function Navbar() {
             )}
 
             <div className="mt-4" onClick={() => setMobileOpen(false)}>
-              <Button variant="outline" size="md" href="/contact" className="w-full rounded-sm">
+              <Button variant="outline" size="md" href="/contact" className="w-full rounded-none">
                 <span>Request a Quote</span>
                 <ArrowUpRight size={18} />
               </Button>

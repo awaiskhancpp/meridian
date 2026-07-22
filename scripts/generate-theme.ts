@@ -17,6 +17,7 @@ import {
   fontFamily,
   fontSize,
   lineHeight,
+  typeRecipe,
   fontWeight,
   buttonPadding,
   borderRadius,
@@ -198,6 +199,50 @@ let css = `/**
   line-height: ${lineHeight.p};
   @media (min-width: 640px) and (max-width: 1023px) { font-size: ${fontSize.p.md}; }
   @media (min-width: 1024px) { font-size: ${fontSize.p.lg}; }
+}
+
+/* Shared responsive recipes. Keep these names stable so components compose
+   the design system instead of repeating clamp() values. */
+@utility heading-2 {
+  font-size: ${typeRecipe.heading2.size};
+  font-weight: ${typeRecipe.heading2.weight};
+  line-height: ${typeRecipe.heading2.line};
+  letter-spacing: ${typeRecipe.heading2.tracking};
+}
+
+@utility heading-script {
+  font-family: var(--font-family-script);
+  font-size: ${typeRecipe.headingScript.size};
+  line-height: ${typeRecipe.headingScript.line};
+}
+
+@utility heading-hero {
+  font-size: ${typeRecipe.headingHero.size};
+  font-weight: ${typeRecipe.headingHero.weight};
+  line-height: ${typeRecipe.headingHero.line};
+  letter-spacing: ${typeRecipe.headingHero.tracking};
+}
+
+@utility heading-hero-script {
+  font-family: var(--font-family-script);
+  font-size: ${typeRecipe.headingHeroScript.size};
+  line-height: ${typeRecipe.headingHeroScript.line};
+}
+
+@utility heading-card {
+  font-size: ${typeRecipe.cardTitle.size};
+  font-weight: ${typeRecipe.cardTitle.weight};
+  line-height: ${typeRecipe.cardTitle.line};
+  letter-spacing: ${typeRecipe.cardTitle.tracking};
+}
+
+@utility section-space {
+  padding-block: ${spacing.section.md};
+  @media (min-width: 1024px) { padding-block: ${spacing.section.lg}; }
+}
+
+@utility section-space-compact {
+  padding-block: 4rem;
 }
 
 /* ═══════════════════════════════════════════════════════════════════

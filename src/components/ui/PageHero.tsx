@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Container } from '@/components/ui'
+import { uiClasses } from '@/builds'
 
 interface PageHeroProps {
   /** Section eyebrow label above the heading e.g. "Journal" */
@@ -37,14 +38,14 @@ export default function PageHero({
           fill
           priority
           aria-hidden="true"
-          className="object-cover object-center"
+          className={uiClasses.mediaCover}
         />
 
         <div className="absolute inset-0 bg-overlay-hero" />
 
         <Container className="relative z-10 flex h-full items-center justify-center pb-8 pt-24 sm:pb-10 sm:pt-28 lg:pb-12">
           <div className="flex w-full flex-col items-center justify-center text-center">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.34em] text-white/70">
+            <p className={`mb-3 ${uiClasses.eyebrowLight}`}>
               {label}
             </p>
 
@@ -58,7 +59,7 @@ export default function PageHero({
             </h1>
 
             {subheading ? (
-              <p className="mt-5 max-w-[28rem] text-sm leading-relaxed text-white/80 sm:text-[0.95rem]">
+              <p className={`mt-5 max-w-[28rem] text-sm leading-relaxed text-white/80 sm:text-[0.95rem]`}>
                 {subheading}
               </p>
             ) : null}

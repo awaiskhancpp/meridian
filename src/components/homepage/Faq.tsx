@@ -61,10 +61,10 @@ export default function FAQ() {
               </p>
 
               <h2 id="blogs-heading" className="mt-4 text-dark">
-                <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em]">
+                <span className="block heading-2">
                   {faq.heading}
                 </span>
-                <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
+                <span className="block heading-script capitalize text-accent">
                   {faq.script}
                 </span>
               </h2>

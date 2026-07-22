@@ -45,8 +45,7 @@ export default function NotFoundPage() {
             overflow-hidden keeps it from ever causing horizontal scroll. */}
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none text-center font-black leading-none text-white/5"
-          style={{ fontSize: 'clamp(9rem, 42vw, 30rem)' }}
+          className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none text-center text-[clamp(9rem,42vw,30rem)] font-black leading-none text-white/5"
         >
           404
         </span>

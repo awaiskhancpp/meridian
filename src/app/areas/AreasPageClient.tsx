@@ -19,7 +19,7 @@ export default function AreasPageClient() {
             <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
               Primary {serviceAreas.label}
             </p>
-            <h2 className="mt-2 text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+            <h2 className="mt-2 heading-2 text-dark">
               Surrounding Areas
             </h2>
           </div>

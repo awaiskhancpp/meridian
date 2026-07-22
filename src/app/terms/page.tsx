@@ -29,7 +29,7 @@ export default function TermsPage() {
               ← Back to home
             </Link>
             <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">Legal</p>
-            <h1 className="mt-3 text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+            <h1 className="mt-3 heading-2 text-dark">
               Terms &amp; Conditions
             </h1>
             <p className="mt-4 text-sm text-dark-muted">Last updated: {lastUpdated}</p>

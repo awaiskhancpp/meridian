@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { Container } from '@/components/ui'
 import { Button } from '@/components/ui'
 import { ArrowUpRight } from 'lucide-react'
+import { uiClasses } from '@/builds'
 
 interface CTABannerProps {
   title?: string
@@ -66,10 +67,10 @@ export default function CTABanner({
     <section aria-label="Call to Action" className="relative py-16">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <Image src={backgroundImage} alt="" fill className="object-cover" priority />
+        <Image src={backgroundImage} alt="" fill className={uiClasses.mediaCover} priority />
         {/* Dark overlay */}
         {/* Directional overlay */}
-        <div className="absolute inset-0 bg-overlay-service-hero" />
+        <div className={uiClasses.heroOverlay} />
       </div>
 
       <Container className="relative z-10">

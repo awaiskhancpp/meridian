@@ -1,0 +1,8 @@
+export { default as ProjectDetailPage } from './ProjectDetailPage'
+export { default as ProjectPage } from './ProjectPage'
+export { default as ProjectBeforeAfter } from './ProjectBeforeAfter'
+export { default as ProjectBrief } from './ProjectBrief'
+export { default as ProjectCTA } from './ProjectCTA'
+export { default as ProjectDirection } from './ProjectDirection'
+export { default as ProjectHero } from './ProjectHero'
+export { default as RelatedProjects } from './RelatedProjects'

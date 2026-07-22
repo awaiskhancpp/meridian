@@ -48,10 +48,10 @@ export default function AboutWhyChooseUs() {
               {whyChooseUs.label}
             </p>
             <h2 id="about-why-choose-us-heading" className="mt-4 text-dark">
-              <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em]">
+              <span className="block heading-2">
                 {whyChooseUs.heading}
               </span>
-              <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
+              <span className="block heading-script capitalize text-accent">
                 {whyChooseUs.script}
               </span>
             </h2>

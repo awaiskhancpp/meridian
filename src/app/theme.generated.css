@@ -165,6 +165,50 @@
   @media (min-width: 1024px) { font-size: 1rem; }
 }
 
+/* Shared responsive recipes. Keep these names stable so components compose
+   the design system instead of repeating clamp() values. */
+@utility heading-2 {
+  font-size: clamp(1.9rem,3.8vw,3.2rem);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+}
+
+@utility heading-script {
+  font-family: var(--font-family-script);
+  font-size: clamp(2.1rem,4vw,3.5rem);
+  line-height: 1;
+}
+
+@utility heading-hero {
+  font-size: clamp(2.75rem,6.8vw,5.85rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+
+@utility heading-hero-script {
+  font-family: var(--font-family-script);
+  font-size: clamp(3.1rem,7vw,6.1rem);
+  line-height: 0.82;
+}
+
+@utility heading-card {
+  font-size: clamp(1.35rem,2vw,1.85rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+@utility section-space {
+  padding-block: 4rem;
+  @media (min-width: 1024px) { padding-block: 6rem; }
+}
+
+@utility section-space-compact {
+  padding-block: 4rem;
+}
+
 /* ═══════════════════════════════════════════════════════════════════
    Button Padding Utilities
    ═══════════════════════════════════════════════════════════════════ */

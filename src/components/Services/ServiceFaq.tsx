@@ -91,10 +91,10 @@ export default function ServiceFaqs({
         <div>
           <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
           <h2 id="service-faq-heading" className="mt-1">
-            <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+            <span className="block heading-2 text-dark">
               {heading}
             </span>
-            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none  text-accent">
+            <span className="block heading-script capitalize text-accent">
               {script}
             </span>
           </h2>

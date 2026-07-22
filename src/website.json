@@ -63,6 +63,184 @@
       }
     ]
   },
+  "projects": {
+    "hero": {
+      "label": "Our work",
+      "heading": "Spaces with",
+      "script": "a story.",
+      "subheading": "A selection of thoughtful renovations, made for the way people really live."
+    },
+    "items": [
+      {
+        "title": "Warm living room remodel",
+        "category": "Whole-home remodeling",
+        "description": "A brighter, calmer living space shaped around natural materials and everyday comfort.",
+        "image": "/home-about.avif",
+        "imageAlt": "Warm living room remodel",
+        "href": "/projects/warm-living-room-remodel",
+        "eyebrow": "Whole-home remodeling / Seattle",
+        "intro": "A softer, more connected living room built around natural light, honest materials, and the rituals of daily life.",
+        "scope": "Living room, millwork, lighting",
+        "timeline": "12 weeks",
+        "result": "A warmer, more useful gathering space",
+        "story": "The original room had good bones but felt disconnected from the rest of the home. We opened the visual flow, introduced custom storage, and tuned the lighting so the room could shift naturally from morning to evening.",
+        "highlights": [
+          "Custom built-in storage",
+          "Layered architectural lighting",
+          "Oak and limewash material palette"
+        ],
+        "beforeAfter": [
+          {
+            "beforeImage": "/hero.webp",
+            "afterImage": "/home-about.avif",
+            "beforeAlt": "Living room before the remodel",
+            "afterAlt": "Living room after the remodel"
+          }
+        ]
+      },
+      {
+        "title": "Full kitchen transformation",
+        "category": "Kitchen remodeling",
+        "description": "A considered kitchen update with better flow, generous storage, and a timeless material palette.",
+        "image": "/hero.webp",
+        "imageAlt": "Full kitchen transformation",
+        "href": "/projects/full-kitchen-transformation",
+        "eyebrow": "Kitchen remodeling / Seattle",
+        "intro": "A high-functioning kitchen that makes everyday movement feel effortless without losing its sense of calm.",
+        "scope": "Kitchen, cabinetry, surfaces",
+        "timeline": "16 weeks",
+        "result": "Better flow and twice the usable storage",
+        "story": "This kitchen was planned around how the homeowners actually cook, host, and move through the house. The result is a more generous working triangle, quieter storage, and materials that will age with the home.",
+        "highlights": [
+          "Full-height cabinetry",
+          "Improved work triangle",
+          "Durable natural-stone surfaces"
+        ],
+        "beforeAfter": [
+          {
+            "beforeImage": "/home-about.avif",
+            "afterImage": "/hero.webp",
+            "beforeAlt": "Kitchen before the remodel",
+            "afterAlt": "Kitchen after the remodel"
+          },
+          {
+            "beforeImage": "/home-about.avif",
+            "afterImage": "/hero.webp",
+            "beforeAlt": "Dining area before the remodel",
+            "afterAlt": "Dining area after the remodel"
+          }
+        ]
+      },
+      {
+        "title": "Custom built-in millwork",
+        "category": "Custom cabinetry",
+        "description": "Purpose-built storage that gives the room a quieter rhythm while making every inch useful.",
+        "image": "/home-about.avif",
+        "imageAlt": "Custom built-in millwork",
+        "href": "/projects/custom-built-in-millwork",
+        "eyebrow": "Custom cabinetry / Seattle",
+        "intro": "A wall of considered storage that gives a busy family room a quiet architectural center.",
+        "scope": "Millwork, storage, finish carpentry",
+        "timeline": "8 weeks",
+        "result": "Clutter becomes part of the architecture",
+        "story": "Rather than add more freestanding furniture, we designed a continuous built-in that conceals technology, displays the meaningful pieces, and creates a visual anchor for the room.",
+        "highlights": [
+          "Integrated media storage",
+          "Concealed cable management",
+          "Hand-finished timber details"
+        ],
+        "beforeAfter": [
+          {
+            "beforeImage": "/hero.webp",
+            "afterImage": "/home-about.avif",
+            "beforeAlt": "Room before custom millwork",
+            "afterAlt": "Room after custom millwork"
+          }
+        ]
+      },
+      {
+        "title": "Primary suite renovation",
+        "category": "Whole-home remodeling",
+        "description": "A restful suite renovation where warm texture and soft light do the heavy lifting.",
+        "image": "/hero.webp",
+        "imageAlt": "Primary suite renovation",
+        "href": "/projects/primary-suite-renovation",
+        "eyebrow": "Whole-home remodeling / Seattle",
+        "intro": "A restorative primary suite where proportion, texture, and light create a slower start and finish to each day.",
+        "scope": "Bedroom, ensuite, lighting",
+        "timeline": "14 weeks",
+        "result": "A private retreat with everyday practicality",
+        "story": "The suite needed to feel special without becoming precious. We simplified the palette, improved circulation, and used warm layered light to make the space feel grounded in every season.",
+        "highlights": [
+          "Improved suite circulation",
+          "Warm layered lighting",
+          "Quiet, tactile finishes"
+        ],
+        "beforeAfter": [
+          {
+            "beforeImage": "/home-about.avif",
+            "afterImage": "/hero.webp",
+            "beforeAlt": "Primary suite before the remodel",
+            "afterAlt": "Primary suite after the remodel"
+          }
+        ]
+      },
+      {
+        "title": "Spa-style bathroom",
+        "category": "Bathroom remodeling",
+        "description": "A practical bathroom reworked as a private retreat through stone, proportion, and light.",
+        "image": "/home-about.avif",
+        "imageAlt": "Spa-style bathroom",
+        "href": "/projects/spa-style-bathroom",
+        "eyebrow": "Bathroom remodeling / Seattle",
+        "intro": "A compact bathroom transformed into a calm, highly functional retreat through better proportion and material restraint.",
+        "scope": "Bathroom, plumbing, tilework",
+        "timeline": "7 weeks",
+        "result": "A daily ritual made more restorative",
+        "story": "The design focused on the moments that matter: clear sightlines, generous shower space, storage exactly where it is needed, and a palette that stays quiet while the textures do the work.",
+        "highlights": [
+          "Curbless shower entry",
+          "Heated stone flooring",
+          "Integrated vanity storage"
+        ],
+        "beforeAfter": [
+          {
+            "beforeImage": "/hero.webp",
+            "afterImage": "/home-about.avif",
+            "beforeAlt": "Bathroom before the remodel",
+            "afterAlt": "Bathroom after the remodel"
+          }
+        ]
+      },
+      {
+        "title": "Outdoor living space",
+        "category": "Home additions",
+        "description": "An outdoor room designed to extend the home and make more of the seasons outside.",
+        "image": "/hero.webp",
+        "imageAlt": "Outdoor living space",
+        "href": "/projects/outdoor-living-space",
+        "eyebrow": "Home additions / Seattle",
+        "intro": "An outdoor room that extends the home’s living season and makes the garden feel like part of the floor plan.",
+        "scope": "Addition, deck, exterior lighting",
+        "timeline": "18 weeks",
+        "result": "More room to gather, outside and in",
+        "story": "The challenge was not simply adding square footage. It was creating a transition that felt inevitable, with shelter, light, and durable materials working together to connect the home to its landscape.",
+        "highlights": [
+          "Weather-protected entertaining area",
+          "Integrated exterior lighting",
+          "Indoor-outdoor material continuity"
+        ],
+        "beforeAfter": [
+          {
+            "beforeImage": "/home-about.avif",
+            "afterImage": "/hero.webp",
+            "beforeAlt": "Exterior before the addition",
+            "afterAlt": "Exterior after the addition"
+          }
+        ]
+      }
+    ]
+  },
   "hero": {
     "eyebrow": "Renova studio",
     "heading": "Design that feels",

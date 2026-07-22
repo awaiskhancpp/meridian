@@ -70,10 +70,10 @@ export default function About({
         <div className="flex h-full flex-col justify-center items-start">
           <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
           <h2 id="service-about-heading" className="mt-1">
-            <span className="text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+            <span className="heading-2 text-dark">
               {heading}
             </span>
-            <span className="ml-2 capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent">
+            <span className="ml-2 heading-script capitalize text-accent">
               {script}
             </span>
           </h2>

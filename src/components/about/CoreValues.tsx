@@ -37,10 +37,10 @@ export default function CoreValues() {
         <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">
           <p className="text-xs uppercase tracking-[0.34em] text-dark-muted mb-4">Our Values</p>
           <h2 id="values-heading">
-            <span className="block text-[clamp(1.9rem,3.8vw,3.2rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+            <span className="block heading-2 text-dark">
               Core Values That Guide
             </span>
-            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.1rem,4vw,3.5rem)] leading-none text-accent mt-3">
+            <span className="block heading-script capitalize text-accent mt-3">
               Every Project & Partnership
             </span>
           </h2>
