@@ -77,15 +77,16 @@ export default function ServiceProcess({
   steps,
 }: ServiceProcessProps) {
   return (
-    <section aria-labelledby="process-heading" className="relative w-full overflow-hidden bg-dark">
-      <div className="relative min-h-[560px] w-full ">
+    <section
+      aria-labelledby="process-heading"
+      className="relative w-full overflow-hidden bg-dark h-[96vh]"
+    >
+      <div className="relative h-full w-full ">
         <Image src={image} alt="" fill aria-hidden="true" className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-overlay-service-hero" />
 
-        <Container className="relative flex h-full min-h-[560px] flex-col justify-between gap-2 py-14  lg:py-16">
-          {/* ── Heading — left-aligned, safe in the gradient's darkest
-                zone regardless of scroll/breakpoint since the fade runs
-                left→right, not top→bottom ── */}
+        <Container className="relative flex h-full flex-col justify-center gap-12 py-14 lg:py-16">
+          {/* ── Heading ── */}
           <div className="max-w-xl mx-auto flex flex-col text-center">
             <p className="text-xs uppercase tracking-[0.34em] text-white/70">{label}</p>
             <h2 id="process-heading" className="mt-2">
@@ -98,7 +99,7 @@ export default function ServiceProcess({
             </h2>
           </div>
 
-          {/* ── Steps: swipeable row on mobile, static grid from sm+ ── */}
+          {/* ── Steps Grid (Sat right below with gap-12 spacing) ── */}
           <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 lg:grid-cols-4 [&::-webkit-scrollbar]:hidden">
             {steps.map((step, i) => (
               <div

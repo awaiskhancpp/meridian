@@ -1,3 +1,5 @@
 export { default as OurStory } from './OurStory'
 export { default as MissionValues } from './MissionValues'
 export { default as CoreValues } from './CoreValues'
+export { default as AboutWhyChooseUs } from './AboutWhyChooseUs'
+export { default as AboutTrustSection } from './AboutTrustSection'
