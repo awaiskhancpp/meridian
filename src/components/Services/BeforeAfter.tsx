@@ -2,7 +2,6 @@ import React from 'react'
 import { Container } from '@/components/ui'
 import { Button } from '@/components/ui'
 import BeforeAfterSlider from './BeforeAfterSlider'
-import { uiClasses } from '@/builds'
 
 interface BeforeAfterItem {
   beforeImage: string
@@ -33,7 +32,7 @@ export default function BeforeAfter({
   ctaHref = '#gallery',
 }: BeforeAfterProps) {
   return (
-    <section aria-label="Before and After" className={uiClasses.sectionCompact}>
+    <section aria-label="Before and After" className="py-16">
       <Container>
         {/* Header — label/heading on the left, "View All" CTA on the
             right, matching the reference layout */}
@@ -44,13 +43,9 @@ export default function BeforeAfter({
               {label}
             </p>
             <h2 id="before-after-heading" className="mt-1 flex flex-wrap items-end gap-3">
-              <span className="heading-2 text-dark">
-                {heading}
-              </span>
+              <span className="heading-2 text-dark">{heading}</span>
 
-              <span className="heading-script text-accent">
-                {script}
-              </span>
+              <span className="heading-script text-accent">{script}</span>
             </h2>
             {subheading && (
               <p className="mt-4 max-w-2xl text-base leading-relaxed  text-dark-muted">

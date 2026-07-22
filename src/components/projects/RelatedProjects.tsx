@@ -4,7 +4,6 @@ import { ArrowUpRight } from 'lucide-react'
 import { Button, Container } from '@/components/ui'
 import { getAllProjects } from '@/lib/projects'
 import type { ProjectDetail } from './types'
-import { uiClasses } from '@/builds'
 
 export default function RelatedProjects({ project }: { project: ProjectDetail }) {
   const relatedProjects = getAllProjects()
@@ -12,23 +11,19 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
     .slice(0, 3)
 
   return (
-    <section className={uiClasses.section}>
+    <section className="py-16 lg:py-24">
       <Container>
         <div className="mb-10 flex items-end justify-between gap-6">
-          <div className=" flex flex-col ">
-            <p className={uiClasses.eyebrow}>Continue exploring</p>
+          <div className=" flex flex-col capitalize">
+            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
+              Continue exploring
+            </p>
             <h2 id="before-after-heading" className="mt-1 gap-3">
               <span className="block heading-2 text-dark">More of our</span>
 
               <span className="block heading-script text-accent">work.</span>
             </h2>
           </div>
-          {/* <div>
-            <p className={uiClasses.eyebrow}>Continue exploring</p>
-            <h2 className="mt-3 text-[clamp(2rem,4vw,3.5rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
-              More of our work.
-            </h2>
-          </div> */}
           <Button
             variant="outline"
             size="md"
@@ -46,7 +41,7 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
                   src={item.image}
                   alt={item.imageAlt}
                   fill
-                  className={uiClasses.mediaCoverTransition}
+                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
               <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-dark-muted">

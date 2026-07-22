@@ -1,17 +1,18 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { projectStyles, uiClasses } from '@/builds'
 import { getAllProjects } from '@/lib/projects'
 import { Container } from '@/components/ui'
 
 export default function ProjectPage() {
   return (
-    <main className={uiClasses.section}>
+    <main className="py-16 lg:py-24">
       <Container>
         <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-16">
           <div>
-            <p className={uiClasses.eyebrow}>Selected work</p>
-            <h2 className={`mt-3 max-w-2xl ${uiClasses.headingLarge}`}>
+            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
+              Selected work
+            </p>
+            <h2 className="mt-3 max-w-2xl text-[clamp(2rem,4vw,3.4rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
               Built around how you live.
             </h2>
           </div>
@@ -21,30 +22,30 @@ export default function ProjectPage() {
           </p>
         </div>
 
-        <div className={projectStyles.grid.wrapper}>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-6 lg:gap-6">
           {getAllProjects().map((project, index) => {
             const sizeClass =
               index === 0
-                ? projectStyles.grid.first
+                ? 'lg:col-span-4'
                 : index === 1
-                  ? projectStyles.grid.second
+                  ? 'lg:col-span-2'
                   : index < 4
-                    ? projectStyles.grid.middle
+                    ? 'lg:col-span-2'
                     : index === 4
-                      ? projectStyles.grid.last
-                      : projectStyles.grid.lastWide
+                      ? 'lg:col-span-2'
+                      : 'lg:col-span-4'
 
             return (
               <article key={project.href} className={`group ${sizeClass}`}>
                 <Link href={project.href} className="block">
-                  <div className={projectStyles.card.image}>
+                  <div className="relative h-[28rem] overflow-hidden lg:h-[34rem]">
                     <Image
                       src={project.image}
                       alt={project.imageAlt}
                       fill
-                      className={uiClasses.mediaCoverTransition}
+                      className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                     />
-                    <div className={projectStyles.card.overlay} />
+                    <div className="absolute inset-0 bg-overlay-card" />
                     {/* Bottom-only hover caption — replaces the previous
                         whole-image centered panel. No description, no
                         button: the entire card is already the click

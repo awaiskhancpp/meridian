@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { Container } from '@/components/ui'
 import { Button } from '@/components/ui'
 import { ArrowUpRight } from 'lucide-react'
-import { uiClasses } from '@/builds'
 
 interface StatBox {
   number: string
@@ -63,11 +62,11 @@ export default function ServiceHero({
           fill
           priority
           aria-hidden="true"
-          className={uiClasses.mediaCover}
+          className="object-cover object-center"
         />
 
         {/* Gradient overlay - using theme colors */}
-        <div className={uiClasses.heroOverlay} />
+        <div className="absolute inset-0 bg-overlay-service-hero" />
 
         <Container className="relative flex h-full flex-col justify-center">
           <div className="max-w-3xl">

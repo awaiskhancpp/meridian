@@ -1,5 +1,4 @@
 import { Footer, Navbar } from '@/components/homepage'
-import { uiClasses } from '@/builds'
 import ProjectBeforeAfter from './ProjectBeforeAfter'
 import ProjectBrief from './ProjectBrief'
 import ProjectCTA from './ProjectCTA'
@@ -10,12 +9,12 @@ import type { ProjectDetail } from './types'
 
 export default function ProjectDetailPage({ project }: { project: ProjectDetail }) {
   return (
-    <div className={uiClasses.page}>
+    <div className="bg-white">
       <Navbar />
       <ProjectHero project={project} />
-      <ProjectBrief project={project} />
+      {/* <ProjectBrief project={project} /> */}
       <ProjectBeforeAfter project={project} />
-      <ProjectDirection project={project} />
+      {/* <ProjectDirection project={project} /> */}
       <RelatedProjects project={project} />
       <ProjectCTA project={project} />
       <Footer />

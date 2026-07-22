@@ -17,15 +17,56 @@ import {
   fontFamily,
   fontSize,
   lineHeight,
-  typeRecipe,
   fontWeight,
-  buttonPadding,
-  borderRadius,
   spacing,
   zIndex,
   shadow,
   gradient,
 } from '../src/builds'
+
+// Removed from builds.ts as single-use, kept here for CSS generation
+const typeRecipe = {
+  heading2: {
+    size: 'clamp(1.9rem,3.8vw,3.2rem)',
+    weight: '900',
+    line: '0.92',
+    tracking: '-0.05em',
+  },
+  headingScript: {
+    size: 'clamp(2.1rem,4vw,3.5rem)',
+    line: '1',
+  },
+  headingHero: {
+    size: 'clamp(2.75rem,6.8vw,5.85rem)',
+    weight: '700',
+    line: '0.9',
+    tracking: '-0.06em',
+  },
+  headingHeroScript: {
+    size: 'clamp(3.1rem,7vw,6.1rem)',
+    line: '0.82',
+  },
+  cardTitle: {
+    size: 'clamp(1.35rem,2vw,1.85rem)',
+    weight: '700',
+    line: '0.95',
+    tracking: '-0.05em',
+  },
+}
+
+const buttonPadding = {
+  lg: ['0.875rem', '2rem'],
+  md: ['0.625rem', '1.5rem'],
+  sm: ['0.5rem', '1.125rem'],
+}
+
+const borderRadius = {
+  xs: '4px',
+  sm: '8px',
+  md: '12px',
+  lg: '20px',
+  full: '9999px',
+}
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
