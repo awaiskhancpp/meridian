@@ -30,7 +30,7 @@ export default function Footer() {
   return (
     <footer id="footer" className=" ">
       <Container>
-        <div className="mx-auto w-full py-8 ">
+        <div className="mx-auto w-full py-6 ">
           <div className="grid grid-cols-1 gap-8 px-5 py-6 backdrop-blur-sm sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:py-6">
             {/* Brand Section */}
             <div className="space-y-4 lg:col-span-3">

@@ -12,6 +12,7 @@ export default function AboutHomePage() {
       <CoreValues />
       <AboutTrustSection />
       <CTABanner />
+      <Footer />
     </div>
   )
 }

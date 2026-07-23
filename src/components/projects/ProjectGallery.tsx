@@ -84,7 +84,7 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
       {/* Lightbox Modal */}
       {selectedIndex !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95 backdrop-blur-sm transition-opacity"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-[#000]/85 backdrop-blur-sm transition-opacity"
           onClick={closeModal}
         >
           {/* Close Button */}
@@ -115,10 +115,7 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
           </button>
 
           {/* Main Image */}
-          <div
-            className="relative h-[85vh] w-[90vw] md:h-[90vh] md:w-[85vw]"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="relative h-[85vh] w-[90vw] md:h-[90vh] md:w-[85vw]">
             <Image
               src={images[selectedIndex]}
               alt={`Project image ${selectedIndex + 1}`}

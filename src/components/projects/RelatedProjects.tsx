@@ -26,7 +26,7 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
           </div>
           <Button
             variant="outline"
-            size="md"
+            size="lg"
             href="/projects"
             className="hidden  rounded-none items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent transition-colors hover:text-dark sm:inline-flex"
           >

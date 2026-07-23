@@ -30,7 +30,7 @@ export default function AboutTrustSection({
   description = 'Building trust takes time, but it starts with transparency. We’ve built our reputation on clear communication, reliable timelines, and an unwavering standard of quality for every home we touch.',
   stats = [
     { value: '24h', label: 'Average response time' },
-    { value: '10+', label: 'Years remodeling homes' },
+    { value: '1', label: 'Decade spent remodeling' },
     { value: '5-step', label: 'A defined process, every time' },
     { value: '100%', label: 'Estimates in writing' },
   ],
