@@ -70,7 +70,7 @@ export default function Services() {
   }
 
   return (
-    <section id="services" aria-labelledby="services-heading" className="py-16 lg:py-24">
+    <section id="services" aria-labelledby="services-heading" className="py-10 lg:py-16">
       <Container>
         <div className="flex items-end justify-between gap-4 pb-6">
           <div>

@@ -21,7 +21,7 @@ export default function Blogs() {
   }
 
   return (
-    <section id="blogs" aria-labelledby="blogs-heading" className="bg-white py-16  lg:py-24">
+    <section id="blogs" aria-labelledby="blogs-heading" className="bg-white py-10 lg:py-16">
       <Container>
         <SectionHeading
           id="blogs-heading"

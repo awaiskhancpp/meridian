@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
               ← Back to home
             </Link>
             <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">Legal</p>
-            <h1 className="mt-3 heading-2 text-dark">Privacy Policy</h1>
+            <h1 className="mt-1 heading-2 text-dark">Privacy Policy</h1>
             <p className="mt-4 text-sm text-dark-muted">Last updated: {lastUpdated}</p>
           </div>
         </Container>

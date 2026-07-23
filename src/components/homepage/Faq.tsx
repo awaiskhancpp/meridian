@@ -33,7 +33,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="py-8 lg:py-16">
+    <section id="faq" aria-labelledby="faq-heading" className="py-10 lg:py-16">
       <Container>
         {/*
           Responsive reasoning:

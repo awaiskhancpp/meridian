@@ -3,7 +3,7 @@ import type { ProjectDetail } from './types'
 
 export default function ProjectBrief({ project }: { project: ProjectDetail }) {
   return (
-    <section className="border-b border-subtle bg-white py-16 lg:py-24">
+    <section className="border-b border-subtle bg-white py-10 lg:py-16">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
           <div>

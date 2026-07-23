@@ -47,7 +47,7 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
         ctaHref="/#contact"
       />
 
-      <Container className="pt-24 pb-16">
+      <Container className="pt-16 pb-16">
         <ServiceAbout
           label={service.about?.label || 'About'}
           heading={service.about?.heading || 'About'}

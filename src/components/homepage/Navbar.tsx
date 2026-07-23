@@ -133,11 +133,11 @@ export default function Navbar() {
         <div className="flex items-center justify-between gap-4 py-3 lg:py-0">
           <Link
             href="/"
-            className={`flex items-center gap-3 ${textClasses}`}
+            className={`flex items-center gap-3 p-1 ${textClasses}`}
             aria-label={brand.name}
           >
             {nav.img ? (
-              <Image src={nav.img} alt={brand.name} width={112} height={80} />
+              <Image src={nav.img} alt={brand.name} width={70} height={70} />
             ) : (
               <span className="text-base font-semibold tracking-[0.22em]">{brand.name}</span>
             )}

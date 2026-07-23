@@ -19,9 +19,7 @@ export default function AreasPageClient() {
             <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
               Primary {serviceAreas.label}
             </p>
-            <h2 className="mt-2 heading-2 text-dark">
-              Surrounding Areas
-            </h2>
+            <h2 className="mt-1 heading-2 text-dark">Surrounding Areas</h2>
           </div>
           <p className="text-sm text-dark-muted"></p> {services.items.length}{' '}
           {serviceAreas.areas.length === 1 ? 'Area' : 'Areas'}

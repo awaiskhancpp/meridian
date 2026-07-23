@@ -85,7 +85,7 @@ export default function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="relative flex min-h-[90vh] items-center py-16 lg:py-26"
+      className="relative flex min-h-[90vh] items-center py-10 lg:py-16"
     >
       {/* FULL WIDTH BACKGROUND IMAGE */}
       <Image src="/hero.webp" alt="" fill className="absolute inset-0 z-0 object-cover" />
@@ -100,12 +100,8 @@ export default function Contact() {
           <div className="flex flex-col items-center text-center">
             <p className="text-xs uppercase tracking-[0.34em] text-white/70">{contact.label}</p>
             <h2 id="contact-heading" className="mt-2">
-              <span className="block heading-2 text-white">
-                {contact.heading}
-              </span>
-              <span className="heading-script capitalize text-white">
-                {contact.script}
-              </span>
+              <span className="block heading-2 text-white">{contact.heading}</span>
+              <span className="heading-script capitalize text-white">{contact.script}</span>
             </h2>
           </div>
 

@@ -4,7 +4,7 @@ import type { ProjectDetail } from './types'
 
 export default function ProjectDirection({ project }: { project: ProjectDetail }) {
   return (
-    <section className="bg-cream py-16 lg:py-24">
+    <section className="bg-cream py-10 lg:py-16">
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <div className=" flex flex-col ">

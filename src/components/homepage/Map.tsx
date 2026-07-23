@@ -17,14 +17,12 @@ export default function Map() {
   const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(map.address)}&output=embed`
 
   return (
-    <section id="map" aria-labelledby="map-heading" className="py-16 lg:py-24">
+    <section id="map" aria-labelledby="map-heading" className="py-10 lg:py-16">
       <Container>
         <div className="mb-8">
           <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{map.label}</p>
           <h2 id="map-heading" className="mt-1">
-          <span className="block heading-2 text-dark">
-              {map.heading}
-            </span>
+            <span className="block heading-2 text-dark">{map.heading}</span>
           </h2>
           <p className="mt-3 text-sm text-dark-muted">{map.address}</p>
         </div>

@@ -32,7 +32,7 @@ export default function Testimonials() {
   const item = items[index]
 
   return (
-    <section id="testimonials" aria-labelledby="testimonials-heading" className="py-16 lg:py-24">
+    <section id="testimonials" aria-labelledby="testimonials-heading" className="py-10 lg:py-16">
       <Container>
         {/* Centered heading */}
         <SectionHeading

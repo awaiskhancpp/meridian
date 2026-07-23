@@ -41,7 +41,7 @@ export default function Gallery() {
     <section
       id="gallery"
       aria-labelledby="gallery-heading"
-      className="relative w-full py-16 overflow-hidden "
+      className="relative w-full py-10 lg:py-16 overflow-hidden "
     >
       {/* Elegant Header Section */}
       <SectionHeading

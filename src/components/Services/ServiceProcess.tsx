@@ -85,17 +85,13 @@ export default function ServiceProcess({
         <Image src={image} alt="" fill aria-hidden="true" className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-overlay-service-hero" />
 
-        <Container className="relative flex h-full flex-col justify-center gap-12 py-14 lg:py-16">
+        <Container className="relative flex h-full flex-col justify-center gap-12 py-10 lg:py-16">
           {/* ── Heading ── */}
           <div className="max-w-xl mx-auto flex flex-col text-center">
             <p className="text-xs uppercase tracking-[0.34em] text-white/70">{label}</p>
             <h2 id="process-heading" className="mt-2">
-              <span className="block heading-2 text-white">
-                {heading}
-              </span>
-              <span className="block heading-script text-cream">
-                {script}
-              </span>
+              <span className="block heading-2 text-white">{heading}</span>
+              <span className="block heading-script text-cream">{script}</span>
             </h2>
           </div>
 

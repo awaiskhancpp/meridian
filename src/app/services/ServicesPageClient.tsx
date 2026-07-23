@@ -121,7 +121,7 @@ export default function ServicesPageClient({
               <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
                 {heroProps.label}
               </p>
-              <h2 className="mt-2 heading-2 text-dark">All Services</h2>
+              <h2 className="mt-1 heading-2 text-dark">All Services</h2>
             </div>
             <p className="text-sm text-dark-muted">
               {filtered.length} {filtered.length === 1 ? 'service' : 'services'}

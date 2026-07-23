@@ -36,7 +36,7 @@ const { about } = siteData
 
 export default function About() {
   return (
-    <section id="about" aria-labelledby="about-heading" className="py-8 lg:py-12 lg:mt-12">
+    <section id="about" aria-labelledby="about-heading" className="py-10 lg:py-16">
       <Container>
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-6">
           {/* ── Left: label, heading, subheading, CTA, stats ───────── */}

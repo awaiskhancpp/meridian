@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
     <section
       id="why-choose-us"
       aria-labelledby="why-choose-us-heading"
-      className="relative overflow-hidden py-16 bg-white"
+      className="relative overflow-hidden py-10 lg:py-16 bg-white"
     >
       {/* Subtle Background Decoration matching the reference's depth */}
       {/* <div className="pointer-events-none absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial-warm" /> */}

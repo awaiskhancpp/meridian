@@ -31,7 +31,7 @@ export default function CoreValues() {
   ]
 
   return (
-    <section aria-labelledby="values-heading" className="py-10 lg:py-16 ">
+    <section aria-labelledby="values-heading" className="py-10 lg:py-16">
       <Container>
         {/* ── Header ── */}
         <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">

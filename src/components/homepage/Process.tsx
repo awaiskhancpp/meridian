@@ -19,7 +19,7 @@ const stepImages = ['/discovery.png', '/design.png', '/build.png', '/handoff.png
 ───────────────────────────────────────────── */
 export default function Process() {
   return (
-    <section id="process" aria-labelledby="process-heading" className="py-16 lg:py-24 bg-white">
+    <section id="process" aria-labelledby="process-heading" className="py-10 lg:py-16 bg-white">
       <Container>
         {/* Centered heading */}
         <SectionHeading

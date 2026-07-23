@@ -7,7 +7,7 @@ export default function ProjectPage() {
   return (
     <main className="py-10 lg:py-16">
       <Container>
-        <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-16">
+        <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-14">
           <div>
             <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
               Selected work
