@@ -109,7 +109,7 @@ export default function Services() {
 
         <div className="border-t border-neutral-200" />
 
-        <div className="mt-8 overflow-hidden rounded-md">
+        <div className="mt-8 overflow-hidden ">
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper

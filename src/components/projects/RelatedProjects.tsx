@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
-import { Button, Container } from '@/components/ui'
+import { Button, CategoryFilterPills, Container } from '@/components/ui'
 import { getAllProjects } from '@/lib/projects'
 import type { ProjectDetail } from './types'
 
