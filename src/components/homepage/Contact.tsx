@@ -79,7 +79,7 @@ export default function Contact() {
   }
 
   const commonClass =
-    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white-muted focus:border-accent focus:ring-0'
+    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white-muted focus:border-accent  focus:ring-0'
 
   return (
     <section
@@ -281,7 +281,7 @@ function UnderlineField({
   rows = 1,
 }: FieldProps) {
   const commonClass =
-    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white-muted focus:border-accent focus:ring-0'
+    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white-muted focus:border-white-subtle focus:ring-0'
 
   return (
     <label htmlFor={id} className="grid gap-3">

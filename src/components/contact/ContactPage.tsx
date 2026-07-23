@@ -185,8 +185,12 @@ export default function ContactPage() {
                   Service of Interest
                 </label>
                 <div className="relative">
-                  <select id="service" className={`${inputStyles} appearance-none cursor-pointer`}>
-                    <option value="null" disabled selected>
+                  <select
+                    id="service"
+                    className={`${inputStyles} appearance-none cursor-pointer`}
+                    defaultValue="null"
+                  >
+                    <option value="null" disabled>
                       Select a service...
                     </option>
                     <option value="kitchen">Kitchen Remodel</option>

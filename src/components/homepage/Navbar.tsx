@@ -136,10 +136,11 @@ export default function Navbar() {
             className={`flex items-center gap-3 p-1 ${textClasses}`}
             aria-label={brand.name}
           >
-            {nav.img ? (
+            {/* {nav.img ? ( */}
+            {scrolled ? (
               <Image src={nav.img} alt={brand.name} width={70} height={70} />
             ) : (
-              <span className="text-base font-semibold tracking-[0.22em]">{brand.name}</span>
+              <Image src="/logoWhite.png" alt={brand.name} width={70} height={70} />
             )}
           </Link>
 
