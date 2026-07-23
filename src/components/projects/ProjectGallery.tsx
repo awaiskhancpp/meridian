@@ -75,7 +75,7 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/10" />
+              <div className="absolute inset-0 bg-transparent transition-colors duration-300 group-hover:bg-overlay-light" />
             </div>
           ))}
         </div>
@@ -84,12 +84,12 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
       {/* Lightbox Modal */}
       {selectedIndex !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[#000]/85 backdrop-blur-sm transition-opacity"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-overlay-heavy backdrop-blur-sm transition-opacity"
           onClick={closeModal}
         >
           {/* Close Button */}
           <button
-            className="absolute right-4 top-4 z-[60] p-3 text-white/70 transition-colors hover:text-white md:right-8 md:top-8"
+            className="absolute right-4 top-4 z-[60] p-3 text-white-subtle transition-colors hover:text-white md:right-8 md:top-8"
             onClick={closeModal}
             aria-label="Close modal"
           >
@@ -98,7 +98,7 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
 
           {/* Previous Button */}
           <button
-            className="absolute left-2 z-[60] p-3 text-white/70 transition-colors hover:text-white md:left-8"
+            className="absolute left-2 z-[60] p-3 text-white-subtle transition-colors hover:text-white md:left-8"
             onClick={prevImage}
             aria-label="Previous image"
           >
@@ -107,7 +107,7 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
 
           {/* Next Button */}
           <button
-            className="absolute right-2 z-[60] p-3 text-white/70 transition-colors hover:text-white md:right-8"
+            className="absolute right-2 z-[60] p-3 text-white-subtle transition-colors hover:text-white md:right-8"
             onClick={nextImage}
             aria-label="Next image"
           >

@@ -19,7 +19,7 @@ export default function ProjectHero({ project }: { project: ProjectDetail }) {
 
       <Container className="relative z-10 flex min-h-[100svh] items-end pb-12 pt-28 lg:pb-16">
         <div className="max-w-4xl text-white">
-          <p className="text-xs font-medium uppercase tracking-[0.34em] text-white/70">
+          <p className="text-xs font-medium uppercase tracking-[0.34em] text-white-subtle">
             {project.eyebrow}
           </p>
 
@@ -27,7 +27,7 @@ export default function ProjectHero({ project }: { project: ProjectDetail }) {
             {project.title}
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-white/85 line-clamp-2 lg:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-7 text-secondary line-clamp-2 lg:text-lg">
             {project.intro}
           </p>
         </div>

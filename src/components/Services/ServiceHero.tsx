@@ -77,7 +77,7 @@ export default function ServiceHero({
 
             {/* Subtitle */}
             {subtitle && (
-              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/90 lg:text-xl">
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white-overlay lg:text-xl">
                 {subtitle}
               </p>
             )}
@@ -107,7 +107,7 @@ export default function ServiceHero({
                 {statBoxes.map((statBox, index) => (
                   <div
                     key={index}
-                    className="bg-white-high backdrop-blur-sm p-4 flex flex-col items-center justify-center gap-2 shadow-sm"
+                    className="bg-white-high backdrop-blur-sm p-4 flex flex-col items-center justify-center gap-2 shadow-soft"
                   >
                     <div className="text-3xl font-black flex items-center text-accent lg:text-4xl">
                       {statBox.number}
@@ -132,7 +132,7 @@ export default function ServiceHero({
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {statBoxes.map((statBox, index) => (
-                <div key={index} className="flex gap-3 bg-white p-6 shadow-lg">
+                <div key={index} className="flex gap-3 bg-white p-6 shadow-card">
                   <div className="flex items-center text-4xl font-black text-accent">
                     {statBox.number}
                   </div>

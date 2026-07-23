@@ -33,6 +33,8 @@
   --color-input-bg:      rgba(60,37,21,0.05);
   --color-input-border:  rgba(60,37,21,0.16);
   --color-overlay-dark:  rgba(0,0,0,0.4);
+  --color-overlay-heavy: rgba(0,0,0,0.85);
+  --color-overlay-light: rgba(0,0,0,0.1);
   --color-panel-dark:    rgba(60,37,21,0.82);
   --color-white-soft:    rgba(255,255,255,0.05);
   --color-white-ghost:   rgba(255,255,255,0.1);
@@ -73,12 +75,22 @@
   --color-decorative-green: #34A853;
   --color-decorative-red: #EA4335;
   --color-decorative-terracotta: #c28b6e;
+  /* Status */
+  --color-status-danger:     #EA4335;
+  --color-status-danger-bg:  rgba(234,67,53,0.08);
+  --color-status-success:    #34A853;
+  --color-status-success-bg: rgba(52,168,83,0.08);
+  --color-status-warning:    #FBBC05;
+  --color-status-warning-bg: rgba(251,188,5,0.08);
+  --color-status-info:       #4285F4;
+  --color-status-info-bg:    rgba(66,133,244,0.08);
   --shadow-soft: 0 12px 28px rgba(60,37,21,0.08);
   --shadow-card: 0 18px 48px rgba(60,37,21,0.1);
   --shadow-card-strong: 0 12px 28px rgba(60,37,21,0.18);
   --shadow-lift: 0 20px 60px rgba(0,0,0,0.12);
   --shadow-navbar: 0 18px 48px rgba(60,37,21,0.06);
   --shadow-menu: 0 28px 70px rgba(60,37,21,0.12);
+  --shadow-text-hero: 0 2px 6px rgba(0,0,0,0.18);
   --gradient-hero: linear-gradient(115deg,rgba(34,24,18,0.7) 0%,rgba(34,24,18,0.42) 38%,rgba(34,24,18,0.12) 68%,rgba(34,24,18,0.04) 100%);
   --gradient-service-hero: linear-gradient(115deg,rgba(34,24,18,0.7) 0%,rgba(34,24,18,0.42) 38%,rgba(34,24,18,0.12) 68%,rgba(34,24,18,0.04) 100%);
   --gradient-card: linear-gradient(180deg,rgba(60,37,21,0.08) 0%,rgba(60,37,21,0.18) 100%);
@@ -230,6 +242,8 @@
 @utility bg-accent-hover { background-color: var(--color-accent-hover); }
 @utility bg-accent-faint { background-color: var(--color-accent-faint); }
 @utility bg-overlay-dark { background-color: var(--color-overlay-dark); }
+@utility bg-overlay-heavy { background-color: var(--color-overlay-heavy); }
+@utility bg-overlay-light { background-color: var(--color-overlay-light); }
 @utility bg-panel-dark { background-color: var(--color-panel-dark); }
 @utility bg-white-soft { background-color: var(--color-white-soft); }
 @utility bg-white-ghost { background-color: var(--color-white-ghost); }
@@ -272,6 +286,7 @@
 @utility border-light-mid { border-color: var(--color-border-light-mid); }
 @utility border-light-strong { border-color: var(--color-border-light-strong); }
 @utility border-light-heavy { border-color: var(--color-border-light-heavy); }
+@utility border-white-ghost { border-color: var(--color-white-ghost); }
 @utility border-emphasis { border-color: var(--color-border-emphasis); }
 @utility border-subtle { border-color: var(--color-border-subtle); }
 @utility border-soft { border-color: var(--color-border-soft); }
@@ -315,6 +330,7 @@
 @utility shadow-lift { box-shadow: var(--shadow-lift); }
 @utility shadow-navbar { box-shadow: var(--shadow-navbar); }
 @utility shadow-menu { box-shadow: var(--shadow-menu); }
+@utility drop-shadow-text-hero { filter: drop-shadow(var(--shadow-text-hero)); }
 
 @utility bg-decorative-gold { background-color: var(--color-decorative-gold); }
 @utility bg-decorative-blue { background-color: var(--color-decorative-blue); }
@@ -332,3 +348,19 @@
 @utility fill-decorative-red { fill: var(--color-decorative-red); }
 @utility fill-decorative-terracotta { fill: var(--color-decorative-terracotta); }
 @utility text-border-strong { color: var(--color-border-strong); }
+
+/* Status */
+@utility bg-status-danger     { background-color: var(--color-status-danger); }
+@utility bg-status-danger-bg  { background-color: var(--color-status-danger-bg); }
+@utility bg-status-success    { background-color: var(--color-status-success); }
+@utility bg-status-success-bg { background-color: var(--color-status-success-bg); }
+@utility bg-status-warning    { background-color: var(--color-status-warning); }
+@utility bg-status-warning-bg { background-color: var(--color-status-warning-bg); }
+@utility bg-status-info       { background-color: var(--color-status-info); }
+@utility bg-status-info-bg    { background-color: var(--color-status-info-bg); }
+@utility text-status-danger   { color: var(--color-status-danger); }
+@utility text-status-success  { color: var(--color-status-success); }
+@utility text-status-warning  { color: var(--color-status-warning); }
+@utility text-status-info     { color: var(--color-status-info); }
+@utility border-status-danger  { border-color: var(--color-status-danger); }
+@utility border-status-success { border-color: var(--color-status-success); }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { buttonClasses } from '@/builds'
+// import { buttonClasses } from '@/builds'
 
 /**
  * Button
@@ -27,17 +27,23 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string
 }
 
-const sizeClasses: Record<Size, string> = buttonClasses.sizes
-
-const variantClasses: Record<Variant, string> = {
-  primary: buttonClasses.variants.primary,
-  outline: buttonClasses.variants.outline,
-  'outline-light': buttonClasses.variants.outlineLight,
-  ghost: buttonClasses.variants.ghost,
-  line: '', // handled entirely by LiquidUnderlineButton below
+const sizeClasses: Record<Size, string> = {
+  lg: 'btn-padding-lg text-base',
+  md: 'btn-padding-md text-sm',
+  sm: 'btn-padding-sm text-sm',
 }
 
-const base = buttonClasses.base
+const variantClasses: Record<Variant, string> = {
+  primary: 'bg-accent hover:bg-accent-hover text-white border border-transparent shadow-soft',
+  outline: 'bg-transparent border border-extra-strong text-dark hover:bg-accent hover:text-white',
+  'outline-light':
+    'bg-transparent border border-light-heavy text-white hover:bg-white hover:text-dark',
+  ghost: 'bg-transparent border border-transparent text-dark hover:bg-accent-faint',
+  line: 'group relative inline-flex items-center gap-3 pb-2 text-sm font-semibold uppercase tracking-[0.18em] text-dark', // handled entirely by LiquidUnderlineButton below
+}
+
+const base =
+  'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 ring-accent/40 disabled:opacity-50 disabled:pointer-events-none'
 
 function LiquidUnderlineButton({
   children,
@@ -45,7 +51,7 @@ function LiquidUnderlineButton({
   className = '',
   ...props
 }: Omit<ButtonProps, 'variant' | 'size'>) {
-  const wrapperClasses = `${buttonClasses.line} ${className}`
+  const wrapperClasses = `"group relative inline-flex items-center gap-3 pb-2 text-sm font-semibold uppercase tracking-[0.18em] text-dark" ${className}`
 
   const content = (
     <>
@@ -60,7 +66,7 @@ function LiquidUnderlineButton({
 
         {/* Sweep layer — solid currentColor, slides in on hover,
             plain CSS transition reverses automatically on leave */}
-        <span className={buttonClasses.lineSweep} />
+        <span className="absolute inset-0 -translate-x-full transform bg-current transition-transform duration-[350ms] ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-x-0" />
       </span>
     </>
   )

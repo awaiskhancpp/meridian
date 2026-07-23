@@ -63,7 +63,7 @@ export default function CTABanner({
   }
 
   return (
-    <section aria-label="Call to Action" className="relative py-16">
+    <section aria-label="Call to Action" className="relative py-10 lg:py-16">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image src={backgroundImage} alt="" fill className="object-cover object-center" priority />
@@ -105,7 +105,11 @@ export default function CTABanner({
               <div className="mt-2 h-5">
                 <p
                   className={`text-sm ${
-                    emailError ? 'text-red-400' : isSubmitted ? 'text-green-400' : 'opacity-0'
+                    emailError
+                      ? 'text-status-danger'
+                      : isSubmitted
+                        ? 'text-status-success'
+                        : 'opacity-0'
                   }`}
                 >
                   {emailError || (isSubmitted ? 'Thank you for subscribing!' : 'Placeholder')}

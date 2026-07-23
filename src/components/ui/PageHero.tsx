@@ -44,7 +44,7 @@ export default function PageHero({
 
         <Container className="relative z-10 flex h-full items-center justify-center pb-8 pt-24 sm:pb-10 sm:pt-28 lg:pb-12">
           <div className="flex w-full flex-col items-center justify-center text-center">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.34em] text-white/70">
+            <p className="mb-3 text-xs font-medium uppercase tracking-[0.34em] text-white-subtle">
               {label}
             </p>
 
@@ -59,7 +59,7 @@ export default function PageHero({
 
             {subheading ? (
               <p
-                className={`mt-5 max-w-[28rem] text-sm leading-relaxed text-white/80 sm:text-[0.95rem]`}
+                className={`mt-5 max-w-[28rem] text-sm leading-relaxed text-secondary sm:text-[0.95rem]`}
               >
                 {subheading}
               </p>

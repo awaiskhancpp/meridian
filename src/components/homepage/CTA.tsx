@@ -44,7 +44,7 @@ export default function CTA({
   }
 
   return (
-    <section className="relative py-16 lg:py-24 bg-white border-t border-subtle">
+    <section className="relative py-10 lg:py-16 bg-white ">
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Text Content */}

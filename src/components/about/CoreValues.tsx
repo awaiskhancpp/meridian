@@ -49,7 +49,7 @@ export default function CoreValues() {
           {values.map((value, index) => (
             <div
               key={index}
-              className="rounded-none border border-[#3C2515]/15 bg-white p-6  flex flex-col "
+              className="rounded-none border border-divider bg-white p-6  flex flex-col "
             >
               {/* Sharp, square icon container matching your hard edges */}
               <div className="w-14 h-14 rounded-none bg-dark text-white flex items-center justify-center mb-8 shrink-0">

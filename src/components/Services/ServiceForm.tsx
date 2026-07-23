@@ -86,7 +86,7 @@ export default function ServiceForm({
       <div className="relative z-10 mx-auto grid w-full  gap-10 px-5 sm:px-6 lg:grid-cols-12 lg:items-center lg:gap-16 lg:px-8">
         {/* ── Left: heading ── */}
         <div className="col-span-6">
-          <p className="text-xs uppercase tracking-[0.34em] text-white/90">{label}</p>
+          <p className="text-xs uppercase tracking-[0.34em] text-white-overlay">{label}</p>
           <h2
             id="service-form-heading"
             className="mt-3 text-[clamp(1.8rem,3.6vw,2.6rem)] font-black uppercase leading-[0.98] tracking-[-0.03em] text-white"
@@ -95,10 +95,10 @@ export default function ServiceForm({
             <br />
             {serviceTitle}
           </h2>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/80">{subheading}</p>
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-secondary">{subheading}</p>
         </div>
 
-        <div className="col-span-6 w-full rounded-none border border-light-soft bg-panel-dark p-6 shadow-sm sm:p-8">
+        <div className="col-span-6 w-full rounded-none border border-light-soft bg-panel-dark p-6 shadow-soft sm:p-8">
           {submitted ? (
             <div className="flex min-h-[20rem] flex-col items-center justify-center text-center">
               <p className="text-sm font-medium text-white">
@@ -117,7 +117,7 @@ export default function ServiceForm({
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate className="grid gap-6">
-              <p className="text-xs uppercase tracking-[0.22em] text-white/60">
+              <p className="text-xs uppercase tracking-[0.22em] text-white-muted">
                 Requesting: <span className="text-white">{serviceTitle}</span>
               </p>
 
@@ -163,7 +163,7 @@ export default function ServiceForm({
 
               <div className="flex flex-col items-start gap-3">
                 {serverError && (
-                  <p className="text-sm text-red-300" role="alert">
+                  <p className="text-sm text-status-danger" role="alert">
                     {serverError}
                   </p>
                 )}
@@ -172,7 +172,7 @@ export default function ServiceForm({
                   size="md"
                   type="submit"
                   disabled={isSubmitting}
-                  className="rounded-none border-light-muted text-white hover:!bg-white hover:!text-dark disabled:cursor-not-allowed disabled:opacity-50"
+                  className="rounded-none border-light-muted text-white hover:!bg-white-high hover:!text-dark disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   <span>{isSubmitting ? 'Sending…' : 'Send Request'}</span>
                   <ArrowUpRight size={20} />
@@ -212,7 +212,7 @@ function UnderlineField({
   className = '',
 }: FieldProps) {
   const commonClass =
-    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white/60 focus:border-white/60 focus:ring-0'
+    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white-muted focus:border-accent focus:ring-0'
 
   return (
     <label htmlFor={id} className={`grid gap-3 ${className}`}>

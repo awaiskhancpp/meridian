@@ -59,7 +59,7 @@ export default function Hero() {
 
           <div className="max-w-[1440px] pb-8 sm:pb-10 lg:pb-12">
             <h1 className="max-w-[40rem] text-white">
-              <span className="text-[clamp(2.75rem,6.8vw,5.85rem)] font-bold uppercase leading-[0.9] tracking-[-0.06em] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.18)]">
+              <span className="text-[clamp(2.75rem,6.8vw,5.85rem)] font-bold uppercase leading-[0.9] tracking-[-0.06em] text-white drop-shadow-text-hero">
                 {hero.heading}{' '}
               </span>
               <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(3.1rem,7vw,6.1rem)] leading-[0.82] text-cream">

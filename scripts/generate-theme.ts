@@ -14,6 +14,7 @@ import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import {
   colors,
+  status,
   fontFamily,
   fontSize,
   lineHeight,
@@ -110,6 +111,8 @@ let css = `/**
   --color-input-bg:      ${colors.inputBg};
   --color-input-border:  ${colors.inputBorder};
   --color-overlay-dark:  ${colors.overlayDark};
+  --color-overlay-heavy: ${colors.overlayHeavy};
+  --color-overlay-light: ${colors.overlayLight};
   --color-panel-dark:    ${colors.panelDark};
   --color-white-soft:    ${colors.whiteSoft};
   --color-white-ghost:   ${colors.whiteGhost};
@@ -150,12 +153,22 @@ let css = `/**
   --color-decorative-green: ${colors.decorativeGreen};
   --color-decorative-red: ${colors.decorativeRed};
   --color-decorative-terracotta: ${colors.decorativeTerracotta};
+  /* Status */
+  --color-status-danger:     ${status.dangerFg};
+  --color-status-danger-bg:  ${status.dangerBg};
+  --color-status-success:    ${status.successFg};
+  --color-status-success-bg: ${status.successBg};
+  --color-status-warning:    ${status.warningFg};
+  --color-status-warning-bg: ${status.warningBg};
+  --color-status-info:       ${status.infoFg};
+  --color-status-info-bg:    ${status.infoBg};
   --shadow-soft: ${shadow.soft};
   --shadow-card: ${shadow.card};
   --shadow-card-strong: ${shadow.cardStrong};
   --shadow-lift: ${shadow.lift};
   --shadow-navbar: ${shadow.navbar};
   --shadow-menu: ${shadow.menu};
+  --shadow-text-hero: ${shadow.textHero};
   --gradient-hero: ${gradient.hero};
   --gradient-service-hero: ${gradient.serviceHero};
   --gradient-card: ${gradient.card};
@@ -307,6 +320,8 @@ let css = `/**
 @utility bg-accent-hover { background-color: var(--color-accent-hover); }
 @utility bg-accent-faint { background-color: var(--color-accent-faint); }
 @utility bg-overlay-dark { background-color: var(--color-overlay-dark); }
+@utility bg-overlay-heavy { background-color: var(--color-overlay-heavy); }
+@utility bg-overlay-light { background-color: var(--color-overlay-light); }
 @utility bg-panel-dark { background-color: var(--color-panel-dark); }
 @utility bg-white-soft { background-color: var(--color-white-soft); }
 @utility bg-white-ghost { background-color: var(--color-white-ghost); }
@@ -349,6 +364,7 @@ let css = `/**
 @utility border-light-mid { border-color: var(--color-border-light-mid); }
 @utility border-light-strong { border-color: var(--color-border-light-strong); }
 @utility border-light-heavy { border-color: var(--color-border-light-heavy); }
+@utility border-white-ghost { border-color: var(--color-white-ghost); }
 @utility border-emphasis { border-color: var(--color-border-emphasis); }
 @utility border-subtle { border-color: var(--color-border-subtle); }
 @utility border-soft { border-color: var(--color-border-soft); }
@@ -392,6 +408,7 @@ let css = `/**
 @utility shadow-lift { box-shadow: var(--shadow-lift); }
 @utility shadow-navbar { box-shadow: var(--shadow-navbar); }
 @utility shadow-menu { box-shadow: var(--shadow-menu); }
+@utility drop-shadow-text-hero { filter: drop-shadow(var(--shadow-text-hero)); }
 
 @utility bg-decorative-gold { background-color: var(--color-decorative-gold); }
 @utility bg-decorative-blue { background-color: var(--color-decorative-blue); }
@@ -409,6 +426,22 @@ let css = `/**
 @utility fill-decorative-red { fill: var(--color-decorative-red); }
 @utility fill-decorative-terracotta { fill: var(--color-decorative-terracotta); }
 @utility text-border-strong { color: var(--color-border-strong); }
+
+/* Status */
+@utility bg-status-danger     { background-color: var(--color-status-danger); }
+@utility bg-status-danger-bg  { background-color: var(--color-status-danger-bg); }
+@utility bg-status-success    { background-color: var(--color-status-success); }
+@utility bg-status-success-bg { background-color: var(--color-status-success-bg); }
+@utility bg-status-warning    { background-color: var(--color-status-warning); }
+@utility bg-status-warning-bg { background-color: var(--color-status-warning-bg); }
+@utility bg-status-info       { background-color: var(--color-status-info); }
+@utility bg-status-info-bg    { background-color: var(--color-status-info-bg); }
+@utility text-status-danger   { color: var(--color-status-danger); }
+@utility text-status-success  { color: var(--color-status-success); }
+@utility text-status-warning  { color: var(--color-status-warning); }
+@utility text-status-info     { color: var(--color-status-info); }
+@utility border-status-danger  { border-color: var(--color-status-danger); }
+@utility border-status-success { border-color: var(--color-status-success); }
 `
 
 // Write the file

@@ -13,7 +13,7 @@ export default function MissionValues() {
             <span className="block uppercase tracking-[-0.05em] text-primary font-sans text-[clamp(2.125rem,3vw,2.75rem)] font-black leading-[1.1]">
               Driven by
             </span>
-            <span className="block capitalize mt-1 text-accentLight font-script text-[clamp(2.75rem,4vw,3.5rem)] leading-none">
+            <span className="block capitalize mt-1 text-accent-light font-[family-name:var(--font-allura)] text-[clamp(2.75rem,4vw,3.5rem)] leading-none">
               Excellence
             </span>
           </h2>

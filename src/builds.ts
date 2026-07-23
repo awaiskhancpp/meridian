@@ -44,6 +44,8 @@ export const colors = {
   inputBg: 'rgba(60,37,21,0.05)',
   inputBorder: 'rgba(60,37,21,0.16)',
   overlayDark: 'rgba(0,0,0,0.4)',
+  overlayHeavy: 'rgba(0,0,0,0.85)',
+  overlayLight: 'rgba(0,0,0,0.1)',
   panelDark: 'rgba(60,37,21,0.82)',
   whiteSoft: 'rgba(255,255,255,0.05)',
   whiteGhost: 'rgba(255,255,255,0.1)',
@@ -87,6 +89,20 @@ export const colors = {
   decorativeGreen: '#34A853',
   decorativeRed: '#EA4335',
   decorativeTerracotta: '#c28b6e',
+} as const
+
+// Status colors derive from the existing palette rather than introducing
+// fresh, untraceable hex values — changing decorativeRed still changes
+// error states everywhere, since dangerFg points at the same value.
+export const status = {
+  dangerFg: colors.decorativeRed,
+  dangerBg: 'rgba(234,67,53,0.08)',
+  successFg: colors.decorativeGreen,
+  successBg: 'rgba(52,168,83,0.08)',
+  warningFg: colors.decorativeGold,
+  warningBg: 'rgba(251,188,5,0.08)',
+  infoFg: colors.decorativeBlue,
+  infoBg: 'rgba(66,133,244,0.08)',
 } as const
 
 // Host Grotesk handles body/UI text.
@@ -136,25 +152,6 @@ export const zIndex = {
   toast: 200,
 } as const
 
-export const buttonClasses = {
-  base: 'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 ring-accent/40 disabled:opacity-50 disabled:pointer-events-none',
-  sizes: {
-    lg: 'btn-padding-lg text-base',
-    md: 'btn-padding-md text-sm',
-    sm: 'btn-padding-sm text-sm',
-  },
-  variants: {
-    primary: 'bg-accent hover:bg-accent-hover text-white border border-transparent shadow-soft',
-    outline: 'bg-transparent border border-extra-strong text-dark hover:bg-accent hover:text-white',
-    outlineLight:
-      'bg-transparent border border-light-heavy text-white hover:bg-white hover:text-dark',
-    ghost: 'bg-transparent border border-transparent text-dark hover:bg-accent-faint',
-  },
-  line: 'group relative inline-flex items-center gap-3 pb-2 text-sm font-semibold uppercase tracking-[0.18em] text-dark',
-  lineSweep:
-    'absolute inset-0 -translate-x-full transform bg-current transition-transform duration-[350ms] ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-x-0',
-} as const
-
 // Shadow tokens that mirror the current template visuals.
 export const shadow = {
   soft: '0 12px 28px rgba(60,37,21,0.08)',
@@ -163,6 +160,7 @@ export const shadow = {
   lift: '0 20px 60px rgba(0,0,0,0.12)',
   navbar: '0 18px 48px rgba(60,37,21,0.06)',
   menu: '0 28px 70px rgba(60,37,21,0.12)',
+  textHero: '0 2px 6px rgba(0,0,0,0.18)',
 } as const
 
 // Reusable gradients used by hero and card overlays.

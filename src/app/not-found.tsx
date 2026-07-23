@@ -45,7 +45,7 @@ export default function NotFoundPage() {
             overflow-hidden keeps it from ever causing horizontal scroll. */}
         <span
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none text-center text-[clamp(9rem,42vw,30rem)] font-black leading-none text-white/5"
+          className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 select-none text-center text-[clamp(9rem,42vw,30rem)] font-black leading-none text-white-soft"
         >
           404
         </span>
@@ -54,12 +54,12 @@ export default function NotFoundPage() {
         <div className="pointer-events-none absolute inset-x-0 bottom-24 h-px bg-white-faint sm:bottom-28 lg:bottom-32" />
 
         <Container className="relative z-10 flex flex-col items-center pb-20 pt-28 text-center sm:pt-32 lg:pt-36">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.34em] text-white/70">
+          <p className="mb-4 text-xs font-medium uppercase tracking-[0.34em] text-white-subtle">
             Error 404
           </p>
 
           <h1 className="max-w-[44rem]">
-            <span className="text-[clamp(2.4rem,7vw,5.5rem)] font-bold uppercase leading-[0.9] tracking-[-0.06em] text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.18)]">
+            <span className="text-[clamp(2.4rem,7vw,5.5rem)] font-bold uppercase leading-[0.9] tracking-[-0.06em] text-white drop-shadow-text-hero">
               Page Not
             </span>{' '}
             <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(2.8rem,7.5vw,6rem)] leading-[0.82] text-cream">
@@ -67,7 +67,7 @@ export default function NotFoundPage() {
             </span>
           </h1>
 
-          <p className="mt-6 max-w-[30rem] text-sm leading-relaxed text-white/80 sm:text-[0.95rem]">
+          <p className="mt-6 max-w-[30rem] text-sm leading-relaxed text-secondary sm:text-[0.95rem]">
             The page you&apos;re looking for may have been moved, renamed, or never existed.
             Let&apos;s get you back on track.
           </p>
@@ -90,13 +90,13 @@ export default function NotFoundPage() {
 
           <nav
             aria-label="Quick links"
-            className="mt-12 flex w-full max-w-[36rem] flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-white/10 pt-8"
+            className="mt-12 flex w-full max-w-[36rem] flex-wrap items-center justify-center gap-x-6 gap-y-3 border-t border-white-ghost pt-8"
           >
             {quickLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-xs font-medium uppercase tracking-[0.18em] text-white/70 transition-colors hover:text-cream"
+                className="text-xs font-medium uppercase tracking-[0.18em] text-white-subtle transition-colors hover:text-cream"
               >
                 {link.label}
               </Link>

@@ -233,7 +233,7 @@ export default function Contact() {
 
                 <div className="flex flex-col items-center gap-3">
                   {serverError && (
-                    <p className="text-sm text-red-300" role="alert">
+                    <p className="text-sm text-status-danger" role="alert">
                       {serverError}
                     </p>
                   )}
@@ -281,7 +281,7 @@ function UnderlineField({
   rows = 1,
 }: FieldProps) {
   const commonClass =
-    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white/60 focus:border-white/60 focus:ring-0'
+    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white/60 focus:border-accent focus:ring-0'
 
   return (
     <label htmlFor={id} className="grid gap-3">

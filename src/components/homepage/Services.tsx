@@ -3,7 +3,6 @@
 import React, { useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
-import Link from 'next/link'
 import 'swiper/css'
 import {
   ChefHat,
@@ -91,7 +90,7 @@ export default function Services() {
               onClick={() => swiperRef.current?.slidePrev()}
               disabled={atStart}
               aria-label="Previous services"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-500 transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-subtle text-dark-muted transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
             >
               <ArrowIcon direction="left" />
             </button>
@@ -100,16 +99,16 @@ export default function Services() {
               onClick={() => swiperRef.current?.slideNext()}
               disabled={atEnd}
               aria-label="Next services"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-neutral-300 text-neutral-900 transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-subtle text-dark transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
             >
               <ArrowIcon direction="right" />
             </button>
           </div>
         </div>
 
-        <div className="border-t border-neutral-200" />
+        <div className="border-t border-subtle" />
 
-        <div className="mt-8 overflow-hidden ">
+        <div className="mt-8 overflow-hidden rounded-md">
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper
@@ -127,10 +126,7 @@ export default function Services() {
           >
             {services.items.map((service, index) => (
               <SwiperSlide key={service.title} className="h-auto">
-                <Link
-                  href={service.href}
-                  className="group flex h-full min-h-[28rem] flex-col bg-dark p-6 md:p-8"
-                >
+                <div className="group flex h-full min-h-[28rem] flex-col bg-dark p-6 md:p-8">
                   <span className="text-sm font-medium text-white">
                     {String(index + 1).padStart(2, '0')}
                   </span>
@@ -151,13 +147,13 @@ export default function Services() {
                         to interpolate between. */}
                     <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out group-hover:grid-rows-[1fr]">
                       <div className="overflow-hidden">
-                        <p className="mt-3 text-sm leading-relaxed text-white opacity-0 transition-opacity duration-300 line-clamp-3 group-hover:opacity-100">
+                        <p className="mt-3 text-sm leading-relaxed text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                           {service.description}
                         </p>
                       </div>
                     </div>
                   </div>
-                </Link>
+                </div>
               </SwiperSlide>
             ))}
           </Swiper>

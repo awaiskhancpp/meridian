@@ -72,7 +72,7 @@ export default function AboutTrustSection({
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-white p-6 sm:p-8 flex flex-col items-center border border-dark-soft justify-center text-center min-h-[160px]"
+              className="bg-white p-6 sm:p-8 flex flex-col items-center border border-soft justify-center text-center min-h-[160px]"
             >
               <p className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-dark">
                 {stat.value}

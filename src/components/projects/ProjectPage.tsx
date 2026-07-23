@@ -76,8 +76,8 @@ export default function ProjectPage() {
                     />
                     <div className="absolute inset-0 bg-overlay-card" />
 
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-full transform-gpu bg-overlay-card-caption px-6 pb-6 pt-14 opacity-0 transition-all duration-700 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
-                      <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/75">
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-full transform-gpu bg-card-bottom-dark px-6 pb-6 pt-14 opacity-0 transition-all duration-700 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
+                      <p className="text-xs font-medium uppercase tracking-[0.28em] text-white-subtle">
                         {project.category}
                       </p>
                       <h3 className="mt-2 text-[clamp(1.2rem,1.8vw,1.6rem)] font-bold uppercase leading-[0.95] tracking-[-0.04em] text-white text-balance line-clamp-2">
