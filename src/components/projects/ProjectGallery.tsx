@@ -53,7 +53,7 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
   }
 
   return (
-    <section className="py-16  bg-white">
+    <section className="py-10 lg:py-16 bg-white">
       <Container>
         <div className="mb-10">
           <h2 className="text-2xl font-bold uppercase tracking-tight text-dark md:text-3xl">

@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import siteData from '@/website.json'
-import { Button, Container } from '@/components/ui'
+import { Button, Container, SectionHeading } from '@/components/ui'
 import { Hammer, Clock, BadgeDollarSign, ClipboardCheck, ArrowUpRight } from 'lucide-react'
 
 const { whyChooseUs } = siteData
@@ -49,20 +49,13 @@ export default function WhyChooseUs() {
 
       <Container className="relative z-10">
         {/* Header Section */}
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
-            {whyChooseUs.label}
-          </p>
-          <h2 id="blogs-heading" className="mt-4 text-dark">
-            <span className="block heading-2">
-              {whyChooseUs.heading}
-            </span>
-            <span className="block heading-script capitalize text-accent">
-              {whyChooseUs.script}
-            </span>
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-p text-dark-muted">{whyChooseUs.subheading}</p>
-        </div>
+        <SectionHeading
+          id="why-choose-us-heading"
+          label={whyChooseUs.label}
+          heading={whyChooseUs.heading}
+          script={whyChooseUs.script}
+          subheading={whyChooseUs.subheading}
+        />
 
         {/* 3-Column Content Layout */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 mt-6">

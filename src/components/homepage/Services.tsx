@@ -19,7 +19,7 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 import siteData from '@/website.json'
-import { Container } from '@/components/ui'
+import { Container, SectionHeadingInline } from '@/components/ui'
 
 const { services } = siteData
 
@@ -74,15 +74,14 @@ export default function Services() {
       <Container>
         <div className="flex items-end justify-between gap-4 pb-6">
           <div>
-            <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{services.label}</p>
-            <h2 id="services-heading" className="mt-1">
-              <span className="block heading-2 text-dark">
-                {services.heading}
-              </span>
-              <span className="block heading-script capitalize text-accent">
-                {services.script}
-              </span>
-            </h2>
+            <SectionHeadingInline
+              id="services-heading"
+              label={services.label}
+              heading={services.heading}
+              script={services.script}
+              labelClassName="text-xs uppercase tracking-[0.34em] text-dark-muted"
+              headingMt="mt-1"
+            />
           </div>
 
           <div className="flex items-center gap-3 pt-1">

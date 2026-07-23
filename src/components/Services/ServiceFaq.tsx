@@ -85,18 +85,14 @@ export default function ServiceFaqs({
   if (!faqs || faqs.length === 0) return null
 
   return (
-    <section aria-labelledby="service-faq-heading" className="py-16">
+    <section aria-labelledby="service-faq-heading" className="py-10 lg:py-16">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16">
         {/* ── Left: eyebrow + heading + contact card ── */}
         <div>
           <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
           <h2 id="service-faq-heading" className="mt-1">
-            <span className="block heading-2 text-dark">
-              {heading}
-            </span>
-            <span className="block heading-script capitalize text-accent">
-              {script}
-            </span>
+            <span className="block heading-2 text-dark">{heading}</span>
+            <span className="block heading-script capitalize text-accent">{script}</span>
           </h2>
 
           {/* ── Contact card — new ── */}

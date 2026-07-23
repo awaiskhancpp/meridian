@@ -23,7 +23,7 @@ export default function OurStory({
   const { about } = siteData
 
   return (
-    <section aria-labelledby="our-story-heading" className="py-16">
+    <section aria-labelledby="our-story-heading" className="py-10 lg:py-16">
       <Container>
         {/* Changed lg:items-center to lg:items-stretch */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10">
@@ -44,12 +44,8 @@ export default function OurStory({
             <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
 
             <h2 id="our-story-heading" className="mt-3">
-              <span className="block heading-2 text-dark">
-                {heading}
-              </span>
-              <span className="block heading-script capitalize text-accent mt-1">
-                {script}
-              </span>
+              <span className="block heading-2 text-dark">{heading}</span>
+              <span className="block heading-script capitalize text-accent mt-1">{script}</span>
             </h2>
 
             <div className="mt-8 space-y-5 text-base leading-relaxed text-dark-muted">

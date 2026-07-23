@@ -5,7 +5,7 @@ import type { ProjectDetail } from './types'
 
 export default function ProjectCTA({ project }: { project: ProjectDetail }) {
   return (
-    <section className="relative isolate overflow-hidden bg-accent py-16 text-white lg:py-24">
+    <section className="relative isolate overflow-hidden bg-accent py-10 text-white lg:py-16">
       <Image src={project.image} alt="" fill className="object-cover object-center" />
       <div className="absolute inset-0 bg-overlay-service-hero" />
 

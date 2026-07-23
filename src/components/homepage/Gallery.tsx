@@ -8,6 +8,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 // Import Swiper styles
 import 'swiper/css'
+import { SectionHeading } from '@/components/ui'
 import siteData from '@/website.json'
 const { gallery } = siteData
 interface GalleryItem {
@@ -37,25 +38,21 @@ const galleryData: GalleryItem[] = [
 
 export default function Gallery() {
   return (
-    <section className="relative w-full py-16 overflow-hidden ">
+    <section
+      id="gallery"
+      aria-labelledby="gallery-heading"
+      className="relative w-full py-16 overflow-hidden "
+    >
       {/* Elegant Header Section */}
-      <div className="mx-auto max-w-3xl text-center">
-        <p className="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
-          <span className="h-5" aria-hidden="true" />
-          {gallery.label}
-        </p>
-        <h2 id="process-heading" className="mt-4">
-          <span className="block heading-2 text-dark">
-            {gallery.heading}
-          </span>
-          <span className="block heading-script capitalize text-accent">
-            {gallery.script}
-          </span>
-        </h2>
-        {/* <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-dark-muted">
-            {gallery.subheading}
-          </p> */}
-      </div>
+      <SectionHeading
+        id="gallery-heading"
+        label={gallery.label}
+        heading={gallery.heading}
+        script={gallery.script}
+        maxWidth="max-w-3xl"
+        labelClassName="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.34em] text-dark-muted"
+        eyebrowLeading={<span className="h-5" aria-hidden="true" />}
+      />
 
       {/* Main Carousel Wrapper */}
       <div className="relative w-full px-0 mt-8">
@@ -66,7 +63,7 @@ export default function Gallery() {
           centeredSlides={true}
           loop={true}
           autoplay={{
-            delay: 4000,
+            delay: 2500,
             disableOnInteraction: false,
           }}
           navigation={{

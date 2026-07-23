@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
       <Navbar />
       <PageHero label="" heading="Privacy" script="Policy" />
       {/* Header */}
-      <div className="border-b border-subtle py-16 ">
+      <div className="border-b border-subtle py-10 lg:py-16">
         <Container>
           <div className="max-w-3xl">
             <Link
@@ -30,9 +30,7 @@ export default function PrivacyPolicyPage() {
               ← Back to home
             </Link>
             <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">Legal</p>
-            <h1 className="mt-3 heading-2 text-dark">
-              Privacy Policy
-            </h1>
+            <h1 className="mt-3 heading-2 text-dark">Privacy Policy</h1>
             <p className="mt-4 text-sm text-dark-muted">Last updated: {lastUpdated}</p>
           </div>
         </Container>
@@ -40,7 +38,7 @@ export default function PrivacyPolicyPage() {
 
       {/* Body */}
       <Container>
-        <div className="max-w-3xl py-16 lg:py-20 [&_h2]:mt-10 [&_h2]:text-base [&_h2]:font-bold [&_h2]:uppercase [&_h2]:tracking-[0.18em] [&_h2]:text-dark [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-dark-muted [&_ul]:text-sm [&_ul]:leading-relaxed [&_ul]:text-dark-muted [&_a]:text-dark [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-accent">
+        <div className="max-w-3xl py-10 lg:py-16 [&_h2]:mt-10 [&_h2]:text-base [&_h2]:font-bold [&_h2]:uppercase [&_h2]:tracking-[0.18em] [&_h2]:text-dark [&_p]:text-sm [&_p]:leading-relaxed [&_p]:text-dark-muted [&_ul]:text-sm [&_ul]:leading-relaxed [&_ul]:text-dark-muted [&_a]:text-dark [&_a]:underline [&_a]:underline-offset-4 hover:[&_a]:text-accent">
           <p>
             {company} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to
             protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and

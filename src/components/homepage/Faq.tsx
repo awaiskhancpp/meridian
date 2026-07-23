@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import siteData from '@/website.json'
-import { Container } from '@/components/ui'
+import { Container, SectionHeading } from '@/components/ui'
 
 const { faq } = siteData
 
@@ -33,7 +33,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section id="faq" className="py-8 lg:py-16">
+    <section id="faq" aria-labelledby="faq-heading" className="py-8 lg:py-16">
       <Container>
         {/*
           Responsive reasoning:
@@ -55,22 +55,13 @@ export default function FAQ() {
         <div className="grid gap-8 lg:grid-cols-1 lg:gap-16">
           {/* ── Left: heading + subheading ──────────────────────── */}
           <div>
-            <div className="mx-auto max-w-4xl text-center">
-              <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
-                {faq.label}
-              </p>
-
-              <h2 id="blogs-heading" className="mt-4 text-dark">
-                <span className="block heading-2">
-                  {faq.heading}
-                </span>
-                <span className="block heading-script capitalize text-accent">
-                  {faq.script}
-                </span>
-              </h2>
-
-              <p className="mx-auto mt-6 max-w-2xl text-p text-dark-muted">{faq.subheading}</p>
-            </div>
+            <SectionHeading
+              id="faq-heading"
+              label={faq.label}
+              heading={faq.heading}
+              script={faq.script}
+              subheading={faq.subheading}
+            />
           </div>
 
           {/* ── Right: accordion list ────────────────────────────── */}

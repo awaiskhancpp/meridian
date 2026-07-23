@@ -11,9 +11,7 @@ export default function AboutHomePage() {
       <AboutWhyChooseUs />
       <CoreValues />
       <AboutTrustSection />
-      {/* <MissionValues /> */}
       <CTABanner />
-      <Footer />
     </div>
   )
 }

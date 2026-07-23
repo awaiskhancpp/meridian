@@ -10,7 +10,7 @@ import { Button, Container, SectionHeading } from '@/components/ui'
 
 const { blogs } = siteData
 
-export default function Blogs() {
+export default function AboutBlogs() {
   const swiperRef = useRef<SwiperType | null>(null)
   const [atStart, setAtStart] = useState(true)
   const [atEnd, setAtEnd] = useState(false)
@@ -21,7 +21,7 @@ export default function Blogs() {
   }
 
   return (
-    <section id="blogs" aria-labelledby="blogs-heading" className="bg-white py-16  lg:py-24">
+    <section id="blogs" aria-labelledby="blogs-heading" className="bg-white py-10 lg:py-16">
       <Container>
         <SectionHeading
           id="blogs-heading"
@@ -56,29 +56,6 @@ export default function Blogs() {
             ))}
           </Swiper>
         </div>
-
-        {/* Prev / Next controls — same wired-to-swiperRef pattern used in
-            Testimonials.tsx, dimmed + non-interactive at either edge */}
-        {/* <div className="mt-8 flex items-center justify-center gap-3">
-          <button
-            type="button"
-            onClick={() => swiperRef.current?.slidePrev()}
-            disabled={atStart}
-            aria-label="Previous articles"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-strong text-dark-muted transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-35"
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </button>
-          <button
-            type="button"
-            onClick={() => swiperRef.current?.slideNext()}
-            disabled={atEnd}
-            aria-label="Next articles"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-strong text-dark-muted transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-35"
-          >
-            <ChevronRight className="h-4 w-4" />
-          </button>
-        </div> */}
       </Container>
     </section>
   )
@@ -92,7 +69,7 @@ type BlogItem = {
   href: string
 }
 
-export function BlogFeatureCard({ card }: { card: BlogItem }) {
+function BlogFeatureCard({ card }: { card: BlogItem }) {
   return (
     <article className="group h-full">
       <a href={card.href} className="block">

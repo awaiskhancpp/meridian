@@ -11,7 +11,7 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
     .slice(0, 3)
 
   return (
-    <section className="py-16 ">
+    <section className="py-10 lg:py-16">
       <Container>
         <div className="mb-10 flex items-end justify-between gap-6">
           <div className=" flex flex-col capitalize">

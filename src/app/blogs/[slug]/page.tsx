@@ -2,12 +2,15 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import type { Metadata } from 'next'
 import Navbar from '@/components/homepage/Navbar'
 import Footer from '@/components/homepage/Footer'
+import CTABanner from '@/components/homepage/CTABanner'
 import { Container, PageHero } from '@/components/ui'
 import RichText, { extractHeadings } from '@/lib/richText'
 import { CATEGORY_LABELS } from '@/lib/blogs'
 import PostFaqs from './PostFaqs'
+import BlogRelatedPosts from './BlogRelatedPosts'
 
 // 1. Import your static JSON data
 import websiteData from '@/website.json' // Update this path if website.json is located elsewhere
@@ -168,9 +171,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </Container>
       </article>
 
-      <div className="mt-20">
-        <Footer />
-      </div>
+      <BlogRelatedPosts />
+      <CTABanner />
+      <Footer />
     </main>
   )
 }

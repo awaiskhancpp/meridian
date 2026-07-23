@@ -38,7 +38,7 @@ export default function AboutWhyChooseUs() {
     <section
       id="about-why-choose-us"
       aria-labelledby="about-why-choose-us-heading"
-      className="relative overflow-hidden py-16 bg-white"
+      className="relative overflow-hidden py-10 lg:py-16 bg-white"
     >
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -48,9 +48,7 @@ export default function AboutWhyChooseUs() {
               {whyChooseUs.label}
             </p>
             <h2 id="about-why-choose-us-heading" className="mt-4 text-dark">
-              <span className="block heading-2">
-                {whyChooseUs.heading}
-              </span>
+              <span className="block heading-2">{whyChooseUs.heading}</span>
               <span className="block heading-script capitalize text-accent">
                 {whyChooseUs.script}
               </span>

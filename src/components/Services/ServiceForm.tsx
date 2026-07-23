@@ -76,7 +76,7 @@ export default function ServiceForm({
   }
 
   return (
-    <section aria-labelledby="service-form-heading" className="relative py-16">
+    <section aria-labelledby="service-form-heading" className="relative py-10 lg:py-16">
       <Image src="/hero.webp" alt="" fill className="absolute inset-0 z-0 object-cover" />
 
       {/* OVERLAY */}

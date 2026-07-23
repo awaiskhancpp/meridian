@@ -43,18 +43,14 @@ export default function AreasWeServe({
   mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d215846.8394237353!2d-122.43563249999999!3d47.7567685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490528c7f9c2c39%3A0x1234567890abcdef!2sSeattle%2C%20WA!5e0!3m2!1sen!2sus!4v1234567890',
 }: AreasWeServeProps) {
   return (
-    <section aria-label="Service Areas" className="py-16 ">
+    <section aria-label="Service Areas" className="py-10 lg:py-16">
       <Container>
         {/* Header */}
         <div className="max-w-2xl mx-auto flex flex-col justify-center items-center">
           <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
           <h2 id="services-heading" className="mt-1 text-center">
-            <span className="block heading-2 text-dark">
-              {heading}
-            </span>
-            <span className="block heading-script capitalize text-accent">
-              {script}
-            </span>
+            <span className="block heading-2 text-dark">{heading}</span>
+            <span className="block heading-script capitalize text-accent">{script}</span>
           </h2>
         </div>
         {/* <div className="mb-12">
@@ -74,14 +70,16 @@ export default function AreasWeServe({
         <div className="grid grid-cols-1 gap-8  mt-6">
           {/* Areas List */}
           <div className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
               {areas.map((area, index) => (
                 <span
                   key={index}
                   className="flex flex-col justify-center items-center gap-1  text-accent px-3 py-2"
                 >
                   <MapPin />
-                  <h3 className="text-lg font-bold uppercase tracking-wide ">{area.title}</h3>
+                  <h3 className="text-sm md:text-lg font-bold uppercase tracking-wide ">
+                    {area.title}
+                  </h3>
                 </span>
               ))}
             </div>

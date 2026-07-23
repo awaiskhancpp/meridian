@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import Image from 'next/image'
-import Link from 'next/link' // 1. Add this import
+import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import siteData from '@/website.json'
 import { Button, Container } from '@/components/ui'
@@ -39,7 +39,9 @@ const NAV_ITEMS: NavItem[] = [
   {
     label: 'Projects',
     href: '/projects',
-    children: getAllProjects().slice(0, 6).map((project) => ({ label: project.title, href: project.href })),
+    children: getAllProjects()
+      .slice(0, 6)
+      .map((project) => ({ label: project.title, href: project.href })),
     seeMore: { label: 'See all projects', href: '/projects' },
   },
   ...remainingLinks,
@@ -65,7 +67,7 @@ function ChevronIcon({ className = '' }: { className?: string }) {
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [openMobileDropdown, setOpenMobileDropdown] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
 
   const menuRef = useRef<HTMLDivElement>(null)
@@ -77,7 +79,13 @@ export default function Navbar() {
       if (event.key === 'Escape') setMobileOpen(false)
     }
     window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
+
+    // Prevent body scroll when full-screen menu is open
+    document.body.style.overflow = 'hidden'
+    return () => {
+      window.removeEventListener('keydown', onKeyDown)
+      document.body.style.overflow = 'unset'
+    }
   }, [mobileOpen])
 
   useEffect(() => {
@@ -93,7 +101,7 @@ export default function Navbar() {
   }, [mobileOpen])
 
   useEffect(() => {
-    if (!mobileOpen) setMobileServicesOpen(false)
+    if (!mobileOpen) setOpenMobileDropdown(null)
   }, [mobileOpen])
 
   useEffect(() => {
@@ -105,44 +113,24 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const surfaceClasses = scrolled
+  // FIX 1: The header must become solid white (bg-nav) if scrolled OR if the mobile menu is open.
+  const isSolid = scrolled || mobileOpen
+
+  const surfaceClasses = isSolid
     ? 'border-b border-nav bg-nav shadow-navbar backdrop-blur-md'
     : 'border-transparent bg-transparent shadow-none backdrop-blur-none'
 
-  const textClasses = scrolled ? 'text-dark' : 'text-white'
-  const mutedTextClasses = scrolled ? 'text-dark-muted' : 'text-white/82'
-  const hoverTextClasses = scrolled ? 'hover:text-accent' : 'hover:text-cream'
-
-  /*
-    CTA design: unified with Contact.tsx's "Send Request" button —
-    same shape (rounded-sm), same ArrowUpRight icon, same border→fill
-    hover interaction. The only thing that changes is which existing
-    Button variant is used, based on what's behind the navbar:
-
-      - scrolled (solid white bar)   -> 'outline'       (dark border/text,
-                                          hover fills solid accent — this
-                                          is exactly Contact's button)
-      - unscrolled (transparent, over
-        the hero photo)             -> 'outline-light'  (white border/text,
-                                          hover fills solid white — the
-                                          palette-inverted mirror of
-                                          'outline', for a dark backdrop)
-
-    Both variants already implement the identical interaction (border-only
-    at rest, solid fill on hover) — swapping between them is the correct
-    fix, rather than the previous approach of force-overriding one
-    variant's colors with `!important` and disabling its hover fill,
-    which is what made this button feel inconsistent with Contact's in
-    the first place.
-  */
-  const ctaVariant = scrolled ? 'outline' : 'outline-light'
+  const textClasses = isSolid ? 'text-dark' : 'text-white'
+  const hoverTextClasses = isSolid ? 'hover:text-accent' : 'hover:text-cream'
+  const ctaVariant = isSolid ? 'outline' : 'outline-light'
 
   return (
     <header
       className={`fixed inset-x-0 top-0 w-full z-[var(--z-navbar)] transition-all duration-300 ${surfaceClasses}`}
     >
+      {/* Container wraps ONLY the top navbar area now */}
       <Container className="relative">
-        <div className="flex items-center justify-between gap-4">
+        <div className="flex items-center justify-between gap-4 py-3 lg:py-0">
           <Link
             href="/"
             className={`flex items-center gap-3 ${textClasses}`}
@@ -155,10 +143,10 @@ export default function Navbar() {
             )}
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex">
+          <nav className="hidden items-center gap-8 lg:flex h-full">
             {NAV_ITEMS.map((item) =>
               item.children ? (
-                <div key={item.label} className="group relative">
+                <div key={item.label} className="group relative py-8">
                   <Link
                     href={item.href ?? '#'}
                     className={`flex items-center gap-1 text-sm font-medium tracking-[0.12em] transition-colors ${textClasses} ${hoverTextClasses}`}
@@ -167,7 +155,7 @@ export default function Navbar() {
                     <ChevronIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
                   </Link>
 
-                  <div className="invisible absolute left-1/2 top-full z-10 w-[220px] -translate-x-1/2 translate-y-2 border border-subtle bg-white p-2 opacity-0 shadow-card transition-all duration-200 group-hover:visible group-hover:translate-y-3 group-hover:opacity-100">
+                  <div className="invisible absolute left-1/2 top-[85%] z-10 w-[220px] -translate-x-1/2 translate-y-2 border border-subtle bg-white p-2 opacity-0 shadow-card transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                     {item.children.map((child) => (
                       <Link
                         key={child.label}
@@ -191,13 +179,14 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`whitespace-nowrap text-sm font-medium tracking-[0.12em] transition-colors ${textClasses} ${hoverTextClasses}`}
+                  className={`whitespace-nowrap text-sm font-medium tracking-[0.12em] transition-colors py-8 ${textClasses} ${hoverTextClasses}`}
                 >
                   {item.label}
                 </Link>
               ),
             )}
           </nav>
+
           <div className="hidden lg:inline-flex">
             <Button
               variant={ctaVariant}
@@ -214,7 +203,7 @@ export default function Navbar() {
             ref={toggleButtonRef}
             onClick={() => setMobileOpen((value) => !value)}
             className={`inline-flex items-center gap-3 rounded-none text-sm font-semibold tracking-[0.24em] transition-colors lg:hidden ${
-              scrolled ? 'text-accent hover:bg-cream' : 'text-white hover:bg-white-ghost'
+              isSolid ? 'text-accent hover:bg-cream' : 'text-white hover:bg-white-ghost'
             }`}
             aria-expanded={mobileOpen}
             aria-controls="main-menu"
@@ -223,7 +212,7 @@ export default function Navbar() {
             <span>{nav.menuLabel}</span>
             <span className="relative flex h-4 w-4 items-center justify-center" aria-hidden="true">
               <span
-                className={`absolute h-0.5 w-4  bg-current transition-transform duration-200 ${
+                className={`absolute h-0.5 w-4 bg-current transition-transform duration-200 ${
                   mobileOpen ? 'rotate-45' : '-translate-y-1.5'
                 }`}
               />
@@ -233,51 +222,59 @@ export default function Navbar() {
                 }`}
               />
               <span
-                className={`absolute h-0.5 w-4  bg-current transition-transform duration-200 ${
+                className={`absolute h-0.5 w-4 bg-current transition-transform duration-200 ${
                   mobileOpen ? '-rotate-45' : 'translate-y-1.5'
                 }`}
               />
             </span>
           </button>
         </div>
+      </Container>
 
-        <div
-          id="main-menu"
-          ref={menuRef}
-          className={`absolute left-4 right-4 top-[calc(100%+0.75rem)] overflow-hidden border border-subtle bg-white shadow-menu transition-all duration-300 lg:hidden ${
-            mobileOpen ? 'max-h-[40rem] opacity-100' : 'pointer-events-none max-h-0 opacity-0'
-          }`}
-        >
-          <div className="flex flex-col p-5 sm:p-6">
-            {NAV_ITEMS.map((item) =>
-              item.children ? (
+      {/* FIX 2 & 3: Menu moved outside Container for edge-to-edge width, using 100dvh for height */}
+      <div
+        id="main-menu"
+        ref={menuRef}
+        className={`absolute left-0 right-0 top-full w-full overflow-y-auto bg-white border-t border-subtle transition-all duration-300 ease-in-out lg:hidden ${
+          mobileOpen
+            ? 'h-[calc(100dvh-100%)] opacity-100'
+            : 'h-0 opacity-0 pointer-events-none border-transparent'
+        }`}
+      >
+        <Container>
+          {/* pb-32 gives breathing room at the bottom so the last item isn't glued to the phone's edge */}
+          <div className="flex flex-col py-6 pb-32">
+            {NAV_ITEMS.map((item) => {
+              const isDropdownOpen = openMobileDropdown === item.label
+
+              return item.children ? (
                 <div key={item.label} className="border-b border-subtle last:border-none">
                   <button
                     type="button"
-                    onClick={() => setMobileServicesOpen((value) => !value)}
-                    aria-expanded={mobileServicesOpen}
-                    className="flex w-full items-center justify-between py-4 text-sm font-medium uppercase tracking-[0.14em] text-dark transition-colors hover:text-accent"
+                    onClick={() => setOpenMobileDropdown(isDropdownOpen ? null : item.label)}
+                    aria-expanded={isDropdownOpen}
+                    className="flex w-full items-center justify-between py-5 text-sm font-medium uppercase tracking-[0.14em] text-dark transition-colors hover:text-accent"
                   >
                     {item.label}
                     <ChevronIcon
                       className={`h-4 w-4 transition-transform duration-300 ${
-                        mobileServicesOpen ? 'rotate-180' : ''
+                        isDropdownOpen ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
 
                   <div
                     className={`overflow-hidden transition-[max-height] duration-300 ease-out ${
-                      mobileServicesOpen ? 'max-h-[24rem]' : 'max-h-0'
+                      isDropdownOpen ? 'max-h-[30rem]' : 'max-h-0'
                     }`}
                   >
-                    <div className="flex flex-col gap-1 pb-4 pl-3">
+                    <div className="flex flex-col gap-1 pb-5 pl-4 border-l border-subtle ml-2 mb-2">
                       {item.children.map((child) => (
                         <a
                           key={child.label}
                           href={child.href}
                           onClick={() => setMobileOpen(false)}
-                          className="py-2 text-sm text-dark-muted transition-colors hover:text-accent"
+                          className="py-2.5 text-sm text-dark-muted transition-colors hover:text-accent"
                         >
                           {child.label}
                         </a>
@@ -286,7 +283,7 @@ export default function Navbar() {
                         <a
                           href={item.seeMore.href}
                           onClick={() => setMobileOpen(false)}
-                          className="border-t border-subtle py-3 text-xs font-semibold uppercase tracking-[0.14em] text-accent"
+                          className="mt-2 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-accent"
                         >
                           {item.seeMore.label}
                         </a>
@@ -299,22 +296,22 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="border-b border-subtle py-4 text-sm font-medium uppercase tracking-[0.14em] text-dark transition-colors last:border-none hover:text-accent"
+                  className="border-b border-subtle py-5 text-sm font-medium uppercase tracking-[0.14em] text-dark transition-colors last:border-none hover:text-accent"
                 >
                   {item.label}
                 </a>
-              ),
-            )}
+              )
+            })}
 
-            <div className="mt-4" onClick={() => setMobileOpen(false)}>
+            <div className="mt-8" onClick={() => setMobileOpen(false)}>
               <Button variant="outline" size="md" href="/contact" className="w-full rounded-none">
                 <span>Request a Quote</span>
                 <ArrowUpRight size={18} />
               </Button>
             </div>
           </div>
-        </div>
-      </Container>
+        </Container>
+      </div>
     </header>
   )
 }

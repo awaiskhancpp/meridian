@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import { ArrowLeft, ArrowRight, Quote } from 'lucide-react'
 import siteData from '@/website.json'
-import { Container } from '@/components/ui'
+import { Container, SectionHeading } from '@/components/ui'
 
 const { testimonials } = siteData
 
@@ -35,22 +35,17 @@ export default function Testimonials() {
     <section id="testimonials" aria-labelledby="testimonials-heading" className="py-16 lg:py-24">
       <Container>
         {/* Centered heading */}
-        <div className="text-center">
-          <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">
-            {testimonials.label}
-          </p>
-
-          <h2 id="testimonials-heading" className="mt-3">
-            <span className="block heading-2 text-dark">
-              {testimonials.heading}
-            </span>
-            <span className="block heading-script text-accent capitalize">
-              {testimonials.script}
-            </span>
-          </h2>
-
-          <p className="mx-auto mt-5 max-w-xl text-p text-dark-muted">{testimonials.subheading}</p>
-        </div>
+        <SectionHeading
+          id="testimonials-heading"
+          label={testimonials.label}
+          heading={testimonials.heading}
+          script={testimonials.script}
+          subheading={testimonials.subheading}
+          maxWidth=""
+          labelClassName="text-xs uppercase tracking-[0.34em] text-dark-muted"
+          headingMt="mt-3"
+          subheadingClassName="mx-auto mt-5 max-w-xl text-p text-dark-muted"
+        />
 
         {/* Testimonial card with nav buttons on sides */}
         {/* Added max-w-4xl and mx-auto to bring arrows closer on lg screens */}

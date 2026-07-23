@@ -32,7 +32,7 @@ export default function BeforeAfter({
   ctaHref = '#gallery',
 }: BeforeAfterProps) {
   return (
-    <section aria-label="Before and After" className="py-16">
+    <section aria-label="Before and After" className="py-10 lg:py-16">
       <Container>
         {/* Header — label/heading on the left, "View All" CTA on the
             right, matching the reference layout */}

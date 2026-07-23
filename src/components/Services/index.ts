@@ -1,6 +1,6 @@
 export { default as ServiceHero } from './ServiceHero'
 export { default as ServicePage } from './ServicePage'
-export { default as About } from './About'
+export { default as ServiceAbout } from './ServiceAbout'
 export { default as ExploreOtherServices } from './ExploreOtherServices'
 export { default as AreasWeServe } from './AreasWeServe'
 export { default as BeforeAfter } from './BeforeAfter'

@@ -40,7 +40,7 @@ interface AboutProps {
   highlights: Highlight[]
 }
 
-export default function About({
+export default function ServiceAbout({
   label = 'About Us',
   heading = 'Renovating for',
   script = 'Genrations',
@@ -53,7 +53,7 @@ export default function About({
   highlights,
 }: AboutProps) {
   return (
-    <section aria-labelledby="service-about-heading">
+    <section aria-labelledby="service-about-heading" className="py-10 lg:py-16">
       <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-stretch ">
         {/* ── Left: photo ── */}
         <div className="relative aspect-[4/5] w-full overflow-hidden rounded-none sm:aspect-[4/3]">
@@ -70,12 +70,8 @@ export default function About({
         <div className="flex h-full flex-col justify-center items-start">
           <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
           <h2 id="service-about-heading" className="mt-1">
-            <span className="heading-2 text-dark">
-              {heading}
-            </span>
-            <span className="ml-2 heading-script capitalize text-accent">
-              {script}
-            </span>
+            <span className="heading-2 text-dark">{heading}</span>
+            <span className="ml-2 heading-script capitalize text-accent">{script}</span>
           </h2>
           <p className="text-sm leading-relaxed text-dark-muted sm:text-base">{description}</p>
 

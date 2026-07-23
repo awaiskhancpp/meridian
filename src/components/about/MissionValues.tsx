@@ -3,7 +3,7 @@ import { Container } from '@/components/ui'
 
 export default function MissionValues() {
   return (
-    <section aria-labelledby="mission-heading" className="py-16  bg-card">
+    <section aria-labelledby="mission-heading" className="py-10 lg:py-16  bg-card">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16">
           <p className="text-xs uppercase tracking-[0.34em] mb-4 text-muted font-sans">

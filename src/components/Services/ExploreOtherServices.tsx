@@ -95,7 +95,7 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
   const script = 'Services'
 
   return (
-    <section aria-label="Explore Other Services" className="py-16">
+    <section aria-label="Explore Other Services" className="py-10 lg:py-16">
       <Container>
         {/* ── Header row: eyebrow + heading left, nav arrows right ── */}
         <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
@@ -104,12 +104,8 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
               <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
             </div>
             <h2 id="services-heading" className="mt-1">
-              <span className="block heading-2 text-dark">
-                {heading}
-              </span>
-              <span className="block heading-script capitalize text-accent">
-                {script}
-              </span>
+              <span className="block heading-2 text-dark">{heading}</span>
+              <span className="block heading-script capitalize text-accent">{script}</span>
             </h2>
           </div>
 

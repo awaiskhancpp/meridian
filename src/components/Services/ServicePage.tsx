@@ -3,7 +3,7 @@ import { Container } from '@/components/ui'
 import siteData from '@/website.json'
 import type { ServiceCardData } from '@/lib/services'
 import ServiceHero from './ServiceHero'
-import About from './About'
+import ServiceAbout from './ServiceAbout'
 import TrustSection from './TrustSection'
 import BeforeAfter from './BeforeAfter'
 import ExploreOtherServices from './ExploreOtherServices'
@@ -48,7 +48,7 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
       />
 
       <Container className="pt-24 pb-16">
-        <About
+        <ServiceAbout
           label={service.about?.label || 'About'}
           heading={service.about?.heading || 'About'}
           script={service.about?.script || 'Us'}

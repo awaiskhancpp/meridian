@@ -114,16 +114,14 @@ export default function ServicesPageClient({
         // formSlot={<HeroSearchBar fields={SEARCH_FIELDS} onSearch={setSearch} />}
       />
 
-      <section aria-label="All services" className="py-16 lg:py-20">
+      <section aria-label="All services" className="py-10 lg:py-16">
         <Container>
           <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
                 {heroProps.label}
               </p>
-              <h2 className="mt-2 heading-2 text-dark">
-                All Services
-              </h2>
+              <h2 className="mt-2 heading-2 text-dark">All Services</h2>
             </div>
             <p className="text-sm text-dark-muted">
               {filtered.length} {filtered.length === 1 ? 'service' : 'services'}

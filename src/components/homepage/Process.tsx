@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import { Container } from '@/components/ui'
+import { Container, SectionHeading } from '@/components/ui'
 import siteData from '@/website.json'
 
 const { process: processData } = siteData
@@ -22,20 +22,13 @@ export default function Process() {
     <section id="process" aria-labelledby="process-heading" className="py-16 lg:py-24 bg-white">
       <Container>
         {/* Centered heading */}
-        <div className="mx-auto max-w-4xl text-center">
-          <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
-            {processData.label}
-          </p>
-          <h2 id="process-heading" className="mt-4 text-dark">
-            <span className="block heading-2">
-              {processData.heading}
-            </span>
-            <span className="block heading-script capitalize text-accent">
-              {processData.script}
-            </span>
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-p text-dark-muted">{processData.subheading}</p>
-        </div>
+        <SectionHeading
+          id="process-heading"
+          label={processData.label}
+          heading={processData.heading}
+          script={processData.script}
+          subheading={processData.subheading}
+        />
 
         {/* Step cards */}
         <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">

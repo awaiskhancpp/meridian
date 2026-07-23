@@ -79,7 +79,7 @@ export default function TrustSection({
   partners = trustHero.partners,
 }: TrustSectionProps) {
   return (
-    <section aria-labelledby="trust-section-heading" className="py-16 ">
+    <section aria-labelledby="trust-section-heading" className="py-10 lg:py-16">
       <Container>
         {/* Rating strip */}
         <div className="flex items-center justify-center gap-2 text-sm">

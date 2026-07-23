@@ -5,7 +5,7 @@ import { Container } from '@/components/ui'
 
 export default function ProjectPage() {
   return (
-    <main className="py-16 lg:py-24">
+    <main className="py-10 lg:py-16">
       <Container>
         <div className="mb-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between lg:mb-16">
           <div>

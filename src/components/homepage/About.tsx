@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import siteData from '@/website.json'
-import { Button, Container } from '@/components/ui'
+import { Button, Container, SectionHeadingInline } from '@/components/ui'
 import { ArrowUpRight, Plus } from 'lucide-react'
 
 const { about } = siteData
@@ -41,20 +41,14 @@ export default function About() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-6">
           {/* ── Left: label, heading, subheading, CTA, stats ───────── */}
           <div className="flex flex-col">
-            <p className="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
-              {about.label}
-            </p>
-
-            <h2 id="about-heading" className="mt-4">
-              <span className="block heading-2 text-dark">
-                {about.heading}
-              </span>
-              <span className="block heading-script capitalize text-accent">
-                {about.script}
-              </span>
-            </h2>
-
-            <p className="mt-4 max-w-[28rem] text-p text-dark-muted">{about.subheading}</p>
+            <SectionHeadingInline
+              id="about-heading"
+              label={about.label}
+              heading={about.heading}
+              script={about.script}
+              subheading={about.subheading}
+              labelClassName="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.34em] text-dark-muted"
+            />
 
             <div className="mt-6">
               <Button variant="line" size="md" href={about.cta.href} className="max-w-fit">

@@ -34,19 +34,15 @@ interface ServiceWhyChooseUsProps {
  */
 export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
   return (
-    <section aria-labelledby="why-choose-us-heading" className="py-16 ">
+    <section aria-labelledby="why-choose-us-heading" className="py-10 lg:py-16">
       <Container>
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">Why Choose Us</p>
 
           <h2 id="why-choose-us-heading" className="mt-1 text-center">
-            <span className="block heading-2 text-dark">
-              {data.heading}
-            </span>
+            <span className="block heading-2 text-dark">{data.heading}</span>
 
-            <span className="mt-2 block heading-script text-accent">
-              {data.script}
-            </span>
+            <span className="mt-2 block heading-script text-accent">{data.script}</span>
           </h2>
         </div>
         <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start lg:gap-10">
