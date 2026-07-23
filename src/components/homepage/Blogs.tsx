@@ -65,7 +65,7 @@ export default function Blogs() {
             onClick={() => swiperRef.current?.slidePrev()}
             disabled={atStart}
             aria-label="Previous articles"
-            className="absolute left-2 top-[14rem] -translate-y-1/2 z-20 flex lg:hidden h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/50 text-dark/80 shadow-sm border border-subtle backdrop-blur-sm transition-all duration-300 enabled:hover:bg-white enabled:hover:text-dark enabled:hover:scale-105 disabled:opacity-20 disabled:cursor-not-allowed disabled:shadow-none"
+            className="absolute left-2 top-[14rem] -translate-y-1/2 z-20 flex lg:hidden h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white-muted text-dark-muted shadow-soft border border-subtle backdrop-blur-sm transition-all duration-300 enabled:hover:bg-white-high enabled:hover:text-dark enabled:hover:scale-105 disabled:opacity-20 disabled:cursor-not-allowed disabled:shadow-none"
           >
             <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
           </button>
@@ -76,7 +76,7 @@ export default function Blogs() {
             onClick={() => swiperRef.current?.slideNext()}
             disabled={atEnd}
             aria-label="Next articles"
-            className="absolute right-2 top-[14rem] -translate-y-1/2 z-20 flex lg:hidden h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/50 text-dark/80 shadow-sm border border-subtle backdrop-blur-sm transition-all duration-300 enabled:hover:bg-white enabled:hover:text-dark enabled:hover:scale-105 disabled:opacity-20 disabled:cursor-not-allowed disabled:shadow-none"
+            className="absolute right-2 top-[14rem] -translate-y-1/2 z-20 flex lg:hidden h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white-muted text-dark-muted shadow-soft border border-subtle backdrop-blur-sm transition-all duration-300 enabled:hover:bg-white-high enabled:hover:text-dark enabled:hover:scale-105 disabled:opacity-20 disabled:cursor-not-allowed disabled:shadow-none"
           >
             <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
           </button>

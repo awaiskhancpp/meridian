@@ -79,7 +79,7 @@ export default function Contact() {
   }
 
   const commonClass =
-    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white/60 focus:border-accent focus:ring-0'
+    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white-muted focus:border-accent focus:ring-0'
 
   return (
     <section
@@ -98,7 +98,7 @@ export default function Contact() {
         <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 bg-panel-dark p-8 shadow-2xl sm:p-12">
           {/* TOP: Heading Section (Centered) */}
           <div className="flex flex-col items-center text-center">
-            <p className="text-xs uppercase tracking-[0.34em] text-white/70">{contact.label}</p>
+            <p className="text-xs uppercase tracking-[0.34em] text-white-subtle">{contact.label}</p>
             <h2 id="contact-heading" className="mt-2">
               <span className="block heading-2 text-white">{contact.heading}</span>
               <span className="heading-script capitalize text-white">{contact.script}</span>
@@ -169,7 +169,7 @@ export default function Contact() {
                     >
                       <span
                         className={`min-w-0 flex-1 truncate pr-4 ${
-                          formData.service ? 'text-white' : 'text-white/60'
+                          formData.service ? 'text-white' : 'text-white-muted'
                         }`}
                       >
                         {formData.service || 'Select a service...'}
@@ -177,7 +177,7 @@ export default function Contact() {
 
                       <ChevronDown
                         size={18}
-                        className={`shrink-0 text-white/60 transition-transform duration-300 ${
+                        className={`shrink-0 text-white-muted transition-transform duration-300 ${
                           isDropdownOpen ? 'rotate-180' : ''
                         }`}
                       />
@@ -281,7 +281,7 @@ function UnderlineField({
   rows = 1,
 }: FieldProps) {
   const commonClass =
-    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white/60 focus:border-accent focus:ring-0'
+    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white-muted focus:border-accent focus:ring-0'
 
   return (
     <label htmlFor={id} className="grid gap-3">

@@ -78,7 +78,7 @@ export default function CTABanner({
             {title}
           </h2>
 
-          <p className="mt-6 text-lg leading-relaxed text-white/80 lg:text-md">{description}</p>
+          <p className="mt-6 text-lg leading-relaxed text-secondary lg:text-md">{description}</p>
 
           <form onSubmit={handleSubmit} className="mt-8">
             <div className="max-w-xl">

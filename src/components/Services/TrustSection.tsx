@@ -159,7 +159,7 @@ export default function TrustSection({
                   {avatars.map((avatar, index) => (
                     <div
                       key={index}
-                      className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 border-cream bg-bg-cream"
+                      className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full border-2 border-cream bg-cream"
                     >
                       <Image src={avatar} alt="" fill className="object-cover" />
                     </div>

@@ -238,6 +238,7 @@
 @utility bg-dark  { background-color: var(--color-bg-dark); }
 @utility bg-card  { background-color: var(--color-bg-card); }
 @utility bg-cream { background-color: var(--color-bg-cream); }
+@utility bg-dark-muted { background-color: var(--color-text-dark-muted); }
 @utility bg-accent       { background-color: var(--color-accent); }
 @utility bg-accent-hover { background-color: var(--color-accent-hover); }
 @utility bg-accent-faint { background-color: var(--color-accent-faint); }

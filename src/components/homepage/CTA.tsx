@@ -86,9 +86,9 @@ export default function CTA({
                 <p
                   className={`text-xs font-medium transition-opacity duration-200 ${
                     emailError
-                      ? 'text-red-500 opacity-100'
+                      ? 'text-status-danger opacity-100'
                       : isSubmitted
-                        ? 'text-emerald-600 opacity-100'
+                        ? 'text-status-success opacity-100'
                         : 'opacity-0'
                   }`}
                 >

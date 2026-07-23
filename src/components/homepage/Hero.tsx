@@ -52,7 +52,7 @@ export default function Hero() {
 
         <Container className="relative flex h-full flex-col justify-between pt-24 sm:pt-28 lg:pt-32 2xl:pt-24">
           <div className="flex justify-between gap-4" aria-hidden="true">
-            <span className="text-[0.68rem] font-medium uppercase tracking-[0.28em] text-white/0">
+            <span className="text-[0.68rem] font-medium uppercase tracking-[0.28em] text-white opacity-0">
               {hero.eyebrow}
             </span>
           </div>
@@ -69,10 +69,10 @@ export default function Hero() {
 
             <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
               <div className="grid max-w-[44rem] grid-cols-1 lg:grid-cols-2">
-                <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/80">
+                <p className="text-xs font-medium uppercase tracking-[0.28em] text-white-subtle">
                   About us
                 </p>
-                <div className="text-sm leading-6 text-white/85 max-w-[260px] sm:text-[0.95rem]">
+                <div className="text-sm leading-6 text-secondary max-w-[260px] sm:text-[0.95rem]">
                   {hero.subheading}
                 </div>
               </div>
