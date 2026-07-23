@@ -51,11 +51,11 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
             {/* Grouping stats together so they sit at the top */}
             <div className="flex flex-col gap-4">
               {data.bullets.map((bullet, index) => (
-                <div key={index} className="rounded-none flex gap-2 items-center">
-                  <div className="rounded-full bg-accent ">
-                    <Check className="text-white" />
+                <div key={index} className="flex items-center gap-3">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent">
+                    <Check className="text-white" size={16} strokeWidth={3} />
                   </div>
-                  <p className="  leading-none text-accent ">{bullet}</p>
+                  <p className="text-accent">{bullet}</p>
                 </div>
               ))}
             </div>
