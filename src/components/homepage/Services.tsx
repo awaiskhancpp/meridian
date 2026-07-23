@@ -3,6 +3,7 @@
 import React, { useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
+import Link from 'next/link'
 import 'swiper/css'
 import {
   ChefHat,
@@ -126,7 +127,10 @@ export default function Services() {
           >
             {services.items.map((service, index) => (
               <SwiperSlide key={service.title} className="h-auto">
-                <div className="group flex h-full min-h-[28rem] flex-col bg-dark p-6 md:p-8">
+                <Link
+                  href={service.href}
+                  className="group flex h-full min-h-[28rem] flex-col bg-dark p-6 md:p-8"
+                >
                   <span className="text-sm font-medium text-white">
                     {String(index + 1).padStart(2, '0')}
                   </span>
@@ -147,13 +151,13 @@ export default function Services() {
                         to interpolate between. */}
                     <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out group-hover:grid-rows-[1fr]">
                       <div className="overflow-hidden">
-                        <p className="mt-3 text-sm leading-relaxed text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                        <p className="mt-3 text-sm leading-relaxed text-white opacity-0 transition-opacity duration-300 line-clamp-3 group-hover:opacity-100">
                           {service.description}
                         </p>
                       </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

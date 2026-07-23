@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import 'swiper/css'
 import siteData from '@/website.json'
 import { Button, Container, SectionHeading } from '@/components/ui'
@@ -31,54 +32,55 @@ export default function Blogs() {
           subheading={blogs.subheading}
         />
 
-        {/* 1 card on sm, 2 on md, 3 on lg+ — overflow-hidden on the wrapper
-            (not the Swiper itself) clips the peek of any partial next
-            slide cleanly at the container edge. */}
-        <div className="mt-12 overflow-hidden">
-          <Swiper
-            onSwiper={(s) => {
-              swiperRef.current = s
-              updateEdgeState(s)
-            }}
-            onSlideChange={updateEdgeState}
-            onResize={updateEdgeState}
-            spaceBetween={16}
-            slidesPerView={1}
-            breakpoints={{
-              768: { slidesPerView: 2, spaceBetween: 20 },
-              1024: { slidesPerView: 3, spaceBetween: 24 },
-            }}
-          >
-            {blogs.items.map((b, i) => (
-              <SwiperSlide key={i} className="h-auto">
-                <BlogFeatureCard card={b} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+        {/* Relative wrapper allowing overlay controls to anchor to the edges */}
+        <div className="relative mt-12">
+          {/* Swiper track */}
+          <div className="overflow-hidden">
+            <Swiper
+              onSwiper={(s) => {
+                swiperRef.current = s
+                updateEdgeState(s)
+              }}
+              onSlideChange={updateEdgeState}
+              onResize={updateEdgeState}
+              spaceBetween={16}
+              slidesPerView={1}
+              breakpoints={{
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1024: { slidesPerView: 3, spaceBetween: 24 },
+              }}
+            >
+              {/* Only display the first 3 blog items */}
+              {blogs.items.slice(0, 3).map((b, i) => (
+                <SwiperSlide key={i} className="h-auto">
+                  <BlogFeatureCard card={b} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
 
-        {/* Prev / Next controls — same wired-to-swiperRef pattern used in
-            Testimonials.tsx, dimmed + non-interactive at either edge */}
-        {/* <div className="mt-8 flex items-center justify-center gap-3">
+          {/* Left Control - Visible only below 'lg' with lower opacity */}
           <button
             type="button"
             onClick={() => swiperRef.current?.slidePrev()}
             disabled={atStart}
             aria-label="Previous articles"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-strong text-dark-muted transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-35"
+            className="absolute left-2 top-[14rem] -translate-y-1/2 z-20 flex lg:hidden h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/50 text-dark/80 shadow-sm border border-subtle backdrop-blur-sm transition-all duration-300 enabled:hover:bg-white enabled:hover:text-dark enabled:hover:scale-105 disabled:opacity-20 disabled:cursor-not-allowed disabled:shadow-none"
           >
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
           </button>
+
+          {/* Right Control - Visible only below 'lg' with lower opacity */}
           <button
             type="button"
             onClick={() => swiperRef.current?.slideNext()}
             disabled={atEnd}
             aria-label="Next articles"
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-strong text-dark-muted transition-colors hover:border-accent hover:text-accent disabled:cursor-not-allowed disabled:opacity-35"
+            className="absolute right-2 top-[14rem] -translate-y-1/2 z-20 flex lg:hidden h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-white/50 text-dark/80 shadow-sm border border-subtle backdrop-blur-sm transition-all duration-300 enabled:hover:bg-white enabled:hover:text-dark enabled:hover:scale-105 disabled:opacity-20 disabled:cursor-not-allowed disabled:shadow-none"
           >
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
           </button>
-        </div> */}
+        </div>
       </Container>
     </section>
   )
@@ -96,7 +98,7 @@ export function BlogFeatureCard({ card }: { card: BlogItem }) {
   return (
     <article className="group h-full">
       <a href={card.href} className="block">
-        <div className="relative ">
+        <div className="relative">
           <div className="relative h-[28rem] overflow-hidden lg:h-[34rem]">
             <Image
               src={card.image}
@@ -106,7 +108,7 @@ export function BlogFeatureCard({ card }: { card: BlogItem }) {
             />
             <div className="absolute inset-0 bg-overlay-card" />
 
-            <div className="absolute inset-0 flex items-center justify-center p-6  opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100">
+            <div className="absolute inset-0 flex items-center justify-center p-6 opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100">
               <div className="w-full translate-y-4 h-full border border-light-strong bg-white-overlay px-8 py-10 flex flex-col items-center justify-center text-center opacity-0 shadow-soft backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                 <h3 className="text-[clamp(1.5rem,2vw,2rem)] font-black uppercase leading-[0.92] tracking-[-0.04em] text-dark">
                   {card.title}

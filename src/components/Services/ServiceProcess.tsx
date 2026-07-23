@@ -106,7 +106,7 @@ export default function ServiceProcess({
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <h3 className="mt-3 text-base font-bold text-dark sm:text-lg">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-dark-muted">{step.description}</p>
+                <p className="mt-2 text-sm leading-relaxed text-dark-muted ">{step.description}</p>
               </div>
             ))}
           </div>

@@ -28,7 +28,7 @@ const legalLinks = [
 
 export default function Footer() {
   return (
-    <footer id="footer" className="border-t border-dark">
+    <footer id="footer" className=" ">
       <Container>
         <div className="mx-auto w-full py-8 ">
           <div className="grid grid-cols-1 gap-8 px-5 py-6 backdrop-blur-sm sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:py-6">

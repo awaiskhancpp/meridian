@@ -6,7 +6,6 @@ import { Hammer, Clock, BadgeDollarSign, ClipboardCheck, ArrowUpRight } from 'lu
 
 const { whyChooseUs } = siteData
 
-// Custom generated content adapted for the symmetrical layout
 const featuresLeft = [
   {
     title: 'Master Craftsmanship',
@@ -44,9 +43,6 @@ export default function WhyChooseUs() {
       aria-labelledby="why-choose-us-heading"
       className="relative overflow-hidden py-10 lg:py-16 bg-white"
     >
-      {/* Subtle Background Decoration matching the reference's depth */}
-      {/* <div className="pointer-events-none absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-radial-warm" /> */}
-
       <Container className="relative z-10">
         {/* Header Section */}
         <SectionHeading
@@ -72,8 +68,8 @@ export default function WhyChooseUs() {
             ))}
           </div>
 
-          {/* Center Column Image with Offset Background */}
-          <div className="w-full sm:max-w-md lg:w-1/3 relative flex justify-center order-1 lg:order-2 mb-8 lg:mb-0">
+          {/* Center Column Image — Reduced width for mobile and desktop */}
+          <div className="w-full max-w-[240px] sm:max-w-[280px] lg:max-w-[320px] mx-auto relative flex justify-center order-1 lg:order-2 mb-8 lg:mb-0">
             <div className="relative w-full aspect-[4/5] overflow-hidden ring-1 ring-dark-soft">
               <Image
                 src="/hero.webp"
@@ -81,7 +77,6 @@ export default function WhyChooseUs() {
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
-              {/* Subtle overlay to match the warm finish of the site */}
               <div className="absolute inset-0 bg-card-bottom-dark" />
             </div>
           </div>
@@ -99,10 +94,11 @@ export default function WhyChooseUs() {
             ))}
           </div>
         </div>
-        <div className="flex justify-center items-center mt-8">
+
+        <div className="flex justify-center items-center mt-12">
           <Button variant="outline" href="/#contact" className="flex gap-1 rounded-none">
             <span>Get a free Quote</span>
-            <ArrowUpRight size={20} />{' '}
+            <ArrowUpRight size={20} />
           </Button>
         </div>
       </Container>
