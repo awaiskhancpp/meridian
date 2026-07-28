@@ -38,7 +38,7 @@ export default function BeforeAfter({
             right, matching the reference layout */}
         <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-3xl mx-auto flex flex-col items-center">
-            <p className="flex items-center gap-2 text-xs text-center uppercase tracking-[0.34em] text-dark-muted">
+            <p className="flex items-center gap-2 text-xs text-center uppercase tracking-eyebrow text-dark-muted">
               {/* <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" /> */}
               {label}
             </p>

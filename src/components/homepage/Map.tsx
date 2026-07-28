@@ -20,7 +20,7 @@ export default function Map() {
     <section id="map" aria-labelledby="map-heading" className="py-10 lg:py-16 mb-10 lg:mb-16">
       <Container>
         <div className="mb-8">
-          <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{map.label}</p>
+          <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{map.label}</p>
           <h2 id="map-heading" className="mt-1">
             <span className="block heading-2 text-dark">{map.heading}</span>
           </h2>

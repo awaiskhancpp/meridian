@@ -35,7 +35,7 @@ export default function Footer() {
           <div className="grid grid-cols-1  px-5 py-6 backdrop-blur-sm sm:px-6 lg:grid-cols-12  lg:px-8 lg:py-6">
             {/* Brand Section */}
             <div className="space-y-4 lg:col-span-4 lg:mr-10 ">
-              <div className="text-xl font-semibold tracking-[0.18em] text-dark">
+              <div className="text-xl font-semibold tracking-medium text-dark">
                 <Image src="/logo.png" alt="" width={120} height={100} />
               </div>
               <p className="max-w-sm text-sm leading-6 text-dark-muted">
@@ -47,7 +47,7 @@ export default function Footer() {
             {/* Menu Section */}
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 mt-4 lg:mt-0 sm:gap-x-6 sm:gap-y-8 md:grid-cols-3 lg:col-span-8 lg:gap-x-8">
               <div className="flex flex-col gap-2  lg:gap-4">
-                <p className="text-xs font-normal uppercase tracking-[0.28em] text-dark-muted ">
+                <p className="text-xs font-normal uppercase tracking-label text-dark-muted ">
                   Menu
                 </p>
                 <div className="mt-2 grid content-start gap-2 lg:mt-0 lg:gap-2">
@@ -55,7 +55,7 @@ export default function Footer() {
                     <a
                       key={item.label}
                       href={item.href}
-                      className="text-sm font-medium capitalize whitespace-nowrap tracking-[0.14em] text-dark transition-colors hover:text-accent"
+                      className="text-sm font-medium capitalize whitespace-nowrap tracking-pill text-dark transition-colors hover:text-accent"
                     >
                       {item.label}
                     </a>
@@ -65,7 +65,7 @@ export default function Footer() {
 
               {/* Follow Us Section */}
               <div className="flex flex-col gap-2 lg:gap-4">
-                <p className=" text-xs font-normal capitalize tracking-[0.28em] text-dark-muted">
+                <p className=" text-xs font-normal capitalize tracking-label text-dark-muted">
                   Follow us
                 </p>
                 <div className="mt-2 grid content-start items-start gap-2 lg:mt-0 lg:gap-2">
@@ -73,7 +73,7 @@ export default function Footer() {
                     <a
                       key={item.label}
                       href={item.href}
-                      className="text-sm font-medium capitalize tracking-[0.14em] text-dark transition-colors hover:text-accent"
+                      className="text-sm font-medium capitalize tracking-pill text-dark transition-colors hover:text-accent"
                     >
                       {item.label}
                     </a>
@@ -83,7 +83,7 @@ export default function Footer() {
 
               {/* Contact Section */}
               <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-1  lg:gap-4">
-                <p className="text-xs font-normal uppercase tracking-[0.28em] text-dark-muted">
+                <p className="text-xs font-normal uppercase tracking-label text-dark-muted">
                   Contacts
                 </p>
                 <div className="mt-0 grid content-start text-sm  leading-6 text-dark gap-3">

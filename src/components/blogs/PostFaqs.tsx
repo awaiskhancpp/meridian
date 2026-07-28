@@ -24,7 +24,7 @@ export default function PostFaqs({ faqs }: { faqs: Faq[] }) {
 
   return (
     <div className="mt-16 border-t border-soft pt-10">
-      <p className="text-xl font-black uppercase tracking-[0.2em] text-dark-muted">
+      <p className="text-xl font-black uppercase tracking-loose text-dark-muted">
         Frequently Asked Questions
       </p>
 

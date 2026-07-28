@@ -50,13 +50,13 @@ export default function ServiceGridCard({ service }: { service: ServiceCardData 
       <div className="relative flex-1">
         <Image src={service.image} alt={service.title} fill className="object-cover" />
         {service.icon && (
-          <span className="absolute right-3 top-3 rounded-full bg-dark/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
+          <span className="absolute right-3 top-3 rounded-full bg-dark/90 px-3 py-1 text-[10px] font-semibold uppercase tracking-pill text-white">
             <ServiceIcon name={service.icon} />
           </span>
         )}
       </div>
 
-      <h3 className="shrink-0 p-4 text-[clamp(1rem,2vw,1.5rem)] font-black uppercase leading-[0.92] tracking-[-0.02em] text-white">
+      <h3 className="shrink-0 p-4 text-[clamp(1rem,2vw,1.5rem)] font-black uppercase leading-[0.92] tracking-heading-tight text-white">
         {service.title}
       </h3>
     </Link>

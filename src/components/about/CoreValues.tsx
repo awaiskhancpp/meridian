@@ -35,7 +35,7 @@ export default function CoreValues() {
       <Container>
         {/* ── Header ── */}
         <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">
-          <p className="text-xs uppercase tracking-[0.34em] text-dark-muted mb-4">Our Values</p>
+          <p className="text-xs uppercase tracking-eyebrow text-dark-muted mb-4">Our Values</p>
           <h2 id="values-heading">
             <span className="block heading-2 text-dark">Core Values That Guide</span>
             <span className="block heading-script capitalize text-accent mt-3">

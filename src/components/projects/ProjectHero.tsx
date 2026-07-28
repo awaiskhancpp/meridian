@@ -19,11 +19,11 @@ export default function ProjectHero({ project }: { project: ProjectDetail }) {
 
       <Container className="relative z-10 flex min-h-[100svh] items-end pb-12 pt-28 lg:pb-16">
         <div className="max-w-4xl text-white">
-          <p className="text-xs font-medium uppercase tracking-[0.34em] text-white-subtle">
+          <p className="text-xs font-medium uppercase tracking-eyebrow text-white-subtle">
             {project.eyebrow}
           </p>
 
-          <h1 className="mt-4 max-w-4xl text-[clamp(2.75rem,7vw,6.4rem)] font-black uppercase leading-[0.88] tracking-[-0.015em]">
+          <h1 className="mt-4 max-w-4xl text-[clamp(2.75rem,7vw,6.4rem)] font-black uppercase leading-[0.88] tracking-heading-subtle">
             {project.title}
           </h1>
 

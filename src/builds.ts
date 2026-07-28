@@ -105,6 +105,26 @@ export const status = {
   infoBg: 'rgba(66,133,244,0.08)',
 } as const
 
+// Letter-spacing tokens. Every value here matches what's already in use
+// somewhere in the repo exactly — this centralizes existing values,
+// it does not redesign the scale. One genuine single-use value
+// (0.24em, Navbar's mobile menu link) is intentionally left as a
+// plain arbitrary value rather than tokenized, since a token only
+// earns its place once a value is actually shared across files.
+export const tracking = {
+  eyebrow: '0.34em',
+  label: '0.28em',
+  snug: '0.22em',
+  loose: '0.2em',
+  medium: '0.18em',
+  pill: '0.14em',
+  nav: '0.12em',
+  headingTight: '-0.02em',
+  headingSubtle: '-0.015em',
+  headingMedium: '-0.03em',
+  headingLoose: '-0.04em',
+} as const
+
 // Host Grotesk handles body/UI text.
 // Allura handles the script accent used in headings.
 export const fontFamily = {

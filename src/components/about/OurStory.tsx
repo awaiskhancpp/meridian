@@ -41,7 +41,7 @@ export default function OurStory({
 
           {/* ── Right Column: Text Content ── */}
           <div className="flex flex-col justify-center py-4">
-            <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
+            <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{label}</p>
 
             <h2 id="our-story-heading" className="mt-3">
               <span className="block heading-2 text-dark">{heading}</span>

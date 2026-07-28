@@ -86,10 +86,10 @@ export default function ServiceForm({
       <Container className="relative z-10 grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-16">
         {/* ── Left: heading ── */}
         <div className="col-span-6">
-          <p className="text-xs uppercase tracking-[0.34em] text-white-overlay">{label}</p>
+          <p className="text-xs uppercase tracking-eyebrow text-white-overlay">{label}</p>
           <h2
             id="service-form-heading"
-            className="mt-3 text-[clamp(1.8rem,3.6vw,2.6rem)] font-black uppercase leading-[0.98] tracking-[-0.015em] text-white"
+            className="mt-3 text-[clamp(1.8rem,3.6vw,2.6rem)] font-black uppercase leading-[0.98] tracking-heading-subtle text-white"
           >
             {heading}
             <br />
@@ -110,14 +110,14 @@ export default function ServiceForm({
                   setSubmitted(false)
                   setFormData({ name: '', phone: '', email: '', message: '' })
                 }}
-                className="mt-4 text-sm font-semibold tracking-[0.12em] text-white underline underline-offset-4 hover:text-accent"
+                className="mt-4 text-sm font-semibold tracking-nav text-white underline underline-offset-4 hover:text-accent"
               >
                 Send another request
               </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate className="grid gap-6">
-              <p className="text-xs uppercase tracking-[0.22em] text-white-muted">
+              <p className="text-xs uppercase tracking-snug text-white-muted">
                 Requesting: <span className="text-white">{serviceTitle}</span>
               </p>
 
@@ -216,7 +216,7 @@ function UnderlineField({
 
   return (
     <label htmlFor={id} className={`grid gap-3 ${className}`}>
-      <span className="text-xs uppercase tracking-[0.22em] text-white">{label}</span>
+      <span className="text-xs uppercase tracking-snug text-white">{label}</span>
       {as === 'textarea' ? (
         <textarea
           id={id}

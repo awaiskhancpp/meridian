@@ -35,7 +35,7 @@ export default function SectionHeadingInline({
   heading,
   script,
   subheading,
-  labelClassName = 'text-xs uppercase tracking-[0.34em] text-dark-muted',
+  labelClassName = 'text-xs uppercase tracking-eyebrow text-dark-muted',
   headingMt = 'mt-1',
   subheadingClassName = 'mt-4 max-w-[28rem] text-p text-dark-muted',
 }: SectionHeadingInlineProps) {

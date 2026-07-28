@@ -7,10 +7,10 @@ export default function ProjectBrief({ project }: { project: ProjectDetail }) {
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
+            <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
               The brief
             </p>
-            <h2 className="mt-4 max-w-2xl text-[clamp(2rem,4vw,3.5rem)] font-black uppercase leading-[0.92] tracking-[-0.02em] text-dark">
+            <h2 className="mt-4 max-w-2xl text-[clamp(2rem,4vw,3.5rem)] font-black uppercase leading-[0.92] tracking-heading-tight text-dark">
               A considered response to everyday life.
             </h2>
           </div>
@@ -31,7 +31,7 @@ export default function ProjectBrief({ project }: { project: ProjectDetail }) {
 function ProjectMetric({ label, value }: { label: string; value: string }) {
   return (
     <div className="border-b border-subtle py-5 sm:border-b-0 sm:border-r sm:px-4 first:pl-0 last:border-r-0">
-      <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-dark-muted">
+      <p className="text-[0.65rem] font-semibold uppercase tracking-loose text-dark-muted">
         {label}
       </p>
       <p className="mt-2 text-sm font-semibold leading-5 text-dark">{value}</p>

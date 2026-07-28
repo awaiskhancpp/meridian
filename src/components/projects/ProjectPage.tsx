@@ -36,10 +36,10 @@ export default function ProjectPage() {
         {/* Header row */}
         <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:mb-10">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
+            <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
               Selected work
             </p>
-            <h2 className="mt-3 max-w-2xl text-[clamp(2rem,4vw,3.4rem)] font-black uppercase leading-[0.92] tracking-[-0.02em] text-dark">
+            <h2 className="mt-3 max-w-2xl text-[clamp(2rem,4vw,3.4rem)] font-black uppercase leading-[0.92] tracking-heading-tight text-dark">
               Built around how you live.
             </h2>
           </div>
@@ -77,16 +77,16 @@ export default function ProjectPage() {
                     <div className="absolute inset-0 bg-overlay-card" />
 
                     <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-full transform-gpu bg-card-bottom-dark px-6 pb-6 pt-14 opacity-0 transition-all duration-700 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
-                      <p className="text-xs font-medium uppercase tracking-[0.28em] text-white-subtle">
+                      <p className="text-xs font-medium uppercase tracking-label text-white-subtle">
                         {project.category}
                       </p>
-                      <h3 className="mt-2 text-[clamp(1.2rem,1.8vw,1.6rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] text-white text-balance line-clamp-2">
+                      <h3 className="mt-2 text-[clamp(1.2rem,1.8vw,1.6rem)] font-bold uppercase leading-[0.95] tracking-heading-tight text-white text-balance line-clamp-2">
                         {project.title}
                       </h3>
                     </div>
                   </div>
 
-                  <div className="mt-4 text-[clamp(1.35rem,2vw,1.85rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] transform-gpu transition-all duration-700 ease-in-out group-hover:-translate-y-2 group-hover:opacity-0 text-balance line-clamp-2">
+                  <div className="mt-4 text-[clamp(1.35rem,2vw,1.85rem)] font-bold uppercase leading-[0.95] tracking-heading-tight transform-gpu transition-all duration-700 ease-in-out group-hover:-translate-y-2 group-hover:opacity-0 text-balance line-clamp-2">
                     {project.title}
                   </div>
                 </Link>
@@ -98,7 +98,7 @@ export default function ProjectPage() {
         {/* Empty state */}
         {filteredProjects.length === 0 && (
           <div className="py-20 text-center">
-            <p className="text-sm uppercase tracking-[0.14em] text-dark-muted">
+            <p className="text-sm uppercase tracking-pill text-dark-muted">
               No projects in this category yet.
             </p>
           </div>

@@ -8,7 +8,7 @@ export default function ProjectDirection({ project }: { project: ProjectDetail }
       <Container>
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <div className=" flex flex-col ">
-            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
+            <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
               Design direction
             </p>
             <h2 id="before-after-heading" className="mt-1 flex flex-wrap items-end gap-3">

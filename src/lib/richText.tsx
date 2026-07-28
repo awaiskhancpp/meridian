@@ -77,9 +77,9 @@ function injectHeadingIds(html: string): string {
 const richTextStyles = `
   [&_p]:mb-5 [&_p]:text-[0.95rem] [&_p]:leading-relaxed [&_p]:text-dark-muted
   
-  [&_h1]:mt-14 [&_h1]:mb-5 [&_h1]:scroll-mt-28 [&_h1]:text-3xl [&_h1]:font-black [&_h1]:uppercase [&_h1]:tracking-[-0.03em] [&_h1]:text-dark md:[&_h1]:text-4xl [&_h1]:leading-tight [&_h1]:border-l-4 [&_h1]:border-accent [&_h1]:pl-4
+  [&_h1]:mt-14 [&_h1]:mb-5 [&_h1]:scroll-mt-28 [&_h1]:text-3xl [&_h1]:font-black [&_h1]:uppercase [&_h1]:tracking-heading-medium [&_h1]:text-dark md:[&_h1]:text-4xl [&_h1]:leading-tight [&_h1]:border-l-4 [&_h1]:border-accent [&_h1]:pl-4
   
-  [&_h2]:mt-14 [&_h2]:mb-5 [&_h2]:scroll-mt-28 [&_h2]:text-2xl [&_h2]:font-black [&_h2]:uppercase [&_h2]:tracking-[-0.03em] [&_h2]:text-dark md:[&_h2]:text-[1.9rem] [&_h2]:leading-tight [&_h2]:border-l-4 [&_h2]:border-accent [&_h2]:pl-4
+  [&_h2]:mt-14 [&_h2]:mb-5 [&_h2]:scroll-mt-28 [&_h2]:text-2xl [&_h2]:font-black [&_h2]:uppercase [&_h2]:tracking-heading-medium [&_h2]:text-dark md:[&_h2]:text-[1.9rem] [&_h2]:leading-tight [&_h2]:border-l-4 [&_h2]:border-accent [&_h2]:pl-4
   
   [&_h3]:mt-10 [&_h3]:mb-4 [&_h3]:scroll-mt-28 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-dark md:[&_h3]:text-2xl [&_h3]:leading-tight [&_h3]:border-l-2 [&_h3]:border-accent/60 [&_h3]:pl-3
   

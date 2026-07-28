@@ -33,7 +33,7 @@ export default function BlogRelatedPosts() {
         <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
           <div>
             <div className="flex items-center gap-2">
-              <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
+              <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{label}</p>
             </div>
             <h2 id="related-posts-heading" className="mt-1">
               <span className="block heading-2 text-dark">{heading}</span>
@@ -149,7 +149,7 @@ function BlogFeatureCard({ card }: { card: BlogItem }) {
 
             <div className="absolute inset-0 flex items-center justify-center p-6  opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100">
               <div className="w-full translate-y-4 h-full border border-light-strong bg-white-overlay px-8 py-10 flex flex-col items-center justify-center text-center opacity-0 shadow-soft backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                <h3 className="text-[clamp(1.5rem,2vw,2rem)] font-black uppercase leading-[0.92] tracking-[-0.04em] text-dark">
+                <h3 className="text-[clamp(1.5rem,2vw,2rem)] font-black uppercase leading-[0.92] tracking-heading-loose text-dark">
                   {card.title}
                 </h3>
                 <p className="mt-5 text-sm leading-6 text-dark-muted">{card.description}</p>

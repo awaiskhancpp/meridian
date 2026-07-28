@@ -52,14 +52,14 @@ export default function Hero() {
 
         <Container className="relative flex h-full flex-col justify-between pt-24 sm:pt-28 lg:pt-32 2xl:pt-24">
           <div className="flex justify-between gap-4" aria-hidden="true">
-            <span className="text-[0.68rem] font-medium uppercase tracking-[0.28em] text-white opacity-0">
+            <span className="text-[0.68rem] font-medium uppercase tracking-label text-white opacity-0">
               {hero.eyebrow}
             </span>
           </div>
 
           <div className="max-w-[1440px] pb-8 sm:pb-10 lg:pb-12">
             <h1 className="max-w-[40rem] text-white">
-              <span className="text-[clamp(2.75rem,6.8vw,5.85rem)] font-bold uppercase leading-[0.9] tracking-[-0.015em] text-white drop-shadow-text-hero">
+              <span className="text-[clamp(2.75rem,6.8vw,5.85rem)] font-bold uppercase leading-[0.9] tracking-heading-subtle text-white drop-shadow-text-hero">
                 {hero.heading}{' '}
               </span>
               <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(3.1rem,7vw,6.1rem)] leading-[0.82] text-cream">
@@ -69,7 +69,7 @@ export default function Hero() {
 
             <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
               <div className="grid max-w-[44rem] grid-cols-1 lg:grid-cols-2">
-                <p className="text-xs font-medium uppercase tracking-[0.28em] text-white-subtle">
+                <p className="text-xs font-medium uppercase tracking-label text-white-subtle">
                   About us
                 </p>
                 <div className="text-sm leading-6 text-secondary max-w-[260px] sm:text-[0.95rem]">
@@ -99,7 +99,7 @@ function HeroLink({ href, children }: { href: string; children: React.ReactNode 
   return (
     <a
       href={href}
-      className="group inline-flex min-w-[11rem] items-center justify-between gap-6 border-b border-light-mid pb-2 text-sm font-medium uppercase tracking-[0.18em] text-white transition-colors hover:border-white hover:text-cream sm:min-w-[12rem]"
+      className="group inline-flex min-w-[11rem] items-center justify-between gap-6 border-b border-light-mid pb-2 text-sm font-medium uppercase tracking-medium text-white transition-colors hover:border-white hover:text-cream sm:min-w-[12rem]"
     >
       <span>{children}</span>
       <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
@@ -119,7 +119,7 @@ function Field({ id, label, ...props }: FieldProps) {
     <div className="min-w-0">
       <label
         htmlFor={id}
-        className="mb-2 block text-xs font-semibold uppercase tracking-[0.22em] text-dark-muted"
+        className="mb-2 block text-xs font-semibold uppercase tracking-snug text-dark-muted"
       >
         {label}
       </label>

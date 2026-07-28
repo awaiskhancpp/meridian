@@ -150,7 +150,7 @@ export default function Navbar() {
                 <div key={item.label} className="group relative py-8">
                   <Link
                     href={item.href ?? '#'}
-                    className={`flex items-center gap-1 text-sm font-medium tracking-[0.12em] transition-colors ${textClasses} ${hoverTextClasses}`}
+                    className={`flex items-center gap-1 text-sm font-medium tracking-nav transition-colors ${textClasses} ${hoverTextClasses}`}
                   >
                     {item.label}
                     <ChevronIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
@@ -169,7 +169,7 @@ export default function Navbar() {
                     {item.seeMore ? (
                       <Link
                         href={item.seeMore.href}
-                        className="mt-1 block border-t border-subtle px-3 py-3 text-xs font-semibold uppercase tracking-[0.14em] text-accent transition-colors hover:bg-cream"
+                        className="mt-1 block border-t border-subtle px-3 py-3 text-xs font-semibold uppercase tracking-pill text-accent transition-colors hover:bg-cream"
                       >
                         {item.seeMore.label}
                       </Link>
@@ -180,7 +180,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`whitespace-nowrap text-sm font-medium tracking-[0.12em] transition-colors py-8 ${textClasses} ${hoverTextClasses}`}
+                  className={`whitespace-nowrap text-sm font-medium tracking-nav transition-colors py-8 ${textClasses} ${hoverTextClasses}`}
                 >
                   {item.label}
                 </Link>
@@ -192,7 +192,7 @@ export default function Navbar() {
             <Button
               variant={ctaVariant}
               href="/contact"
-              className="whitespace-nowrap rounded-none text-dark-muted text-sm font-medium tracking-[0.12em]"
+              className="whitespace-nowrap rounded-none text-dark-muted text-sm font-medium tracking-nav"
             >
               <span>Request a Quote</span>
               <ArrowUpRight size={18} />
@@ -254,7 +254,7 @@ export default function Navbar() {
                     type="button"
                     onClick={() => setOpenMobileDropdown(isDropdownOpen ? null : item.label)}
                     aria-expanded={isDropdownOpen}
-                    className="flex w-full items-center justify-between py-5 text-sm font-medium uppercase tracking-[0.14em] text-dark transition-colors hover:text-accent"
+                    className="flex w-full items-center justify-between py-5 text-sm font-medium uppercase tracking-pill text-dark transition-colors hover:text-accent"
                   >
                     {item.label}
                     <ChevronIcon
@@ -284,7 +284,7 @@ export default function Navbar() {
                         <a
                           href={item.seeMore.href}
                           onClick={() => setMobileOpen(false)}
-                          className="mt-2 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-accent"
+                          className="mt-2 py-2 text-xs font-semibold uppercase tracking-pill text-accent"
                         >
                           {item.seeMore.label}
                         </a>
@@ -297,7 +297,7 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="border-b border-subtle py-5 text-sm font-medium uppercase tracking-[0.14em] text-dark transition-colors last:border-none hover:text-accent"
+                  className="border-b border-subtle py-5 text-sm font-medium uppercase tracking-pill text-dark transition-colors last:border-none hover:text-accent"
                 >
                   {item.label}
                 </a>

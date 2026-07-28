@@ -118,7 +118,7 @@ export default function ServicesPageClient({
         <Container>
           <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
+              <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
                 {heroProps.label}
               </p>
               <h2 className="mt-1 heading-2 text-dark">All Services</h2>

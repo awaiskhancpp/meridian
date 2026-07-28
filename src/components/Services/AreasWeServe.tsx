@@ -47,15 +47,15 @@ export default function AreasWeServe({
       <Container>
         {/* Header */}
         <div className="max-w-2xl mx-auto flex flex-col justify-center items-center">
-          <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
+          <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{label}</p>
           <h2 id="services-heading" className="mt-1 text-center">
             <span className="block heading-2 text-dark">{heading}</span>
             <span className="block heading-script capitalize text-accent">{script}</span>
           </h2>
         </div>
         {/* <div className="mb-12">
-          <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">{label}</p>
-          <h2 className="mt-3 text-[clamp(2rem,4vw,3rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] text-dark lg:text-[3.5rem]">
+          <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">{label}</p>
+          <h2 className="mt-3 text-[clamp(2rem,4vw,3rem)] font-bold uppercase leading-[0.95] tracking-heading-tight text-dark lg:text-[3.5rem]">
             {heading}{' '}
             <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(2.2rem,4.5vw,3.5rem)] leading-[0.82] text-accent">
               {script}

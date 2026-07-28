@@ -50,7 +50,7 @@ function LiquidUnderlineButton({
   className = '',
   ...props
 }: Omit<ButtonProps, 'variant' | 'size'>) {
-  const wrapperClasses = `group relative inline-flex items-center gap-3 pb-2 text-sm font-semibold uppercase tracking-[0.18em] text-dark ${className}`
+  const wrapperClasses = `group relative inline-flex items-center gap-3 pb-2 text-sm font-semibold uppercase tracking-medium text-dark ${className}`
 
   const content = (
     <>

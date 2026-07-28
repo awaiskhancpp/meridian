@@ -15,7 +15,7 @@ export default function ProjectCTA({ project }: { project: ProjectDetail }) {
       */}
       <Container className="relative z-10 flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
         <div className="max-w-2xl">
-          <h2 className="mt-4 text-[clamp(2rem,4vw,4rem)] font-black uppercase leading-[0.9] tracking-[-0.02em]">
+          <h2 className="mt-4 text-[clamp(2rem,4vw,4rem)] font-black uppercase leading-[0.9] tracking-heading-tight">
             Let’s shape a space around your life.
           </h2>
         </div>

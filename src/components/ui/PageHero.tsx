@@ -44,12 +44,12 @@ export default function PageHero({
 
         <Container className="relative z-10 flex h-full items-center justify-center pb-8 pt-24 sm:pb-10 sm:pt-28 lg:pb-12">
           <div className="flex w-full flex-col items-center justify-center text-center">
-            <p className="mb-3 text-xs font-medium uppercase tracking-[0.34em] text-white-subtle">
+            <p className="mb-3 text-xs font-medium uppercase tracking-eyebrow text-white-subtle">
               {label}
             </p>
 
             <h1 className="max-w-[44rem]">
-              <span className="text-[clamp(2.75rem,6.8vw,5.85rem)] font-bold uppercase leading-[0.9] tracking-[-0.015em] text-white">
+              <span className="text-[clamp(2.75rem,6.8vw,5.85rem)] font-bold uppercase leading-[0.9] tracking-heading-subtle text-white">
                 {heading}
               </span>{' '}
               <span className="inline-block -translate-y-1 font-[family-name:var(--font-allura)] capitalize text-[clamp(3.1rem,7vw,6.1rem)] leading-[0.82] text-cream">

@@ -73,7 +73,7 @@ export default function CategoryFilterPills({
               aria-selected={isActive}
               onClick={() => onChange(cat.value === 'all' ? null : cat.value)}
               className={`
-                relative shrink-0 border px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] transition-all duration-200
+                relative shrink-0 border px-5 py-2.5 text-xs font-semibold uppercase tracking-pill transition-all duration-200
                 ${
                   isActive
                     ? 'border-accent bg-accent text-white'

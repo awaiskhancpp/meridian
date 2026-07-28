@@ -80,7 +80,7 @@ export default function Services() {
               label={services.label}
               heading={services.heading}
               script={services.script}
-              labelClassName="text-xs uppercase tracking-[0.34em] text-dark-muted"
+              labelClassName="text-xs uppercase tracking-eyebrow text-dark-muted"
               headingMt="mt-1"
             />
           </div>

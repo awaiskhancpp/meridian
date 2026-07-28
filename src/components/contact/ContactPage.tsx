@@ -16,7 +16,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 ">
           {/* LEFT COLUMN: Contact Information */}
           <div className="flex flex-col justify-center">
-            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted mb-2">
+            <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted mb-2">
               Get In Touch
             </p>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-dark mb-6">

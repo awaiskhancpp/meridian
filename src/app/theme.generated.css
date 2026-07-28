@@ -122,6 +122,19 @@
   --z-navbar: 50;
   --z-modal:  100;
   --z-toast:  200;
+
+  /* ─── Letter Spacing ──────────────────────────────────────────── */
+  --tracking-eyebrow: 0.34em;
+  --tracking-label: 0.28em;
+  --tracking-snug: 0.22em;
+  --tracking-loose: 0.2em;
+  --tracking-medium: 0.18em;
+  --tracking-pill: 0.14em;
+  --tracking-nav: 0.12em;
+  --tracking-heading-tight: -0.02em;
+  --tracking-heading-subtle: -0.015em;
+  --tracking-heading-medium: -0.03em;
+  --tracking-heading-loose: -0.04em;
 }
 
 /* ═══════════════════════════════════════════════════════════════════

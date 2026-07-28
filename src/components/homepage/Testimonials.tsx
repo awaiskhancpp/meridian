@@ -42,7 +42,7 @@ export default function Testimonials() {
           script={testimonials.script}
           subheading={testimonials.subheading}
           maxWidth=""
-          labelClassName="text-xs uppercase tracking-[0.34em] text-dark-muted"
+          labelClassName="text-xs uppercase tracking-eyebrow text-dark-muted"
           headingMt="mt-3"
           subheadingClassName="mx-auto mt-5 max-w-xl text-p text-dark-muted"
         />

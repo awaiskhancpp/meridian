@@ -74,7 +74,7 @@ export default function CTABanner({
 
       <Container className="relative z-10">
         <div className="max-w-2xl">
-          <h2 className="text-[clamp(2rem,4vw,3rem)]  font-bold uppercase leading-[0.95] tracking-[-0.02em] text-white lg:text-[3.5rem]">
+          <h2 className="text-[clamp(2rem,4vw,3rem)]  font-bold uppercase leading-[0.95] tracking-heading-tight text-white lg:text-[3.5rem]">
             {title}
           </h2>
 

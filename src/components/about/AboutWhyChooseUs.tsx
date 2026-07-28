@@ -44,7 +44,7 @@ export default function AboutWhyChooseUs() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Sticky Context & CTA */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
-            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
+            <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
               {whyChooseUs.label}
             </p>
             <h2 id="about-why-choose-us-heading" className="mt-4 text-dark">

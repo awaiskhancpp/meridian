@@ -37,7 +37,7 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
     <section aria-labelledby="why-choose-us-heading" className="py-10 lg:py-16 lg:mb-16 mb-10">
       <Container>
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-          <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">Why Choose Us</p>
+          <p className="text-xs uppercase tracking-eyebrow text-dark-muted">Why Choose Us</p>
 
           <h2 id="why-choose-us-heading" className="mt-1 text-center">
             <span className="block heading-2 text-dark">{data.heading}</span>
@@ -81,7 +81,7 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
 
           {/* ── Right: heading, description, mission ── */}
           <div className="order-1 lg:order-3">
-            <h3 className="mt-1 flex flex-wrap items-end gap-3 text-[clamp(1.9rem,3.8vw,3rem)] font-bold uppercase leading-[0.92] tracking-[-0.02em] text-dark">
+            <h3 className="mt-1 flex flex-wrap items-end gap-3 text-[clamp(1.9rem,3.8vw,3rem)] font-bold uppercase leading-[0.92] tracking-heading-tight text-dark">
               {data.contentHeading}
             </h3>
 
@@ -90,7 +90,7 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
             </p>
 
             <div className="mt-10 rounded-none ">
-              <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-accent">
+              <h3 className="text-sm font-bold uppercase tracking-loose text-accent">
                 {data.missionTitle}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-dark-muted lg:text-base">

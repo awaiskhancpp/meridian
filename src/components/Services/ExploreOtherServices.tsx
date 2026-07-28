@@ -101,7 +101,7 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
         <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
           <div>
             <div className="flex items-center gap-2">
-              <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
+              <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{label}</p>
             </div>
             <h2 id="services-heading" className="mt-1">
               <span className="block heading-2 text-dark">{heading}</span>

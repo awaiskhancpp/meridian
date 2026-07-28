@@ -43,7 +43,7 @@ export default function SectionHeading({
   script,
   subheading,
   maxWidth = 'max-w-4xl',
-  labelClassName = 'text-xs font-medium uppercase tracking-[0.34em] text-dark-muted',
+  labelClassName = 'text-xs font-medium uppercase tracking-eyebrow text-dark-muted',
   headingMt = 'mt-1',
   subheadingClassName = 'mx-auto mt-6 max-w-2xl text-p text-dark-muted',
   eyebrowLeading,

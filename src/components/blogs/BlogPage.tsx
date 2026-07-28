@@ -51,7 +51,7 @@ export default function BlogPage({ post }: { post: BlogPost }) {
         {/* Breadcrumb */}
         <nav
           aria-label="Breadcrumb"
-          className="mb-4 flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-dark-muted"
+          className="mb-4 flex items-center gap-2 text-xs uppercase tracking-loose text-dark-muted"
         >
           <Link href="/blogs" className="transition-colors hover:text-accent">
             Journal
@@ -61,7 +61,7 @@ export default function BlogPage({ post }: { post: BlogPost }) {
         </nav>
 
         {/* Title */}
-        <h1 className="text-[clamp(2rem,4.5vw,3.2rem)] font-black uppercase leading-[0.98] tracking-[-0.02em] text-dark">
+        <h1 className="text-[clamp(2rem,4.5vw,3.2rem)] font-black uppercase leading-[0.98] tracking-heading-tight text-dark">
           {post.title}
         </h1>
 

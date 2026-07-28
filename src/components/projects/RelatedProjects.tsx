@@ -15,7 +15,7 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
       <Container>
         <div className="mb-10 flex items-end justify-between gap-6">
           <div className=" flex flex-col capitalize">
-            <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
+            <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
               Continue exploring
             </p>
             <h2 id="before-after-heading" className="mt-1 gap-3">
@@ -28,7 +28,7 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
             variant="outline"
             size="lg"
             href="/projects"
-            className="hidden  rounded-none items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent transition-colors hover:text-dark sm:inline-flex"
+            className="hidden  rounded-none items-center gap-2 text-xs font-semibold uppercase tracking-medium text-accent transition-colors hover:text-dark sm:inline-flex"
           >
             See all <ArrowUpRight size={16} />
           </Button>
@@ -44,10 +44,10 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <p className="mt-4 text-xs font-medium uppercase tracking-[0.2em] text-dark-muted">
+              <p className="mt-4 text-xs font-medium uppercase tracking-loose text-dark-muted">
                 {item.category}
               </p>
-              <h3 className="mt-2 text-xl font-bold uppercase leading-tight tracking-[-0.015em] text-dark">
+              <h3 className="mt-2 text-xl font-bold uppercase leading-tight tracking-heading-subtle text-dark">
                 {item.title}
               </h3>
             </Link>

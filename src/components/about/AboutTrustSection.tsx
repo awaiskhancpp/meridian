@@ -49,12 +49,12 @@ export default function AboutTrustSection({
       <Container>
         {/* ── Section Header ── */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-          <p className="text-xs font-bold uppercase tracking-[0.34em] text-dark-muted">{label}</p>
+          <p className="text-xs font-bold uppercase tracking-eyebrow text-dark-muted">{label}</p>
 
           <div className="w-16 h-px bg-dark-soft mx-auto my-4" />
 
           <h2 id="trust-section-heading">
-            <span className="block text-[clamp(2rem,4vw,3.25rem)] font-black uppercase leading-[0.92] tracking-[-0.02em] text-dark">
+            <span className="block text-[clamp(2rem,4vw,3.25rem)] font-black uppercase leading-[0.92] tracking-heading-tight text-dark">
               {heading}
             </span>
             <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.5rem,5vw,4rem)] leading-none text-accent mt-1">

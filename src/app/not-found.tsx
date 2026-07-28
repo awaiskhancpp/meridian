@@ -54,12 +54,12 @@ export default function NotFoundPage() {
         <div className="pointer-events-none absolute inset-x-0 bottom-24 h-px bg-white-faint sm:bottom-28 lg:bottom-32" />
 
         <Container className="relative z-10 flex flex-col items-center pb-20 pt-28 text-center sm:pt-32 lg:pt-36">
-          <p className="mb-4 text-xs font-medium uppercase tracking-[0.34em] text-white-subtle">
+          <p className="mb-4 text-xs font-medium uppercase tracking-eyebrow text-white-subtle">
             Error 404
           </p>
 
           <h1 className="max-w-[44rem]">
-            <span className="text-[clamp(2.4rem,7vw,5.5rem)] font-bold uppercase leading-[0.9] tracking-[-0.015em] text-white drop-shadow-text-hero">
+            <span className="text-[clamp(2.4rem,7vw,5.5rem)] font-bold uppercase leading-[0.9] tracking-heading-subtle text-white drop-shadow-text-hero">
               Page Not
             </span>{' '}
             <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(2.8rem,7.5vw,6rem)] leading-[0.82] text-cream">
@@ -96,7 +96,7 @@ export default function NotFoundPage() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-xs font-medium uppercase tracking-[0.18em] text-white-subtle transition-colors hover:text-cream"
+                className="text-xs font-medium uppercase tracking-medium text-white-subtle transition-colors hover:text-cream"
               >
                 {link.label}
               </Link>

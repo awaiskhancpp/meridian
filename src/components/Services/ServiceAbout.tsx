@@ -68,7 +68,7 @@ export default function ServiceAbout({
 
         {/* ── Right: description, stat grid, CTA ── */}
         <div className="flex h-full flex-col justify-center items-start">
-          <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">{label}</p>
+          <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{label}</p>
           <h2 id="service-about-heading" className="mt-1">
             <span className="heading-2 text-dark">{heading}</span>
             <span className="ml-2 heading-script capitalize text-accent">{script}</span>

@@ -98,7 +98,7 @@ export default function Contact() {
         <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 bg-panel-dark p-8 shadow-2xl sm:p-12">
           {/* TOP: Heading Section (Centered) */}
           <div className="flex flex-col items-center text-center">
-            <p className="text-xs uppercase tracking-[0.34em] text-white-subtle">{contact.label}</p>
+            <p className="text-xs uppercase tracking-eyebrow text-white-subtle">{contact.label}</p>
             <h2 id="contact-heading" className="mt-2">
               <span className="block heading-2 text-white">{contact.heading}</span>
               <span className="heading-script capitalize text-white">{contact.script}</span>
@@ -119,7 +119,7 @@ export default function Contact() {
                     setSubmitted(false)
                     setFormData({ name: '', phone: '', email: '', message: '', service: '' })
                   }}
-                  className="mt-4 text-sm font-semibold tracking-[0.12em] text-white underline underline-offset-4 hover:text-accent"
+                  className="mt-4 text-sm font-semibold tracking-nav text-white underline underline-offset-4 hover:text-accent"
                 >
                   Send another message
                 </button>
@@ -158,7 +158,7 @@ export default function Contact() {
 
                   {/* SERVICE DROPDOWN — single-select */}
                   <div className="relative grid gap-3">
-                    <span className="text-xs uppercase tracking-[0.22em] text-white">
+                    <span className="text-xs uppercase tracking-snug text-white">
                       Service of Interest
                     </span>
 
@@ -285,7 +285,7 @@ function UnderlineField({
 
   return (
     <label htmlFor={id} className="grid gap-3">
-      <span className="text-xs uppercase tracking-[0.22em] text-white">{label}</span>
+      <span className="text-xs uppercase tracking-snug text-white">{label}</span>
       {as === 'textarea' ? (
         <textarea
           id={id}

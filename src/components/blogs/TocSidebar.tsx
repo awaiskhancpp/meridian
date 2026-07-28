@@ -43,7 +43,7 @@ export default function TocSidebar({ toc }: { toc: TocItem[] }) {
   return (
     <aside className="order-first lg:order-last">
       <div className="lg:sticky lg:top-28">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-dark-muted">Contents</p>
+        <p className="text-xs font-semibold uppercase tracking-loose text-dark-muted">Contents</p>
         <ul className="mt-4 space-y-3 border-l border-muted text-sm">
           {toc.map((item) => (
             <li key={item.anchorId}>

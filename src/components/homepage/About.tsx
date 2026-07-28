@@ -65,7 +65,7 @@ export default function About() {
                 to spare. max-w caps how wide the breakout can get on
                 very wide columns. */}
             <div className="absolute inset-x-4 bottom-4 right-16 md:right-72 bg-dark p-3 sm:inset-x-6 sm:bottom-6 sm:p-6 lg:inset-x-auto lg:-right-6 lg:bottom-8 lg:left-6 lg:max-w-[19rem] lg:p-7">
-              <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/70">
+              <p className="text-xs font-medium uppercase tracking-label text-white/70">
                 {about.card.label}
               </p>
               <p className="mt-3 text-4xl font-black leading-none text-accent-light">
@@ -83,7 +83,7 @@ export default function About() {
               heading={about.heading}
               script={about.script}
               subheading={about.subheading}
-              labelClassName="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.34em] text-dark-muted"
+              labelClassName="flex items-center gap-3 text-xs font-medium uppercase tracking-eyebrow text-dark-muted"
             />
 
             <div className="mt-8">

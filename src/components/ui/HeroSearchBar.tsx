@@ -56,7 +56,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
           key={field.name}
           className={`flex flex-1 z-[800] flex-col justify-center gap-0.5 px-5 ${borderClass}`}
         >
-          <label className="text-[10px] font-semibold uppercase tracking-[0.22em] text-dark-muted">
+          <label className="text-[10px] font-semibold uppercase tracking-snug text-dark-muted">
             {field.label}
           </label>
           <input
@@ -79,7 +79,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
         key={field.name}
         className={`relative flex flex-1 flex-col justify-center gap-0.5 px-5 ${borderClass}`}
       >
-        <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-dark-muted">
+        <span className="text-[10px] font-semibold uppercase tracking-snug text-dark-muted">
           {field.label}
         </span>
         <button
@@ -130,7 +130,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
 
           <button
             type="submit"
-            className="flex shrink-0 items-center bg-text-dark-muted px-9 text-sm font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-dark"
+            className="flex shrink-0 items-center bg-text-dark-muted px-9 text-sm font-semibold uppercase tracking-loose text-white transition-colors hover:bg-dark"
           >
             Search
           </button>
@@ -143,7 +143,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
 
           <button
             type="submit"
-            className="flex items-center justify-center bg-dark-muted px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:bg-accent"
+            className="flex items-center justify-center bg-dark-muted px-8 py-4 text-sm font-semibold uppercase tracking-loose text-white transition-colors hover:bg-accent"
           >
             Search
           </button>

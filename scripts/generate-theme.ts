@@ -15,6 +15,7 @@ import { fileURLToPath } from 'url'
 import {
   colors,
   status,
+  tracking,
   fontFamily,
   fontSize,
   lineHeight,
@@ -200,6 +201,19 @@ let css = `/**
   --z-navbar: ${zIndex.navbar};
   --z-modal:  ${zIndex.modal};
   --z-toast:  ${zIndex.toast};
+
+  /* ─── Letter Spacing ──────────────────────────────────────────── */
+  --tracking-eyebrow: ${tracking.eyebrow};
+  --tracking-label: ${tracking.label};
+  --tracking-snug: ${tracking.snug};
+  --tracking-loose: ${tracking.loose};
+  --tracking-medium: ${tracking.medium};
+  --tracking-pill: ${tracking.pill};
+  --tracking-nav: ${tracking.nav};
+  --tracking-heading-tight: ${tracking.headingTight};
+  --tracking-heading-subtle: ${tracking.headingSubtle};
+  --tracking-heading-medium: ${tracking.headingMedium};
+  --tracking-heading-loose: ${tracking.headingLoose};
 }
 
 /* ═══════════════════════════════════════════════════════════════════

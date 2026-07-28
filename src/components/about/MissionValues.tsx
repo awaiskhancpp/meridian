@@ -6,9 +6,9 @@ export default function MissionValues() {
     <section aria-labelledby="mission-heading" className="py-10 lg:py-16 bg-card">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-xs uppercase tracking-[0.34em] mb-4 text-muted">Our Philosophy</p>
+          <p className="text-xs uppercase tracking-eyebrow mb-4 text-muted">Our Philosophy</p>
           <h2 id="mission-heading">
-            <span className="block uppercase tracking-[-0.02em] text-primary text-[clamp(2.125rem,3vw,2.75rem)] font-black leading-[1.1]">
+            <span className="block uppercase tracking-heading-tight text-primary text-[clamp(2.125rem,3vw,2.75rem)] font-black leading-[1.1]">
               Driven by
             </span>
             <span className="block capitalize mt-1 text-accent-light font-[family-name:var(--font-allura)] text-[clamp(2.75rem,4vw,3.5rem)] leading-none">

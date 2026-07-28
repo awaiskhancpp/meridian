@@ -50,7 +50,7 @@ export default function Gallery() {
         heading={gallery.heading}
         script={gallery.script}
         maxWidth="max-w-3xl"
-        labelClassName="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.34em] text-dark-muted"
+        labelClassName="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-eyebrow text-dark-muted"
         eyebrowLeading={<span className="h-5" aria-hidden="true" />}
       />
 
