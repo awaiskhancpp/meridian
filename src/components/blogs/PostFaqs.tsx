@@ -52,7 +52,7 @@ export default function PostFaqs({ faqs }: { faqs: Faq[] }) {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <p className="pb-5 text-sm leading-relaxed text-dark-muted">{item.answer}</p>
+                  <p className="pb-5 text-xs leading-relaxed text-dark-muted">{item.answer}</p>
                 </div>
               </div>
             </div>

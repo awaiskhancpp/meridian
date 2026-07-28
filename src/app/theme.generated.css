@@ -33,8 +33,6 @@
   --color-input-bg:      rgba(60,37,21,0.05);
   --color-input-border:  rgba(60,37,21,0.16);
   --color-overlay-dark:  rgba(0,0,0,0.4);
-  --color-overlay-heavy: rgba(0,0,0,0.85);
-  --color-overlay-light: rgba(0,0,0,0.1);
   --color-panel-dark:    rgba(60,37,21,0.82);
   --color-white-soft:    rgba(255,255,255,0.05);
   --color-white-ghost:   rgba(255,255,255,0.1);
@@ -183,7 +181,7 @@
   font-size: clamp(1.9rem,3.8vw,3.2rem);
   font-weight: 900;
   line-height: 0.92;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
 }
 
 @utility heading-script {
@@ -196,7 +194,7 @@
   font-size: clamp(2.75rem,6.8vw,5.85rem);
   font-weight: 700;
   line-height: 0.9;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.03em;
 }
 
 @utility heading-hero-script {
@@ -209,7 +207,7 @@
   font-size: clamp(1.35rem,2vw,1.85rem);
   font-weight: 700;
   line-height: 0.95;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
 }
 
 @utility section-space {
@@ -238,13 +236,10 @@
 @utility bg-dark  { background-color: var(--color-bg-dark); }
 @utility bg-card  { background-color: var(--color-bg-card); }
 @utility bg-cream { background-color: var(--color-bg-cream); }
-@utility bg-dark-muted { background-color: var(--color-text-dark-muted); }
 @utility bg-accent       { background-color: var(--color-accent); }
 @utility bg-accent-hover { background-color: var(--color-accent-hover); }
 @utility bg-accent-faint { background-color: var(--color-accent-faint); }
 @utility bg-overlay-dark { background-color: var(--color-overlay-dark); }
-@utility bg-overlay-heavy { background-color: var(--color-overlay-heavy); }
-@utility bg-overlay-light { background-color: var(--color-overlay-light); }
 @utility bg-panel-dark { background-color: var(--color-panel-dark); }
 @utility bg-white-soft { background-color: var(--color-white-soft); }
 @utility bg-white-ghost { background-color: var(--color-white-ghost); }
@@ -287,7 +282,6 @@
 @utility border-light-mid { border-color: var(--color-border-light-mid); }
 @utility border-light-strong { border-color: var(--color-border-light-strong); }
 @utility border-light-heavy { border-color: var(--color-border-light-heavy); }
-@utility border-white-ghost { border-color: var(--color-white-ghost); }
 @utility border-emphasis { border-color: var(--color-border-emphasis); }
 @utility border-subtle { border-color: var(--color-border-subtle); }
 @utility border-soft { border-color: var(--color-border-soft); }

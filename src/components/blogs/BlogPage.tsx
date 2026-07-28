@@ -61,7 +61,7 @@ export default function BlogPage({ post }: { post: BlogPost }) {
         </nav>
 
         {/* Title */}
-        <h1 className="text-[clamp(2rem,4.5vw,3.2rem)] font-black uppercase leading-[0.98] tracking-[-0.04em] text-dark">
+        <h1 className="text-[clamp(2rem,4.5vw,3.2rem)] font-black uppercase leading-[0.98] tracking-[-0.02em] text-dark">
           {post.title}
         </h1>
 

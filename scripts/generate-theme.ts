@@ -31,7 +31,7 @@ const typeRecipe = {
     size: 'clamp(1.9rem,3.8vw,3.2rem)',
     weight: '900',
     line: '0.92',
-    tracking: '-0.05em',
+    tracking: '-0.02em',
   },
   headingScript: {
     size: 'clamp(2.1rem,4vw,3.5rem)',
@@ -41,7 +41,7 @@ const typeRecipe = {
     size: 'clamp(2.75rem,6.8vw,5.85rem)',
     weight: '700',
     line: '0.9',
-    tracking: '-0.06em',
+    tracking: '-0.03em',
   },
   headingHeroScript: {
     size: 'clamp(3.1rem,7vw,6.1rem)',
@@ -51,7 +51,7 @@ const typeRecipe = {
     size: 'clamp(1.35rem,2vw,1.85rem)',
     weight: '700',
     line: '0.95',
-    tracking: '-0.05em',
+    tracking: '-0.02em',
   },
 }
 
@@ -111,8 +111,6 @@ let css = `/**
   --color-input-bg:      ${colors.inputBg};
   --color-input-border:  ${colors.inputBorder};
   --color-overlay-dark:  ${colors.overlayDark};
-  --color-overlay-heavy: ${colors.overlayHeavy};
-  --color-overlay-light: ${colors.overlayLight};
   --color-panel-dark:    ${colors.panelDark};
   --color-white-soft:    ${colors.whiteSoft};
   --color-white-ghost:   ${colors.whiteGhost};
@@ -316,13 +314,10 @@ let css = `/**
 @utility bg-dark  { background-color: var(--color-bg-dark); }
 @utility bg-card  { background-color: var(--color-bg-card); }
 @utility bg-cream { background-color: var(--color-bg-cream); }
-@utility bg-dark-muted { background-color: var(--color-text-dark-muted); }
 @utility bg-accent       { background-color: var(--color-accent); }
 @utility bg-accent-hover { background-color: var(--color-accent-hover); }
 @utility bg-accent-faint { background-color: var(--color-accent-faint); }
 @utility bg-overlay-dark { background-color: var(--color-overlay-dark); }
-@utility bg-overlay-heavy { background-color: var(--color-overlay-heavy); }
-@utility bg-overlay-light { background-color: var(--color-overlay-light); }
 @utility bg-panel-dark { background-color: var(--color-panel-dark); }
 @utility bg-white-soft { background-color: var(--color-white-soft); }
 @utility bg-white-ghost { background-color: var(--color-white-ghost); }
@@ -365,7 +360,6 @@ let css = `/**
 @utility border-light-mid { border-color: var(--color-border-light-mid); }
 @utility border-light-strong { border-color: var(--color-border-light-strong); }
 @utility border-light-heavy { border-color: var(--color-border-light-heavy); }
-@utility border-white-ghost { border-color: var(--color-white-ghost); }
 @utility border-emphasis { border-color: var(--color-border-emphasis); }
 @utility border-subtle { border-color: var(--color-border-subtle); }
 @utility border-soft { border-color: var(--color-border-soft); }

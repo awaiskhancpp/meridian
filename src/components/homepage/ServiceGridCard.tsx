@@ -56,7 +56,7 @@ export default function ServiceGridCard({ service }: { service: ServiceCardData 
         )}
       </div>
 
-      <h3 className="shrink-0 p-4 text-[clamp(1rem,2vw,1.5rem)] font-black uppercase leading-[0.92] tracking-[-0.04em] text-white">
+      <h3 className="shrink-0 p-4 text-[clamp(1rem,2vw,1.5rem)] font-black uppercase leading-[0.92] tracking-[-0.02em] text-white">
         {service.title}
       </h3>
     </Link>

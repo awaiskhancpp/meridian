@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Button } from '@/components/ui'
+import { Button, Container } from '@/components/ui'
 import { ArrowUpRight } from 'lucide-react'
 import Image from 'next/image'
 
@@ -83,13 +83,13 @@ export default function ServiceForm({
       <div className="absolute inset-0 z-0 bg-overlay-dark" />
 
       {/* ADDED relative z-10 HERE */}
-      <div className="relative z-10 mx-auto grid w-full  gap-10 px-5 sm:px-6 lg:grid-cols-12 lg:items-center lg:gap-16 lg:px-8">
+      <Container className="relative z-10 grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-16">
         {/* ── Left: heading ── */}
         <div className="col-span-6">
           <p className="text-xs uppercase tracking-[0.34em] text-white-overlay">{label}</p>
           <h2
             id="service-form-heading"
-            className="mt-3 text-[clamp(1.8rem,3.6vw,2.6rem)] font-black uppercase leading-[0.98] tracking-[-0.03em] text-white"
+            className="mt-3 text-[clamp(1.8rem,3.6vw,2.6rem)] font-black uppercase leading-[0.98] tracking-[-0.015em] text-white"
           >
             {heading}
             <br />
@@ -181,7 +181,7 @@ export default function ServiceForm({
             </form>
           )}
         </div>
-      </div>
+      </Container>
     </section>
   )
 }

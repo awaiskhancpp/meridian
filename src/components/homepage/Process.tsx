@@ -35,7 +35,7 @@ export default function Process() {
           {processData.steps.map((step, idx) => (
             <div
               key={idx}
-              className="relative flex flex-col border border-soft bg-white p-6 shadow-sm transition-shadow duration-300 hover:shadow-md"
+              className="relative flex flex-col border border-soft bg-white p-6 transition-shadow duration-300 hover:shadow-sm"
             >
               {/*
                 Badge + line share one flex row now, instead of the badge

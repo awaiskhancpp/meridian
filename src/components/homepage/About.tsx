@@ -2,45 +2,81 @@ import React from 'react'
 import Image from 'next/image'
 import siteData from '@/website.json'
 import { Button, Container, SectionHeadingInline } from '@/components/ui'
-import { ArrowUpRight, Plus } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 
 const { about } = siteData
 
 /**
  * About
  *
- * Matches the reference layout:
- *   left  — label, heading, subheading, CTA (Button variant="line"),
- *           then a two-box stat row lower down
- *   right — an avatar-stack "trust" badge above a contained photo
- *           (NOT full-bleed/full-column-height like the previous
- *           design — just a normal rectangular image block)
+ * Redesigned around the one idea worth taking from the reference: a
+ * photo with a dark caption card breaking out over its edge, instead
+ * of a plain contained photo with a separate avatar row floating
+ * above it. Everything else — heading treatment, colors, button
+ * style — stays on the site's existing tokens and conventions; this
+ * is a layout reference, not a palette or type swap.
  *
- * Deliberately square, not rounded, per request — no rounded-* classes
- * on the photo, stat boxes, or button. Avatar dots are the one
- * exception (rounded-full): that's their functional shape as circular
- * portrait thumbnails, not a "rounded corner" stylistic choice.
+ * Photo now goes FIRST in the grid (left at desktop), text second —
+ * the reference leads with the photo, the previous version had this
+ * reversed (text-left, photo-right), which is why swapping the grid
+ * children's order was the one structural change that mattered most.
  *
- * Colors/typography stay on the site's existing tokens throughout
- * (text-dark, text-dark-muted, text-accent, bg-cream, the
- * heading+Allura-script pattern) rather than adopting the reference's
- * literal green/gray palette — this is a layout reference, not a
- * palette swap.
+ * The overlapping caption card uses about.card (label/stat/subStat) —
+ * a big number + a punchy line of supporting copy, sitting completely
+ * unused in the data until now. That's a much closer match to the
+ * reference's tone (a short confident statement) than the avatar
+ * stack + "Client Satisfaction" label originally placed here, which
+ * read more like a review widget than a caption. The avatars still
+ * have a home — the site's TrustSection component elsewhere already
+ * covers that social-proof role, so this section doesn't need to
+ * duplicate it.
  *
- * The previous version's height-matching machinery (lg:items-stretch +
- * absolute-inset image fill to match a stretched grid row) is gone —
- * that existed specifically to make a full-height photo match the text
- * column's height. This photo is a normal contained block now, so
- * none of that complexity is needed anymore.
+ * Responsive reasoning for the overlap itself: breaking a card outside
+ * its photo's edges only makes sense once there's room to actually see
+ * both the photo and the breakout without either getting clipped by
+ * the viewport. Below lg, the card sits fully inset within the photo
+ * (inset-x-4/6, bottom-4/6) — safe on any phone width, no risk of the
+ * card's edge running past the screen. Only at lg+, where the column
+ * itself has real width to spare, does it break outside the photo's
+ * right and bottom edges for the more dramatic overlap effect.
+ *
+ * The text column has no explicit height of its own — CSS grid's
+ * default `items: stretch` already makes it match the photo column's
+ * height, and `flex flex-col justify-center` inside it then centers
+ * the label/heading/subheading/CTA/stats stack vertically within that
+ * space, so the composition balances against the photo without any
+ * extra height-matching machinery.
  */
 
 export default function About() {
   return (
-    <section id="about" aria-labelledby="about-heading" className="py-10 lg:py-16">
+    <section id="about" aria-labelledby="about-heading" className="py-10 lg:py-16 mt-10 ">
       <Container>
-        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-6">
-          {/* ── Left: label, heading, subheading, CTA, stats ───────── */}
-          <div className="flex flex-col">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
+          {/* ── Left (at lg): photo with overlapping trust card ────── */}
+          <div className="relative">
+            <div className="relative aspect-[4/3] w-full overflow-hidden">
+              <Image src={about.image} alt={about.heading} fill className="object-cover" />
+            </div>
+
+            {/* Inset on mobile/tablet (safe within the photo's own
+                bounds, no viewport-edge risk); breaks outside the
+                photo's right + bottom edge at lg where there's room
+                to spare. max-w caps how wide the breakout can get on
+                very wide columns. */}
+            <div className="absolute inset-x-4 bottom-4 bg-dark p-5 sm:inset-x-6 sm:bottom-6 sm:p-6 lg:inset-x-auto lg:-right-6 lg:bottom-8 lg:left-6 lg:max-w-[19rem] lg:p-7">
+              <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/70">
+                {about.card.label}
+              </p>
+              <p className="mt-3 text-4xl font-black leading-none text-accent-light">
+                {about.card.stat}
+              </p>
+              <p className="mt-2 text-sm leading-snug text-white/85">{about.card.subStat}</p>
+            </div>
+          </div>
+
+          {/* ── Right (at lg): heading, subheading, CTA, stats ─────── */}
+          <div className="flex flex-col justify-center">
             <SectionHeadingInline
               id="about-heading"
               label={about.label}
@@ -50,47 +86,15 @@ export default function About() {
               labelClassName="flex items-center gap-3 text-xs font-medium uppercase tracking-[0.34em] text-dark-muted"
             />
 
-            <div className="mt-6">
+            <div className="mt-8">
               <Button variant="line" size="md" href={about.cta.href} className="max-w-fit">
                 <span>{about.cta.label}</span> <ArrowUpRight size={20} />
               </Button>
             </div>
 
-            {/* Two-box stat row — replaces the old floating stat card
-                that used to sit on top of the photo */}
-            <div className="mt-auto grid grid-cols-2 gap-4 pt-14 max-w-[24rem]">
-              {about.stats.map((stat) => (
-                <div key={stat.label} className="bg-cream p-5">
-                  <p className="text-3xl font-black leading-none text-dark">{stat.value}</p>
-                  <p className="mt-2 text-sm text-dark-muted">{stat.label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* ── Right: avatar trust badge + contained photo ────────── */}
-          <div className="flex flex-col">
-            {/* Avatar stack + trust label */}
-            <div className="flex items-center gap-3">
-              <div className="flex items-center -space-x-3">
-                {about.trust.avatars.map((avatar, i) => (
-                  <div
-                    key={i}
-                    className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-white bg-cream"
-                  >
-                    <Image src={avatar} alt="" fill className="object-cover" />
-                  </div>
-                ))}
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-white bg-accent text-white">
-                  <Plus className="h-4 w-4" aria-hidden="true" />
-                </span>
-              </div>
-            </div>
-            <p className="mt-3 text-sm font-medium text-dark">{about.trust.label}</p>
-
-            {/* Contained photo — not full-bleed, no overlay cards */}
-            <div className="relative mt-8 aspect-[16/11] w-full overflow-hidden">
-              <Image src={about.image} alt={about.heading} fill className="object-cover" />
+            <div className="mt-10 max-w-[15rem] bg-cream p-5">
+              <p className="text-3xl font-black leading-none text-dark">{about.stats[1].value}</p>
+              <p className="mt-2 text-sm text-dark-muted">{about.stats[1].label}</p>
             </div>
           </div>
         </div>

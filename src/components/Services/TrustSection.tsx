@@ -79,7 +79,7 @@ export default function TrustSection({
   partners = trustHero.partners,
 }: TrustSectionProps) {
   return (
-    <section aria-labelledby="trust-section-heading" className="py-10 lg:py-16">
+    <section aria-labelledby="trust-section-heading" className="py-10 lg:py-16 mt-10 lg:mt-16">
       <Container>
         {/* Rating strip */}
         <div className="flex items-center justify-center gap-2 text-sm">
@@ -98,7 +98,7 @@ export default function TrustSection({
 
         {/* Heading */}
         <h2 id="trust-section-heading" className="mt-4 text-center">
-          <span className="block text-[clamp(2.2rem,5.4vw,3.8rem)] font-black uppercase leading-[0.98] tracking-[-0.03em] text-dark">
+          <span className="block text-[clamp(2.2rem,5.4vw,3.8rem)] font-black uppercase leading-[0.98] tracking-[-0.015em] text-dark">
             {heading}
           </span>
           <span className="block font-[family-name:var(--font-allura)] text-[clamp(2.4rem,5.4vw,4rem)] leading-tight text-accent">

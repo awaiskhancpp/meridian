@@ -310,7 +310,7 @@
     "backgroundImage": "/hero.webp",
     "cta": {
       "label": "Book Consultation",
-      "href": "#contact"
+      "href": "/contact"
     },
     "form": {
       "fields": {
@@ -395,10 +395,10 @@
       "label": "See Gallery"
     },
     "script": "around your home.",
-    "subheading": "Kinetic started with a simple frustration: too many remodels feel rushed, disconnected, or over-promised. We built our process around the opposite.",
+    "subheading": "Meridian started with a simple frustration: too many remodels feel rushed, disconnected, or over-promised. We built our process around the opposite.",
     "cta": {
       "label": "See How We Work",
-      "href": "#why-choose-us"
+      "href": "/about"
     },
     "image": "/home-about.avif",
     "features": [
@@ -1858,7 +1858,7 @@
     "description": "We provide expert kitchen, bath, and whole-home remodeling designed to keep your project on time, on budget, and built to last. From first sketch to final walkthrough, our team makes the whole process feel effortless.",
     "ctaPrimary": {
       "label": "Book a Consultation",
-      "href": "/#contact"
+      "href": "/contact"
     },
     "ctaSecondary": {
       "label": "Call Us Now",

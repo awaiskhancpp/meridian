@@ -49,7 +49,7 @@ export default function PageHero({
             </p>
 
             <h1 className="max-w-[44rem]">
-              <span className="text-[clamp(2.75rem,6.8vw,5.85rem)] font-bold uppercase leading-[0.9] tracking-[-0.06em] text-white">
+              <span className="text-[clamp(2.75rem,6.8vw,5.85rem)] font-bold uppercase leading-[0.9] tracking-[-0.015em] text-white">
                 {heading}
               </span>{' '}
               <span className="inline-block -translate-y-1 font-[family-name:var(--font-allura)] capitalize text-[clamp(3.1rem,7vw,6.1rem)] leading-[0.82] text-cream">

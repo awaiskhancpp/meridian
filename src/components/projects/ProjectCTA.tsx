@@ -5,7 +5,7 @@ import type { ProjectDetail } from './types'
 
 export default function ProjectCTA({ project }: { project: ProjectDetail }) {
   return (
-    <section className="relative isolate overflow-hidden bg-accent py-10 text-white lg:py-16">
+    <section className="relative isolate overflow-hidden bg-accent py-10 text-white lg:py-26">
       <Image src={project.image} alt="" fill className="object-cover object-center" />
       <div className="absolute inset-0 bg-overlay-service-hero" />
 
@@ -15,7 +15,7 @@ export default function ProjectCTA({ project }: { project: ProjectDetail }) {
       */}
       <Container className="relative z-10 flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
         <div className="max-w-2xl">
-          <h2 className="mt-4 text-[clamp(2rem,4vw,4rem)] font-black uppercase leading-[0.9] tracking-[-0.05em]">
+          <h2 className="mt-4 text-[clamp(2rem,4vw,4rem)] font-black uppercase leading-[0.9] tracking-[-0.02em]">
             Let’s shape a space around your life.
           </h2>
         </div>

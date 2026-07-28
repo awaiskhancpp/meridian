@@ -59,7 +59,7 @@ export default function NotFoundPage() {
           </p>
 
           <h1 className="max-w-[44rem]">
-            <span className="text-[clamp(2.4rem,7vw,5.5rem)] font-bold uppercase leading-[0.9] tracking-[-0.06em] text-white drop-shadow-text-hero">
+            <span className="text-[clamp(2.4rem,7vw,5.5rem)] font-bold uppercase leading-[0.9] tracking-[-0.015em] text-white drop-shadow-text-hero">
               Page Not
             </span>{' '}
             <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(2.8rem,7.5vw,6rem)] leading-[0.82] text-cream">

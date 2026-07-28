@@ -34,7 +34,7 @@ interface ServiceWhyChooseUsProps {
  */
 export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
   return (
-    <section aria-labelledby="why-choose-us-heading" className="py-10 lg:py-16">
+    <section aria-labelledby="why-choose-us-heading" className="py-10 lg:py-16 lg:mb-16 mb-10">
       <Container>
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <p className="text-xs uppercase tracking-[0.34em] text-dark-muted">Why Choose Us</p>
@@ -81,7 +81,7 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
 
           {/* ── Right: heading, description, mission ── */}
           <div className="order-1 lg:order-3">
-            <h3 className="mt-1 flex flex-wrap items-end gap-3 text-[clamp(1.9rem,3.8vw,3rem)] font-bold uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+            <h3 className="mt-1 flex flex-wrap items-end gap-3 text-[clamp(1.9rem,3.8vw,3rem)] font-bold uppercase leading-[0.92] tracking-[-0.02em] text-dark">
               {data.contentHeading}
             </h3>
 

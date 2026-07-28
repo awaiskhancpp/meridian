@@ -55,7 +55,7 @@ export default function AreasWeServe({
         </div>
         {/* <div className="mb-12">
           <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">{label}</p>
-          <h2 className="mt-3 text-[clamp(2rem,4vw,3rem)] font-bold uppercase leading-[0.95] tracking-[-0.04em] text-dark lg:text-[3.5rem]">
+          <h2 className="mt-3 text-[clamp(2rem,4vw,3rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] text-dark lg:text-[3.5rem]">
             {heading}{' '}
             <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(2.2rem,4.5vw,3.5rem)] leading-[0.82] text-accent">
               {script}
@@ -86,7 +86,7 @@ export default function AreasWeServe({
           </div>
 
           {/* Map */}
-          <div className="">
+          <div className="mb-10 lg:mb-16">
             <IFrame mapSrc={mapSrc} />
           </div>
         </div>

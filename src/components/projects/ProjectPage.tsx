@@ -39,7 +39,7 @@ export default function ProjectPage() {
             <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">
               Selected work
             </p>
-            <h2 className="mt-3 max-w-2xl text-[clamp(2rem,4vw,3.4rem)] font-black uppercase leading-[0.92] tracking-[-0.05em] text-dark">
+            <h2 className="mt-3 max-w-2xl text-[clamp(2rem,4vw,3.4rem)] font-black uppercase leading-[0.92] tracking-[-0.02em] text-dark">
               Built around how you live.
             </h2>
           </div>
@@ -80,13 +80,13 @@ export default function ProjectPage() {
                       <p className="text-xs font-medium uppercase tracking-[0.28em] text-white-subtle">
                         {project.category}
                       </p>
-                      <h3 className="mt-2 text-[clamp(1.2rem,1.8vw,1.6rem)] font-bold uppercase leading-[0.95] tracking-[-0.04em] text-white text-balance line-clamp-2">
+                      <h3 className="mt-2 text-[clamp(1.2rem,1.8vw,1.6rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] text-white text-balance line-clamp-2">
                         {project.title}
                       </h3>
                     </div>
                   </div>
 
-                  <div className="mt-4 text-[clamp(1.35rem,2vw,1.85rem)] font-bold uppercase leading-[0.95] tracking-[-0.05em] transform-gpu transition-all duration-700 ease-in-out group-hover:-translate-y-2 group-hover:opacity-0 text-balance line-clamp-2">
+                  <div className="mt-4 text-[clamp(1.35rem,2vw,1.85rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] transform-gpu transition-all duration-700 ease-in-out group-hover:-translate-y-2 group-hover:opacity-0 text-balance line-clamp-2">
                     {project.title}
                   </div>
                 </Link>

@@ -13,7 +13,7 @@ export default function AreasPageClient() {
         heading={serviceAreas.heading}
         script={serviceAreas.script}
       />
-      <Container className="py-10 lg:py-16">
+      <Container className="py-10 lg:py-16 mt-10">
         <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="">
             <p className="text-xs font-medium uppercase tracking-[0.34em] text-dark-muted">

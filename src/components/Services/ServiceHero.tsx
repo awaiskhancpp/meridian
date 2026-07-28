@@ -71,7 +71,7 @@ export default function ServiceHero({
         <Container className="relative flex h-full flex-col justify-center">
           <div className="max-w-3xl">
             {/* Main title */}
-            <h1 className="text-[clamp(2rem,5vw,4rem)] font-bold uppercase leading-[0.95] tracking-[-0.04em] text-white lg:text-[4.5rem]">
+            <h1 className="text-[clamp(2rem,5vw,4rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] text-white lg:text-[4.5rem]">
               {title}
             </h1>
 
