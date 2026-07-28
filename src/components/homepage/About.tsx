@@ -64,7 +64,7 @@ export default function About() {
                 photo's right + bottom edge at lg where there's room
                 to spare. max-w caps how wide the breakout can get on
                 very wide columns. */}
-            <div className="absolute inset-x-4 bottom-4 bg-dark p-5 sm:inset-x-6 sm:bottom-6 sm:p-6 lg:inset-x-auto lg:-right-6 lg:bottom-8 lg:left-6 lg:max-w-[19rem] lg:p-7">
+            <div className="absolute inset-x-4 bottom-4 right-16 md:right-72 bg-dark p-3 sm:inset-x-6 sm:bottom-6 sm:p-6 lg:inset-x-auto lg:-right-6 lg:bottom-8 lg:left-6 lg:max-w-[19rem] lg:p-7">
               <p className="text-xs font-medium uppercase tracking-[0.28em] text-white/70">
                 {about.card.label}
               </p>

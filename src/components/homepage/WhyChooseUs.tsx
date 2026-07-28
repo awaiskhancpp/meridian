@@ -56,7 +56,7 @@ export default function WhyChooseUs() {
         {/* 3-Column Content Layout */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8 mt-6">
           {/* Left Column Features */}
-          <div className="flex flex-col w-full sm:max-w-md lg:w-1/3 gap-12 order-2 lg:order-1">
+          <div className="flex flex-col sm:flex-row lg:flex-col w-full sm:max-w-md lg:w-1/3 gap-12 order-2 lg:order-1">
             {featuresLeft.map((feature, idx) => (
               <div key={idx} className="flex flex-col items-center text-center group">
                 <div className="mb-5 text-decorative-terracotta transition-transform duration-300 group-hover:-translate-y-1">
@@ -69,7 +69,7 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Center Column Image — Reduced width for mobile and desktop */}
-          <div className="w-full max-w-[240px] sm:max-w-[280px] lg:max-w-[320px] mx-auto relative flex justify-center order-1 lg:order-2 mb-8 lg:mb-0">
+          <div className="w-full max-w-[380px] sm:max-w-[420px] lg:max-w-[360px] mx-auto relative flex justify-center order-1 lg:order-2 mb-8 lg:mb-0">
             <div className="relative w-full aspect-[4/5] overflow-hidden ring-1 ring-dark-soft">
               <Image
                 src="/hero.webp"
@@ -82,7 +82,7 @@ export default function WhyChooseUs() {
           </div>
 
           {/* Right Column Features */}
-          <div className="flex flex-col w-full sm:max-w-md lg:w-1/3 gap-12 order-3 lg:order-3">
+          <div className="flex flex-col sm:flex-row lg:flex-col w-full sm:max-w-md lg:w-1/3 gap-12 order-3 lg:order-3">
             {featuresRight.map((feature, idx) => (
               <div key={idx} className="flex flex-col items-center text-center group">
                 <div className="mb-5 text-decorative-terracotta transition-transform duration-300 group-hover:-translate-y-1">

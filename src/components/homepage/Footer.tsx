@@ -45,7 +45,7 @@ export default function Footer() {
             </div>
 
             {/* Menu Section */}
-            <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 md:grid-cols-3 lg:col-span-8 lg:gap-x-8">
+            <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 mt-4 lg:mt-0 sm:gap-x-6 sm:gap-y-8 md:grid-cols-3 lg:col-span-8 lg:gap-x-8">
               <div className="flex flex-col gap-2  lg:gap-4">
                 <p className="text-xs font-normal uppercase tracking-[0.28em] text-dark-muted ">
                   Menu
@@ -88,14 +88,14 @@ export default function Footer() {
                 </p>
                 <div className="mt-0 grid content-start text-sm  leading-6 text-dark gap-3">
                   <div className="flex gap-2 items-center">
-                    <MapPin />
+                    <MapPin className="shrink-0" size={20} />
                     <p className=" leading-[1.2]">
                       734 University Ave. Suite 205 San Diego, CA 92103
                     </p>
                   </div>
 
                   <div className="flex gap-2 items-center">
-                    <Mail size={17} />
+                    <Mail className="shrink-0" size={20} />
                     <a
                       href="mailto:hello@meridian.studio"
                       className="font-medium hover:text-accent  whitespace-nowrap"
@@ -104,7 +104,7 @@ export default function Footer() {
                     </a>
                   </div>
                   <div className="flex gap-2 items-center">
-                    <Phone size={17} />
+                    <Phone className="shrink-0" size={20} />
                     <a
                       href="tel:+6193154591"
                       className="font-medium hover:text-accent whitespace-nowrap"

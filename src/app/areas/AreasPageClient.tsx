@@ -21,7 +21,7 @@ export default function AreasPageClient() {
             </p>
             <h2 className="mt-1 heading-2 text-dark">Surrounding Areas</h2>
           </div>
-          <p className="text-sm text-dark-muted"></p> {services.items.length}{' '}
+          <p className="text-sm text-dark-muted"></p> {6}{' '}
           {serviceAreas.areas.length === 1 ? 'Area' : 'Areas'}
         </div>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4  gap-y-8">

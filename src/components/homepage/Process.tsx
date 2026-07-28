@@ -31,11 +31,11 @@ export default function Process() {
         />
 
         {/* Step cards */}
-        <div className="mt-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid grid-cols-1 gap-4 xl:gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {processData.steps.map((step, idx) => (
             <div
               key={idx}
-              className="relative flex flex-col border border-soft bg-white p-6 transition-shadow duration-300 hover:shadow-sm"
+              className="relative flex flex-col border border-soft bg-white p-4 lg:p-3 xl:p-6 transition-shadow duration-300 hover:shadow-sm"
             >
               {/*
                 Badge + line share one flex row now, instead of the badge

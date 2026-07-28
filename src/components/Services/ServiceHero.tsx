@@ -68,7 +68,7 @@ export default function ServiceHero({
         {/* Gradient overlay - using theme colors */}
         <div className="absolute inset-0 bg-overlay-service-hero" />
 
-        <Container className="relative flex h-full flex-col justify-center">
+        <Container className="relative flex h-full flex-col justify-end pb-10 lg:mb-0 lg:justify-center">
           <div className="max-w-3xl">
             {/* Main title */}
             <h1 className="text-[clamp(2rem,5vw,4rem)] font-bold uppercase leading-[0.95] tracking-[-0.02em] text-white lg:text-[4.5rem]">
