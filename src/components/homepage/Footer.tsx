@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import siteData from '@/website.json'
 import { Container } from '@/components/ui'
+import { Mail, MapPin, Phone } from 'lucide-react'
 
 const { brand } = siteData
 
@@ -30,7 +31,7 @@ export default function Footer() {
   return (
     <footer id="footer" className=" ">
       <Container>
-        <div className="mx-auto w-full py-6 ">
+        <div className="mx-auto w-full py-6">
           <div className="grid grid-cols-1 gap-8 px-5 py-6 backdrop-blur-sm sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:py-6">
             {/* Brand Section */}
             <div className="space-y-4 lg:col-span-3">
@@ -45,7 +46,7 @@ export default function Footer() {
 
             {/* Menu Section */}
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 md:grid-cols-3 lg:col-span-9 lg:gap-x-8">
-              <div className="flex flex-col gap-2 lg:flex-row lg:gap-4">
+              <div className="flex flex-col gap-2  lg:gap-4">
                 <p className="text-xs font-normal uppercase tracking-[0.28em] text-dark-muted ">
                   Menu
                 </p>
@@ -63,7 +64,7 @@ export default function Footer() {
               </div>
 
               {/* Follow Us Section */}
-              <div className="flex flex-col gap-2 lg:flex-row lg:gap-4">
+              <div className="flex flex-col gap-2 lg:gap-4">
                 <p className=" text-xs font-normal uppercase tracking-[0.28em] text-dark-muted">
                   Follow us
                 </p>
@@ -81,27 +82,36 @@ export default function Footer() {
               </div>
 
               {/* Contact Section */}
-              <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-1 lg:flex-row lg:gap-2">
+              <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-1  lg:gap-4">
                 <p className="text-xs font-normal uppercase tracking-[0.28em] text-dark-muted">
                   Contacts
                 </p>
-                <div className="mt-0 grid content-start text-sm  leading-6 text-dark">
-                  <p className="max-w-[10rem] leading-[1.2]">
-                    734 University Ave. Suite 205 San Diego, CA 92103
-                  </p>
+                <div className="mt-0 grid content-start text-sm  leading-6 text-dark gap-2">
+                  <div className="flex gap-2">
+                    <MapPin />
+                    <p className=" leading-[1.2]">
+                      734 University Ave. Suite 205 San Diego, CA 92103
+                    </p>
+                  </div>
 
-                  <a
-                    href="mailto:hello@meridian.studio"
-                    className="font-medium hover:text-accent  whitespace-nowrap"
-                  >
-                    hello@meridian.studio
-                  </a>
-                  <a
-                    href="tel:+6193154591"
-                    className="font-medium hover:text-accent whitespace-nowrap"
-                  >
-                    (619) 315-4591
-                  </a>
+                  <div className="flex gap-2">
+                    <Mail size={18} />
+                    <a
+                      href="mailto:hello@meridian.studio"
+                      className="font-medium hover:text-accent  whitespace-nowrap"
+                    >
+                      hello@meridian.studio
+                    </a>
+                  </div>
+                  <div className="flex gap-2">
+                    <Phone size={18} />
+                    <a
+                      href="tel:+6193154591"
+                      className="font-medium hover:text-accent whitespace-nowrap"
+                    >
+                      (619) 315-4591
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
