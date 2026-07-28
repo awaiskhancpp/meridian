@@ -1,4 +1,4 @@
-import { Footer, Navbar } from '@/components/homepage'
+import { Footer, Navbar, Testimonials } from '@/components/homepage'
 import { Container } from '@/components/ui'
 import siteData from '@/website.json'
 import type { ServiceCardData } from '@/lib/services'
@@ -47,7 +47,7 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
         ctaHref="/#contact"
       />
 
-      <Container className="pt-16 pb-16">
+      <Container className="pt-10 pb-10">
         <ServiceAbout
           label={service.about?.label || 'About'}
           heading={service.about?.heading || 'About'}
@@ -71,7 +71,7 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
           steps={service.process.steps}
         />
       )}
-      <TrustSection />
+      {/* <TrustSection /> */}
 
       {/* Only rendered for services that involve physical remodeling
           work — Design Consultation and Project Planning have no
@@ -87,6 +87,7 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
           items={service.beforeAfter}
         />
       )}
+      <Testimonials />
 
       <ExploreOtherServices currentSlug={service.slug} services={allServices} />
       <Container>

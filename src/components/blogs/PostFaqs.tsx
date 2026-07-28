@@ -24,7 +24,7 @@ export default function PostFaqs({ faqs }: { faqs: Faq[] }) {
 
   return (
     <div className="mt-16 border-t border-soft pt-10">
-      <p className="text-xs font-semibold uppercase tracking-[0.2em] text-dark-muted">
+      <p className="text-xl font-black uppercase tracking-[0.2em] text-dark-muted">
         Frequently Asked Questions
       </p>
 
@@ -39,7 +39,7 @@ export default function PostFaqs({ faqs }: { faqs: Faq[] }) {
                 aria-expanded={open}
                 className="flex w-full items-center justify-between gap-4 py-5 text-left"
               >
-                <span className="text-sm font-semibold text-dark">{item.question}</span>
+                <span className="text-lg font-bold text-dark">{item.question}</span>
                 <PlusMinusIcon open={open} />
               </button>
 
@@ -52,7 +52,7 @@ export default function PostFaqs({ faqs }: { faqs: Faq[] }) {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <p className="pb-5 text-xs leading-relaxed text-dark-muted">{item.answer}</p>
+                  <p className="pb-5 text-md leading-relaxed text-dark-muted">{item.answer}</p>
                 </div>
               </div>
             </div>

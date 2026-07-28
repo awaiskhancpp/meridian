@@ -47,7 +47,7 @@ export default function BlogPage({ post }: { post: BlogPost }) {
 
   return (
     <article className="pt-12 lg:pt-16">
-      <Container className="!max-w-4xl">
+      <Container className="!max-w-6xl">
         {/* Breadcrumb */}
         <nav
           aria-label="Breadcrumb"
@@ -86,7 +86,7 @@ export default function BlogPage({ post }: { post: BlogPost }) {
       {/* Cover image */}
 
       {/* Body + sticky ToC sidebar */}
-      <Container className="!max-w-4xl">
+      <Container className="!max-w-6xl">
         <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[1fr_15rem]">
           <div className="min-w-0">
             <RichText content={rawContent} />

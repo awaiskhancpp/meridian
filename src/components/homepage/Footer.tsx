@@ -7,12 +7,12 @@ import { Mail, MapPin, Phone } from 'lucide-react'
 const { brand } = siteData
 
 const footerLinks = [
-  { label: 'About us', href: '#about' },
+  { label: 'About us', href: '/about' },
   { label: 'Process', href: '#process' },
-  { label: 'Services', href: '#hero' },
+  { label: 'Services', href: '/services' },
   { label: 'Why choose us', href: '#why-choose-us' },
-  { label: 'Our Projects', href: '#gallery' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Our Projects', href: '/projects' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 const socialLinks = [
@@ -55,7 +55,7 @@ export default function Footer() {
                     <a
                       key={item.label}
                       href={item.href}
-                      className="text-sm font-medium uppercase whitespace-nowrap tracking-[0.14em] text-dark transition-colors hover:text-accent"
+                      className="text-sm font-medium capitalize whitespace-nowrap tracking-[0.14em] text-dark transition-colors hover:text-accent"
                     >
                       {item.label}
                     </a>
@@ -65,7 +65,7 @@ export default function Footer() {
 
               {/* Follow Us Section */}
               <div className="flex flex-col gap-2 lg:gap-4">
-                <p className=" text-xs font-normal uppercase tracking-[0.28em] text-dark-muted">
+                <p className=" text-xs font-normal capitalize tracking-[0.28em] text-dark-muted">
                   Follow us
                 </p>
                 <div className="mt-2 grid content-start items-start gap-2 lg:mt-0 lg:gap-2">
@@ -73,7 +73,7 @@ export default function Footer() {
                     <a
                       key={item.label}
                       href={item.href}
-                      className="text-sm font-medium uppercase tracking-[0.14em] text-dark transition-colors hover:text-accent"
+                      className="text-sm font-medium capitalize tracking-[0.14em] text-dark transition-colors hover:text-accent"
                     >
                       {item.label}
                     </a>
@@ -86,16 +86,16 @@ export default function Footer() {
                 <p className="text-xs font-normal uppercase tracking-[0.28em] text-dark-muted">
                   Contacts
                 </p>
-                <div className="mt-0 grid content-start text-sm  leading-6 text-dark gap-2">
-                  <div className="flex gap-2">
+                <div className="mt-0 grid content-start text-sm  leading-6 text-dark gap-3">
+                  <div className="flex gap-2 items-center">
                     <MapPin />
                     <p className=" leading-[1.2]">
                       734 University Ave. Suite 205 San Diego, CA 92103
                     </p>
                   </div>
 
-                  <div className="flex gap-2">
-                    <Mail size={18} />
+                  <div className="flex gap-2 items-center">
+                    <Mail size={17} />
                     <a
                       href="mailto:hello@meridian.studio"
                       className="font-medium hover:text-accent  whitespace-nowrap"
@@ -103,8 +103,8 @@ export default function Footer() {
                       hello@meridian.studio
                     </a>
                   </div>
-                  <div className="flex gap-2">
-                    <Phone size={18} />
+                  <div className="flex gap-2 items-center">
+                    <Phone size={17} />
                     <a
                       href="tel:+6193154591"
                       className="font-medium hover:text-accent whitespace-nowrap"
