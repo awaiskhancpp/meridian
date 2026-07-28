@@ -92,10 +92,10 @@ export default function About() {
               </Button>
             </div>
 
-            <div className="mt-10 max-w-[15rem] bg-cream p-5">
+            {/* <div className="mt-10 max-w-[15rem] bg-cream p-5">
               <p className="text-3xl font-black leading-none text-dark">{about.stats[1].value}</p>
               <p className="mt-2 text-sm text-dark-muted">{about.stats[1].label}</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </Container>
