@@ -32,9 +32,9 @@ export default function Footer() {
     <footer id="footer" className=" ">
       <Container>
         <div className="mx-auto w-full py-6">
-          <div className="grid grid-cols-1 gap-8 px-5 py-6 backdrop-blur-sm sm:px-6 lg:grid-cols-12 lg:gap-10 lg:px-8 lg:py-6">
+          <div className="grid grid-cols-1  px-5 py-6 backdrop-blur-sm sm:px-6 lg:grid-cols-12  lg:px-8 lg:py-6">
             {/* Brand Section */}
-            <div className="space-y-4 lg:col-span-3">
+            <div className="space-y-4 lg:col-span-4 lg:mr-10 ">
               <div className="text-xl font-semibold tracking-[0.18em] text-dark">
                 <Image src="/logo.png" alt="" width={120} height={100} />
               </div>
@@ -45,7 +45,7 @@ export default function Footer() {
             </div>
 
             {/* Menu Section */}
-            <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 md:grid-cols-3 lg:col-span-9 lg:gap-x-8">
+            <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-8 md:grid-cols-3 lg:col-span-8 lg:gap-x-8">
               <div className="flex flex-col gap-2  lg:gap-4">
                 <p className="text-xs font-normal uppercase tracking-[0.28em] text-dark-muted ">
                   Menu
