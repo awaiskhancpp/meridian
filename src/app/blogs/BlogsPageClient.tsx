@@ -8,22 +8,6 @@ import { PageHero, HeroSearchBar, CategoryFilterPills, Container } from '@/compo
 import type { SearchField } from '@/components/ui'
 import { CATEGORY_LABELS, type BlogCardData } from '@/lib/blogs'
 
-/**
- * BlogsPageClient
- *
- * All the interactive parts of the /blogs page live here as one client
- * component: the search bar (title/author/sort), the category filter
- * pills, and the resulting grid. `posts` is fetched server-side in
- * page.tsx and passed in already-shaped for BlogFeatureCard — this
- * component only ever filters/sorts/re-renders that in-memory list,
- * it never re-fetches.
- *
- * Search + category are independent filters that combine (AND, not
- * OR): typing an author AND picking a category narrows by both at
- * once, matching how search bars + filter tabs behave together on
- * most listing pages.
- */
-
 const SEARCH_FIELDS: SearchField[] = [
   {
     type: 'select',

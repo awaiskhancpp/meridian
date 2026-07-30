@@ -12,20 +12,20 @@
         "href": "/"
       },
       {
-        "label": "Service Areas",
-        "href": "/areas"
-      },
-      {
-        "label": "Blogs",
-        "href": "/blogs"
-      },
-      {
         "label": "About",
         "href": "/about"
       },
       {
+        "label": "Service Areas",
+        "href": "/areas"
+      },
+      {
         "label": "Projects",
         "href": "/projects"
+      },
+      {
+        "label": "Blogs",
+        "href": "/blogs"
       }
     ],
     "services": [
@@ -389,7 +389,7 @@
     ]
   },
   "about": {
-    "label": "Start Your Project",
+    "label": "About Us",
     "heading": "A team built",
     "badge": {
       "label": "See Gallery"

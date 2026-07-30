@@ -70,7 +70,7 @@ export default function Hero() {
             <div className="mt-6 grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
               <div className="grid max-w-[44rem] grid-cols-1 lg:grid-cols-2">
                 <p className="text-xs font-medium uppercase tracking-label text-white-subtle">
-                  About us
+                  Start Your Project
                 </p>
                 <div className="text-sm leading-6 text-secondary max-w-[260px] sm:text-[0.95rem]">
                   {hero.subheading}

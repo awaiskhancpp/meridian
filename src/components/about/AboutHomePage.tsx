@@ -6,7 +6,7 @@ export default function AboutHomePage() {
   return (
     <div>
       <Navbar />
-      <PageHero label="" heading="CRAFTING SPACES" script="THAT LAST." />
+      <PageHero label="" heading="CRAFTING SPACES" script="That Last." />
       <OurStory />
       <AboutWhyChooseUs />
       <CoreValues />

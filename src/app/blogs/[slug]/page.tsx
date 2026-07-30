@@ -48,11 +48,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) notFound()
 
   return (
-    <main className="min-h-screen bg-white overflow-hidden">
+    <main className="min-h-screen bg-white">
       <Navbar />
       <PageHero label="" heading="" subheading="" image="/hero.webp" />
-
-      {/* Pass the entire post object down to BlogPage */}
       <BlogPage post={post} />
 
       <BlogRelatedPosts />

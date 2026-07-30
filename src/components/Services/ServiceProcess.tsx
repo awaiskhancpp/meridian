@@ -51,23 +51,11 @@ interface ServiceProcessProps {
  * they carry their own contrast regardless of how much photo shows
  * through on the right side of the gradient.
  *
- * Responsive reasoning (this is the other real change, not just
- * fewer columns at each breakpoint):
- * - Mobile: steps are a horizontally swipeable, scroll-snapped row —
- *   NOT a vertical stack. A vertical stack of 4 cards over a full-bleed
- *   photo would force the photo panel to grow very tall on a phone.
- *   A horizontal row keeps the panel's height bounded to "one card row"
- *   at every breakpoint, and doubles as a natural "explore the
- *   sequence" swipe interaction — distinct from ExploreOtherServices'
- *   arrow-button carousel elsewhere on this same page, so two sections
- *   don't share the identical interaction pattern.
- * - sm+/lg+: the row becomes a static grid (2-up, then 4-up) — desktop
- *   has room to show all four steps at once, so scrolling would be an
- *   unnecessary interaction cost once there's space to avoid it.
- * - The -mx-4/px-4 pair on the mobile scroll row matches Container's
- *   own px-4 mobile padding exactly, so cards can bleed to the true
- *   screen edge (revealing a "peek" of the next card as a scroll
- *   affordance) without fighting Container's padding.
+ * Responsive reasoning:
+ * - Mobile: single-column stack — one step per row.
+ * - sm: 2-up grid; lg: 4-up grid when there is room to show every step at once.
+ * - min-h-[96vh] on mobile lets the section grow with stacked cards instead of
+ *   clipping them inside a fixed viewport-height panel.
  */
 export default function ServiceProcess({
   label = 'Our Process',
@@ -79,14 +67,13 @@ export default function ServiceProcess({
   return (
     <section
       aria-labelledby="process-heading"
-      className="relative w-full overflow-hidden bg-dark h-[96vh]"
+      className="relative w-full overflow-hidden bg-dark min-h-[96vh] lg:h-[96vh]"
     >
       <div className="relative h-full w-full ">
         <Image src={image} alt="" fill aria-hidden="true" className="object-cover" sizes="100vw" />
         <div className="absolute inset-0 bg-overlay-service-hero" />
 
         <Container className="relative flex h-full flex-col justify-center gap-12 py-10 lg:py-16">
-          {/* ── Heading ── */}
           <div className="max-w-xl mx-auto flex flex-col text-center">
             <p className="text-xs uppercase tracking-eyebrow text-white-subtle">{label}</p>
             <h2 id="process-heading" className="mt-2">
@@ -95,18 +82,17 @@ export default function ServiceProcess({
             </h2>
           </div>
 
-          {/* ── Steps Grid (Sat right below with gap-12 spacing) ── */}
-          <div className="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-1 [-ms-overflow-style:none] [scrollbar-width:none] sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-5 sm:overflow-visible sm:px-0 lg:grid-cols-4 [&::-webkit-scrollbar]:hidden">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
             {steps.map((step, i) => (
               <div
                 key={step.title}
-                className="w-[78vw] shrink-0 snap-start border border-glass bg-glass p-6 shadow-card backdrop-blur-sm sm:w-auto sm:shrink"
+                className="border border-glass bg-glass p-6 shadow-card backdrop-blur-sm"
               >
                 <span className="text-3xl font-black leading-none text-accent sm:text-4xl">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <h3 className="mt-3 text-base font-bold text-dark sm:text-lg">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-dark-muted ">{step.description}</p>
+                <p className="mt-2 text-sm leading-relaxed text-dark-muted">{step.description}</p>
               </div>
             ))}
           </div>

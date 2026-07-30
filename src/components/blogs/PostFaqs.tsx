@@ -4,8 +4,6 @@ import React, { useState } from 'react'
 
 type Faq = { question: string; answer: string }
 
-// Same plus→minus icon as the site-wide Faq.tsx component, reused here
-// so a per-post FAQ reads as the same design language, not a one-off.
 function PlusMinusIcon({ open }: { open: boolean }) {
   return (
     <span className="relative flex h-5 w-5 shrink-0 items-center justify-center" aria-hidden="true">

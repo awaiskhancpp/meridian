@@ -4,6 +4,7 @@ import React, { useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
 import Link from 'next/link'
+import Image from 'next/image'
 import 'swiper/css'
 import {
   ChefHat,
@@ -21,6 +22,7 @@ import {
 } from 'lucide-react'
 import siteData from '@/website.json'
 import { Container, SectionHeadingInline } from '@/components/ui'
+import ServiceGridCard from './ServiceGridCard'
 
 const { services } = siteData
 
@@ -109,7 +111,7 @@ export default function Services() {
 
         <div className="border-t border-subtle" />
 
-        <div className="mt-8 overflow-hidden rounded-md">
+        <div className="mt-8 overflow-hidden ">
           <Swiper
             onSwiper={(swiper) => {
               swiperRef.current = swiper
@@ -125,41 +127,41 @@ export default function Services() {
               1024: { slidesPerView: 3, spaceBetween: 4 },
             }}
           >
-            {services.items.map((service, index) => (
-              <SwiperSlide key={service.title} className="h-auto">
-                <Link
-                  href={service.href}
-                  className="group flex h-full min-h-[28rem] flex-col bg-dark p-6 md:p-8"
-                >
-                  <span className="text-sm font-medium text-white">
-                    {String(index + 1).padStart(2, '0')}
-                  </span>
-
-                  <div className="flex flex-1 items-center justify-center">
-                    <ServiceIcon name={service.icon} />
-                  </div>
-
-                  <div>
-                    <h3 className="text-lg font-semibold text-white md:text-xl">{service.title}</h3>
-
-                    {/* Description is hidden at rest — number, icon, and
-                        title only. Revealed smoothly on hover via a
-                        max-height + opacity transition (not display:none,
-                        which can't be animated, and not height:auto,
-                        which also can't be transitioned). max-h-0 → a
-                        generous fixed cap gives the browser a real value
-                        to interpolate between. */}
-                    <div className="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-out group-hover:grid-rows-[1fr]">
-                      <div className="overflow-hidden">
-                        <p className="mt-3 text-sm leading-relaxed text-white opacity-0 line-clamp-3 transition-opacity duration-300 group-hover:opacity-100">
-                          {service.description}
-                        </p>
+            {services.items.map((service, index) => {
+              const Icon = service.icon && SERVICE_ICONS[service.icon]
+              return (
+                <SwiperSlide key={service.title} className="h-auto">
+                  <Link
+                    key={index}
+                    href={`/services/${service.href}`}
+                    className="group flex w-full"
+                  >
+                    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-none">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-x-4 bottom-4 bg-dark px-5 pb-5 pt-9 shadow-card-strong transition-colors duration-300">
+                        {Icon && (
+                          <div className="absolute -top-7 left-5 flex h-14 w-14 items-center justify-center rounded-full bg-white">
+                            <Icon
+                              className="h-7 w-7 text-accent"
+                              strokeWidth={1.5}
+                              aria-hidden="true"
+                            />
+                          </div>
+                        )}
+                        <h3 className="text-base font-bold uppercase leading-snug tracking-wide text-white sm:text-lg">
+                          {service.title}
+                        </h3>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              </SwiperSlide>
-            ))}
+                  </Link>
+                </SwiperSlide>
+              )
+            })}
           </Swiper>
         </div>
       </Container>

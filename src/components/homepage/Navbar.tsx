@@ -19,33 +19,53 @@ type DropdownNavItem = {
 }
 type NavItem = SimpleNavItem | DropdownNavItem
 
-const homeLink = nav.links.find((l) => l.label === 'Home')!
-const serviceAreasLink = nav.links.find((l) => l.label === 'Service Areas')!
-const remainingLinks = nav.links.filter(
-  (l) => l.label !== 'Home' && l.label !== 'Service Areas' && l.label !== 'Projects',
-)
+const servicesDropdown: DropdownNavItem = {
+  label: 'Services',
+  href: '/services',
+  children: nav.services.map((service) => ({
+    label: service.name,
+    href: service.href,
+  })),
+}
 
-const NAV_ITEMS: NavItem[] = [
-  homeLink,
-  serviceAreasLink,
-  {
-    label: 'Services',
-    href: '/services',
-    children: nav.services.map((service) => ({
-      label: service.name,
-      href: service.href,
-    })),
-  },
-  {
-    label: 'Projects',
-    href: '/projects',
-    children: getAllProjects()
-      .slice(0, 6)
-      .map((project) => ({ label: project.title, href: project.href })),
-    seeMore: { label: 'See all projects', href: '/projects' },
-  },
-  ...remainingLinks,
-]
+const projectsDropdown: DropdownNavItem = {
+  label: 'Projects',
+  href: '/projects',
+  children: getAllProjects()
+    .slice(0, 6)
+    .map((project) => ({ label: project.title, href: project.href })),
+  seeMore: { label: 'See all projects', href: '/projects' },
+}
+
+/** Respect nav.links order from website.json; swap in dropdowns for Services/Projects; Blogs always last. */
+function buildNavItems(): NavItem[] {
+  const hasServicesLink = nav.links.some((link) => link.label === 'Services')
+  const blogsLink = nav.links.find((link) => link.label === 'Blogs')
+  const items: NavItem[] = []
+
+  for (const link of nav.links) {
+    if (link.label === 'Blogs') continue
+
+    if (link.label === 'Services') {
+      items.push(servicesDropdown)
+      continue
+    }
+
+    if (link.label === 'Projects') {
+      if (!hasServicesLink) items.push(servicesDropdown)
+      items.push(projectsDropdown)
+      continue
+    }
+
+    items.push(link)
+  }
+
+  if (blogsLink) items.push(blogsLink)
+
+  return items
+}
+
+const NAV_ITEMS = buildNavItems()
 
 function ChevronIcon({ className = '' }: { className?: string }) {
   return (
@@ -113,7 +133,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // FIX 1: The header must become solid white (bg-nav) if scrolled OR if the mobile menu is open.
   const isSolid = scrolled || mobileOpen
 
   const surfaceClasses = isSolid
@@ -137,7 +156,7 @@ export default function Navbar() {
             aria-label={brand.name}
           >
             {/* {nav.img ? ( */}
-            {scrolled ? (
+            {isSolid ? (
               <Image src={nav.img} alt={brand.name} width={70} height={70} />
             ) : (
               <Image src="/logoWhite.png" alt={brand.name} width={70} height={70} />

@@ -4,10 +4,7 @@ import Link from 'next/link'
 import { Container } from '@/components/ui'
 import RichText, { extractHeadings } from '@/lib/richText'
 import { CATEGORY_LABELS } from '@/lib/blogs'
-// import PostFaqs from '@/components/blogs/PostFaqs'
 import { TocSidebar, PostFaqs } from './index'
-
-// Import the BlogPost type from your parent page
 import type { BlogPost } from '@/app/blogs/[slug]/page'
 
 function formatDate(iso: string) {
@@ -66,11 +63,11 @@ export default function BlogPage({ post }: { post: BlogPost }) {
         </h1>
 
         {/* Description */}
-        {post.description && (
+        {/* {post.description && (
           <p className="mt-6 text-lg md:text-xl text-dark-muted leading-relaxed max-w-3xl">
             {post.description}
           </p>
-        )}
+        )} */}
 
         {/* Author / date / read time */}
         <div className="mt-6 flex items-center gap-3 border-b border-soft pb-6 text-sm text-dark-muted">

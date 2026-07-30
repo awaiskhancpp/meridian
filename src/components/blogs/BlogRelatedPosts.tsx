@@ -37,16 +37,9 @@ export default function BlogRelatedPosts() {
             </div>
             <h2 id="related-posts-heading" className="mt-1">
               <span className="block heading-2 text-dark">{heading}</span>
-              <span className="block heading-script capitalize text-accent">{script}</span>
+              <span className="block heading-script capitalize text-accent mt-2">{script}</span>
             </h2>
           </div>
-
-          {/*
-            Two-tone prev/next pair, matching the reference's dark +
-            accent colour split. h-11 w-11 (44px) is a real touch target
-            at every breakpoint — these buttons are the only way to move
-            the carousel now, so they don't get smaller on mobile.
-          */}
           <div className="flex flex-shrink-0 items-center gap-3">
             <button
               ref={prevRef}
@@ -72,7 +65,7 @@ export default function BlogRelatedPosts() {
           spaceBetween={24}
           onSwiper={setSwiperInstance}
           onBeforeInit={(swiper) => {
-            // @ts-expect-error — Swiper's own types want these set before init
+            // @ts-expect-error
             swiper.params.navigation.prevEl = prevRef.current
             // @ts-expect-error
             swiper.params.navigation.nextEl = nextRef.current
@@ -95,13 +88,6 @@ export default function BlogRelatedPosts() {
         </Swiper>
       </Container>
 
-      {/*
-        swiper-nav-prev / swiper-nav-next get Swiper's disabled state
-        applied via swiper-button-disabled — Swiper adds/removes that
-        class on the elements passed as prevEl/nextEl automatically, so
-        no extra JS state is needed here to grey out an arrow at either
-        end of the list.
-      */}
       <style>{`
       .swiper {
         padding-right: 2px;
@@ -137,7 +123,7 @@ function BlogFeatureCard({ card }: { card: BlogItem }) {
   return (
     <article className="group h-full">
       <a href={card.href} className="block">
-        <div className="relative ">
+        <div className="relative">
           <div className="relative h-[28rem] overflow-hidden lg:h-[34rem]">
             <Image
               src={card.image}
@@ -147,13 +133,13 @@ function BlogFeatureCard({ card }: { card: BlogItem }) {
             />
             <div className="absolute inset-0 bg-overlay-card" />
 
-            <div className="absolute inset-0 flex items-center justify-center p-6  opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100">
+            <div className="absolute inset-0 flex items-center justify-center p-6 opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100">
               <div className="w-full translate-y-4 h-full border border-light-strong bg-white-overlay px-8 py-10 flex flex-col items-center justify-center text-center opacity-0 shadow-soft backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                <h3 className="text-[clamp(1.5rem,2vw,2rem)] font-black uppercase leading-[0.92] tracking-heading-loose text-dark">
+                <h3 className="text-[clamp(1.5rem,2vw,2rem)] font-black capitalize leading-[0.92] tracking-heading-subtle text-dark">
                   {card.title}
                 </h3>
                 <p className="mt-5 text-sm leading-6 text-dark-muted">{card.description}</p>
-                <Button variant="outline" className="mt-10 rounded-none">
+                <Button variant="outline" className="mt-10 rounded-none ">
                   Read More
                 </Button>
               </div>
