@@ -84,7 +84,7 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
       {/* Lightbox Modal */}
       {selectedIndex !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-overlay-heavy backdrop-blur-sm transition-opacity"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-overlay-dark backdrop-blur-sm transition-opacity"
           onClick={closeModal}
         >
           {/* Close Button */}

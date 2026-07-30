@@ -13,10 +13,7 @@ export default function ProjectDetailPage({ project }: { project: ProjectDetail 
     <div className="bg-white">
       <Navbar />
       <ProjectHero project={project} />
-      {/* <ProjectBrief project={project} /> */}
       <ProjectGallery images={project.gallery} />
-      {/* <ProjectBeforeAfter project={project} /> */}
-      {/* <ProjectDirection project={project} /> */}
       <RelatedProjects project={project} />
       <ProjectCTA project={project} />
       <Footer />
