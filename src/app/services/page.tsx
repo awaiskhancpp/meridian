@@ -1,6 +1,6 @@
 import React from 'react'
 import siteData from '@/website.json'
-import ServicesPageClient from './ServicesPageClient'
+import { ServicesPageClient } from '@/components/Services'
 
 const { services } = siteData
 

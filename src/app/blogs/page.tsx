@@ -1,7 +1,7 @@
 import React from 'react'
 
 import siteData from '@/website.json'
-import BlogsPageClient from './BlogsPageClient'
+import { BlogsPageClient } from '@/components/blogs'
 
 const { blogs } = siteData
 

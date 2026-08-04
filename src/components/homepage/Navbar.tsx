@@ -222,7 +222,7 @@ export default function Navbar() {
             type="button"
             ref={toggleButtonRef}
             onClick={() => setMobileOpen((value) => !value)}
-            className={`inline-flex items-center gap-3 rounded-none text-sm font-semibold tracking-[0.24em] transition-colors lg:hidden ${
+            className={`inline-flex items-center gap-3 rounded-none text-sm font-semibold tracking-snug transition-colors lg:hidden ${
               isSolid ? 'text-accent hover:bg-cream' : 'text-white hover:bg-white-ghost'
             }`}
             aria-expanded={mobileOpen}

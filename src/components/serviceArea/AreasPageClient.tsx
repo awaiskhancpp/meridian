@@ -1,10 +1,10 @@
-import { Contact, Footer, Map, Navbar, Services } from '@/components/homepage'
+import { Contact, Footer, Map, Navbar } from '@/components/homepage'
 import { ServiceAreaGrid } from '@/components/homepage/ServiceAreaGrid'
 import { Container, PageHero } from '@/components/ui'
 import siteData from '@/website.json'
 
 export default function AreasPageClient() {
-  const { services, serviceAreas } = siteData
+  const { serviceAreas } = siteData
   return (
     <div>
       <Navbar />

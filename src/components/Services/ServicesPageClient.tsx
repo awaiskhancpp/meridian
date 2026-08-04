@@ -4,15 +4,9 @@ import Link from 'next/link'
 import React, { useMemo, useState } from 'react'
 import Navbar from '@/components/homepage/Navbar'
 import Footer from '@/components/homepage/Footer'
-import ServiceGridCard from '@/components/homepage/ServiceGridCard'
-import { PageHero, HeroSearchBar, Container } from '@/components/ui'
-import type { SearchField } from '@/components/ui'
-import { PRICE_TIERS, priceTierFor, type ServiceCardData } from '@/lib/services'
+import { PageHero, Container } from '@/components/ui'
+import { priceTierFor, type ServiceCardData } from '@/lib/services'
 import {
-  ArrowUpRight,
-  ArrowRight,
-  ChevronLeft,
-  ChevronRight,
   ChefHat,
   Bath,
   Home,
@@ -24,13 +18,6 @@ import {
   type LucideIcon,
 } from 'lucide-react'
 
-/**
- * ServicesPageClient
- *
- * Same field-order convention as the blogs page: Price Range and Sort
- * sit on the left, Title sits last, right next to the Search button
- * (the "search side").
- */
 const SERVICE_ICONS: Record<string, LucideIcon> = {
   'chef-hat': ChefHat,
   bath: Bath,
@@ -41,24 +28,6 @@ const SERVICE_ICONS: Record<string, LucideIcon> = {
   'layout-grid': LayoutGrid,
   'clipboard-list': ClipboardList,
 }
-
-const SEARCH_FIELDS: SearchField[] = [
-  {
-    type: 'select',
-    name: 'priceRange',
-    label: 'Price Range',
-    placeholder: 'Any Price',
-    options: [...PRICE_TIERS],
-  },
-  {
-    type: 'select',
-    name: 'sort',
-    label: 'Sort',
-    options: ['Popular', 'Price: Low to High', 'Price: High to Low', 'A–Z'],
-    placeholder: 'Popular',
-  },
-  { type: 'text', name: 'title', label: 'Service', placeholder: 'Search services…' },
-]
 
 function numericPrice(startingPrice: string): number {
   if (startingPrice.toLowerCase() === 'free') return 0
@@ -111,7 +80,6 @@ export default function ServicesPageClient({
         script={heroProps.script}
         subheading={heroProps.subheading}
         image="/hero.webp"
-        // formSlot={<HeroSearchBar fields={SEARCH_FIELDS} onSearch={setSearch} />}
       />
 
       <section aria-label="All services" className="py-10 lg:py-16">
@@ -138,12 +106,6 @@ export default function ServicesPageClient({
                 const Icon = service.icon && SERVICE_ICONS[service.icon]
                 return (
                   <Link key={i} href={`/services/${service.slug}`} className="group flex w-full">
-                    {/*
-                    Whole card is now just the photo — rounded-2xl on
-                    THIS outer wrapper (not a separate content panel
-                    below it), since the title card floats ON TOP of the
-                    photo rather than sitting in its own space beneath it.
-                  */}
                     <div className="relative aspect-[4/5] w-full overflow-hidden rounded-none">
                       <Image
                         src={service.image}

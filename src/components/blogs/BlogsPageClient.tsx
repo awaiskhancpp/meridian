@@ -4,7 +4,7 @@ import React, { useMemo, useState } from 'react'
 import Navbar from '@/components/homepage/Navbar'
 import Footer from '@/components/homepage/Footer'
 import { BlogFeatureCard } from '@/components/homepage/Blogs'
-import { PageHero, HeroSearchBar, CategoryFilterPills, Container } from '@/components/ui'
+import { PageHero, HeroSearchBar, Container } from '@/components/ui'
 import type { SearchField } from '@/components/ui'
 import { CATEGORY_LABELS, type BlogCardData } from '@/lib/blogs'
 

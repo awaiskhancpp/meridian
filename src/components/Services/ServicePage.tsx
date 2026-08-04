@@ -4,30 +4,17 @@ import siteData from '@/website.json'
 import type { ServiceCardData } from '@/lib/services'
 import ServiceHero from './ServiceHero'
 import ServiceAbout from './ServiceAbout'
-import TrustSection from './TrustSection'
 import BeforeAfter from './BeforeAfter'
 import ExploreOtherServices from './ExploreOtherServices'
 import AreasWeServe from './AreasWeServe'
 import ServiceProcess from './ServiceProcess'
 import ServiceFaqs from './ServiceFaq'
-import ServiceWhyChooseUs from './ServiceWhyChooseUs'
-import ServiceForm from './ServiceForm'
+import { ServiceForm, ServiceWhyChooseUs } from './index'
 
 interface ServicePageProps {
   service: ServiceCardData
   allServices: ServiceCardData[]
 }
-
-/**
- * ServicePage
- *
- * The actual reusable service-detail template — every /services/[slug]
- * route renders THIS, passed only the resolved `service` + the full
- * `allServices` list. This used to be a disconnected stub (just an
- * empty <About />) while app/services/[slug]/page.tsx built the entire
- * page inline instead of using this file at all. Now the route file is
- * just data-lookup + notFound(); this is where the actual page lives.
- */
 export default function ServicePage({ service, allServices }: ServicePageProps) {
   const { serviceAreas, serviceWhyChooseUs } = siteData
   const whyChooseUsData = serviceWhyChooseUs?.[service.slug as keyof typeof serviceWhyChooseUs]
@@ -71,13 +58,6 @@ export default function ServicePage({ service, allServices }: ServicePageProps) 
           steps={service.process.steps}
         />
       )}
-      {/* <TrustSection /> */}
-
-      {/* Only rendered for services that involve physical remodeling
-          work — Design Consultation and Project Planning have no
-          beforeAfter array in website.json since there's no physical
-          result to show a before/after of, and forcing a fake one in
-          would be worse than just not having the section. */}
       {service.beforeAfter && service.beforeAfter.length > 0 && (
         <BeforeAfter
           label="Our Work"

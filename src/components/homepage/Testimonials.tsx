@@ -63,7 +63,7 @@ export default function Testimonials() {
           {/* Testimonial content */}
           {/* Added min-heights and flex-col to prevent jumping up and down */}
           <div
-            className={`flex min-h-[360px] flex-1 flex-col justify-center transition-all duration-300 ease-out  md:min-h-[240px] lg:min-h-[320px] ${
+            className={`flex min-h-96 flex-1 flex-col justify-center transition-all duration-300 ease-out md:min-h-60 lg:min-h-80 ${
               visible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
             }`}
           >
@@ -74,9 +74,7 @@ export default function Testimonials() {
               aria-hidden="true"
             />
 
-            <p className="mt-4 text-center text-[clamp(1.2rem,2.2vw,1.75rem)] font-medium leading-snug text-dark">
-              {item.body}
-            </p>
+            <p className="mt-4 text-center text-h4 font-medium text-dark">{item.body}</p>
 
             <div className="mt-8 flex items-center justify-center gap-3">
               <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full bg-cream">

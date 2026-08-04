@@ -1,18 +1,13 @@
-import React from 'react'
 import { notFound } from 'next/navigation'
-import type { Metadata } from 'next'
+import Image from 'next/image'
 
 import Navbar from '@/components/homepage/Navbar'
 import Footer from '@/components/homepage/Footer'
 import CTABanner from '@/components/homepage/CTABanner'
-import { PageHero } from '@/components/ui'
 import BlogRelatedPosts from '@/components/blogs/BlogRelatedPosts'
-
-// Import your newly separated BlogPage component (Adjust path if needed)
 import BlogPage from '@/components/blogs/BlogPage'
 import websiteData from '@/website.json'
 
-// Export the type so BlogPage can use it safely
 export type BlogPost = (typeof websiteData.blogs.items)[0] & {
   content?: string
   tableOfContents?: { heading: string; anchorId: string }[]
@@ -50,7 +45,18 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
-      <PageHero label="" heading="" subheading="" image="/hero.webp" />
+      <div className="relative isolate h-[60vh] min-h-[480px] w-full lg:h-[85vh]">
+        <Image
+          src="/hero.webp"
+          alt=""
+          fill
+          priority
+          aria-hidden="true"
+          className="object-cover object-center"
+        />
+
+        <div className="absolute inset-0 bg-overlay-hero" />
+      </div>
       <BlogPage post={post} />
 
       <BlogRelatedPosts />
