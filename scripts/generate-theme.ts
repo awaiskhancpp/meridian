@@ -196,6 +196,7 @@ let css = `/**
   --spacing-nav-h-sm:   ${spacing.navH.sm};
   --spacing-nav-h-md:   ${spacing.navH.md};
   --spacing-nav-h-lg:   ${spacing.navH.lg};
+  --spacing-content-max-width: ${spacing.contentMaxWidth};
 
   /* ─── Z-Index ─────────────────────────────────────────────────── */
   --z-navbar: ${zIndex.navbar};
@@ -451,6 +452,7 @@ let css = `/**
 @utility text-status-info     { color: var(--color-status-info); }
 @utility border-status-danger  { border-color: var(--color-status-danger); }
 @utility border-status-success { border-color: var(--color-status-success); }
+@utility max-w-content { max-width: var(--spacing-content-max-width); }
 `
 
 // Write the file

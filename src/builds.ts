@@ -163,6 +163,10 @@ export const spacing = {
   section: { lg: '6rem', md: '4rem', sm: '2.5rem' },
   navH: { lg: '72px', md: '64px', sm: '56px' },
   containerPx: { lg: '5rem', md: '2.5rem', sm: '1.25rem' },
+  // The page's outer content width — was hardcoded as max-w-[1440px]
+  // independently in both Container.tsx and Hero.tsx (same raw value,
+  // two places), the exact "should be a token" signal.
+  contentMaxWidth: '1440px',
 } as const
 
 // Z-index tokens.

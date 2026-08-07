@@ -42,12 +42,6 @@ export default function Hero() {
         />
 
         <div className="absolute inset-0 bg-overlay-hero" />
-
-        {/* <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-white/20" />
-        <div className="pointer-events-none absolute inset-x-0 top-14 h-px bg-white/10 sm:top-16" />
-        <div className="pointer-events-none absolute inset-y-0 left-24 hidden w-px bg-white/10 md:block" />
-        <div className="pointer-events-none absolute inset-y-0 left-[42rem] hidden w-px bg-white/10 xl:block" />
-        <div className="pointer-events-none absolute inset-y-0 right-6 hidden w-px bg-white/20 lg:block" /> */}
         <div className="pointer-events-none absolute inset-x-0 bottom-24 h-px bg-white-faint sm:bottom-26 lg:bottom-32" />
 
         <Container className="relative flex h-full flex-col justify-between pt-24 sm:pt-28 lg:pt-32 2xl:pt-24">
@@ -62,7 +56,7 @@ export default function Hero() {
               <span className="text-[clamp(2.75rem,6.8vw,5.85rem)] font-bold uppercase leading-[0.9] tracking-heading-subtle text-white drop-shadow-text-hero">
                 {hero.heading}{' '}
               </span>
-              <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(3.1rem,7vw,6.1rem)] leading-[0.82] text-cream">
+              <span className="font-family-script capitalize text-[clamp(3.1rem,7vw,6.1rem)] leading-[0.82] text-cream">
                 {hero.script}
               </span>
             </h1>
@@ -95,39 +89,7 @@ export default function Hero() {
   )
 }
 
-function HeroLink({ href, children }: { href: string; children: React.ReactNode }) {
-  return (
-    <a
-      href={href}
-      className="group inline-flex min-w-[11rem] items-center justify-between gap-6 border-b border-light-mid pb-2 text-sm font-medium uppercase tracking-medium text-white transition-colors hover:border-white hover:text-cream sm:min-w-[12rem]"
-    >
-      <span>{children}</span>
-      <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
-        -&gt;
-      </span>
-    </a>
-  )
-}
-
 interface FieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string
   label: string
-}
-
-function Field({ id, label, ...props }: FieldProps) {
-  return (
-    <div className="min-w-0">
-      <label
-        htmlFor={id}
-        className="mb-2 block text-xs font-semibold uppercase tracking-snug text-dark-muted"
-      >
-        {label}
-      </label>
-      <input
-        id={id}
-        {...props}
-        className="h-12 w-full border-0 border-b border-input bg-transparent px-0 text-sm text-dark outline-none transition-colors placeholder:text-dark-muted focus:border-accent focus:ring-0"
-      />
-    </div>
-  )
 }

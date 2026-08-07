@@ -6,13 +6,9 @@ interface ContainerProps {
   as?: React.ElementType
 }
 
-/**
- * Container
- * Centered max-width wrapper with responsive horizontal padding.
- */
 export default function Container({ children, className = '', as: Tag = 'div' }: ContainerProps) {
   return (
-    <Tag className={`mx-auto w-full max-w-[1440px] px-4 md:px-6 lg:px-8 ${className}`}>
+    <Tag className={`mx-auto w-full max-w-content px-4 md:px-6 lg:px-8 ${className}`}>
       {children}
     </Tag>
   )

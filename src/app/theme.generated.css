@@ -117,6 +117,7 @@
   --spacing-nav-h-sm:   56px;
   --spacing-nav-h-md:   64px;
   --spacing-nav-h-lg:   72px;
+  --spacing-content-max-width: 1440px;
 
   /* ─── Z-Index ─────────────────────────────────────────────────── */
   --z-navbar: 50;
@@ -372,3 +373,4 @@
 @utility text-status-info     { color: var(--color-status-info); }
 @utility border-status-danger  { border-color: var(--color-status-danger); }
 @utility border-status-success { border-color: var(--color-status-success); }
+@utility max-w-content { max-width: var(--spacing-content-max-width); }
