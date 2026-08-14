@@ -80,9 +80,6 @@ export default function BlogPage({ post }: { post: BlogPost }) {
         </div>
       </Container>
 
-      {/* Cover image */}
-
-      {/* Body + sticky ToC sidebar */}
       <Container className="!max-w-6xl">
         <div className="mt-10 grid grid-cols-1 gap-12 lg:columns-blog">
           <div className="min-w-0">
@@ -101,4 +98,3 @@ export default function BlogPage({ post }: { post: BlogPost }) {
     </article>
   )
 }
-

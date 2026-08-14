@@ -130,7 +130,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
 
           <button
             type="submit"
-            className="flex shrink-0 items-center bg-text-dark-muted px-9 text-sm font-semibold uppercase tracking-loose text-white transition-colors hover:bg-dark"
+            className="flex shrink-0 items-center bg-accent px-9 text-sm font-semibold uppercase tracking-loose text-white transition-colors hover:bg-dark"
           >
             Search
           </button>
@@ -143,7 +143,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
 
           <button
             type="submit"
-            className="flex items-center justify-center bg-dark-muted px-8 py-4 text-sm font-semibold uppercase tracking-loose text-white transition-colors hover:bg-accent"
+            className="flex items-center justify-center bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-loose text-white transition-colors hover:bg-accent-hover"
           >
             Search
           </button>

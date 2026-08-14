@@ -67,7 +67,7 @@ export default function ServiceProcess({
   return (
     <section
       aria-labelledby="process-heading"
-      className="relative w-full overflow-hidden bg-dark min-h-process lg:h-process"
+      className="relative w-full overflow-hidden bg-page  lg:h-process"
     >
       <div className="relative h-full w-full ">
         <Image src={image} alt="" fill aria-hidden="true" className="object-cover" sizes="100vw" />
@@ -82,7 +82,7 @@ export default function ServiceProcess({
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-2 lg:grid-cols-4">
             {steps.map((step, i) => (
               <div
                 key={step.title}
@@ -101,4 +101,3 @@ export default function ServiceProcess({
     </section>
   )
 }
-

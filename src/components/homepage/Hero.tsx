@@ -42,7 +42,7 @@ export default function Hero() {
         />
 
         <div className="absolute inset-0 bg-overlay-hero" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-38 h-px bg-white-faint sm:bottom-26 lg:bottom-30" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-38 h-px bg-white-faint sm:bottom-26 lg:bottom-32 " />
 
         <Container className="relative flex h-full flex-col justify-between hero-content-padding">
           <div className="flex justify-between gap-4" aria-hidden="true">
