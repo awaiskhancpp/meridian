@@ -144,7 +144,7 @@ export default function Services() {
                       />
                       <div className="absolute inset-x-4 bottom-4 bg-dark px-5 pb-5 pt-9 shadow-card-strong transition-colors duration-standard">
                         {Icon && (
-                          <div className="absolute -top-7 left-5 flex h-14 w-14 items-center justify-center rounded-full bg-surface">
+                          <div className="absolute -top-7 left-5 flex h-14 w-14 items-center justify-center rounded-full bg-surface-high">
                             <Icon
                               className="h-7 w-7 text-accent"
                               strokeWidth={1.5}
@@ -167,4 +167,3 @@ export default function Services() {
     </section>
   )
 }
-

@@ -89,7 +89,7 @@ export default function Footer() {
                 <div className="mt-0 grid content-start text-sm  leading-6 text-dark gap-field">
                   <div className="flex gap-2 items-center">
                     <MapPin className="shrink-0" size={20} />
-                    <p className=" leading-footer">
+                    <p className="font-medium leading-footer">
                       734 University Ave. Suite 205 San Diego, CA 92103
                     </p>
                   </div>

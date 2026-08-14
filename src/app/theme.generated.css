@@ -257,6 +257,7 @@
 @utility bg-surface { background-color: var(--color-bg-cream); }
 @utility bg-surface-muted { background-color: var(--color-white-soft); }
 @utility bg-surface-high { background-color: var(--color-white); }
+@utility bg-surface-overlay { background-color: var(--color-white-overlay); }
 @utility text-surface { color: var(--color-text-dark); }
 @utility legal-page {
   margin-inline: auto;
@@ -287,6 +288,9 @@
 
 /* Semantic component recipes. Keep raw values in builds.ts so a builder can
    change a visual rule once without searching through component markup. */
+@utility type-hero-display { font-size: clamp(2.75rem,6.8vw,5.85rem); }
+@utility type-hero-script { font-size: clamp(3.1rem,7vw,6.1rem); }
+@utility type-eyebrow { font-size: 0.68rem; }
 @utility type-not-found-watermark { font-size: clamp(9rem,42vw,30rem); }
 @utility type-not-found-title { font-size: clamp(2.4rem,7vw,5.5rem); }
 @utility type-not-found-script { font-size: clamp(2.8rem,7.5vw,6rem); }
@@ -324,9 +328,10 @@
 @utility leading-heading { line-height: 0.92; }
 @utility leading-section { line-height: 0.95; }
 @utility leading-compact { line-height: 0.98; }
-@utility leading-projectHero { line-height: 0.88; }
+@utility leading-project-hero { line-height: 0.88; }
 @utility leading-mission { line-height: 1.1; }
 @utility leading-body { line-height: 1.6; }
+@utility leading-footer { line-height: 1.6; }
 @utility max-hero { max-width: 40rem; }
 @utility max-heading { max-width: 44rem; }
 @utility max-copy { max-width: 28rem; }
@@ -383,6 +388,9 @@
 @utility min-h-process { min-height: 96vh; }
 @utility viewport-mobile-menu { height: calc(100dvh - 100%); }
 @utility viewport-toc { max-height: calc(100vh - 8rem); }
+@utility z-navbar { z-index: 50; }
+@utility top-dropdown { top: 85%; }
+@utility w-dropdown { width: 220px; }
 @utility h-navbar { height: 72px; }
 @utility min-h-story-media { min-height: 300px; }
 @utility min-h-trust-card { min-height: 160px; }
@@ -398,6 +406,8 @@
 @utility ease-button { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
 @utility rows-open { grid-template-rows: 1fr; }
 @utility rows-closed { grid-template-rows: 0fr; }
+@utility grid-rows-expanded { grid-template-rows: 1fr; }
+@utility grid-rows-collapsed { grid-template-rows: 0fr; }
 
 /* ═══════════════════════════════════════════════════════════════════
    Button Padding Utilities

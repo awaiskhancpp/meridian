@@ -22,7 +22,7 @@ export default function Blogs() {
   }
 
   return (
-    <section id="blogs" aria-labelledby="blogs-heading" className="bg-surface section-padding">
+    <section id="blogs" aria-labelledby="blogs-heading" className="bg-surface-high section-padding">
       <Container>
         <SectionHeading
           id="blogs-heading"
@@ -129,4 +129,3 @@ export function BlogFeatureCard({ card }: { card: BlogItem }) {
     </article>
   )
 }
-

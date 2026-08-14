@@ -41,7 +41,7 @@ export default function WhyChooseUs() {
     <section
       id="why-choose-us"
       aria-labelledby="why-choose-us-heading"
-      className="relative overflow-hidden section-padding bg-surface"
+      className="relative overflow-hidden section-padding bg-surface-high"
     >
       <Container className="relative z-10">
         {/* Header Section */}
@@ -105,4 +105,3 @@ export default function WhyChooseUs() {
     </section>
   )
 }
-

@@ -185,6 +185,7 @@ export const spacing = {
   cardMediaLg: '34rem',
   contactMapHeight: '437px',
   dropdownWidth: '220px',
+  dropdownTop: '85%',
   headerTop: '6rem',
   gapField: '0.75rem',
   dividerWidth: '0.125rem',
@@ -212,6 +213,9 @@ export const motion = {
 // of exposing raw clamp(), viewport, pixel, or fraction values in class names.
 export const componentStyles = {
   type: {
+    heroDisplay: 'clamp(2.75rem,6.8vw,5.85rem)',
+    heroScript: 'clamp(3.1rem,7vw,6.1rem)',
+    eyebrow: '0.68rem',
     notFoundWatermark: 'clamp(9rem,42vw,30rem)',
     notFoundTitle: 'clamp(2.4rem,7vw,5.5rem)',
     notFoundScript: 'clamp(2.8rem,7.5vw,6rem)',
@@ -254,6 +258,7 @@ export const componentStyles = {
     projectHero: '0.88',
     mission: '1.1',
     body: '1.6',
+    footer: '1.6',
   },
   layout: {
     heroMax: '40rem',

@@ -338,6 +338,7 @@ let css = `/**
 @utility bg-surface { background-color: var(--color-bg-cream); }
 @utility bg-surface-muted { background-color: var(--color-white-soft); }
 @utility bg-surface-high { background-color: var(--color-white); }
+@utility bg-surface-overlay { background-color: var(--color-white-overlay); }
 @utility text-surface { color: var(--color-text-dark); }
 @utility legal-page {
   margin-inline: auto;
@@ -372,7 +373,7 @@ ${Object.entries(componentStyles.type)
   .map(([name, value]) => `@utility type-${name.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)} { font-size: ${value}; }`)
   .join('\n')}
 ${Object.entries(componentStyles.leading)
-  .map(([name, value]) => `@utility leading-${name} { line-height: ${value}; }`)
+  .map(([name, value]) => `@utility leading-${name.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)} { line-height: ${value}; }`)
   .join('\n')}
 @utility max-hero { max-width: ${componentStyles.layout.heroMax}; }
 @utility max-heading { max-width: ${componentStyles.layout.headingMax}; }
@@ -430,6 +431,9 @@ ${Object.entries(componentStyles.leading)
 @utility min-h-process { min-height: ${componentStyles.viewport.process}; }
 @utility viewport-mobile-menu { height: ${componentStyles.viewport.mobileMenu}; }
 @utility viewport-toc { max-height: ${componentStyles.viewport.tocMax}; }
+@utility z-navbar { z-index: ${zIndex.navbar}; }
+@utility top-dropdown { top: ${spacing.dropdownTop}; }
+@utility w-dropdown { width: ${spacing.dropdownWidth}; }
 @utility h-navbar { height: ${spacing.navH.lg}; }
 @utility min-h-story-media { min-height: ${componentStyles.layout.storyMediaMinHeight}; }
 @utility min-h-trust-card { min-height: ${componentStyles.layout.trustCardMinHeight}; }
@@ -445,6 +449,8 @@ ${Object.entries(componentStyles.leading)
 @utility ease-button { transition-timing-function: ${motion.buttonEasing}; }
 @utility rows-open { grid-template-rows: 1fr; }
 @utility rows-closed { grid-template-rows: 0fr; }
+@utility grid-rows-expanded { grid-template-rows: 1fr; }
+@utility grid-rows-collapsed { grid-template-rows: 0fr; }
 
 /* ═══════════════════════════════════════════════════════════════════
    Button Padding Utilities

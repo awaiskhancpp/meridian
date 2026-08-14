@@ -211,7 +211,7 @@ export default function Navbar() {
             <Button
               variant={ctaVariant}
               href="/contact"
-              className="whitespace-nowrap rounded-none text-dark-muted text-sm font-medium tracking-nav"
+              className={`whitespace-nowrap rounded-none text-sm font-medium tracking-nav ${textClasses}`}
             >
               <span>Request a Quote</span>
               <ArrowUpRight size={18} />

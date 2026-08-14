@@ -79,7 +79,7 @@ export default function BlogsPageClient({
   }, [posts, search, category])
 
   return (
-    <main className="min-h-screen bg-surface">
+    <main className="min-h-screen bg-surface-high">
       <Navbar />
 
       <div className="relative z-10">
