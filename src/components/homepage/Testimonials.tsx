@@ -32,7 +32,7 @@ export default function Testimonials() {
   const item = items[index]
 
   return (
-    <section id="testimonials" aria-labelledby="testimonials-heading" className="py-10 lg:py-16">
+    <section id="testimonials" aria-labelledby="testimonials-heading" className="section-padding">
       <Container>
         {/* Centered heading */}
         <SectionHeading
@@ -57,13 +57,13 @@ export default function Testimonials() {
             aria-label="Previous testimonial"
             className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-strong text-dark transition-colors hover:border-accent hover:text-accent"
           >
-            <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+            <ArrowLeft className="icon-sm" aria-hidden="true" />
           </button>
 
           {/* Testimonial content */}
           {/* Added min-heights and flex-col to prevent jumping up and down */}
           <div
-            className={`flex min-h-96 flex-1 flex-col justify-center transition-all duration-300 ease-out md:min-h-60 lg:min-h-80 ${
+            className={`flex min-h-96 flex-1 flex-col justify-center transition-all duration-standard ease-out md:min-h-60 lg:min-h-80 ${
               visible ? 'translate-y-0 opacity-100' : 'translate-y-2 opacity-0'
             }`}
           >
@@ -76,7 +76,7 @@ export default function Testimonials() {
 
             <p className="mt-4 text-center text-h4 font-medium text-dark">{item.body}</p>
 
-            <div className="mt-8 flex items-center justify-center gap-3">
+            <div className="mt-8 flex items-center justify-center gap-card">
               <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full bg-cream">
                 <Image src={item.avatar} alt={item.author} fill className="object-cover" />
               </div>
@@ -94,10 +94,11 @@ export default function Testimonials() {
             aria-label="Next testimonial"
             className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-strong text-dark transition-colors hover:border-accent hover:text-accent"
           >
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            <ArrowRight className="icon-sm" aria-hidden="true" />
           </button>
         </div>
       </Container>
     </section>
   )
 }
+

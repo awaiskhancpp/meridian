@@ -4,8 +4,8 @@ import React from 'react'
  * Button
  * Uses semantic utility classes generated from builds.ts.
  *
- * The 'line' variant is a plain text link — uppercase label, arrow,
- * thin underline below — where the underline itself does a "liquid
+ * The 'line' variant is a plain text link â€” uppercase label, arrow,
+ * thin underline below â€” where the underline itself does a "liquid
  * wipe": a solid currentColor line slides in from the left on hover,
  * covering a muted, always-visible base underline. Plain CSS, no JS:
  * a single `:hover`-driven transition reverses automatically on mouse
@@ -36,9 +36,9 @@ const variantClasses: Record<Variant, string> = {
   primary: 'bg-accent hover:bg-accent-hover text-white border border-transparent shadow-soft',
   outline: 'bg-transparent border border-extra-strong text-dark hover:bg-accent hover:text-white',
   'outline-light':
-    'bg-transparent border border-light-heavy text-white hover:bg-white hover:text-dark',
+    'bg-transparent border border-light-heavy text-white hover:bg-surface hover:text-dark',
   ghost: 'bg-transparent border border-transparent text-dark hover:bg-accent-faint',
-  line: '', // unreachable — Button() branches to LiquidUnderlineButton before this lookup
+  line: '', // unreachable â€” Button() branches to LiquidUnderlineButton before this lookup
 }
 
 const base =
@@ -50,22 +50,22 @@ function LiquidUnderlineButton({
   className = '',
   ...props
 }: Omit<ButtonProps, 'variant' | 'size'>) {
-  const wrapperClasses = `group relative inline-flex items-center gap-3 pb-2 text-sm font-semibold uppercase tracking-medium text-dark ${className}`
+  const wrapperClasses = `group relative inline-flex items-center gap-card pb-2 text-sm font-semibold uppercase tracking-medium text-dark ${className}`
 
   const content = (
     <>
       <span className="relative z-10 inline-flex">{children}</span>
 
-      {/* Underline track — own overflow-hidden strip so the sweep's
+      {/* Underline track â€” own overflow-hidden strip so the sweep's
           off-screen rest position is truly invisible without clipping
           the text/arrow above it */}
       <span className="absolute inset-x-0 bottom-0 h-px overflow-hidden" aria-hidden="true">
-        {/* Base underline — muted, always visible at rest */}
+        {/* Base underline â€” muted, always visible at rest */}
         <span className="absolute inset-0 bg-current opacity-30" />
 
-        {/* Sweep layer — solid currentColor, slides in on hover,
+        {/* Sweep layer â€” solid currentColor, slides in on hover,
             plain CSS transition reverses automatically on leave */}
-        <span className="absolute inset-0 -translate-x-full transform bg-current transition-transform duration-[350ms] ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-x-0" />
+        <span className="absolute inset-0 -translate-x-full transform bg-current transition-transform duration-button ease-button group-hover:translate-x-0" />
       </span>
     </>
   )

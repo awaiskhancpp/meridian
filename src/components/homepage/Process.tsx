@@ -19,7 +19,7 @@ const stepImages = ['/discovery.png', '/design.png', '/build.png', '/handoff.png
 ───────────────────────────────────────────── */
 export default function Process() {
   return (
-    <section id="process" aria-labelledby="process-heading" className="py-10 lg:py-16 bg-white">
+    <section id="process" aria-labelledby="process-heading" className="section-padding bg-surface-high">
       <Container>
         {/* Centered heading */}
         <SectionHeading
@@ -35,7 +35,7 @@ export default function Process() {
           {processData.steps.map((step, idx) => (
             <div
               key={idx}
-              className="relative flex flex-col border border-soft bg-white p-4 lg:p-3 xl:p-6 transition-shadow duration-300 hover:shadow-sm"
+              className="relative flex flex-col border border-soft bg-surface-high p-4 lg:p-3 xl:p-6 transition-shadow duration-standard hover:shadow-sm"
             >
               {/*
                 Badge + line share one flex row now, instead of the badge
@@ -64,9 +64,9 @@ export default function Process() {
               <p className="flex-1 text-sm leading-relaxed text-dark-muted">{step.description}</p>
 
               {/* Photo — replaces the previous inline SVG illustration.
-                  aspect-[280/160] matches the old SVG viewBox's proportions
+                  The media ratio matches the original SVG viewBox proportions
                   so the card's overall shape doesn't jump when this swaps in. */}
-              <div className="relative mt-6 aspect-[280/160] w-full overflow-hidden  ">
+              <div className="relative mt-6 ratio-process-media w-full overflow-hidden  ">
                 <Image
                   src={stepImages[idx] ?? stepImages[stepImages.length - 1]}
                   alt={step.title}

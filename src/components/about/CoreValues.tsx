@@ -31,7 +31,7 @@ export default function CoreValues() {
   ]
 
   return (
-    <section aria-labelledby="values-heading" className="py-10 lg:py-16">
+    <section aria-labelledby="values-heading" className="section-padding">
       <Container>
         {/* ── Header ── */}
         <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">
@@ -49,7 +49,7 @@ export default function CoreValues() {
           {values.map((value, index) => (
             <div
               key={index}
-              className="rounded-none border border-divider bg-white p-6  flex flex-col "
+              className="rounded-none border border-divider bg-surface-high p-6  flex flex-col "
             >
               {/* Sharp, square icon container matching your hard edges */}
               <div className="w-14 h-14 rounded-none bg-dark text-white flex items-center justify-center mb-8 shrink-0">

@@ -44,12 +44,12 @@ export default function CTA({
   }
 
   return (
-    <section className="relative py-10 lg:py-16 bg-white ">
+    <section className="relative section-padding bg-surface-high ">
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-bold uppercase leading-[0.95] tracking-heading-tight text-dark">
+            <h2 className="type-trust-title font-bold uppercase leading-section tracking-heading-tight text-dark">
               {title}
             </h2>
 
@@ -70,19 +70,19 @@ export default function CTA({
                     setEmailError('')
                   }}
                   placeholder="Enter your email"
-                  className="h-14 w-full rounded-none border border-accent-light bg-white px-4 pr-36 text-sm text-dark placeholder:text-dark-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+                  className="h-14 w-full rounded-none border border-accent-light bg-surface-high px-4 pr-36 text-sm text-dark placeholder:text-dark-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
                 />
 
                 <button
                   type="submit"
-                  className="absolute right-1 top-1 bottom-1 rounded-none bg-accent px-6 text-xs font-semibold uppercase tracking-widest text-white transition-colors duration-300 hover:bg-dark"
+                  className="absolute right-1 top-1 bottom-1 rounded-none bg-accent px-6 text-xs font-semibold uppercase tracking-widest text-white transition-colors duration-standard hover:bg-dark"
                 >
                   Subscribe
                 </button>
               </div>
 
               {/* Form Feedback */}
-              <div className="mt-2 min-h-[1.25rem]">
+              <div className="mt-2 min-h-status">
                 <p
                   className={`text-xs font-medium transition-opacity duration-200 ${
                     emailError

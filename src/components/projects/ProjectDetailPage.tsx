@@ -10,7 +10,7 @@ import ProjectGallery from './ProjectGallery'
 
 export default function ProjectDetailPage({ project }: { project: ProjectDetail }) {
   return (
-    <div className="bg-white">
+    <div className="bg-surface">
       <Navbar />
       <ProjectHero project={project} />
       <ProjectGallery images={project.gallery} />
@@ -20,3 +20,4 @@ export default function ProjectDetailPage({ project }: { project: ProjectDetail 
     </div>
   )
 }
+

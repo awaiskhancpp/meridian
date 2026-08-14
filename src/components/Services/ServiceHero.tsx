@@ -55,7 +55,7 @@ export default function ServiceHero({
 }: ServiceHeroProps) {
   return (
     <section aria-label={title} className="w-full">
-      <div className="relative isolate h-[100vh] min-h-[500px] w-full lg:h-[92vh]">
+      <div className="relative isolate h-service-hero min-h-service-hero w-full lg:viewport-service-hero-lg">
         <Image
           src={image}
           alt=""
@@ -71,7 +71,7 @@ export default function ServiceHero({
         <Container className="relative flex h-full flex-col justify-end pb-10 lg:mb-0 lg:justify-center">
           <div className="max-w-3xl">
             {/* Main title */}
-            <h1 className="text-[clamp(2rem,5vw,4rem)] font-bold uppercase leading-[0.95] tracking-heading-tight text-white lg:text-[4.5rem]">
+            <h1 className="type-service-hero font-bold uppercase leading-section tracking-heading-tight text-white lg:type-display-extra-large">
               {title}
             </h1>
 
@@ -128,11 +128,11 @@ export default function ServiceHero({
         )}
       </div>
       {statBoxes && statBoxes.length > 0 && (
-        <div className="block lg:hidden py-4 bg-white">
+        <div className="block lg:hidden py-4 bg-surface-high">
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {statBoxes.map((statBox, index) => (
-                <div key={index} className="flex gap-3 bg-white p-6 shadow-card">
+                <div key={index} className="flex gap-field bg-surface-high p-6 shadow-card">
                   <div className="flex items-center text-4xl font-black text-accent">
                     {statBox.number}
                   </div>

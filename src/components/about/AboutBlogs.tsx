@@ -21,7 +21,7 @@ export default function AboutBlogs() {
   }
 
   return (
-    <section id="blogs" aria-labelledby="blogs-heading" className="bg-white py-10 lg:py-16">
+    <section id="blogs" aria-labelledby="blogs-heading" className="bg-surface-high section-padding">
       <Container>
         <SectionHeading
           id="blogs-heading"
@@ -31,7 +31,7 @@ export default function AboutBlogs() {
           subheading={blogs.subheading}
         />
 
-        {/* 1 card on sm, 2 on md, 3 on lg+ — overflow-hidden on the wrapper
+        {/* 1 card on sm, 2 on md, 3 on lg+ â€” overflow-hidden on the wrapper
             (not the Swiper itself) clips the peek of any partial next
             slide cleanly at the container edge. */}
         <div className="mt-12 overflow-hidden">
@@ -74,7 +74,7 @@ function BlogFeatureCard({ card }: { card: BlogItem }) {
     <article className="group h-full">
       <a href={card.href} className="block">
         <div className="relative ">
-          <div className="relative h-[28rem] overflow-hidden lg:h-[34rem]">
+          <div className="relative h-card-media overflow-hidden lg:h-card-media-lg">
             <Image
               src={card.image}
               alt={card.imageAlt}
@@ -85,7 +85,7 @@ function BlogFeatureCard({ card }: { card: BlogItem }) {
 
             <div className="absolute inset-0 flex items-center justify-center p-6  opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100">
               <div className="w-full translate-y-4 h-full border border-light-strong bg-white-overlay px-8 py-10 flex flex-col items-center justify-center text-center opacity-0 shadow-soft backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                <h3 className="text-[clamp(1.5rem,2vw,2rem)] font-black uppercase leading-[0.92] tracking-heading-tight text-dark">
+                <h3 className="type-card-title font-black uppercase leading-heading tracking-heading-tight text-dark">
                   {card.title}
                 </h3>
                 <p className="mt-5 text-sm leading-6 text-dark-muted">{card.description}</p>
@@ -97,7 +97,7 @@ function BlogFeatureCard({ card }: { card: BlogItem }) {
           </div>
         </div>
 
-        <div className="mt-4 transition-all duration-300 group-hover:opacity-0 group-hover:-translate-y-2">
+        <div className="mt-4 transition-all duration-standard group-hover:opacity-0 group-hover:-translate-y-2">
           <h3 className="heading-card text-dark">{card.title}</h3>
         </div>
       </a>

@@ -12,22 +12,22 @@ const { about } = siteData
  * Redesigned around the one idea worth taking from the reference: a
  * photo with a dark caption card breaking out over its edge, instead
  * of a plain contained photo with a separate avatar row floating
- * above it. Everything else — heading treatment, colors, button
- * style — stays on the site's existing tokens and conventions; this
+ * above it. Everything else Ã¢â‚¬â€ heading treatment, colors, button
+ * style Ã¢â‚¬â€ stays on the site's existing tokens and conventions; this
  * is a layout reference, not a palette or type swap.
  *
- * Photo now goes FIRST in the grid (left at desktop), text second —
+ * Photo now goes FIRST in the grid (left at desktop), text second Ã¢â‚¬â€
  * the reference leads with the photo, the previous version had this
  * reversed (text-left, photo-right), which is why swapping the grid
  * children's order was the one structural change that mattered most.
  *
- * The overlapping caption card uses about.card (label/stat/subStat) —
+ * The overlapping caption card uses about.card (label/stat/subStat) Ã¢â‚¬â€
  * a big number + a punchy line of supporting copy, sitting completely
  * unused in the data until now. That's a much closer match to the
  * reference's tone (a short confident statement) than the avatar
  * stack + "Client Satisfaction" label originally placed here, which
  * read more like a review widget than a caption. The avatars still
- * have a home — the site's TrustSection component elsewhere already
+ * have a home Ã¢â‚¬â€ the site's TrustSection component elsewhere already
  * covers that social-proof role, so this section doesn't need to
  * duplicate it.
  *
@@ -35,12 +35,12 @@ const { about } = siteData
  * its photo's edges only makes sense once there's room to actually see
  * both the photo and the breakout without either getting clipped by
  * the viewport. Below lg, the card sits fully inset within the photo
- * (inset-x-4/6, bottom-4/6) — safe on any phone width, no risk of the
+ * (inset-x-4/6, bottom-4/6) Ã¢â‚¬â€ safe on any phone width, no risk of the
  * card's edge running past the screen. Only at lg+, where the column
  * itself has real width to spare, does it break outside the photo's
  * right and bottom edges for the more dramatic overlap effect.
  *
- * The text column has no explicit height of its own — CSS grid's
+ * The text column has no explicit height of its own Ã¢â‚¬â€ CSS grid's
  * default `items: stretch` already makes it match the photo column's
  * height, and `flex flex-col justify-center` inside it then centers
  * the label/heading/subheading/CTA/stats stack vertically within that
@@ -50,12 +50,12 @@ const { about } = siteData
 
 export default function About() {
   return (
-    <section id="about" aria-labelledby="about-heading" className="py-10 lg:py-16 mt-10 ">
+    <section id="about" aria-labelledby="about-heading" className="section-padding mt-10 ">
       <Container>
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-          {/* ── Left (at lg): photo with overlapping trust card ────── */}
+          {/* Ã¢â€â‚¬Ã¢â€â‚¬ Left (at lg): photo with overlapping trust card Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
           <div className="relative">
-            <div className="relative aspect-[4/3] w-full overflow-hidden">
+            <div className="relative ratio-landscape w-full overflow-hidden">
               <Image src={about.image} alt={about.heading} fill className="object-cover" />
             </div>
 
@@ -64,18 +64,18 @@ export default function About() {
                 photo's right + bottom edge at lg where there's room
                 to spare. max-w caps how wide the breakout can get on
                 very wide columns. */}
-            <div className="absolute inset-x-4 bottom-4 right-16 md:right-72 bg-dark p-3 sm:inset-x-6 sm:bottom-6 sm:p-6 lg:inset-x-auto lg:-right-6 lg:bottom-8 lg:left-6 lg:max-w-[19rem] lg:p-7">
+            <div className="absolute inset-x-4 bottom-4 about-callout-right bg-dark p-3 sm:inset-x-6 sm:bottom-6 sm:p-6 lg:inset-x-auto lg:-right-6 lg:bottom-8 lg:left-6 lg:max-card-copy lg:p-7">
               <p className="text-xs font-medium uppercase tracking-label text-white/70">
                 {about.card.label}
               </p>
               <p className="mt-3 text-4xl font-black leading-none text-accent-light">
                 {about.card.stat}
               </p>
-              <p className="mt-2 text-sm leading-snug text-white/85">{about.card.subStat}</p>
+              <p className="mt-2 text-sm leading-snug text-white-strong">{about.card.subStat}</p>
             </div>
           </div>
 
-          {/* ── Right (at lg): heading, subheading, CTA, stats ─────── */}
+          {/* Ã¢â€â‚¬Ã¢â€â‚¬ Right (at lg): heading, subheading, CTA, stats Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
           <div className="flex flex-col justify-center">
             <SectionHeadingInline
               id="about-heading"
@@ -83,7 +83,7 @@ export default function About() {
               heading={about.heading}
               script={about.script}
               subheading={about.subheading}
-              labelClassName="flex items-center gap-3 text-xs font-medium uppercase tracking-eyebrow text-dark-muted"
+              labelClassName="flex items-center gap-card text-xs font-medium uppercase tracking-eyebrow text-dark-muted"
             />
 
             <div className="mt-8">
@@ -92,7 +92,7 @@ export default function About() {
               </Button>
             </div>
 
-            {/* <div className="mt-10 max-w-[15rem] bg-cream p-5">
+            {/* <div className="mt-10 max-about-stats bg-cream p-5">
               <p className="text-3xl font-black leading-none text-dark">{about.stats[1].value}</p>
               <p className="mt-2 text-sm text-dark-muted">{about.stats[1].label}</p>
             </div> */}

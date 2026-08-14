@@ -63,7 +63,7 @@ export default function CTABanner({
   }
 
   return (
-    <section aria-label="Call to Action" className="relative py-10 lg:py-16">
+    <section aria-label="Call to Action" className="relative section-padding">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image src={backgroundImage} alt="" fill className="object-cover object-center" priority />
@@ -74,7 +74,7 @@ export default function CTABanner({
 
       <Container className="relative z-10">
         <div className="max-w-2xl">
-          <h2 className="text-[clamp(2rem,4vw,3rem)]  font-bold uppercase leading-[0.95] tracking-heading-tight text-white lg:text-[3.5rem]">
+          <h2 className="type-section-title font-bold uppercase leading-section tracking-heading-tight text-white lg:type-display-large">
             {title}
           </h2>
 
@@ -91,12 +91,12 @@ export default function CTABanner({
                     setEmailError('')
                   }}
                   placeholder="Enter your email"
-                  className="h-14 w-full rounded-none border border-light-muted bg-white px-4 pr-36 text-accent placeholder:text-accent focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                  className="h-14 w-full rounded-none border border-light-muted bg-surface-high px-4 pr-36 text-accent placeholder:text-accent focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 />
 
                 <button
                   type="submit"
-                  className="absolute right-1 top-1 h-12 rounded-none bg-accent px-6 text-white transition-colors duration-300  hover:bg-dark hover:text-white "
+                  className="absolute right-1 top-1 h-12 rounded-none bg-accent px-6 text-white transition-colors duration-standard  hover:bg-dark hover:text-white "
                 >
                   Subscribe
                 </button>

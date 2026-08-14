@@ -43,9 +43,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) notFound()
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-surface-high">
       <Navbar />
-      <div className="relative isolate h-[60vh] min-h-[480px] w-full lg:h-[85vh]">
+      <div className="relative isolate h-page-hero min-h-page-hero w-full lg:h-tall-section">
         <Image
           src="/hero.webp"
           alt=""

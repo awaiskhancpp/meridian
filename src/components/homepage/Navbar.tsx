@@ -145,14 +145,14 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 w-full z-[var(--z-navbar)] transition-all duration-300 ${surfaceClasses}`}
+      className={`fixed inset-x-0 top-0 w-full z-navbar transition-all duration-standard ${surfaceClasses}`}
     >
       {/* Container wraps ONLY the top navbar area now */}
       <Container className="relative">
         <div className="flex items-center justify-between gap-4 py-3 lg:py-0">
           <Link
             href="/"
-            className={`flex items-center gap-3 p-1 ${textClasses}`}
+            className={`flex items-center gap-field p-1 ${textClasses}`}
             aria-label={brand.name}
           >
             {/* {nav.img ? ( */}
@@ -175,7 +175,7 @@ export default function Navbar() {
                     <ChevronIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
                   </Link>
 
-                  <div className="invisible absolute left-1/2 top-[85%] z-10 w-[220px] -translate-x-1/2 translate-y-2 border border-subtle bg-white p-2 opacity-0 shadow-card transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="invisible absolute left-1/2 top-dropdown z-10 w-dropdown -translate-x-1/2 translate-y-2 border border-subtle bg-surface p-2 opacity-0 shadow-card transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                     {item.children.map((child) => (
                       <Link
                         key={child.label}
@@ -222,7 +222,7 @@ export default function Navbar() {
             type="button"
             ref={toggleButtonRef}
             onClick={() => setMobileOpen((value) => !value)}
-            className={`inline-flex items-center gap-3 rounded-none text-sm font-semibold tracking-snug transition-colors lg:hidden ${
+            className={`inline-flex items-center gap-field rounded-none text-sm font-semibold tracking-snug transition-colors lg:hidden ${
               isSolid ? 'text-accent hover:bg-cream' : 'text-white hover:bg-white-ghost'
             }`}
             aria-expanded={mobileOpen}
@@ -255,9 +255,9 @@ export default function Navbar() {
       <div
         id="main-menu"
         ref={menuRef}
-        className={`absolute left-0 right-0 top-full w-full overflow-y-auto bg-white border-t border-subtle transition-all duration-300 ease-in-out lg:hidden ${
+        className={`absolute left-0 right-0 top-full w-full overflow-y-auto bg-surface border-t border-subtle transition-all duration-standard ease-in-out lg:hidden ${
           mobileOpen
-            ? 'h-[calc(100dvh-100%)] opacity-100'
+            ? 'viewport-mobile-menu opacity-100'
             : 'h-0 opacity-0 pointer-events-none border-transparent'
         }`}
       >
@@ -277,15 +277,15 @@ export default function Navbar() {
                   >
                     {item.label}
                     <ChevronIcon
-                      className={`h-4 w-4 transition-transform duration-300 ${
+                      className={`h-4 w-4 transition-transform duration-standard ${
                         isDropdownOpen ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
 
                   <div
-                    className={`overflow-hidden transition-[max-height] duration-300 ease-out ${
-                      isDropdownOpen ? 'max-h-[30rem]' : 'max-h-0'
+                    className={`overflow-hidden transition-menu duration-standard ease-out ${
+                      isDropdownOpen ? 'max-menu-height' : 'max-h-0'
                     }`}
                   >
                     <div className="flex flex-col gap-1 pb-5 pl-4 border-l border-subtle ml-2 mb-2">

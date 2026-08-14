@@ -31,7 +31,7 @@ export default function ProjectPage() {
   }, [activeCategory, allProjects])
 
   return (
-    <main className="py-10 lg:py-16">
+    <main className="section-padding">
       <Container>
         {/* Header row */}
         <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:mb-10">
@@ -39,7 +39,7 @@ export default function ProjectPage() {
             <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
               Selected work
             </p>
-            <h2 className="mt-3 max-w-2xl text-[clamp(2rem,4vw,3.4rem)] font-black uppercase leading-[0.92] tracking-heading-tight text-dark">
+            <h2 className="mt-3 max-w-2xl type-project-title font-black uppercase leading-heading tracking-heading-tight text-dark">
               Built around how you live.
             </h2>
           </div>
@@ -67,7 +67,7 @@ export default function ProjectPage() {
             return (
               <article key={project.href} className={`group ${sizeClass}`}>
                 <Link href={project.href} className="block">
-                  <div className="relative h-[28rem] overflow-hidden lg:h-[34rem]">
+                  <div className="relative h-card-media overflow-hidden lg:h-card-media-lg">
                     <Image
                       src={project.image}
                       alt={project.imageAlt}
@@ -80,13 +80,13 @@ export default function ProjectPage() {
                       <p className="text-xs font-medium uppercase tracking-label text-white-subtle">
                         {project.category}
                       </p>
-                      <h3 className="mt-2 text-[clamp(1.2rem,1.8vw,1.6rem)] font-bold uppercase leading-[0.95] tracking-heading-tight text-white text-balance line-clamp-2">
+                      <h3 className="mt-2 type-project-card font-bold uppercase leading-section tracking-heading-tight text-white text-balance line-clamp-2">
                         {project.title}
                       </h3>
                     </div>
                   </div>
 
-                  <div className="mt-4 text-[clamp(1.35rem,2vw,1.85rem)] font-bold uppercase leading-[0.95] tracking-heading-tight transform-gpu transition-all duration-700 ease-in-out group-hover:-translate-y-2 group-hover:opacity-0 text-balance line-clamp-2">
+                  <div className="mt-4 type-project-card-hover font-bold uppercase leading-section tracking-heading-tight transform-gpu transition-all duration-700 ease-in-out group-hover:-translate-y-2 group-hover:opacity-0 text-balance line-clamp-2">
                     {project.title}
                   </div>
                 </Link>
@@ -107,3 +107,4 @@ export default function ProjectPage() {
     </main>
   )
 }
+

@@ -82,14 +82,14 @@ export default function Footer() {
               </div>
 
               {/* Contact Section */}
-              <div className="flex flex-col gap-3 sm:col-span-2 md:col-span-1  lg:gap-4">
+              <div className="flex flex-col gap-field sm:col-span-2 md:col-span-1  lg:gap-4">
                 <p className="text-xs font-normal uppercase tracking-label text-dark-muted">
                   Contacts
                 </p>
-                <div className="mt-0 grid content-start text-sm  leading-6 text-dark gap-3">
+                <div className="mt-0 grid content-start text-sm  leading-6 text-dark gap-field">
                   <div className="flex gap-2 items-center">
                     <MapPin className="shrink-0" size={20} />
-                    <p className=" leading-[1.2]">
+                    <p className=" leading-footer">
                       734 University Ave. Suite 205 San Diego, CA 92103
                     </p>
                   </div>
@@ -116,7 +116,7 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="mt-8 flex flex-col items-center justify-center md:justify-between gap-2 border-t border-subtle px-5 pt-6 text-center text-xs text-dark-muted md:flex-row md:gap-3">
+          <div className="mt-8 flex flex-col items-center justify-center md:justify-between gap-2 border-t border-subtle px-5 pt-6 text-center text-xs text-dark-muted md:flex-row md:gap-field">
             <div className="flex flex-col md:flex-row gap-2">
               <p>© 2026 MERIDIAN. All rights reserved.</p>
               <span className="hidden md:inline text-border-strong">|</span>
@@ -133,7 +133,7 @@ export default function Footer() {
               </p>
             </div>
             {/* <span className="hidden md:inline text-border-strong">|</span> */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-field">
               {legalLinks.map((item, i) => (
                 <React.Fragment key={item.label}>
                   {i > 0 && <span className="text-border-strong">|</span>}

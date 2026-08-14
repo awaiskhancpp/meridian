@@ -41,7 +41,7 @@ export default function Gallery() {
     <section
       id="gallery"
       aria-labelledby="gallery-heading"
-      className="relative w-full py-10 lg:py-16 overflow-hidden "
+      className="relative w-full section-padding overflow-hidden "
     >
       {/* Elegant Header Section */}
       <SectionHeading
@@ -90,7 +90,7 @@ export default function Gallery() {
             <SwiperSlide key={i} className="w-full ">
               {({ isActive }) => (
                 <div
-                  className={`relative w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden transition-all duration-500 ease-in-out ${
+                  className={`relative w-full ratio-landscape md:aspect-gallery overflow-hidden transition-all duration-500 ease-in-out ${
                     isActive ? 'scale-100 opacity-100 shadow-xl' : 'scale-90 opacity-100'
                   }`}
                 >

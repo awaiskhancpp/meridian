@@ -14,19 +14,19 @@ interface BeforeAfterSliderProps {
 /**
  * BeforeAfterSlider
  *
- * A single draggable comparison widget — one "after" photo underneath,
+ * A single draggable comparison widget Ã¢â‚¬â€ one "after" photo underneath,
  * one "before" photo on top clipped via clip-path to reveal only the
  * portion left of the handle's position. Dragging the handle (or
  * clicking/dragging anywhere on the image) moves that clip boundary.
  *
  * Pointer capture (setPointerCapture on the container, which is what
  * received pointerdown) is what lets a fast drag keep working even if
- * the cursor momentarily leaves the image bounds — without it, moving
+ * the cursor momentarily leaves the image bounds Ã¢â‚¬â€ without it, moving
  * the mouse quickly during a drag can "lose" the element and the slider
  * stops responding until the next pointerdown.
  *
  * Keyboard: the handle is a real `role="slider"` element, focusable,
- * with ArrowLeft/ArrowRight nudging the position — not just a
+ * with ArrowLeft/ArrowRight nudging the position Ã¢â‚¬â€ not just a
  * mouse/touch-only interaction.
  */
 export default function BeforeAfterSlider({
@@ -71,15 +71,15 @@ export default function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
-      className="relative aspect-[4/3] w-full touch-none select-none overflow-hidden border border-muted"
+      className="relative ratio-landscape w-full touch-none select-none overflow-hidden border border-muted"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
     >
-      {/* After — full image, underneath */}
+      {/* After Ã¢â‚¬â€ full image, underneath */}
       <Image src={afterImage} alt={afterAlt} fill className="pointer-events-none object-cover" />
 
-      {/* Before — clipped to reveal only up to `position`% from the left */}
+      {/* Before Ã¢â‚¬â€ clipped to reveal only up to `position`% from the left */}
       <div
         className="pointer-events-none absolute inset-0"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
@@ -89,11 +89,11 @@ export default function BeforeAfterSlider({
 
       {/* Divider line */}
       <div
-        className="pointer-events-none absolute inset-y-0 w-0.5 -translate-x-1/2 bg-white"
+        className="pointer-events-none absolute inset-y-0 w-divider -translate-x-1/2 bg-surface"
         style={{ left: `${position}%` }}
       />
 
-      {/* Handle — dragging is handled by the container's pointer events
+      {/* Handle Ã¢â‚¬â€ dragging is handled by the container's pointer events
           above (so grabbing anywhere on the image works, not just this
           circle), but this is the focusable element for keyboard control */}
       <div
@@ -104,7 +104,7 @@ export default function BeforeAfterSlider({
         aria-valuemin={0}
         aria-valuemax={100}
         onKeyDown={handleKeyDown}
-        className="absolute top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full bg-white text-dark shadow-card outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        className="absolute top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full bg-surface text-dark shadow-card outline-none focus-visible:ring-2 focus-visible:ring-accent"
         style={{ left: `${position}%` }}
       >
         <ChevronLeft className="h-3.5 w-3.5" aria-hidden="true" />

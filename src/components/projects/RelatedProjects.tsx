@@ -11,14 +11,14 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
     .slice(0, 3)
 
   return (
-    <section className="py-10 lg:py-16 mb-10 lg:mb-16">
+    <section className="section-padding section-margin-bottom">
       <Container>
         <div className="mb-10 flex items-end justify-between gap-6">
           <div className=" flex flex-col capitalize">
             <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
               Continue exploring
             </p>
-            <h2 id="before-after-heading" className="mt-1 gap-3">
+            <h2 id="before-after-heading" className="mt-1 gap-card">
               <span className="block heading-2 text-dark">More of our</span>
 
               <span className="block heading-script text-accent">work.</span>
@@ -36,7 +36,7 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
         <div className="grid gap-6 md:grid-cols-3">
           {relatedProjects.map((item) => (
             <Link key={item.href} href={item.href} className="group">
-              <div className="relative aspect-[4/3] overflow-hidden">
+              <div className="relative ratio-landscape overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.imageAlt}
@@ -57,3 +57,4 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
     </section>
   )
 }
+

@@ -85,7 +85,7 @@ export default function Contact() {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="relative flex min-h-[90vh] items-center py-10 lg:py-16"
+      className="relative flex min-h-contact items-center section-padding"
     >
       {/* FULL WIDTH BACKGROUND IMAGE */}
       <Image src="/hero.webp" alt="" fill className="absolute inset-0 z-0 object-cover" />
@@ -108,7 +108,7 @@ export default function Contact() {
           {/* BOTTOM: Form Section */}
           <div className="w-full">
             {submitted ? (
-              <div className="flex h-[437px] flex-col items-center justify-center rounded-[24px] border border-light-soft bg-white-soft p-6 backdrop-blur-sm">
+              <div className="flex h-contact-success flex-col items-center justify-center rounded-contact border border-light-soft bg-white-soft p-6 backdrop-blur-sm">
                 <p className="text-sm font-medium text-white">
                   Thanks. Your message is in, and we will be in touch soon.
                 </p>
@@ -157,7 +157,7 @@ export default function Contact() {
                   />
 
                   {/* SERVICE DROPDOWN — single-select */}
-                  <div className="relative grid gap-3">
+                  <div className="relative grid gap-field">
                     <span className="text-xs uppercase tracking-snug text-white">
                       Service of Interest
                     </span>
@@ -177,7 +177,7 @@ export default function Contact() {
 
                       <ChevronDown
                         size={18}
-                        className={`shrink-0 text-white-muted transition-transform duration-300 ${
+                        className={`shrink-0 text-white-muted transition-transform duration-standard ${
                           isDropdownOpen ? 'rotate-180' : ''
                         }`}
                       />
@@ -196,7 +196,7 @@ export default function Contact() {
                           role="listbox"
                           aria-label="Service of interest"
                           // Added classes to hide scrollbar across all major browsers
-                          className="absolute left-0 top-full z-20 mt-1 max-h-60 w-full overflow-y-auto rounded-none border border-light-soft bg-dark py-2 shadow-xl [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                          className="absolute left-0 top-full z-20 mt-1 max-h-60 w-full overflow-y-auto rounded-none border border-light-soft bg-dark py-2 shadow-xl scrollbar-hide"
                         >
                           {AVAILABLE_SERVICES.map((service) => {
                             const isSelected = formData.service === service
@@ -207,7 +207,7 @@ export default function Contact() {
                                 role="option"
                                 aria-selected={isSelected}
                                 onClick={() => handleServiceSelect(service)}
-                                className="flex cursor-pointer items-center gap-3 px-4 py-3 transition-colors hover:bg-white-ghost"
+                                className="flex cursor-pointer items-center gap-field px-4 py-3 transition-colors hover:bg-white-ghost"
                               >
                                 <span className="text-sm text-white">{service}</span>
                               </div>
@@ -231,7 +231,7 @@ export default function Contact() {
                   onChange={handleChange}
                 />
 
-                <div className="flex flex-col items-center gap-3">
+                <div className="flex flex-col items-center gap-field">
                   {serverError && (
                     <p className="text-sm text-status-danger" role="alert">
                       {serverError}
@@ -242,7 +242,7 @@ export default function Contact() {
                     size="md"
                     type="submit"
                     disabled={isSubmitting}
-                    className="max-w-fit rounded-none border-light-muted text-white hover:!bg-white hover:!text-dark disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="max-w-fit rounded-none border-light-muted text-white hover:!bg-surface-high hover:!text-dark disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <span>{isSubmitting ? 'Sending…' : contact.submit}</span>
                     <ArrowUpRight size={20} />
@@ -284,7 +284,7 @@ function UnderlineField({
     'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white-muted focus:border-white-subtle focus:ring-0'
 
   return (
-    <label htmlFor={id} className="grid gap-3">
+    <label htmlFor={id} className="grid gap-field">
       <span className="text-xs uppercase tracking-snug text-white">{label}</span>
       {as === 'textarea' ? (
         <textarea
@@ -294,7 +294,7 @@ function UnderlineField({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className={`${commonClass} min-h-[9rem] resize-none rounded-none`}
+          className={`${commonClass} min-h-contact-field resize-none rounded-none`}
         />
       ) : (
         <input

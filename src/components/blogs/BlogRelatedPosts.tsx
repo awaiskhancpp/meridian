@@ -26,10 +26,10 @@ export default function BlogRelatedPosts() {
     <section
       id="related-posts"
       aria-labelledby="related-posts-heading"
-      className="bg-white py-16  lg:py-24"
+      className="bg-surface section-space"
     >
       <Container>
-        {/* ── Header row: eyebrow + heading left, nav arrows right ── */}
+        {/* Ã¢â€â‚¬Ã¢â€â‚¬ Header row: eyebrow + heading left, nav arrows right Ã¢â€â‚¬Ã¢â€â‚¬ */}
         <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
           <div>
             <div className="flex items-center gap-2">
@@ -40,7 +40,7 @@ export default function BlogRelatedPosts() {
               <span className="block heading-script capitalize text-accent mt-2">{script}</span>
             </h2>
           </div>
-          <div className="flex flex-shrink-0 items-center gap-3">
+          <div className="flex flex-shrink-0 items-center gap-card">
             <button
               ref={prevRef}
               type="button"
@@ -124,7 +124,7 @@ function BlogFeatureCard({ card }: { card: BlogItem }) {
     <article className="group h-full">
       <a href={card.href} className="block">
         <div className="relative">
-          <div className="relative h-[28rem] overflow-hidden lg:h-[34rem]">
+          <div className="relative h-card-media overflow-hidden lg:h-card-media-lg">
             <Image
               src={card.image}
               alt={card.imageAlt}
@@ -134,8 +134,8 @@ function BlogFeatureCard({ card }: { card: BlogItem }) {
             <div className="absolute inset-0 bg-overlay-card" />
 
             <div className="absolute inset-0 flex items-center justify-center p-6 opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100">
-              <div className="w-full translate-y-4 h-full border border-light-strong bg-white-overlay px-8 py-10 flex flex-col items-center justify-center text-center opacity-0 shadow-soft backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                <h3 className="text-[clamp(1.5rem,2vw,2rem)] font-black capitalize leading-[0.92] tracking-heading-subtle text-dark">
+              <div className="w-full translate-y-4 h-full border border-light-strong bg-surface-overlay px-8 py-10 flex flex-col items-center justify-center text-center opacity-0 shadow-soft backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <h3 className="type-card-title font-black capitalize leading-heading tracking-heading-subtle text-dark">
                   {card.title}
                 </h3>
                 <p className="mt-5 text-sm leading-6 text-dark-muted">{card.description}</p>
@@ -147,7 +147,7 @@ function BlogFeatureCard({ card }: { card: BlogItem }) {
           </div>
         </div>
 
-        <div className="mt-4 transition-all duration-300 group-hover:opacity-0 group-hover:-translate-y-2">
+        <div className="mt-4 transition-all duration-standard group-hover:opacity-0 group-hover:-translate-y-2">
           <h3 className="heading-card text-dark">{card.title}</h3>
         </div>
       </a>

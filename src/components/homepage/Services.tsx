@@ -22,17 +22,16 @@ import {
 } from 'lucide-react'
 import siteData from '@/website.json'
 import { Container, SectionHeadingInline } from '@/components/ui'
-import ServiceGridCard from './ServiceGridCard'
 
 const { services } = siteData
 
 /**
- * Hand-drawn SVGs replaced with real lucide-react icons — one per service,
+ * Hand-drawn SVGs replaced with real lucide-react icons Ã¢â‚¬â€ one per service,
  * looked up by the `icon` key already in website.json rather than a long
  * if/else chain of custom paths.
  *
  * Cards 4/5/6 were rendering blank because their icon keys in website.json
- * ("plus-square", "cabinet") had no matching entry here — ServiceIcon
+ * ("plus-square", "cabinet") had no matching entry here Ã¢â‚¬â€ ServiceIcon
  * silently returns null for any key it doesn't recognize. Fixed both
  * sides: website.json now uses "house-plus" / "shelving-unit" /
  * "pencil-line", matching the map below exactly.
@@ -59,7 +58,7 @@ function ServiceIcon({ name }: { name: string }) {
 
 function ArrowIcon({ direction }: { direction: 'left' | 'right' }) {
   const Icon = direction === 'left' ? ChevronLeft : ChevronRight
-  return <Icon className="h-4 w-4" aria-hidden="true" />
+  return <Icon className="icon-sm" aria-hidden="true" />
 }
 
 export default function Services() {
@@ -73,7 +72,7 @@ export default function Services() {
   }
 
   return (
-    <section id="services" aria-labelledby="services-heading" className="py-10 lg:py-16">
+    <section id="services" aria-labelledby="services-heading" className="section-padding">
       <Container>
         <div className="flex items-end justify-between gap-4 pb-6">
           <div>
@@ -87,7 +86,7 @@ export default function Services() {
             />
           </div>
 
-          <div className="flex items-center gap-3 pt-1">
+          <div className="flex items-center gap-card pt-1">
             <button
               type="button"
               onClick={() => swiperRef.current?.slidePrev()}
@@ -136,16 +135,16 @@ export default function Services() {
                     href={`/services/${service.href}`}
                     className="group flex w-full"
                   >
-                    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-none">
+                    <div className="relative ratio-portrait w-full overflow-hidden rounded-none">
                       <Image
                         src={service.image}
                         alt={service.title}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-x-4 bottom-4 bg-dark px-5 pb-5 pt-9 shadow-card-strong transition-colors duration-300">
+                      <div className="absolute inset-x-4 bottom-4 bg-dark px-5 pb-5 pt-9 shadow-card-strong transition-colors duration-standard">
                         {Icon && (
-                          <div className="absolute -top-7 left-5 flex h-14 w-14 items-center justify-center rounded-full bg-white">
+                          <div className="absolute -top-7 left-5 flex h-14 w-14 items-center justify-center rounded-full bg-surface">
                             <Icon
                               className="h-7 w-7 text-accent"
                               strokeWidth={1.5}
@@ -168,3 +167,4 @@ export default function Services() {
     </section>
   )
 }
+

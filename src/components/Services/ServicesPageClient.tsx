@@ -58,12 +58,12 @@ export default function ServicesPageClient({
 
     const sort = search.sort || 'Popular'
     result = [...result].sort((a, b) => {
-      if (sort === 'A–Z') return a.title.localeCompare(b.title)
+      if (sort === 'AÃ¢â‚¬â€œZ') return a.title.localeCompare(b.title)
       if (sort === 'Price: Low to High')
         return numericPrice(a.startingPrice) - numericPrice(b.startingPrice)
       if (sort === 'Price: High to Low')
         return numericPrice(b.startingPrice) - numericPrice(a.startingPrice)
-      // "Popular" — badged services first (Most Popular, Free Consultation, etc.), original order otherwise
+      // "Popular" Ã¢â‚¬â€ badged services first (Most Popular, Free Consultation, etc.), original order otherwise
       return (b.badge ? 1 : 0) - (a.badge ? 1 : 0)
     })
 
@@ -71,7 +71,7 @@ export default function ServicesPageClient({
   }, [services, search])
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-surface">
       <Navbar />
 
       <PageHero
@@ -82,7 +82,7 @@ export default function ServicesPageClient({
         image="/hero.webp"
       />
 
-      <section aria-label="All services" className="py-10 lg:py-16">
+      <section aria-label="All services" className="section-padding">
         <Container>
           <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
@@ -106,16 +106,16 @@ export default function ServicesPageClient({
                 const Icon = service.icon && SERVICE_ICONS[service.icon]
                 return (
                   <Link key={i} href={`/services/${service.slug}`} className="group flex w-full">
-                    <div className="relative aspect-[4/5] w-full overflow-hidden rounded-none">
+                    <div className="relative ratio-portrait w-full overflow-hidden rounded-none">
                       <Image
                         src={service.image}
                         alt={service.title}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-x-4 bottom-4 bg-dark px-5 pb-5 pt-9 shadow-card-strong transition-colors duration-300">
+                      <div className="absolute inset-x-4 bottom-4 bg-dark px-5 pb-5 pt-9 shadow-card-strong transition-colors duration-standard">
                         {Icon && (
-                          <div className="absolute -top-7 left-5 flex h-14 w-14 items-center justify-center rounded-full bg-white">
+                          <div className="absolute -top-7 left-5 flex h-14 w-14 items-center justify-center rounded-full bg-surface">
                             <Icon
                               className="h-7 w-7 text-accent"
                               strokeWidth={1.5}
@@ -140,3 +140,4 @@ export default function ServicesPageClient({
     </main>
   )
 }
+

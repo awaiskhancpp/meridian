@@ -34,7 +34,7 @@ interface ServiceWhyChooseUsProps {
  */
 export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
   return (
-    <section aria-labelledby="why-choose-us-heading" className="py-10 lg:py-16 lg:mb-16 mb-10">
+    <section aria-labelledby="why-choose-us-heading" className="section-padding lg:mb-16 mb-10">
       <Container>
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           <p className="text-xs uppercase tracking-eyebrow text-dark-muted">Why Choose Us</p>
@@ -45,13 +45,13 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
             <span className="mt-2 block heading-script text-accent">{data.script}</span>
           </h2>
         </div>
-        <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1fr)_minmax(0,1.2fr)] lg:items-start lg:gap-10">
-          {/* ── Left: stats ── */}
+        <div className="mt-6 grid grid-cols-1 gap-8 lg:columns-service-why lg:items-start lg:gap-10">
+          {/* Ã¢â€â‚¬Ã¢â€â‚¬ Left: stats Ã¢â€â‚¬Ã¢â€â‚¬ */}
           <div className="flex h-full flex-col justify-between gap-6 lg:gap-8 order-3 lg:order-1">
             {/* Grouping stats together so they sit at the top */}
             <div className="flex flex-col gap-4">
               {data.bullets.map((bullet, index) => (
-                <div key={index} className="flex items-center gap-3">
+                <div key={index} className="flex items-center gap-card">
                   <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent">
                     <Check className="text-white" size={16} strokeWidth={3} />
                   </div>
@@ -66,8 +66,8 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
             </Button>
           </div>
 
-          {/* ── Center: image ── */}
-          <div className="relative h-full w-full overflow-hidden rounded-none aspect-[4/3]  order-2 lg:order-2">
+          {/* Ã¢â€â‚¬Ã¢â€â‚¬ Center: image Ã¢â€â‚¬Ã¢â€â‚¬ */}
+          <div className="relative h-full w-full overflow-hidden rounded-none ratio-landscape  order-2 lg:order-2">
             {data.image && (
               <Image
                 src={data.image}
@@ -79,9 +79,9 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
             )}
           </div>
 
-          {/* ── Right: heading, description, mission ── */}
+          {/* Ã¢â€â‚¬Ã¢â€â‚¬ Right: heading, description, mission Ã¢â€â‚¬Ã¢â€â‚¬ */}
           <div className="order-1 lg:order-3">
-            <h3 className="mt-1 flex flex-wrap items-end gap-3 text-[clamp(1.9rem,3.8vw,3rem)] font-bold uppercase leading-[0.92] tracking-heading-tight text-dark">
+            <h3 className="mt-1 flex flex-wrap items-end gap-card type-service-why font-bold uppercase leading-heading tracking-heading-tight text-dark">
               {data.contentHeading}
             </h3>
 
@@ -103,3 +103,4 @@ export default function ServiceWhyChooseUs({ data }: ServiceWhyChooseUsProps) {
     </section>
   )
 }
+

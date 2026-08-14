@@ -232,6 +232,172 @@
 @utility section-space-compact {
   padding-block: 4rem;
 }
+@utility font-sans { font-family: var(--font-family-sans); }
+@utility font-script { font-family: var(--font-family-script); }
+@utility section-padding {
+  padding-block: 2.5rem;
+  @media (min-width: 1024px) { padding-block: 4rem; }
+}
+@utility section-margin-bottom {
+  margin-bottom: 2.5rem;
+  @media (min-width: 1024px) { margin-bottom: 4rem; }
+}
+@utility gap-field { gap: 0.75rem; }
+@utility w-divider { width: 0.125rem; }
+@utility hero-content-padding {
+  padding-top: 6rem;
+  @media (min-width: 640px) { padding-top: 7rem; }
+  @media (min-width: 1024px) { padding-top: 8rem; }
+  @media (min-width: 1536px) { padding-top: 6rem; }
+}
+@utility about-callout-right {
+  right: 4rem;
+  @media (min-width: 768px) { right: 18rem; }
+}
+@utility bg-surface { background-color: var(--color-bg-cream); }
+@utility bg-surface-muted { background-color: var(--color-white-soft); }
+@utility bg-surface-high { background-color: var(--color-white); }
+@utility text-surface { color: var(--color-text-dark); }
+@utility legal-page {
+  margin-inline: auto;
+  padding-block: 2.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-dark-muted);
+  @media (min-width: 1024px) { padding-block: 4rem; }
+  & h2 { margin-top: 2.5rem; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-medium); color: var(--color-text-dark); }
+  & p, & ul { font-size: 0.875rem; line-height: 1.6; color: var(--color-text-dark-muted); }
+  & a { color: var(--color-text-dark); text-decoration: underline; text-underline-offset: 4px; }
+  & a:hover { color: var(--color-accent); }
+}
+@utility richtext {
+  & p { margin-bottom: 1.25rem; font-size: 0.95rem; line-height: 1.6; color: var(--color-text-dark-muted); }
+  & h1, & h2 { margin-top: 3.5rem; margin-bottom: 1.25rem; scroll-margin-top: 7rem; font-weight: 900; text-transform: uppercase; letter-spacing: var(--tracking-heading-medium); color: var(--color-text-dark); border-left: 4px solid var(--color-accent); padding-left: 1rem; line-height: 1.1; }
+  & h1 { font-size: 1.875rem; }
+  & h2 { font-size: 1.5rem; }
+  @media (min-width: 768px) { & h1 { font-size: 2.25rem; } & h2 { font-size: 1.9rem; } }
+  & h3 { margin-top: 2.5rem; margin-bottom: 1rem; scroll-margin-top: 7rem; font-size: 1.25rem; font-weight: 700; color: var(--color-text-dark); line-height: 1.1; border-left: 2px solid color-mix(in srgb, var(--color-accent) 60%, transparent); padding-left: 0.75rem; }
+  & h4 { margin-top: 2rem; margin-bottom: 0.75rem; font-size: 1.125rem; font-weight: 700; color: var(--color-text-dark); line-height: 1.1; border-left: 2px solid color-mix(in srgb, var(--color-accent) 40%, transparent); padding-left: 0.75rem; }
+  & ul, & ol { margin-bottom: 1.5rem; margin-left: 0.25rem; padding-left: 1.25rem; font-size: 0.95rem; line-height: 1.6; color: var(--color-text-dark-muted); }
+  & ul { list-style: disc; } & ol { list-style: decimal; } & li { padding-left: 0.25rem; }
+  & blockquote { margin-bottom: 1.5rem; border-left: 4px solid var(--color-accent); padding-left: 1.25rem; font-style: italic; color: var(--color-text-dark-muted); }
+  & a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 2px; transition: color 300ms; }
+  & code { border-radius: 0.25rem; background: var(--color-bg-cream); padding: 0.125rem 0.375rem; font-family: monospace; font-size: 0.9em; color: var(--color-text-dark); }
+  & hr { margin-block: 2.5rem; border-top: 1px solid var(--color-border-muted); }
+}
+
+/* Semantic component recipes. Keep raw values in builds.ts so a builder can
+   change a visual rule once without searching through component markup. */
+@utility type-not-found-watermark { font-size: clamp(9rem,42vw,30rem); }
+@utility type-not-found-title { font-size: clamp(2.4rem,7vw,5.5rem); }
+@utility type-not-found-script { font-size: clamp(2.8rem,7.5vw,6rem); }
+@utility type-page-title { font-size: clamp(2.75rem,6.8vw,5.85rem); }
+@utility type-page-script { font-size: clamp(3.1rem,7vw,6.1rem); }
+@utility type-section-title { font-size: clamp(2rem,4vw,3rem); }
+@utility type-section-title-wide { font-size: clamp(2rem,4vw,3.25rem); }
+@utility type-section-title-large { font-size: clamp(2rem,4vw,3.5rem); }
+@utility type-section-title-extra-large { font-size: clamp(2rem,4vw,4rem); }
+@utility type-service-script { font-size: clamp(2.2rem,4.5vw,3.5rem); }
+@utility type-service-hero { font-size: clamp(2rem,5vw,4rem); }
+@utility type-service-form { font-size: clamp(1.8rem,3.6vw,2.6rem); }
+@utility type-service-why { font-size: clamp(1.9rem,3.8vw,3rem); }
+@utility type-project-hero { font-size: clamp(2.75rem,7vw,6.4rem); }
+@utility type-project-title { font-size: clamp(2rem,4vw,3.4rem); }
+@utility type-project-brief { font-size: clamp(2rem,4vw,3.5rem); }
+@utility type-project-cta { font-size: clamp(2rem,4vw,4rem); }
+@utility type-project-card { font-size: clamp(1.2rem,1.8vw,1.6rem); }
+@utility type-project-card-hover { font-size: clamp(1.35rem,2vw,1.85rem); }
+@utility type-card-title { font-size: clamp(1.5rem,2vw,2rem); }
+@utility type-mission-title { font-size: clamp(2.125rem,3vw,2.75rem); }
+@utility type-mission-script { font-size: clamp(2.75rem,4vw,3.5rem); }
+@utility type-value-title { font-size: clamp(1.625rem,2vw,2rem); }
+@utility type-trust-title { font-size: clamp(2rem,4vw,3.25rem); }
+@utility type-trust-script { font-size: clamp(2.5rem,5vw,4rem); }
+@utility type-body { font-size: 0.95rem; }
+@utility type-metadata { font-size: 0.65rem; }
+@utility type-code { font-size: 0.9em; }
+@utility type-search-label { font-size: 10px; }
+@utility type-display-large { font-size: 3.5rem; }
+@utility type-display-extra-large { font-size: 4.5rem; }
+@utility type-article-subheading { font-size: 1.9rem; }
+@utility leading-hero { line-height: 0.9; }
+@utility leading-script { line-height: 0.82; }
+@utility leading-heading { line-height: 0.92; }
+@utility leading-section { line-height: 0.95; }
+@utility leading-compact { line-height: 0.98; }
+@utility leading-projectHero { line-height: 0.88; }
+@utility leading-mission { line-height: 1.1; }
+@utility leading-body { line-height: 1.6; }
+@utility max-hero { max-width: 40rem; }
+@utility max-heading { max-width: 44rem; }
+@utility max-copy { max-width: 28rem; }
+@utility max-copy-wide { max-width: 30rem; }
+@utility max-copy-extra-wide { max-width: 36rem; }
+@utility max-card-copy { max-width: 19rem; }
+@utility max-about-stats { max-width: 15rem; }
+@utility max-trust-copy { max-width: 12rem; }
+@utility max-story-copy { max-width: 24rem; }
+@utility max-why-image-sm { max-width: 380px; }
+@utility max-why-image-md { max-width: 420px; }
+@utility max-why-image-lg { max-width: 360px; }
+@utility h-card-media { height: 28rem; }
+@utility h-card-media-lg { height: 34rem; }
+@utility h-iframe { height: 24rem; }
+@utility h-iframe-lg { height: 30rem; }
+@utility h-gallery { height: 85vh; }
+@utility h-gallery-lg { height: 90vh; }
+@utility w-gallery { width: 90vw; }
+@utility w-gallery-lg { width: 85vw; }
+@utility min-h-service-form { min-height: 20rem; }
+@utility min-h-service-field { min-height: 7rem; }
+@utility min-h-contact { min-height: 90vh; }
+@utility h-contact-success { height: 437px; }
+@utility min-h-contact-field { min-height: 9rem; }
+@utility rounded-contact { border-radius: 24px; }
+@utility max-legal { max-width: 64rem; }
+@utility min-h-page-hero { min-height: 480px; }
+@utility min-h-service-hero { min-height: 500px; }
+@utility ratio-process-media { aspect-ratio: 280/160; }
+@utility ratio-landscape { aspect-ratio: 4/3; }
+@utility ratio-portrait { aspect-ratio: 4/5; }
+@utility ratio-gallery { aspect-ratio: 16/10; }
+@utility columns-hero { grid-template-columns: minmax(0,1fr) auto; }
+@utility columns-project-brief { grid-template-columns: 1.1fr 0.9fr; }
+@utility columns-project-direction { grid-template-columns: 0.8fr 1.2fr; }
+@utility columns-service-about { grid-template-columns: minmax(0,0.9fr) minmax(0,1.1fr); }
+@utility columns-service-why { grid-template-columns: minmax(0,0.8fr) minmax(0,1fr) minmax(0,1.2fr); }
+@utility columns-faq { grid-template-columns: 0.85fr 1.15fr; }
+@utility columns-blog { grid-template-columns: 1fr 15rem; }
+@utility viewport-hero { height: 100svh; }
+@utility h-full-viewport { height: 100svh; }
+@utility min-h-full-viewport { min-height: 100svh; }
+@utility viewport-service-hero { height: 100vh; }
+@utility h-service-hero { height: 100vh; }
+@utility viewport-service-hero-lg { height: 92vh; }
+@utility viewport-page-hero { height: 60vh; }
+@utility h-page-hero { height: 60vh; }
+@utility viewport-page-hero-lg { height: 85vh; }
+@utility h-tall-section { height: 85vh; }
+@utility viewport-project { min-height: 100svh; }
+@utility viewport-process { min-height: 96vh; }
+@utility h-process { height: 96vh; }
+@utility min-h-process { min-height: 96vh; }
+@utility viewport-mobile-menu { height: calc(100dvh - 100%); }
+@utility viewport-toc { max-height: calc(100vh - 8rem); }
+@utility h-navbar { height: 72px; }
+@utility min-h-story-media { min-height: 300px; }
+@utility min-h-trust-card { min-height: 160px; }
+@utility max-menu-height { max-height: 30rem; }
+@utility top-carousel { top: 14rem; }
+@utility z-search { z-index: 800; }
+@utility z-overlay { z-index: 999; }
+@utility z-gallery { z-index: 60; }
+@utility transition-accordion { transition-property: grid-template-rows; }
+@utility transition-menu { transition-property: max-height; }
+@utility duration-standard { transition-duration: 300ms; }
+@utility duration-button { transition-duration: 350ms; }
+@utility ease-button { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
+@utility rows-open { grid-template-rows: 1fr; }
+@utility rows-closed { grid-template-rows: 0fr; }
 
 /* ═══════════════════════════════════════════════════════════════════
    Button Padding Utilities

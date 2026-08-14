@@ -30,7 +30,7 @@ export default function PageHero({
 }: PageHeroProps) {
   return (
     <section aria-label={heading} className="w-full">
-      <div className="relative isolate h-[60vh] min-h-[480px] w-full lg:h-[85vh]">
+      <div className="relative isolate h-page-hero min-h-page-hero w-full lg:h-tall-section">
         <Image
           src={image}
           alt=""
@@ -42,24 +42,24 @@ export default function PageHero({
 
         <div className="absolute inset-0 bg-overlay-hero" />
 
-        <Container className="relative z-10 flex h-full items-center justify-center pb-8 pt-24 sm:pb-10 sm:pt-28 lg:pb-12">
+        <Container className="relative z-10 flex h-full items-center justify-center pb-8 pt-header sm:pb-10 sm:pt-28 lg:pb-12">
           <div className="flex w-full flex-col items-center justify-center text-center">
             <p className="mb-3 text-xs font-medium uppercase tracking-eyebrow text-white-subtle">
               {label}
             </p>
 
-            <h1 className="max-w-[44rem]">
-              <span className="text-[clamp(2.75rem,6.8vw,5.85rem)] font-bold uppercase leading-[0.9] tracking-heading-subtle text-white">
+            <h1 className="max-heading">
+              <span className="type-page-title font-bold uppercase leading-hero tracking-heading-subtle text-white">
                 {heading}
               </span>{' '}
-              <span className="inline-block -translate-y-1 font-[family-name:var(--font-allura)] capitalize text-[clamp(3.1rem,7vw,6.1rem)] leading-[0.82] text-cream">
+              <span className="inline-block -translate-y-1 font-script capitalize type-page-script leading-script text-cream">
                 {script}
               </span>
             </h1>
 
             {subheading ? (
               <p
-                className={`mt-5 max-w-[28rem] text-sm leading-relaxed text-secondary sm:text-[0.95rem]`}
+                className={`mt-5 max-copy text-sm leading-relaxed text-secondary sm:type-body`}
               >
                 {subheading}
               </p>
@@ -76,3 +76,4 @@ export default function PageHero({
     </section>
   )
 }
+

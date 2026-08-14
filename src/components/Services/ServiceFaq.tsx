@@ -40,7 +40,7 @@ import siteData from '@/website.json'
  *
  * Responsive reasoning:
  * - The existing lg: breakpoint split (grid-cols-1 below lg,
- *   grid-cols-[0.85fr_1.15fr] at lg+) is unchanged — it already
+ *   uses the existing two-column layout at lg+) and remains unchanged
  *   correctly matches the reference's two-column shape at desktop
  *   widths and stacks cleanly below that.
  * - Below lg, the new contact card sits in normal document flow between
@@ -59,7 +59,7 @@ function PlusMinusIcon({ open }: { open: boolean }) {
     <span className="relative flex h-5 w-5 shrink-0 items-center justify-center" aria-hidden="true">
       <span className="absolute h-0.5 w-4 rounded-full bg-dark" />
       <span
-        className={`absolute h-4 w-0.5 rounded-full bg-dark transition-transform duration-300 ${
+        className={`absolute h-4 w-divider rounded-full bg-dark transition-transform duration-standard ${
           open ? 'scale-y-0' : 'scale-y-100'
         }`}
       />
@@ -85,8 +85,8 @@ export default function ServiceFaqs({
   if (!faqs || faqs.length === 0) return null
 
   return (
-    <section aria-labelledby="service-faq-heading" className="py-10 lg:py-16">
-      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start lg:gap-16">
+    <section aria-labelledby="service-faq-heading" className="section-padding">
+      <div className="grid grid-cols-1 gap-8 lg:columns-faq lg:items-start lg:gap-16">
         {/* ── Left: eyebrow + heading + contact card ── */}
         <div>
           <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{label}</p>
@@ -115,14 +115,14 @@ export default function ServiceFaqs({
         </div>
 
         {/* ── Right: accordion ── */}
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-field">
           {faqs.map((item, index) => {
             const open = openIndex === index
             return (
               <div
                 key={item.question}
-                className={`rounded-none border px-5 py-4 transition-colors duration-300 sm:px-6 ${
-                  open ? 'border-emphasis ' : 'border-muted bg-white'
+                className={`rounded-none border px-5 py-4 transition-colors duration-standard sm:px-6 ${
+                  open ? 'border-emphasis ' : 'border-muted bg-surface-high'
                 }`}
               >
                 <button
@@ -138,8 +138,8 @@ export default function ServiceFaqs({
                 </button>
 
                 <div
-                  className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-                    open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                className={`grid transition-accordion duration-standard ease-out ${
+                    open ? 'grid-rows-expanded' : 'grid-rows-collapsed'
                   }`}
                 >
                   <div className="overflow-hidden">

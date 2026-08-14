@@ -53,10 +53,10 @@ export default function ServiceAbout({
   highlights,
 }: AboutProps) {
   return (
-    <section aria-labelledby="service-about-heading" className="py-10 lg:py-16">
-      <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-stretch ">
+    <section aria-labelledby="service-about-heading" className="section-padding">
+      <div className="mt-8 grid grid-cols-1 gap-8 lg:columns-service-about lg:items-stretch ">
         {/* ── Left: photo ── */}
-        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-none sm:aspect-[4/3]">
+        <div className="relative ratio-portrait w-full overflow-hidden rounded-none sm:ratio-landscape">
           <Image
             src={image}
             alt={imageAlt}
@@ -87,7 +87,7 @@ export default function ServiceAbout({
           <Button
             href={ctaHref}
             variant="outline"
-            className="mt-10 inline-flex items-center gap-2 rounded-none px-6 py-3.5 text-sm font-semibold transition-colors duration-300"
+            className="mt-10 inline-flex items-center gap-2 rounded-none px-6 py-3.5 text-sm font-semibold transition-colors duration-standard"
           >
             {ctaLabel}
             <ArrowUpRight size={16} strokeWidth={2} aria-hidden="true" />

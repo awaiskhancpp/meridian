@@ -9,7 +9,7 @@ function PlusMinusIcon({ open }: { open: boolean }) {
     <span className="relative flex h-5 w-5 shrink-0 items-center justify-center" aria-hidden="true">
       <span className="absolute h-0.5 w-4 rounded-full bg-dark" />
       <span
-        className={`absolute h-4 w-0.5 rounded-full bg-dark transition-transform duration-300 ${
+        className={`absolute h-4 w-divider rounded-full bg-dark transition-transform duration-standard ${
           open ? 'scale-y-0' : 'scale-y-100'
         }`}
       />
@@ -41,12 +41,12 @@ export default function PostFaqs({ faqs }: { faqs: Faq[] }) {
                 <PlusMinusIcon open={open} />
               </button>
 
-              {/* grid-template-rows 0fr → 1fr — same smooth-height-without-
+              {/* grid-template-rows 0fr Ã¢â€ â€™ 1fr Ã¢â‚¬â€ same smooth-height-without-
                   a-measured-ref technique already used elsewhere in this
                   project's accordions. */}
               <div
-                className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-                  open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                className={`grid transition-accordion duration-standard ease-out ${
+                  open ? 'rows-open' : 'rows-closed'
                 }`}
               >
                 <div className="overflow-hidden">

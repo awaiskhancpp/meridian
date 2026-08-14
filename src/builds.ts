@@ -132,6 +132,19 @@ export const fontFamily = {
   script: "'Allura', cursive",
 } as const
 
+// Central typography and layout recipes used by components. Keep values here
+// so a builder can update the template from one source of truth.
+export const typography = {
+  heroDisplay: 'clamp(2.75rem,6.8vw,5.85rem)',
+  heroScript: 'clamp(3.1rem,7vw,6.1rem)',
+  body: '0.95rem',
+  eyebrow: '0.68rem',
+  metadata: '0.65rem',
+  heroLine: '0.9',
+  scriptLine: '0.82',
+  headingLine: '0.92',
+} as const
+
 // Font sizes are responsive by breakpoint: sm (<640) | md (640-1024) | lg (>1024)
 export const fontSize = {
   h1: { lg: '3.5rem', md: '2.75rem', sm: '2rem' },
@@ -163,10 +176,148 @@ export const spacing = {
   section: { lg: '6rem', md: '4rem', sm: '2.5rem' },
   navH: { lg: '72px', md: '64px', sm: '56px' },
   containerPx: { lg: '5rem', md: '2.5rem', sm: '1.25rem' },
-  // The page's outer content width — was hardcoded as max-w-[1440px]
+  // The page's shared outer content width.
   // independently in both Container.tsx and Hero.tsx (same raw value,
   // two places), the exact "should be a token" signal.
   contentMaxWidth: '1440px',
+  carouselOffset: '14rem',
+  cardMedia: '28rem',
+  cardMediaLg: '34rem',
+  contactMapHeight: '437px',
+  dropdownWidth: '220px',
+  headerTop: '6rem',
+  gapField: '0.75rem',
+  dividerWidth: '0.125rem',
+  heroTop: { base: '6rem', sm: '7rem', lg: '8rem', wide: '6rem' },
+  aboutCalloutRight: { base: '4rem', md: '18rem' },
+} as const
+
+export const layout = {
+  sectionPadding: { sm: '2.5rem', lg: '4rem' },
+  sectionMarginBottom: { sm: '2.5rem', lg: '4rem' },
+  heroColumns: 'minmax(0,1fr) auto',
+  galleryAspect: '16/10',
+  accordionExpanded: '1fr',
+  accordionCollapsed: '0fr',
+} as const
+
+export const motion = {
+  standard: '300ms',
+  accordionProperty: 'grid-template-rows',
+  buttonReveal: '350ms',
+  buttonEasing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+} as const
+
+// Component-level recipes. Components reference these semantic names instead
+// of exposing raw clamp(), viewport, pixel, or fraction values in class names.
+export const componentStyles = {
+  type: {
+    notFoundWatermark: 'clamp(9rem,42vw,30rem)',
+    notFoundTitle: 'clamp(2.4rem,7vw,5.5rem)',
+    notFoundScript: 'clamp(2.8rem,7.5vw,6rem)',
+    pageTitle: 'clamp(2.75rem,6.8vw,5.85rem)',
+    pageScript: 'clamp(3.1rem,7vw,6.1rem)',
+    sectionTitle: 'clamp(2rem,4vw,3rem)',
+    sectionTitleWide: 'clamp(2rem,4vw,3.25rem)',
+    sectionTitleLarge: 'clamp(2rem,4vw,3.5rem)',
+    sectionTitleExtraLarge: 'clamp(2rem,4vw,4rem)',
+    serviceScript: 'clamp(2.2rem,4.5vw,3.5rem)',
+    serviceHero: 'clamp(2rem,5vw,4rem)',
+    serviceForm: 'clamp(1.8rem,3.6vw,2.6rem)',
+    serviceWhy: 'clamp(1.9rem,3.8vw,3rem)',
+    projectHero: 'clamp(2.75rem,7vw,6.4rem)',
+    projectTitle: 'clamp(2rem,4vw,3.4rem)',
+    projectBrief: 'clamp(2rem,4vw,3.5rem)',
+    projectCta: 'clamp(2rem,4vw,4rem)',
+    projectCard: 'clamp(1.2rem,1.8vw,1.6rem)',
+    projectCardHover: 'clamp(1.35rem,2vw,1.85rem)',
+    cardTitle: 'clamp(1.5rem,2vw,2rem)',
+    missionTitle: 'clamp(2.125rem,3vw,2.75rem)',
+    missionScript: 'clamp(2.75rem,4vw,3.5rem)',
+    valueTitle: 'clamp(1.625rem,2vw,2rem)',
+    trustTitle: 'clamp(2rem,4vw,3.25rem)',
+    trustScript: 'clamp(2.5rem,5vw,4rem)',
+    body: '0.95rem',
+    metadata: '0.65rem',
+    code: '0.9em',
+    searchLabel: '10px',
+    displayLarge: '3.5rem',
+    displayExtraLarge: '4.5rem',
+    articleSubheading: '1.9rem',
+  },
+  leading: {
+    hero: '0.9',
+    script: '0.82',
+    heading: '0.92',
+    section: '0.95',
+    compact: '0.98',
+    projectHero: '0.88',
+    mission: '1.1',
+    body: '1.6',
+  },
+  layout: {
+    heroMax: '40rem',
+    headingMax: '44rem',
+    copyMax: '28rem',
+    copyWide: '30rem',
+    copyExtraWide: '36rem',
+    cardCopy: '19rem',
+    aboutStats: '15rem',
+    trustCopy: '12rem',
+    storyCopy: '24rem',
+    whyImageSm: '380px',
+    whyImageMd: '420px',
+    whyImageLg: '360px',
+    mediaHeight: '28rem',
+    mediaHeightLg: '34rem',
+    iframeHeight: '24rem',
+    iframeHeightLg: '30rem',
+    galleryHeight: '85vh',
+    galleryHeightLg: '90vh',
+    galleryWidth: '90vw',
+    galleryWidthLg: '85vw',
+    serviceFormMinHeight: '20rem',
+    serviceFieldMinHeight: '7rem',
+    storyMediaMinHeight: '300px',
+    trustCardMinHeight: '160px',
+    menuMaxHeight: '30rem',
+    carouselTop: '14rem',
+    contactMapHeight: '437px',
+    contactMinHeight: '90vh',
+    contactSuccessHeight: '437px',
+    contactFieldMinHeight: '9rem',
+    contactRadius: '24px',
+    legalMaxWidth: '64rem',
+    pageHeroMinHeight: '480px',
+    serviceHeroMinHeight: '500px',
+    processMediaRatio: '280/160',
+    landscapeRatio: '4/3',
+    portraitRatio: '4/5',
+    galleryRatio: '16/10',
+    heroColumns: 'minmax(0,1fr) auto',
+    projectBriefColumns: '1.1fr 0.9fr',
+    projectDirectionColumns: '0.8fr 1.2fr',
+    serviceAboutColumns: 'minmax(0,0.9fr) minmax(0,1.1fr)',
+    serviceWhyColumns: 'minmax(0,0.8fr) minmax(0,1fr) minmax(0,1.2fr)',
+    faqColumns: '0.85fr 1.15fr',
+    blogColumns: '1fr 15rem',
+  },
+  viewport: {
+    hero: '100svh',
+    serviceHero: '100vh',
+    serviceHeroLg: '92vh',
+    pageHero: '60vh',
+    pageHeroLg: '85vh',
+    project: '100svh',
+    process: '96vh',
+    mobileMenu: 'calc(100dvh - 100%)',
+    tocMax: 'calc(100vh - 8rem)',
+  },
+  zIndex: {
+    search: 800,
+    overlay: 999,
+    gallery: 60,
+  },
 } as const
 
 // Z-index tokens.
@@ -199,4 +350,22 @@ export const gradient = {
   card: 'linear-gradient(180deg,rgba(60,37,21,0.08) 0%,rgba(60,37,21,0.18) 100%)',
   radialWarm: 'radial-gradient(circle at center,rgba(60,37,21,0.03) 0%,transparent 70%)',
   cardBottomDark: 'linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.1) 100%)',
+} as const
+
+// Named one-off layout values discovered during the repository-wide audit.
+// These are intentionally explicit so future builders do not need to search
+// component files for arbitrary Tailwind values.
+export const utilityTokens = {
+  tocMaxHeight: 'calc(100vh - 8rem)',
+  cardMedia: '28rem',
+  cardMediaLg: '34rem',
+  galleryAspect: '16/10',
+  accordionRowsOpen: '1fr',
+  accordionRowsClosed: '0fr',
+  transitionAccordion: 'grid-template-rows',
+  carouselTop: '14rem',
+  navbarDropdownTop: '85%',
+  navbarDropdownWidth: '220px',
+  sectionPaddingSm: '2.5rem',
+  sectionPaddingLg: '4rem',
 } as const

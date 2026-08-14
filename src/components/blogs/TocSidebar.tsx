@@ -41,7 +41,7 @@ export default function TocSidebar({ toc }: { toc: TocItem[] }) {
   if (!toc || toc.length === 0) return null
 
   return (
-    <aside className="order-first lg:order-last lg:sticky lg:top-28 lg:self-start lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pb-8">
+    <aside className="order-first lg:order-last lg:sticky lg:top-28 lg:self-start lg:viewport-toc lg:overflow-y-auto lg:pb-8">
       <div>
         <p className="text-xs font-semibold uppercase tracking-loose text-dark-muted">Contents</p>
         <ul className="mt-4 space-y-3 border-l border-muted text-sm">

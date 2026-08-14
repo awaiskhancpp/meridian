@@ -21,7 +21,7 @@ export default function ContactPage() {
             </p>
             <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-dark mb-6">
               Let's Build Something <br />
-              <span className="font-[family-name:var(--font-allura)] text-5xl md:text-6xl text-accent font-normal capitalize">
+              <span className="font-script text-5xl md:text-6xl text-accent font-normal capitalize">
                 Amazing Together.
               </span>
             </h2>
@@ -33,7 +33,7 @@ export default function ContactPage() {
             <div className="space-y-8">
               {/* Phone Block */}
               <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-white border border-divider rounded-full text-accent mr-6">
+                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-surface-high border border-divider rounded-full text-accent mr-6">
                   <svg
                     className="w-5 h-5"
                     fill="none"
@@ -59,7 +59,7 @@ export default function ContactPage() {
 
               {/* Email Block */}
               <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-white border border-divider rounded-full text-accent mr-6">
+                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-surface-high border border-divider rounded-full text-accent mr-6">
                   <svg
                     className="w-5 h-5"
                     fill="none"
@@ -85,7 +85,7 @@ export default function ContactPage() {
 
               {/* Address Block */}
               <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-white border border-divider rounded-full text-accent mr-6">
+                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-surface-high border border-divider rounded-full text-accent mr-6">
                   <svg
                     className="w-5 h-5"
                     fill="none"
@@ -118,7 +118,7 @@ export default function ContactPage() {
           </div>
 
           {/* RIGHT COLUMN: The Form */}
-          <div className="bg-white px-8 py-8 shadow-sm border border-divider rounded-none">
+          <div className="bg-surface-high px-8 py-8 shadow-sm border border-divider rounded-none">
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* First Name */}

@@ -76,7 +76,7 @@ export default function ServiceForm({
   }
 
   return (
-    <section aria-labelledby="service-form-heading" className="relative py-10 lg:py-16">
+    <section aria-labelledby="service-form-heading" className="relative section-padding">
       <Image src="/hero.webp" alt="" fill className="absolute inset-0 z-0 object-cover" />
 
       {/* OVERLAY */}
@@ -89,7 +89,7 @@ export default function ServiceForm({
           <p className="text-xs uppercase tracking-eyebrow text-white-overlay">{label}</p>
           <h2
             id="service-form-heading"
-            className="mt-3 text-[clamp(1.8rem,3.6vw,2.6rem)] font-black uppercase leading-[0.98] tracking-heading-subtle text-white"
+            className="mt-3 type-service-form font-black uppercase leading-compact tracking-heading-subtle text-white"
           >
             {heading}
             <br />
@@ -100,7 +100,7 @@ export default function ServiceForm({
 
         <div className="col-span-6 w-full rounded-none border border-light-soft bg-panel-dark p-6 shadow-soft sm:p-8">
           {submitted ? (
-            <div className="flex min-h-[20rem] flex-col items-center justify-center text-center">
+            <div className="flex min-h-service-form flex-col items-center justify-center text-center">
               <p className="text-sm font-medium text-white">
                 Thanks. Your request for {serviceTitle} is in, and we'll be in touch soon.
               </p>
@@ -161,7 +161,7 @@ export default function ServiceForm({
                 onChange={handleChange}
               />
 
-              <div className="flex flex-col items-start gap-3">
+              <div className="flex flex-col items-start gap-field">
                 {serverError && (
                   <p className="text-sm text-status-danger" role="alert">
                     {serverError}
@@ -215,7 +215,7 @@ function UnderlineField({
     'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white-muted focus:border-white-subtle focus:ring-0'
 
   return (
-    <label htmlFor={id} className={`grid gap-3 ${className}`}>
+    <label htmlFor={id} className={`grid gap-field ${className}`}>
       <span className="text-xs uppercase tracking-snug text-white">{label}</span>
       {as === 'textarea' ? (
         <textarea
@@ -225,7 +225,7 @@ function UnderlineField({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className={`${commonClass} min-h-[7rem] resize-none rounded-none`}
+          className={`${commonClass} min-h-service-field resize-none rounded-none`}
         />
       ) : (
         <input

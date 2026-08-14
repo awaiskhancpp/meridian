@@ -95,7 +95,7 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
   const script = 'Services'
 
   return (
-    <section aria-label="Explore Other Services" className="py-10 lg:py-16">
+    <section aria-label="Explore Other Services" className="section-padding">
       <Container>
         {/* ── Header row: eyebrow + heading left, nav arrows right ── */}
         <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
@@ -118,7 +118,7 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
             swiper-button-disabled class, applied via the .swiper-nav
             selectors in the <style> block below.
           */}
-          <div className="flex flex-shrink-0 items-center gap-3">
+          <div className="flex flex-shrink-0 items-center gap-field">
             <button
               ref={prevRef}
               type="button"
@@ -169,16 +169,16 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
                     below it), since the title card floats ON TOP of the
                     photo rather than sitting in its own space beneath it.
                   */}
-                  <div className="relative aspect-[4/5] w-full overflow-hidden rounded-none">
+                  <div className="relative ratio-portrait w-full overflow-hidden rounded-none">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
-                    <div className="absolute inset-x-4 bottom-4 bg-dark px-5 pb-5 pt-9 shadow-card-strong transition-colors duration-300">
+                    <div className="absolute inset-x-4 bottom-4 bg-dark px-5 pb-5 pt-9 shadow-card-strong transition-colors duration-standard">
                       {Icon && (
-                        <div className="absolute -top-7 left-5 flex h-14 w-14 items-center justify-center rounded-full bg-white">
+                        <div className="absolute -top-7 left-5 flex h-14 w-14 items-center justify-center rounded-full bg-surface-high">
                           <Icon
                             className="h-7 w-7 text-accent"
                             strokeWidth={1.5}

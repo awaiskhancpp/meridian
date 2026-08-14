@@ -23,13 +23,13 @@ export default function OurStory({
   const { about } = siteData
 
   return (
-    <section aria-labelledby="our-story-heading" className="py-10 lg:py-16">
+    <section aria-labelledby="our-story-heading" className="section-padding">
       <Container>
         {/* Changed lg:items-center to lg:items-stretch */}
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10">
-          {/* ── Left Column: Image ── */}
+          {/* â”€â”€ Left Column: Image â”€â”€ */}
           {/* Removed aspect ratios, added lg:h-full to fill the stretched grid cell */}
-          <div className="relative w-full min-h-[300px] lg:h-full overflow-hidden">
+          <div className="relative w-full min-h-story-media lg:h-full overflow-hidden">
             <Image
               src={imageSrc}
               alt={imageAlt}
@@ -39,7 +39,7 @@ export default function OurStory({
             />
           </div>
 
-          {/* ── Right Column: Text Content ── */}
+          {/* â”€â”€ Right Column: Text Content â”€â”€ */}
           <div className="flex flex-col justify-center py-4">
             <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{label}</p>
 
@@ -70,7 +70,7 @@ export default function OurStory({
               )}
             </div>
 
-            <div className="mt-auto grid grid-cols-2  pt-14 max-w-[24rem]">
+            <div className="mt-auto grid grid-cols-2  pt-14 max-story-copy">
               {about.stats.map((stat) => (
                 <div key={stat.label} className=" ">
                   <p className="text-3xl font-black leading-none text-dark">{stat.value}</p>

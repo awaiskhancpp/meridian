@@ -43,7 +43,7 @@ export default function AreasWeServe({
   mapSrc = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d215846.8394237353!2d-122.43563249999999!3d47.7567685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490528c7f9c2c39%3A0x1234567890abcdef!2sSeattle%2C%20WA!5e0!3m2!1sen!2sus!4v1234567890',
 }: AreasWeServeProps) {
   return (
-    <section aria-label="Service Areas" className="py-10 lg:py-16">
+    <section aria-label="Service Areas" className="section-padding">
       <Container>
         {/* Header */}
         <div className="max-w-2xl mx-auto flex flex-col justify-center items-center">
@@ -55,9 +55,9 @@ export default function AreasWeServe({
         </div>
         {/* <div className="mb-12">
           <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">{label}</p>
-          <h2 className="mt-3 text-[clamp(2rem,4vw,3rem)] font-bold uppercase leading-[0.95] tracking-heading-tight text-dark lg:text-[3.5rem]">
+          <h2 className="mt-3 type-section-title font-bold uppercase leading-section tracking-heading-tight text-dark lg:type-display-large">
             {heading}{' '}
-            <span className="font-[family-name:var(--font-allura)] capitalize text-[clamp(2.2rem,4.5vw,3.5rem)] leading-[0.82] text-accent">
+            <span className="font-script capitalize type-service-script leading-script text-accent">
               {script}
             </span>
           </h2>
@@ -70,7 +70,7 @@ export default function AreasWeServe({
         <div className="grid grid-cols-1 gap-8  mt-6">
           {/* Areas List */}
           <div className="space-y-6">
-            <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-card">
               {areas.map((area, index) => (
                 <span
                   key={index}
@@ -86,7 +86,7 @@ export default function AreasWeServe({
           </div>
 
           {/* Map */}
-          <div className="mb-10 lg:mb-16">
+          <div className="section-margin-bottom">
             <IFrame mapSrc={mapSrc} />
           </div>
         </div>
@@ -94,3 +94,4 @@ export default function AreasWeServe({
     </section>
   )
 }
+

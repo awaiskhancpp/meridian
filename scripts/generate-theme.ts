@@ -24,6 +24,8 @@ import {
   zIndex,
   shadow,
   gradient,
+  componentStyles,
+  motion,
 } from '../src/builds'
 
 // Removed from builds.ts as single-use, kept here for CSS generation
@@ -311,6 +313,138 @@ let css = `/**
 @utility section-space-compact {
   padding-block: 4rem;
 }
+@utility font-sans { font-family: var(--font-family-sans); }
+@utility font-script { font-family: var(--font-family-script); }
+@utility section-padding {
+  padding-block: ${spacing.section.sm};
+  @media (min-width: 1024px) { padding-block: ${spacing.section.md}; }
+}
+@utility section-margin-bottom {
+  margin-bottom: ${spacing.section.sm};
+  @media (min-width: 1024px) { margin-bottom: ${spacing.section.md}; }
+}
+@utility gap-field { gap: ${spacing.gapField}; }
+@utility w-divider { width: ${spacing.dividerWidth}; }
+@utility hero-content-padding {
+  padding-top: ${spacing.heroTop.base};
+  @media (min-width: 640px) { padding-top: ${spacing.heroTop.sm}; }
+  @media (min-width: 1024px) { padding-top: ${spacing.heroTop.lg}; }
+  @media (min-width: 1536px) { padding-top: ${spacing.heroTop.wide}; }
+}
+@utility about-callout-right {
+  right: ${spacing.aboutCalloutRight.base};
+  @media (min-width: 768px) { right: ${spacing.aboutCalloutRight.md}; }
+}
+@utility bg-surface { background-color: var(--color-bg-cream); }
+@utility bg-surface-muted { background-color: var(--color-white-soft); }
+@utility bg-surface-high { background-color: var(--color-white); }
+@utility text-surface { color: var(--color-text-dark); }
+@utility legal-page {
+  margin-inline: auto;
+  padding-block: ${spacing.section.sm};
+  font-size: ${componentStyles.type.body};
+  color: var(--color-text-dark-muted);
+  @media (min-width: 1024px) { padding-block: ${spacing.section.md}; }
+  & h2 { margin-top: 2.5rem; font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: var(--tracking-medium); color: var(--color-text-dark); }
+  & p, & ul { font-size: 0.875rem; line-height: 1.6; color: var(--color-text-dark-muted); }
+  & a { color: var(--color-text-dark); text-decoration: underline; text-underline-offset: 4px; }
+  & a:hover { color: var(--color-accent); }
+}
+@utility richtext {
+  & p { margin-bottom: 1.25rem; font-size: ${componentStyles.type.body}; line-height: 1.6; color: var(--color-text-dark-muted); }
+  & h1, & h2 { margin-top: 3.5rem; margin-bottom: 1.25rem; scroll-margin-top: 7rem; font-weight: 900; text-transform: uppercase; letter-spacing: var(--tracking-heading-medium); color: var(--color-text-dark); border-left: 4px solid var(--color-accent); padding-left: 1rem; line-height: 1.1; }
+  & h1 { font-size: 1.875rem; }
+  & h2 { font-size: 1.5rem; }
+  @media (min-width: 768px) { & h1 { font-size: 2.25rem; } & h2 { font-size: ${componentStyles.type.articleSubheading}; } }
+  & h3 { margin-top: 2.5rem; margin-bottom: 1rem; scroll-margin-top: 7rem; font-size: 1.25rem; font-weight: 700; color: var(--color-text-dark); line-height: 1.1; border-left: 2px solid color-mix(in srgb, var(--color-accent) 60%, transparent); padding-left: 0.75rem; }
+  & h4 { margin-top: 2rem; margin-bottom: 0.75rem; font-size: 1.125rem; font-weight: 700; color: var(--color-text-dark); line-height: 1.1; border-left: 2px solid color-mix(in srgb, var(--color-accent) 40%, transparent); padding-left: 0.75rem; }
+  & ul, & ol { margin-bottom: 1.5rem; margin-left: 0.25rem; padding-left: 1.25rem; font-size: ${componentStyles.type.body}; line-height: 1.6; color: var(--color-text-dark-muted); }
+  & ul { list-style: disc; } & ol { list-style: decimal; } & li { padding-left: 0.25rem; }
+  & blockquote { margin-bottom: 1.5rem; border-left: 4px solid var(--color-accent); padding-left: 1.25rem; font-style: italic; color: var(--color-text-dark-muted); }
+  & a { color: var(--color-accent); text-decoration: underline; text-underline-offset: 2px; transition: color ${motion.standard}; }
+  & code { border-radius: 0.25rem; background: var(--color-bg-cream); padding: 0.125rem 0.375rem; font-family: monospace; font-size: ${componentStyles.type.code}; color: var(--color-text-dark); }
+  & hr { margin-block: 2.5rem; border-top: 1px solid var(--color-border-muted); }
+}
+
+/* Semantic component recipes. Keep raw values in builds.ts so a builder can
+   change a visual rule once without searching through component markup. */
+${Object.entries(componentStyles.type)
+  .map(([name, value]) => `@utility type-${name.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)} { font-size: ${value}; }`)
+  .join('\n')}
+${Object.entries(componentStyles.leading)
+  .map(([name, value]) => `@utility leading-${name} { line-height: ${value}; }`)
+  .join('\n')}
+@utility max-hero { max-width: ${componentStyles.layout.heroMax}; }
+@utility max-heading { max-width: ${componentStyles.layout.headingMax}; }
+@utility max-copy { max-width: ${componentStyles.layout.copyMax}; }
+@utility max-copy-wide { max-width: ${componentStyles.layout.copyWide}; }
+@utility max-copy-extra-wide { max-width: ${componentStyles.layout.copyExtraWide}; }
+@utility max-card-copy { max-width: ${componentStyles.layout.cardCopy}; }
+@utility max-about-stats { max-width: ${componentStyles.layout.aboutStats}; }
+@utility max-trust-copy { max-width: ${componentStyles.layout.trustCopy}; }
+@utility max-story-copy { max-width: ${componentStyles.layout.storyCopy}; }
+@utility max-why-image-sm { max-width: ${componentStyles.layout.whyImageSm}; }
+@utility max-why-image-md { max-width: ${componentStyles.layout.whyImageMd}; }
+@utility max-why-image-lg { max-width: ${componentStyles.layout.whyImageLg}; }
+@utility h-card-media { height: ${componentStyles.layout.mediaHeight}; }
+@utility h-card-media-lg { height: ${componentStyles.layout.mediaHeightLg}; }
+@utility h-iframe { height: ${componentStyles.layout.iframeHeight}; }
+@utility h-iframe-lg { height: ${componentStyles.layout.iframeHeightLg}; }
+@utility h-gallery { height: ${componentStyles.layout.galleryHeight}; }
+@utility h-gallery-lg { height: ${componentStyles.layout.galleryHeightLg}; }
+@utility w-gallery { width: ${componentStyles.layout.galleryWidth}; }
+@utility w-gallery-lg { width: ${componentStyles.layout.galleryWidthLg}; }
+@utility min-h-service-form { min-height: ${componentStyles.layout.serviceFormMinHeight}; }
+@utility min-h-service-field { min-height: ${componentStyles.layout.serviceFieldMinHeight}; }
+@utility min-h-contact { min-height: ${componentStyles.layout.contactMinHeight}; }
+@utility h-contact-success { height: ${componentStyles.layout.contactSuccessHeight}; }
+@utility min-h-contact-field { min-height: ${componentStyles.layout.contactFieldMinHeight}; }
+@utility rounded-contact { border-radius: ${componentStyles.layout.contactRadius}; }
+@utility max-legal { max-width: ${componentStyles.layout.legalMaxWidth}; }
+@utility min-h-page-hero { min-height: ${componentStyles.layout.pageHeroMinHeight}; }
+@utility min-h-service-hero { min-height: ${componentStyles.layout.serviceHeroMinHeight}; }
+@utility ratio-process-media { aspect-ratio: ${componentStyles.layout.processMediaRatio}; }
+@utility ratio-landscape { aspect-ratio: ${componentStyles.layout.landscapeRatio}; }
+@utility ratio-portrait { aspect-ratio: ${componentStyles.layout.portraitRatio}; }
+@utility ratio-gallery { aspect-ratio: ${componentStyles.layout.galleryRatio}; }
+@utility columns-hero { grid-template-columns: ${componentStyles.layout.heroColumns}; }
+@utility columns-project-brief { grid-template-columns: ${componentStyles.layout.projectBriefColumns}; }
+@utility columns-project-direction { grid-template-columns: ${componentStyles.layout.projectDirectionColumns}; }
+@utility columns-service-about { grid-template-columns: ${componentStyles.layout.serviceAboutColumns}; }
+@utility columns-service-why { grid-template-columns: ${componentStyles.layout.serviceWhyColumns}; }
+@utility columns-faq { grid-template-columns: ${componentStyles.layout.faqColumns}; }
+@utility columns-blog { grid-template-columns: ${componentStyles.layout.blogColumns}; }
+@utility viewport-hero { height: ${componentStyles.viewport.hero}; }
+@utility h-full-viewport { height: ${componentStyles.viewport.hero}; }
+@utility min-h-full-viewport { min-height: ${componentStyles.viewport.project}; }
+@utility viewport-service-hero { height: ${componentStyles.viewport.serviceHero}; }
+@utility h-service-hero { height: ${componentStyles.viewport.serviceHero}; }
+@utility viewport-service-hero-lg { height: ${componentStyles.viewport.serviceHeroLg}; }
+@utility viewport-page-hero { height: ${componentStyles.viewport.pageHero}; }
+@utility h-page-hero { height: ${componentStyles.viewport.pageHero}; }
+@utility viewport-page-hero-lg { height: ${componentStyles.viewport.pageHeroLg}; }
+@utility h-tall-section { height: ${componentStyles.viewport.pageHeroLg}; }
+@utility viewport-project { min-height: ${componentStyles.viewport.project}; }
+@utility viewport-process { min-height: ${componentStyles.viewport.process}; }
+@utility h-process { height: ${componentStyles.viewport.process}; }
+@utility min-h-process { min-height: ${componentStyles.viewport.process}; }
+@utility viewport-mobile-menu { height: ${componentStyles.viewport.mobileMenu}; }
+@utility viewport-toc { max-height: ${componentStyles.viewport.tocMax}; }
+@utility h-navbar { height: ${spacing.navH.lg}; }
+@utility min-h-story-media { min-height: ${componentStyles.layout.storyMediaMinHeight}; }
+@utility min-h-trust-card { min-height: ${componentStyles.layout.trustCardMinHeight}; }
+@utility max-menu-height { max-height: ${componentStyles.layout.menuMaxHeight}; }
+@utility top-carousel { top: ${componentStyles.layout.carouselTop}; }
+@utility z-search { z-index: ${componentStyles.zIndex.search}; }
+@utility z-overlay { z-index: ${componentStyles.zIndex.overlay}; }
+@utility z-gallery { z-index: ${componentStyles.zIndex.gallery}; }
+@utility transition-accordion { transition-property: ${motion.accordionProperty}; }
+@utility transition-menu { transition-property: max-height; }
+@utility duration-standard { transition-duration: ${motion.standard}; }
+@utility duration-button { transition-duration: ${motion.buttonReveal}; }
+@utility ease-button { transition-timing-function: ${motion.buttonEasing}; }
+@utility rows-open { grid-template-rows: 1fr; }
+@utility rows-closed { grid-template-rows: 0fr; }
 
 /* ═══════════════════════════════════════════════════════════════════
    Button Padding Utilities

@@ -41,7 +41,7 @@ export default function WhyChooseUs() {
     <section
       id="why-choose-us"
       aria-labelledby="why-choose-us-heading"
-      className="relative overflow-hidden py-10 lg:py-16 bg-white"
+      className="relative overflow-hidden section-padding bg-surface"
     >
       <Container className="relative z-10">
         {/* Header Section */}
@@ -59,7 +59,7 @@ export default function WhyChooseUs() {
           <div className="flex flex-col sm:flex-row lg:flex-col w-full sm:max-w-md lg:w-1/3 gap-12 order-2 lg:order-1">
             {featuresLeft.map((feature, idx) => (
               <div key={idx} className="flex flex-col items-center text-center group">
-                <div className="mb-5 text-decorative-terracotta transition-transform duration-300 group-hover:-translate-y-1">
+                <div className="mb-5 text-decorative-terracotta transition-transform duration-standard group-hover:-translate-y-1">
                   <feature.icon className="w-10 h-10 text-dark" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold text-dark mb-3">{feature.title}</h3>
@@ -68,9 +68,9 @@ export default function WhyChooseUs() {
             ))}
           </div>
 
-          {/* Center Column Image — Reduced width for mobile and desktop */}
-          <div className="w-full max-w-[380px] sm:max-w-[420px] lg:max-w-[360px] mx-auto relative flex justify-center order-1 lg:order-2 mb-8 lg:mb-0">
-            <div className="relative w-full aspect-[4/5] overflow-hidden ring-1 ring-dark-soft">
+          {/* Center Column Image Ã¢â‚¬â€ Reduced width for mobile and desktop */}
+          <div className="w-full max-why-image-sm sm:max-why-image-md lg:max-why-image-lg mx-auto relative flex justify-center order-1 lg:order-2 mb-8 lg:mb-0">
+            <div className="relative w-full ratio-portrait overflow-hidden ring-1 ring-dark-soft">
               <Image
                 src="/hero.webp"
                 alt="Detailed interior remodeling craftsmanship"
@@ -85,7 +85,7 @@ export default function WhyChooseUs() {
           <div className="flex flex-col sm:flex-row lg:flex-col w-full sm:max-w-md lg:w-1/3 gap-12 order-3 lg:order-3">
             {featuresRight.map((feature, idx) => (
               <div key={idx} className="flex flex-col items-center text-center group">
-                <div className="mb-5 text-decorative-terracotta transition-transform duration-300 group-hover:-translate-y-1">
+                <div className="mb-5 text-decorative-terracotta transition-transform duration-standard group-hover:-translate-y-1">
                   <feature.icon className="w-10 h-10 text-dark" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold text-dark mb-3">{feature.title}</h3>
@@ -105,3 +105,4 @@ export default function WhyChooseUs() {
     </section>
   )
 }
+

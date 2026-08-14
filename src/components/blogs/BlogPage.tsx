@@ -58,7 +58,7 @@ export default function BlogPage({ post }: { post: BlogPost }) {
         </nav>
 
         {/* Title */}
-        <h1 className="text-[clamp(2rem,4.5vw,3.2rem)] font-black uppercase leading-[0.98] tracking-heading-tight text-dark">
+        <h1 className="type-section-title font-black uppercase leading-compact tracking-heading-tight text-dark">
           {post.title}
         </h1>
 
@@ -70,12 +70,12 @@ export default function BlogPage({ post }: { post: BlogPost }) {
         )} */}
 
         {/* Author / date / read time */}
-        <div className="mt-6 flex items-center gap-3 border-b border-soft pb-6 text-sm text-dark-muted">
+        <div className="mt-6 flex items-center gap-card border-b border-soft pb-6 text-sm text-dark-muted">
           <AuthorAvatar name={authorName} />
           <span className="font-medium text-dark">{authorName}</span>
-          <span aria-hidden="true">·</span>
+          <span aria-hidden="true">Ã‚Â·</span>
           <span>{formatDate(post.datePosted)}</span>
-          <span aria-hidden="true">·</span>
+          <span aria-hidden="true">Ã‚Â·</span>
           <span>{post.readTimeMinutes ?? 1} min read</span>
         </div>
       </Container>
@@ -84,7 +84,7 @@ export default function BlogPage({ post }: { post: BlogPost }) {
 
       {/* Body + sticky ToC sidebar */}
       <Container className="!max-w-6xl">
-        <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-[1fr_15rem]">
+        <div className="mt-10 grid grid-cols-1 gap-12 lg:columns-blog">
           <div className="min-w-0">
             <RichText content={rawContent} />
             {imageUrl && (
@@ -101,3 +101,4 @@ export default function BlogPage({ post }: { post: BlogPost }) {
     </article>
   )
 }
+

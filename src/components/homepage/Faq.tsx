@@ -20,7 +20,7 @@ function PlusMinusIcon({ open }: { open: boolean }) {
     <span className="relative flex h-5 w-5 shrink-0 items-center justify-center" aria-hidden="true">
       <span className="absolute h-0.5 w-4 rounded-full bg-dark" />
       <span
-        className={`absolute h-4 w-0.5 rounded-full bg-dark transition-transform duration-300 ${
+        className={`absolute h-4 w-divider rounded-full bg-dark transition-transform duration-standard ${
           open ? 'scale-y-0' : 'scale-y-100'
         }`}
       />
@@ -33,7 +33,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   return (
-    <section id="faq" aria-labelledby="faq-heading" className="py-10 lg:py-16">
+    <section id="faq" aria-labelledby="faq-heading" className="section-padding">
       <Container>
         {/*
           Responsive reasoning:
@@ -43,7 +43,7 @@ export default function FAQ() {
           genuine two-column split once the question text needs to wrap
           on a narrow screen, and stacking keeps both halves legible.
 
-          Desktop (lg+): grid-cols-[0.85fr_1.15fr] — the accordion column
+          Desktop (lg+): two-column accordion layout
           gets more width than the heading column, matching the reference
           image's proportions (heading block is narrower than the card
           list). lg:items-start (implicit — no items-center anywhere)
@@ -65,13 +65,13 @@ export default function FAQ() {
           </div>
 
           {/* ── Right: accordion list ────────────────────────────── */}
-          <div className="flex flex-col gap-3 ">
+          <div className="flex flex-col gap-field ">
             {faq.items.map((item, index) => {
               const open = openIndex === index
               return (
                 <div
                   key={item.question}
-                  className={`overflow-hidden  transition-colors duration-300 border-b border-dark/10 last:border-none `}
+                  className={`overflow-hidden  transition-colors duration-standard border-b border-dark/10 last:border-none `}
                 >
                   <button
                     type="button"
@@ -94,8 +94,8 @@ export default function FAQ() {
                     "exactly fits content" (1fr).
                   */}
                   <div
-                    className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-                      open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                    className={`grid transition-accordion duration-standard ease-out ${
+                      open ? 'grid-rows-expanded' : 'grid-rows-collapsed'
                     }`}
                   >
                     <div className="overflow-hidden">

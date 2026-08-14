@@ -13,7 +13,7 @@ const SEARCH_FIELDS: SearchField[] = [
     type: 'select',
     name: 'Category',
     label: 'Category',
-    placeholder: 'Search by Category…',
+    placeholder: 'Search by Categoryâ€¦',
     options: [
       'Kitchen Remodeling',
       'Bathroom Remodeling',
@@ -29,10 +29,10 @@ const SEARCH_FIELDS: SearchField[] = [
     type: 'select',
     name: 'sort',
     label: 'Sort',
-    options: ['Latest', 'Oldest', 'A–Z'],
+    options: ['Latest', 'Oldest', 'Aâ€“Z'],
     placeholder: 'Latest',
   },
-  { type: 'text', name: 'title', label: 'Title', placeholder: 'Search by title…' },
+  { type: 'text', name: 'title', label: 'Title', placeholder: 'Search by titleâ€¦' },
 ]
 
 export default function BlogsPageClient({
@@ -69,7 +69,7 @@ export default function BlogsPageClient({
 
     const sort = search.sort || 'Latest'
     result = [...result].sort((a, b) => {
-      if (sort === 'A–Z') return a.title.localeCompare(b.title)
+      if (sort === 'Aâ€“Z') return a.title.localeCompare(b.title)
       const dateA = new Date(a.datePosted).getTime()
       const dateB = new Date(b.datePosted).getTime()
       return sort === 'Oldest' ? dateA - dateB : dateB - dateA
@@ -79,7 +79,7 @@ export default function BlogsPageClient({
   }, [posts, search, category])
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-surface">
       <Navbar />
 
       <div className="relative z-10">
@@ -93,7 +93,7 @@ export default function BlogsPageClient({
         />
       </div>
 
-      <section aria-label="All articles" className="py-10 lg:py-16">
+      <section aria-label="All articles" className="section-padding">
         <Container>
           <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>

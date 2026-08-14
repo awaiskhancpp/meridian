@@ -27,7 +27,7 @@ export default function AboutTrustSection({
   label = 'WHY HOMEOWNERS TRUST US',
   heading = 'NUMBERS THAT BACK UP',
   script = 'Every Promise We Make.',
-  description = 'Building trust takes time, but it starts with transparency. We’ve built our reputation on clear communication, reliable timelines, and an unwavering standard of quality for every home we touch.',
+  description = 'Building trust takes time, but it starts with transparency. Weâ€™ve built our reputation on clear communication, reliable timelines, and an unwavering standard of quality for every home we touch.',
   stats = [
     { value: '24h', label: 'Average response time' },
     { value: '1', label: 'Decade spent remodeling' },
@@ -45,19 +45,19 @@ export default function AboutTrustSection({
   ],
 }: AboutTrustSectionProps) {
   return (
-    <section aria-labelledby="trust-section-heading" className="py-10 lg:py-16 bg-white">
+    <section aria-labelledby="trust-section-heading" className="section-padding bg-surface-high">
       <Container>
-        {/* ── Section Header ── */}
+        {/* â”€â”€ Section Header â”€â”€ */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
           <p className="text-xs font-bold uppercase tracking-eyebrow text-dark-muted">{label}</p>
 
           <div className="w-16 h-px bg-dark-soft mx-auto my-4" />
 
           <h2 id="trust-section-heading">
-            <span className="block text-[clamp(2rem,4vw,3.25rem)] font-black uppercase leading-[0.92] tracking-heading-tight text-dark">
+            <span className="block type-trust-title font-black uppercase leading-heading tracking-heading-tight text-dark">
               {heading}
             </span>
-            <span className="block capitalize font-[family-name:var(--font-allura)] text-[clamp(2.5rem,5vw,4rem)] leading-none text-accent mt-1">
+            <span className="block capitalize font-script type-trust-script leading-none text-accent mt-1">
               {script}
             </span>
             <p className="mt-2 text-xs sm:text-sm text-dark-muted font-medium leading-snug">
@@ -66,18 +66,18 @@ export default function AboutTrustSection({
           </h2>
         </div>
 
-        {/* ── Stats Grid (Mobile: 2-cols | Desktop: 4-cols) ── */}
+        {/* â”€â”€ Stats Grid (Mobile: 2-cols | Desktop: 4-cols) â”€â”€ */}
         {/* Uses gap-px bg-dark-soft to create clean 1px borders without overlap */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 bg-dark-soft  ">
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-white p-6 sm:p-8 flex flex-col items-center border border-soft justify-center text-center min-h-[160px]"
+              className="bg-surface-high p-6 sm:p-8 flex flex-col items-center border border-soft justify-center text-center min-h-trust-card"
             >
               <p className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-dark">
                 {stat.value}
               </p>
-              <p className="mt-2 text-xs sm:text-sm text-dark-muted font-medium max-w-[12rem] leading-snug">
+              <p className="mt-2 text-xs sm:text-sm text-dark-muted font-medium max-trust-copy leading-snug">
                 {stat.label}
               </p>
             </div>
@@ -98,7 +98,7 @@ export default function AboutTrustSection({
             })}
           </div>
         </div>
-        {/* ── Call to Action ── */}
+        {/* â”€â”€ Call to Action â”€â”€ */}
         <div className="mt-10 sm:mt-12 flex justify-center">
           <Button
             variant="outline"
@@ -111,7 +111,7 @@ export default function AboutTrustSection({
           </Button>
         </div>
 
-        {/* ── Trust Indicators Bar (Bottom Sub-bar) ── */}
+        {/* â”€â”€ Trust Indicators Bar (Bottom Sub-bar) â”€â”€ */}
       </Container>
     </section>
   )
