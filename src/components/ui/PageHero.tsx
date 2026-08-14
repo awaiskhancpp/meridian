@@ -52,15 +52,13 @@ export default function PageHero({
               <span className="type-hero-display font-bold uppercase leading-hero tracking-heading-subtle text-white">
                 {heading}
               </span>{' '}
-              <span className="inline-block -translate-y-1 font-script capitalize type-hero-script leading-script text-cream">
+              <span className="mt-1 inline-block -translate-y-1 font-script capitalize type-hero-script leading-script text-cream">
                 {script}
               </span>
             </h1>
 
             {subheading ? (
-              <p
-                className={`mt-5 max-copy text-sm leading-relaxed text-secondary sm:type-body`}
-              >
+              <p className={`mt-5 max-copy text-sm leading-relaxed text-secondary sm:type-body`}>
                 {subheading}
               </p>
             ) : null}
