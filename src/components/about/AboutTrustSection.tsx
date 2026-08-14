@@ -54,7 +54,7 @@ export default function AboutTrustSection({
           <div className="w-16 h-px bg-dark-soft mx-auto my-4" />
 
           <h2 id="trust-section-heading">
-            <span className="block type-trust-title font-black uppercase leading-heading tracking-heading-tight text-dark">
+              <span className="block type-section-title-wide font-black uppercase leading-heading tracking-heading-tight text-dark">
               {heading}
             </span>
             <span className="block capitalize font-script type-trust-script leading-none text-accent mt-1">

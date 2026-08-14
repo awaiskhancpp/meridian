@@ -310,8 +310,6 @@
 @utility type-not-found-watermark { font-size: clamp(9rem,42vw,30rem); }
 @utility type-not-found-title { font-size: clamp(2.4rem,7vw,5.5rem); }
 @utility type-not-found-script { font-size: clamp(2.8rem,7.5vw,6rem); }
-@utility type-page-title { font-size: clamp(2.75rem,6.8vw,5.85rem); }
-@utility type-page-script { font-size: clamp(3.1rem,7vw,6.1rem); }
 @utility type-section-title { font-size: clamp(2rem,4vw,3rem); }
 @utility type-section-title-wide { font-size: clamp(2rem,4vw,3.25rem); }
 @utility type-section-title-large { font-size: clamp(2rem,4vw,3.5rem); }
@@ -320,17 +318,13 @@
 @utility type-service-hero { font-size: clamp(2rem,5vw,4rem); }
 @utility type-service-form { font-size: clamp(1.8rem,3.6vw,2.6rem); }
 @utility type-service-why { font-size: clamp(1.9rem,3.8vw,3rem); }
-@utility type-project-hero { font-size: clamp(2.75rem,6.8vw,5.85rem); }
 @utility type-project-title { font-size: clamp(2rem,4vw,3.4rem); }
-@utility type-project-brief { font-size: clamp(2rem,4vw,3.5rem); }
-@utility type-project-cta { font-size: clamp(2rem,4vw,4rem); }
 @utility type-project-card { font-size: clamp(1.2rem,1.8vw,1.6rem); }
 @utility type-project-card-hover { font-size: clamp(1.35rem,2vw,1.85rem); }
 @utility type-card-title { font-size: clamp(1.5rem,2vw,2rem); }
 @utility type-mission-title { font-size: clamp(2.125rem,3vw,2.75rem); }
 @utility type-mission-script { font-size: clamp(2.75rem,4vw,3.5rem); }
 @utility type-value-title { font-size: clamp(1.625rem,2vw,2rem); }
-@utility type-trust-title { font-size: clamp(2rem,4vw,3.25rem); }
 @utility type-trust-script { font-size: clamp(2.5rem,5vw,4rem); }
 @utility type-body { font-size: 0.95rem; }
 @utility type-metadata { font-size: 0.65rem; }
@@ -344,10 +338,8 @@
 @utility leading-heading { line-height: 0.92; }
 @utility leading-section { line-height: 0.95; }
 @utility leading-compact { line-height: 0.98; }
-@utility leading-project-hero { line-height: 0.9; }
 @utility leading-mission { line-height: 1.1; }
 @utility leading-body { line-height: 1.6; }
-@utility leading-footer { line-height: 1.6; }
 @utility max-hero { max-width: 40rem; }
 @utility max-heading { max-width: 44rem; }
 @utility max-copy { max-width: 28rem; }

@@ -49,10 +49,10 @@ export default function PageHero({
             </p>
 
             <h1 className="max-heading">
-              <span className="type-page-title font-bold uppercase leading-hero tracking-heading-subtle text-white">
+              <span className="type-hero-display font-bold uppercase leading-hero tracking-heading-subtle text-white">
                 {heading}
               </span>{' '}
-              <span className="inline-block -translate-y-1 font-script capitalize type-page-script leading-script text-cream">
+              <span className="inline-block -translate-y-1 font-script capitalize type-hero-script leading-script text-cream">
                 {script}
               </span>
             </h1>
@@ -76,4 +76,3 @@ export default function PageHero({
     </section>
   )
 }
-

@@ -23,7 +23,7 @@ export default function ProjectHero({ project }: { project: ProjectDetail }) {
             {project.eyebrow}
           </p>
 
-          <h1 className="mt-4 max-w-4xl type-project-hero font-black uppercase leading-project-hero tracking-heading-subtle">
+          <h1 className="mt-4 max-w-4xl type-hero-display font-black uppercase leading-hero tracking-heading-subtle">
             {project.title}
           </h1>
 

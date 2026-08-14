@@ -49,7 +49,7 @@ export default function CTA({
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <h2 className="type-trust-title font-bold uppercase leading-section tracking-heading-tight text-dark">
+            <h2 className="type-section-title-wide font-bold uppercase leading-section tracking-heading-tight text-dark">
               {title}
             </h2>
 

@@ -10,7 +10,7 @@ export default function ProjectBrief({ project }: { project: ProjectDetail }) {
             <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
               The brief
             </p>
-            <h2 className="mt-4 max-w-2xl type-project-brief font-black uppercase leading-heading tracking-heading-tight text-dark">
+            <h2 className="mt-4 max-w-2xl type-section-title-large font-black uppercase leading-heading tracking-heading-tight text-dark">
               A considered response to everyday life.
             </h2>
           </div>
