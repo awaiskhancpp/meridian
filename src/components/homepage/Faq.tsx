@@ -71,7 +71,7 @@ export default function FAQ() {
               return (
                 <div
                   key={item.question}
-                  className={`overflow-hidden  transition-colors duration-standard border-b border-dark/10 last:border-none `}
+                  className={`overflow-hidden  transition-colors duration-standard border-b border-soft last:border-none `}
                 >
                   <button
                     type="button"

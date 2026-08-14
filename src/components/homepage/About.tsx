@@ -65,7 +65,7 @@ export default function About() {
                 to spare. max-w caps how wide the breakout can get on
                 very wide columns. */}
             <div className="absolute inset-x-4 bottom-4 about-callout-right bg-dark p-3 sm:inset-x-6 sm:bottom-6 sm:p-6 lg:inset-x-auto lg:-right-6 lg:bottom-8 lg:left-6 lg:max-card-copy lg:p-7">
-              <p className="text-xs font-medium uppercase tracking-label text-white/70">
+              <p className="text-xs font-medium uppercase tracking-label text-white-subtle">
                 {about.card.label}
               </p>
               <p className="mt-3 text-4xl font-black leading-none text-accent-light">

@@ -53,7 +53,7 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
   }
 
   return (
-    <section className="section-padding bg-surface-high">
+    <section className="section-padding bg-page">
       <Container>
         <div className="mb-10">
           <h2 className="text-2xl font-bold uppercase tracking-tight text-dark md:text-3xl">

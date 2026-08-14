@@ -15,7 +15,7 @@ export default function TermsPage() {
   const email = 'hello@meridian.studio'
 
   return (
-    <main className="min-h-screen bg-surface-high">
+    <main className="min-h-screen bg-page">
       <Navbar />
       <PageHero label="" heading="Terms &amp;" script="Conditions" />
       {/* Header */}

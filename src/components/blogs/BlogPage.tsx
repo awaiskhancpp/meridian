@@ -53,7 +53,7 @@ export default function BlogPage({ post }: { post: BlogPost }) {
           <Link href="/blogs" className="transition-colors hover:text-accent">
             Journal
           </Link>
-          <span aria-hidden="true">/</span>
+          <span aria-hidden="true">·</span>
           <span className="text-dark">{categoryLabel}</span>
         </nav>
 
@@ -73,9 +73,9 @@ export default function BlogPage({ post }: { post: BlogPost }) {
         <div className="mt-6 flex items-center gap-card border-b border-soft pb-6 text-sm text-dark-muted">
           <AuthorAvatar name={authorName} />
           <span className="font-medium text-dark">{authorName}</span>
-          <span aria-hidden="true">Ã‚Â·</span>
+          <span aria-hidden="true">·</span>
           <span>{formatDate(post.datePosted)}</span>
-          <span aria-hidden="true">Ã‚Â·</span>
+          <span aria-hidden="true">·</span>
           <span>{post.readTimeMinutes ?? 1} min read</span>
         </div>
       </Container>

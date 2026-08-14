@@ -10,7 +10,7 @@ import ProjectGallery from './ProjectGallery'
 
 export default function ProjectDetailPage({ project }: { project: ProjectDetail }) {
   return (
-    <div className="bg-surface-high">
+    <div className="bg-page">
       <Navbar />
       <ProjectHero project={project} />
       <ProjectGallery images={project.gallery} />

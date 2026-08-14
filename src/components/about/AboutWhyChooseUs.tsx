@@ -38,7 +38,7 @@ export default function AboutWhyChooseUs() {
     <section
       id="about-why-choose-us"
       aria-labelledby="about-why-choose-us-heading"
-      className="relative overflow-hidden section-padding bg-surface-high"
+      className="relative overflow-hidden section-padding bg-page"
     >
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -77,7 +77,7 @@ export default function AboutWhyChooseUs() {
             {features.map((feature, idx) => (
               <div
                 key={idx}
-                className="group relative flex flex-col p-8 md:p-10 bg-surface-high ring-1 ring-dark-soft overflow-hidden"
+                className="group relative flex flex-col p-8 md:p-10 bg-page ring-1 ring-dark-soft overflow-hidden"
               >
                 {/* Decorative animated top border */}
                 {/* <div className="absolute top-0 left-0 w-full h-1 bg-decorative-terracotta scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" /> */}

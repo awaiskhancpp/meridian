@@ -42,7 +42,7 @@ export default function Hero() {
         />
 
         <div className="absolute inset-0 bg-overlay-hero" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-24 h-px bg-white-faint sm:bottom-26 lg:bottom-32" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-38 h-px bg-white-faint sm:bottom-26 lg:bottom-30" />
 
         <Container className="relative flex h-full flex-col justify-between hero-content-padding">
           <div className="flex justify-between gap-4" aria-hidden="true">
@@ -51,7 +51,7 @@ export default function Hero() {
             </span>
           </div>
 
-          <div className="max-w-content pb-8 sm:pb-10 lg:pb-12">
+          <div className="">
             <h1 className="max-hero text-white">
               <span className="type-hero-display font-bold uppercase leading-hero tracking-heading-subtle text-white drop-shadow-text-hero">
                 {hero.heading}{' '}
@@ -61,25 +61,26 @@ export default function Hero() {
               </span>
             </h1>
 
-            <div className="mt-6 grid gap-10 lg:grid-cols-hero lg:items-end">
-              <div className="grid max-heading grid-cols-1 lg:grid-cols-2">
-                <p className="text-xs font-medium uppercase tracking-label text-white-subtle">
-                  Start Your Project
-                </p>
-                <div className="text-sm leading-6 text-secondary max-w-narrow-copy sm:type-body">
-                  {hero.subheading}
+            <div className="mt-8  lg:items-start pb-4 lg:pb-8">
+              <div className="grid  grid-cols-1 gap-2 md:grid-cols-2">
+                <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
+                  <p className="text-xs font-medium uppercase tracking-label text-white-subtle">
+                    Start Your Project
+                  </p>
+                  <div className="max-w-narrow-copy text-sm leading-6 text-secondary sm:type-body">
+                    {hero.subheading}
+                  </div>
                 </div>
-              </div>
-
-              <div className="inline-flex items-center gap-x-2 md:gap-x-4 gap-y-4 lg:justify-center">
-                <Button
-                  variant="line"
-                  href={hero.cta.href}
-                  className="text-white flex gap-2 items-center"
-                >
-                  <span>{hero.cta.label}</span>
-                  <ArrowUpRight size={20} />
-                </Button>
+                <div className="inline-flex items-center gap-4  md:justify-self-end md:items-end">
+                  <Button
+                    variant="line"
+                    href={hero.cta.href}
+                    className="flex items-center gap-2 text-white"
+                  >
+                    <span>{hero.cta.label}</span>
+                    <ArrowUpRight size={20} />
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

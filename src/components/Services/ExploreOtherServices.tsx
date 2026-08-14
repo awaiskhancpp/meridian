@@ -1,25 +1,15 @@
 'use client'
 
 import React, { useRef, useState } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
 import {
   ArrowUpRight,
   ArrowRight,
   ChevronLeft,
   ChevronRight,
-  ChefHat,
-  Bath,
-  Home,
-  HousePlus,
-  ShelvingUnit,
-  PencilLine,
-  LayoutGrid,
-  ClipboardList,
-  type LucideIcon,
 } from 'lucide-react'
 
 import { Container } from '@/components/ui'
+import ServiceImageCard from './ServiceImageCard'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
@@ -27,17 +17,6 @@ import type { Swiper as SwiperType } from 'swiper'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
-
-const SERVICE_ICONS: Record<string, LucideIcon> = {
-  'chef-hat': ChefHat,
-  bath: Bath,
-  home: Home,
-  'house-plus': HousePlus,
-  'shelving-unit': ShelvingUnit,
-  'pencil-line': PencilLine,
-  'layout-grid': LayoutGrid,
-  'clipboard-list': ClipboardList,
-}
 
 interface ServiceCard {
   title: string
@@ -159,39 +138,20 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
           }}
         >
           {otherServices.splice(0, 4).map((service) => {
-            const Icon = service.icon && SERVICE_ICONS[service.icon]
             return (
               <SwiperSlide key={service.slug}>
-                <Link href={`/services/${service.slug}`} className="group flex w-full">
+                <ServiceImageCard
+                  title={service.title}
+                  image={service.image}
+                  icon={service.icon}
+                  href={`/services/${service.slug}`}
+                />
                   {/*
                     Whole card is now just the photo — rounded-2xl on
                     THIS outer wrapper (not a separate content panel
                     below it), since the title card floats ON TOP of the
                     photo rather than sitting in its own space beneath it.
                   */}
-                  <div className="relative ratio-portrait w-full overflow-hidden rounded-none">
-                    <Image
-                      src={service.image}
-                      alt={service.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute inset-x-4 bottom-4 bg-dark px-5 pb-5 pt-9 shadow-card-strong transition-colors duration-standard">
-                      {Icon && (
-                        <div className="absolute -top-7 left-5 flex h-14 w-14 items-center justify-center rounded-full bg-surface-high">
-                          <Icon
-                            className="h-7 w-7 text-accent"
-                            strokeWidth={1.5}
-                            aria-hidden="true"
-                          />
-                        </div>
-                      )}
-                      <h3 className="text-base font-bold uppercase leading-snug tracking-wide text-white sm:text-lg">
-                        {service.title}
-                      </h3>
-                    </div>
-                  </div>
-                </Link>
               </SwiperSlide>
             )
           })}

@@ -52,6 +52,7 @@ export const colors = {
   whiteFaint: 'rgba(255,255,255,0.2)',
   whiteMuted: 'rgba(255,255,255,0.6)',
   whiteSubtle: 'rgba(255,255,255,0.7)',
+  whiteStrong: 'rgba(255,255,255,0.85)',
   whiteOverlay: 'rgba(255,255,255,0.9)',
   whiteHigh: 'rgba(255,255,255,0.95)',
   borderLightSoft: 'rgba(255,255,255,0.2)',
@@ -89,6 +90,16 @@ export const colors = {
   decorativeGreen: '#34A853',
   decorativeRed: '#EA4335',
   decorativeTerracotta: '#c28b6e',
+} as const
+
+// Page-level surface roles. Components use these names so a builder can
+// change a whole surface category from one source of truth.
+export const surfaces = {
+  page: colors.bgWhite,
+  section: colors.bgCream,
+  card: colors.white,
+  overlay: colors.whiteOverlay,
+  dark: colors.bgDark,
 } as const
 
 // Status colors derive from the existing palette rather than introducing
@@ -186,6 +197,8 @@ export const spacing = {
   contactMapHeight: '437px',
   dropdownWidth: '220px',
   dropdownTop: '85%',
+  gapCard: '0.75rem',
+  narrowCopy: '260px',
   headerTop: '6rem',
   gapField: '0.75rem',
   dividerWidth: '0.125rem',
@@ -229,7 +242,7 @@ export const componentStyles = {
     serviceHero: 'clamp(2rem,5vw,4rem)',
     serviceForm: 'clamp(1.8rem,3.6vw,2.6rem)',
     serviceWhy: 'clamp(1.9rem,3.8vw,3rem)',
-    projectHero: 'clamp(2.75rem,7vw,6.4rem)',
+    projectHero: 'clamp(2.75rem,6.8vw,5.85rem)',
     projectTitle: 'clamp(2rem,4vw,3.4rem)',
     projectBrief: 'clamp(2rem,4vw,3.5rem)',
     projectCta: 'clamp(2rem,4vw,4rem)',
@@ -255,7 +268,7 @@ export const componentStyles = {
     heading: '0.92',
     section: '0.95',
     compact: '0.98',
-    projectHero: '0.88',
+    projectHero: '0.9',
     mission: '1.1',
     body: '1.6',
     footer: '1.6',

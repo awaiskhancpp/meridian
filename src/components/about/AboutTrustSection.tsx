@@ -27,7 +27,7 @@ export default function AboutTrustSection({
   label = 'WHY HOMEOWNERS TRUST US',
   heading = 'NUMBERS THAT BACK UP',
   script = 'Every Promise We Make.',
-  description = 'Building trust takes time, but it starts with transparency. Weâ€™ve built our reputation on clear communication, reliable timelines, and an unwavering standard of quality for every home we touch.',
+  description = 'Building trust takes time, but it starts with transparency. We’ve built our reputation on clear communication, reliable timelines, and an unwavering standard of quality for every home we touch.',
   stats = [
     { value: '24h', label: 'Average response time' },
     { value: '1', label: 'Decade spent remodeling' },
@@ -45,7 +45,7 @@ export default function AboutTrustSection({
   ],
 }: AboutTrustSectionProps) {
   return (
-    <section aria-labelledby="trust-section-heading" className="section-padding bg-surface-high">
+    <section aria-labelledby="trust-section-heading" className="section-padding bg-page">
       <Container>
         {/* â”€â”€ Section Header â”€â”€ */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
@@ -72,7 +72,7 @@ export default function AboutTrustSection({
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-surface-high p-6 sm:p-8 flex flex-col items-center border border-soft justify-center text-center min-h-trust-card"
+              className="bg-page p-6 sm:p-8 flex flex-col items-center border border-soft justify-center text-center min-h-trust-card"
             >
               <p className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-dark">
                 {stat.value}

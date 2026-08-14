@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useRef, useState } from 'react'
-import Image from 'next/image'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation } from 'swiper/modules'
 import type { Swiper as SwiperType } from 'swiper'
@@ -9,7 +8,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import siteData from '@/website.json'
-import { Button, Container } from '@/components/ui'
+import { Container } from '@/components/ui'
+import BlogCard from './BlogCard'
 
 const { blogs } = siteData
 
@@ -26,7 +26,7 @@ export default function BlogRelatedPosts() {
     <section
       id="related-posts"
       aria-labelledby="related-posts-heading"
-      className="bg-surface section-space"
+      className="bg-page section-space"
     >
       <Container>
         {/* Ã¢â€â‚¬Ã¢â€â‚¬ Header row: eyebrow + heading left, nav arrows right Ã¢â€â‚¬Ã¢â€â‚¬ */}
@@ -82,7 +82,7 @@ export default function BlogRelatedPosts() {
         >
           {blogs.items.map((b, i) => (
             <SwiperSlide key={i} className="h-auto">
-              <BlogFeatureCard card={b} />
+              <BlogCard card={b} />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -108,49 +108,5 @@ export default function BlogRelatedPosts() {
       }
     `}</style>
     </section>
-  )
-}
-
-type BlogItem = {
-  title: string
-  description: string
-  image: string
-  imageAlt: string
-  href: string
-}
-
-function BlogFeatureCard({ card }: { card: BlogItem }) {
-  return (
-    <article className="group h-full">
-      <a href={card.href} className="block">
-        <div className="relative">
-          <div className="relative h-card-media overflow-hidden lg:h-card-media-lg">
-            <Image
-              src={card.image}
-              alt={card.imageAlt}
-              fill
-              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-overlay-card" />
-
-            <div className="absolute inset-0 flex items-center justify-center p-6 opacity-0 pointer-events-none transition-all duration-500 ease-out group-hover:opacity-100">
-              <div className="w-full translate-y-4 h-full border border-light-strong bg-surface-overlay px-8 py-10 flex flex-col items-center justify-center text-center opacity-0 shadow-soft backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
-                <h3 className="type-card-title font-black capitalize leading-heading tracking-heading-subtle text-dark">
-                  {card.title}
-                </h3>
-                <p className="mt-5 text-sm leading-6 text-dark-muted">{card.description}</p>
-                <Button variant="outline" className="mt-10 rounded-none ">
-                  Read More
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-4 transition-all duration-standard group-hover:opacity-0 group-hover:-translate-y-2">
-          <h3 className="heading-card text-dark">{card.title}</h3>
-        </div>
-      </a>
-    </article>
   )
 }

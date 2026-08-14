@@ -3,7 +3,7 @@
 import React, { useMemo, useState } from 'react'
 import Navbar from '@/components/homepage/Navbar'
 import Footer from '@/components/homepage/Footer'
-import { BlogFeatureCard } from '@/components/homepage/Blogs'
+import BlogCard from './BlogCard'
 import { PageHero, HeroSearchBar, Container } from '@/components/ui'
 import type { SearchField } from '@/components/ui'
 import { CATEGORY_LABELS, type BlogCardData } from '@/lib/blogs'
@@ -13,7 +13,7 @@ const SEARCH_FIELDS: SearchField[] = [
     type: 'select',
     name: 'Category',
     label: 'Category',
-    placeholder: 'Search by Categoryâ€¦',
+    placeholder: 'Search by Category…',
     options: [
       'Kitchen Remodeling',
       'Bathroom Remodeling',
@@ -29,10 +29,10 @@ const SEARCH_FIELDS: SearchField[] = [
     type: 'select',
     name: 'sort',
     label: 'Sort',
-    options: ['Latest', 'Oldest', 'Aâ€“Z'],
+    options: ['Latest', 'Oldest', 'A–Z'],
     placeholder: 'Latest',
   },
-  { type: 'text', name: 'title', label: 'Title', placeholder: 'Search by titleâ€¦' },
+  { type: 'text', name: 'title', label: 'Title', placeholder: 'Search by title…' },
 ]
 
 export default function BlogsPageClient({
@@ -69,7 +69,7 @@ export default function BlogsPageClient({
 
     const sort = search.sort || 'Latest'
     result = [...result].sort((a, b) => {
-      if (sort === 'Aâ€“Z') return a.title.localeCompare(b.title)
+      if (sort === 'A–Z') return a.title.localeCompare(b.title)
       const dateA = new Date(a.datePosted).getTime()
       const dateB = new Date(b.datePosted).getTime()
       return sort === 'Oldest' ? dateA - dateB : dateB - dateA
@@ -79,7 +79,7 @@ export default function BlogsPageClient({
   }, [posts, search, category])
 
   return (
-    <main className="min-h-screen bg-surface-high">
+    <main className="min-h-screen bg-page">
       <Navbar />
 
       <div className="relative z-10">
@@ -114,7 +114,7 @@ export default function BlogsPageClient({
           ) : (
             <div className="z-10 grid grid-cols-1 gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((post) => (
-                <BlogFeatureCard key={post.slug} card={post} />
+                <BlogCard key={post.slug} card={post} />
               ))}
             </div>
           )}

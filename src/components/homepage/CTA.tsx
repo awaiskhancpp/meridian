@@ -44,7 +44,7 @@ export default function CTA({
   }
 
   return (
-    <section className="relative section-padding bg-surface-high ">
+    <section className="relative section-padding bg-page ">
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
@@ -70,7 +70,7 @@ export default function CTA({
                     setEmailError('')
                   }}
                   placeholder="Enter your email"
-                  className="h-14 w-full rounded-none border border-accent-light bg-surface-high px-4 pr-36 text-sm text-dark placeholder:text-dark-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+                  className="h-14 w-full rounded-none border border-accent-light bg-page px-4 pr-36 text-sm text-dark placeholder:text-dark-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
                 />
 
                 <button

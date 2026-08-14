@@ -14,6 +14,7 @@ import { resolve, dirname } from 'path'
 import { fileURLToPath } from 'url'
 import {
   colors,
+  surfaces,
   status,
   tracking,
   fontFamily,
@@ -107,6 +108,13 @@ let css = `/**
   --color-cream:      ${colors.cream};
   --color-dark-slate: ${colors.darkSlate};
 
+  /* Page-level surface roles: the builder's primary background controls. */
+  --surface-page:    ${surfaces.page};
+  --surface-section: ${surfaces.section};
+  --surface-card:    ${surfaces.card};
+  --surface-overlay: ${surfaces.overlay};
+  --surface-dark:    ${surfaces.dark};
+
   /* UI chrome */
   --color-nav-bg:        ${colors.navBg};
   --color-nav-bg-default:${colors.navBgDefault};
@@ -120,6 +128,7 @@ let css = `/**
   --color-white-faint:   ${colors.whiteFaint};
   --color-white-muted:   ${colors.whiteMuted};
   --color-white-subtle:  ${colors.whiteSubtle};
+  --color-white-strong:  ${colors.whiteStrong};
   --color-white-overlay: ${colors.whiteOverlay};
   --color-white-high:    ${colors.whiteHigh};
   --color-border-light-soft:   ${colors.borderLightSoft};
@@ -324,7 +333,9 @@ let css = `/**
   @media (min-width: 1024px) { margin-bottom: ${spacing.section.md}; }
 }
 @utility gap-field { gap: ${spacing.gapField}; }
+@utility gap-card { gap: ${spacing.gapCard}; }
 @utility w-divider { width: ${spacing.dividerWidth}; }
+@utility max-w-narrow-copy { max-width: ${spacing.narrowCopy}; }
 @utility hero-content-padding {
   padding-top: ${spacing.heroTop.base};
   @media (min-width: 640px) { padding-top: ${spacing.heroTop.sm}; }
@@ -339,7 +350,13 @@ let css = `/**
 @utility bg-surface-muted { background-color: var(--color-white-soft); }
 @utility bg-surface-high { background-color: var(--color-white); }
 @utility bg-surface-overlay { background-color: var(--color-white-overlay); }
+@utility bg-page { background-color: var(--surface-page); }
+@utility bg-section { background-color: var(--surface-section); }
+@utility bg-card-surface { background-color: var(--surface-card); }
+@utility bg-overlay-surface { background-color: var(--surface-overlay); }
+@utility bg-dark-surface { background-color: var(--surface-dark); }
 @utility text-surface { color: var(--color-text-dark); }
+@utility text-white-strong { color: var(--color-white-strong); }
 @utility legal-page {
   margin-inline: auto;
   padding-block: ${spacing.section.sm};

@@ -175,7 +175,7 @@ export default function Navbar() {
                     <ChevronIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
                   </Link>
 
-                  <div className="invisible absolute left-1/2 top-dropdown z-10 w-dropdown -translate-x-1/2 translate-y-2 border border-subtle bg-surface p-2 opacity-0 shadow-card transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="invisible absolute left-1/2 top-dropdown z-10 w-dropdown -translate-x-1/2 translate-y-2 border border-subtle bg-page p-2 opacity-0 shadow-card transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                     {item.children.map((child) => (
                       <Link
                         key={child.label}
@@ -251,11 +251,10 @@ export default function Navbar() {
         </div>
       </Container>
 
-      {/* FIX 2 & 3: Menu moved outside Container for edge-to-edge width, using 100dvh for height */}
       <div
         id="main-menu"
         ref={menuRef}
-        className={`absolute left-0 right-0 top-full w-full overflow-y-auto bg-surface border-t border-subtle transition-all duration-standard ease-in-out lg:hidden ${
+        className={`absolute left-0 right-0 top-full w-full overflow-y-auto bg-page border-t border-subtle transition-all duration-standard ease-in-out lg:hidden ${
           mobileOpen
             ? 'viewport-mobile-menu opacity-100'
             : 'h-0 opacity-0 pointer-events-none border-transparent'

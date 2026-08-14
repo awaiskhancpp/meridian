@@ -40,7 +40,7 @@ interface ServiceProcessProps {
  *   already exist in builds.ts (glassBg/glassBorder) but were unused
  *   anywhere in the codebase until now. This is the same "photo with
  *   floating translucent stat-like boxes" grammar ServiceHero already
- *   established with its own bg-surface-high stat boxes, just carried
+ *   established with its own bg-page stat boxes, just carried
  *   through with the warmer glass token instead.
  *
  * The gradient is 90deg (left Ã¢â€ â€™ right fade, darkest at the left edge),

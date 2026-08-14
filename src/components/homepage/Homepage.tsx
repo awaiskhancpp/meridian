@@ -16,7 +16,7 @@ import {
 
 export default async function Homepage() {
   return (
-    <main className="min-h-screen bg-surface-high">
+    <main className="min-h-screen bg-page">
       <Navbar />
       <Hero />
       <About />

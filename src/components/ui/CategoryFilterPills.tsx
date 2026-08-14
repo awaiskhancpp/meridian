@@ -42,7 +42,7 @@ export default function CategoryFilterPills({
       <button
         type="button"
         onClick={() => scroll('left')}
-        className="absolute left-0 top-1/2 z-20 -translate-y-1/2 sm:hidden flex h-8 w-8 items-center justify-center border border-strong bg-surface text-dark-muted hover:text-accent transition-colors"
+        className="absolute left-0 top-1/2 z-20 -translate-y-1/2 sm:hidden flex h-8 w-8 items-center justify-center border border-strong bg-section text-dark-muted hover:text-accent transition-colors"
         aria-label="Scroll categories left"
       >
         <ChevronLeft className="h-4 w-4" />
@@ -50,7 +50,7 @@ export default function CategoryFilterPills({
       <button
         type="button"
         onClick={() => scroll('right')}
-        className="absolute right-0 top-1/2 z-20 -translate-y-1/2 sm:hidden flex h-8 w-8 items-center justify-center border border-strong bg-surface text-dark-muted hover:text-accent transition-colors"
+        className="absolute right-0 top-1/2 z-20 -translate-y-1/2 sm:hidden flex h-8 w-8 items-center justify-center border border-strong bg-section text-dark-muted hover:text-accent transition-colors"
         aria-label="Scroll categories right"
       >
         <ChevronRight className="h-4 w-4" />

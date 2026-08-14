@@ -33,7 +33,7 @@ const quickLinks = [
 
 export default function NotFoundPage() {
   return (
-    <main className="min-h-screen bg-surface-high">
+    <main className="min-h-screen bg-page">
       <Navbar />
 
       <section

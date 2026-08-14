@@ -19,7 +19,7 @@ const stepImages = ['/discovery.png', '/design.png', '/build.png', '/handoff.png
 ───────────────────────────────────────────── */
 export default function Process() {
   return (
-    <section id="process" aria-labelledby="process-heading" className="section-padding bg-surface-high">
+    <section id="process" aria-labelledby="process-heading" className="section-padding bg-page">
       <Container>
         {/* Centered heading */}
         <SectionHeading
@@ -35,7 +35,7 @@ export default function Process() {
           {processData.steps.map((step, idx) => (
             <div
               key={idx}
-              className="relative flex flex-col border border-soft bg-surface-high p-4 lg:p-3 xl:p-6 transition-shadow duration-standard hover:shadow-sm"
+              className="relative flex flex-col border border-soft bg-page p-4 lg:p-3 xl:p-6 transition-shadow duration-standard hover:shadow-sm"
             >
               {/*
                 Badge + line share one flex row now, instead of the badge

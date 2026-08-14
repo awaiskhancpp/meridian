@@ -242,7 +242,7 @@ export default function Contact() {
                     size="md"
                     type="submit"
                     disabled={isSubmitting}
-                    className="max-w-fit rounded-none border-light-muted text-white hover:!bg-surface-high hover:!text-dark disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="max-w-fit rounded-none border-light-muted text-white hover:!bg-page hover:!text-dark disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <span>{isSubmitting ? 'Sending…' : contact.submit}</span>
                     <ArrowUpRight size={20} />

@@ -26,6 +26,13 @@
   --color-cream:      #EFE6D8;
   --color-dark-slate: #3C2515;
 
+  /* Page-level surface roles: the builder's primary background controls. */
+  --surface-page:    #FFFFFF;
+  --surface-section: #EFE6D8;
+  --surface-card:    #FFFFFF;
+  --surface-overlay: rgba(255,255,255,0.9);
+  --surface-dark:    #4A3424;
+
   /* UI chrome */
   --color-nav-bg:        rgba(255,255,255,0.96);
   --color-nav-bg-default:rgba(255,255,255,0.88);
@@ -39,6 +46,7 @@
   --color-white-faint:   rgba(255,255,255,0.2);
   --color-white-muted:   rgba(255,255,255,0.6);
   --color-white-subtle:  rgba(255,255,255,0.7);
+  --color-white-strong:  rgba(255,255,255,0.85);
   --color-white-overlay: rgba(255,255,255,0.9);
   --color-white-high:    rgba(255,255,255,0.95);
   --color-border-light-soft:   rgba(255,255,255,0.2);
@@ -243,7 +251,9 @@
   @media (min-width: 1024px) { margin-bottom: 4rem; }
 }
 @utility gap-field { gap: 0.75rem; }
+@utility gap-card { gap: 0.75rem; }
 @utility w-divider { width: 0.125rem; }
+@utility max-w-narrow-copy { max-width: 260px; }
 @utility hero-content-padding {
   padding-top: 6rem;
   @media (min-width: 640px) { padding-top: 7rem; }
@@ -258,7 +268,13 @@
 @utility bg-surface-muted { background-color: var(--color-white-soft); }
 @utility bg-surface-high { background-color: var(--color-white); }
 @utility bg-surface-overlay { background-color: var(--color-white-overlay); }
+@utility bg-page { background-color: var(--surface-page); }
+@utility bg-section { background-color: var(--surface-section); }
+@utility bg-card-surface { background-color: var(--surface-card); }
+@utility bg-overlay-surface { background-color: var(--surface-overlay); }
+@utility bg-dark-surface { background-color: var(--surface-dark); }
 @utility text-surface { color: var(--color-text-dark); }
+@utility text-white-strong { color: var(--color-white-strong); }
 @utility legal-page {
   margin-inline: auto;
   padding-block: 2.5rem;
@@ -304,7 +320,7 @@
 @utility type-service-hero { font-size: clamp(2rem,5vw,4rem); }
 @utility type-service-form { font-size: clamp(1.8rem,3.6vw,2.6rem); }
 @utility type-service-why { font-size: clamp(1.9rem,3.8vw,3rem); }
-@utility type-project-hero { font-size: clamp(2.75rem,7vw,6.4rem); }
+@utility type-project-hero { font-size: clamp(2.75rem,6.8vw,5.85rem); }
 @utility type-project-title { font-size: clamp(2rem,4vw,3.4rem); }
 @utility type-project-brief { font-size: clamp(2rem,4vw,3.5rem); }
 @utility type-project-cta { font-size: clamp(2rem,4vw,4rem); }
@@ -328,7 +344,7 @@
 @utility leading-heading { line-height: 0.92; }
 @utility leading-section { line-height: 0.95; }
 @utility leading-compact { line-height: 0.98; }
-@utility leading-project-hero { line-height: 0.88; }
+@utility leading-project-hero { line-height: 0.9; }
 @utility leading-mission { line-height: 1.1; }
 @utility leading-body { line-height: 1.6; }
 @utility leading-footer { line-height: 1.6; }

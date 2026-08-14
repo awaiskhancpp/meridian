@@ -17,7 +17,7 @@ export default function ProjectDirection({ project }: { project: ProjectDetail }
               <span className="heading-script text-accent">the feeling.</span>
             </h2>
           </div>
-          <div className="grid gap-px bg-surface sm:grid-cols-3">
+          <div className="grid gap-px bg-section sm:grid-cols-3">
             {project.highlights.map((highlight) => (
               <div
                 key={highlight}

@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
   const address = '123 Artisan Lane, New York, NY 10001'
 
   return (
-    <main className="min-h-screen bg-surface-high">
+    <main className="min-h-screen bg-page">
       <Navbar />
       <PageHero label="" heading="Privacy" script="Policy" />
       {/* Header */}

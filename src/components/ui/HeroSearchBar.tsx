@@ -99,7 +99,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
         {isOpen ? (
           <>
             <div className="fixed inset-0 z-20" onClick={() => setOpenDropdown(null)} />
-            <div className="absolute left-0 top-full z-overlay mt-2 w-full border border-subtle bg-surface py-1 shadow-card">
+            <div className="absolute left-0 top-full z-overlay mt-2 w-full border border-subtle bg-section py-1 shadow-card">
               {field.options.map((option) => (
                 <button
                   key={option}
@@ -123,7 +123,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
   }
 
   return (
-    <div className="relative z-50 mx-auto w-full max-w-5xl border border-subtle bg-surface shadow-lift">
+    <div className="relative z-50 mx-auto w-full max-w-5xl border border-subtle bg-section shadow-lift">
       <form onSubmit={handleSubmit} role="search" aria-label="Search articles">
         <div className="hidden h-navbar items-stretch lg:flex">
           {fields.map((field) => renderField(field))}

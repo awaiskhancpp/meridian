@@ -89,7 +89,7 @@ export default function BeforeAfterSlider({
 
       {/* Divider line */}
       <div
-        className="pointer-events-none absolute inset-y-0 w-divider -translate-x-1/2 bg-surface"
+        className="pointer-events-none absolute inset-y-0 w-divider -translate-x-1/2 bg-section"
         style={{ left: `${position}%` }}
       />
 
@@ -104,7 +104,7 @@ export default function BeforeAfterSlider({
         aria-valuemin={0}
         aria-valuemax={100}
         onKeyDown={handleKeyDown}
-        className="absolute top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full bg-surface text-dark shadow-card outline-none focus-visible:ring-2 focus-visible:ring-accent"
+        className="absolute top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full bg-section text-dark shadow-card outline-none focus-visible:ring-2 focus-visible:ring-accent"
         style={{ left: `${position}%` }}
       >
         <ChevronLeft className="h-3.5 w-3.5" aria-hidden="true" />

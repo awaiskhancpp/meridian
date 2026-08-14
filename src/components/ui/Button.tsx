@@ -36,7 +36,7 @@ const variantClasses: Record<Variant, string> = {
   primary: 'bg-accent hover:bg-accent-hover text-white border border-transparent shadow-soft',
   outline: 'bg-transparent border border-extra-strong text-dark hover:bg-accent hover:text-white',
   'outline-light':
-    'bg-transparent border border-light-heavy text-white hover:bg-surface hover:text-dark',
+    'bg-transparent border border-light-heavy text-white hover:bg-section hover:text-dark',
   ghost: 'bg-transparent border border-transparent text-dark hover:bg-accent-faint',
   line: '', // unreachable â€” Button() branches to LiquidUnderlineButton before this lookup
 }

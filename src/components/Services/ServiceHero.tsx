@@ -128,11 +128,11 @@ export default function ServiceHero({
         )}
       </div>
       {statBoxes && statBoxes.length > 0 && (
-        <div className="block lg:hidden py-4 bg-surface-high">
+        <div className="block lg:hidden py-4 bg-page">
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {statBoxes.map((statBox, index) => (
-                <div key={index} className="flex gap-field bg-surface-high p-6 shadow-card">
+                <div key={index} className="flex gap-field bg-page p-6 shadow-card">
                   <div className="flex items-center text-4xl font-black text-accent">
                     {statBox.number}
                   </div>

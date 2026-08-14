@@ -1,33 +1,10 @@
 'use client'
-import Image from 'next/image'
-import Link from 'next/link'
 import React, { useMemo, useState } from 'react'
 import Navbar from '@/components/homepage/Navbar'
 import Footer from '@/components/homepage/Footer'
 import { PageHero, Container } from '@/components/ui'
 import { priceTierFor, type ServiceCardData } from '@/lib/services'
-import {
-  ChefHat,
-  Bath,
-  Home,
-  HousePlus,
-  ShelvingUnit,
-  PencilLine,
-  LayoutGrid,
-  ClipboardList,
-  type LucideIcon,
-} from 'lucide-react'
-
-const SERVICE_ICONS: Record<string, LucideIcon> = {
-  'chef-hat': ChefHat,
-  bath: Bath,
-  home: Home,
-  'house-plus': HousePlus,
-  'shelving-unit': ShelvingUnit,
-  'pencil-line': PencilLine,
-  'layout-grid': LayoutGrid,
-  'clipboard-list': ClipboardList,
-}
+import ServiceImageCard from './ServiceImageCard'
 
 function numericPrice(startingPrice: string): number {
   if (startingPrice.toLowerCase() === 'free') return 0
@@ -58,7 +35,7 @@ export default function ServicesPageClient({
 
     const sort = search.sort || 'Popular'
     result = [...result].sort((a, b) => {
-      if (sort === 'AÃ¢â‚¬â€œZ') return a.title.localeCompare(b.title)
+      if (sort === 'A–Z') return a.title.localeCompare(b.title)
       if (sort === 'Price: Low to High')
         return numericPrice(a.startingPrice) - numericPrice(b.startingPrice)
       if (sort === 'Price: High to Low')
@@ -71,7 +48,7 @@ export default function ServicesPageClient({
   }, [services, search])
 
   return (
-    <main className="min-h-screen bg-surface-high">
+    <main className="min-h-screen bg-page">
       <Navbar />
 
       <PageHero
@@ -102,35 +79,15 @@ export default function ServicesPageClient({
             </p>
           ) : (
             <div className="grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
-              {filtered.map((service, i) => {
-                const Icon = service.icon && SERVICE_ICONS[service.icon]
-                return (
-                  <Link key={i} href={`/services/${service.slug}`} className="group flex w-full">
-                    <div className="relative ratio-portrait w-full overflow-hidden rounded-none">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-x-4 bottom-4 bg-dark px-5 pb-5 pt-9 shadow-card-strong transition-colors duration-standard">
-                        {Icon && (
-                          <div className="absolute -top-7 left-5 flex h-14 w-14 items-center justify-center rounded-full bg-surface-high">
-                            <Icon
-                              className="h-7 w-7 text-accent"
-                              strokeWidth={1.5}
-                              aria-hidden="true"
-                            />
-                          </div>
-                        )}
-                        <h3 className="text-base font-bold uppercase leading-snug tracking-wide text-white sm:text-lg">
-                          {service.title}
-                        </h3>
-                      </div>
-                    </div>
-                  </Link>
-                )
-              })}
+              {filtered.map((service) => (
+                <ServiceImageCard
+                  key={service.slug}
+                  title={service.title}
+                  image={service.image}
+                  icon={service.icon}
+                  href={`/services/${service.slug}`}
+                />
+              ))}
             </div>
           )}
         </Container>

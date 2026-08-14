@@ -27,7 +27,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="en" className={`${hostGrotesk.variable} ${allura.variable}`}>
-      <body className="min-h-screen bg-surface-high font-sans text-dark antialiased selection:bg-accent selection:text-white">
+      <body className="min-h-screen bg-page font-sans text-dark antialiased selection:bg-accent selection:text-white">
         {children}
       </body>
     </html>

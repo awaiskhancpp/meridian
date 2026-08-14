@@ -91,7 +91,7 @@ export default function CTABanner({
                     setEmailError('')
                   }}
                   placeholder="Enter your email"
-                  className="h-14 w-full rounded-none border border-light-muted bg-surface-high px-4 pr-36 text-accent placeholder:text-accent focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                  className="h-14 w-full rounded-none border border-light-muted bg-page px-4 pr-36 text-accent placeholder:text-accent focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
                 />
 
                 <button
