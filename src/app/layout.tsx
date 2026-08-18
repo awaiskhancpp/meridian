@@ -1,17 +1,19 @@
-import { Host_Grotesk, Allura } from 'next/font/google' // Use Google fonts instead
+import localFont from 'next/font/local'
 import React from 'react'
 import './styles.css'
 
-const hostGrotesk = Host_Grotesk({
-  subsets: ['latin', 'latin-ext'],
-  weight: ['300', '400', '500', '600', '700', '800'],
+const hostGrotesk = localFont({
+  src: '../fonts/HostGrotesk-Latin.woff2',
+  weight: '300 800',
+  style: 'normal',
   variable: '--font-host-grotesk',
   display: 'swap',
 })
 
-const allura = Allura({
+const allura = localFont({
+  src: '../fonts/Allura-Latin.woff2',
   weight: '400',
-  subsets: ['latin', 'latin-ext'],
+  style: 'normal',
   variable: '--font-allura',
   display: 'swap',
 })
