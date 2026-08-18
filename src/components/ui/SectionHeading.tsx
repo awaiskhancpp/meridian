@@ -56,7 +56,7 @@ export default function SectionHeading({
       </p>
       <h2 id={id} className={headingMt}>
         <span className="block heading-2 text-dark">{heading}</span>
-        <span className="block heading-script capitalize text-accent">{script}</span>
+        <span className="mt-2 block heading-script capitalize text-accent">{script}</span>
       </h2>
       {subheading && <p className={subheadingClassName}>{subheading}</p>}
     </div>
