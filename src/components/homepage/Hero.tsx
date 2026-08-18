@@ -63,7 +63,7 @@ export default function Hero() {
 
             <div className="mt-8  lg:items-start pb-4 lg:pb-8">
               <div className="grid  grid-cols-1 gap-2 md:grid-cols-2">
-                <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
+                <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
                   <p className="text-xs font-medium uppercase tracking-label text-white-subtle">
                     Start Your Project
                   </p>

@@ -32,23 +32,23 @@ import {
 // Removed from builds.ts as single-use, kept here for CSS generation
 const typeRecipe = {
   heading2: {
-    size: 'clamp(1.9rem,3.8vw,3.2rem)',
+    size: componentStyles.type.sectionTitle,
     weight: '900',
     line: '0.92',
     tracking: '-0.02em',
   },
   headingScript: {
-    size: 'clamp(2.1rem,4vw,3.5rem)',
+    size: componentStyles.type.sectionScript,
     line: '1',
   },
   headingHero: {
-    size: 'clamp(2.75rem,6.8vw,5.85rem)',
+    size: componentStyles.type.heroDisplay,
     weight: '700',
     line: '0.9',
     tracking: '-0.03em',
   },
   headingHeroScript: {
-    size: 'clamp(3.1rem,7vw,6.1rem)',
+    size: componentStyles.type.heroScript,
     line: '0.82',
   },
   cardTitle: {

@@ -120,19 +120,6 @@ export const fontFamily = {
   script: "'Allura', cursive",
 } as const
 
-// Central typography and layout recipes used by components. Keep values here
-// so a builder can update the template from one source of truth.
-export const typography = {
-  heroDisplay: 'clamp(2.75rem,6.8vw,5.85rem)',
-  heroScript: 'clamp(3.1rem,7vw,6.1rem)',
-  body: '0.95rem',
-  eyebrow: '0.68rem',
-  metadata: '0.65rem',
-  heroLine: '0.9',
-  scriptLine: '0.82',
-  headingLine: '0.92',
-} as const
-
 // Font sizes are responsive by breakpoint: sm (<640) | md (640-1024) | lg (>1024)
 export const fontSize = {
   h1: { lg: '3.5rem', md: '2.75rem', sm: '2rem' },
@@ -159,6 +146,8 @@ export const fontWeight = {
   bold: '700',
 } as const
 
+const sharedGap = '0.75rem'
+
 // Spacing tokens.
 export const spacing = {
   section: { lg: '6rem', md: '4rem', sm: '2.5rem' },
@@ -168,29 +157,28 @@ export const spacing = {
   // independently in both Container.tsx and Hero.tsx (same raw value,
   // two places), the exact "should be a token" signal.
   contentMaxWidth: '1440px',
-  carouselOffset: '14rem',
-  cardMedia: '28rem',
-  cardMediaLg: '34rem',
-  contactMapHeight: '437px',
   dropdownWidth: '220px',
   dropdownTop: '85%',
-  gapCard: '0.75rem',
+  gapCard: sharedGap,
   narrowCopy: '260px',
-  headerTop: '6rem',
-  gapField: '0.75rem',
+  gapField: sharedGap,
   dividerWidth: '0.125rem',
   heroTop: { base: '6rem', sm: '7rem', lg: '8rem', wide: '6rem' },
   aboutCalloutRight: { base: '4rem', md: '18rem' },
 } as const
 
-export const layout = {
-  sectionPadding: { sm: '2.5rem', lg: '4rem' },
-  sectionMarginBottom: { sm: '2.5rem', lg: '4rem' },
-  heroColumns: 'minmax(0,1fr) auto',
-  galleryAspect: '16/10',
-  accordionExpanded: '1fr',
-  accordionCollapsed: '0fr',
+// Shared typography scales. Section-specific names below point back to these
+// values so the existing component classes remain compatible without creating
+// slightly different heading sizes for each section.
+const sharedType = {
+  heroDisplay: 'clamp(2.75rem,6.8vw,5.85rem)',
+  heroScript: 'clamp(3.1rem,7vw,6.1rem)',
+  sectionTitle: 'clamp(1.9rem,3.8vw,3.2rem)',
+  sectionScript: 'clamp(2.1rem,4vw,3.5rem)',
 } as const
+const sharedContactHeight = '437px'
+const sharedHeroGradient =
+  'linear-gradient(115deg,rgba(34,24,18,0.7) 0%,rgba(34,24,18,0.42) 38%,rgba(34,24,18,0.12) 68%,rgba(34,24,18,0.04) 100%)'
 
 export const motion = {
   standard: '300ms',
@@ -203,34 +191,35 @@ export const motion = {
 // of exposing raw clamp(), viewport, pixel, or fraction values in class names.
 export const componentStyles = {
   type: {
-    heroDisplay: 'clamp(2.75rem,6.8vw,5.85rem)',
-    heroScript: 'clamp(3.1rem,7vw,6.1rem)',
+    heroDisplay: sharedType.heroDisplay,
+    heroScript: sharedType.heroScript,
     eyebrow: '0.68rem',
     notFoundWatermark: 'clamp(9rem,42vw,30rem)',
     notFoundTitle: 'clamp(2.4rem,7vw,5.5rem)',
     notFoundScript: 'clamp(2.8rem,7.5vw,6rem)',
-    sectionTitle: 'clamp(2rem,4vw,3rem)',
-    sectionTitleWide: 'clamp(2rem,4vw,3.25rem)',
-    sectionTitleLarge: 'clamp(2rem,4vw,3.5rem)',
-    sectionTitleExtraLarge: 'clamp(2rem,4vw,4rem)',
-    serviceScript: 'clamp(2.2rem,4.5vw,3.5rem)',
-    serviceHero: 'clamp(2rem,5vw,4rem)',
+    sectionTitle: sharedType.sectionTitle,
+    sectionScript: sharedType.sectionScript,
+    sectionTitleWide: sharedType.sectionTitle,
+    sectionTitleLarge: sharedType.sectionTitle,
+    sectionTitleExtraLarge: sharedType.sectionTitle,
+    serviceScript: sharedType.sectionScript,
+    serviceHero: sharedType.heroDisplay,
     serviceForm: 'clamp(1.8rem,3.6vw,2.6rem)',
     serviceWhy: 'clamp(1.9rem,3.8vw,3rem)',
-    projectTitle: 'clamp(2rem,4vw,3.4rem)',
+    projectTitle: sharedType.sectionTitle,
     projectCard: 'clamp(1.2rem,1.8vw,1.6rem)',
     projectCardHover: 'clamp(1.35rem,2vw,1.85rem)',
     cardTitle: 'clamp(1.5rem,2vw,2rem)',
     missionTitle: 'clamp(2.125rem,3vw,2.75rem)',
-    missionScript: 'clamp(2.75rem,4vw,3.5rem)',
+    missionScript: sharedType.sectionScript,
     valueTitle: 'clamp(1.625rem,2vw,2rem)',
-    trustScript: 'clamp(2.5rem,5vw,4rem)',
+    trustScript: sharedType.sectionScript,
     body: '0.95rem',
     metadata: '0.65rem',
     code: '0.9em',
     searchLabel: '10px',
-    displayLarge: '3.5rem',
-    displayExtraLarge: '4.5rem',
+    displayLarge: sharedType.sectionTitle,
+    displayExtraLarge: sharedType.heroDisplay,
     articleSubheading: '1.9rem',
   },
   leading: {
@@ -244,7 +233,7 @@ export const componentStyles = {
   },
   layout: {
     heroDividerBottom: { base: '9.5rem', sm: '6.5rem', lg: '8rem' },
-    ctaSectionPadding: { base: '2.5rem', lg: '6.5rem' },
+    ctaSectionPadding: { base: spacing.section.sm, lg: '6.5rem' },
     heroMax: '40rem',
     headingMax: '44rem',
     copyMax: '28rem',
@@ -271,9 +260,9 @@ export const componentStyles = {
     trustCardMinHeight: '160px',
     menuMaxHeight: '30rem',
     carouselTop: '14rem',
-    contactMapHeight: '437px',
+    contactMapHeight: sharedContactHeight,
     contactMinHeight: '90vh',
-    contactSuccessHeight: '437px',
+    contactSuccessHeight: sharedContactHeight,
     contactFieldMinHeight: '9rem',
     contactRadius: '24px',
     legalMaxWidth: '64rem',
@@ -333,28 +322,9 @@ export const shadow = {
 
 // Reusable gradients used by hero and card overlays.
 export const gradient = {
-  hero: 'linear-gradient(115deg,rgba(34,24,18,0.7) 0%,rgba(34,24,18,0.42) 38%,rgba(34,24,18,0.12) 68%,rgba(34,24,18,0.04) 100%)',
-  serviceHero:
-    'linear-gradient(115deg,rgba(34,24,18,0.7) 0%,rgba(34,24,18,0.42) 38%,rgba(34,24,18,0.12) 68%,rgba(34,24,18,0.04) 100%)',
+  hero: sharedHeroGradient,
+  serviceHero: sharedHeroGradient,
   card: 'linear-gradient(180deg,rgba(60,37,21,0.08) 0%,rgba(60,37,21,0.18) 100%)',
   radialWarm: 'radial-gradient(circle at center,rgba(60,37,21,0.03) 0%,transparent 70%)',
   cardBottomDark: 'linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.1) 100%)',
-} as const
-
-// Named one-off layout values discovered during the repository-wide audit.
-// These are intentionally explicit so future builders do not need to search
-// component files for arbitrary Tailwind values.
-export const utilityTokens = {
-  tocMaxHeight: 'calc(100vh - 8rem)',
-  cardMedia: '28rem',
-  cardMediaLg: '34rem',
-  galleryAspect: '16/10',
-  accordionRowsOpen: '1fr',
-  accordionRowsClosed: '0fr',
-  transitionAccordion: 'grid-template-rows',
-  carouselTop: '14rem',
-  navbarDropdownTop: '85%',
-  navbarDropdownWidth: '220px',
-  sectionPaddingSm: '2.5rem',
-  sectionPaddingLg: '4rem',
 } as const
