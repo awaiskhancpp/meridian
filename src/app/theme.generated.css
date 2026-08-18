@@ -134,6 +134,10 @@
 
   /* ─── Letter Spacing ──────────────────────────────────────────── */
   --tracking-eyebrow: 0.34em;
+  --tracking-tight: -0.025em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
   --tracking-label: 0.28em;
   --tracking-snug: 0.22em;
   --tracking-loose: 0.2em;
@@ -259,6 +263,21 @@
   @media (min-width: 640px) { padding-top: 7rem; }
   @media (min-width: 1024px) { padding-top: 8rem; }
   @media (min-width: 1536px) { padding-top: 6rem; }
+}
+@utility bottom-hero-divider {
+  bottom: 9.5rem;
+  @media (min-width: 640px) { bottom: 6.5rem; }
+  @media (min-width: 1024px) { bottom: 8rem; }
+}
+@utility section-padding-cta {
+  padding-block: 2.5rem;
+  @media (min-width: 1024px) { padding-block: 6.5rem; }
+}
+@utility before-after-clip {
+  clip-path: inset(0 calc(100% - attr(data-position type(<number>)) * 1%) 0 0);
+}
+@utility before-after-position {
+  left: calc(attr(data-position type(<number>)) * 1%);
 }
 @utility about-callout-right {
   right: 4rem;

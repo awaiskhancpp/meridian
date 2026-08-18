@@ -216,6 +216,10 @@ let css = `/**
 
   /* ─── Letter Spacing ──────────────────────────────────────────── */
   --tracking-eyebrow: ${tracking.eyebrow};
+  --tracking-tight: ${tracking.tight};
+  --tracking-wide: ${tracking.wide};
+  --tracking-wider: ${tracking.wider};
+  --tracking-widest: ${tracking.widest};
   --tracking-label: ${tracking.label};
   --tracking-snug: ${tracking.snug};
   --tracking-loose: ${tracking.loose};
@@ -341,6 +345,21 @@ let css = `/**
   @media (min-width: 640px) { padding-top: ${spacing.heroTop.sm}; }
   @media (min-width: 1024px) { padding-top: ${spacing.heroTop.lg}; }
   @media (min-width: 1536px) { padding-top: ${spacing.heroTop.wide}; }
+}
+@utility bottom-hero-divider {
+  bottom: ${componentStyles.layout.heroDividerBottom.base};
+  @media (min-width: 640px) { bottom: ${componentStyles.layout.heroDividerBottom.sm}; }
+  @media (min-width: 1024px) { bottom: ${componentStyles.layout.heroDividerBottom.lg}; }
+}
+@utility section-padding-cta {
+  padding-block: ${componentStyles.layout.ctaSectionPadding.base};
+  @media (min-width: 1024px) { padding-block: ${componentStyles.layout.ctaSectionPadding.lg}; }
+}
+@utility before-after-clip {
+  clip-path: inset(0 calc(100% - attr(data-position type(<number>)) * 1%) 0 0);
+}
+@utility before-after-position {
+  left: calc(attr(data-position type(<number>)) * 1%);
 }
 @utility about-callout-right {
   right: ${spacing.aboutCalloutRight.base};

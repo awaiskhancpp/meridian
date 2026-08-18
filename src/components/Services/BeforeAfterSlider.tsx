@@ -81,16 +81,18 @@ export default function BeforeAfterSlider({
 
       {/* Before Ã¢â‚¬â€ clipped to reveal only up to `position`% from the left */}
       <div
-        className="pointer-events-none absolute inset-0"
-        style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+        className="pointer-events-none absolute inset-0 before-after-clip"
+        data-position={position}
+        aria-hidden="true"
       >
         <Image src={beforeImage} alt={beforeAlt} fill className="object-cover" />
       </div>
 
       {/* Divider line */}
       <div
-        className="pointer-events-none absolute inset-y-0 w-divider -translate-x-1/2 bg-page"
-        style={{ left: `${position}%` }}
+        className="pointer-events-none absolute inset-y-0 w-divider -translate-x-1/2 bg-page before-after-position"
+        data-position={position}
+        aria-hidden="true"
       />
 
       {/* Handle Ã¢â‚¬â€ dragging is handled by the container's pointer events
@@ -99,13 +101,13 @@ export default function BeforeAfterSlider({
       <div
         role="slider"
         tabIndex={0}
+        data-position={position}
         aria-label="Drag to compare before and after"
         aria-valuenow={Math.round(position)}
         aria-valuemin={0}
         aria-valuemax={100}
         onKeyDown={handleKeyDown}
-        className="absolute top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full bg-page text-dark shadow-card outline-none focus-visible:ring-2 focus-visible:ring-accent"
-        style={{ left: `${position}%` }}
+        className="absolute top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full bg-page text-dark shadow-card outline-none focus-visible:ring-2 focus-visible:ring-accent before-after-position"
       >
         <ChevronLeft className="h-3.5 w-3.5" aria-hidden="true" />
         <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />

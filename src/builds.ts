@@ -123,6 +123,10 @@ export const status = {
 // plain arbitrary value rather than tokenized, since a token only
 // earns its place once a value is actually shared across files.
 export const tracking = {
+  tight: '-0.025em',
+  wide: '0.025em',
+  wider: '0.05em',
+  widest: '0.1em',
   eyebrow: '0.34em',
   label: '0.28em',
   snug: '0.22em',
@@ -266,6 +270,8 @@ export const componentStyles = {
     body: '1.6',
   },
   layout: {
+    heroDividerBottom: { base: '9.5rem', sm: '6.5rem', lg: '8rem' },
+    ctaSectionPadding: { base: '2.5rem', lg: '6.5rem' },
     heroMax: '40rem',
     headingMax: '44rem',
     copyMax: '28rem',
