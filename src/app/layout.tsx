@@ -27,6 +27,9 @@ export default function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="en" className={`${hostGrotesk.variable} ${allura.variable}`}>
+      <head>
+        <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon" />
+      </head>
       <body className="min-h-screen bg-page font-sans text-dark antialiased selection:bg-accent selection:text-white">
         {children}
       </body>

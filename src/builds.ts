@@ -1,17 +1,3 @@
-/**
- * Central design tokens for the template.
- *
- * Keep these values aligned with the current live styling.
- * If a component needs a new visual treatment, add the value here first
- * and then wire it through the generator or component utilities.
- *
- * Palette:
- * - deep brown canvas
- * - espresso accent
- * - warm cream
- * - pure white
- */
-
 export const colors = {
   bgDeep: '#5B4836',
   bgDark: '#4A3424',
@@ -83,8 +69,6 @@ export const colors = {
   cardOverlay: 'rgba(60,37,21,0.08)',
   cardOverlayStrong: 'rgba(60,37,21,0.18)',
   radialWarm: 'rgba(60,37,21,0.03)',
-
-  // Decorative accents used for icons, ratings, and highlights.
   decorativeGold: '#FBBC05',
   decorativeBlue: '#4285F4',
   decorativeGreen: '#34A853',
@@ -92,8 +76,6 @@ export const colors = {
   decorativeTerracotta: '#c28b6e',
 } as const
 
-// Page-level surface roles. Components use these names so a builder can
-// change a whole surface category from one source of truth.
 export const surfaces = {
   page: colors.bgWhite,
   section: colors.bgCream,
@@ -102,9 +84,6 @@ export const surfaces = {
   dark: colors.bgDark,
 } as const
 
-// Status colors derive from the existing palette rather than introducing
-// fresh, untraceable hex values — changing decorativeRed still changes
-// error states everywhere, since dangerFg points at the same value.
 export const status = {
   dangerFg: colors.decorativeRed,
   dangerBg: 'rgba(234,67,53,0.08)',
@@ -116,12 +95,6 @@ export const status = {
   infoBg: 'rgba(66,133,244,0.08)',
 } as const
 
-// Letter-spacing tokens. Every value here matches what's already in use
-// somewhere in the repo exactly — this centralizes existing values,
-// it does not redesign the scale. One genuine single-use value
-// (0.24em, Navbar's mobile menu link) is intentionally left as a
-// plain arbitrary value rather than tokenized, since a token only
-// earns its place once a value is actually shared across files.
 export const tracking = {
   tight: '-0.025em',
   wide: '0.025em',
