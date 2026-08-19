@@ -283,7 +283,7 @@ export default function Navbar() {
                   </button>
 
                   <div
-                    className={`overflow-hidden transition-menu duration-standard ease-out ${
+                    className={`overflow-hidden transition-accordion duration-standard ease-out ${
                       isDropdownOpen ? 'max-h-96' : 'max-h-0'
                     }`}
                   >
@@ -334,5 +334,4 @@ export default function Navbar() {
     </header>
   )
 }
-
 

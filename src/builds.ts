@@ -58,6 +58,14 @@ export const fontSize = {
   cardTitle: 'clamp(1.5rem,2vw,2rem)',
   form: 'clamp(1.8rem,3.6vw,2.6rem)',
   displayLg: '4.5rem',
+  compact: '2.25rem',
+  compactLg: '3rem',
+  scriptCompact: '3rem',
+  scriptCompactLg: '3.75rem',
+  stat: '1.875rem',
+  statLg: '2.25rem',
+  highlight: '1.25rem',
+  highlightLg: '1.5rem',
   subheading: 'clamp(1.9rem,3.8vw,3.2rem)',
   heading: 'clamp(1.9rem,3.8vw,3.2rem)',
   headingLg: 'clamp(2.75rem,6.8vw,5.85rem)',
@@ -103,9 +111,14 @@ export const spacing = {
   80: '5rem',
   96: '6rem',
   sectionSm: '2.5rem',
-  sectionMd: '4rem',
-  sectionLg: '6rem',
   sectionXl: '6.5rem',
+} as const
+
+export const sectionSpacing = {
+  sm: spacing.sectionSm,
+  md: spacing[64],
+  lg: spacing[96],
+  xl: spacing.sectionXl,
 } as const
 
 export const layout = {
@@ -120,6 +133,7 @@ export const layout = {
   viewportWidthWide: '85vw',
   media: '28rem',
   mediaLg: '34rem',
+  formSuccess: '20rem',
 } as const
 
 export const aspectRatio = {
@@ -151,6 +165,9 @@ export const zIndex = {
   navbar: 50,
   modal: 100,
   toast: 200,
+  search: 800,
+  overlay: 999,
+  gallery: 60,
 } as const
 
 export const gradients = {
@@ -196,6 +213,7 @@ export const design = {
   lineHeight,
   fontWeight,
   spacing,
+  sectionSpacing,
   layout,
   aspectRatio,
   radius,

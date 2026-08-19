@@ -165,27 +165,7 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
         no extra JS state is needed here to grey out an arrow at either
         end of the list.
       */}
-      <style>{`
-      .swiper {
-        padding-right: 2px;
-      }
-
-      .swiper-wrapper {
-        align-items: stretch !important;
-      }
-
-      .swiper-slide {
-        height: auto !important;
-        display: flex !important;
-      }
-
-      .swiper-button-disabled {
-        opacity: 0.35;
-        pointer-events: none;
-      }
-    `}</style>
     </section>
   )
 }
-
 

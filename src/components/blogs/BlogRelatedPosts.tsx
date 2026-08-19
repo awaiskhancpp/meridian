@@ -88,26 +88,6 @@ export default function BlogRelatedPosts() {
         </Swiper>
       </Container>
 
-      <style>{`
-      .swiper {
-        padding-right: 2px;
-      }
-
-      .swiper-wrapper {
-        align-items: stretch !important;
-      }
-
-      .swiper-slide {
-        height: auto !important;
-        display: flex !important;
-      }
-
-      .swiper-button-disabled {
-        opacity: 0.35;
-        pointer-events: none;
-      }
-    `}</style>
     </section>
   )
 }
-

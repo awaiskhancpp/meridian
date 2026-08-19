@@ -40,7 +40,7 @@ export default function PageHero({
           className="object-cover object-center"
         />
 
-        <div className="absolute inset-0 bg-overlay-hero" />
+        <div className="absolute inset-0 bg-hero-overlay" />
 
         <Container className="relative z-10 flex h-full items-center justify-center pb-8 pt-header sm:pb-10 sm:pt-28 lg:pb-12">
           <div className="flex w-full flex-col items-center justify-center text-center">

@@ -7,7 +7,7 @@ export default function ProjectCTA({ project }: { project: ProjectDetail }) {
   return (
     <section className="relative isolate overflow-hidden bg-accent section-padding-xl text-primary-foreground">
       <Image src={project.image} alt="" fill className="object-cover object-center" />
-      <div className="absolute inset-0 bg-service-hero-overlay" />
+      <div className="absolute inset-0 bg-hero-overlay" />
 
       {/* 
         FIX: Changed sm:items-end to sm:items-center. 

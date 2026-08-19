@@ -1,2 +1,22 @@
 @import "tailwindcss";
 @import "./theme.generated.css";
+
+/* Shared Swiper layout and navigation state. Kept outside React components so
+   the third-party slider keeps the same sizing and disabled-button behavior. */
+.swiper {
+  padding-right: 2px;
+}
+
+.swiper-wrapper {
+  align-items: stretch !important;
+}
+
+.swiper-slide {
+  height: auto !important;
+  display: flex !important;
+}
+
+.swiper-button-disabled {
+  opacity: 0.35;
+  pointer-events: none;
+}

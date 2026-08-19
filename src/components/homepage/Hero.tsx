@@ -41,7 +41,7 @@ export default function Hero() {
           className="object-cover object-center"
         />
 
-        <div className="absolute inset-0 bg-overlay-hero" />
+        <div className="absolute inset-0 bg-hero-overlay" />
         <div className="pointer-events-none absolute inset-x-0 bottom-32 h-px bg-primary-foreground-faint" />
 
                 <Container className="relative flex h-full flex-col justify-between pt-24">

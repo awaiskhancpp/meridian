@@ -55,7 +55,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           className="object-cover object-center"
         />
 
-        <div className="absolute inset-0 bg-overlay-hero" />
+        <div className="absolute inset-0 bg-hero-overlay" />
       </div>
       <BlogPage post={post} />
 
@@ -65,5 +65,4 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     </main>
   )
 }
-
 

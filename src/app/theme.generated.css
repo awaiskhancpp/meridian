@@ -63,6 +63,9 @@
   --z-navbar: 50;
   --z-modal: 100;
   --z-toast: 200;
+  --z-search: 800;
+  --z-overlay: 999;
+  --z-gallery: 60;
 }
 
 @utility font-sans { font-family: var(--font-family-sans); }
@@ -154,6 +157,8 @@
 @utility w-divider { width: 0.125rem; }
 @utility h-media { height: 28rem; }
 @utility h-media-lg { height: 34rem; }
+@utility h-form-success { height: 20rem; }
+@utility min-h-form-success { min-height: 20rem; }
 @utility h-viewport { height: 100svh; }
 @utility min-h-viewport { min-height: 100svh; }
 @utility h-viewport-short { height: 60vh; }
@@ -167,6 +172,9 @@
 @utility z-navbar { z-index: var(--z-navbar); }
 @utility z-modal { z-index: var(--z-modal); }
 @utility z-toast { z-index: var(--z-toast); }
+@utility z-search { z-index: var(--z-search); }
+@utility z-overlay { z-index: var(--z-overlay); }
+@utility z-gallery { z-index: var(--z-gallery); }
 @utility transition-standard { transition-property: color, background-color, border-color, opacity, transform; transition-duration: 300ms; }
 @utility duration-standard { transition-duration: 300ms; }
 @utility duration-button { transition-duration: 350ms; }
@@ -225,8 +233,6 @@
 @utility text-status-warning { color: var(--color-warning); }
 @utility text-status-info { color: var(--color-info); }
 @utility bg-hero-overlay { background-image: linear-gradient(115deg,rgba(34,24,18,0.7) 0%,rgba(34,24,18,0.42) 38%,rgba(34,24,18,0.12) 68%,rgba(34,24,18,0.04) 100%); }
-@utility bg-service-hero-overlay { background-image: linear-gradient(115deg,rgba(34,24,18,0.7) 0%,rgba(34,24,18,0.42) 38%,rgba(34,24,18,0.12) 68%,rgba(34,24,18,0.04) 100%); }
-@utility bg-overlay-hero { background-image: linear-gradient(115deg,rgba(34,24,18,0.7) 0%,rgba(34,24,18,0.42) 38%,rgba(34,24,18,0.12) 68%,rgba(34,24,18,0.04) 100%); }
 @utility bg-overlay-card { background-image: linear-gradient(180deg,rgba(60,37,21,0.08) 0%,rgba(60,37,21,0.18) 100%); }
 @utility bg-radial { background-image: radial-gradient(circle at center,rgba(60,37,21,0.03) 0%,transparent 70%); }
 @utility bg-card-bottom { background-image: linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.1) 100%); }

@@ -13,6 +13,7 @@ import {
   lineHeight,
   fontWeight,
   spacing,
+  sectionSpacing,
   layout,
   aspectRatio,
   radius,
@@ -92,6 +93,9 @@ const css = `/** Generated from src/builds.ts. Do not edit by hand. */
   --z-navbar: ${zIndex.navbar};
   --z-modal: ${zIndex.modal};
   --z-toast: ${zIndex.toast};
+  --z-search: ${zIndex.search};
+  --z-overlay: ${zIndex.overlay};
+  --z-gallery: ${zIndex.gallery};
 }
 
 @utility font-sans { font-family: var(--font-family-sans); }
@@ -122,9 +126,9 @@ const css = `/** Generated from src/builds.ts. Do not edit by hand. */
   color: var(--color-foreground); @media (min-width: 1024px) { font-size: ${fontSize.displayLg}; }
 }
 @utility heading-compact {
-  font-size: 2.25rem; font-weight: ${fontWeight.black}; line-height: ${lineHeight.tight};
+  font-size: ${fontSize.compact}; font-weight: ${fontWeight.black}; line-height: ${lineHeight.tight};
   letter-spacing: ${tracking.tight}; text-transform: uppercase; color: var(--color-foreground);
-  @media (min-width: 768px) { font-size: 3rem; }
+  @media (min-width: 768px) { font-size: ${fontSize.compactLg}; }
 }
 @utility heading-1 {
   font-size: ${fontSize.headingLg}; font-weight: ${fontWeight.black};
@@ -145,9 +149,9 @@ const css = `/** Generated from src/builds.ts. Do not edit by hand. */
 }
 @utility card-heading { font-size: ${fontSize.card}; font-weight: ${fontWeight.bold}; line-height: 0.95; letter-spacing: ${tracking.tight}; }
 @utility heading-script { font-family: var(--font-family-script); font-size: ${fontSize.script}; line-height: 1; text-transform: capitalize; }
-@utility heading-compact-script { font-family: var(--font-family-script); font-size: 3rem; font-weight: ${fontWeight.regular}; line-height: 1; text-transform: capitalize; color: var(--color-accent); @media (min-width: 768px) { font-size: 3.75rem; } }
+@utility heading-compact-script { font-family: var(--font-family-script); font-size: ${fontSize.scriptCompact}; font-weight: ${fontWeight.regular}; line-height: 1; text-transform: capitalize; color: var(--color-accent); @media (min-width: 768px) { font-size: ${fontSize.scriptCompactLg}; } }
 @utility heading-form { font-size: ${fontSize.form}; font-weight: ${fontWeight.black}; line-height: ${lineHeight.tight}; letter-spacing: ${tracking.hero}; text-transform: uppercase; color: var(--color-foreground); }
-@utility stat-value { font-size: 1.875rem; font-weight: ${fontWeight.black}; line-height: 1; color: var(--color-accent); @media (min-width: 1024px) { font-size: 2.25rem; } }
+@utility stat-value { font-size: ${fontSize.stat}; font-weight: ${fontWeight.black}; line-height: 1; color: var(--color-accent); @media (min-width: 1024px) { font-size: ${fontSize.statLg}; } }
 @utility label { font-size: ${fontSize.caption}; font-weight: ${fontWeight.medium}; text-transform: uppercase; letter-spacing: ${tracking.wider}; }
 
 /* Reusable structural recipes. Components choose a visual role instead of
@@ -157,7 +161,7 @@ const css = `/** Generated from src/builds.ts. Do not edit by hand. */
 @utility section-heading-script { display: block; margin-top: ${spacing[8]}; font-family: var(--font-family-script); font-size: ${fontSize.script}; line-height: 1; text-transform: capitalize; color: var(--color-accent); }
 @utility section-description { margin-inline: auto; margin-top: ${spacing[24]}; max-width: 42rem; font-size: ${fontSize.body}; line-height: ${lineHeight.body}; color: var(--color-muted-foreground); }
 @utility section-heading-inline-description { margin-top: ${spacing[16]}; max-width: 36rem; font-size: ${fontSize.bodySm}; color: var(--color-muted-foreground); }
-@utility highlight-title { font-size: 1.25rem; font-weight: ${fontWeight.bold}; line-height: 1; @media (min-width: 640px) { font-size: 1.5rem; } }
+@utility highlight-title { font-size: ${fontSize.highlight}; font-weight: ${fontWeight.bold}; line-height: 1; @media (min-width: 640px) { font-size: ${fontSize.highlightLg}; } }
 @utility card { border: 1px solid var(--color-border); border-radius: 0; background-color: var(--color-card); padding: ${spacing[24]}; }
 @utility card-interactive { border: 1px solid var(--color-border); border-radius: 0; background-color: var(--color-card); padding: ${spacing[24]}; transition-property: box-shadow; transition-duration: ${motion.standard}; }
 @utility card-overlay { border: 1px solid var(--color-border-inverse-strong); border-radius: 0; background-color: var(--color-surface-overlay); padding: ${spacing[24]}; box-shadow: var(--shadow-sm); }
@@ -173,16 +177,18 @@ const css = `/** Generated from src/builds.ts. Do not edit by hand. */
 @utility tracking-wide { letter-spacing: ${tracking.wide}; }
 @utility tracking-wider { letter-spacing: ${tracking.wider}; }
 
-@utility section-padding { padding-block: ${spacing.sectionSm}; @media (min-width: 1024px) { padding-block: ${spacing.sectionMd}; } }
-@utility section-padding-xl { padding-block: ${spacing.sectionMd}; @media (min-width: 1024px) { padding-block: ${spacing.sectionXl}; } }
-@utility section-space { padding-block: ${spacing.sectionMd}; @media (min-width: 1024px) { padding-block: ${spacing.sectionLg}; } }
-@utility section-margin-bottom { margin-bottom: ${spacing.sectionSm}; @media (min-width: 1024px) { margin-bottom: ${spacing.sectionMd}; } }
+@utility section-padding { padding-block: ${sectionSpacing.sm}; @media (min-width: 1024px) { padding-block: ${sectionSpacing.md}; } }
+@utility section-padding-xl { padding-block: ${sectionSpacing.md}; @media (min-width: 1024px) { padding-block: ${sectionSpacing.xl}; } }
+@utility section-space { padding-block: ${sectionSpacing.md}; @media (min-width: 1024px) { padding-block: ${sectionSpacing.lg}; } }
+@utility section-margin-bottom { margin-bottom: ${sectionSpacing.sm}; @media (min-width: 1024px) { margin-bottom: ${sectionSpacing.md}; } }
 @utility max-w-content { max-width: var(--spacing-content-max); }
 @utility gap-field { gap: ${spacing[12]}; }
 @utility gap-card { gap: ${spacing[12]}; }
 @utility w-divider { width: ${layout.divider}; }
 @utility h-media { height: ${layout.media}; }
 @utility h-media-lg { height: ${layout.mediaLg}; }
+@utility h-form-success { height: ${layout.formSuccess}; }
+@utility min-h-form-success { min-height: ${layout.formSuccess}; }
 @utility h-viewport { height: ${layout.viewport}; }
 @utility min-h-viewport { min-height: ${layout.viewport}; }
 @utility h-viewport-short { height: ${layout.viewportShort}; }
@@ -196,6 +202,9 @@ const css = `/** Generated from src/builds.ts. Do not edit by hand. */
 @utility z-navbar { z-index: var(--z-navbar); }
 @utility z-modal { z-index: var(--z-modal); }
 @utility z-toast { z-index: var(--z-toast); }
+@utility z-search { z-index: var(--z-search); }
+@utility z-overlay { z-index: var(--z-overlay); }
+@utility z-gallery { z-index: var(--z-gallery); }
 @utility transition-standard { transition-property: color, background-color, border-color, opacity, transform; transition-duration: ${motion.standard}; }
 @utility duration-standard { transition-duration: ${motion.standard}; }
 @utility duration-button { transition-duration: ${motion.buttonReveal}; }
@@ -254,8 +263,6 @@ const css = `/** Generated from src/builds.ts. Do not edit by hand. */
 @utility text-status-warning { color: var(--color-warning); }
 @utility text-status-info { color: var(--color-info); }
 @utility bg-hero-overlay { background-image: ${gradients.hero}; }
-@utility bg-service-hero-overlay { background-image: ${gradients.hero}; }
-@utility bg-overlay-hero { background-image: ${gradients.hero}; }
 @utility bg-overlay-card { background-image: ${gradients.card}; }
 @utility bg-radial { background-image: ${gradients.radial}; }
 @utility bg-card-bottom { background-image: ${gradients.cardBottom}; }
