@@ -16,12 +16,12 @@ export default function AreasPageClient() {
       <Container className="section-padding mt-10">
         <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="">
-            <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
+            <p className="text-caption font-medium uppercase tracking-wider text-muted-foreground">
               Primary {serviceAreas.label}
             </p>
-            <h2 className="mt-1 heading-2 text-dark">Surrounding Areas</h2>
+          <h2 className="mt-1 heading-2 text-foreground">Surrounding Areas</h2>
           </div>
-          <p className="text-sm text-dark-muted"></p> {6}{' '}
+          <p className="text-body-sm text-muted-foreground"></p> {6}{' '}
           {serviceAreas.areas.length === 1 ? 'Area' : 'Areas'}
         </div>
         <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4  gap-y-8">
@@ -42,3 +42,4 @@ export default function AreasPageClient() {
     </div>
   )
 }
+

@@ -45,39 +45,39 @@ export default function AboutTrustSection({
   ],
 }: AboutTrustSectionProps) {
   return (
-    <section aria-labelledby="trust-section-heading" className="section-padding bg-page">
+    <section aria-labelledby="trust-section-heading" className="section-padding bg-background">
       <Container>
         {/* â”€â”€ Section Header â”€â”€ */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-          <p className="text-xs font-bold uppercase tracking-eyebrow text-dark-muted">{label}</p>
+          <p className="text-caption font-bold uppercase tracking-wider text-muted-foreground">{label}</p>
 
-          <div className="w-16 h-px bg-dark-soft mx-auto my-4" />
+          <div className="w-16 h-px bg-overlay-soft mx-auto my-4" />
 
           <h2 id="trust-section-heading">
-              <span className="block type-section-title-wide font-black uppercase leading-heading tracking-heading-tight text-dark">
+              <span className="block heading-2 text-foreground">
               {heading}
             </span>
-            <span className="block capitalize font-script type-trust-script leading-none text-accent mt-1">
+            <span className="block capitalize font-script text-script leading-normal text-accent mt-1">
               {script}
             </span>
-            <p className="mt-2 text-xs sm:text-sm text-dark-muted font-medium leading-snug">
+            <p className="mt-2 text-caption sm:text-body-sm text-muted-foreground font-medium leading-snug">
               {description}
             </p>
           </h2>
         </div>
 
         {/* â”€â”€ Stats Grid (Mobile: 2-cols | Desktop: 4-cols) â”€â”€ */}
-        {/* Uses gap-px bg-dark-soft to create clean 1px borders without overlap */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 bg-dark-soft  ">
+        {/* Uses gap-px bg-overlay-soft to create clean 1px borders without overlap */}
+        <div className="grid grid-cols-2 gap-px border border-border bg-overlay-soft sm:grid-cols-4">
           {stats.map((stat, idx) => (
             <div
               key={idx}
-              className="bg-page p-6 sm:p-8 flex flex-col items-center border border-soft justify-center text-center min-h-trust-card"
+              className="card flex min-h-40 flex-col items-center justify-center border-0 text-center"
             >
-              <p className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-dark">
+              <p className="heading-2 text-foreground">
                 {stat.value}
               </p>
-              <p className="mt-2 text-xs sm:text-sm text-dark-muted font-medium max-trust-copy leading-snug">
+              <p className="mt-2 text-caption sm:text-body-sm text-muted-foreground font-medium max-w-xs leading-snug">
                 {stat.label}
               </p>
             </div>
@@ -89,8 +89,8 @@ export default function AboutTrustSection({
               const IconComponent = item.icon
               return (
                 <div key={idx} className="flex items-center gap-2.5 shrink-0">
-                  <IconComponent className="h-4 w-4 text-dark-muted shrink-0" aria-hidden="true" />
-                  <span className="text-xs font-semibold uppercase tracking-wider text-dark-muted whitespace-nowrap">
+                  <IconComponent className="h-4 w-4 text-muted-foreground shrink-0" aria-hidden="true" />
+                  <span className="text-caption font-semibold uppercase tracking-wider text-muted-foreground whitespace-nowrap">
                     {item.label}
                   </span>
                 </div>
@@ -104,7 +104,7 @@ export default function AboutTrustSection({
             variant="outline"
             size="md"
             href={ctaHref}
-            className="rounded-none font-semibold text-xs uppercase tracking-wider"
+            className="rounded-none font-semibold text-caption uppercase tracking-wider"
           >
             {ctaLabel}
             <ArrowUpRight className=" h-4 w-4" aria-hidden="true" />

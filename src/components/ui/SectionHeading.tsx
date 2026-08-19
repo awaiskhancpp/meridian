@@ -43,9 +43,9 @@ export default function SectionHeading({
   script,
   subheading,
   maxWidth = 'max-w-4xl',
-  labelClassName = 'text-xs font-medium uppercase tracking-eyebrow text-dark-muted',
+  labelClassName = 'section-eyebrow',
   headingMt = 'mt-1',
-  subheadingClassName = 'mx-auto mt-6 max-w-2xl text-p text-dark-muted',
+  subheadingClassName = 'section-description',
   eyebrowLeading,
 }: SectionHeadingProps) {
   return (
@@ -55,10 +55,11 @@ export default function SectionHeading({
         {label}
       </p>
       <h2 id={id} className={headingMt}>
-        <span className="block heading-2 text-dark">{heading}</span>
-        <span className="mt-2 block heading-script capitalize text-accent">{script}</span>
+        <span className="section-heading-title">{heading}</span>
+        <span className="section-heading-script">{script}</span>
       </h2>
       {subheading && <p className={subheadingClassName}>{subheading}</p>}
     </div>
   )
 }
+

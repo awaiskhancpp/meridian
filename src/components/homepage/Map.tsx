@@ -11,14 +11,16 @@ export default function Map() {
     <section id="map" aria-labelledby="map-heading" className="section-padding section-margin-bottom">
       <Container>
         <div className="mb-8">
-          <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{map.label}</p>
+          <p className="text-caption uppercase tracking-wider text-muted-foreground">{map.label}</p>
           <h2 id="map-heading" className="mt-1">
-            <span className="block heading-2 text-dark">{map.heading}</span>
+            <span className="block heading-2 text-foreground">{map.heading}</span>
           </h2>
-          <p className="mt-3 text-sm text-dark-muted">{map.address}</p>
+          <p className="mt-3 text-body-sm text-muted-foreground">{map.address}</p>
         </div>
         <IFrame mapSrc={mapSrc} address={map.address} />
       </Container>
     </section>
   )
 }
+
+

@@ -43,9 +43,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   if (!post) notFound()
 
   return (
-    <main className="min-h-screen bg-page">
+    <main className="min-h-screen bg-background">
       <Navbar />
-      <div className="relative isolate h-page-hero min-h-page-hero w-full lg:h-tall-section">
+      <div className="relative isolate h-viewport-short min-h-120 w-full lg:h-viewport-page">
         <Image
           src="/hero.webp"
           alt=""
@@ -65,3 +65,5 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     </main>
   )
 }
+
+

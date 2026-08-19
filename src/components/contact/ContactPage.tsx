@@ -8,7 +8,7 @@ import { CTABanner } from '../homepage'
 export default function ContactPage() {
   // Shared classes for all input fields to ensure consistency
   const inputStyles =
-    'w-full px-4 py-3 bg-transparent border border-divider rounded-none text-dark placeholder:text-dark-muted focus:outline-none focus:border-dark focus:ring-1 focus:ring-dark transition-colors'
+    'w-full px-4 py-3 bg-transparent border border-border rounded-none text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-border-strong focus:ring-1 focus:ring-border transition-colors'
 
   return (
     <section className="pt-16 ">
@@ -16,16 +16,16 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 ">
           {/* LEFT COLUMN: Contact Information */}
           <div className="flex flex-col justify-center">
-            <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted mb-2">
+            <p className="text-caption font-medium uppercase tracking-wider text-muted-foreground mb-2">
               Get In Touch
             </p>
-            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-dark mb-6">
+            <h2 className="heading-compact mb-6">
               Let's Build Something <br />
-              <span className="font-script text-5xl md:text-6xl text-accent font-normal capitalize">
+              <span className="heading-compact-script">
                 Amazing Together.
               </span>
             </h2>
-            <p className="text-base text-dark-muted leading-relaxed mb-10 max-w-md">
+            <p className="text-body text-muted-foreground leading-relaxed mb-10 max-w-md">
               Whether you are ready to start your project or just have a few questions, our team is
               here to help. Reach out to us using the details below or fill out the form.
             </p>
@@ -33,7 +33,7 @@ export default function ContactPage() {
             <div className="space-y-8">
               {/* Phone Block */}
               <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-page border border-divider rounded-full text-accent mr-6">
+                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-background border border-border rounded-full text-accent mr-6">
                   <svg
                     className="w-5 h-5"
                     fill="none"
@@ -50,16 +50,16 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-dark mb-1">
+                  <h4 className="text-body-sm font-bold uppercase tracking-wider text-foreground mb-1">
                     Call Us
                   </h4>
-                  <p className="text-dark-muted">{'(555) 123-4567'}</p>
+                  <p className="text-muted-foreground">{'(555) 123-4567'}</p>
                 </div>
               </div>
 
               {/* Email Block */}
               <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-page border border-divider rounded-full text-accent mr-6">
+                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-background border border-border rounded-full text-accent mr-6">
                   <svg
                     className="w-5 h-5"
                     fill="none"
@@ -76,16 +76,16 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-dark mb-1">
+                  <h4 className="text-body-sm font-bold uppercase tracking-wider text-foreground mb-1">
                     Email Us
                   </h4>
-                  <p className="text-dark-muted">{'info@example.com'}</p>
+                  <p className="text-muted-foreground">{'info@example.com'}</p>
                 </div>
               </div>
 
               {/* Address Block */}
               <div className="flex items-start">
-                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-page border border-divider rounded-full text-accent mr-6">
+                <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-background border border-border rounded-full text-accent mr-6">
                   <svg
                     className="w-5 h-5"
                     fill="none"
@@ -108,24 +108,24 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold uppercase tracking-wider text-dark mb-1">
+                  <h4 className="text-body-sm font-bold uppercase tracking-wider text-foreground mb-1">
                     Office Location
                   </h4>
-                  <p className="text-dark-muted">{'123 Builders Lane, Suite 100'}</p>
+                  <p className="text-muted-foreground">{'123 Builders Lane, Suite 100'}</p>
                 </div>
               </div>
             </div>
           </div>
 
           {/* RIGHT COLUMN: The Form */}
-          <div className="bg-page px-8 py-8 shadow-sm border border-divider rounded-none">
+          <div className="card shadow-sm">
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* First Name */}
                 <div>
                   <label
                     htmlFor="firstName"
-                    className="block text-xs font-bold text-dark uppercase tracking-wider mb-2"
+                    className="block text-caption font-bold text-foreground uppercase tracking-wider mb-2"
                   >
                     First Name
                   </label>
@@ -135,7 +135,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="lastName"
-                    className="block text-xs font-bold text-dark uppercase tracking-wider mb-2"
+                    className="block text-caption font-bold text-foreground uppercase tracking-wider mb-2"
                   >
                     Last Name
                   </label>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-xs font-bold text-dark uppercase tracking-wider mb-2"
+                    className="block text-caption font-bold text-foreground uppercase tracking-wider mb-2"
                   >
                     Email Address
                   </label>
@@ -163,7 +163,7 @@ export default function ContactPage() {
                 <div>
                   <label
                     htmlFor="phone"
-                    className="block text-xs font-bold text-dark uppercase tracking-wider mb-2"
+                    className="block text-caption font-bold text-foreground uppercase tracking-wider mb-2"
                   >
                     Phone Number
                   </label>
@@ -180,7 +180,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="service"
-                  className="block text-xs font-bold text-dark uppercase tracking-wider mb-2"
+                  className="block text-caption font-bold text-foreground uppercase tracking-wider mb-2"
                 >
                   Service of Interest
                 </label>
@@ -200,7 +200,7 @@ export default function ContactPage() {
                     <option value="other">Other</option>
                   </select>
                   {/* Custom Dropdown Chevron */}
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-dark">
+                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-foreground">
                     <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path
                         strokeLinecap="round"
@@ -217,7 +217,7 @@ export default function ContactPage() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-xs font-bold text-dark uppercase tracking-wider mb-2"
+                  className="block text-caption font-bold text-foreground uppercase tracking-wider mb-2"
                 >
                   Project Details
                 </label>
@@ -232,7 +232,7 @@ export default function ContactPage() {
               {/* Submit Action */}
               <Button
                 variant="outline"
-                className="w-full py-4 text-sm tracking-wider uppercase rounded-none mt-2"
+                className="w-full py-4 text-body-sm tracking-wider uppercase rounded-none mt-2"
                 type="submit"
               >
                 Send Message

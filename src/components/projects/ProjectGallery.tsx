@@ -53,10 +53,10 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
   }
 
   return (
-    <section className="section-padding bg-page">
+    <section className="section-padding bg-background">
       <Container>
         <div className="mb-10">
-          <h2 className="text-2xl font-bold uppercase tracking-tight text-dark md:text-3xl">
+          <h2 className="heading-2 text-foreground">
             Project Gallery
           </h2>
         </div>
@@ -75,7 +75,7 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-transparent transition-colors duration-standard group-hover:bg-overlay-light" />
+              <div className="absolute inset-0 bg-transparent transition-colors duration-standard group-hover:bg-overlay-soft" />
             </div>
           ))}
         </div>
@@ -84,12 +84,12 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
       {/* Lightbox Modal */}
       {selectedIndex !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-overlay-dark backdrop-blur-sm transition-opacity"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-overlay-strong backdrop-blur-sm transition-opacity"
           onClick={closeModal}
         >
           {/* Close Button */}
           <button
-            className="absolute right-4 top-4 z-gallery p-3 text-white-subtle transition-colors hover:text-white md:right-8 md:top-8"
+            className="absolute right-4 top-4 z-gallery p-3 text-primary-foreground-subtle transition-colors hover:text-primary-foreground md:right-8 md:top-8"
             onClick={closeModal}
             aria-label="Close modal"
           >
@@ -98,7 +98,7 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
 
           {/* Previous Button */}
           <button
-            className="absolute left-2 z-gallery p-3 text-white-subtle transition-colors hover:text-white md:left-8"
+            className="absolute left-2 z-gallery p-3 text-primary-foreground-subtle transition-colors hover:text-primary-foreground md:left-8"
             onClick={prevImage}
             aria-label="Previous image"
           >
@@ -107,7 +107,7 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
 
           {/* Next Button */}
           <button
-            className="absolute right-2 z-gallery p-3 text-white-subtle transition-colors hover:text-white md:right-8"
+            className="absolute right-2 z-gallery p-3 text-primary-foreground-subtle transition-colors hover:text-primary-foreground md:right-8"
             onClick={nextImage}
             aria-label="Next image"
           >
@@ -115,7 +115,7 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
           </button>
 
           {/* Main Image */}
-          <div className="relative h-tall-section w-gallery md:h-gallery-lg md:w-gallery-lg">
+          <div className="relative h-viewport-page w-viewport md:h-viewport-tall md:w-viewport-wide">
             <Image
               src={images[selectedIndex]}
               alt={`Project image ${selectedIndex + 1}`}
@@ -130,3 +130,4 @@ export default function ProjectGallery({ images }: ProjectGalleryProps) {
     </section>
   )
 }
+

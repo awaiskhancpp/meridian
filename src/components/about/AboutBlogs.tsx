@@ -21,7 +21,7 @@ export default function AboutBlogs() {
   }
 
   return (
-    <section id="blogs" aria-labelledby="blogs-heading" className="bg-page section-padding">
+    <section id="blogs" aria-labelledby="blogs-heading" className="bg-background section-padding">
       <Container>
         <SectionHeading
           id="blogs-heading"
@@ -60,3 +60,5 @@ export default function AboutBlogs() {
     </section>
   )
 }
+
+

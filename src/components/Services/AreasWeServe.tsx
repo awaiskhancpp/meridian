@@ -47,21 +47,21 @@ export default function AreasWeServe({
       <Container>
         {/* Header */}
         <div className="max-w-2xl mx-auto flex flex-col justify-center items-center">
-          <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{label}</p>
+          <p className="text-caption uppercase tracking-wider text-muted-foreground">{label}</p>
           <h2 id="services-heading" className="mt-1 text-center">
-            <span className="block heading-2 text-dark">{heading}</span>
+            <span className="block heading-2 text-foreground">{heading}</span>
             <span className="block heading-script capitalize text-accent">{script}</span>
           </h2>
         </div>
         {/* <div className="mb-12">
-          <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">{label}</p>
-          <h2 className="mt-3 type-section-title font-bold uppercase leading-section tracking-heading-tight text-dark lg:type-display-large">
+          <p className="text-caption font-medium uppercase tracking-wider text-muted-foreground">{label}</p>
+          <h2 className="mt-3 heading-2 text-foreground">
             {heading}{' '}
-            <span className="font-script capitalize type-service-script leading-script text-accent">
+            <span className="font-script capitalize text-script leading-tight text-accent">
               {script}
             </span>
           </h2>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-dark-muted lg:text-lg">
+          <p className="mt-6 max-w-2xl text-body leading-relaxed text-muted-foreground lg:text-body-lg">
             {subheading}
           </p>
         </div> */}
@@ -77,7 +77,7 @@ export default function AreasWeServe({
                   className="flex flex-col justify-center items-center gap-1  text-accent px-3 py-2"
                 >
                   <MapPin />
-                  <h3 className="text-sm md:text-lg font-bold uppercase tracking-wide ">
+                  <h3 className="text-body-sm md:text-body-lg font-bold uppercase tracking-wide ">
                     {area.title}
                   </h3>
                 </span>
@@ -94,4 +94,5 @@ export default function AreasWeServe({
     </section>
   )
 }
+
 

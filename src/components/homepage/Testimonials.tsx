@@ -42,9 +42,9 @@ export default function Testimonials() {
           script={testimonials.script}
           subheading={testimonials.subheading}
           maxWidth=""
-          labelClassName="text-xs uppercase tracking-eyebrow text-dark-muted"
+          labelClassName="text-caption uppercase tracking-wider text-muted-foreground"
           headingMt="mt-3"
-          subheadingClassName="mx-auto mt-5 max-w-xl text-p text-dark-muted"
+          subheadingClassName="mx-auto mt-5 max-w-xl text-body text-muted-foreground"
         />
 
         {/* Testimonial card with nav buttons on sides */}
@@ -55,7 +55,7 @@ export default function Testimonials() {
             type="button"
             onClick={prev}
             aria-label="Previous testimonial"
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-strong text-dark transition-colors hover:border-accent hover:text-accent"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border-strong text-foreground transition-colors hover:border-accent hover:text-accent"
           >
             <ArrowLeft className="icon-sm" aria-hidden="true" />
           </button>
@@ -74,15 +74,15 @@ export default function Testimonials() {
               aria-hidden="true"
             />
 
-            <p className="mt-4 text-center text-h4 font-medium text-dark">{item.body}</p>
+            <p className="mt-4 text-center text-body-lg font-medium text-foreground">{item.body}</p>
 
             <div className="mt-8 flex items-center justify-center gap-card">
-              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full bg-cream">
+              <div className="relative h-12 w-12 shrink-0 overflow-hidden rounded-full bg-surface">
                 <Image src={item.avatar} alt={item.author} fill className="object-cover" />
               </div>
               <div>
-                <p className="text-sm font-semibold text-dark">{item.author}</p>
-                <p className="text-sm text-dark-muted">{item.role}</p>
+                <p className="text-body-sm font-semibold text-foreground">{item.author}</p>
+                <p className="text-body-sm text-muted-foreground">{item.role}</p>
               </div>
             </div>
           </div>
@@ -92,7 +92,7 @@ export default function Testimonials() {
             type="button"
             onClick={next}
             aria-label="Next testimonial"
-            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-strong text-dark transition-colors hover:border-accent hover:text-accent"
+            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-border-strong text-foreground transition-colors hover:border-accent hover:text-accent"
           >
             <ArrowRight className="icon-sm" aria-hidden="true" />
           </button>
@@ -101,4 +101,6 @@ export default function Testimonials() {
     </section>
   )
 }
+
+
 

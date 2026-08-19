@@ -5,9 +5,9 @@ import type { ProjectDetail } from './types'
 
 export default function ProjectCTA({ project }: { project: ProjectDetail }) {
   return (
-    <section className="relative isolate overflow-hidden bg-accent section-padding-cta text-white">
+    <section className="relative isolate overflow-hidden bg-accent section-padding-xl text-primary-foreground">
       <Image src={project.image} alt="" fill className="object-cover object-center" />
-      <div className="absolute inset-0 bg-overlay-service-hero" />
+      <div className="absolute inset-0 bg-service-hero-overlay" />
 
       {/* 
         FIX: Changed sm:items-end to sm:items-center. 
@@ -15,7 +15,7 @@ export default function ProjectCTA({ project }: { project: ProjectDetail }) {
       */}
       <Container className="relative z-10 flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
         <div className="max-w-2xl">
-          <h2 className="mt-4 type-section-title-large font-black text-center sm:text-left uppercase leading-hero tracking-heading-tight">
+          <h2 className="mt-4 heading-2 text-center sm:text-left text-primary-foreground">
             Let’s shape a space around your life.
           </h2>
         </div>

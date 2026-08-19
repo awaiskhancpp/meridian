@@ -13,7 +13,7 @@ import React from 'react'
  * parent instead.
  *
  * Subheading is optional and unstyled-by-default beyond the shared
- * text-p/text-dark-muted treatment, since About's subheading uses a
+ * text-body/text-muted-foreground treatment, since About's subheading uses a
  * fixed max-copy with no auto-centering while Services renders no
  * subheading at all.
  */
@@ -35,18 +35,19 @@ export default function SectionHeadingInline({
   heading,
   script,
   subheading,
-  labelClassName = 'text-xs uppercase tracking-eyebrow text-dark-muted',
+  labelClassName = 'section-eyebrow',
   headingMt = 'mt-1',
-  subheadingClassName = 'mt-4 max-copy text-p text-dark-muted',
+  subheadingClassName = 'section-heading-inline-description',
 }: SectionHeadingInlineProps) {
   return (
     <>
       <p className={labelClassName}>{label}</p>
       <h2 id={id} className={headingMt}>
-        <span className="block heading-2 text-dark">{heading}</span>
-        <span className="block heading-script capitalize text-accent">{script}</span>
+        <span className="section-heading-title">{heading}</span>
+        <span className="section-heading-script !mt-0">{script}</span>
       </h2>
       {subheading && <p className={subheadingClassName}>{subheading}</p>}
     </>
   )
 }
+

@@ -136,11 +136,11 @@ export default function Navbar() {
   const isSolid = scrolled || mobileOpen
 
   const surfaceClasses = isSolid
-    ? 'border-b border-nav bg-nav shadow-navbar backdrop-blur-md'
+    ? 'border-b border-border bg-background shadow-sm backdrop-blur-md'
     : 'border-transparent bg-transparent shadow-none backdrop-blur-none'
 
-  const textClasses = isSolid ? 'text-dark' : 'text-white'
-  const hoverTextClasses = isSolid ? 'hover:text-accent' : 'hover:text-cream'
+  const textClasses = isSolid ? 'text-foreground' : 'text-primary-foreground'
+  const hoverTextClasses = isSolid ? 'hover:text-accent' : 'hover:text-surface-foreground'
   const ctaVariant = isSolid ? 'outline' : 'outline-light'
 
   return (
@@ -169,18 +169,18 @@ export default function Navbar() {
                 <div key={item.label} className="group relative py-8">
                   <Link
                     href={item.href ?? '#'}
-                    className={`flex items-center gap-1 text-sm font-medium tracking-nav transition-colors ${textClasses} ${hoverTextClasses}`}
+                    className={`flex items-center gap-1 text-body-sm font-medium tracking-wider transition-colors ${textClasses} ${hoverTextClasses}`}
                   >
                     {item.label}
                     <ChevronIcon className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180" />
                   </Link>
 
-                  <div className="invisible absolute left-1/2 top-dropdown z-10 w-dropdown -translate-x-1/2 translate-y-2 border border-subtle bg-page p-2 opacity-0 shadow-card transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                  <div className="invisible absolute left-1/2 top-full z-10 mt-2 w-56 -translate-x-1/2 border border-border bg-background p-2 opacity-0 shadow-md transition-all duration-200 group-hover:visible group-hover:opacity-100">
                     {item.children.map((child) => (
                       <Link
                         key={child.label}
                         href={child.href}
-                        className="block px-3 py-2 text-sm text-dark-muted transition-colors hover:bg-cream hover:text-dark"
+                        className="block px-3 py-2 text-body-sm text-muted-foreground transition-colors hover:bg-surface hover:text-foreground"
                       >
                         {child.label}
                       </Link>
@@ -188,7 +188,7 @@ export default function Navbar() {
                     {item.seeMore ? (
                       <Link
                         href={item.seeMore.href}
-                        className="mt-1 block border-t border-subtle px-3 py-3 text-xs font-semibold uppercase tracking-pill text-accent transition-colors hover:bg-cream"
+                        className="mt-1 block border-t border-border px-3 py-3 text-caption font-semibold uppercase tracking-wide text-accent transition-colors hover:bg-surface"
                       >
                         {item.seeMore.label}
                       </Link>
@@ -199,7 +199,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className={`whitespace-nowrap text-sm font-medium tracking-nav transition-colors py-8 ${textClasses} ${hoverTextClasses}`}
+                  className={`whitespace-nowrap text-body-sm font-medium tracking-wider transition-colors py-8 ${textClasses} ${hoverTextClasses}`}
                 >
                   {item.label}
                 </Link>
@@ -211,7 +211,7 @@ export default function Navbar() {
             <Button
               variant={ctaVariant}
               href="/contact"
-              className={`whitespace-nowrap rounded-none text-sm font-medium tracking-nav ${textClasses}`}
+              className={`whitespace-nowrap rounded-none text-body-sm font-medium tracking-wider ${textClasses}`}
             >
               <span>Request a Quote</span>
               <ArrowUpRight size={18} />
@@ -222,8 +222,8 @@ export default function Navbar() {
             type="button"
             ref={toggleButtonRef}
             onClick={() => setMobileOpen((value) => !value)}
-            className={`inline-flex items-center gap-field rounded-none text-sm font-semibold tracking-snug transition-colors lg:hidden ${
-              isSolid ? 'text-accent hover:bg-cream' : 'text-white hover:bg-white-ghost'
+            className={`inline-flex items-center gap-field rounded-none text-body-sm font-semibold tracking-wide transition-colors lg:hidden ${
+              isSolid ? 'text-accent hover:bg-surface' : 'text-primary-foreground hover:bg-primary-foreground'
             }`}
             aria-expanded={mobileOpen}
             aria-controls="main-menu"
@@ -254,9 +254,9 @@ export default function Navbar() {
       <div
         id="main-menu"
         ref={menuRef}
-        className={`absolute left-0 right-0 top-full w-full overflow-y-auto bg-page border-t border-subtle transition-all duration-standard ease-in-out lg:hidden ${
+        className={`absolute left-0 right-0 top-full w-full overflow-y-auto bg-background border-t border-border transition-all duration-standard ease-in-out lg:hidden ${
           mobileOpen
-            ? 'viewport-mobile-menu opacity-100'
+            ? 'h-screen opacity-100'
             : 'h-0 opacity-0 pointer-events-none border-transparent'
         }`}
       >
@@ -267,12 +267,12 @@ export default function Navbar() {
               const isDropdownOpen = openMobileDropdown === item.label
 
               return item.children ? (
-                <div key={item.label} className="border-b border-subtle last:border-none">
+                <div key={item.label} className="border-b border-border last:border-none">
                   <button
                     type="button"
                     onClick={() => setOpenMobileDropdown(isDropdownOpen ? null : item.label)}
                     aria-expanded={isDropdownOpen}
-                    className="flex w-full items-center justify-between py-5 text-sm font-medium uppercase tracking-pill text-dark transition-colors hover:text-accent"
+                    className="flex w-full items-center justify-between py-5 text-body-sm font-medium uppercase tracking-wide text-foreground transition-colors hover:text-accent"
                   >
                     {item.label}
                     <ChevronIcon
@@ -284,16 +284,16 @@ export default function Navbar() {
 
                   <div
                     className={`overflow-hidden transition-menu duration-standard ease-out ${
-                      isDropdownOpen ? 'max-menu-height' : 'max-h-0'
+                      isDropdownOpen ? 'max-h-96' : 'max-h-0'
                     }`}
                   >
-                    <div className="flex flex-col gap-1 pb-5 pl-4 border-l border-subtle ml-2 mb-2">
+                    <div className="flex flex-col gap-1 pb-5 pl-4 border-l border-border ml-2 mb-2">
                       {item.children.map((child) => (
                         <a
                           key={child.label}
                           href={child.href}
                           onClick={() => setMobileOpen(false)}
-                          className="py-2.5 text-sm text-dark-muted transition-colors hover:text-accent"
+                          className="py-2.5 text-body-sm text-muted-foreground transition-colors hover:text-accent"
                         >
                           {child.label}
                         </a>
@@ -302,7 +302,7 @@ export default function Navbar() {
                         <a
                           href={item.seeMore.href}
                           onClick={() => setMobileOpen(false)}
-                          className="mt-2 py-2 text-xs font-semibold uppercase tracking-pill text-accent"
+                          className="mt-2 py-2 text-caption font-semibold uppercase tracking-wide text-accent"
                         >
                           {item.seeMore.label}
                         </a>
@@ -315,7 +315,7 @@ export default function Navbar() {
                   key={item.label}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="border-b border-subtle py-5 text-sm font-medium uppercase tracking-pill text-dark transition-colors last:border-none hover:text-accent"
+                  className="border-b border-border py-5 text-body-sm font-medium uppercase tracking-wide text-foreground transition-colors last:border-none hover:text-accent"
                 >
                   {item.label}
                 </a>
@@ -334,3 +334,5 @@ export default function Navbar() {
     </header>
   )
 }
+
+

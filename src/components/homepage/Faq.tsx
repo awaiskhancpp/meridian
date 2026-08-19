@@ -18,9 +18,9 @@ const { faq } = siteData
 function PlusMinusIcon({ open }: { open: boolean }) {
   return (
     <span className="relative flex h-5 w-5 shrink-0 items-center justify-center" aria-hidden="true">
-      <span className="absolute h-0.5 w-4 rounded-full bg-dark" />
+      <span className="absolute h-0.5 w-4 rounded-full bg-primary" />
       <span
-        className={`absolute h-4 w-divider rounded-full bg-dark transition-transform duration-standard ${
+        className={`absolute h-4 w-divider rounded-full bg-primary transition-transform duration-standard ${
           open ? 'scale-y-0' : 'scale-y-100'
         }`}
       />
@@ -71,7 +71,7 @@ export default function FAQ() {
               return (
                 <div
                   key={item.question}
-                  className={`overflow-hidden  transition-colors duration-standard border-b border-soft last:border-none `}
+                  className={`overflow-hidden  transition-colors duration-standard border-b border-border last:border-none `}
                 >
                   <button
                     type="button"
@@ -79,7 +79,7 @@ export default function FAQ() {
                     aria-expanded={open}
                     className="flex w-full items-center justify-between gap-4 px-5 py-2 text-left sm:px-6 sm:py-3"
                   >
-                    <span className="text-md font-semibold text-dark sm:text-lg">
+                    <span className="text-body-lg font-semibold text-foreground sm:text-body-lg">
                       {item.question}
                     </span>
                     <PlusMinusIcon open={open} />
@@ -99,7 +99,7 @@ export default function FAQ() {
                     }`}
                   >
                     <div className="overflow-hidden">
-                      <p className="px-5 pb-5 text-sm leading-relaxed text-dark-muted sm:px-6 sm:pb-6">
+                      <p className="px-5 pb-5 text-body-sm leading-relaxed text-muted-foreground sm:px-6 sm:pb-6">
                         {item.answer}
                       </p>
                     </div>
@@ -113,3 +113,5 @@ export default function FAQ() {
     </section>
   )
 }
+
+

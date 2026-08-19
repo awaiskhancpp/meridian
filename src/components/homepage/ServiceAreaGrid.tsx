@@ -8,9 +8,9 @@ interface ServiceCardProps {
 export function ServiceAreaGrid({ title, description, image, imageAlt }: ServiceCardProps) {
   return (
     <div className="flex h-full flex-col">
-      <div className="pr-2 flex-1">
-        <h2 className="font-bold text-2xl">{title}</h2>
-        <div className="border border-t-text-dark my-2 pr-4" />
+      <div className="flex-1">
+        <h2 className="font-bold text-body-lg">{title}</h2>
+        <div className="my-2 border-t border-border-strong" />
         <p>{description}</p>
       </div>
       {/* <div className="relative mt-1 w-full aspect-square w-full">

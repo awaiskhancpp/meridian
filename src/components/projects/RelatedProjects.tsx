@@ -15,11 +15,11 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
       <Container>
         <div className="mb-10 flex items-end justify-between gap-6">
           <div className=" flex flex-col capitalize">
-            <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
+            <p className="text-caption font-medium uppercase tracking-wider text-muted-foreground">
               Continue exploring
             </p>
             <h2 id="before-after-heading" className="mt-1 gap-card">
-              <span className="block heading-2 text-dark">More of our</span>
+              <span className="block heading-2 text-foreground">More of our</span>
 
               <span className="block heading-script text-accent">work.</span>
             </h2>
@@ -28,7 +28,7 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
             variant="outline"
             size="lg"
             href="/projects"
-            className="hidden  rounded-none items-center gap-2 text-xs font-semibold uppercase tracking-medium text-accent transition-colors hover:text-dark sm:inline-flex"
+            className="hidden  rounded-none items-center gap-2 text-caption font-semibold uppercase tracking-wider text-accent transition-colors hover:text-foreground sm:inline-flex"
           >
             See all <ArrowUpRight size={16} />
           </Button>
@@ -36,7 +36,7 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
         <div className="grid gap-6 md:grid-cols-3">
           {relatedProjects.map((item) => (
             <Link key={item.href} href={item.href} className="group">
-              <div className="relative ratio-landscape overflow-hidden">
+              <div className="relative aspect-landscape overflow-hidden">
                 <Image
                   src={item.image}
                   alt={item.imageAlt}
@@ -44,10 +44,10 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <p className="mt-4 text-xs font-medium uppercase tracking-loose text-dark-muted">
+              <p className="mt-4 text-caption font-medium uppercase tracking-wider text-muted-foreground">
                 {item.category}
               </p>
-              <h3 className="mt-2 text-xl font-bold uppercase leading-tight tracking-heading-subtle text-dark">
+              <h3 className="mt-2 text-card font-bold uppercase leading-tight tracking-tight text-foreground">
                 {item.title}
               </h3>
             </Link>
@@ -57,4 +57,6 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
     </section>
   )
 }
+
+
 

@@ -32,9 +32,11 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       <head>
         <link rel="icon" href="/favicon.ico?v=2" type="image/x-icon" />
       </head>
-      <body className="min-h-screen bg-page font-sans text-dark antialiased selection:bg-accent selection:text-white">
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased selection:bg-accent selection:text-primary-foreground">
         {children}
       </body>
     </html>
   )
 }
+
+

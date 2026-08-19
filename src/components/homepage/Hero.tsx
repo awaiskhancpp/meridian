@@ -31,7 +31,7 @@ export default function Hero() {
 
   return (
     <section id="hero" aria-label="Hero" className="w-full">
-      <div className="relative isolate h-full-viewport w-full overflow-hidden 2xl:h-full-viewport">
+      <div className="relative isolate h-viewport w-full overflow-hidden">
         <Image
           src={hero.backgroundImage}
           alt=""
@@ -42,21 +42,21 @@ export default function Hero() {
         />
 
         <div className="absolute inset-0 bg-overlay-hero" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-hero-divider h-px bg-white-faint" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-32 h-px bg-primary-foreground-faint" />
 
-        <Container className="relative flex h-full flex-col justify-between hero-content-padding">
+                <Container className="relative flex h-full flex-col justify-between pt-24">
           <div className="flex justify-between gap-4" aria-hidden="true">
-            <span className="type-eyebrow font-medium uppercase tracking-label text-white opacity-0">
+            <span className="text-caption font-medium uppercase tracking-wider text-primary-foreground opacity-0">
               {hero.eyebrow}
             </span>
           </div>
 
           <div className="">
-            <h1 className="max-hero text-white">
-              <span className="type-hero-display font-bold uppercase leading-hero tracking-heading-subtle text-white drop-shadow-text-hero">
+            <h1 className="max-w-2xl text-primary-foreground">
+              <span className="heading-display text-primary-foreground drop-shadow-hero">
                 {hero.heading}{' '}
               </span>
-              <span className="font-script capitalize type-hero-script leading-script text-cream">
+              <span className="heading-display-script text-surface-foreground">
                 {hero.script}
               </span>
             </h1>
@@ -64,10 +64,10 @@ export default function Hero() {
             <div className="mt-8  lg:items-start pb-4 lg:pb-8">
               <div className="grid  grid-cols-1 gap-2 md:grid-cols-2">
                 <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
-                  <p className="text-xs font-medium uppercase tracking-label text-white-subtle">
+                  <p className="text-caption font-medium uppercase tracking-wider text-primary-foreground-subtle">
                     Start Your Project
                   </p>
-                  <div className="max-w-narrow-copy text-sm leading-6 text-secondary sm:type-body">
+                  <div className="max-w-xs text-body-sm leading-body text-secondary-foreground">
                     {hero.subheading}
                   </div>
                 </div>
@@ -75,7 +75,7 @@ export default function Hero() {
                   <Button
                     variant="line"
                     href={hero.cta.href}
-                    className="flex items-center gap-2 text-white"
+                    className="flex items-center gap-2 text-primary-foreground"
                   >
                     <span>{hero.cta.label}</span>
                     <ArrowUpRight size={20} />

@@ -6,12 +6,12 @@ export default function MissionValues() {
     <section aria-labelledby="mission-heading" className="section-padding bg-card">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-xs uppercase tracking-eyebrow mb-4 text-muted">Our Philosophy</p>
+          <p className="text-caption uppercase tracking-wider mb-4 text-muted-foreground">Our Philosophy</p>
           <h2 id="mission-heading">
-            <span className="block uppercase tracking-heading-tight text-primary type-mission-title font-black leading-mission">
+            <span className="block heading-2 text-primary-foreground">
               Driven by
             </span>
-            <span className="block capitalize mt-1 text-accent-light font-script type-mission-script leading-none">
+            <span className="block capitalize mt-1 text-accent font-script text-script leading-normal">
               Excellence
             </span>
           </h2>
@@ -19,11 +19,11 @@ export default function MissionValues() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* â”€â”€ Mission Card â”€â”€ */}
-          <div className="p-8 lg:p-12 relative overflow-hidden bg-deep rounded-lg shadow-card border border-soft">
-            <h3 className="mb-4 text-primary type-value-title font-bold">
+          <div className="card-featured relative overflow-hidden">
+            <h3 className="mb-4 text-primary-foreground text-subheading font-bold">
               Our Mission
             </h3>
-            <p className="text-secondary text-base lg:text-lg leading-body">
+            <p className="text-secondary-foreground text-body lg:text-body-lg leading-body">
               To elevate the standard of home remodeling by delivering unparalleled craftsmanship,
               transparent communication, and innovative design. We strive to turn every client's
               vision into a reality that enhances their daily life and adds lasting value to their
@@ -32,11 +32,11 @@ export default function MissionValues() {
           </div>
 
           {/* â”€â”€ Vision Card â”€â”€ */}
-          <div className="p-8 lg:p-12 relative overflow-hidden bg-deep rounded-lg shadow-card border border-soft">
-            <h3 className="mb-4 text-primary type-value-title font-bold">
+          <div className="card-featured relative overflow-hidden">
+            <h3 className="mb-4 text-primary-foreground text-subheading font-bold">
               Our Vision
             </h3>
-            <p className="text-secondary text-base lg:text-lg leading-body">
+            <p className="text-secondary-foreground text-body lg:text-body-lg leading-body">
               To be the most trusted and sought-after remodeling partner in our community, known for
               our integrity, our creative problem-solving, and the enduring quality of the spaces we
               build.

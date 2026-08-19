@@ -1,6 +1,6 @@
 export function IFrame({ address, mapSrc }: { address?: string; mapSrc: string }) {
   return (
-    <div className="h-iframe w-full overflow-hidden border border-soft lg:h-iframe-lg">
+    <div className="h-media w-full overflow-hidden border border-border lg:h-media-lg">
       <iframe
         title={`${address} on Google Maps`}
         src={mapSrc}
@@ -12,3 +12,5 @@ export function IFrame({ address, mapSrc }: { address?: string; mapSrc: string }
     </div>
   )
 }
+
+

@@ -13,7 +13,7 @@ export default function BlogCard({ card, titleTransform = 'capitalize' }: BlogCa
   return (
     <article className="group h-full">
       <Link href={card.href} className="block">
-        <div className="relative h-card-media overflow-hidden lg:h-card-media-lg">
+        <div className="relative h-media overflow-hidden lg:h-media-lg">
           <Image
             src={card.image}
             alt={card.imageAlt}
@@ -37,13 +37,13 @@ export default function BlogCard({ card, titleTransform = 'capitalize' }: BlogCa
               (on the panel itself, not just its parent) centers its
               children both ways within the full-height space.
             */}
-            <div className="flex h-full w-full translate-y-4 flex-col items-center justify-center border border-light-strong bg-overlay-surface px-8 py-10 text-center opacity-0 shadow-soft backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+            <div className="card-overlay flex h-full w-full translate-y-4 flex-col items-center justify-center text-center opacity-0 backdrop-blur-sm transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
               <h3
-                className={`type-card-title font-black leading-heading tracking-heading-subtle text-dark ${titleTransform}`}
+                className={`card-title text-foreground ${titleTransform}`}
               >
                 {card.title}
               </h3>
-              <p className="mt-5 text-sm leading-6 text-dark-muted">{card.description}</p>
+              <p className="mt-5 text-body-sm leading-6 text-muted-foreground">{card.description}</p>
               <Button variant="outline" className="mt-10 rounded-none">
                 Read More
               </Button>
@@ -52,7 +52,7 @@ export default function BlogCard({ card, titleTransform = 'capitalize' }: BlogCa
         </div>
 
         <div className="mt-4 transition-all duration-standard group-hover:-translate-y-2 group-hover:opacity-0">
-          <h3 className="heading-card text-dark">{card.title}</h3>
+          <h3 className="card-heading text-foreground">{card.title}</h3>
         </div>
       </Link>
     </article>

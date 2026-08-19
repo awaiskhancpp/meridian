@@ -79,7 +79,7 @@ export default function BlogsPageClient({
   }, [posts, search, category])
 
   return (
-    <main className="min-h-screen bg-page">
+    <main className="min-h-screen bg-background">
       <Navbar />
 
       <div className="relative z-10">
@@ -97,18 +97,18 @@ export default function BlogsPageClient({
         <Container>
           <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
+              <p className="text-caption font-medium uppercase tracking-wider text-muted-foreground">
                 {heroProps.label}
               </p>
-              <h2 className="mt-2 heading-2 text-dark">All Articles</h2>
+              <h2 className="mt-2 heading-2 text-foreground">All Articles</h2>
             </div>
-            <p className="text-sm text-dark-muted">
+            <p className="text-body-sm text-muted-foreground">
               {filtered.length} {filtered.length === 1 ? 'article' : 'articles'}
             </p>
           </div>
 
           {filtered.length === 0 ? (
-            <p className="py-16 text-center text-sm text-dark-muted">
+            <p className="py-16 text-center text-body-sm text-muted-foreground">
               No articles match your search. Try clearing a filter.
             </p>
           ) : (
@@ -125,3 +125,4 @@ export default function BlogsPageClient({
     </main>
   )
 }
+

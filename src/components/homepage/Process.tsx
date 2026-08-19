@@ -19,7 +19,7 @@ const stepImages = ['/discovery.png', '/design.png', '/build.png', '/handoff.png
 ───────────────────────────────────────────── */
 export default function Process() {
   return (
-    <section id="process" aria-labelledby="process-heading" className="section-padding bg-page">
+    <section id="process" aria-labelledby="process-heading" className="section-padding bg-background">
       <Container>
         {/* Centered heading */}
         <SectionHeading
@@ -35,7 +35,7 @@ export default function Process() {
           {processData.steps.map((step, idx) => (
             <div
               key={idx}
-              className="relative flex flex-col border border-soft bg-page p-4 lg:p-3 xl:p-6 transition-shadow duration-standard hover:shadow-sm"
+              className="relative flex flex-col card-interactive hover:shadow-sm"
             >
               {/*
                 Badge + line share one flex row now, instead of the badge
@@ -48,25 +48,25 @@ export default function Process() {
                 width or position to reach "the end of the card."
               */}
               <div className="mb-5 flex items-center gap-2">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-sm font-bold text-white">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-body-sm font-bold text-primary-foreground">
                   {String(idx + 1).padStart(2, '0')}
                 </div>
                 <div
-                  className="h-0 flex-1 border-t border-dashed border-divider-strong"
+                  className="h-0 flex-1 border-t border-dashed border-border-strong"
                   aria-hidden="true"
                 />
               </div>
 
               {/* Title */}
-              <h3 className="mb-3 text-base font-bold leading-snug text-dark">{step.title}</h3>
+              <h3 className="mb-3 text-body font-bold leading-snug text-foreground">{step.title}</h3>
 
               {/* Description */}
-              <p className="flex-1 text-sm leading-relaxed text-dark-muted">{step.description}</p>
+              <p className="flex-1 text-body-sm leading-relaxed text-muted-foreground">{step.description}</p>
 
               {/* Photo — replaces the previous inline SVG illustration.
                   The media ratio matches the original SVG viewBox proportions
                   so the card's overall shape doesn't jump when this swaps in. */}
-              <div className="relative mt-6 ratio-process-media w-full overflow-hidden  ">
+              <div className="relative mt-6 aspect-landscape w-full overflow-hidden  ">
                 <Image
                   src={stepImages[idx] ?? stepImages[stepImages.length - 1]}
                   alt={step.title}
@@ -82,3 +82,4 @@ export default function Process() {
     </section>
   )
 }
+

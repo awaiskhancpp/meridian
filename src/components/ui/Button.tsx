@@ -27,22 +27,22 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const sizeClasses: Record<Size, string> = {
-  lg: 'btn-padding-lg text-base',
-  md: 'btn-padding-md text-sm',
-  sm: 'btn-padding-sm text-sm',
+  lg: 'px-8 py-3.5 text-body',
+  md: 'px-6 py-2.5 text-body-sm',
+  sm: 'px-4 py-2 text-body-sm',
 }
 
 const variantClasses: Record<Variant, string> = {
-  primary: 'bg-accent hover:bg-accent-hover text-white border border-transparent shadow-soft',
-  outline: 'bg-transparent border border-extra-strong text-dark hover:bg-accent hover:text-white',
+  primary: 'bg-accent hover:bg-primary-hover text-primary-foreground border border-transparent shadow-sm',
+  outline: 'bg-transparent border border-border-strong text-foreground hover:bg-accent hover:text-primary-foreground',
   'outline-light':
-    'bg-transparent border border-light-heavy text-white hover:bg-section hover:text-dark',
-  ghost: 'bg-transparent border border-transparent text-dark hover:bg-accent-faint',
+    'bg-transparent border border-border-inverse-strong text-primary-foreground hover:bg-surface hover:text-foreground',
+  ghost: 'bg-transparent border border-transparent text-foreground hover:bg-overlay-soft',
   line: '', // unreachable â€” Button() branches to LiquidUnderlineButton before this lookup
 }
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 ring-accent/40 disabled:opacity-50 disabled:pointer-events-none'
+  'inline-flex items-center justify-center gap-2 rounded-full font-medium transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 ring-focus/40 disabled:opacity-50 disabled:pointer-events-none'
 
 function LiquidUnderlineButton({
   children,
@@ -50,7 +50,7 @@ function LiquidUnderlineButton({
   className = '',
   ...props
 }: Omit<ButtonProps, 'variant' | 'size'>) {
-  const wrapperClasses = `group relative inline-flex items-center gap-card pb-2 text-sm font-semibold uppercase tracking-medium text-dark ${className}`
+  const wrapperClasses = `group relative inline-flex items-center gap-card pb-2 text-body-sm font-semibold uppercase tracking-wider text-foreground ${className}`
 
   const content = (
     <>
@@ -117,3 +117,5 @@ export default function Button({
     </button>
   )
 }
+
+

@@ -19,7 +19,7 @@ function AuthorAvatar({ name }: { name: string }) {
   const initial = name.trim().charAt(0).toUpperCase()
   return (
     <span
-      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-xs font-semibold text-white"
+      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-caption font-semibold text-primary-foreground"
       aria-hidden="true"
     >
       {initial}
@@ -48,31 +48,31 @@ export default function BlogPage({ post }: { post: BlogPost }) {
         {/* Breadcrumb */}
         <nav
           aria-label="Breadcrumb"
-          className="mb-4 flex items-center gap-2 text-xs uppercase tracking-loose text-dark-muted"
+          className="mb-4 flex items-center gap-2 text-caption uppercase tracking-wider text-muted-foreground"
         >
           <Link href="/blogs" className="transition-colors hover:text-accent">
             Journal
           </Link>
           <span aria-hidden="true">·</span>
-          <span className="text-dark">{categoryLabel}</span>
+          <span className="text-foreground">{categoryLabel}</span>
         </nav>
 
         {/* Title */}
-        <h1 className="type-section-title font-black uppercase leading-compact tracking-heading-tight text-dark">
+        <h1 className="heading-2 text-foreground">
           {post.title}
         </h1>
 
         {/* Description */}
         {/* {post.description && (
-          <p className="mt-6 text-lg md:text-xl text-dark-muted leading-relaxed max-w-3xl">
+          <p className="mt-6 text-body-lg md:text-card text-muted-foreground leading-relaxed max-w-3xl">
             {post.description}
           </p>
         )} */}
 
         {/* Author / date / read time */}
-        <div className="mt-6 flex items-center gap-card border-b border-soft pb-6 text-sm text-dark-muted">
+        <div className="mt-6 flex items-center gap-card border-b border-border pb-6 text-body-sm text-muted-foreground">
           <AuthorAvatar name={authorName} />
-          <span className="font-medium text-dark">{authorName}</span>
+          <span className="font-medium text-foreground">{authorName}</span>
           <span aria-hidden="true">·</span>
           <span>{formatDate(post.datePosted)}</span>
           <span aria-hidden="true">·</span>
@@ -81,7 +81,7 @@ export default function BlogPage({ post }: { post: BlogPost }) {
       </Container>
 
       <Container className="!max-w-6xl">
-        <div className="mt-10 grid grid-cols-1 gap-12 lg:columns-blog">
+        <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div className="min-w-0">
             <RichText content={rawContent} />
             {imageUrl && (
@@ -98,3 +98,4 @@ export default function BlogPage({ post }: { post: BlogPost }) {
     </article>
   )
 }
+

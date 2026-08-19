@@ -29,7 +29,7 @@ export default function OurStory({
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-stretch lg:gap-10">
           {/* â”€â”€ Left Column: Image â”€â”€ */}
           {/* Removed aspect ratios, added lg:h-full to fill the stretched grid cell */}
-          <div className="relative w-full min-h-story-media lg:h-full overflow-hidden">
+          <div className="relative w-full min-h-72 lg:h-full overflow-hidden">
             <Image
               src={imageSrc}
               alt={imageAlt}
@@ -41,14 +41,14 @@ export default function OurStory({
 
           {/* â”€â”€ Right Column: Text Content â”€â”€ */}
           <div className="flex flex-col justify-center py-4">
-            <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{label}</p>
+            <p className="text-caption uppercase tracking-wider text-muted-foreground">{label}</p>
 
             <h2 id="our-story-heading" className="mt-3">
-              <span className="block heading-2 text-dark">{heading}</span>
-              <span className="block heading-script capitalize text-accent mt-1">{script}</span>
+              <span className="block heading-2 text-foreground">{heading}</span>
+              <span className="block text-script capitalize leading-normal text-accent mt-1">{script}</span>
             </h2>
 
-            <div className="mt-8 space-y-5 text-base leading-relaxed text-dark-muted">
+            <div className="mt-8 space-y-5 text-body leading-relaxed text-muted-foreground">
               {content ? (
                 content
               ) : (
@@ -70,11 +70,11 @@ export default function OurStory({
               )}
             </div>
 
-            <div className="mt-auto grid grid-cols-2  pt-14 max-story-copy">
+            <div className="mt-auto grid grid-cols-2  pt-14 max-w-lg">
               {about.stats.map((stat) => (
                 <div key={stat.label} className=" ">
-                  <p className="text-3xl font-black leading-none text-dark">{stat.value}</p>
-                  <p className="mt-2 text-sm text-dark-muted">{stat.label}</p>
+                  <p className="heading-2 text-foreground">{stat.value}</p>
+                  <p className="mt-2 text-body-sm text-muted-foreground">{stat.label}</p>
                 </div>
               ))}
             </div>

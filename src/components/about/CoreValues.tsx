@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from '@/components/ui'
+import { Container, SectionHeading } from '@/components/ui'
 import { Hammer, Handshake, HardHat, Target } from 'lucide-react'
 
 export default function CoreValues() {
@@ -33,15 +33,13 @@ export default function CoreValues() {
   return (
     <section aria-labelledby="values-heading" className="section-padding">
       <Container>
-        {/* ── Header ── */}
-        <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">
-          <p className="text-xs uppercase tracking-eyebrow text-dark-muted mb-4">Our Values</p>
-          <h2 id="values-heading">
-            <span className="block heading-2 text-dark">Core Values That Guide</span>
-            <span className="block heading-script capitalize text-accent mt-3">
-              Every Project & Partnership
-            </span>
-          </h2>
+        <div className="mb-16 lg:mb-20">
+          <SectionHeading
+            id="values-heading"
+            label="Our Values"
+            heading="Core Values That Guide"
+            script="Every Project & Partnership"
+          />
         </div>
 
         {/* ── Cards Grid ── */}
@@ -49,18 +47,18 @@ export default function CoreValues() {
           {values.map((value, index) => (
             <div
               key={index}
-              className="rounded-none border border-divider bg-page p-6  flex flex-col "
+              className="card flex flex-col"
             >
               {/* Sharp, square icon container matching your hard edges */}
-              <div className="w-14 h-14 rounded-none bg-dark text-white flex items-center justify-center mb-8 shrink-0">
+              <div className="w-14 h-14 rounded-none bg-primary text-primary-foreground flex items-center justify-center mb-8 shrink-0">
                 {value.icon}
               </div>
 
-              <h3 className="text-lg font-bold uppercase tracking-wide text-dark mb-4 pr-2 leading-snug">
+              <h3 className="heading-3 mb-4 text-foreground">
                 {value.title}
               </h3>
 
-              <p className="text-sm leading-relaxed text-dark-muted flex-grow">
+              <p className="text-body-sm leading-relaxed text-muted-foreground flex-grow">
                 {value.description}
               </p>
             </div>

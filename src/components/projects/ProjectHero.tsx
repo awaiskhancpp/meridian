@@ -13,21 +13,21 @@ import type { ProjectDetail } from './types'
  */
 export default function ProjectHero({ project }: { project: ProjectDetail }) {
   return (
-    <section className="relative isolate min-h-full-viewport overflow-hidden">
+    <section className="relative isolate min-h-viewport overflow-hidden">
       <Image src={project.image} alt="" fill priority className="object-cover object-center" />
-      <div className="absolute inset-0 bg-overlay-service-hero" />
+      <div className="absolute inset-0 bg-service-hero-overlay" />
 
-      <Container className="relative z-10 flex min-h-full-viewport items-end pb-12 pt-28 lg:pb-16">
-        <div className="max-w-4xl text-white">
-          <p className="text-xs font-medium uppercase tracking-eyebrow text-white-subtle">
+      <Container className="relative z-10 flex min-h-viewport items-end pb-12 pt-28 lg:pb-16">
+        <div className="max-w-4xl text-primary-foreground">
+          <p className="text-caption font-medium uppercase tracking-wider text-primary-foreground-subtle">
             {project.eyebrow}
           </p>
 
-          <h1 className="mt-4 max-w-4xl type-hero-display font-black uppercase leading-hero tracking-heading-subtle">
+          <h1 className="mt-4 max-w-4xl heading-display text-primary-foreground">
             {project.title}
           </h1>
 
-          <p className="mt-5 max-w-2xl text-base leading-7 text-secondary line-clamp-2 lg:text-lg">
+          <p className="mt-5 max-w-2xl text-body leading-7 text-secondary-foreground line-clamp-2 lg:text-body-lg">
             {project.intro}
           </p>
         </div>

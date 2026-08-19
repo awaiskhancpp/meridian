@@ -38,22 +38,22 @@ export default function AboutWhyChooseUs() {
     <section
       id="about-why-choose-us"
       aria-labelledby="about-why-choose-us-heading"
-      className="relative overflow-hidden section-padding bg-page"
+      className="relative overflow-hidden section-padding bg-background"
     >
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Sticky Context & CTA */}
           <div className="lg:col-span-5 lg:sticky lg:top-32">
-            <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
+            <p className="text-caption font-medium uppercase tracking-wider text-muted-foreground">
               {whyChooseUs.label}
             </p>
-            <h2 id="about-why-choose-us-heading" className="mt-4 text-dark">
-              <span className="block heading-2">{whyChooseUs.heading}</span>
-              <span className="block heading-script capitalize text-accent">
+            <h2 id="about-why-choose-us-heading" className="mt-4 text-foreground">
+              <span className="block heading-2 text-foreground">{whyChooseUs.heading}</span>
+              <span className="block text-script capitalize leading-normal text-accent">
                 {whyChooseUs.script}
               </span>
             </h2>
-            <p className="mt-6 max-w-md text-p text-dark-muted leading-relaxed">
+            <p className="mt-6 max-w-md text-body text-muted-foreground leading-relaxed">
               {whyChooseUs.subheading}
             </p>
 
@@ -77,18 +77,18 @@ export default function AboutWhyChooseUs() {
             {features.map((feature, idx) => (
               <div
                 key={idx}
-                className="group relative flex flex-col p-8 md:p-10 bg-page ring-1 ring-dark-soft overflow-hidden"
+                className="group relative flex flex-col p-8 md:p-10 bg-background ring-1 ring-border overflow-hidden"
               >
                 {/* Decorative animated top border */}
-                {/* <div className="absolute top-0 left-0 w-full h-1 bg-decorative-terracotta scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" /> */}
+                {/* <div className="absolute top-0 left-0 w-full h-1 bg-accent scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" /> */}
 
-                <div className="mb-6 text-decorative-terracotta transition-transform duration-standard group-hover:scale-110 origin-left">
-                  <feature.icon className="w-10 h-10 text-dark" strokeWidth={1.5} />
+                <div className="mb-6 text-accent transition-transform duration-standard group-hover:scale-110 origin-left">
+                  <feature.icon className="w-10 h-10 text-foreground" strokeWidth={1.5} />
                 </div>
 
-                <h3 className="text-xl font-bold text-dark mb-4">{feature.title}</h3>
+                <h3 className="text-card font-bold text-foreground mb-4">{feature.title}</h3>
 
-                <p className="text-dark-muted text-sm leading-relaxed">{feature.description}</p>
+                <p className="text-muted-foreground text-body-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -97,3 +97,4 @@ export default function AboutWhyChooseUs() {
     </section>
   )
 }
+

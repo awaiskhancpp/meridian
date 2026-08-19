@@ -22,7 +22,7 @@ export default function Blogs() {
   }
 
   return (
-    <section id="blogs" aria-labelledby="blogs-heading" className="bg-page section-padding">
+    <section id="blogs" aria-labelledby="blogs-heading" className="bg-background section-padding">
       <Container>
         <SectionHeading
           id="blogs-heading"
@@ -65,7 +65,7 @@ export default function Blogs() {
             onClick={() => swiperRef.current?.slidePrev()}
             disabled={atStart}
             aria-label="Previous articles"
-            className="absolute left-2 top-carousel -translate-y-1/2 z-20 flex lg:hidden h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-surface-muted text-dark-muted shadow-soft border border-subtle backdrop-blur-sm transition-all duration-standard enabled:hover:bg-page enabled:hover:text-dark enabled:hover:scale-105 disabled:opacity-20 disabled:cursor-not-allowed disabled:shadow-none"
+            className="absolute left-2 top-56 -translate-y-1/2 z-20 flex lg:hidden h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-surface-muted text-muted-foreground shadow-sm border border-border backdrop-blur-sm transition-all duration-standard enabled:hover:bg-background enabled:hover:text-foreground enabled:hover:scale-105 disabled:opacity-20 disabled:cursor-not-allowed disabled:shadow-none"
           >
             <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6" />
           </button>
@@ -76,7 +76,7 @@ export default function Blogs() {
             onClick={() => swiperRef.current?.slideNext()}
             disabled={atEnd}
             aria-label="Next articles"
-            className="absolute right-2 top-carousel -translate-y-1/2 z-20 flex lg:hidden h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-surface-muted text-dark-muted shadow-soft border border-subtle backdrop-blur-sm transition-all duration-standard enabled:hover:bg-page enabled:hover:text-dark enabled:hover:scale-105 disabled:opacity-20 disabled:cursor-not-allowed disabled:shadow-none"
+            className="absolute right-2 top-56 -translate-y-1/2 z-20 flex lg:hidden h-10 w-10 sm:h-12 sm:w-12 items-center justify-center rounded-full bg-surface-muted text-muted-foreground shadow-sm border border-border backdrop-blur-sm transition-all duration-standard enabled:hover:bg-background enabled:hover:text-foreground enabled:hover:scale-105 disabled:opacity-20 disabled:cursor-not-allowed disabled:shadow-none"
           >
             <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6" />
           </button>
@@ -85,3 +85,5 @@ export default function Blogs() {
     </section>
   )
 }
+
+

@@ -30,7 +30,7 @@ export default function PageHero({
 }: PageHeroProps) {
   return (
     <section aria-label={heading} className="w-full">
-      <div className="relative isolate h-page-hero min-h-page-hero w-full lg:h-tall-section">
+      <div className="relative isolate h-viewport-short min-h-120 w-full lg:h-viewport-page">
         <Image
           src={image}
           alt=""
@@ -44,21 +44,21 @@ export default function PageHero({
 
         <Container className="relative z-10 flex h-full items-center justify-center pb-8 pt-header sm:pb-10 sm:pt-28 lg:pb-12">
           <div className="flex w-full flex-col items-center justify-center text-center">
-            <p className="mb-3 text-xs font-medium uppercase tracking-eyebrow text-white-subtle">
+            <p className="mb-3 text-caption font-medium uppercase tracking-wider text-primary-foreground-subtle">
               {label}
             </p>
 
-            <h1 className="max-heading">
-              <span className="type-hero-display font-bold uppercase leading-hero tracking-heading-subtle text-white">
+            <h1 className="max-w-4xl">
+              <span className="heading-display text-primary-foreground">
                 {heading}
               </span>{' '}
-              <span className="mt-2 inline-block -translate-y-1 font-script capitalize type-hero-script leading-script text-cream">
+              <span className="mt-2 inline-block -translate-y-1 heading-display-script text-surface-foreground">
                 {script}
               </span>
             </h1>
 
             {subheading ? (
-              <p className={`mt-5 max-copy text-sm leading-relaxed text-secondary sm:type-body`}>
+              <p className={`mt-5 max-w-xl text-body-sm leading-body text-secondary-foreground`}>
                 {subheading}
               </p>
             ) : null}

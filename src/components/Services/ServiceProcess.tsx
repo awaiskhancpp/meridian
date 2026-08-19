@@ -30,17 +30,17 @@ interface ServiceProcessProps {
  *
  * It deliberately echoes ServiceHero rather than inventing a new visual
  * language from scratch:
- * - Same gradient token (bg-overlay-service-hero) ServiceHero itself
+ * - Same gradient token (bg-hero-overlay) ServiceHero itself
  *   uses over its own photo Ã¢â‚¬â€ not a new bespoke overlay.
  * - Step numbers use the exact "big black accent numeral" treatment
- *   ServiceHero's own stat boxes use (text-3xl font-black text-accent),
+ *   ServiceHero's own stat boxes use (heading-2 font-black text-accent),
  *   so the step count reads as a sibling of the hero's stat count, not
  *   an unrelated invention.
- * - The floating card material is bg-glass/border-glass Ã¢â‚¬â€ tokens that
+ * - The floating card material is bg-glass/border-border-inverse Ã¢â‚¬â€ tokens that
  *   already exist in builds.ts (glassBg/glassBorder) but were unused
  *   anywhere in the codebase until now. This is the same "photo with
  *   floating translucent stat-like boxes" grammar ServiceHero already
- *   established with its own bg-page stat boxes, just carried
+ *   established with its own bg-background stat boxes, just carried
  *   through with the warmer glass token instead.
  *
  * The gradient is 90deg (left Ã¢â€ â€™ right fade, darkest at the left edge),
@@ -67,18 +67,18 @@ export default function ServiceProcess({
   return (
     <section
       aria-labelledby="process-heading"
-      className="relative w-full overflow-hidden bg-page  lg:h-process"
+      className="relative w-full overflow-hidden bg-background  lg:h-viewport"
     >
       <div className="relative h-full w-full ">
         <Image src={image} alt="" fill aria-hidden="true" className="object-cover" sizes="100vw" />
-        <div className="absolute inset-0 bg-overlay-service-hero" />
+        <div className="absolute inset-0 bg-hero-overlay" />
 
         <Container className="relative flex h-full flex-col justify-center gap-12 section-padding">
           <div className="max-w-xl mx-auto flex flex-col text-center">
-            <p className="text-xs uppercase tracking-eyebrow text-white-subtle">{label}</p>
+            <p className="text-caption uppercase tracking-wider text-primary-foreground-subtle">{label}</p>
             <h2 id="process-heading" className="mt-2">
-              <span className="block heading-2 text-white">{heading}</span>
-              <span className="block heading-script text-cream">{script}</span>
+              <span className="block heading-2 text-primary-foreground">{heading}</span>
+              <span className="block heading-script text-surface-foreground">{script}</span>
             </h2>
           </div>
 
@@ -86,13 +86,13 @@ export default function ServiceProcess({
             {steps.map((step, i) => (
               <div
                 key={step.title}
-                className="border border-glass bg-glass p-6 shadow-card backdrop-blur-sm"
+                className="card-muted backdrop-blur-sm"
               >
-                <span className="text-3xl font-black leading-none text-accent sm:text-4xl">
+                <span className="heading-2 text-accent sm:heading-1">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <h3 className="mt-3 text-base font-bold text-dark sm:text-lg">{step.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-dark-muted">{step.description}</p>
+                <h3 className="mt-3 text-body font-bold text-foreground sm:text-body-lg">{step.title}</h3>
+                <p className="mt-2 text-body-sm leading-relaxed text-muted-foreground">{step.description}</p>
               </div>
             ))}
           </div>

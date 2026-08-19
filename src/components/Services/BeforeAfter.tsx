@@ -38,17 +38,17 @@ export default function BeforeAfter({
             right, matching the reference layout */}
         <div className="mb-12 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-3xl mx-auto flex flex-col items-center">
-            <p className="flex items-center gap-2 text-xs text-center uppercase tracking-eyebrow text-dark-muted">
+            <p className="flex items-center gap-2 text-caption text-center uppercase tracking-wider text-muted-foreground">
               {/* <span className="h-1.5 w-1.5 rounded-full bg-accent" aria-hidden="true" /> */}
               {label}
             </p>
             <h2 id="before-after-heading" className="mt-1 flex flex-wrap items-end gap-card">
-              <span className="heading-2 text-dark">{heading}</span>
+              <span className="heading-2 text-foreground">{heading}</span>
 
               <span className="heading-script text-accent">{script}</span>
             </h2>
             {subheading && (
-              <p className="mt-4 max-w-2xl text-base text-center leading-relaxed  text-dark-muted">
+              <p className="mt-4 max-w-2xl text-body text-center leading-relaxed  text-muted-foreground">
                 {subheading}
               </p>
             )}
@@ -69,8 +69,8 @@ export default function BeforeAfter({
               />
 
               <div className="mt-4 flex items-center justify-between">
-                <span className="text-lg font-bold text-dark">Before</span>
-                <span className="text-lg font-bold text-dark">After</span>
+                <span className="text-body-lg font-bold text-foreground">Before</span>
+                <span className="text-body-lg font-bold text-foreground">After</span>
               </div>
             </div>
           ))}
@@ -79,4 +79,6 @@ export default function BeforeAfter({
     </section>
   )
 }
+
+
 

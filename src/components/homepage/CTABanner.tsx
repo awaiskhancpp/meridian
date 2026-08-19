@@ -69,16 +69,16 @@ export default function CTABanner({
         <Image src={backgroundImage} alt="" fill className="object-cover object-center" priority />
         {/* Dark overlay */}
         {/* Directional overlay */}
-        <div className="absolute inset-0 bg-overlay-service-hero" />
+        <div className="absolute inset-0 bg-hero-overlay" />
       </div>
 
       <Container className="relative z-10">
         <div className="max-w-2xl">
-          <h2 className="type-section-title font-bold uppercase leading-section tracking-heading-tight text-white lg:type-display-large">
+          <h2 className="heading-2 text-primary-foreground">
             {title}
           </h2>
 
-          <p className="mt-6 text-lg leading-relaxed text-secondary lg:text-md">{description}</p>
+          <p className="mt-6 text-body-lg leading-relaxed text-secondary-foreground lg:text-body-lg">{description}</p>
 
           <form onSubmit={handleSubmit} className="mt-8">
             <div className="max-w-xl">
@@ -91,12 +91,12 @@ export default function CTABanner({
                     setEmailError('')
                   }}
                   placeholder="Enter your email"
-                  className="h-14 w-full rounded-none border border-light-muted bg-page px-4 pr-36 text-accent placeholder:text-accent focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
+                  className="h-14 w-full rounded-none border border-border-inverse bg-background px-4 pr-36 text-accent placeholder:text-accent focus:border-accent focus:outline-none focus:ring-1 focus:ring-focus"
                 />
 
                 <button
                   type="submit"
-                  className="absolute right-1 top-1 h-12 rounded-none bg-accent px-6 text-white transition-colors duration-standard  hover:bg-dark hover:text-white "
+                  className="absolute right-1 top-1 h-12 rounded-none bg-accent px-6 text-primary-foreground transition-colors duration-standard  hover:bg-primary hover:text-primary-foreground "
                 >
                   Subscribe
                 </button>
@@ -104,7 +104,7 @@ export default function CTABanner({
 
               <div className="mt-2 h-5">
                 <p
-                  className={`text-sm ${
+                  className={`text-body-sm ${
                     emailError
                       ? 'text-status-danger'
                       : isSubmitted
@@ -122,3 +122,4 @@ export default function CTABanner({
     </section>
   )
 }
+

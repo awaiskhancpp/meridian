@@ -26,18 +26,18 @@ export default function BlogRelatedPosts() {
     <section
       id="related-posts"
       aria-labelledby="related-posts-heading"
-      className="bg-page section-space"
+      className="bg-background section-space"
     >
       <Container>
         {/* Ã¢â€â‚¬Ã¢â€â‚¬ Header row: eyebrow + heading left, nav arrows right Ã¢â€â‚¬Ã¢â€â‚¬ */}
         <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
           <div>
             <div className="flex items-center gap-2">
-              <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{label}</p>
+              <p className="text-caption uppercase tracking-wider text-muted-foreground">{label}</p>
             </div>
             <h2 id="related-posts-heading" className="mt-1">
-              <span className="block heading-2 text-dark">{heading}</span>
-              <span className="block heading-script capitalize text-accent mt-2">{script}</span>
+              <span className="block heading-2 text-foreground">{heading}</span>
+              <span className="block text-script capitalize leading-normal text-accent mt-2">{script}</span>
             </h2>
           </div>
           <div className="flex flex-shrink-0 items-center gap-card">
@@ -45,7 +45,7 @@ export default function BlogRelatedPosts() {
               ref={prevRef}
               type="button"
               aria-label="Previous blog"
-              className="swiper-nav-prev flex h-11 w-11 items-center justify-center rounded-full text-dark border border-dark transition-opacity duration-200 hover:opacity-85"
+              className="swiper-nav-prev flex h-11 w-11 items-center justify-center rounded-full text-foreground border border-border-strong transition-opacity duration-200 hover:opacity-85"
             >
               <ChevronLeft size={20} aria-hidden="true" />
             </button>
@@ -110,3 +110,4 @@ export default function BlogRelatedPosts() {
     </section>
   )
 }
+

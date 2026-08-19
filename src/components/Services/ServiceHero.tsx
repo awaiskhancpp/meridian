@@ -55,7 +55,7 @@ export default function ServiceHero({
 }: ServiceHeroProps) {
   return (
     <section aria-label={title} className="w-full">
-      <div className="relative isolate h-service-hero min-h-service-hero w-full lg:viewport-service-hero-lg">
+      <div className="relative isolate h-screen min-h-120 w-full lg:h-viewport-tall">
         <Image
           src={image}
           alt=""
@@ -66,18 +66,16 @@ export default function ServiceHero({
         />
 
         {/* Gradient overlay - using theme colors */}
-        <div className="absolute inset-0 bg-overlay-service-hero" />
+        <div className="absolute inset-0 bg-service-hero-overlay" />
 
-        <Container className="relative flex h-full flex-col justify-end pb-10 lg:mb-0 lg:justify-center">
+        <Container className="relative flex h-full flex-col justify-end lg:mb-0 lg:justify-center">
           <div className="max-w-3xl">
             {/* Main title */}
-            <h1 className="type-service-hero font-bold uppercase leading-section tracking-heading-tight text-white lg:type-display-extra-large">
-              {title}
-            </h1>
+            <h1 className="heading-hero text-primary-foreground">{title}</h1>
 
             {/* Subtitle */}
             {subtitle && (
-              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white-overlay lg:text-xl">
+              <p className="mt-4 max-w-2xl text-body-sm leading-relaxed text-primary-foreground lg:text-body-lg">
                 {subtitle}
               </p>
             )}
@@ -88,7 +86,7 @@ export default function ServiceHero({
                 <Button
                   variant="line"
                   href={ctaHref}
-                  className="text-white flex items-center gap-2"
+                  className="text-primary-foreground flex items-center gap-2"
                 >
                   <span>{ctaLabel}</span>
                   <ArrowUpRight size={18} />
@@ -107,16 +105,14 @@ export default function ServiceHero({
                 {statBoxes.map((statBox, index) => (
                   <div
                     key={index}
-                    className="bg-white-high backdrop-blur-sm p-4 flex flex-col items-center justify-center gap-2 shadow-soft"
+                    className="bg-primary-foreground-high backdrop-blur-sm p-4 flex flex-col items-center justify-center gap-2 shadow-sm"
                   >
-                    <div className="text-3xl font-black flex items-center text-accent lg:text-4xl">
-                      {statBox.number}
-                    </div>
+                    <div className="stat-value flex items-center">{statBox.number}</div>
                     <div className="flex flex-col justify-center items-center">
-                      <h3 className="text-md font-bold text-dark uppercase tracking-wide">
+                      <h3 className="text-body-lg font-bold text-foreground uppercase tracking-wide">
                         {statBox.title}
                       </h3>
-                      <p className="text-xs text-center text-dark-muted leading-relaxed">
+                      <p className="text-caption text-center text-muted-foreground leading-relaxed">
                         {statBox.description}
                       </p>
                     </div>
@@ -128,19 +124,19 @@ export default function ServiceHero({
         )}
       </div>
       {statBoxes && statBoxes.length > 0 && (
-        <div className="block lg:hidden py-4 bg-page">
+        <div className="block lg:hidden py-4 bg-background">
           <Container>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {statBoxes.map((statBox, index) => (
-                <div key={index} className="flex gap-field bg-page p-6 shadow-card">
-                  <div className="flex items-center text-4xl font-black text-accent">
-                    {statBox.number}
-                  </div>
+                <div key={index} className="card flex gap-field shadow-md">
+                  <div className="flex items-center heading-1 text-accent">{statBox.number}</div>
 
                   <div>
-                    <h3 className="text-lg font-bold uppercase text-dark">{statBox.title}</h3>
+                    <h3 className="text-body-lg font-bold uppercase text-foreground">
+                      {statBox.title}
+                    </h3>
 
-                    <p className="mt-2 text-sm text-dark-muted">{statBox.description}</p>
+                    <p className="mt-2 text-body-sm text-muted-foreground">{statBox.description}</p>
                   </div>
                 </div>
               ))}

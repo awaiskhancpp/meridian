@@ -50,7 +50,7 @@ export default function Gallery() {
         heading={gallery.heading}
         script={gallery.script}
         maxWidth="max-w-3xl"
-        labelClassName="inline-flex items-center gap-2 text-xs font-medium uppercase tracking-eyebrow text-dark-muted"
+        labelClassName="inline-flex items-center gap-2 text-caption font-medium uppercase tracking-wider text-muted-foreground"
         eyebrowLeading={<span className="h-5" aria-hidden="true" />}
       />
 
@@ -90,8 +90,8 @@ export default function Gallery() {
             <SwiperSlide key={i} className="w-full ">
               {({ isActive }) => (
                 <div
-                  className={`relative w-full ratio-landscape md:aspect-gallery overflow-hidden transition-all duration-500 ease-in-out ${
-                    isActive ? 'scale-100 opacity-100 shadow-xl' : 'scale-90 opacity-100'
+                  className={`relative w-full aspect-landscape md:aspect-landscape overflow-hidden transition-all duration-500 ease-in-out ${
+                    isActive ? 'scale-100 opacity-100 shadow-lg' : 'scale-90 opacity-100'
                   }`}
                 >
                   <Image
@@ -111,3 +111,5 @@ export default function Gallery() {
     </section>
   )
 }
+
+

@@ -35,10 +35,10 @@ export default function Footer() {
           <div className="grid grid-cols-1  px-5 py-6 backdrop-blur-sm sm:px-6 lg:grid-cols-12  lg:px-8 lg:py-6">
             {/* Brand Section */}
             <div className="space-y-4 lg:col-span-4 lg:mr-10 ">
-              <div className="text-xl font-semibold tracking-medium text-dark">
+              <div className="text-card font-semibold tracking-wider text-foreground">
                 <Image src="/logo.png" alt="" width={120} height={100} />
               </div>
-              <p className="max-w-sm text-sm leading-6 text-dark-muted">
+              <p className="max-w-sm text-body-sm leading-6 text-muted-foreground">
                 Warm, practical remodeling for kitchens, baths, and whole-home updates with a calm
                 process and a finished result that feels lived in from day one.
               </p>
@@ -47,7 +47,7 @@ export default function Footer() {
             {/* Menu Section */}
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-2 mt-4 lg:mt-0 sm:gap-x-6 sm:gap-y-8 md:grid-cols-3 lg:col-span-8 lg:gap-x-8">
               <div className="flex flex-col gap-2  lg:gap-4">
-                <p className="text-xs font-normal uppercase tracking-label text-dark-muted ">
+                <p className="text-caption font-normal uppercase tracking-wider text-muted-foreground ">
                   Menu
                 </p>
                 <div className="mt-2 grid content-start gap-2 lg:mt-0 lg:gap-2">
@@ -55,7 +55,7 @@ export default function Footer() {
                     <a
                       key={item.label}
                       href={item.href}
-                      className="text-sm font-medium capitalize whitespace-nowrap tracking-pill text-dark transition-colors hover:text-accent"
+                      className="text-body-sm font-medium capitalize whitespace-nowrap tracking-wide text-foreground transition-colors hover:text-accent"
                     >
                       {item.label}
                     </a>
@@ -65,7 +65,7 @@ export default function Footer() {
 
               {/* Follow Us Section */}
               <div className="flex flex-col gap-2 lg:gap-4">
-                <p className=" text-xs font-normal capitalize tracking-label text-dark-muted">
+                <p className=" text-caption font-normal capitalize tracking-wider text-muted-foreground">
                   Follow us
                 </p>
                 <div className="mt-2 grid content-start items-start gap-2 lg:mt-0 lg:gap-2">
@@ -73,7 +73,7 @@ export default function Footer() {
                     <a
                       key={item.label}
                       href={item.href}
-                      className="text-sm font-medium capitalize tracking-pill text-dark transition-colors hover:text-accent"
+                      className="text-body-sm font-medium capitalize tracking-wide text-foreground transition-colors hover:text-accent"
                     >
                       {item.label}
                     </a>
@@ -83,10 +83,10 @@ export default function Footer() {
 
               {/* Contact Section */}
               <div className="flex flex-col gap-field sm:col-span-2 md:col-span-1  lg:gap-4">
-                <p className="text-xs font-normal uppercase tracking-label text-dark-muted">
+                <p className="text-caption font-normal uppercase tracking-wider text-muted-foreground">
                   Contacts
                 </p>
-                <div className="mt-0 grid content-start text-sm  leading-6 text-dark gap-field">
+                <div className="mt-0 grid content-start text-body-sm  leading-6 text-foreground gap-field">
                   <div className="flex gap-2 items-center">
                     <MapPin className="shrink-0" size={20} />
                     <p className="font-medium leading-body">
@@ -116,27 +116,27 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="mt-8 flex flex-col items-center justify-center md:justify-between gap-2 border-t border-subtle px-5 pt-6 text-center text-xs text-dark-muted md:flex-row md:gap-field">
+          <div className="mt-8 flex flex-col items-center justify-center md:justify-between gap-2 border-t border-border px-5 pt-6 text-center text-caption text-muted-foreground md:flex-row md:gap-field">
             <div className="flex flex-col md:flex-row gap-2">
               <p>© 2026 MERIDIAN. All rights reserved.</p>
-              <span className="hidden md:inline text-border-strong">|</span>
+              <span className="hidden md:inline text-muted-foreground">|</span>
               <p>
                 Designed and Developed by{' '}
                 <a
                   href="https://1realtour.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-semibold text-dark transition-colors hover:text-accent"
+                  className="font-semibold text-foreground transition-colors hover:text-accent"
                 >
                   1REALTOUR
                 </a>
               </p>
             </div>
-            {/* <span className="hidden md:inline text-border-strong">|</span> */}
+            {/* <span className="hidden md:inline text-muted-foreground">|</span> */}
             <div className="flex items-center gap-field">
               {legalLinks.map((item, i) => (
                 <React.Fragment key={item.label}>
-                  {i > 0 && <span className="text-border-strong">|</span>}
+                  {i > 0 && <span className="text-muted-foreground">|</span>}
                   <a href={item.href} className="transition-colors hover:text-accent">
                     {item.label}
                   </a>
@@ -149,3 +149,5 @@ export default function Footer() {
     </footer>
   )
 }
+
+

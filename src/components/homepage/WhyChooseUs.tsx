@@ -41,7 +41,7 @@ export default function WhyChooseUs() {
     <section
       id="why-choose-us"
       aria-labelledby="why-choose-us-heading"
-      className="relative overflow-hidden section-padding bg-page"
+      className="relative overflow-hidden section-padding bg-background"
     >
       <Container className="relative z-10">
         {/* Header Section */}
@@ -59,25 +59,25 @@ export default function WhyChooseUs() {
           <div className="flex flex-col sm:flex-row lg:flex-col w-full lg:max-w-md lg:w-1/3 gap-12 order-2 lg:order-1">
             {featuresLeft.map((feature, idx) => (
               <div key={idx} className="flex flex-col items-center text-center group">
-                <div className="mb-5 text-decorative-terracotta transition-transform duration-standard group-hover:-translate-y-1">
-                  <feature.icon className="w-10 h-10 text-dark" strokeWidth={1.5} />
+                <div className="mb-5 text-accent transition-transform duration-standard group-hover:-translate-y-1">
+                  <feature.icon className="w-10 h-10 text-foreground" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-bold text-dark mb-3">{feature.title}</h3>
-                <p className="text-dark-muted text-sm leading-relaxed">{feature.description}</p>
+                <h3 className="text-card font-bold text-foreground mb-3">{feature.title}</h3>
+                <p className="text-muted-foreground text-body-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
 
           {/* Center Column Image Ã¢â‚¬â€ Reduced width for mobile and desktop */}
-          <div className="w-full max-why-image-sm sm:max-w-none lg:max-why-image-lg mx-auto relative flex justify-center order-1 lg:order-2 mb-8 lg:mb-0">
-            <div className="relative w-full ratio-portrait overflow-hidden ring-1 ring-dark-soft">
+          <div className="w-full max-w-sm sm:max-w-none lg:max-w-sm mx-auto relative flex justify-center order-1 lg:order-2 mb-8 lg:mb-0">
+            <div className="relative w-full aspect-portrait overflow-hidden ring-1 ring-border">
               <Image
                 src="/hero.webp"
                 alt="Detailed interior remodeling craftsmanship"
                 fill
                 className="object-cover transition-transform duration-700 hover:scale-105"
               />
-              <div className="absolute inset-0 bg-card-bottom-dark" />
+              <div className="absolute inset-0 bg-card-bottom" />
             </div>
           </div>
 
@@ -85,11 +85,11 @@ export default function WhyChooseUs() {
           <div className="flex flex-col sm:flex-row lg:flex-col w-full lg:max-w-md lg:w-1/3 gap-12 order-3 lg:order-3">
             {featuresRight.map((feature, idx) => (
               <div key={idx} className="flex flex-col items-center text-center group">
-                <div className="mb-5 text-decorative-terracotta transition-transform duration-standard group-hover:-translate-y-1">
-                  <feature.icon className="w-10 h-10 text-dark" strokeWidth={1.5} />
+                <div className="mb-5 text-accent transition-transform duration-standard group-hover:-translate-y-1">
+                  <feature.icon className="w-10 h-10 text-foreground" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-bold text-dark mb-3">{feature.title}</h3>
-                <p className="text-dark-muted text-sm leading-relaxed">{feature.description}</p>
+                <h3 className="text-card font-bold text-foreground mb-3">{feature.title}</h3>
+                <p className="text-muted-foreground text-body-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -105,3 +105,5 @@ export default function WhyChooseUs() {
     </section>
   )
 }
+
+

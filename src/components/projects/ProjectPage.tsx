@@ -36,14 +36,14 @@ export default function ProjectPage() {
         {/* Header row */}
         <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between lg:mb-10">
           <div>
-            <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
+            <p className="text-caption font-medium uppercase tracking-wider text-muted-foreground">
               Selected work
             </p>
-            <h2 className="mt-3 max-w-2xl type-project-title font-black uppercase leading-heading tracking-heading-tight text-dark">
+            <h2 className="mt-3 max-w-2xl heading-2 text-foreground">
               Built around how you live.
             </h2>
           </div>
-          <p className="max-w-sm text-sm leading-6 text-dark-muted">
+          <p className="max-w-sm text-body-sm leading-6 text-muted-foreground">
             Explore a few of the spaces we have shaped with care, clarity, and a close eye for the
             details that last.
           </p>
@@ -67,7 +67,7 @@ export default function ProjectPage() {
             return (
               <article key={project.href} className={`group ${sizeClass}`}>
                 <Link href={project.href} className="block">
-                  <div className="relative h-card-media overflow-hidden lg:h-card-media-lg">
+                  <div className="relative h-media overflow-hidden lg:h-media-lg">
                     <Image
                       src={project.image}
                       alt={project.imageAlt}
@@ -76,17 +76,17 @@ export default function ProjectPage() {
                     />
                     <div className="absolute inset-0 bg-overlay-card" />
 
-                    <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-full transform-gpu bg-card-bottom-dark px-6 pb-6 pt-14 opacity-0 transition-all duration-700 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
-                      <p className="text-xs font-medium uppercase tracking-label text-white-subtle">
+                    <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-full transform-gpu bg-card-bottom px-6 pb-6 pt-14 opacity-0 transition-all duration-700 ease-in-out group-hover:translate-y-0 group-hover:opacity-100">
+                      <p className="text-caption font-medium uppercase tracking-wider text-primary-foreground-subtle">
                         {project.category}
                       </p>
-                      <h3 className="mt-2 type-project-card font-bold uppercase leading-section tracking-heading-tight text-white text-balance line-clamp-2">
+                      <h3 className="mt-2 heading-3 text-primary-foreground text-balance line-clamp-2">
                         {project.title}
                       </h3>
                     </div>
                   </div>
 
-                  <div className="mt-4 type-project-card-hover font-bold uppercase leading-section tracking-heading-tight transform-gpu transition-all duration-700 ease-in-out group-hover:-translate-y-2 group-hover:opacity-0 text-balance line-clamp-2">
+                  <div className="mt-4 heading-3 transform-gpu transition-all duration-700 ease-in-out group-hover:-translate-y-2 group-hover:opacity-0 text-balance line-clamp-2">
                     {project.title}
                   </div>
                 </Link>
@@ -98,7 +98,7 @@ export default function ProjectPage() {
         {/* Empty state */}
         {filteredProjects.length === 0 && (
           <div className="py-20 text-center">
-            <p className="text-sm uppercase tracking-pill text-dark-muted">
+            <p className="text-body-sm uppercase tracking-wide text-muted-foreground">
               No projects in this category yet.
             </p>
           </div>
@@ -107,4 +107,3 @@ export default function ProjectPage() {
     </main>
   )
 }
-

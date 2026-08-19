@@ -16,29 +16,29 @@ export default function PrivacyPolicyPage() {
   const address = '123 Artisan Lane, New York, NY 10001'
 
   return (
-    <main className="min-h-screen bg-page">
+    <main className="min-h-screen bg-background">
       <Navbar />
       <PageHero label="" heading="Privacy" script="Policy" />
       {/* Header */}
-      <div className="border-b border-subtle section-padding">
+      <div className="border-b border-border section-padding">
         <Container>
           <div className="max-w-5xl mx-auto">
             <Link
               href="/"
-              className="mb-8 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-label text-dark-muted transition-colors hover:text-dark"
+              className="mb-8 inline-flex items-center gap-2 text-caption font-medium uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
             >
               ← Back to home
             </Link>
-            <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">Legal</p>
-            <h1 className="mt-1 heading-2 text-dark">Privacy Policy</h1>
-            <p className="mt-4 text-sm text-dark-muted">Last updated: {lastUpdated}</p>
+            <p className="text-caption font-medium uppercase tracking-wider text-muted-foreground">Legal</p>
+            <h1 className="mt-1 heading-2 text-foreground">Privacy Policy</h1>
+            <p className="mt-4 text-body-sm text-muted-foreground">Last updated: {lastUpdated}</p>
           </div>
         </Container>
       </div>
 
       {/* Body */}
       <Container className="">
-        <div className="max-legal legal-page">
+        <div className="max-w-5xl legal-page">
           <p>
             {company} (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is committed to
             protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and

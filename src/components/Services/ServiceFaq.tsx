@@ -18,7 +18,7 @@ import siteData from '@/website.json'
  *
  * Avatar cluster reuses the SAME pattern TrustSection.tsx already
  * established elsewhere on a service page (-space-x-3 overlapping
- * circles, border-2 border-cream, a trailing count badge) rather than
+ * circles, border-2 border-border, a trailing count badge) rather than
  * inventing a second version of the same idea. avatars/avatarCountBadge
  * are read from siteData.trustHero — the same source TrustSection
  * itself uses — so this card and the trust section can never show
@@ -29,7 +29,7 @@ import siteData from '@/website.json'
  * uses elsewhere for "Call Us Now" style CTAs, so updating the real
  * number in one place updates it here too.
  *
- * Card tint uses bg-cream/border-accent — this site's own palette
+ * Card tint uses bg-surface/border-accent — this site's own palette
  * standing in for the reference's green-tinted card, consistent with
  * how the open-accordion-row tint below already substitutes cream for
  * the reference's green for the same reason.
@@ -57,9 +57,9 @@ import siteData from '@/website.json'
 function PlusMinusIcon({ open }: { open: boolean }) {
   return (
     <span className="relative flex h-5 w-5 shrink-0 items-center justify-center" aria-hidden="true">
-      <span className="absolute h-0.5 w-4 rounded-full bg-dark" />
+      <span className="absolute h-0.5 w-4 rounded-full bg-primary" />
       <span
-        className={`absolute h-4 w-divider rounded-full bg-dark transition-transform duration-standard ${
+        className={`absolute h-4 w-divider rounded-full bg-primary transition-transform duration-standard ${
           open ? 'scale-y-0' : 'scale-y-100'
         }`}
       />
@@ -86,19 +86,19 @@ export default function ServiceFaqs({
 
   return (
     <section aria-labelledby="service-faq-heading" className="section-padding">
-      <div className="grid grid-cols-1 gap-8 lg:columns-faq lg:items-start lg:gap-16">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-start lg:gap-16">
         {/* ── Left: eyebrow + heading + contact card ── */}
         <div>
-          <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{label}</p>
+          <p className="text-caption uppercase tracking-wider text-muted-foreground">{label}</p>
           <h2 id="service-faq-heading" className="mt-1">
-            <span className="block heading-2 text-dark">{heading}</span>
+            <span className="block heading-2 text-foreground">{heading}</span>
             <span className="block heading-script capitalize text-accent">{script}</span>
           </h2>
 
           {/* ── Contact card — new ── */}
           <div className="mt-6">
-            <p className="mt-4 text-xl font-bold text-dark">Still have a question?</p>
-            <p className="mt-1 text-sm leading-relaxed text-dark-muted">
+            <p className="mt-4 text-card font-bold text-foreground">Still have a question?</p>
+            <p className="mt-1 text-body-sm leading-relaxed text-muted-foreground">
               We&apos;re ready to help — reach out and a real person will get back to you.
             </p>
 
@@ -122,7 +122,7 @@ export default function ServiceFaqs({
               <div
                 key={item.question}
                 className={`rounded-none border px-5 py-4 transition-colors duration-standard sm:px-6 ${
-                  open ? 'border-emphasis ' : 'border-muted bg-page'
+                  open ? 'border-border-strong ' : 'border-border-muted bg-background'
                 }`}
               >
                 <button
@@ -131,7 +131,7 @@ export default function ServiceFaqs({
                   aria-expanded={open}
                   className="flex w-full items-center justify-between gap-4 text-left"
                 >
-                  <span className="text-sm font-semibold text-dark sm:text-base">
+                  <span className="text-body-sm font-semibold text-foreground sm:text-body">
                     {item.question}
                   </span>
                   <PlusMinusIcon open={open} />
@@ -143,7 +143,7 @@ export default function ServiceFaqs({
                   }`}
                 >
                   <div className="overflow-hidden">
-                    <p className="pt-3 text-sm leading-relaxed text-dark-muted">{item.answer}</p>
+                    <p className="pt-3 text-body-sm leading-relaxed text-muted-foreground">{item.answer}</p>
                   </div>
                 </div>
               </div>
@@ -154,3 +154,5 @@ export default function ServiceFaqs({
     </section>
   )
 }
+
+

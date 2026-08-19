@@ -41,16 +41,16 @@ export default function TocSidebar({ toc }: { toc: TocItem[] }) {
   if (!toc || toc.length === 0) return null
 
   return (
-    <aside className="order-first lg:order-last lg:sticky lg:top-28 lg:self-start lg:viewport-toc lg:overflow-y-auto lg:pb-8">
+    <aside className="order-first lg:order-last lg:sticky lg:top-28 lg:self-start lg:max-h-96 lg:overflow-y-auto lg:pb-8">
       <div>
-        <p className="text-xs font-semibold uppercase tracking-loose text-dark-muted">Contents</p>
-        <ul className="mt-4 space-y-3 border-l border-muted text-sm">
+        <p className="text-caption font-semibold uppercase tracking-wider text-muted-foreground">Contents</p>
+        <ul className="mt-4 space-y-3 border-l border-border-muted text-body-sm">
           {toc.map((item) => (
             <li key={item.anchorId}>
               <a
                 href={`#${item.anchorId}`}
                 onClick={(e) => handleScroll(e, item.anchorId)}
-                className="-ml-px block border-l-2 border-transparent pl-4 text-dark-muted transition-colors hover:border-accent hover:text-accent"
+                className="-ml-px block border-l-2 border-transparent pl-4 text-muted-foreground transition-colors hover:border-accent hover:text-accent"
               >
                 {item.heading}
               </a>
@@ -61,3 +61,5 @@ export default function TocSidebar({ toc }: { toc: TocItem[] }) {
     </aside>
   )
 }
+
+

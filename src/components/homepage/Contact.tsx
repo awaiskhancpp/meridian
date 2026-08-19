@@ -79,37 +79,37 @@ export default function Contact() {
   }
 
   const commonClass =
-    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white-muted focus:border-accent  focus:ring-0'
+    'w-full border-0 border-b border-border-inverse bg-transparent px-0 pb-2 text-body-sm text-primary-foreground outline-none placeholder:text-primary-foreground-muted focus:border-accent  focus:ring-0'
 
   return (
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="relative flex min-h-contact items-center section-padding"
+      className="relative flex min-h-screen items-center section-padding"
     >
       {/* FULL WIDTH BACKGROUND IMAGE */}
       <Image src="/hero.webp" alt="" fill className="absolute inset-0 z-0 object-cover" />
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 z-0 bg-overlay-dark" />
+      <div className="absolute inset-0 z-0 bg-image-overlay" />
 
       <Container className="relative z-10 w-full">
         {/* RESPONSIVE CARD */}
-        <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 bg-panel-dark p-8 shadow-2xl sm:p-12">
+        <div className="mx-auto flex w-full max-w-2xl flex-col gap-8 bg-panel p-8 shadow-lg sm:p-12">
           {/* TOP: Heading Section (Centered) */}
           <div className="flex flex-col items-center text-center">
-            <p className="text-xs uppercase tracking-eyebrow text-white-subtle">{contact.label}</p>
+            <p className="text-caption uppercase tracking-wider text-primary-foreground-subtle">{contact.label}</p>
             <h2 id="contact-heading" className="mt-2">
-              <span className="block heading-2 text-white">{contact.heading}</span>
-              <span className="heading-script capitalize text-white">{contact.script}</span>
+              <span className="block heading-2 text-primary-foreground">{contact.heading}</span>
+              <span className="text-script capitalize leading-normal text-primary-foreground">{contact.script}</span>
             </h2>
           </div>
 
           {/* BOTTOM: Form Section */}
           <div className="w-full">
             {submitted ? (
-              <div className="flex h-contact-success flex-col items-center justify-center rounded-contact border border-light-soft bg-white-soft p-6 backdrop-blur-sm">
-                <p className="text-sm font-medium text-white">
+              <div className="flex h-form-success flex-col items-center justify-center rounded-none border border-border-inverse bg-primary-foreground p-6 backdrop-blur-sm">
+                <p className="text-body-sm font-medium text-primary-foreground">
                   Thanks. Your message is in, and we will be in touch soon.
                 </p>
                 <br />
@@ -119,7 +119,7 @@ export default function Contact() {
                     setSubmitted(false)
                     setFormData({ name: '', phone: '', email: '', message: '', service: '' })
                   }}
-                  className="mt-4 text-sm font-semibold tracking-nav text-white underline underline-offset-4 hover:text-accent"
+                  className="mt-4 text-body-sm font-semibold tracking-wider text-primary-foreground underline underline-offset-4 hover:text-accent"
                 >
                   Send another message
                 </button>
@@ -158,7 +158,7 @@ export default function Contact() {
 
                   {/* SERVICE DROPDOWN — single-select */}
                   <div className="relative grid gap-field">
-                    <span className="text-xs uppercase tracking-snug text-white">
+                    <span className="text-caption uppercase tracking-wide text-primary-foreground">
                       Service of Interest
                     </span>
 
@@ -169,7 +169,7 @@ export default function Contact() {
                     >
                       <span
                         className={`min-w-0 flex-1 truncate pr-4 ${
-                          formData.service ? 'text-white' : 'text-white-muted'
+                          formData.service ? 'text-primary-foreground' : 'text-primary-foreground-muted'
                         }`}
                       >
                         {formData.service || 'Select a service...'}
@@ -177,7 +177,7 @@ export default function Contact() {
 
                       <ChevronDown
                         size={18}
-                        className={`shrink-0 text-white-muted transition-transform duration-standard ${
+                        className={`shrink-0 text-primary-foreground-muted transition-transform duration-standard ${
                           isDropdownOpen ? 'rotate-180' : ''
                         }`}
                       />
@@ -196,7 +196,7 @@ export default function Contact() {
                           role="listbox"
                           aria-label="Service of interest"
                           // Added classes to hide scrollbar across all major browsers
-                          className="absolute left-0 top-full z-20 mt-1 max-h-60 w-full overflow-y-auto rounded-none border border-light-soft bg-dark py-2 shadow-xl scrollbar-hide"
+                          className="absolute left-0 top-full z-20 mt-1 max-h-60 w-full overflow-y-auto rounded-none border border-border-inverse bg-primary py-2 shadow-lg scrollbar-hide"
                         >
                           {AVAILABLE_SERVICES.map((service) => {
                             const isSelected = formData.service === service
@@ -207,9 +207,9 @@ export default function Contact() {
                                 role="option"
                                 aria-selected={isSelected}
                                 onClick={() => handleServiceSelect(service)}
-                                className="flex cursor-pointer items-center gap-field px-4 py-3 transition-colors hover:bg-white-ghost"
+                                className="flex cursor-pointer items-center gap-field px-4 py-3 transition-colors hover:bg-primary-foreground"
                               >
-                                <span className="text-sm text-white">{service}</span>
+                                <span className="text-body-sm text-primary-foreground">{service}</span>
                               </div>
                             )
                           })}
@@ -233,7 +233,7 @@ export default function Contact() {
 
                 <div className="flex flex-col items-center gap-field">
                   {serverError && (
-                    <p className="text-sm text-status-danger" role="alert">
+                    <p className="text-body-sm text-status-danger" role="alert">
                       {serverError}
                     </p>
                   )}
@@ -242,7 +242,7 @@ export default function Contact() {
                     size="md"
                     type="submit"
                     disabled={isSubmitting}
-                    className="max-w-fit rounded-none border-light-muted text-white hover:!bg-page hover:!text-dark disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="max-w-fit rounded-none border-border-inverse text-primary-foreground hover:!bg-background hover:!text-foreground disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <span>{isSubmitting ? 'Sending…' : contact.submit}</span>
                     <ArrowUpRight size={20} />
@@ -281,11 +281,11 @@ function UnderlineField({
   rows = 1,
 }: FieldProps) {
   const commonClass =
-    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white-muted focus:border-white-subtle focus:ring-0'
+    'w-full border-0 border-b border-border-inverse bg-transparent px-0 pb-2 text-body-sm text-primary-foreground outline-none placeholder:text-primary-foreground-muted focus:border-border-inverse focus:ring-0'
 
   return (
     <label htmlFor={id} className="grid gap-field">
-      <span className="text-xs uppercase tracking-snug text-white">{label}</span>
+      <span className="text-caption uppercase tracking-wide text-primary-foreground">{label}</span>
       {as === 'textarea' ? (
         <textarea
           id={id}
@@ -294,7 +294,7 @@ function UnderlineField({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className={`${commonClass} min-h-contact-field resize-none rounded-none`}
+                          className={`${commonClass} min-h-36 resize-none rounded-none`}
         />
       ) : (
         <input

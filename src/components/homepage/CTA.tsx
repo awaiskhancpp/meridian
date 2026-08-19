@@ -44,16 +44,16 @@ export default function CTA({
   }
 
   return (
-    <section className="relative section-padding bg-page ">
+    <section className="relative section-padding bg-background ">
       <Container className="relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
           <div className="lg:col-span-7 flex flex-col justify-center">
-            <h2 className="type-section-title-wide font-bold uppercase leading-section tracking-heading-tight text-dark">
+            <h2 className="heading-2 text-foreground">
               {title}
             </h2>
 
-            <p className="mt-4 text-base sm:text-lg leading-relaxed text-dark-muted max-w-xl">
+            <p className="mt-4 text-body sm:text-body-lg leading-relaxed text-muted-foreground max-w-xl">
               {description}
             </p>
           </div>
@@ -70,12 +70,12 @@ export default function CTA({
                     setEmailError('')
                   }}
                   placeholder="Enter your email"
-                  className="h-14 w-full rounded-none border border-accent-light bg-page px-4 pr-36 text-sm text-dark placeholder:text-dark-muted/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent transition-colors"
+                  className="h-14 w-full rounded-none border border-accent bg-background px-4 pr-36 text-body-sm text-foreground placeholder:text-muted-foreground/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-focus transition-colors"
                 />
 
                 <button
                   type="submit"
-                  className="absolute right-1 top-1 bottom-1 rounded-none bg-accent px-6 text-xs font-semibold uppercase tracking-widest text-white transition-colors duration-standard hover:bg-dark"
+                  className="absolute right-1 top-1 bottom-1 rounded-none bg-accent px-6 text-caption font-semibold uppercase tracking-widest text-primary-foreground transition-colors duration-standard hover:bg-primary"
                 >
                   Subscribe
                 </button>
@@ -84,7 +84,7 @@ export default function CTA({
               {/* Form Feedback */}
               <div className="mt-2 min-h-status">
                 <p
-                  className={`text-xs font-medium transition-opacity duration-200 ${
+                  className={`text-caption font-medium transition-opacity duration-200 ${
                     emailError
                       ? 'text-status-danger opacity-100'
                       : isSubmitted
@@ -102,3 +102,4 @@ export default function CTA({
     </section>
   )
 }
+

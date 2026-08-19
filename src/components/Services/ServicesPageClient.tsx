@@ -48,7 +48,7 @@ export default function ServicesPageClient({
   }, [services, search])
 
   return (
-    <main className="min-h-screen bg-page">
+    <main className="min-h-screen bg-background">
       <Navbar />
 
       <PageHero
@@ -63,18 +63,18 @@ export default function ServicesPageClient({
         <Container>
           <div className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">
+              <p className="text-caption font-medium uppercase tracking-wider text-muted-foreground">
                 {heroProps.label}
               </p>
-              <h2 className="mt-1 heading-2 text-dark">All Services</h2>
+              <h2 className="mt-1 heading-2 text-foreground">All Services</h2>
             </div>
-            <p className="text-sm text-dark-muted">
+            <p className="text-body-sm text-muted-foreground">
               {filtered.length} {filtered.length === 1 ? 'service' : 'services'}
             </p>
           </div>
 
           {filtered.length === 0 ? (
-            <p className="py-16 text-center text-sm text-dark-muted">
+            <p className="py-16 text-center text-body-sm text-muted-foreground">
               No services match your search. Try clearing a filter.
             </p>
           ) : (
@@ -97,3 +97,5 @@ export default function ServicesPageClient({
     </main>
   )
 }
+
+

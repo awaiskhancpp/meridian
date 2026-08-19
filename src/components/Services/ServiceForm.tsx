@@ -12,13 +12,13 @@ import Image from 'next/image'
  * panel, borderless inputs with a bottom rule, ArrowUpRight submit
  * button, same /api/contact endpoint.
  *
- * Left-column color hierarchy: text-accent and text-dark are the
+ * Left-column color hierarchy: text-accent and text-foreground are the
  * SAME hex (#3C2515) — using text-accent for the eyebrow label AND
  * the subheading paragraph meant they rendered in the exact same
  * full-strength color as the giant heading, with zero tonal contrast
  * between "quiet label," "loud heading," and "quiet supporting text."
  * Every other section in this codebase (Faq.tsx, Process.tsx,
- * Blogs.tsx, Testimonials.tsx) uses text-dark-muted (#6F513D — a
+ * Blogs.tsx, Testimonials.tsx) uses text-muted-foreground (#6F513D — a
  * genuinely different, softer shade) for exactly the label + body-copy
  * roles, reserving the strong color for the heading only. Matched
  * that convention here instead.
@@ -80,28 +80,28 @@ export default function ServiceForm({
       <Image src="/hero.webp" alt="" fill className="absolute inset-0 z-0 object-cover" />
 
       {/* OVERLAY */}
-      <div className="absolute inset-0 z-0 bg-overlay-dark" />
+      <div className="absolute inset-0 z-0 bg-overlay-strong" />
 
       {/* ADDED relative z-10 HERE */}
       <Container className="relative z-10 grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-16">
         {/* ── Left: heading ── */}
         <div className="col-span-6">
-          <p className="text-xs uppercase tracking-eyebrow text-white-overlay">{label}</p>
+          <p className="text-caption uppercase tracking-wider text-primary-foreground">{label}</p>
           <h2
             id="service-form-heading"
-            className="mt-3 type-service-form font-black uppercase leading-compact tracking-heading-subtle text-white"
+            className="mt-3 heading-form text-primary-foreground"
           >
             {heading}
             <br />
             {serviceTitle}
           </h2>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-secondary">{subheading}</p>
+          <p className="mt-4 max-w-sm text-body-sm leading-relaxed text-secondary-foreground">{subheading}</p>
         </div>
 
-        <div className="col-span-6 w-full rounded-none border border-light-soft bg-panel-dark p-6 shadow-soft sm:p-8">
+        <div className="col-span-6 w-full rounded-none border border-border-inverse bg-panel p-6 shadow-sm sm:p-8">
           {submitted ? (
-            <div className="flex min-h-service-form flex-col items-center justify-center text-center">
-              <p className="text-sm font-medium text-white">
+            <div className="flex min-h-form-success flex-col items-center justify-center text-center">
+              <p className="text-body-sm font-medium text-primary-foreground">
                 Thanks. Your request for {serviceTitle} is in, and we'll be in touch soon.
               </p>
               <button
@@ -110,15 +110,15 @@ export default function ServiceForm({
                   setSubmitted(false)
                   setFormData({ name: '', phone: '', email: '', message: '' })
                 }}
-                className="mt-4 text-sm font-semibold tracking-nav text-white underline underline-offset-4 hover:text-accent"
+                className="mt-4 text-body-sm font-semibold tracking-wider text-primary-foreground underline underline-offset-4 hover:text-accent"
               >
                 Send another request
               </button>
             </div>
           ) : (
             <form onSubmit={handleSubmit} noValidate className="grid gap-6">
-              <p className="text-xs uppercase tracking-snug text-white-muted">
-                Requesting: <span className="text-white">{serviceTitle}</span>
+              <p className="text-caption uppercase tracking-wide text-primary-foreground-muted">
+                Requesting: <span className="text-primary-foreground">{serviceTitle}</span>
               </p>
 
               <div className="grid gap-6 sm:grid-cols-2">
@@ -163,7 +163,7 @@ export default function ServiceForm({
 
               <div className="flex flex-col items-start gap-field">
                 {serverError && (
-                  <p className="text-sm text-status-danger" role="alert">
+                  <p className="text-body-sm text-status-danger" role="alert">
                     {serverError}
                   </p>
                 )}
@@ -172,7 +172,7 @@ export default function ServiceForm({
                   size="md"
                   type="submit"
                   disabled={isSubmitting}
-                  className="rounded-none border-light-muted text-white hover:!bg-white-high hover:!text-dark disabled:cursor-not-allowed disabled:opacity-50"
+                  className="rounded-none border-border-inverse text-primary-foreground hover:!bg-primary-foreground-high hover:!text-foreground disabled:cursor-not-allowed disabled:opacity-50"
                 >
                   <span>{isSubmitting ? 'Sending…' : 'Send Request'}</span>
                   <ArrowUpRight size={20} />
@@ -212,11 +212,11 @@ function UnderlineField({
   className = '',
 }: FieldProps) {
   const commonClass =
-    'w-full border-0 border-b border-light-muted bg-transparent px-0 pb-2 text-sm text-white outline-none placeholder:text-white-muted focus:border-white-subtle focus:ring-0'
+    'w-full border-0 border-b border-border-inverse bg-transparent px-0 pb-2 text-body-sm text-primary-foreground outline-none placeholder:text-primary-foreground-muted focus:border-border-inverse focus:ring-0'
 
   return (
     <label htmlFor={id} className={`grid gap-field ${className}`}>
-      <span className="text-xs uppercase tracking-snug text-white">{label}</span>
+      <span className="text-caption uppercase tracking-wide text-primary-foreground">{label}</span>
       {as === 'textarea' ? (
         <textarea
           id={id}
@@ -225,7 +225,7 @@ function UnderlineField({
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className={`${commonClass} min-h-service-field resize-none rounded-none`}
+          className={`${commonClass} min-h-28 resize-none rounded-none`}
         />
       ) : (
         <input

@@ -55,7 +55,7 @@ export default function About() {
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Ã¢â€â‚¬Ã¢â€â‚¬ Left (at lg): photo with overlapping trust card Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */}
           <div className="relative">
-            <div className="relative ratio-landscape w-full overflow-hidden">
+            <div className="relative aspect-landscape w-full overflow-hidden">
               <Image src={about.image} alt={about.heading} fill className="object-cover" />
             </div>
 
@@ -64,14 +64,14 @@ export default function About() {
                 photo's right + bottom edge at lg where there's room
                 to spare. max-w caps how wide the breakout can get on
                 very wide columns. */}
-            <div className="absolute inset-x-4 bottom-4 about-callout-right bg-dark p-3 sm:inset-x-6 sm:bottom-6 sm:p-6 lg:inset-x-auto lg:-right-6 lg:bottom-8 lg:left-6 lg:max-card-copy lg:p-7">
-              <p className="text-xs font-medium uppercase tracking-label text-white-subtle">
+            <div className="absolute inset-x-4 bottom-4 right-16 bg-primary p-3 sm:inset-x-6 sm:bottom-6 sm:p-6 lg:inset-x-auto lg:-right-6 lg:bottom-8 lg:left-6 lg:max-w-xs lg:p-7">
+              <p className="text-caption font-medium uppercase tracking-wider text-primary-foreground-subtle">
                 {about.card.label}
               </p>
-              <p className="mt-3 text-4xl font-black leading-none text-accent-light">
+              <p className="mt-3 heading-1 text-primary-foreground">
                 {about.card.stat}
               </p>
-              <p className="mt-2 text-sm leading-snug text-white-strong">{about.card.subStat}</p>
+              <p className="mt-2 text-body-sm leading-snug text-primary-foreground-strong">{about.card.subStat}</p>
             </div>
           </div>
 
@@ -83,7 +83,7 @@ export default function About() {
               heading={about.heading}
               script={about.script}
               subheading={about.subheading}
-              labelClassName="flex items-center gap-card text-xs font-medium uppercase tracking-eyebrow text-dark-muted"
+              labelClassName="flex items-center gap-card text-caption font-medium uppercase tracking-wider text-muted-foreground"
             />
 
             <div className="mt-8">
@@ -92,9 +92,9 @@ export default function About() {
               </Button>
             </div>
 
-            {/* <div className="mt-10 max-about-stats bg-cream p-5">
-              <p className="text-3xl font-black leading-none text-dark">{about.stats[1].value}</p>
-              <p className="mt-2 text-sm text-dark-muted">{about.stats[1].label}</p>
+            {/* <div className="mt-10 max-about-stats bg-surface p-5">
+              <p className="heading-2 text-foreground">{about.stats[1].value}</p>
+              <p className="mt-2 text-body-sm text-muted-foreground">{about.stats[1].label}</p>
             </div> */}
           </div>
         </div>

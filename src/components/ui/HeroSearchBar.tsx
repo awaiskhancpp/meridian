@@ -48,7 +48,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
   }
 
   function renderField(field: SearchField, opts: { border?: string } = {}) {
-    const borderClass = opts.border ?? 'border-r border-subtle'
+    const borderClass = opts.border ?? 'border-r border-border'
 
     if (field.type === 'text') {
       return (
@@ -56,7 +56,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
           key={field.name}
           className={`flex flex-1 z-search flex-col justify-center gap-0.5 px-5 ${borderClass}`}
         >
-          <label className="type-search-label font-semibold uppercase tracking-snug text-dark-muted">
+          <label className="text-caption font-semibold uppercase tracking-wide text-muted-foreground">
             {field.label}
           </label>
           <input
@@ -64,7 +64,7 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
             value={values[field.name] ?? ''}
             onChange={(e) => setValue(field.name, e.target.value)}
             placeholder={field.placeholder}
-            className="truncate bg-transparent text-sm text-dark outline-none placeholder:text-dark-muted/60"
+            className="truncate bg-transparent text-body-sm text-foreground outline-none placeholder:text-muted-foreground/60"
           />
         </div>
       )
@@ -79,27 +79,27 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
         key={field.name}
         className={`relative flex flex-1 flex-col justify-center gap-0.5 px-5 ${borderClass}`}
       >
-        <span className="type-search-label font-semibold uppercase tracking-snug text-dark-muted">
+        <span className="text-caption font-semibold uppercase tracking-wide text-muted-foreground">
           {field.label}
         </span>
         <button
           type="button"
           onClick={() => setOpenDropdown(isOpen ? null : field.name)}
-          className="flex items-center gap-2 text-sm text-dark outline-none"
+          className="flex items-center gap-2 text-body-sm text-foreground outline-none"
         >
-          <span className={`truncate ${selected ? 'text-dark' : 'text-dark-muted/70'}`}>
+          <span className={`truncate ${selected ? 'text-foreground' : 'text-muted-foreground/70'}`}>
             {displayLabel}
           </span>
           <ChevronDown
             size={14}
-            className={`ml-auto shrink-0 text-dark-muted transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+            className={`ml-auto shrink-0 text-muted-foreground transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
           />
         </button>
 
         {isOpen ? (
           <>
             <div className="fixed inset-0 z-20" onClick={() => setOpenDropdown(null)} />
-            <div className="absolute left-0 top-full z-overlay mt-2 w-full border border-subtle bg-page py-1 shadow-card">
+            <div className="absolute left-0 top-full z-overlay mt-2 w-full border border-border bg-background py-1 shadow-md">
               {field.options.map((option) => (
                 <button
                   key={option}
@@ -108,8 +108,8 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
                     setValue(field.name, option)
                     setOpenDropdown(null)
                   }}
-                  className={`z-overlay w-full px-4 py-2.5 text-left text-sm transition-colors hover:bg-cream ${
-                    option === selected ? 'font-medium text-dark' : 'text-dark-muted'
+                  className={`z-overlay w-full px-4 py-2.5 text-left text-body-sm transition-colors hover:bg-surface ${
+                    option === selected ? 'font-medium text-foreground' : 'text-muted-foreground'
                   }`}
                 >
                   {option}
@@ -123,14 +123,14 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
   }
 
   return (
-    <div className="relative z-50 mx-auto w-full max-w-5xl border border-subtle bg-page shadow-lift">
+    <div className="relative z-50 mx-auto w-full max-w-5xl border border-border bg-background shadow-lg">
       <form onSubmit={handleSubmit} role="search" aria-label="Search articles">
         <div className="hidden h-navbar items-stretch lg:flex">
           {fields.map((field) => renderField(field))}
 
           <button
             type="submit"
-            className="flex shrink-0 items-center bg-accent px-9 text-sm font-semibold uppercase tracking-loose text-white transition-colors hover:bg-dark"
+            className="flex shrink-0 items-center bg-accent px-9 text-body-sm font-semibold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary"
           >
             Search
           </button>
@@ -138,12 +138,12 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
 
         <div className="flex flex-col gap-0 lg:hidden">
           {fields.map((field) =>
-            renderField(field, { border: 'border-b border-subtle px-5 py-4' }),
+            renderField(field, { border: 'border-b border-border px-5 py-4' }),
           )}
 
           <button
             type="submit"
-            className="flex items-center justify-center bg-accent px-8 py-4 text-sm font-semibold uppercase tracking-loose text-white transition-colors hover:bg-accent-hover"
+            className="flex items-center justify-center bg-accent px-8 py-4 text-body-sm font-semibold uppercase tracking-wider text-primary-foreground transition-colors hover:bg-primary-hover"
           >
             Search
           </button>
@@ -152,3 +152,5 @@ export default function HeroSearchBar({ onSearch, fields = DEFAULT_FIELDS }: Her
     </div>
   )
 }
+
+

@@ -47,7 +47,7 @@ export default function Services() {
               label={services.label}
               heading={services.heading}
               script={services.script}
-              labelClassName="text-xs uppercase tracking-eyebrow text-dark-muted"
+              labelClassName="text-caption uppercase tracking-wider text-muted-foreground"
               headingMt="mt-1"
             />
           </div>
@@ -58,7 +58,7 @@ export default function Services() {
               onClick={() => swiperRef.current?.slidePrev()}
               disabled={atStart}
               aria-label="Previous services"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-subtle text-dark-muted transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
             >
               <ArrowIcon direction="left" />
             </button>
@@ -67,14 +67,14 @@ export default function Services() {
               onClick={() => swiperRef.current?.slideNext()}
               disabled={atEnd}
               aria-label="Next services"
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-subtle text-dark transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-foreground transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
             >
               <ArrowIcon direction="right" />
             </button>
           </div>
         </div>
 
-        <div className="border-t border-subtle" />
+        <div className="border-t border-border" />
 
         <div className="mt-8 overflow-hidden ">
           <Swiper
@@ -110,3 +110,5 @@ export default function Services() {
     </section>
   )
 }
+
+

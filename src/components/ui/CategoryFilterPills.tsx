@@ -36,11 +36,11 @@ export default function CategoryFilterPills({
             aria-selected={isActive}
             onClick={() => onChange(cat.value === 'all' ? null : cat.value)}
             className={`
-              relative shrink-0 border px-5 py-2.5 text-xs font-semibold uppercase tracking-pill transition-all duration-200
+              relative shrink-0 border px-5 py-2.5 text-caption font-semibold uppercase tracking-wide transition-all duration-200
               ${
                 isActive
-                  ? 'border-accent bg-accent text-white'
-                  : 'border-strong text-dark-muted hover:border-accent hover:text-accent'
+                  ? 'border-accent bg-accent text-primary-foreground'
+                  : 'border-border-strong text-muted-foreground hover:border-accent hover:text-accent'
               }
             `}
           >
@@ -51,3 +51,5 @@ export default function CategoryFilterPills({
     </div>
   )
 }
+
+

@@ -71,7 +71,7 @@ export default function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
-      className="relative ratio-landscape w-full touch-none select-none overflow-hidden border border-muted"
+      className="relative aspect-landscape w-full touch-none select-none overflow-hidden border border-border-muted"
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
@@ -90,7 +90,7 @@ export default function BeforeAfterSlider({
 
       {/* Divider line */}
       <div
-        className="pointer-events-none absolute inset-y-0 w-divider -translate-x-1/2 bg-page before-after-position"
+        className="pointer-events-none absolute inset-y-0 w-divider -translate-x-1/2 bg-background before-after-position"
         data-position={position}
         aria-hidden="true"
       />
@@ -107,7 +107,7 @@ export default function BeforeAfterSlider({
         aria-valuemin={0}
         aria-valuemax={100}
         onKeyDown={handleKeyDown}
-        className="absolute top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full bg-page text-dark shadow-card outline-none focus-visible:ring-2 focus-visible:ring-accent before-after-position"
+        className="absolute top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 cursor-ew-resize items-center justify-center rounded-full bg-background text-foreground shadow-md outline-none focus-visible:ring-2 focus-visible:ring-focus before-after-position"
       >
         <ChevronLeft className="h-3.5 w-3.5" aria-hidden="true" />
         <ChevronRight className="h-3.5 w-3.5" aria-hidden="true" />
@@ -115,3 +115,5 @@ export default function BeforeAfterSlider({
     </div>
   )
 }
+
+

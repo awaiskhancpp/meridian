@@ -80,10 +80,10 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
         <div className="mb-8 flex flex-wrap items-end justify-between gap-6">
           <div>
             <div className="flex items-center gap-2">
-              <p className="text-xs uppercase tracking-eyebrow text-dark-muted">{label}</p>
+              <p className="text-caption uppercase tracking-wider text-muted-foreground">{label}</p>
             </div>
             <h2 id="services-heading" className="mt-1">
-              <span className="block heading-2 text-dark">{heading}</span>
+              <span className="block heading-2 text-foreground">{heading}</span>
               <span className="block heading-script capitalize text-accent">{script}</span>
             </h2>
           </div>
@@ -102,7 +102,7 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
               ref={prevRef}
               type="button"
               aria-label="Previous service"
-              className="swiper-nav-prev flex h-11 w-11 items-center justify-center rounded-full text-dark border border-dark transition-opacity duration-200 hover:opacity-85"
+              className="swiper-nav-prev flex h-11 w-11 items-center justify-center rounded-full text-foreground border border-border-strong transition-opacity duration-200 hover:opacity-85"
             >
               <ChevronLeft size={20} aria-hidden="true" />
             </button>
@@ -187,3 +187,5 @@ export default function ExploreOtherServices({ currentSlug, services }: ExploreO
     </section>
   )
 }
+
+

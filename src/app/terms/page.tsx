@@ -15,29 +15,29 @@ export default function TermsPage() {
   const email = 'hello@meridian.studio'
 
   return (
-    <main className="min-h-screen bg-page">
+    <main className="min-h-screen bg-background">
       <Navbar />
       <PageHero label="" heading="Terms &amp;" script="Conditions" />
       {/* Header */}
-      <div className="border-b border-subtle section-padding">
+      <div className="border-b border-border section-padding">
         <Container>
           <div className="max-w-5xl mx-auto">
             <Link
               href="/"
-              className="mb-8 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-label text-dark-muted transition-colors hover:text-dark"
+              className="mb-8 inline-flex items-center gap-2 text-caption font-medium uppercase tracking-wider text-muted-foreground transition-colors hover:text-foreground"
             >
               ← Back to home
             </Link>
-            <p className="text-xs font-medium uppercase tracking-eyebrow text-dark-muted">Legal</p>
-            <h1 className="mt-1 heading-2 text-dark">Terms &amp; Conditions</h1>
-            <p className="mt-4 text-sm text-dark-muted">Last updated: {lastUpdated}</p>
+            <p className="text-caption font-medium uppercase tracking-wider text-muted-foreground">Legal</p>
+            <h1 className="mt-1 heading-2 text-foreground">Terms &amp; Conditions</h1>
+            <p className="mt-4 text-body-sm text-muted-foreground">Last updated: {lastUpdated}</p>
           </div>
         </Container>
       </div>
 
       {/* Body */}
       <Container>
-        <div className="max-legal legal-page">
+        <div className="max-w-5xl legal-page">
           <p>
             Please read these Terms &amp; Conditions carefully before using the {company} website or
             engaging our services. By accessing our website or contacting us, you agree to be bound
