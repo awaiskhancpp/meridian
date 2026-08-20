@@ -42,9 +42,9 @@ export default function Hero() {
         />
 
         <div className="absolute inset-0 bg-hero-overlay" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-32 h-px bg-primary-foreground-faint" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-36 md:bottom-30 lg:bottom-32 h-px bg-primary-foreground-faint" />
 
-                <Container className="relative flex h-full flex-col justify-between pt-24">
+        <Container className="relative flex h-full flex-col justify-between pt-24">
           <div className="flex justify-between gap-4" aria-hidden="true">
             <span className="text-caption font-medium uppercase tracking-wider text-primary-foreground opacity-0">
               {hero.eyebrow}
@@ -56,9 +56,7 @@ export default function Hero() {
               <span className="heading-display text-primary-foreground drop-shadow-hero">
                 {hero.heading}{' '}
               </span>
-              <span className="heading-display-script text-surface-foreground">
-                {hero.script}
-              </span>
+              <span className="heading-display-script text-surface-foreground">{hero.script}</span>
             </h1>
 
             <div className="mt-8  lg:items-start pb-4 lg:pb-8">

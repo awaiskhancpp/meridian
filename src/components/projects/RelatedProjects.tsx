@@ -57,6 +57,3 @@ export default function RelatedProjects({ project }: { project: ProjectDetail })
     </section>
   )
 }
-
-
-

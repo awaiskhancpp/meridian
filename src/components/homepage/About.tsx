@@ -64,14 +64,14 @@ export default function About() {
                 photo's right + bottom edge at lg where there's room
                 to spare. max-w caps how wide the breakout can get on
                 very wide columns. */}
-            <div className="absolute inset-x-4 bottom-4 right-16 bg-primary p-3 sm:inset-x-6 sm:bottom-6 sm:p-6 lg:inset-x-auto lg:-right-6 lg:bottom-8 lg:left-6 lg:max-w-xs lg:p-7">
+            <div className="absolute inset-x-4 bottom-4 right-16 bg-primary p-3 sm:inset-x-6 sm:bottom-6 sm:p-6 sm:right-1/2 lg:inset-x-auto lg:-right-6 lg:bottom-8 lg:left-6 lg:max-w-xs lg:p-7">
               <p className="text-caption font-medium uppercase tracking-wider text-primary-foreground-subtle">
                 {about.card.label}
               </p>
-              <p className="mt-3 heading-1 text-primary-foreground">
-                {about.card.stat}
+              <p className="mt-3 heading-1 text-primary-foreground">{about.card.stat}</p>
+              <p className="mt-2 text-body-sm leading-snug text-primary-foreground-strong">
+                {about.card.subStat}
               </p>
-              <p className="mt-2 text-body-sm leading-snug text-primary-foreground-strong">{about.card.subStat}</p>
             </div>
           </div>
 

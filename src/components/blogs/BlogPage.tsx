@@ -58,9 +58,7 @@ export default function BlogPage({ post }: { post: BlogPost }) {
         </nav>
 
         {/* Title */}
-        <h1 className="heading-2 text-foreground">
-          {post.title}
-        </h1>
+        <h1 className="heading-2 text-foreground">{post.title}</h1>
 
         {/* Description */}
         {/* {post.description && (
@@ -81,8 +79,8 @@ export default function BlogPage({ post }: { post: BlogPost }) {
       </Container>
 
       <Container className="!max-w-6xl">
-        <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-2">
-          <div className="min-w-0">
+        <div className="mt-10 grid grid-cols-1 gap-12 lg:grid-cols-12">
+          <div className="order-2 lg:order-1 lg:col-span-8 min-w-0">
             <RichText content={rawContent} />
             {imageUrl && (
               <div className="relative mt-4 aspect-video w-full overflow-hidden ">
@@ -92,10 +90,11 @@ export default function BlogPage({ post }: { post: BlogPost }) {
             {post.faqs && post.faqs.length > 0 && <PostFaqs faqs={post.faqs} />}
           </div>
 
-          <TocSidebar toc={toc} />
+          <div className="order-1 lg:order-2 lg:col-span-4">
+            <TocSidebar toc={toc} />
+          </div>
         </div>
       </Container>
     </article>
   )
 }
-

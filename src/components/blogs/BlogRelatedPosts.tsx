@@ -37,7 +37,9 @@ export default function BlogRelatedPosts() {
             </div>
             <h2 id="related-posts-heading" className="mt-1">
               <span className="block heading-2 text-foreground">{heading}</span>
-              <span className="block text-script capitalize leading-normal text-accent mt-2">{script}</span>
+              <span className="block text-script capitalize leading-normal text-accent mt-2">
+                {script}
+              </span>
             </h2>
           </div>
           <div className="flex flex-shrink-0 items-center gap-card">
@@ -62,7 +64,7 @@ export default function BlogRelatedPosts() {
 
         <Swiper
           modules={[Navigation]}
-          spaceBetween={24}
+          spaceBetween={20}
           onSwiper={setSwiperInstance}
           onBeforeInit={(swiper) => {
             // @ts-expect-error
@@ -87,7 +89,6 @@ export default function BlogRelatedPosts() {
           ))}
         </Swiper>
       </Container>
-
     </section>
   )
 }
